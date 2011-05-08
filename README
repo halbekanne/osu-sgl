@@ -1,0 +1,6 @@
+SGL (Storyboard Generation Language) port for C# 2.0 and .NET 2.0
+---------------------------------------------------------------------------------
+
+A port of the SGL Editor, written in C# 2.0 with the goal to be integrated in osu!
+
+However, the structure of the program will be completely differen, e.g. ANTLR is used to compile SGL into Storyboard Code.
