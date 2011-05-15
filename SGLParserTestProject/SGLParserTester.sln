@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend", "SGLParserTester\Frontend.csproj", "{25D1AE24-8712-4515-A6E5-1D59387382B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D46C69FA-C7B2-4B34-A8EB-5EEB5869BCA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25D1AE24-8712-4515-A6E5-1D59387382B0}.Debug|x86.ActiveCfg = Debug|x86
+		{25D1AE24-8712-4515-A6E5-1D59387382B0}.Debug|x86.Build.0 = Debug|x86
+		{25D1AE24-8712-4515-A6E5-1D59387382B0}.Release|x86.ActiveCfg = Release|x86
+		{25D1AE24-8712-4515-A6E5-1D59387382B0}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
