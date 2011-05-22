@@ -1,6 +1,0 @@
-<Modules>
-  <Module PersistentId="d:Miscellaneous Files" ModuleId="System.Drawing" />
-  <Module PersistentId="9A3287D7-1088-451E-81B2-8342F05A351E" ModuleId="osuEditor" />
-  <Module PersistentId="19EF75B2-B414-4EB0-9486-160FAF93E62C" ModuleId="Alsing.SyntaxBox.NET" />
-  <Module PersistentId="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Windows.Forms" />
-</Modules>
