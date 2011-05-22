@@ -1,0 +1,7 @@
+Janus.Windows.UI.Tab.UITab, Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+Janus.Windows.GridEX.GridEX, Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+Janus.Windows.Ribbon.OfficeFormAdorner, Janus.Windows.Ribbon.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+Janus.Windows.UI.CommandBars.UICommandManager, Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+Janus.Windows.Ribbon.Ribbon, Janus.Windows.Ribbon.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+Janus.Windows.Ribbon.RibbonContextMenu, Janus.Windows.Ribbon.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+Janus.Windows.ButtonBar.ButtonBar, Janus.Windows.ButtonBar.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null

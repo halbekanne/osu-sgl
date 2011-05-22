@@ -1,0 +1,162 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.Designer.cs" caret="17796" fromTop="17" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:FileController.cs" caret="910" fromTop="31" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="3728" fromTop="24" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:FileController.cs" caret="230" fromTop="7" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:FileController.cs" caret="334" fromTop="12" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="2664" fromTop="26" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="1996" fromTop="0" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="4113" fromTop="21" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="3606" fromTop="22" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="3326" fromTop="28" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="1615" fromTop="22" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="4009" fromTop="35" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="2664" fromTop="27" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="4369" fromTop="32" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="4369" fromTop="23" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="4642" fromTop="21" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="835" fromTop="29" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="5149" fromTop="29" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="4825" fromTop="22" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="4951" fromTop="21" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.Designer.cs" caret="21833" fromTop="5" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="352" fromTop="15" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="5149" fromTop="15" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="5124" fromTop="24" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="4688" fromTop="4" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.Designer.cs" caret="18083" fromTop="20" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="3263" fromTop="34" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="1889" fromTop="38" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="1577" fromTop="18" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="1231" fromTop="13" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="527" fromTop="15" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="1344" fromTop="27" />
+      <File id="9A3287D7-1088-451E-81B2-8342F05A351E/f:Form1.cs" caret="3700" fromTop="24" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="new" priority="3" />
+      <Item value="MessageBox`0" priority="0" />
+      <Item value="public" priority="7" />
+      <Item value="OpenFileDialog`0" priority="1" />
+      <Item value="OpenFileDialog" priority="1" />
+      <Item value="Message`0" priority="0" />
+      <Item value="fd" priority="1" />
+      <Item value="FileController`0" priority="2" />
+      <Item value="String`0" priority="4" />
+      <Item value="void" priority="4" />
+      <Item value="private" priority="4" />
+      <Item value="filePath" priority="0" />
+      <Item value="filepath" priority="6" />
+      <Item value="GetHashCode`0" priority="1" />
+      <Item value="return" priority="5" />
+      <Item value="_filePath" priority="1" />
+      <Item value="AppDomainSetup`0" priority="0" />
+      <Item value="filePath`0" priority="0" />
+      <Item value="value" priority="0" />
+      <Item value="FilePath" priority="1" />
+      <Item value="controller" priority="14" />
+      <Item value="FileController" priority="0" />
+      <Item value="osuEditor" priority="0" />
+      <Item value="osuSbEditor`0" priority="1" />
+      <Item value="fileDialog" priority="3" />
+      <Item value="null" priority="1" />
+      <Item value="e" priority="6" />
+      <Item value="Console`0" priority="0" />
+      <Item value="defaultTab" priority="0" />
+      <Item value="newFile`0" priority="1" />
+      <Item value="editorDocument" priority="0" />
+      <Item value="bool" priority="2" />
+      <Item value="if" priority="5" />
+      <Item value="save" priority="0" />
+      <Item value="else" priority="2" />
+      <Item value="fileChooser`0" priority="1" />
+      <Item value="try" priority="2" />
+      <Item value="ArgumentException`0" priority="0" />
+      <Item value="argumentException" priority="0" />
+      <Item value="true" priority="3" />
+      <Item value="Saved" priority="0" />
+      <Item value="false" priority="1" />
+      <Item value="tabControl" priority="0" />
+      <Item value="this" priority="6" />
+      <Item value="title" priority="4" />
+      <Item value="refreshTitle`0" priority="5" />
+      <Item value="saved" priority="0" />
+      <Item value="editorControl" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.OpenFileDialog">
+      <Item value="ShowDialog`0" priority="0" />
+      <Item value="FileName" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:osuEditor.FileController">
+      <Item value="FilePath" priority="6" />
+      <Item value="Saved" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.SaveFileDialog">
+      <Item value="FileName" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.KeyPressEventArgs">
+      <Item value="KeyChar" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.KeyEventArgs">
+      <Item value="KeyCode" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Char">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TabPage">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Alsing.SourceCode.SyntaxDocument">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TabControl">
+      <Item value="AccessibilityObject" priority="0" />
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:osuEditor.osuSbEditor">
+      <Item value="Name" priority="4" />
+      <Item value="title" priority="0" />
+      <Item value="Text" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DialogResult">
+      <Item value="No" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.FormClosingEventArgs">
+      <Item value="Cancel" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Alsing.Windows.Forms.SyntaxBoxControl">
+      <Item value="Undo`0" priority="0" />
+      <Item value="Redo`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

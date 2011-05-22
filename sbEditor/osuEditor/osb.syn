@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Language Name="osb" Startblock="osb code">
+  <Block Name="osb code" Style="Osb Code" IsMultiline="true">
+   <Keywords>
+		  <PatternGroup Name="Keywords" Style="Osb Keyword" CaseSensitive="true">
+				 <Patterns>
+				 Sprite Animation Foreground Background Centre
+				 </Patterns>
+		  </PatternGroup>
+		  <PatternGroup Name="Keywords2" Style="Osb Type">
+              <Pattern Text="(^( |_)+[FMSVRCPL])" IsComplex="true" />
+		  </PatternGroup>
+		  <PatternGroup Name="Comment" Style="Osb Comment">
+              <Pattern Text="(\/\/.*)" IsComplex="true" />
+		  </PatternGroup>	
+		  <PatternGroup Name="String" Style="Osb String">
+              <Pattern Text='(\".*\")' IsComplex="true" />
+		  </PatternGroup>			  
+		  <PatternGroup Name="Heading" Style="Osb Heading">
+              <Pattern Text='(\[.*\])' IsComplex="true" />
+		  </PatternGroup>	
+		  <PatternGroup Name="Property" Style="Osb Property">
+              <Pattern Text='(^.*\:)' IsComplex="true" />
+		  </PatternGroup>				  
+   </Keywords>  
+  </Block>
+
+ <Style Name="Osb Code" 
+	ForeColor="Black" 
+	BackColor="" 
+	Bold="false" 
+	Italic="false" 
+	Underline="false" 
+/>  
+<Style Name="Osb Keyword" 
+	ForeColor="Blue" 
+	BackColor="" 
+	Bold="true" 
+	Italic="false" 
+	Underline="false" 
+/>
+<Style Name="Osb Type" 
+	ForeColor="Tomato" 
+	BackColor="" 
+	Bold="true" 
+	Italic="false" 
+	Underline="false" 
+/>
+<Style Name="Osb Comment" 
+	ForeColor="DarkMagenta" 
+	BackColor="" 
+	Bold="false" 
+	Italic="true" 
+	Underline="false" 
+/>
+<Style Name="Osb String" 
+	ForeColor="Teal" 
+	BackColor="" 
+	Bold="false" 
+	Italic="false" 
+	Underline="false" 
+/>
+<Style Name="Osb Heading" 
+	ForeColor="green" 
+	BackColor="" 
+	Bold="true" 
+	Italic="false" 
+	Underline="true" 
+/>
+<Style Name="Osb Property" 
+	ForeColor="blue" 
+	BackColor="" 
+	Bold="true" 
+	Italic="false" 
+	Underline="false" 
+/>
+</Language>
