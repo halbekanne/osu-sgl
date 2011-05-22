@@ -1,0 +1,4 @@
+Basic SGL/SB Editor port for C#
+Features syntax highlighting, undo, redo, editor splitting
+
+No Parser included in this Version
