@@ -1,0 +1,13 @@
+# Compiled Source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Resharper #
+#############
+_ReSharper.osuEditor
+osuEditor.5.1.ReSharper.user

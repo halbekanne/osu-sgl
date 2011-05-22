@@ -101,7 +101,7 @@ namespace osuEditor
 
         // Form Events
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenToolStripMenuItemClick(object sender, EventArgs e)
         {
 
             String filepath = FileChooser(false);
@@ -123,7 +123,7 @@ namespace osuEditor
 
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveToolStripMenuItemClick(object sender, EventArgs e)
         {
             if ( _controller.FilePath == "" )
             {
@@ -139,7 +139,7 @@ namespace osuEditor
             RefreshTitle();
         }
 
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveAsToolStripMenuItemClick(object sender, EventArgs e)
         {
             String filepath = FileChooser(true);
             if (filepath != "")
@@ -148,17 +148,17 @@ namespace osuEditor
             RefreshTitle();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItemClick(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NewToolStripMenuItemClick(object sender, EventArgs e)
         {
             NewFile();
         }
 
-        private void osuSbEditor_FormClosing(object sender, FormClosingEventArgs e)
+        private void OsuSbEditorFormClosing(object sender, FormClosingEventArgs e)
         {
             if (!_controller.Saved)
             {
@@ -169,17 +169,17 @@ namespace osuEditor
             }
         }
 
-        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void UndoToolStripMenuItemClick(object sender, EventArgs e)
         {
             editorControl.Undo();
         }
 
-        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RedoToolStripMenuItemClick(object sender, EventArgs e)
         {
             editorControl.Redo();
         }
 
-        private void editorDocument_ModifiedChanged(object sender, EventArgs e)
+        private void EditorDocumentModifiedChanged(object sender, EventArgs e)
         {
             _controller.Saved = false;
             RefreshTitle();
