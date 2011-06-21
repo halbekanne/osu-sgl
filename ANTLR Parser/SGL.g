@@ -184,12 +184,20 @@ castExpression
 
 // (...) / value / variable / method like rand(...)  
 mathAtom returns [int value]
-    :   '(' e=mathExpression ')' {$value = $e.value;}
+	@init {
+		boolean negative = false;
+	}
+	@after {
+		if (negative) $value = - $value;
+	}
+    :   ('-' {negative = true})? 
+    (	'(' e=mathExpression ')' {$value = $e.value;}
     |   i=IntegerAtom {$value = Convert.ToInt32($i.text);}
+    
 //    |	f=Float
     //|   'new' creator
 //    |   Identifier ('.' Identifier)* arguments
-    ;    
+    );    
 
 // arguments for methods aso.
 arguments

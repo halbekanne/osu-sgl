@@ -12,6 +12,7 @@ namespace osuEditor
     {
         private readonly FileController _controller;
         private readonly String _title;
+        private float BPM = 100;
 
         public OsuSbEditor()
         {
@@ -98,6 +99,18 @@ namespace osuEditor
 
         }
 
+        // Moves a Selection ín Time
+        private String MoveSelectionTime(String text)
+        {
+            
+
+
+            return "";
+        }
+
+
+
+
 
         // Form Events
 
@@ -183,6 +196,33 @@ namespace osuEditor
         {
             _controller.Saved = false;
             RefreshTitle();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editorControl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void moveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Move selected Lines in Time
+            //MessageBox.Show(editorControl.Selection.Text);
+            ShiftTimeForm chooseMS = new ShiftTimeForm(BPM);
+            if (chooseMS.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(chooseMS.GetMs().ToString());
+
+                // User chose the amount of ms
+                int ms = chooseMS.GetMs();
+                
+
+
+            }
         }
 
     }
