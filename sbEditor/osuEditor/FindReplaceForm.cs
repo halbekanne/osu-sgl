@@ -17,7 +17,7 @@ namespace osuEditor
 
         private void FindReplaceForm_Deactivate(object sender, EventArgs e)
         {
-            this.Opacity = 0.7;
+            this.Opacity = Settings.Opacity;
             //MessageBox.Show("Deactivate!");
         }
 

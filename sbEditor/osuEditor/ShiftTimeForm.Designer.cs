@@ -88,11 +88,11 @@
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(65, 113);
+            this.buttonOK.Location = new System.Drawing.Point(38, 113);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(79, 23);
+            this.buttonOK.Size = new System.Drawing.Size(106, 23);
             this.buttonOK.TabIndex = 7;
-            this.buttonOK.Text = "OK";
+            this.buttonOK.Text = "Shift Selection";
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click_1);
             // 
@@ -102,7 +102,7 @@
             this.buttonCanel.Name = "buttonCanel";
             this.buttonCanel.Size = new System.Drawing.Size(79, 23);
             this.buttonCanel.TabIndex = 8;
-            this.buttonCanel.Text = "Cancel";
+            this.buttonCanel.Text = "Close";
             this.buttonCanel.UseVisualStyleBackColor = true;
             // 
             // msTextBox
@@ -117,6 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCanel;
             this.ClientSize = new System.Drawing.Size(241, 148);
             this.Controls.Add(this.buttonCanel);
             this.Controls.Add(this.buttonOK);
@@ -126,7 +127,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MeasureTrackBar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ShiftTimeForm";

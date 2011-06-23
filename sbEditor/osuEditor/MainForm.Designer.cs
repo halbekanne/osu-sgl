@@ -345,6 +345,7 @@
             // editorControl
             // 
             this.editorControl.ActiveView = Alsing.Windows.Forms.ActiveView.BottomRight;
+            this.editorControl.AllowDrop = true;
             this.editorControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
@@ -449,7 +450,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.MenuStrip editorMenu;
         private System.Windows.Forms.TabPage defaultTab;
-        private Alsing.Windows.Forms.SyntaxBoxControl editorControl;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.ToolStripMenuItem timeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moveToolStripMenuItem;
@@ -460,6 +460,7 @@
         private System.Windows.Forms.ToolStripMenuItem findNexToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem replaceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findPreviousToolStripMenuItem;
+        public Alsing.Windows.Forms.SyntaxBoxControl editorControl;
     }
 }
 

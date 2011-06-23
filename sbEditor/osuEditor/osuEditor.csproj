@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Settings.cs" />
     <Compile Include="FileController.cs" />
     <Compile Include="FindReplaceForm.cs">
       <SubType>Form</SubType>

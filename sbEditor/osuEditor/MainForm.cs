@@ -13,6 +13,8 @@ namespace osuEditor
         private readonly FileController _controller;
         private readonly String _title;
         private float BPM = 100;
+        private ShiftTimeForm shiftTime = null;
+        
 
         public OsuSbEditor()
         {
@@ -212,16 +214,13 @@ namespace osuEditor
         {
             // Move selected Lines in Time
             //MessageBox.Show(editorControl.Selection.Text);
-            ShiftTimeForm chooseMS = new ShiftTimeForm(BPM);
-            if (chooseMS.ShowDialog() == DialogResult.OK)
+            if (this.shiftTime == null)
             {
-                MessageBox.Show(chooseMS.GetMs().ToString());
-
-                // User chose the amount of ms
-                int ms = chooseMS.GetMs();
-                
-
-
+                shiftTime = new ShiftTimeForm(BPM);
+            }
+            if (!shiftTime.Visible)
+            {
+                shiftTime.Show(this);
             }
         }
 
@@ -246,8 +245,8 @@ namespace osuEditor
         {
 
             Form findReplace = new FindReplaceForm();
-            findReplace.Show();
-            findReplace.TopLevel = true;
+            findReplace.Show(this);
+            //findReplace.TopLevel = true;
         }
 
 
