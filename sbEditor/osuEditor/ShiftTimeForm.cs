@@ -27,19 +27,19 @@ namespace osuEditor
 
         private void buttonOK_Click_1(object sender, EventArgs e)
         {
-            ms = Convert.ToInt32(xTextBox.Text);
+            ms = Convert.ToInt32(msTextBox.Text);
             DialogResult = DialogResult.OK;
         }
 
         private void MeasureTrackBar_Scroll(object sender, EventArgs e)
         {
-            yTextBox.Text = ((xTrackBar.Value - 20) / 8.0).ToString();
+            measureTextBox.Text = ((MeasureTrackBar.Value - 20) / 8.0).ToString();
         }
 
         private void measureTextBox_TextChanged(object sender, EventArgs e)
         {
-            float measures = (float)Convert.ToDouble(yTextBox.Text);
-            xTextBox.Text = Convert.ToInt16((60000 * measures * 4) / BPM).ToString();
+            float measures = (float)Convert.ToDouble(measureTextBox.Text);
+            msTextBox.Text = Convert.ToInt16((60000 * measures * 4) / BPM).ToString();
         }
     }
 }

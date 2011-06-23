@@ -1,6 +1,6 @@
 ﻿namespace osuEditor
 {
-    partial class ShiftTimeForm
+    partial class MovePlaceForm
     {
         /// <summary>
         /// Required designer variable.
@@ -50,7 +50,7 @@
             this.xTrackBar.Size = new System.Drawing.Size(177, 25);
             this.xTrackBar.TabIndex = 0;
             this.xTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.xTrackBar.Scroll += new System.EventHandler(this.MeasureTrackBar_Scroll);
+            this.xTrackBar.Scroll += new System.EventHandler(this.xTrackBar_Scroll);
             // 
             // yTextBox
             // 
@@ -59,7 +59,6 @@
             this.yTextBox.Size = new System.Drawing.Size(45, 20);
             this.yTextBox.TabIndex = 3;
             this.yTextBox.Text = "0";
-            this.yTextBox.TextChanged += new System.EventHandler(this.measureTextBox_TextChanged);
             // 
             // xTextBox
             // 
@@ -77,7 +76,6 @@
             this.label3.Size = new System.Drawing.Size(12, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "x";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // buttonOK
             // 
@@ -87,7 +85,7 @@
             this.buttonOK.TabIndex = 7;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click_1);
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // buttonCanel
             // 
@@ -108,6 +106,7 @@
             this.yTrackBar.Size = new System.Drawing.Size(177, 25);
             this.yTrackBar.TabIndex = 9;
             this.yTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.yTrackBar.Scroll += new System.EventHandler(this.yTrackBar_Scroll);
             // 
             // label2
             // 
@@ -118,7 +117,7 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "y";
             // 
-            // ShiftTimeForm
+            // MovePlaceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,7 +133,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ShiftTimeForm";
+            this.Name = "MovePlaceForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

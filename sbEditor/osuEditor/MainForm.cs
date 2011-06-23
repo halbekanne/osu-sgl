@@ -225,5 +225,31 @@ namespace osuEditor
             }
         }
 
+        private void moveLinesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MovePlaceForm chooseMS = new MovePlaceForm();
+            if (chooseMS.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(chooseMS.GetX().ToString() + "," + chooseMS.GetY().ToString());
+
+                // User chose the amount of ms
+                int x = chooseMS.GetX();
+                int y = chooseMS.GetY();
+
+                // Get selected Lines
+
+
+            }
+        }
+
+        private void findToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form findReplace = new FindReplaceForm();
+            findReplace.Show();
+            findReplace.TopLevel = true;
+        }
+
+
     }
 }

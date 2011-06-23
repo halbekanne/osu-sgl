@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.xTrackBar = new System.Windows.Forms.TrackBar();
+            this.MeasureTrackBar = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.yTextBox = new System.Windows.Forms.TextBox();
-            this.xTextBox = new System.Windows.Forms.TextBox();
+            this.measureTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCanel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.xTrackBar)).BeginInit();
+            this.msTextBox = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.MeasureTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // MeasureTrackBar
             // 
-            this.xTrackBar.AutoSize = false;
-            this.xTrackBar.Location = new System.Drawing.Point(12, 12);
-            this.xTrackBar.Maximum = 40;
-            this.xTrackBar.Name = "MeasureTrackBar";
-            this.xTrackBar.Size = new System.Drawing.Size(217, 25);
-            this.xTrackBar.TabIndex = 0;
-            this.xTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.xTrackBar.Value = 20;
-            this.xTrackBar.Scroll += new System.EventHandler(this.MeasureTrackBar_Scroll);
+            this.MeasureTrackBar.AutoSize = false;
+            this.MeasureTrackBar.Location = new System.Drawing.Point(12, 12);
+            this.MeasureTrackBar.Maximum = 40;
+            this.MeasureTrackBar.Name = "MeasureTrackBar";
+            this.MeasureTrackBar.Size = new System.Drawing.Size(217, 25);
+            this.MeasureTrackBar.TabIndex = 0;
+            this.MeasureTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.MeasureTrackBar.Value = 20;
+            this.MeasureTrackBar.Scroll += new System.EventHandler(this.MeasureTrackBar_Scroll);
             // 
             // label1
             // 
@@ -70,20 +70,12 @@
             // 
             // measureTextBox
             // 
-            this.yTextBox.Location = new System.Drawing.Point(97, 51);
-            this.yTextBox.Name = "measureTextBox";
-            this.yTextBox.Size = new System.Drawing.Size(80, 20);
-            this.yTextBox.TabIndex = 3;
-            this.yTextBox.Text = "0";
-            this.yTextBox.TextChanged += new System.EventHandler(this.measureTextBox_TextChanged);
-            // 
-            // msTextBox
-            // 
-            this.xTextBox.Location = new System.Drawing.Point(98, 78);
-            this.xTextBox.Name = "msTextBox";
-            this.xTextBox.Size = new System.Drawing.Size(79, 20);
-            this.xTextBox.TabIndex = 4;
-            this.xTextBox.Text = "0";
+            this.measureTextBox.Location = new System.Drawing.Point(97, 51);
+            this.measureTextBox.Name = "measureTextBox";
+            this.measureTextBox.Size = new System.Drawing.Size(79, 20);
+            this.measureTextBox.TabIndex = 4;
+            this.measureTextBox.Text = "0";
+            this.measureTextBox.TextChanged += new System.EventHandler(this.measureTextBox_TextChanged);
             // 
             // label3
             // 
@@ -113,6 +105,14 @@
             this.buttonCanel.Text = "Cancel";
             this.buttonCanel.UseVisualStyleBackColor = true;
             // 
+            // msTextBox
+            // 
+            this.msTextBox.Location = new System.Drawing.Point(97, 78);
+            this.msTextBox.Name = "msTextBox";
+            this.msTextBox.Size = new System.Drawing.Size(79, 20);
+            this.msTextBox.TabIndex = 9;
+            this.msTextBox.Text = "0";
+            // 
             // ShiftTimeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,11 +121,11 @@
             this.Controls.Add(this.buttonCanel);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.xTextBox);
-            this.Controls.Add(this.yTextBox);
+            this.Controls.Add(this.measureTextBox);
+            this.Controls.Add(this.msTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.xTrackBar);
+            this.Controls.Add(this.MeasureTrackBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -134,7 +134,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Shift Selection...";
-            ((System.ComponentModel.ISupportInitialize)(this.xTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MeasureTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,10 +146,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox measureTextBox;
-        private System.Windows.Forms.TextBox msTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCanel;
+        private System.Windows.Forms.TextBox msTextBox;
 
     }
 }

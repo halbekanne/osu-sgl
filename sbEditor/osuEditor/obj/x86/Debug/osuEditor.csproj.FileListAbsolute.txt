@@ -10,4 +10,6 @@ D:\sgl4c#\gitrepo\sbEditor\osuEditor\bin\Debug\Puzzle.SyntaxBox.NET3.5.dll
 D:\sgl4c#\gitrepo\sbEditor\osuEditor\bin\Debug\Puzzle.SyntaxBox.NET3.5.pdb
 D:\sgl4c#\gitrepo\sbEditor\osuEditor\obj\x86\Debug\osuEditor.exe
 D:\sgl4c#\gitrepo\sbEditor\osuEditor\obj\x86\Debug\osuEditor.pdb
-D:\sgl4c#\gitrepo\sbEditor\osuEditor\obj\x86\Debug\osuEditor.MoveTimeForm.resources
+D:\sgl4c#\gitrepo\sbEditor\osuEditor\obj\x86\Debug\osuEditor.MovePlaceForm.resources
+D:\sgl4c#\gitrepo\sbEditor\osuEditor\obj\x86\Debug\osuEditor.ShiftTimeForm.resources
+D:\sgl4c#\gitrepo\sbEditor\osuEditor\obj\x86\Debug\osuEditor.FindReplaceForm.resources
