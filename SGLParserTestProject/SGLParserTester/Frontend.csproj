@@ -57,6 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SGLActions.cs" />
+    <Compile Include="SGLTreeWalker.cs" />
+    <Compile Include="VariableDictionary.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SGLLexer.cs" />
     <Compile Include="SGLParser.cs" />
+    <Compile Include="VariableScope.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

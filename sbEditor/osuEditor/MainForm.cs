@@ -30,12 +30,13 @@ namespace osuEditor
         private void SaveTo(String filePath)
         {
             String text = editorDocument.Text;
-
+            /*
             defaultTab.Text = filePath;
             _controller.FilePath = filePath;
             _controller.SaveFile(text);
             _controller.Saved = true;
             RefreshTitle();
+             * */
         }
 
         private void NewFile()
@@ -47,12 +48,13 @@ namespace osuEditor
                     return;
                 }
             }
-
+            /*
             _controller.FilePath = "";
             _controller.Saved = true;
             defaultTab.Text = "new file";
             editorDocument.Text = "";
             RefreshTitle();
+             * */
         }
 
         private void RefreshTitle()
@@ -123,6 +125,7 @@ namespace osuEditor
 
             if (filepath != "")
             {
+                /*
                 _controller.FilePath = filepath;
                 defaultTab.Text = filepath;
 
@@ -134,6 +137,7 @@ namespace osuEditor
 
                 _controller.Saved = true;
                 RefreshTitle();
+                 */
             }
 
         }
@@ -247,6 +251,16 @@ namespace osuEditor
             Form findReplace = new FindReplaceForm();
             findReplace.Show(this);
             //findReplace.TopLevel = true;
+        }
+
+        private void defaultTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
 

@@ -26,6 +26,30 @@ namespace osuEditor
             this.Opacity = 1;
         }
 
+        private void findNextButton_Click(object sender, EventArgs e)
+        {
+            String search = findTextField.Text;
+            OsuSbEditor owner = (OsuSbEditor)Owner;
+            String text = owner.editorDocument.Text;
+
+            // Additional Information
+            int startposition = owner.editorControl.Caret.Position;
+
+            // Suche search in text
+            int index = text.IndexOf(search);
+            //MessageBox.Show("" + index);
+
+            // Markieren des Textes
+            owner.editorControl.Selection.SelStart = index;
+            owner.editorControl.Selection.SelEnd = index + search.Length;
+            owner.Activate();
+            this.Activate();
+            //owner.editorControl.Selection.MakeSelection();
+
+
+        }
+
+
 
     }
 }

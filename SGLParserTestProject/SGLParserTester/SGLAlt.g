@@ -3,7 +3,6 @@ grammar SGL;
 // Goal: Building an AST for SGL
 
 options {
-	output = 'AST';
 	language = 'CSharp2'; 
 	
 	/* Backtracking: 
@@ -20,23 +19,18 @@ options {
 	//memoize = true;
 }
 
-tokens {
-	VARDEF;
-
-}
-
 @namespace { SGL }
 
 @header {
-	//using SGLParserTester;
+	using SGLParserTester;
 }
 
 @members{
 	// For global variables (accessable anywhere)
-	//NullableDictionnary globalVariables = new NullableDictionnary();
+	NullableDictionnary globalVariables = new NullableDictionnary();
 	
 	// For main variables (accessable anywhere but methods)
-	//Stack<NullableDictionnary> localVariables = new Stack<NullableDictionnary>();
+	Stack<NullableDictionnary> localVariables = new Stack<NullableDictionnary>();
 	//NullableDictionnary mainVariables = new NullableDictionnary();
 	
 	// This should tell the statements where they have to look up variables
@@ -56,34 +50,23 @@ tokens {
 
 // This is the starting rule, and should only contain the very first root element/statement that could appear
 compilationUnit
-	:	statement+ EOF
+	:	(statement {variableAccess = mainVariables;})+
 	;
 
 
 statement
-	//:  	variableDefinitionList
-	:  variableDefinitionList
+	: (
+		localVariableDeclarationStatement 
+	| 	variableAssignmentStatement
+	) ';'
 	;
 
 /* Statements */
 
 // int t = 1
-
-variableDefinitionList
-	:	variableType variableDefinition (',' variableDefinition)* -> ^(VARDEF variableType variableDefinition)+
-	;
-
-variableDefinition
-	: variableName ('=' expression)?  -> variableName expression?
-	;
-	
-simpleVariableDefinition
-	: variableType
-	;
-
 localVariableDeclarationStatement
-	: 	'boolean' variableName ('=' expression)?
-	|	'int' variableName ('=' expression)?
+	: 	'boolean' variableName ('=' booleanExpression)?
+	|	'int' variableName ('=' mathExpression {variableAccess.Add($variableName.text, $mathExpression.value); output += "Lege Variable " + $variableName.text + " an mit dem Wert " + $mathExpression.value + "\n";} )?
 	;
 	
 // t = t + 1	
@@ -97,22 +80,36 @@ variableAssignmentStatement
 
 // Only used for the first time declaration of a new variable
 variableDeclaration
-	:	variableName ('=' expression)?
+	:	variableName ('=' variableInit)?
 	;
 	
+variableInit
+	:	expression
+	;	
 	
 variableName
 	:	Identifier
 	;	
 
 variableType
-	:	IntType
-	|	BooleanType
-	|	StringType
-	|	FloatType
+	:	primitiveType
+	|	classType
 	;
 
-  
+// primitive variable types
+primitiveType
+    :   'boolean'
+    |   'string'
+    |   'int'
+    |   'float'
+    ;
+    
+// types for Pictures/Animations    
+classType
+	:	'Object'
+	|	'Sprite'
+	|	'Animation'
+	;    
     
     
     
@@ -120,8 +117,8 @@ variableType
 
 // start rule for all sorts of expressions
 expression
-    :  conditionalExpression
-    //|	mathExpression
+    :   booleanExpression
+    |	mathExpression
     ;    
     
 // Simplified if-condition, (condition ? if-expression : else-expression)    
@@ -129,9 +126,17 @@ expression
 //    :   booleanExpression ( '?' (mathConditionalExpression | mathExpression) ':' (mathConditionalExpression | mathExpression) )?
 //    ;
     
-conditionalExpression
-    :   conditionalOrExpression ( '?' conditionalExpression ':'conditionalExpression )?
-    ;        
+booleanConditionalExpression
+    :   booleanExpression ( '?' booleanConditionalExpression ':' booleanConditionalExpression )?
+    ;     
+    
+mathExpression returns [int value]
+	:	e = additiveExpression {$value = $e.value;}
+	; 
+	
+booleanExpression
+	:	conditionalOrExpression
+	;	   
        
     
 // OR     
@@ -151,20 +156,23 @@ equalityExpression
     
 // Comparison <, > , <=, =>    
 relationalExpression
-    :   additiveExpression (('<'|'>'|'<='|'>=') additiveExpression)*
+    :   mathExpression ( ('<'|'>'|'<='|'>=') mathExpression )*
     ;            
     
 // + / -    
-additiveExpression
-    :   multiplicativeExpression (('+'^|'-'^) multiplicativeExpression)*
+additiveExpression returns [int value]
+    :   e=multiplicativeExpression {$value = $e.value;} 
+    (	'+' e=multiplicativeExpression {$value += $e.value;}
+    |	'-' e=multiplicativeExpression {$value -= $e.value;}
+    )*
     ;        
     
 // * / / / %    
-multiplicativeExpression
-    :   e=mathAtom
-    (	'*' e=mathAtom
-    |	'/' e=mathAtom
-    |	'%' e=mathAtom
+multiplicativeExpression returns [int value]
+    :   e=mathAtom {$value = $e.value;} 
+    (	'*' e=mathAtom {$value *= $e.value;}
+    |	'/' e=mathAtom {$value /= $e.value;}
+    |	'%' e=mathAtom {$value = $e.value;} 
     )*
     ;
     
@@ -184,14 +192,20 @@ unaryExpressionNotPlusMinus
 
 // Int -> Float, ...    
 castExpression
-    :  '(' variableType ')' unaryExpression
+    :  '(' primitiveType ')' unaryExpression
     ;  
 
 // (...) / value / variable / method like rand(...)  
-mathAtom
-    :   ('-')? 
-    (	'(' e=additiveExpression ')'
-    |   i=IntegerAtom
+mathAtom returns [int value]
+	@init {
+		Boolean negative = false;
+	}
+	@after {
+		if (negative) $value = - $value;
+	}
+    :   ('-' {negative = true;})? 
+    (	'(' e=mathExpression ')' {$value = $e.value;}
+    |   i=IntegerAtom {$value = Convert.ToInt32($i.text);}
     
 //    |	f=Float
     //|   'new' creator
@@ -226,8 +240,6 @@ literal
  * --------------------------------------------------------------------------------------------------------------------------------------------------------------
 **/
 
-
-
 /* Format Types */
 
 IntegerAtom
@@ -248,30 +260,6 @@ BooleanAtom
     :   'true'
     |   'false'
     ;
-   
-IntType
-	: 'int'
-	; 
-	
-BooleanType
-	: 'boolean'
-	;	
-	
-StringType
-	: 'string'
-	;
-	
-FloatType
-	: 'float'
-	;		  
-    
-    
-// types for Pictures/Animations    
-ClassType
-	:	'Object'
-	|	'Sprite'
-	|	'Animation'
-	;      
 
 
 // Use this for variable names, method names, and so on

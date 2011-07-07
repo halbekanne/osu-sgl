@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using SGL;
 using Antlr.Runtime;
+using Antlr.Runtime.Tree;
 
 namespace WindowsFormsApplication4
 {
@@ -26,17 +27,24 @@ namespace WindowsFormsApplication4
             CommonTokenStream tStream = new CommonTokenStream(lexer);
 
             SGLParser parser = new SGLParser(tStream);
-            try
-            {
-                parser.compilationUnit();
-                outputBox.Text = parser.GetOutput();
+            
+            //try
+            //{
+                CommonTree t = (CommonTree) parser.compilationUnit().Tree;
+                Console.WriteLine("; " + t.ToStringTree());
+
+                CommonTreeNodeStream  treeStream = new CommonTreeNodeStream(t);
+                SGLTreeWalker tw = new SGLTreeWalker(treeStream);
+                tw.compilationUnit();
+/*
             }
             catch (Exception ex)
             {
                 outputBox.Text = "Es ist ein Fehler aufgetreten.";
-                Console.Error.WriteLine(ex.StackTrace);
-            }
+                Console.WriteLine(ex.StackTrace);
 
+            }
+            */
 
             
         }
