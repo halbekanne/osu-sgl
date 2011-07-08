@@ -9,12 +9,18 @@ options {
 @namespace { SGL }
 
 @header {
-	using SGLParserTester;
 	using System.Collections.Generic;
 }
 
 @members{
 	SGLActions action = new SGLActions();
+	
+	// Error reporting
+    private StdErrReporter errorReporter = new StdErrReporter();
+    public override void EmitErrorMessage(String msg)
+    {
+    	errorReporter.ReportError(msg);
+    }
 
 	// For global variables (accessable anywhere)
 	//NullableDictionnary globalVariables = new NullableDictionnary();
@@ -98,6 +104,11 @@ variableType returns [string txt]
 // start rule for all sorts of expressions
 expression returns [string txt]
 	:	^('+' a=expression b=expression) { $txt = action.Add($a.txt,$b.txt); }
+	|	^('-' a=expression b=expression) { $txt = action.Sub($a.txt,$b.txt); }
+	|	^('*' a=expression b=expression) { $txt = action.Mult($a.txt,$b.txt); }
+	|	^('/' a=expression b=expression) { $txt = action.Div($a.txt,$b.txt); }
+	|	^('%' a=expression b=expression) //{ $txt = action.Remainder($a.txt,$b.txt); } 
+	|	^(NEGATE a=expression) { $txt = action.Mult($a.txt,"-1"); }
     |  	IntegerAtom { $txt = $IntegerAtom.text; }
     |  	BooleanAtom { $txt = $BooleanAtom.text; }
     //|	mathExpression

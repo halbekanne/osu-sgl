@@ -9,7 +9,7 @@ public class __Test__ {
         SGLLexer lex = new SGLLexer(new ANTLRFileStream("C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\__Test___input.txt", "UTF8"));
         CommonTokenStream tokens = new CommonTokenStream(lex);
 
-        SGLParser g = new SGLParser(tokens, 60, null);
+        SGLParser g = new SGLParser(tokens, 1323, null);
         try {
             g.compilationUnit();
         } catch (RecognitionException e) {

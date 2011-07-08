@@ -23,8 +23,8 @@ C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\
 C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\bin\Debug\Antlr3.Utility.xml
 C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\obj\x86\Debug\WindowsFormsApplication4.Form1.resources
-C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\obj\x86\Debug\SGLParserTester.Properties.Resources.resources
 C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\obj\x86\Debug\ResGen.read.1.tlog
 C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\obj\x86\Debug\ResGen.write.1.tlog
 C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\obj\x86\Debug\SGLParserTester.exe
 C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\obj\x86\Debug\SGLParserTester.pdb
+C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\obj\x86\Debug\SGL.Properties.Resources.resources

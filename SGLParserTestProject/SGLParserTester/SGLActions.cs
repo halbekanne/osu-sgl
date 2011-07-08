@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGLParserTester
+namespace SGL
 {
     /// <summary>
     /// This class handles all actions the SGLTreeWalker will invoke. It saves Variables and does all the technical SGL stuff.
@@ -40,6 +40,12 @@ namespace SGLParserTester
 
 
         // Expression/Math Actions
+        /// <summary>
+        /// Add 2 numbers, stored in Strings
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public String Add(String a, String b)
         {
             if (IsInteger(a) && IsInteger(b))
@@ -49,8 +55,49 @@ namespace SGLParserTester
                 int vb = Int32.Parse(b);
                 return (va + vb).ToString();
             }
-            throw new Exception("something");
+            throw new Exception("Unable to add " + a + " and " + b + " together");
         }
+
+
+
+        public String Sub(String a, String b)
+        {
+            if (IsInteger(a) && IsInteger(b))
+            {
+                // Both values are integers
+                int va = Int32.Parse(a);
+                int vb = Int32.Parse(b);
+                return (va - vb).ToString();
+            }
+            throw new Exception("Unable to subtract " + a + " from " + b);
+        }
+
+
+        public String Mult(String a, String b)
+        {
+            if (IsInteger(a) && IsInteger(b))
+            {
+                // Both values are integers
+                int va = Int32.Parse(a);
+                int vb = Int32.Parse(b);
+                return (va * vb).ToString();
+            }
+            throw new Exception("Unable to multiply " + a + " with " + b);
+        }
+
+
+        public String Div(String a, String b)
+        {
+            if (IsInteger(a) && IsInteger(b))
+            {
+                // Both values are integers
+                int va = Int32.Parse(a);
+                int vb = Int32.Parse(b);
+                return (va / vb).ToString();
+            }
+            throw new Exception("Unable to divide " + a + " through " + b);
+        }
+
 
 
         // Convertion and value checking

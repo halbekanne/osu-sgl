@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGLParserTester
+namespace SGL
 {
     /// <summary>
     /// Contains memory for all variable types

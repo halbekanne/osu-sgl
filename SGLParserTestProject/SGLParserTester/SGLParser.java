@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g 2011-07-07 23:06:08
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g 2011-07-08 18:35:30
 
 	//using SGLParserTester;
 
@@ -15,38 +15,40 @@ import org.antlr.runtime.tree.*;
 
 public class SGLParser extends DebugParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "VARDEF", "Identifier", "IntType", "BooleanType", "StringType", "FloatType", "IntegerAtom", "FloatAtom", "StringAtom", "BooleanAtom", "EscapeSequence", "ClassType", "Letter", "SGLIDDigit", "UnicodeEscape", "OctalEscape", "HEX_DIGIT", "WS", "COMMENT", "','", "'='", "'?'", "':'", "'||'", "'&&'", "'=='", "'!='", "'<'", "'>'", "'<='", "'>='", "'+'", "'-'", "'*'", "'/'", "'%'", "'++'", "'--'", "'!'", "'('", "')'", "'null'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "VARDEF", "NEGATE", "LIBMETHOD", "Identifier", "IntType", "BooleanType", "StringType", "FloatType", "IntegerAtom", "FloatAtom", "StringAtom", "BooleanAtom", "EscapeSequence", "ClassType", "Letter", "SGLIDDigit", "UnicodeEscape", "OctalEscape", "HEX_DIGIT", "WS", "COMMENT", "','", "'='", "'?'", "':'", "'||'", "'&&'", "'=='", "'!='", "'<'", "'>'", "'<='", "'>='", "'+'", "'-'", "'*'", "'/'", "'%'", "'++'", "'--'", "'!'", "'('", "')'", "'null'"
     };
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
     public static final int T__26=26;
     public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int SGLIDDigit=17;
-    public static final int IntType=6;
+    public static final int SGLIDDigit=19;
+    public static final int IntType=8;
     public static final int EOF=-1;
-    public static final int Identifier=5;
-    public static final int StringType=8;
-    public static final int COMMENT=22;
+    public static final int Identifier=7;
+    public static final int StringType=10;
+    public static final int COMMENT=24;
     public static final int VARDEF=4;
-    public static final int BooleanType=7;
+    public static final int BooleanType=9;
     public static final int T__42=42;
     public static final int T__43=43;
     public static final int T__40=40;
     public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
     public static final int T__44=44;
     public static final int T__45=45;
-    public static final int IntegerAtom=10;
-    public static final int FloatType=9;
-    public static final int StringAtom=12;
-    public static final int HEX_DIGIT=20;
-    public static final int BooleanAtom=13;
+    public static final int LIBMETHOD=6;
+    public static final int IntegerAtom=12;
+    public static final int FloatType=11;
+    public static final int StringAtom=14;
+    public static final int HEX_DIGIT=22;
+    public static final int NEGATE=5;
+    public static final int BooleanAtom=15;
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int WS=21;
+    public static final int WS=23;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
@@ -54,25 +56,25 @@ public class SGLParser extends DebugParser {
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int UnicodeEscape=18;
-    public static final int ClassType=15;
-    public static final int FloatAtom=11;
-    public static final int EscapeSequence=14;
-    public static final int Letter=16;
-    public static final int OctalEscape=19;
+    public static final int UnicodeEscape=20;
+    public static final int ClassType=17;
+    public static final int FloatAtom=13;
+    public static final int OctalEscape=21;
+    public static final int EscapeSequence=16;
+    public static final int Letter=18;
 
     // delegates
     // delegators
 
     public static final String[] ruleNames = new String[] {
-        "invalidRule", "variableName", "variableDefinition", "localVariableDeclarationStatement", 
-        "unaryExpressionNotPlusMinus", "relationalExpression", "compilationUnit", 
-        "mathAtom", "variableAssignmentStatement", "variableDefinitionList", 
-        "equalityExpression", "variableDeclaration", "conditionalAndExpression", 
-        "expression", "variableType", "unaryExpression", "conditionalExpression", 
-        "simpleVariableDefinition", "multiplicativeExpression", "literal", 
-        "additiveExpression", "statement", "castExpression", "conditionalOrExpression", 
-        "arguments", "expressionList"
+        "invalidRule", "localVariableDeclarationStatement", "negativeExpression", 
+        "variableType", "variableDefinition", "mathAtom", "expressionList", 
+        "conditionalExpression", "expression", "simpleVariableDefinition", 
+        "relationalExpression", "variableAssignmentStatement", "literal", 
+        "variableName", "compilationUnit", "multiplicativeExpression", "variableDefinitionList", 
+        "statement", "conditionalAndExpression", "conditionalOrExpression", 
+        "equalityExpression", "arguments", "additiveExpression", "variableDeclaration", 
+        "unaryExpression", "castExpression", "unaryExpressionNotPlusMinus"
     };
      
         public int ruleLevel = 0;
@@ -125,6 +127,16 @@ public class SGLParser extends DebugParser {
     public String getGrammarFileName() { return "C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g"; }
 
 
+
+    	// Error reporting
+    	/*
+        private StdErrReporter errorReporter = new StdErrReporter();
+        public override void EmitErrorMessage(String msg)
+        {
+        	errorReporter.ReportError(msg);
+        }
+        */
+        
     	// For global variables (accessable anywhere)
     	//NullableDictionnary globalVariables = new NullableDictionnary();
     	
@@ -147,7 +159,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "compilationUnit"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:58:1: compilationUnit : ( statement )+ EOF ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:70:1: compilationUnit : ( statement )+ EOF ;
     public final SGLParser.compilationUnit_return compilationUnit() throws RecognitionException {
         SGLParser.compilationUnit_return retval = new SGLParser.compilationUnit_return();
         retval.start = input.LT(1);
@@ -163,18 +175,18 @@ public class SGLParser extends DebugParser {
         try { dbg.enterRule(getGrammarFileName(), "compilationUnit");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(58, 1);
+        dbg.location(70, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:59:2: ( ( statement )+ EOF )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:71:2: ( ( statement )+ EOF )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:59:4: ( statement )+ EOF
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:71:4: ( statement )+ EOF
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(59,4);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:59:4: ( statement )+
+            dbg.location(71,4);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:71:4: ( statement )+
             int cnt1=0;
             try { dbg.enterSubRule(1);
 
@@ -196,10 +208,10 @@ public class SGLParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:59:4: statement
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:71:4: statement
             	    {
-            	    dbg.location(59,4);
-            	    pushFollow(FOLLOW_statement_in_compilationUnit76);
+            	    dbg.location(71,4);
+            	    pushFollow(FOLLOW_statement_in_compilationUnit84);
             	    statement1=statement();
 
             	    state._fsp--;
@@ -221,8 +233,8 @@ public class SGLParser extends DebugParser {
             } while (true);
             } finally {dbg.exitSubRule(1);}
 
-            dbg.location(59,15);
-            EOF2=(Token)match(input,EOF,FOLLOW_EOF_in_compilationUnit79); 
+            dbg.location(71,15);
+            EOF2=(Token)match(input,EOF,FOLLOW_EOF_in_compilationUnit87); 
             EOF2_tree = (Object)adaptor.create(EOF2);
             adaptor.addChild(root_0, EOF2_tree);
 
@@ -243,7 +255,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(60, 2);
+        dbg.location(72, 2);
 
         }
         finally {
@@ -262,7 +274,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "statement"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:63:1: statement : variableDefinitionList ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:75:1: statement : variableDefinitionList ;
     public final SGLParser.statement_return statement() throws RecognitionException {
         SGLParser.statement_return retval = new SGLParser.statement_return();
         retval.start = input.LT(1);
@@ -276,18 +288,18 @@ public class SGLParser extends DebugParser {
         try { dbg.enterRule(getGrammarFileName(), "statement");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(63, 1);
+        dbg.location(75, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:65:2: ( variableDefinitionList )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:77:2: ( variableDefinitionList )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:65:5: variableDefinitionList
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:77:5: variableDefinitionList
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(65,5);
-            pushFollow(FOLLOW_variableDefinitionList_in_statement94);
+            dbg.location(77,5);
+            pushFollow(FOLLOW_variableDefinitionList_in_statement102);
             variableDefinitionList3=variableDefinitionList();
 
             state._fsp--;
@@ -310,7 +322,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(66, 2);
+        dbg.location(78, 2);
 
         }
         finally {
@@ -329,7 +341,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "variableDefinitionList"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:72:1: variableDefinitionList : variableType variableDefinition ( ',' variableDefinition )* -> ( ^( VARDEF variableType variableDefinition ) )+ ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:84:1: variableDefinitionList : variableType variableDefinition ( ',' variableDefinition )* -> ( ^( VARDEF variableType variableDefinition ) )+ ;
     public final SGLParser.variableDefinitionList_return variableDefinitionList() throws RecognitionException {
         SGLParser.variableDefinitionList_return retval = new SGLParser.variableDefinitionList_return();
         retval.start = input.LT(1);
@@ -345,36 +357,36 @@ public class SGLParser extends DebugParser {
 
 
         Object char_literal6_tree=null;
-        RewriteRuleTokenStream stream_23=new RewriteRuleTokenStream(adaptor,"token 23");
+        RewriteRuleTokenStream stream_25=new RewriteRuleTokenStream(adaptor,"token 25");
         RewriteRuleSubtreeStream stream_variableType=new RewriteRuleSubtreeStream(adaptor,"rule variableType");
         RewriteRuleSubtreeStream stream_variableDefinition=new RewriteRuleSubtreeStream(adaptor,"rule variableDefinition");
         try { dbg.enterRule(getGrammarFileName(), "variableDefinitionList");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(72, 1);
+        dbg.location(84, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:73:2: ( variableType variableDefinition ( ',' variableDefinition )* -> ( ^( VARDEF variableType variableDefinition ) )+ )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:85:2: ( variableType variableDefinition ( ',' variableDefinition )* -> ( ^( VARDEF variableType variableDefinition ) )+ )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:73:4: variableType variableDefinition ( ',' variableDefinition )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:85:4: variableType variableDefinition ( ',' variableDefinition )*
             {
-            dbg.location(73,4);
-            pushFollow(FOLLOW_variableType_in_variableDefinitionList110);
+            dbg.location(85,4);
+            pushFollow(FOLLOW_variableType_in_variableDefinitionList118);
             variableType4=variableType();
 
             state._fsp--;
 
             stream_variableType.add(variableType4.getTree());
-            dbg.location(73,17);
-            pushFollow(FOLLOW_variableDefinition_in_variableDefinitionList112);
+            dbg.location(85,17);
+            pushFollow(FOLLOW_variableDefinition_in_variableDefinitionList120);
             variableDefinition5=variableDefinition();
 
             state._fsp--;
 
             stream_variableDefinition.add(variableDefinition5.getTree());
-            dbg.location(73,36);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:73:36: ( ',' variableDefinition )*
+            dbg.location(85,36);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:85:36: ( ',' variableDefinition )*
             try { dbg.enterSubRule(2);
 
             loop2:
@@ -384,7 +396,7 @@ public class SGLParser extends DebugParser {
 
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==23) ) {
+                if ( (LA2_0==25) ) {
                     alt2=1;
                 }
 
@@ -395,14 +407,14 @@ public class SGLParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:73:37: ',' variableDefinition
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:85:37: ',' variableDefinition
             	    {
-            	    dbg.location(73,37);
-            	    char_literal6=(Token)match(input,23,FOLLOW_23_in_variableDefinitionList115);  
-            	    stream_23.add(char_literal6);
+            	    dbg.location(85,37);
+            	    char_literal6=(Token)match(input,25,FOLLOW_25_in_variableDefinitionList123);  
+            	    stream_25.add(char_literal6);
 
-            	    dbg.location(73,41);
-            	    pushFollow(FOLLOW_variableDefinition_in_variableDefinitionList117);
+            	    dbg.location(85,41);
+            	    pushFollow(FOLLOW_variableDefinition_in_variableDefinitionList125);
             	    variableDefinition7=variableDefinition();
 
             	    state._fsp--;
@@ -421,7 +433,7 @@ public class SGLParser extends DebugParser {
 
 
             // AST REWRITE
-            // elements: variableDefinition, variableType
+            // elements: variableType, variableDefinition
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -431,31 +443,31 @@ public class SGLParser extends DebugParser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 73:62: -> ( ^( VARDEF variableType variableDefinition ) )+
+            // 85:62: -> ( ^( VARDEF variableType variableDefinition ) )+
             {
-                dbg.location(73,65);
-                if ( !(stream_variableDefinition.hasNext()||stream_variableType.hasNext()) ) {
+                dbg.location(85,65);
+                if ( !(stream_variableType.hasNext()||stream_variableDefinition.hasNext()) ) {
                     throw new RewriteEarlyExitException();
                 }
-                while ( stream_variableDefinition.hasNext()||stream_variableType.hasNext() ) {
-                    dbg.location(73,65);
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:73:65: ^( VARDEF variableType variableDefinition )
+                while ( stream_variableType.hasNext()||stream_variableDefinition.hasNext() ) {
+                    dbg.location(85,65);
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:85:65: ^( VARDEF variableType variableDefinition )
                     {
                     Object root_1 = (Object)adaptor.nil();
-                    dbg.location(73,67);
+                    dbg.location(85,67);
                     root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(VARDEF, "VARDEF"), root_1);
 
-                    dbg.location(73,74);
+                    dbg.location(85,74);
                     adaptor.addChild(root_1, stream_variableType.nextTree());
-                    dbg.location(73,87);
+                    dbg.location(85,87);
                     adaptor.addChild(root_1, stream_variableDefinition.nextTree());
 
                     adaptor.addChild(root_0, root_1);
                     }
 
                 }
-                stream_variableDefinition.reset();
                 stream_variableType.reset();
+                stream_variableDefinition.reset();
 
             }
 
@@ -476,7 +488,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(74, 2);
+        dbg.location(86, 2);
 
         }
         finally {
@@ -495,7 +507,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "variableDefinition"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:76:1: variableDefinition : variableName ( '=' expression )? -> variableName ( expression )? ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:88:1: variableDefinition : variableName ( '=' expression )? -> variableName ( expression )? ;
     public final SGLParser.variableDefinition_return variableDefinition() throws RecognitionException {
         SGLParser.variableDefinition_return retval = new SGLParser.variableDefinition_return();
         retval.start = input.LT(1);
@@ -509,36 +521,36 @@ public class SGLParser extends DebugParser {
 
 
         Object char_literal9_tree=null;
-        RewriteRuleTokenStream stream_24=new RewriteRuleTokenStream(adaptor,"token 24");
+        RewriteRuleTokenStream stream_26=new RewriteRuleTokenStream(adaptor,"token 26");
         RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
         RewriteRuleSubtreeStream stream_variableName=new RewriteRuleSubtreeStream(adaptor,"rule variableName");
         try { dbg.enterRule(getGrammarFileName(), "variableDefinition");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(76, 1);
+        dbg.location(88, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:77:2: ( variableName ( '=' expression )? -> variableName ( expression )? )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:89:2: ( variableName ( '=' expression )? -> variableName ( expression )? )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:77:4: variableName ( '=' expression )?
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:89:4: variableName ( '=' expression )?
             {
-            dbg.location(77,4);
-            pushFollow(FOLLOW_variableName_in_variableDefinition141);
+            dbg.location(89,4);
+            pushFollow(FOLLOW_variableName_in_variableDefinition149);
             variableName8=variableName();
 
             state._fsp--;
 
             stream_variableName.add(variableName8.getTree());
-            dbg.location(77,17);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:77:17: ( '=' expression )?
+            dbg.location(89,17);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:89:17: ( '=' expression )?
             int alt3=2;
             try { dbg.enterSubRule(3);
             try { dbg.enterDecision(3);
 
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==24) ) {
+            if ( (LA3_0==26) ) {
                 alt3=1;
             }
             } finally {dbg.exitDecision(3);}
@@ -547,14 +559,14 @@ public class SGLParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:77:18: '=' expression
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:89:18: '=' expression
                     {
-                    dbg.location(77,18);
-                    char_literal9=(Token)match(input,24,FOLLOW_24_in_variableDefinition144);  
-                    stream_24.add(char_literal9);
+                    dbg.location(89,18);
+                    char_literal9=(Token)match(input,26,FOLLOW_26_in_variableDefinition152);  
+                    stream_26.add(char_literal9);
 
-                    dbg.location(77,22);
-                    pushFollow(FOLLOW_expression_in_variableDefinition146);
+                    dbg.location(89,22);
+                    pushFollow(FOLLOW_expression_in_variableDefinition154);
                     expression10=expression();
 
                     state._fsp--;
@@ -580,14 +592,14 @@ public class SGLParser extends DebugParser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 77:36: -> variableName ( expression )?
+            // 89:36: -> variableName ( expression )?
             {
-                dbg.location(77,39);
+                dbg.location(89,39);
                 adaptor.addChild(root_0, stream_variableName.nextTree());
-                dbg.location(77,52);
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:77:52: ( expression )?
+                dbg.location(89,52);
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:89:52: ( expression )?
                 if ( stream_expression.hasNext() ) {
-                    dbg.location(77,52);
+                    dbg.location(89,52);
                     adaptor.addChild(root_0, stream_expression.nextTree());
 
                 }
@@ -612,7 +624,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(78, 2);
+        dbg.location(90, 2);
 
         }
         finally {
@@ -631,7 +643,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "simpleVariableDefinition"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:80:1: simpleVariableDefinition : variableType ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:92:1: simpleVariableDefinition : variableType ;
     public final SGLParser.simpleVariableDefinition_return simpleVariableDefinition() throws RecognitionException {
         SGLParser.simpleVariableDefinition_return retval = new SGLParser.simpleVariableDefinition_return();
         retval.start = input.LT(1);
@@ -645,18 +657,18 @@ public class SGLParser extends DebugParser {
         try { dbg.enterRule(getGrammarFileName(), "simpleVariableDefinition");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(80, 1);
+        dbg.location(92, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:81:2: ( variableType )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:93:2: ( variableType )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:81:4: variableType
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:93:4: variableType
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(81,4);
-            pushFollow(FOLLOW_variableType_in_simpleVariableDefinition168);
+            dbg.location(93,4);
+            pushFollow(FOLLOW_variableType_in_simpleVariableDefinition176);
             variableType11=variableType();
 
             state._fsp--;
@@ -679,7 +691,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(82, 2);
+        dbg.location(94, 2);
 
         }
         finally {
@@ -698,7 +710,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "localVariableDeclarationStatement"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:84:1: localVariableDeclarationStatement : ( 'boolean' variableName ( '=' expression )? | 'int' variableName ( '=' expression )? );
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:96:1: localVariableDeclarationStatement : ( 'boolean' variableName ( '=' expression )? | 'int' variableName ( '=' expression )? );
     public final SGLParser.localVariableDeclarationStatement_return localVariableDeclarationStatement() throws RecognitionException {
         SGLParser.localVariableDeclarationStatement_return retval = new SGLParser.localVariableDeclarationStatement_return();
         retval.start = input.LT(1);
@@ -726,10 +738,10 @@ public class SGLParser extends DebugParser {
         try { dbg.enterRule(getGrammarFileName(), "localVariableDeclarationStatement");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(84, 1);
+        dbg.location(96, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:85:2: ( 'boolean' variableName ( '=' expression )? | 'int' variableName ( '=' expression )? )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:97:2: ( 'boolean' variableName ( '=' expression )? | 'int' variableName ( '=' expression )? )
             int alt6=2;
             try { dbg.enterDecision(6);
 
@@ -754,31 +766,31 @@ public class SGLParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:85:5: 'boolean' variableName ( '=' expression )?
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:97:5: 'boolean' variableName ( '=' expression )?
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    dbg.location(85,5);
-                    string_literal12=(Token)match(input,BooleanType,FOLLOW_BooleanType_in_localVariableDeclarationStatement180); 
+                    dbg.location(97,5);
+                    string_literal12=(Token)match(input,BooleanType,FOLLOW_BooleanType_in_localVariableDeclarationStatement188); 
                     string_literal12_tree = (Object)adaptor.create(string_literal12);
                     adaptor.addChild(root_0, string_literal12_tree);
 
-                    dbg.location(85,15);
-                    pushFollow(FOLLOW_variableName_in_localVariableDeclarationStatement182);
+                    dbg.location(97,15);
+                    pushFollow(FOLLOW_variableName_in_localVariableDeclarationStatement190);
                     variableName13=variableName();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, variableName13.getTree());
-                    dbg.location(85,28);
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:85:28: ( '=' expression )?
+                    dbg.location(97,28);
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:97:28: ( '=' expression )?
                     int alt4=2;
                     try { dbg.enterSubRule(4);
                     try { dbg.enterDecision(4);
 
                     int LA4_0 = input.LA(1);
 
-                    if ( (LA4_0==24) ) {
+                    if ( (LA4_0==26) ) {
                         alt4=1;
                     }
                     } finally {dbg.exitDecision(4);}
@@ -787,15 +799,15 @@ public class SGLParser extends DebugParser {
                         case 1 :
                             dbg.enterAlt(1);
 
-                            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:85:29: '=' expression
+                            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:97:29: '=' expression
                             {
-                            dbg.location(85,29);
-                            char_literal14=(Token)match(input,24,FOLLOW_24_in_localVariableDeclarationStatement185); 
+                            dbg.location(97,29);
+                            char_literal14=(Token)match(input,26,FOLLOW_26_in_localVariableDeclarationStatement193); 
                             char_literal14_tree = (Object)adaptor.create(char_literal14);
                             adaptor.addChild(root_0, char_literal14_tree);
 
-                            dbg.location(85,33);
-                            pushFollow(FOLLOW_expression_in_localVariableDeclarationStatement187);
+                            dbg.location(97,33);
+                            pushFollow(FOLLOW_expression_in_localVariableDeclarationStatement195);
                             expression15=expression();
 
                             state._fsp--;
@@ -814,31 +826,31 @@ public class SGLParser extends DebugParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:86:4: 'int' variableName ( '=' expression )?
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:98:4: 'int' variableName ( '=' expression )?
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    dbg.location(86,4);
-                    string_literal16=(Token)match(input,IntType,FOLLOW_IntType_in_localVariableDeclarationStatement194); 
+                    dbg.location(98,4);
+                    string_literal16=(Token)match(input,IntType,FOLLOW_IntType_in_localVariableDeclarationStatement202); 
                     string_literal16_tree = (Object)adaptor.create(string_literal16);
                     adaptor.addChild(root_0, string_literal16_tree);
 
-                    dbg.location(86,10);
-                    pushFollow(FOLLOW_variableName_in_localVariableDeclarationStatement196);
+                    dbg.location(98,10);
+                    pushFollow(FOLLOW_variableName_in_localVariableDeclarationStatement204);
                     variableName17=variableName();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, variableName17.getTree());
-                    dbg.location(86,23);
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:86:23: ( '=' expression )?
+                    dbg.location(98,23);
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:98:23: ( '=' expression )?
                     int alt5=2;
                     try { dbg.enterSubRule(5);
                     try { dbg.enterDecision(5);
 
                     int LA5_0 = input.LA(1);
 
-                    if ( (LA5_0==24) ) {
+                    if ( (LA5_0==26) ) {
                         alt5=1;
                     }
                     } finally {dbg.exitDecision(5);}
@@ -847,15 +859,15 @@ public class SGLParser extends DebugParser {
                         case 1 :
                             dbg.enterAlt(1);
 
-                            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:86:24: '=' expression
+                            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:98:24: '=' expression
                             {
-                            dbg.location(86,24);
-                            char_literal18=(Token)match(input,24,FOLLOW_24_in_localVariableDeclarationStatement199); 
+                            dbg.location(98,24);
+                            char_literal18=(Token)match(input,26,FOLLOW_26_in_localVariableDeclarationStatement207); 
                             char_literal18_tree = (Object)adaptor.create(char_literal18);
                             adaptor.addChild(root_0, char_literal18_tree);
 
-                            dbg.location(86,28);
-                            pushFollow(FOLLOW_expression_in_localVariableDeclarationStatement201);
+                            dbg.location(98,28);
+                            pushFollow(FOLLOW_expression_in_localVariableDeclarationStatement209);
                             expression19=expression();
 
                             state._fsp--;
@@ -887,7 +899,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(87, 2);
+        dbg.location(99, 2);
 
         }
         finally {
@@ -906,7 +918,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "variableAssignmentStatement"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:90:1: variableAssignmentStatement : variableDeclaration ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:102:1: variableAssignmentStatement : variableDeclaration ;
     public final SGLParser.variableAssignmentStatement_return variableAssignmentStatement() throws RecognitionException {
         SGLParser.variableAssignmentStatement_return retval = new SGLParser.variableAssignmentStatement_return();
         retval.start = input.LT(1);
@@ -920,18 +932,18 @@ public class SGLParser extends DebugParser {
         try { dbg.enterRule(getGrammarFileName(), "variableAssignmentStatement");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(90, 1);
+        dbg.location(102, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:91:2: ( variableDeclaration )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:103:2: ( variableDeclaration )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:91:4: variableDeclaration
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:103:4: variableDeclaration
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(91,4);
-            pushFollow(FOLLOW_variableDeclaration_in_variableAssignmentStatement216);
+            dbg.location(103,4);
+            pushFollow(FOLLOW_variableDeclaration_in_variableAssignmentStatement224);
             variableDeclaration20=variableDeclaration();
 
             state._fsp--;
@@ -954,7 +966,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(92, 2);
+        dbg.location(104, 2);
 
         }
         finally {
@@ -973,7 +985,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "variableDeclaration"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:99:1: variableDeclaration : variableName ( '=' expression )? ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:111:1: variableDeclaration : variableName ( '=' expression )? ;
     public final SGLParser.variableDeclaration_return variableDeclaration() throws RecognitionException {
         SGLParser.variableDeclaration_return retval = new SGLParser.variableDeclaration_return();
         retval.start = input.LT(1);
@@ -991,32 +1003,32 @@ public class SGLParser extends DebugParser {
         try { dbg.enterRule(getGrammarFileName(), "variableDeclaration");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(99, 1);
+        dbg.location(111, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:100:2: ( variableName ( '=' expression )? )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:112:2: ( variableName ( '=' expression )? )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:100:4: variableName ( '=' expression )?
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:112:4: variableName ( '=' expression )?
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(100,4);
-            pushFollow(FOLLOW_variableName_in_variableDeclaration235);
+            dbg.location(112,4);
+            pushFollow(FOLLOW_variableName_in_variableDeclaration243);
             variableName21=variableName();
 
             state._fsp--;
 
             adaptor.addChild(root_0, variableName21.getTree());
-            dbg.location(100,17);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:100:17: ( '=' expression )?
+            dbg.location(112,17);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:112:17: ( '=' expression )?
             int alt7=2;
             try { dbg.enterSubRule(7);
             try { dbg.enterDecision(7);
 
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==24) ) {
+            if ( (LA7_0==26) ) {
                 alt7=1;
             }
             } finally {dbg.exitDecision(7);}
@@ -1025,15 +1037,15 @@ public class SGLParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:100:18: '=' expression
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:112:18: '=' expression
                     {
-                    dbg.location(100,18);
-                    char_literal22=(Token)match(input,24,FOLLOW_24_in_variableDeclaration238); 
+                    dbg.location(112,18);
+                    char_literal22=(Token)match(input,26,FOLLOW_26_in_variableDeclaration246); 
                     char_literal22_tree = (Object)adaptor.create(char_literal22);
                     adaptor.addChild(root_0, char_literal22_tree);
 
-                    dbg.location(100,22);
-                    pushFollow(FOLLOW_expression_in_variableDeclaration240);
+                    dbg.location(112,22);
+                    pushFollow(FOLLOW_expression_in_variableDeclaration248);
                     expression23=expression();
 
                     state._fsp--;
@@ -1063,7 +1075,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(101, 2);
+        dbg.location(113, 2);
 
         }
         finally {
@@ -1082,7 +1094,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "variableName"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:104:1: variableName : Identifier ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:116:1: variableName : Identifier ;
     public final SGLParser.variableName_return variableName() throws RecognitionException {
         SGLParser.variableName_return retval = new SGLParser.variableName_return();
         retval.start = input.LT(1);
@@ -1096,18 +1108,18 @@ public class SGLParser extends DebugParser {
         try { dbg.enterRule(getGrammarFileName(), "variableName");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(104, 1);
+        dbg.location(116, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:105:2: ( Identifier )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:117:2: ( Identifier )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:105:4: Identifier
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:117:4: Identifier
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(105,4);
-            Identifier24=(Token)match(input,Identifier,FOLLOW_Identifier_in_variableName256); 
+            dbg.location(117,4);
+            Identifier24=(Token)match(input,Identifier,FOLLOW_Identifier_in_variableName264); 
             Identifier24_tree = (Object)adaptor.create(Identifier24);
             adaptor.addChild(root_0, Identifier24_tree);
 
@@ -1128,7 +1140,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(106, 2);
+        dbg.location(118, 2);
 
         }
         finally {
@@ -1147,7 +1159,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "variableType"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:108:1: variableType : ( IntType | BooleanType | StringType | FloatType );
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:120:1: variableType : ( IntType | BooleanType | StringType | FloatType );
     public final SGLParser.variableType_return variableType() throws RecognitionException {
         SGLParser.variableType_return retval = new SGLParser.variableType_return();
         retval.start = input.LT(1);
@@ -1161,17 +1173,17 @@ public class SGLParser extends DebugParser {
         try { dbg.enterRule(getGrammarFileName(), "variableType");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(108, 1);
+        dbg.location(120, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:109:2: ( IntType | BooleanType | StringType | FloatType )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:121:2: ( IntType | BooleanType | StringType | FloatType )
             dbg.enterAlt(1);
 
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(109,2);
+            dbg.location(121,2);
             set25=(Token)input.LT(1);
             if ( (input.LA(1)>=IntType && input.LA(1)<=FloatType) ) {
                 input.consume();
@@ -1201,7 +1213,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(113, 2);
+        dbg.location(125, 2);
 
         }
         finally {
@@ -1220,7 +1232,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "expression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:122:1: expression : conditionalExpression ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:134:1: expression : conditionalExpression ;
     public final SGLParser.expression_return expression() throws RecognitionException {
         SGLParser.expression_return retval = new SGLParser.expression_return();
         retval.start = input.LT(1);
@@ -1234,18 +1246,18 @@ public class SGLParser extends DebugParser {
         try { dbg.enterRule(getGrammarFileName(), "expression");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(122, 1);
+        dbg.location(134, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:123:5: ( conditionalExpression )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:135:5: ( conditionalExpression )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:123:8: conditionalExpression
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:135:8: conditionalExpression
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(123,8);
-            pushFollow(FOLLOW_conditionalExpression_in_expression320);
+            dbg.location(135,8);
+            pushFollow(FOLLOW_conditionalExpression_in_expression328);
             conditionalExpression26=conditionalExpression();
 
             state._fsp--;
@@ -1268,7 +1280,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(125, 5);
+        dbg.location(137, 5);
 
         }
         finally {
@@ -1287,7 +1299,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "conditionalExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:132:1: conditionalExpression : conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )? ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:144:1: conditionalExpression : conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )? ;
     public final SGLParser.conditionalExpression_return conditionalExpression() throws RecognitionException {
         SGLParser.conditionalExpression_return retval = new SGLParser.conditionalExpression_return();
         retval.start = input.LT(1);
@@ -1309,32 +1321,32 @@ public class SGLParser extends DebugParser {
         try { dbg.enterRule(getGrammarFileName(), "conditionalExpression");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(132, 1);
+        dbg.location(144, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:133:5: ( conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )? )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:145:5: ( conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )? )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:133:9: conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )?
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:145:9: conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )?
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(133,9);
-            pushFollow(FOLLOW_conditionalOrExpression_in_conditionalExpression361);
+            dbg.location(145,9);
+            pushFollow(FOLLOW_conditionalOrExpression_in_conditionalExpression369);
             conditionalOrExpression27=conditionalOrExpression();
 
             state._fsp--;
 
             adaptor.addChild(root_0, conditionalOrExpression27.getTree());
-            dbg.location(133,33);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:133:33: ( '?' conditionalExpression ':' conditionalExpression )?
+            dbg.location(145,33);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:145:33: ( '?' conditionalExpression ':' conditionalExpression )?
             int alt8=2;
             try { dbg.enterSubRule(8);
             try { dbg.enterDecision(8);
 
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==25) ) {
+            if ( (LA8_0==27) ) {
                 alt8=1;
             }
             } finally {dbg.exitDecision(8);}
@@ -1343,27 +1355,24 @@ public class SGLParser extends DebugParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:133:35: '?' conditionalExpression ':' conditionalExpression
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:145:35: '?' conditionalExpression ':' conditionalExpression
                     {
-                    dbg.location(133,35);
-                    char_literal28=(Token)match(input,25,FOLLOW_25_in_conditionalExpression365); 
+                    dbg.location(145,38);
+                    char_literal28=(Token)match(input,27,FOLLOW_27_in_conditionalExpression373); 
                     char_literal28_tree = (Object)adaptor.create(char_literal28);
-                    adaptor.addChild(root_0, char_literal28_tree);
+                    root_0 = (Object)adaptor.becomeRoot(char_literal28_tree, root_0);
 
-                    dbg.location(133,39);
-                    pushFollow(FOLLOW_conditionalExpression_in_conditionalExpression367);
+                    dbg.location(145,40);
+                    pushFollow(FOLLOW_conditionalExpression_in_conditionalExpression376);
                     conditionalExpression29=conditionalExpression();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, conditionalExpression29.getTree());
-                    dbg.location(133,61);
-                    char_literal30=(Token)match(input,26,FOLLOW_26_in_conditionalExpression369); 
-                    char_literal30_tree = (Object)adaptor.create(char_literal30);
-                    adaptor.addChild(root_0, char_literal30_tree);
-
-                    dbg.location(133,64);
-                    pushFollow(FOLLOW_conditionalExpression_in_conditionalExpression370);
+                    dbg.location(145,65);
+                    char_literal30=(Token)match(input,28,FOLLOW_28_in_conditionalExpression378); 
+                    dbg.location(145,67);
+                    pushFollow(FOLLOW_conditionalExpression_in_conditionalExpression381);
                     conditionalExpression31=conditionalExpression();
 
                     state._fsp--;
@@ -1393,7 +1402,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(134, 5);
+        dbg.location(146, 5);
 
         }
         finally {
@@ -1412,7 +1421,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "conditionalOrExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:138:1: conditionalOrExpression : conditionalAndExpression ( '||' conditionalAndExpression )* ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:150:1: conditionalOrExpression : conditionalAndExpression ( '||' conditionalAndExpression )* ;
     public final SGLParser.conditionalOrExpression_return conditionalOrExpression() throws RecognitionException {
         SGLParser.conditionalOrExpression_return retval = new SGLParser.conditionalOrExpression_return();
         retval.start = input.LT(1);
@@ -1430,25 +1439,25 @@ public class SGLParser extends DebugParser {
         try { dbg.enterRule(getGrammarFileName(), "conditionalOrExpression");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(138, 1);
+        dbg.location(150, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:139:5: ( conditionalAndExpression ( '||' conditionalAndExpression )* )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:151:5: ( conditionalAndExpression ( '||' conditionalAndExpression )* )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:139:9: conditionalAndExpression ( '||' conditionalAndExpression )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:151:9: conditionalAndExpression ( '||' conditionalAndExpression )*
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(139,9);
-            pushFollow(FOLLOW_conditionalAndExpression_in_conditionalOrExpression413);
+            dbg.location(151,9);
+            pushFollow(FOLLOW_conditionalAndExpression_in_conditionalOrExpression424);
             conditionalAndExpression32=conditionalAndExpression();
 
             state._fsp--;
 
             adaptor.addChild(root_0, conditionalAndExpression32.getTree());
-            dbg.location(139,34);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:139:34: ( '||' conditionalAndExpression )*
+            dbg.location(151,34);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:151:34: ( '||' conditionalAndExpression )*
             try { dbg.enterSubRule(9);
 
             loop9:
@@ -1458,7 +1467,7 @@ public class SGLParser extends DebugParser {
 
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==27) ) {
+                if ( (LA9_0==29) ) {
                     alt9=1;
                 }
 
@@ -1469,15 +1478,15 @@ public class SGLParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:139:36: '||' conditionalAndExpression
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:151:36: '||' conditionalAndExpression
             	    {
-            	    dbg.location(139,36);
-            	    string_literal33=(Token)match(input,27,FOLLOW_27_in_conditionalOrExpression417); 
+            	    dbg.location(151,40);
+            	    string_literal33=(Token)match(input,29,FOLLOW_29_in_conditionalOrExpression428); 
             	    string_literal33_tree = (Object)adaptor.create(string_literal33);
-            	    adaptor.addChild(root_0, string_literal33_tree);
+            	    root_0 = (Object)adaptor.becomeRoot(string_literal33_tree, root_0);
 
-            	    dbg.location(139,41);
-            	    pushFollow(FOLLOW_conditionalAndExpression_in_conditionalOrExpression419);
+            	    dbg.location(151,42);
+            	    pushFollow(FOLLOW_conditionalAndExpression_in_conditionalOrExpression431);
             	    conditionalAndExpression34=conditionalAndExpression();
 
             	    state._fsp--;
@@ -1510,7 +1519,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(140, 5);
+        dbg.location(152, 5);
 
         }
         finally {
@@ -1529,7 +1538,7 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "conditionalAndExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:143:1: conditionalAndExpression : equalityExpression ( '&&' equalityExpression )* ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:155:1: conditionalAndExpression : equalityExpression ( '&&' equalityExpression )* ;
     public final SGLParser.conditionalAndExpression_return conditionalAndExpression() throws RecognitionException {
         SGLParser.conditionalAndExpression_return retval = new SGLParser.conditionalAndExpression_return();
         retval.start = input.LT(1);
@@ -1547,25 +1556,25 @@ public class SGLParser extends DebugParser {
         try { dbg.enterRule(getGrammarFileName(), "conditionalAndExpression");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(143, 1);
+        dbg.location(155, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:144:5: ( equalityExpression ( '&&' equalityExpression )* )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:156:5: ( equalityExpression ( '&&' equalityExpression )* )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:144:9: equalityExpression ( '&&' equalityExpression )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:156:9: equalityExpression ( '&&' equalityExpression )*
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(144,9);
-            pushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression450);
+            dbg.location(156,9);
+            pushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression462);
             equalityExpression35=equalityExpression();
 
             state._fsp--;
 
             adaptor.addChild(root_0, equalityExpression35.getTree());
-            dbg.location(144,28);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:144:28: ( '&&' equalityExpression )*
+            dbg.location(156,28);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:156:28: ( '&&' equalityExpression )*
             try { dbg.enterSubRule(10);
 
             loop10:
@@ -1575,7 +1584,7 @@ public class SGLParser extends DebugParser {
 
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==28) ) {
+                if ( (LA10_0==30) ) {
                     alt10=1;
                 }
 
@@ -1586,15 +1595,15 @@ public class SGLParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:144:30: '&&' equalityExpression
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:156:30: '&&' equalityExpression
             	    {
-            	    dbg.location(144,30);
-            	    string_literal36=(Token)match(input,28,FOLLOW_28_in_conditionalAndExpression454); 
+            	    dbg.location(156,34);
+            	    string_literal36=(Token)match(input,30,FOLLOW_30_in_conditionalAndExpression466); 
             	    string_literal36_tree = (Object)adaptor.create(string_literal36);
-            	    adaptor.addChild(root_0, string_literal36_tree);
+            	    root_0 = (Object)adaptor.becomeRoot(string_literal36_tree, root_0);
 
-            	    dbg.location(144,35);
-            	    pushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression456);
+            	    dbg.location(156,36);
+            	    pushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression469);
             	    equalityExpression37=equalityExpression();
 
             	    state._fsp--;
@@ -1627,7 +1636,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(145, 5);
+        dbg.location(157, 5);
 
         }
         finally {
@@ -1646,168 +1655,45 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "equalityExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:148:1: equalityExpression : relationalExpression ( ( '==' | '!=' ) relationalExpression )* ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:160:1: equalityExpression : relationalExpression ( ( '==' | '!=' ) relationalExpression )* ;
     public final SGLParser.equalityExpression_return equalityExpression() throws RecognitionException {
         SGLParser.equalityExpression_return retval = new SGLParser.equalityExpression_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token set39=null;
+        Token string_literal39=null;
+        Token string_literal40=null;
         SGLParser.relationalExpression_return relationalExpression38 = null;
 
-        SGLParser.relationalExpression_return relationalExpression40 = null;
+        SGLParser.relationalExpression_return relationalExpression41 = null;
 
 
-        Object set39_tree=null;
+        Object string_literal39_tree=null;
+        Object string_literal40_tree=null;
 
         try { dbg.enterRule(getGrammarFileName(), "equalityExpression");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(148, 1);
+        dbg.location(160, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:149:5: ( relationalExpression ( ( '==' | '!=' ) relationalExpression )* )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:161:5: ( relationalExpression ( ( '==' | '!=' ) relationalExpression )* )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:149:9: relationalExpression ( ( '==' | '!=' ) relationalExpression )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:161:9: relationalExpression ( ( '==' | '!=' ) relationalExpression )*
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(149,9);
-            pushFollow(FOLLOW_relationalExpression_in_equalityExpression483);
+            dbg.location(161,9);
+            pushFollow(FOLLOW_relationalExpression_in_equalityExpression496);
             relationalExpression38=relationalExpression();
 
             state._fsp--;
 
             adaptor.addChild(root_0, relationalExpression38.getTree());
-            dbg.location(149,30);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:149:30: ( ( '==' | '!=' ) relationalExpression )*
-            try { dbg.enterSubRule(11);
-
-            loop11:
-            do {
-                int alt11=2;
-                try { dbg.enterDecision(11);
-
-                int LA11_0 = input.LA(1);
-
-                if ( ((LA11_0>=29 && LA11_0<=30)) ) {
-                    alt11=1;
-                }
-
-
-                } finally {dbg.exitDecision(11);}
-
-                switch (alt11) {
-            	case 1 :
-            	    dbg.enterAlt(1);
-
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:149:32: ( '==' | '!=' ) relationalExpression
-            	    {
-            	    dbg.location(149,32);
-            	    set39=(Token)input.LT(1);
-            	    if ( (input.LA(1)>=29 && input.LA(1)<=30) ) {
-            	        input.consume();
-            	        adaptor.addChild(root_0, (Object)adaptor.create(set39));
-            	        state.errorRecovery=false;
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        dbg.recognitionException(mse);
-            	        throw mse;
-            	    }
-
-            	    dbg.location(149,46);
-            	    pushFollow(FOLLOW_relationalExpression_in_equalityExpression495);
-            	    relationalExpression40=relationalExpression();
-
-            	    state._fsp--;
-
-            	    adaptor.addChild(root_0, relationalExpression40.getTree());
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop11;
-                }
-            } while (true);
-            } finally {dbg.exitSubRule(11);}
-
-
-            }
-
-            retval.stop = input.LT(-1);
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        dbg.location(150, 5);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "equalityExpression");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
-        return retval;
-    }
-    // $ANTLR end "equalityExpression"
-
-    public static class relationalExpression_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "relationalExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:153:1: relationalExpression : additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )* ;
-    public final SGLParser.relationalExpression_return relationalExpression() throws RecognitionException {
-        SGLParser.relationalExpression_return retval = new SGLParser.relationalExpression_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        Token set42=null;
-        SGLParser.additiveExpression_return additiveExpression41 = null;
-
-        SGLParser.additiveExpression_return additiveExpression43 = null;
-
-
-        Object set42_tree=null;
-
-        try { dbg.enterRule(getGrammarFileName(), "relationalExpression");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(153, 1);
-
-        try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:154:5: ( additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )* )
-            dbg.enterAlt(1);
-
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:154:9: additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )*
-            {
-            root_0 = (Object)adaptor.nil();
-
-            dbg.location(154,9);
-            pushFollow(FOLLOW_additiveExpression_in_relationalExpression526);
-            additiveExpression41=additiveExpression();
-
-            state._fsp--;
-
-            adaptor.addChild(root_0, additiveExpression41.getTree());
-            dbg.location(154,28);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:154:28: ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )*
+            dbg.location(161,30);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:161:30: ( ( '==' | '!=' ) relationalExpression )*
             try { dbg.enterSubRule(12);
 
             loop12:
@@ -1817,7 +1703,7 @@ public class SGLParser extends DebugParser {
 
                 int LA12_0 = input.LA(1);
 
-                if ( ((LA12_0>=31 && LA12_0<=34)) ) {
+                if ( ((LA12_0>=31 && LA12_0<=32)) ) {
                     alt12=1;
                 }
 
@@ -1828,28 +1714,69 @@ public class SGLParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:154:29: ( '<' | '>' | '<=' | '>=' ) additiveExpression
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:161:32: ( '==' | '!=' ) relationalExpression
             	    {
-            	    dbg.location(154,29);
-            	    set42=(Token)input.LT(1);
-            	    if ( (input.LA(1)>=31 && input.LA(1)<=34) ) {
-            	        input.consume();
-            	        adaptor.addChild(root_0, (Object)adaptor.create(set42));
-            	        state.errorRecovery=false;
+            	    dbg.location(161,32);
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:161:32: ( '==' | '!=' )
+            	    int alt11=2;
+            	    try { dbg.enterSubRule(11);
+            	    try { dbg.enterDecision(11);
+
+            	    int LA11_0 = input.LA(1);
+
+            	    if ( (LA11_0==31) ) {
+            	        alt11=1;
+            	    }
+            	    else if ( (LA11_0==32) ) {
+            	        alt11=2;
             	    }
             	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        dbg.recognitionException(mse);
-            	        throw mse;
-            	    }
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 11, 0, input);
 
-            	    dbg.location(154,49);
-            	    pushFollow(FOLLOW_additiveExpression_in_relationalExpression539);
-            	    additiveExpression43=additiveExpression();
+            	        dbg.recognitionException(nvae);
+            	        throw nvae;
+            	    }
+            	    } finally {dbg.exitDecision(11);}
+
+            	    switch (alt11) {
+            	        case 1 :
+            	            dbg.enterAlt(1);
+
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:161:33: '=='
+            	            {
+            	            dbg.location(161,37);
+            	            string_literal39=(Token)match(input,31,FOLLOW_31_in_equalityExpression501); 
+            	            string_literal39_tree = (Object)adaptor.create(string_literal39);
+            	            root_0 = (Object)adaptor.becomeRoot(string_literal39_tree, root_0);
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            dbg.enterAlt(2);
+
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:161:41: '!='
+            	            {
+            	            dbg.location(161,45);
+            	            string_literal40=(Token)match(input,32,FOLLOW_32_in_equalityExpression506); 
+            	            string_literal40_tree = (Object)adaptor.create(string_literal40);
+            	            root_0 = (Object)adaptor.becomeRoot(string_literal40_tree, root_0);
+
+
+            	            }
+            	            break;
+
+            	    }
+            	    } finally {dbg.exitSubRule(11);}
+
+            	    dbg.location(161,48);
+            	    pushFollow(FOLLOW_relationalExpression_in_equalityExpression510);
+            	    relationalExpression41=relationalExpression();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, additiveExpression43.getTree());
+            	    adaptor.addChild(root_0, relationalExpression41.getTree());
 
             	    }
             	    break;
@@ -1877,64 +1804,68 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(155, 5);
+        dbg.location(162, 5);
 
         }
         finally {
-            dbg.exitRule(getGrammarFileName(), "relationalExpression");
+            dbg.exitRule(getGrammarFileName(), "equalityExpression");
             decRuleLevel();
             if ( getRuleLevel()==0 ) {dbg.terminate();}
         }
 
         return retval;
     }
-    // $ANTLR end "relationalExpression"
+    // $ANTLR end "equalityExpression"
 
-    public static class additiveExpression_return extends ParserRuleReturnScope {
+    public static class relationalExpression_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "additiveExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:158:1: additiveExpression : multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* ;
-    public final SGLParser.additiveExpression_return additiveExpression() throws RecognitionException {
-        SGLParser.additiveExpression_return retval = new SGLParser.additiveExpression_return();
+    // $ANTLR start "relationalExpression"
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:165:1: relationalExpression : additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )* ;
+    public final SGLParser.relationalExpression_return relationalExpression() throws RecognitionException {
+        SGLParser.relationalExpression_return retval = new SGLParser.relationalExpression_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token char_literal45=null;
-        Token char_literal46=null;
-        SGLParser.multiplicativeExpression_return multiplicativeExpression44 = null;
+        Token char_literal43=null;
+        Token char_literal44=null;
+        Token string_literal45=null;
+        Token string_literal46=null;
+        SGLParser.additiveExpression_return additiveExpression42 = null;
 
-        SGLParser.multiplicativeExpression_return multiplicativeExpression47 = null;
+        SGLParser.additiveExpression_return additiveExpression47 = null;
 
 
-        Object char_literal45_tree=null;
-        Object char_literal46_tree=null;
+        Object char_literal43_tree=null;
+        Object char_literal44_tree=null;
+        Object string_literal45_tree=null;
+        Object string_literal46_tree=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "additiveExpression");
+        try { dbg.enterRule(getGrammarFileName(), "relationalExpression");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(158, 1);
+        dbg.location(165, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:159:5: ( multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:166:5: ( additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )* )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:159:9: multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:166:9: additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )*
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(159,9);
-            pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression577);
-            multiplicativeExpression44=multiplicativeExpression();
+            dbg.location(166,9);
+            pushFollow(FOLLOW_additiveExpression_in_relationalExpression541);
+            additiveExpression42=additiveExpression();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, multiplicativeExpression44.getTree());
-            dbg.location(159,34);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:159:34: ( ( '+' | '-' ) multiplicativeExpression )*
+            adaptor.addChild(root_0, additiveExpression42.getTree());
+            dbg.location(166,28);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:166:28: ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )*
             try { dbg.enterSubRule(14);
 
             loop14:
@@ -1944,7 +1875,7 @@ public class SGLParser extends DebugParser {
 
                 int LA14_0 = input.LA(1);
 
-                if ( ((LA14_0>=35 && LA14_0<=36)) ) {
+                if ( ((LA14_0>=33 && LA14_0<=36)) ) {
                     alt14=1;
                 }
 
@@ -1955,41 +1886,55 @@ public class SGLParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:159:35: ( '+' | '-' ) multiplicativeExpression
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:166:29: ( '<' | '>' | '<=' | '>=' ) additiveExpression
             	    {
-            	    dbg.location(159,35);
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:159:35: ( '+' | '-' )
-            	    int alt13=2;
+            	    dbg.location(166,29);
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:166:29: ( '<' | '>' | '<=' | '>=' )
+            	    int alt13=4;
             	    try { dbg.enterSubRule(13);
             	    try { dbg.enterDecision(13);
 
-            	    int LA13_0 = input.LA(1);
-
-            	    if ( (LA13_0==35) ) {
+            	    switch ( input.LA(1) ) {
+            	    case 33:
+            	        {
             	        alt13=1;
-            	    }
-            	    else if ( (LA13_0==36) ) {
+            	        }
+            	        break;
+            	    case 34:
+            	        {
             	        alt13=2;
-            	    }
-            	    else {
+            	        }
+            	        break;
+            	    case 35:
+            	        {
+            	        alt13=3;
+            	        }
+            	        break;
+            	    case 36:
+            	        {
+            	        alt13=4;
+            	        }
+            	        break;
+            	    default:
             	        NoViableAltException nvae =
             	            new NoViableAltException("", 13, 0, input);
 
             	        dbg.recognitionException(nvae);
             	        throw nvae;
             	    }
+
             	    } finally {dbg.exitDecision(13);}
 
             	    switch (alt13) {
             	        case 1 :
             	            dbg.enterAlt(1);
 
-            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:159:36: '+'
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:166:30: '<'
             	            {
-            	            dbg.location(159,39);
-            	            char_literal45=(Token)match(input,35,FOLLOW_35_in_additiveExpression581); 
-            	            char_literal45_tree = (Object)adaptor.create(char_literal45);
-            	            root_0 = (Object)adaptor.becomeRoot(char_literal45_tree, root_0);
+            	            dbg.location(166,33);
+            	            char_literal43=(Token)match(input,33,FOLLOW_33_in_relationalExpression545); 
+            	            char_literal43_tree = (Object)adaptor.create(char_literal43);
+            	            root_0 = (Object)adaptor.becomeRoot(char_literal43_tree, root_0);
 
 
             	            }
@@ -1997,12 +1942,38 @@ public class SGLParser extends DebugParser {
             	        case 2 :
             	            dbg.enterAlt(2);
 
-            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:159:41: '-'
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:166:35: '>'
             	            {
-            	            dbg.location(159,44);
-            	            char_literal46=(Token)match(input,36,FOLLOW_36_in_additiveExpression584); 
-            	            char_literal46_tree = (Object)adaptor.create(char_literal46);
-            	            root_0 = (Object)adaptor.becomeRoot(char_literal46_tree, root_0);
+            	            dbg.location(166,38);
+            	            char_literal44=(Token)match(input,34,FOLLOW_34_in_relationalExpression548); 
+            	            char_literal44_tree = (Object)adaptor.create(char_literal44);
+            	            root_0 = (Object)adaptor.becomeRoot(char_literal44_tree, root_0);
+
+
+            	            }
+            	            break;
+            	        case 3 :
+            	            dbg.enterAlt(3);
+
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:166:40: '<='
+            	            {
+            	            dbg.location(166,44);
+            	            string_literal45=(Token)match(input,35,FOLLOW_35_in_relationalExpression551); 
+            	            string_literal45_tree = (Object)adaptor.create(string_literal45);
+            	            root_0 = (Object)adaptor.becomeRoot(string_literal45_tree, root_0);
+
+
+            	            }
+            	            break;
+            	        case 4 :
+            	            dbg.enterAlt(4);
+
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:166:46: '>='
+            	            {
+            	            dbg.location(166,50);
+            	            string_literal46=(Token)match(input,36,FOLLOW_36_in_relationalExpression554); 
+            	            string_literal46_tree = (Object)adaptor.create(string_literal46);
+            	            root_0 = (Object)adaptor.becomeRoot(string_literal46_tree, root_0);
 
 
             	            }
@@ -2011,13 +1982,13 @@ public class SGLParser extends DebugParser {
             	    }
             	    } finally {dbg.exitSubRule(13);}
 
-            	    dbg.location(159,47);
-            	    pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression588);
-            	    multiplicativeExpression47=multiplicativeExpression();
+            	    dbg.location(166,53);
+            	    pushFollow(FOLLOW_additiveExpression_in_relationalExpression558);
+            	    additiveExpression47=additiveExpression();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, multiplicativeExpression47.getTree());
+            	    adaptor.addChild(root_0, additiveExpression47.getTree());
 
             	    }
             	    break;
@@ -2045,7 +2016,175 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(160, 5);
+        dbg.location(167, 5);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "relationalExpression");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "relationalExpression"
+
+    public static class additiveExpression_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "additiveExpression"
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:170:1: additiveExpression : multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* ;
+    public final SGLParser.additiveExpression_return additiveExpression() throws RecognitionException {
+        SGLParser.additiveExpression_return retval = new SGLParser.additiveExpression_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token char_literal49=null;
+        Token char_literal50=null;
+        SGLParser.multiplicativeExpression_return multiplicativeExpression48 = null;
+
+        SGLParser.multiplicativeExpression_return multiplicativeExpression51 = null;
+
+
+        Object char_literal49_tree=null;
+        Object char_literal50_tree=null;
+
+        try { dbg.enterRule(getGrammarFileName(), "additiveExpression");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(170, 1);
+
+        try {
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:171:5: ( multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* )
+            dbg.enterAlt(1);
+
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:171:9: multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )*
+            {
+            root_0 = (Object)adaptor.nil();
+
+            dbg.location(171,9);
+            pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression596);
+            multiplicativeExpression48=multiplicativeExpression();
+
+            state._fsp--;
+
+            adaptor.addChild(root_0, multiplicativeExpression48.getTree());
+            dbg.location(171,34);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:171:34: ( ( '+' | '-' ) multiplicativeExpression )*
+            try { dbg.enterSubRule(16);
+
+            loop16:
+            do {
+                int alt16=2;
+                try { dbg.enterDecision(16);
+
+                int LA16_0 = input.LA(1);
+
+                if ( ((LA16_0>=37 && LA16_0<=38)) ) {
+                    alt16=1;
+                }
+
+
+                } finally {dbg.exitDecision(16);}
+
+                switch (alt16) {
+            	case 1 :
+            	    dbg.enterAlt(1);
+
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:171:35: ( '+' | '-' ) multiplicativeExpression
+            	    {
+            	    dbg.location(171,35);
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:171:35: ( '+' | '-' )
+            	    int alt15=2;
+            	    try { dbg.enterSubRule(15);
+            	    try { dbg.enterDecision(15);
+
+            	    int LA15_0 = input.LA(1);
+
+            	    if ( (LA15_0==37) ) {
+            	        alt15=1;
+            	    }
+            	    else if ( (LA15_0==38) ) {
+            	        alt15=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 15, 0, input);
+
+            	        dbg.recognitionException(nvae);
+            	        throw nvae;
+            	    }
+            	    } finally {dbg.exitDecision(15);}
+
+            	    switch (alt15) {
+            	        case 1 :
+            	            dbg.enterAlt(1);
+
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:171:36: '+'
+            	            {
+            	            dbg.location(171,39);
+            	            char_literal49=(Token)match(input,37,FOLLOW_37_in_additiveExpression600); 
+            	            char_literal49_tree = (Object)adaptor.create(char_literal49);
+            	            root_0 = (Object)adaptor.becomeRoot(char_literal49_tree, root_0);
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            dbg.enterAlt(2);
+
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:171:41: '-'
+            	            {
+            	            dbg.location(171,44);
+            	            char_literal50=(Token)match(input,38,FOLLOW_38_in_additiveExpression603); 
+            	            char_literal50_tree = (Object)adaptor.create(char_literal50);
+            	            root_0 = (Object)adaptor.becomeRoot(char_literal50_tree, root_0);
+
+
+            	            }
+            	            break;
+
+            	    }
+            	    } finally {dbg.exitSubRule(15);}
+
+            	    dbg.location(171,47);
+            	    pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression607);
+            	    multiplicativeExpression51=multiplicativeExpression();
+
+            	    state._fsp--;
+
+            	    adaptor.addChild(root_0, multiplicativeExpression51.getTree());
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop16;
+                }
+            } while (true);
+            } finally {dbg.exitSubRule(16);}
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(172, 5);
 
         }
         finally {
@@ -2064,140 +2203,161 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "multiplicativeExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:163:1: multiplicativeExpression : e= mathAtom ( '*' e= mathAtom | '/' e= mathAtom | '%' e= mathAtom )* ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:175:1: multiplicativeExpression : negativeExpression ( ( '*' | '/' | '%' ) negativeExpression )* ;
     public final SGLParser.multiplicativeExpression_return multiplicativeExpression() throws RecognitionException {
         SGLParser.multiplicativeExpression_return retval = new SGLParser.multiplicativeExpression_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token char_literal48=null;
-        Token char_literal49=null;
-        Token char_literal50=null;
-        SGLParser.mathAtom_return e = null;
+        Token char_literal53=null;
+        Token char_literal54=null;
+        Token char_literal55=null;
+        SGLParser.negativeExpression_return negativeExpression52 = null;
+
+        SGLParser.negativeExpression_return negativeExpression56 = null;
 
 
-        Object char_literal48_tree=null;
-        Object char_literal49_tree=null;
-        Object char_literal50_tree=null;
+        Object char_literal53_tree=null;
+        Object char_literal54_tree=null;
+        Object char_literal55_tree=null;
 
         try { dbg.enterRule(getGrammarFileName(), "multiplicativeExpression");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(163, 1);
+        dbg.location(175, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:164:5: (e= mathAtom ( '*' e= mathAtom | '/' e= mathAtom | '%' e= mathAtom )* )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:176:5: ( negativeExpression ( ( '*' | '/' | '%' ) negativeExpression )* )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:164:9: e= mathAtom ( '*' e= mathAtom | '/' e= mathAtom | '%' e= mathAtom )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:176:9: negativeExpression ( ( '*' | '/' | '%' ) negativeExpression )*
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(164,10);
-            pushFollow(FOLLOW_mathAtom_in_multiplicativeExpression624);
-            e=mathAtom();
+            dbg.location(176,9);
+            pushFollow(FOLLOW_negativeExpression_in_multiplicativeExpression641);
+            negativeExpression52=negativeExpression();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, e.getTree());
-            dbg.location(165,5);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:165:5: ( '*' e= mathAtom | '/' e= mathAtom | '%' e= mathAtom )*
-            try { dbg.enterSubRule(15);
+            adaptor.addChild(root_0, negativeExpression52.getTree());
+            dbg.location(177,5);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:177:5: ( ( '*' | '/' | '%' ) negativeExpression )*
+            try { dbg.enterSubRule(18);
 
-            loop15:
+            loop18:
             do {
-                int alt15=4;
-                try { dbg.enterDecision(15);
+                int alt18=2;
+                try { dbg.enterDecision(18);
 
-                switch ( input.LA(1) ) {
-                case 37:
-                    {
-                    alt15=1;
-                    }
-                    break;
-                case 38:
-                    {
-                    alt15=2;
-                    }
-                    break;
-                case 39:
-                    {
-                    alt15=3;
-                    }
-                    break;
+                int LA18_0 = input.LA(1);
 
+                if ( ((LA18_0>=39 && LA18_0<=41)) ) {
+                    alt18=1;
                 }
 
-                } finally {dbg.exitDecision(15);}
 
-                switch (alt15) {
+                } finally {dbg.exitDecision(18);}
+
+                switch (alt18) {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:165:7: '*' e= mathAtom
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:177:6: ( '*' | '/' | '%' ) negativeExpression
             	    {
-            	    dbg.location(165,7);
-            	    char_literal48=(Token)match(input,37,FOLLOW_37_in_multiplicativeExpression632); 
-            	    char_literal48_tree = (Object)adaptor.create(char_literal48);
-            	    adaptor.addChild(root_0, char_literal48_tree);
+            	    dbg.location(177,6);
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:177:6: ( '*' | '/' | '%' )
+            	    int alt17=3;
+            	    try { dbg.enterSubRule(17);
+            	    try { dbg.enterDecision(17);
 
-            	    dbg.location(165,12);
-            	    pushFollow(FOLLOW_mathAtom_in_multiplicativeExpression636);
-            	    e=mathAtom();
+            	    switch ( input.LA(1) ) {
+            	    case 39:
+            	        {
+            	        alt17=1;
+            	        }
+            	        break;
+            	    case 40:
+            	        {
+            	        alt17=2;
+            	        }
+            	        break;
+            	    case 41:
+            	        {
+            	        alt17=3;
+            	        }
+            	        break;
+            	    default:
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 17, 0, input);
 
-            	    state._fsp--;
+            	        dbg.recognitionException(nvae);
+            	        throw nvae;
+            	    }
 
-            	    adaptor.addChild(root_0, e.getTree());
+            	    } finally {dbg.exitDecision(17);}
+
+            	    switch (alt17) {
+            	        case 1 :
+            	            dbg.enterAlt(1);
+
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:177:7: '*'
+            	            {
+            	            dbg.location(177,10);
+            	            char_literal53=(Token)match(input,39,FOLLOW_39_in_multiplicativeExpression649); 
+            	            char_literal53_tree = (Object)adaptor.create(char_literal53);
+            	            root_0 = (Object)adaptor.becomeRoot(char_literal53_tree, root_0);
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            dbg.enterAlt(2);
+
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:177:12: '/'
+            	            {
+            	            dbg.location(177,15);
+            	            char_literal54=(Token)match(input,40,FOLLOW_40_in_multiplicativeExpression652); 
+            	            char_literal54_tree = (Object)adaptor.create(char_literal54);
+            	            root_0 = (Object)adaptor.becomeRoot(char_literal54_tree, root_0);
+
+
+            	            }
+            	            break;
+            	        case 3 :
+            	            dbg.enterAlt(3);
+
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:177:17: '%'
+            	            {
+            	            dbg.location(177,20);
+            	            char_literal55=(Token)match(input,41,FOLLOW_41_in_multiplicativeExpression655); 
+            	            char_literal55_tree = (Object)adaptor.create(char_literal55);
+            	            root_0 = (Object)adaptor.becomeRoot(char_literal55_tree, root_0);
+
+
+            	            }
+            	            break;
 
             	    }
-            	    break;
-            	case 2 :
-            	    dbg.enterAlt(2);
+            	    } finally {dbg.exitSubRule(17);}
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:166:7: '/' e= mathAtom
-            	    {
-            	    dbg.location(166,7);
-            	    char_literal49=(Token)match(input,38,FOLLOW_38_in_multiplicativeExpression644); 
-            	    char_literal49_tree = (Object)adaptor.create(char_literal49);
-            	    adaptor.addChild(root_0, char_literal49_tree);
-
-            	    dbg.location(166,12);
-            	    pushFollow(FOLLOW_mathAtom_in_multiplicativeExpression648);
-            	    e=mathAtom();
+            	    dbg.location(177,23);
+            	    pushFollow(FOLLOW_negativeExpression_in_multiplicativeExpression659);
+            	    negativeExpression56=negativeExpression();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, e.getTree());
-
-            	    }
-            	    break;
-            	case 3 :
-            	    dbg.enterAlt(3);
-
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:167:7: '%' e= mathAtom
-            	    {
-            	    dbg.location(167,7);
-            	    char_literal50=(Token)match(input,39,FOLLOW_39_in_multiplicativeExpression656); 
-            	    char_literal50_tree = (Object)adaptor.create(char_literal50);
-            	    adaptor.addChild(root_0, char_literal50_tree);
-
-            	    dbg.location(167,12);
-            	    pushFollow(FOLLOW_mathAtom_in_multiplicativeExpression660);
-            	    e=mathAtom();
-
-            	    state._fsp--;
-
-            	    adaptor.addChild(root_0, e.getTree());
+            	    adaptor.addChild(root_0, negativeExpression56.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop18;
                 }
             } while (true);
-            } finally {dbg.exitSubRule(15);}
+            } finally {dbg.exitSubRule(18);}
 
 
             }
@@ -2216,7 +2376,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(169, 5);
+        dbg.location(178, 5);
 
         }
         finally {
@@ -2235,123 +2395,123 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "unaryExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:171:1: unaryExpression : ( '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus );
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:180:1: unaryExpression : ( '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus );
     public final SGLParser.unaryExpression_return unaryExpression() throws RecognitionException {
         SGLParser.unaryExpression_return retval = new SGLParser.unaryExpression_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token string_literal51=null;
-        Token string_literal53=null;
-        SGLParser.unaryExpression_return unaryExpression52 = null;
+        Token string_literal57=null;
+        Token string_literal59=null;
+        SGLParser.unaryExpression_return unaryExpression58 = null;
 
-        SGLParser.unaryExpression_return unaryExpression54 = null;
+        SGLParser.unaryExpression_return unaryExpression60 = null;
 
-        SGLParser.unaryExpressionNotPlusMinus_return unaryExpressionNotPlusMinus55 = null;
+        SGLParser.unaryExpressionNotPlusMinus_return unaryExpressionNotPlusMinus61 = null;
 
 
-        Object string_literal51_tree=null;
-        Object string_literal53_tree=null;
+        Object string_literal57_tree=null;
+        Object string_literal59_tree=null;
 
         try { dbg.enterRule(getGrammarFileName(), "unaryExpression");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(171, 1);
+        dbg.location(180, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:172:5: ( '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus )
-            int alt16=3;
-            try { dbg.enterDecision(16);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:181:5: ( '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus )
+            int alt19=3;
+            try { dbg.enterDecision(19);
 
             switch ( input.LA(1) ) {
-            case 40:
-                {
-                alt16=1;
-                }
-                break;
-            case 41:
-                {
-                alt16=2;
-                }
-                break;
-            case IntegerAtom:
-            case 36:
             case 42:
+                {
+                alt19=1;
+                }
+                break;
             case 43:
                 {
-                alt16=3;
+                alt19=2;
+                }
+                break;
+            case Identifier:
+            case IntegerAtom:
+            case 44:
+            case 45:
+                {
+                alt19=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 dbg.recognitionException(nvae);
                 throw nvae;
             }
 
-            } finally {dbg.exitDecision(16);}
+            } finally {dbg.exitDecision(19);}
 
-            switch (alt16) {
+            switch (alt19) {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:172:7: '++' unaryExpression
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:181:7: '++' unaryExpression
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    dbg.location(172,7);
-                    string_literal51=(Token)match(input,40,FOLLOW_40_in_unaryExpression688); 
-                    string_literal51_tree = (Object)adaptor.create(string_literal51);
-                    adaptor.addChild(root_0, string_literal51_tree);
+                    dbg.location(181,7);
+                    string_literal57=(Token)match(input,42,FOLLOW_42_in_unaryExpression682); 
+                    string_literal57_tree = (Object)adaptor.create(string_literal57);
+                    adaptor.addChild(root_0, string_literal57_tree);
 
-                    dbg.location(172,12);
-                    pushFollow(FOLLOW_unaryExpression_in_unaryExpression690);
-                    unaryExpression52=unaryExpression();
+                    dbg.location(181,12);
+                    pushFollow(FOLLOW_unaryExpression_in_unaryExpression684);
+                    unaryExpression58=unaryExpression();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, unaryExpression52.getTree());
+                    adaptor.addChild(root_0, unaryExpression58.getTree());
 
                     }
                     break;
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:173:9: '--' unaryExpression
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:182:9: '--' unaryExpression
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    dbg.location(173,9);
-                    string_literal53=(Token)match(input,41,FOLLOW_41_in_unaryExpression700); 
-                    string_literal53_tree = (Object)adaptor.create(string_literal53);
-                    adaptor.addChild(root_0, string_literal53_tree);
+                    dbg.location(182,9);
+                    string_literal59=(Token)match(input,43,FOLLOW_43_in_unaryExpression694); 
+                    string_literal59_tree = (Object)adaptor.create(string_literal59);
+                    adaptor.addChild(root_0, string_literal59_tree);
 
-                    dbg.location(173,14);
-                    pushFollow(FOLLOW_unaryExpression_in_unaryExpression702);
-                    unaryExpression54=unaryExpression();
+                    dbg.location(182,14);
+                    pushFollow(FOLLOW_unaryExpression_in_unaryExpression696);
+                    unaryExpression60=unaryExpression();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, unaryExpression54.getTree());
+                    adaptor.addChild(root_0, unaryExpression60.getTree());
 
                     }
                     break;
                 case 3 :
                     dbg.enterAlt(3);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:174:9: unaryExpressionNotPlusMinus
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:183:9: unaryExpressionNotPlusMinus
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    dbg.location(174,9);
-                    pushFollow(FOLLOW_unaryExpressionNotPlusMinus_in_unaryExpression712);
-                    unaryExpressionNotPlusMinus55=unaryExpressionNotPlusMinus();
+                    dbg.location(183,9);
+                    pushFollow(FOLLOW_unaryExpressionNotPlusMinus_in_unaryExpression706);
+                    unaryExpressionNotPlusMinus61=unaryExpressionNotPlusMinus();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, unaryExpressionNotPlusMinus55.getTree());
+                    adaptor.addChild(root_0, unaryExpressionNotPlusMinus61.getTree());
 
                     }
                     break;
@@ -2371,7 +2531,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(175, 5);
+        dbg.location(184, 5);
 
         }
         finally {
@@ -2390,154 +2550,154 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "unaryExpressionNotPlusMinus"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:178:1: unaryExpressionNotPlusMinus : ( '!' unaryExpression | castExpression | mathAtom ( '++' | '--' )? );
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:187:1: unaryExpressionNotPlusMinus : ( '!' unaryExpression | castExpression | mathAtom ( '++' | '--' )? );
     public final SGLParser.unaryExpressionNotPlusMinus_return unaryExpressionNotPlusMinus() throws RecognitionException {
         SGLParser.unaryExpressionNotPlusMinus_return retval = new SGLParser.unaryExpressionNotPlusMinus_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token char_literal56=null;
-        Token set60=null;
-        SGLParser.unaryExpression_return unaryExpression57 = null;
+        Token char_literal62=null;
+        Token set66=null;
+        SGLParser.unaryExpression_return unaryExpression63 = null;
 
-        SGLParser.castExpression_return castExpression58 = null;
+        SGLParser.castExpression_return castExpression64 = null;
 
-        SGLParser.mathAtom_return mathAtom59 = null;
+        SGLParser.mathAtom_return mathAtom65 = null;
 
 
-        Object char_literal56_tree=null;
-        Object set60_tree=null;
+        Object char_literal62_tree=null;
+        Object set66_tree=null;
 
         try { dbg.enterRule(getGrammarFileName(), "unaryExpressionNotPlusMinus");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(178, 1);
+        dbg.location(187, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:179:5: ( '!' unaryExpression | castExpression | mathAtom ( '++' | '--' )? )
-            int alt18=3;
-            try { dbg.enterDecision(18);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:188:5: ( '!' unaryExpression | castExpression | mathAtom ( '++' | '--' )? )
+            int alt21=3;
+            try { dbg.enterDecision(21);
 
             switch ( input.LA(1) ) {
-            case 42:
+            case 44:
                 {
-                alt18=1;
+                alt21=1;
                 }
                 break;
-            case 43:
+            case 45:
                 {
-                int LA18_2 = input.LA(2);
+                int LA21_2 = input.LA(2);
 
-                if ( (LA18_2==IntegerAtom||LA18_2==36||LA18_2==43) ) {
-                    alt18=3;
+                if ( ((LA21_2>=IntType && LA21_2<=FloatType)) ) {
+                    alt21=2;
                 }
-                else if ( ((LA18_2>=IntType && LA18_2<=FloatType)) ) {
-                    alt18=2;
+                else if ( (LA21_2==Identifier||LA21_2==IntegerAtom||LA21_2==38||LA21_2==45) ) {
+                    alt21=3;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 18, 2, input);
+                        new NoViableAltException("", 21, 2, input);
 
                     dbg.recognitionException(nvae);
                     throw nvae;
                 }
                 }
                 break;
+            case Identifier:
             case IntegerAtom:
-            case 36:
                 {
-                alt18=3;
+                alt21=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 21, 0, input);
 
                 dbg.recognitionException(nvae);
                 throw nvae;
             }
 
-            } finally {dbg.exitDecision(18);}
+            } finally {dbg.exitDecision(21);}
 
-            switch (alt18) {
+            switch (alt21) {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:179:9: '!' unaryExpression
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:188:9: '!' unaryExpression
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    dbg.location(179,9);
-                    char_literal56=(Token)match(input,42,FOLLOW_42_in_unaryExpressionNotPlusMinus733); 
-                    char_literal56_tree = (Object)adaptor.create(char_literal56);
-                    adaptor.addChild(root_0, char_literal56_tree);
+                    dbg.location(188,9);
+                    char_literal62=(Token)match(input,44,FOLLOW_44_in_unaryExpressionNotPlusMinus727); 
+                    char_literal62_tree = (Object)adaptor.create(char_literal62);
+                    adaptor.addChild(root_0, char_literal62_tree);
 
-                    dbg.location(179,13);
-                    pushFollow(FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus735);
-                    unaryExpression57=unaryExpression();
+                    dbg.location(188,13);
+                    pushFollow(FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus729);
+                    unaryExpression63=unaryExpression();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, unaryExpression57.getTree());
+                    adaptor.addChild(root_0, unaryExpression63.getTree());
 
                     }
                     break;
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:180:9: castExpression
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:189:9: castExpression
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    dbg.location(180,9);
-                    pushFollow(FOLLOW_castExpression_in_unaryExpressionNotPlusMinus745);
-                    castExpression58=castExpression();
+                    dbg.location(189,9);
+                    pushFollow(FOLLOW_castExpression_in_unaryExpressionNotPlusMinus739);
+                    castExpression64=castExpression();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, castExpression58.getTree());
+                    adaptor.addChild(root_0, castExpression64.getTree());
 
                     }
                     break;
                 case 3 :
                     dbg.enterAlt(3);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:182:9: mathAtom ( '++' | '--' )?
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:191:9: mathAtom ( '++' | '--' )?
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    dbg.location(182,9);
-                    pushFollow(FOLLOW_mathAtom_in_unaryExpressionNotPlusMinus760);
-                    mathAtom59=mathAtom();
+                    dbg.location(191,9);
+                    pushFollow(FOLLOW_mathAtom_in_unaryExpressionNotPlusMinus754);
+                    mathAtom65=mathAtom();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, mathAtom59.getTree());
-                    dbg.location(182,18);
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:182:18: ( '++' | '--' )?
-                    int alt17=2;
-                    try { dbg.enterSubRule(17);
-                    try { dbg.enterDecision(17);
+                    adaptor.addChild(root_0, mathAtom65.getTree());
+                    dbg.location(191,18);
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:191:18: ( '++' | '--' )?
+                    int alt20=2;
+                    try { dbg.enterSubRule(20);
+                    try { dbg.enterDecision(20);
 
-                    int LA17_0 = input.LA(1);
+                    int LA20_0 = input.LA(1);
 
-                    if ( ((LA17_0>=40 && LA17_0<=41)) ) {
-                        alt17=1;
+                    if ( ((LA20_0>=42 && LA20_0<=43)) ) {
+                        alt20=1;
                     }
-                    } finally {dbg.exitDecision(17);}
+                    } finally {dbg.exitDecision(20);}
 
-                    switch (alt17) {
+                    switch (alt20) {
                         case 1 :
                             dbg.enterAlt(1);
 
                             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:
                             {
-                            dbg.location(182,18);
-                            set60=(Token)input.LT(1);
-                            if ( (input.LA(1)>=40 && input.LA(1)<=41) ) {
+                            dbg.location(191,18);
+                            set66=(Token)input.LT(1);
+                            if ( (input.LA(1)>=42 && input.LA(1)<=43) ) {
                                 input.consume();
-                                adaptor.addChild(root_0, (Object)adaptor.create(set60));
+                                adaptor.addChild(root_0, (Object)adaptor.create(set66));
                                 state.errorRecovery=false;
                             }
                             else {
@@ -2551,7 +2711,7 @@ public class SGLParser extends DebugParser {
                             break;
 
                     }
-                    } finally {dbg.exitSubRule(17);}
+                    } finally {dbg.exitSubRule(20);}
 
 
                     }
@@ -2572,7 +2732,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(183, 5);
+        dbg.location(192, 5);
 
         }
         finally {
@@ -2591,60 +2751,60 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "castExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:186:1: castExpression : '(' variableType ')' unaryExpression ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:195:1: castExpression : '(' variableType ')' unaryExpression ;
     public final SGLParser.castExpression_return castExpression() throws RecognitionException {
         SGLParser.castExpression_return retval = new SGLParser.castExpression_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token char_literal61=null;
-        Token char_literal63=null;
-        SGLParser.variableType_return variableType62 = null;
+        Token char_literal67=null;
+        Token char_literal69=null;
+        SGLParser.variableType_return variableType68 = null;
 
-        SGLParser.unaryExpression_return unaryExpression64 = null;
+        SGLParser.unaryExpression_return unaryExpression70 = null;
 
 
-        Object char_literal61_tree=null;
-        Object char_literal63_tree=null;
+        Object char_literal67_tree=null;
+        Object char_literal69_tree=null;
 
         try { dbg.enterRule(getGrammarFileName(), "castExpression");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(186, 1);
+        dbg.location(195, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:187:5: ( '(' variableType ')' unaryExpression )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:196:5: ( '(' variableType ')' unaryExpression )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:187:8: '(' variableType ')' unaryExpression
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:196:8: '(' variableType ')' unaryExpression
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(187,8);
-            char_literal61=(Token)match(input,43,FOLLOW_43_in_castExpression793); 
-            char_literal61_tree = (Object)adaptor.create(char_literal61);
-            adaptor.addChild(root_0, char_literal61_tree);
+            dbg.location(196,8);
+            char_literal67=(Token)match(input,45,FOLLOW_45_in_castExpression787); 
+            char_literal67_tree = (Object)adaptor.create(char_literal67);
+            adaptor.addChild(root_0, char_literal67_tree);
 
-            dbg.location(187,12);
-            pushFollow(FOLLOW_variableType_in_castExpression795);
-            variableType62=variableType();
-
-            state._fsp--;
-
-            adaptor.addChild(root_0, variableType62.getTree());
-            dbg.location(187,25);
-            char_literal63=(Token)match(input,44,FOLLOW_44_in_castExpression797); 
-            char_literal63_tree = (Object)adaptor.create(char_literal63);
-            adaptor.addChild(root_0, char_literal63_tree);
-
-            dbg.location(187,29);
-            pushFollow(FOLLOW_unaryExpression_in_castExpression799);
-            unaryExpression64=unaryExpression();
+            dbg.location(196,12);
+            pushFollow(FOLLOW_variableType_in_castExpression789);
+            variableType68=variableType();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, unaryExpression64.getTree());
+            adaptor.addChild(root_0, variableType68.getTree());
+            dbg.location(196,25);
+            char_literal69=(Token)match(input,46,FOLLOW_46_in_castExpression791); 
+            char_literal69_tree = (Object)adaptor.create(char_literal69);
+            adaptor.addChild(root_0, char_literal69_tree);
+
+            dbg.location(196,29);
+            pushFollow(FOLLOW_unaryExpression_in_castExpression793);
+            unaryExpression70=unaryExpression();
+
+            state._fsp--;
+
+            adaptor.addChild(root_0, unaryExpression70.getTree());
 
             }
 
@@ -2662,7 +2822,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(188, 5);
+        dbg.location(197, 5);
 
         }
         finally {
@@ -2675,144 +2835,151 @@ public class SGLParser extends DebugParser {
     }
     // $ANTLR end "castExpression"
 
-    public static class mathAtom_return extends ParserRuleReturnScope {
+    public static class negativeExpression_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "mathAtom"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:191:1: mathAtom : ( '-' )? ( '(' e= additiveExpression ')' | i= IntegerAtom ) ;
-    public final SGLParser.mathAtom_return mathAtom() throws RecognitionException {
-        SGLParser.mathAtom_return retval = new SGLParser.mathAtom_return();
+    // $ANTLR start "negativeExpression"
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:201:1: negativeExpression : ( mathAtom -> mathAtom | ( '-' ) mathAtom -> ^( NEGATE mathAtom ) );
+    public final SGLParser.negativeExpression_return negativeExpression() throws RecognitionException {
+        SGLParser.negativeExpression_return retval = new SGLParser.negativeExpression_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token i=null;
-        Token char_literal65=null;
-        Token char_literal66=null;
-        Token char_literal67=null;
-        SGLParser.additiveExpression_return e = null;
+        Token char_literal72=null;
+        SGLParser.mathAtom_return mathAtom71 = null;
+
+        SGLParser.mathAtom_return mathAtom73 = null;
 
 
-        Object i_tree=null;
-        Object char_literal65_tree=null;
-        Object char_literal66_tree=null;
-        Object char_literal67_tree=null;
-
-        try { dbg.enterRule(getGrammarFileName(), "mathAtom");
+        Object char_literal72_tree=null;
+        RewriteRuleTokenStream stream_38=new RewriteRuleTokenStream(adaptor,"token 38");
+        RewriteRuleSubtreeStream stream_mathAtom=new RewriteRuleSubtreeStream(adaptor,"rule mathAtom");
+        try { dbg.enterRule(getGrammarFileName(), "negativeExpression");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(191, 1);
+        dbg.location(201, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:192:5: ( ( '-' )? ( '(' e= additiveExpression ')' | i= IntegerAtom ) )
-            dbg.enterAlt(1);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:202:2: ( mathAtom -> mathAtom | ( '-' ) mathAtom -> ^( NEGATE mathAtom ) )
+            int alt22=2;
+            try { dbg.enterDecision(22);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:192:9: ( '-' )? ( '(' e= additiveExpression ')' | i= IntegerAtom )
-            {
-            root_0 = (Object)adaptor.nil();
+            int LA22_0 = input.LA(1);
 
-            dbg.location(192,9);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:192:9: ( '-' )?
-            int alt19=2;
-            try { dbg.enterSubRule(19);
-            try { dbg.enterDecision(19);
-
-            int LA19_0 = input.LA(1);
-
-            if ( (LA19_0==36) ) {
-                alt19=1;
+            if ( (LA22_0==Identifier||LA22_0==IntegerAtom||LA22_0==45) ) {
+                alt22=1;
             }
-            } finally {dbg.exitDecision(19);}
-
-            switch (alt19) {
-                case 1 :
-                    dbg.enterAlt(1);
-
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:192:10: '-'
-                    {
-                    dbg.location(192,10);
-                    char_literal65=(Token)match(input,36,FOLLOW_36_in_mathAtom822); 
-                    char_literal65_tree = (Object)adaptor.create(char_literal65);
-                    adaptor.addChild(root_0, char_literal65_tree);
-
-
-                    }
-                    break;
-
-            }
-            } finally {dbg.exitSubRule(19);}
-
-            dbg.location(193,5);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:193:5: ( '(' e= additiveExpression ')' | i= IntegerAtom )
-            int alt20=2;
-            try { dbg.enterSubRule(20);
-            try { dbg.enterDecision(20);
-
-            int LA20_0 = input.LA(1);
-
-            if ( (LA20_0==43) ) {
-                alt20=1;
-            }
-            else if ( (LA20_0==IntegerAtom) ) {
-                alt20=2;
+            else if ( (LA22_0==38) ) {
+                alt22=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 22, 0, input);
 
                 dbg.recognitionException(nvae);
                 throw nvae;
             }
-            } finally {dbg.exitDecision(20);}
+            } finally {dbg.exitDecision(22);}
 
-            switch (alt20) {
+            switch (alt22) {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:193:7: '(' e= additiveExpression ')'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:202:4: mathAtom
                     {
-                    dbg.location(193,7);
-                    char_literal66=(Token)match(input,43,FOLLOW_43_in_mathAtom833); 
-                    char_literal66_tree = (Object)adaptor.create(char_literal66);
-                    adaptor.addChild(root_0, char_literal66_tree);
-
-                    dbg.location(193,12);
-                    pushFollow(FOLLOW_additiveExpression_in_mathAtom837);
-                    e=additiveExpression();
+                    dbg.location(202,4);
+                    pushFollow(FOLLOW_mathAtom_in_negativeExpression811);
+                    mathAtom71=mathAtom();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, e.getTree());
-                    dbg.location(193,32);
-                    char_literal67=(Token)match(input,44,FOLLOW_44_in_mathAtom839); 
-                    char_literal67_tree = (Object)adaptor.create(char_literal67);
-                    adaptor.addChild(root_0, char_literal67_tree);
+                    stream_mathAtom.add(mathAtom71.getTree());
 
 
+                    // AST REWRITE
+                    // elements: mathAtom
+                    // token labels: 
+                    // rule labels: retval
+                    // token list labels: 
+                    // rule list labels: 
+                    // wildcard labels: 
+                    retval.tree = root_0;
+                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+                    root_0 = (Object)adaptor.nil();
+                    // 202:13: -> mathAtom
+                    {
+                        dbg.location(202,16);
+                        adaptor.addChild(root_0, stream_mathAtom.nextTree());
+
+                    }
+
+                    retval.tree = root_0;
                     }
                     break;
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:194:9: i= IntegerAtom
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:203:4: ( '-' ) mathAtom
                     {
-                    dbg.location(194,10);
-                    i=(Token)match(input,IntegerAtom,FOLLOW_IntegerAtom_in_mathAtom851); 
-                    i_tree = (Object)adaptor.create(i);
-                    adaptor.addChild(root_0, i_tree);
+                    dbg.location(203,4);
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:203:4: ( '-' )
+                    dbg.enterAlt(1);
+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:203:5: '-'
+                    {
+                    dbg.location(203,5);
+                    char_literal72=(Token)match(input,38,FOLLOW_38_in_negativeExpression821);  
+                    stream_38.add(char_literal72);
 
 
+                    }
+
+                    dbg.location(203,10);
+                    pushFollow(FOLLOW_mathAtom_in_negativeExpression824);
+                    mathAtom73=mathAtom();
+
+                    state._fsp--;
+
+                    stream_mathAtom.add(mathAtom73.getTree());
+
+
+                    // AST REWRITE
+                    // elements: mathAtom
+                    // token labels: 
+                    // rule labels: retval
+                    // token list labels: 
+                    // rule list labels: 
+                    // wildcard labels: 
+                    retval.tree = root_0;
+                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+                    root_0 = (Object)adaptor.nil();
+                    // 203:19: -> ^( NEGATE mathAtom )
+                    {
+                        dbg.location(203,22);
+                        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:203:22: ^( NEGATE mathAtom )
+                        {
+                        Object root_1 = (Object)adaptor.nil();
+                        dbg.location(203,24);
+                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(NEGATE, "NEGATE"), root_1);
+
+                        dbg.location(203,31);
+                        adaptor.addChild(root_1, stream_mathAtom.nextTree());
+
+                        adaptor.addChild(root_0, root_1);
+                        }
+
+                    }
+
+                    retval.tree = root_0;
                     }
                     break;
 
             }
-            } finally {dbg.exitSubRule(20);}
-
-
-            }
-
             retval.stop = input.LT(-1);
 
             retval.tree = (Object)adaptor.rulePostProcessing(root_0);
@@ -2827,7 +2994,194 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(199, 6);
+        dbg.location(204, 2);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "negativeExpression");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
+        return retval;
+    }
+    // $ANTLR end "negativeExpression"
+
+    public static class mathAtom_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "mathAtom"
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:206:1: mathAtom : ( '(' additiveExpression ')' | IntegerAtom | Identifier arguments -> ^( LIBMETHOD Identifier ( arguments )? ) );
+    public final SGLParser.mathAtom_return mathAtom() throws RecognitionException {
+        SGLParser.mathAtom_return retval = new SGLParser.mathAtom_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token char_literal74=null;
+        Token char_literal76=null;
+        Token IntegerAtom77=null;
+        Token Identifier78=null;
+        SGLParser.additiveExpression_return additiveExpression75 = null;
+
+        SGLParser.arguments_return arguments79 = null;
+
+
+        Object char_literal74_tree=null;
+        Object char_literal76_tree=null;
+        Object IntegerAtom77_tree=null;
+        Object Identifier78_tree=null;
+        RewriteRuleTokenStream stream_Identifier=new RewriteRuleTokenStream(adaptor,"token Identifier");
+        RewriteRuleSubtreeStream stream_arguments=new RewriteRuleSubtreeStream(adaptor,"rule arguments");
+        try { dbg.enterRule(getGrammarFileName(), "mathAtom");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(206, 1);
+
+        try {
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:207:5: ( '(' additiveExpression ')' | IntegerAtom | Identifier arguments -> ^( LIBMETHOD Identifier ( arguments )? ) )
+            int alt23=3;
+            try { dbg.enterDecision(23);
+
+            switch ( input.LA(1) ) {
+            case 45:
+                {
+                alt23=1;
+                }
+                break;
+            case IntegerAtom:
+                {
+                alt23=2;
+                }
+                break;
+            case Identifier:
+                {
+                alt23=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 23, 0, input);
+
+                dbg.recognitionException(nvae);
+                throw nvae;
+            }
+
+            } finally {dbg.exitDecision(23);}
+
+            switch (alt23) {
+                case 1 :
+                    dbg.enterAlt(1);
+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:207:7: '(' additiveExpression ')'
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    dbg.location(207,10);
+                    char_literal74=(Token)match(input,45,FOLLOW_45_in_mathAtom846); 
+                    dbg.location(207,12);
+                    pushFollow(FOLLOW_additiveExpression_in_mathAtom849);
+                    additiveExpression75=additiveExpression();
+
+                    state._fsp--;
+
+                    adaptor.addChild(root_0, additiveExpression75.getTree());
+                    dbg.location(207,34);
+                    char_literal76=(Token)match(input,46,FOLLOW_46_in_mathAtom851); 
+
+                    }
+                    break;
+                case 2 :
+                    dbg.enterAlt(2);
+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:208:9: IntegerAtom
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    dbg.location(208,9);
+                    IntegerAtom77=(Token)match(input,IntegerAtom,FOLLOW_IntegerAtom_in_mathAtom862); 
+                    IntegerAtom77_tree = (Object)adaptor.create(IntegerAtom77);
+                    adaptor.addChild(root_0, IntegerAtom77_tree);
+
+
+                    }
+                    break;
+                case 3 :
+                    dbg.enterAlt(3);
+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:213:4: Identifier arguments
+                    {
+                    dbg.location(213,4);
+                    Identifier78=(Token)match(input,Identifier,FOLLOW_Identifier_in_mathAtom880);  
+                    stream_Identifier.add(Identifier78);
+
+                    dbg.location(213,15);
+                    pushFollow(FOLLOW_arguments_in_mathAtom882);
+                    arguments79=arguments();
+
+                    state._fsp--;
+
+                    stream_arguments.add(arguments79.getTree());
+
+
+                    // AST REWRITE
+                    // elements: Identifier, arguments
+                    // token labels: 
+                    // rule labels: retval
+                    // token list labels: 
+                    // rule list labels: 
+                    // wildcard labels: 
+                    retval.tree = root_0;
+                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+                    root_0 = (Object)adaptor.nil();
+                    // 213:25: -> ^( LIBMETHOD Identifier ( arguments )? )
+                    {
+                        dbg.location(213,28);
+                        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:213:28: ^( LIBMETHOD Identifier ( arguments )? )
+                        {
+                        Object root_1 = (Object)adaptor.nil();
+                        dbg.location(213,30);
+                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LIBMETHOD, "LIBMETHOD"), root_1);
+
+                        dbg.location(213,40);
+                        adaptor.addChild(root_1, stream_Identifier.nextNode());
+                        dbg.location(213,51);
+                        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:213:51: ( arguments )?
+                        if ( stream_arguments.hasNext() ) {
+                            dbg.location(213,51);
+                            adaptor.addChild(root_1, stream_arguments.nextTree());
+
+                        }
+                        stream_arguments.reset();
+
+                        adaptor.addChild(root_0, root_1);
+                        }
+
+                    }
+
+                    retval.tree = root_0;
+                    }
+                    break;
+
+            }
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        dbg.location(214, 5);
 
         }
         finally {
@@ -2846,77 +3200,71 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "arguments"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:202:1: arguments : '(' ( expressionList )? ')' ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:217:1: arguments : '(' ( expressionList )? ')' ;
     public final SGLParser.arguments_return arguments() throws RecognitionException {
         SGLParser.arguments_return retval = new SGLParser.arguments_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token char_literal68=null;
-        Token char_literal70=null;
-        SGLParser.expressionList_return expressionList69 = null;
+        Token char_literal80=null;
+        Token char_literal82=null;
+        SGLParser.expressionList_return expressionList81 = null;
 
 
-        Object char_literal68_tree=null;
-        Object char_literal70_tree=null;
+        Object char_literal80_tree=null;
+        Object char_literal82_tree=null;
 
         try { dbg.enterRule(getGrammarFileName(), "arguments");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(202, 1);
+        dbg.location(217, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:203:5: ( '(' ( expressionList )? ')' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:218:5: ( '(' ( expressionList )? ')' )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:203:9: '(' ( expressionList )? ')'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:218:9: '(' ( expressionList )? ')'
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(203,9);
-            char_literal68=(Token)match(input,43,FOLLOW_43_in_arguments888); 
-            char_literal68_tree = (Object)adaptor.create(char_literal68);
-            adaptor.addChild(root_0, char_literal68_tree);
+            dbg.location(218,12);
+            char_literal80=(Token)match(input,45,FOLLOW_45_in_arguments915); 
+            dbg.location(218,14);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:218:14: ( expressionList )?
+            int alt24=2;
+            try { dbg.enterSubRule(24);
+            try { dbg.enterDecision(24);
 
-            dbg.location(203,13);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:203:13: ( expressionList )?
-            int alt21=2;
-            try { dbg.enterSubRule(21);
-            try { dbg.enterDecision(21);
+            int LA24_0 = input.LA(1);
 
-            int LA21_0 = input.LA(1);
-
-            if ( (LA21_0==IntegerAtom||LA21_0==36||LA21_0==43) ) {
-                alt21=1;
+            if ( (LA24_0==Identifier||LA24_0==IntegerAtom||LA24_0==38||LA24_0==45) ) {
+                alt24=1;
             }
-            } finally {dbg.exitDecision(21);}
+            } finally {dbg.exitDecision(24);}
 
-            switch (alt21) {
+            switch (alt24) {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:203:13: expressionList
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:218:14: expressionList
                     {
-                    dbg.location(203,13);
-                    pushFollow(FOLLOW_expressionList_in_arguments890);
-                    expressionList69=expressionList();
+                    dbg.location(218,14);
+                    pushFollow(FOLLOW_expressionList_in_arguments918);
+                    expressionList81=expressionList();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, expressionList69.getTree());
+                    adaptor.addChild(root_0, expressionList81.getTree());
 
                     }
                     break;
 
             }
-            } finally {dbg.exitSubRule(21);}
+            } finally {dbg.exitSubRule(24);}
 
-            dbg.location(203,29);
-            char_literal70=(Token)match(input,44,FOLLOW_44_in_arguments893); 
-            char_literal70_tree = (Object)adaptor.create(char_literal70);
-            adaptor.addChild(root_0, char_literal70_tree);
-
+            dbg.location(218,33);
+            char_literal82=(Token)match(input,46,FOLLOW_46_in_arguments921); 
 
             }
 
@@ -2934,7 +3282,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(204, 5);
+        dbg.location(219, 5);
 
         }
         finally {
@@ -2953,86 +3301,83 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "expressionList"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:206:1: expressionList : expression ( ',' expression )* ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:221:1: expressionList : expression ( ',' expression )* ;
     public final SGLParser.expressionList_return expressionList() throws RecognitionException {
         SGLParser.expressionList_return retval = new SGLParser.expressionList_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token char_literal72=null;
-        SGLParser.expression_return expression71 = null;
+        Token char_literal84=null;
+        SGLParser.expression_return expression83 = null;
 
-        SGLParser.expression_return expression73 = null;
+        SGLParser.expression_return expression85 = null;
 
 
-        Object char_literal72_tree=null;
+        Object char_literal84_tree=null;
 
         try { dbg.enterRule(getGrammarFileName(), "expressionList");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(206, 1);
+        dbg.location(221, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:207:5: ( expression ( ',' expression )* )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:222:5: ( expression ( ',' expression )* )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:207:9: expression ( ',' expression )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:222:9: expression ( ',' expression )*
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(207,9);
-            pushFollow(FOLLOW_expression_in_expressionList912);
-            expression71=expression();
+            dbg.location(222,9);
+            pushFollow(FOLLOW_expression_in_expressionList941);
+            expression83=expression();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, expression71.getTree());
-            dbg.location(207,20);
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:207:20: ( ',' expression )*
-            try { dbg.enterSubRule(22);
+            adaptor.addChild(root_0, expression83.getTree());
+            dbg.location(222,20);
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:222:20: ( ',' expression )*
+            try { dbg.enterSubRule(25);
 
-            loop22:
+            loop25:
             do {
-                int alt22=2;
-                try { dbg.enterDecision(22);
+                int alt25=2;
+                try { dbg.enterDecision(25);
 
-                int LA22_0 = input.LA(1);
+                int LA25_0 = input.LA(1);
 
-                if ( (LA22_0==23) ) {
-                    alt22=1;
+                if ( (LA25_0==25) ) {
+                    alt25=1;
                 }
 
 
-                } finally {dbg.exitDecision(22);}
+                } finally {dbg.exitDecision(25);}
 
-                switch (alt22) {
+                switch (alt25) {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:207:21: ',' expression
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:222:21: ',' expression
             	    {
-            	    dbg.location(207,21);
-            	    char_literal72=(Token)match(input,23,FOLLOW_23_in_expressionList915); 
-            	    char_literal72_tree = (Object)adaptor.create(char_literal72);
-            	    adaptor.addChild(root_0, char_literal72_tree);
-
-            	    dbg.location(207,25);
-            	    pushFollow(FOLLOW_expression_in_expressionList917);
-            	    expression73=expression();
+            	    dbg.location(222,24);
+            	    char_literal84=(Token)match(input,25,FOLLOW_25_in_expressionList944); 
+            	    dbg.location(222,26);
+            	    pushFollow(FOLLOW_expression_in_expressionList947);
+            	    expression85=expression();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, expression73.getTree());
+            	    adaptor.addChild(root_0, expression85.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop25;
                 }
             } while (true);
-            } finally {dbg.exitSubRule(22);}
+            } finally {dbg.exitSubRule(25);}
 
 
             }
@@ -3051,7 +3396,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(208, 5);
+        dbg.location(223, 5);
 
         }
         finally {
@@ -3070,35 +3415,35 @@ public class SGLParser extends DebugParser {
     };
 
     // $ANTLR start "literal"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:212:1: literal : ( IntegerAtom | FloatAtom | StringAtom | BooleanAtom | 'null' );
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:227:1: literal : ( IntegerAtom | FloatAtom | StringAtom | BooleanAtom | 'null' );
     public final SGLParser.literal_return literal() throws RecognitionException {
         SGLParser.literal_return retval = new SGLParser.literal_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token set74=null;
+        Token set86=null;
 
-        Object set74_tree=null;
+        Object set86_tree=null;
 
         try { dbg.enterRule(getGrammarFileName(), "literal");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(212, 1);
+        dbg.location(227, 1);
 
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:213:5: ( IntegerAtom | FloatAtom | StringAtom | BooleanAtom | 'null' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:228:5: ( IntegerAtom | FloatAtom | StringAtom | BooleanAtom | 'null' )
             dbg.enterAlt(1);
 
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:
             {
             root_0 = (Object)adaptor.nil();
 
-            dbg.location(213,5);
-            set74=(Token)input.LT(1);
-            if ( (input.LA(1)>=IntegerAtom && input.LA(1)<=BooleanAtom)||input.LA(1)==45 ) {
+            dbg.location(228,5);
+            set86=(Token)input.LT(1);
+            if ( (input.LA(1)>=IntegerAtom && input.LA(1)<=BooleanAtom)||input.LA(1)==47 ) {
                 input.consume();
-                adaptor.addChild(root_0, (Object)adaptor.create(set74));
+                adaptor.addChild(root_0, (Object)adaptor.create(set86));
                 state.errorRecovery=false;
             }
             else {
@@ -3124,7 +3469,7 @@ public class SGLParser extends DebugParser {
         }
         finally {
         }
-        dbg.location(218, 5);
+        dbg.location(233, 5);
 
         }
         finally {
@@ -3142,85 +3487,91 @@ public class SGLParser extends DebugParser {
 
  
 
-    public static final BitSet FOLLOW_statement_in_compilationUnit76 = new BitSet(new long[]{0x00000000000003C0L});
-    public static final BitSet FOLLOW_EOF_in_compilationUnit79 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variableDefinitionList_in_statement94 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variableType_in_variableDefinitionList110 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_variableDefinition_in_variableDefinitionList112 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_23_in_variableDefinitionList115 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_variableDefinition_in_variableDefinitionList117 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_variableName_in_variableDefinition141 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_24_in_variableDefinition144 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_expression_in_variableDefinition146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variableType_in_simpleVariableDefinition168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BooleanType_in_localVariableDeclarationStatement180 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_variableName_in_localVariableDeclarationStatement182 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_24_in_localVariableDeclarationStatement185 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_expression_in_localVariableDeclarationStatement187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IntType_in_localVariableDeclarationStatement194 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_variableName_in_localVariableDeclarationStatement196 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_24_in_localVariableDeclarationStatement199 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_expression_in_localVariableDeclarationStatement201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variableDeclaration_in_variableAssignmentStatement216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variableName_in_variableDeclaration235 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_24_in_variableDeclaration238 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_expression_in_variableDeclaration240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Identifier_in_variableName256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_statement_in_compilationUnit84 = new BitSet(new long[]{0x0000000000000F00L});
+    public static final BitSet FOLLOW_EOF_in_compilationUnit87 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_variableDefinitionList_in_statement102 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_variableType_in_variableDefinitionList118 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_variableDefinition_in_variableDefinitionList120 = new BitSet(new long[]{0x0000000002000002L});
+    public static final BitSet FOLLOW_25_in_variableDefinitionList123 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_variableDefinition_in_variableDefinitionList125 = new BitSet(new long[]{0x0000000002000002L});
+    public static final BitSet FOLLOW_variableName_in_variableDefinition149 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_26_in_variableDefinition152 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_expression_in_variableDefinition154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_variableType_in_simpleVariableDefinition176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BooleanType_in_localVariableDeclarationStatement188 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_variableName_in_localVariableDeclarationStatement190 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_26_in_localVariableDeclarationStatement193 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_expression_in_localVariableDeclarationStatement195 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IntType_in_localVariableDeclarationStatement202 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_variableName_in_localVariableDeclarationStatement204 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_26_in_localVariableDeclarationStatement207 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_expression_in_localVariableDeclarationStatement209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_variableDeclaration_in_variableAssignmentStatement224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_variableName_in_variableDeclaration243 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_26_in_variableDeclaration246 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_expression_in_variableDeclaration248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Identifier_in_variableName264 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_variableType0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_conditionalExpression_in_expression320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_conditionalOrExpression_in_conditionalExpression361 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_25_in_conditionalExpression365 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_conditionalExpression_in_conditionalExpression367 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_conditionalExpression369 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_conditionalExpression_in_conditionalExpression370 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_conditionalAndExpression_in_conditionalOrExpression413 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_27_in_conditionalOrExpression417 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_conditionalAndExpression_in_conditionalOrExpression419 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_equalityExpression_in_conditionalAndExpression450 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_28_in_conditionalAndExpression454 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_equalityExpression_in_conditionalAndExpression456 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_relationalExpression_in_equalityExpression483 = new BitSet(new long[]{0x0000000060000002L});
-    public static final BitSet FOLLOW_set_in_equalityExpression487 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_relationalExpression_in_equalityExpression495 = new BitSet(new long[]{0x0000000060000002L});
-    public static final BitSet FOLLOW_additiveExpression_in_relationalExpression526 = new BitSet(new long[]{0x0000000780000002L});
-    public static final BitSet FOLLOW_set_in_relationalExpression529 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_additiveExpression_in_relationalExpression539 = new BitSet(new long[]{0x0000000780000002L});
-    public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression577 = new BitSet(new long[]{0x0000001800000002L});
-    public static final BitSet FOLLOW_35_in_additiveExpression581 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_36_in_additiveExpression584 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression588 = new BitSet(new long[]{0x0000001800000002L});
-    public static final BitSet FOLLOW_mathAtom_in_multiplicativeExpression624 = new BitSet(new long[]{0x000000E000000002L});
-    public static final BitSet FOLLOW_37_in_multiplicativeExpression632 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_mathAtom_in_multiplicativeExpression636 = new BitSet(new long[]{0x000000E000000002L});
-    public static final BitSet FOLLOW_38_in_multiplicativeExpression644 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_mathAtom_in_multiplicativeExpression648 = new BitSet(new long[]{0x000000E000000002L});
-    public static final BitSet FOLLOW_39_in_multiplicativeExpression656 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_mathAtom_in_multiplicativeExpression660 = new BitSet(new long[]{0x000000E000000002L});
-    public static final BitSet FOLLOW_40_in_unaryExpression688 = new BitSet(new long[]{0x00000F1000000400L});
-    public static final BitSet FOLLOW_unaryExpression_in_unaryExpression690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_unaryExpression700 = new BitSet(new long[]{0x00000F1000000400L});
-    public static final BitSet FOLLOW_unaryExpression_in_unaryExpression702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_unaryExpressionNotPlusMinus_in_unaryExpression712 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_unaryExpressionNotPlusMinus733 = new BitSet(new long[]{0x00000F1000000400L});
-    public static final BitSet FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus735 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_castExpression_in_unaryExpressionNotPlusMinus745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_mathAtom_in_unaryExpressionNotPlusMinus760 = new BitSet(new long[]{0x0000030000000002L});
-    public static final BitSet FOLLOW_set_in_unaryExpressionNotPlusMinus762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_castExpression793 = new BitSet(new long[]{0x00000000000003C0L});
-    public static final BitSet FOLLOW_variableType_in_castExpression795 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44_in_castExpression797 = new BitSet(new long[]{0x00000F1000000400L});
-    public static final BitSet FOLLOW_unaryExpression_in_castExpression799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_mathAtom822 = new BitSet(new long[]{0x0000080000000400L});
-    public static final BitSet FOLLOW_43_in_mathAtom833 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_additiveExpression_in_mathAtom837 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44_in_mathAtom839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IntegerAtom_in_mathAtom851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_arguments888 = new BitSet(new long[]{0x0000181000000400L});
-    public static final BitSet FOLLOW_expressionList_in_arguments890 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44_in_arguments893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expression_in_expressionList912 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_23_in_expressionList915 = new BitSet(new long[]{0x0000081000000400L});
-    public static final BitSet FOLLOW_expression_in_expressionList917 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_conditionalExpression_in_expression328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_conditionalOrExpression_in_conditionalExpression369 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_27_in_conditionalExpression373 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_conditionalExpression_in_conditionalExpression376 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_conditionalExpression378 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_conditionalExpression_in_conditionalExpression381 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_conditionalAndExpression_in_conditionalOrExpression424 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_29_in_conditionalOrExpression428 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_conditionalAndExpression_in_conditionalOrExpression431 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_equalityExpression_in_conditionalAndExpression462 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_30_in_conditionalAndExpression466 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_equalityExpression_in_conditionalAndExpression469 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_relationalExpression_in_equalityExpression496 = new BitSet(new long[]{0x0000000180000002L});
+    public static final BitSet FOLLOW_31_in_equalityExpression501 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_32_in_equalityExpression506 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_relationalExpression_in_equalityExpression510 = new BitSet(new long[]{0x0000000180000002L});
+    public static final BitSet FOLLOW_additiveExpression_in_relationalExpression541 = new BitSet(new long[]{0x0000001E00000002L});
+    public static final BitSet FOLLOW_33_in_relationalExpression545 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_34_in_relationalExpression548 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_35_in_relationalExpression551 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_36_in_relationalExpression554 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_additiveExpression_in_relationalExpression558 = new BitSet(new long[]{0x0000001E00000002L});
+    public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression596 = new BitSet(new long[]{0x0000006000000002L});
+    public static final BitSet FOLLOW_37_in_additiveExpression600 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_38_in_additiveExpression603 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression607 = new BitSet(new long[]{0x0000006000000002L});
+    public static final BitSet FOLLOW_negativeExpression_in_multiplicativeExpression641 = new BitSet(new long[]{0x0000038000000002L});
+    public static final BitSet FOLLOW_39_in_multiplicativeExpression649 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_40_in_multiplicativeExpression652 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_41_in_multiplicativeExpression655 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_negativeExpression_in_multiplicativeExpression659 = new BitSet(new long[]{0x0000038000000002L});
+    public static final BitSet FOLLOW_42_in_unaryExpression682 = new BitSet(new long[]{0x00003C0000001080L});
+    public static final BitSet FOLLOW_unaryExpression_in_unaryExpression684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_unaryExpression694 = new BitSet(new long[]{0x00003C0000001080L});
+    public static final BitSet FOLLOW_unaryExpression_in_unaryExpression696 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_unaryExpressionNotPlusMinus_in_unaryExpression706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_unaryExpressionNotPlusMinus727 = new BitSet(new long[]{0x00003C0000001080L});
+    public static final BitSet FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus729 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_castExpression_in_unaryExpressionNotPlusMinus739 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_mathAtom_in_unaryExpressionNotPlusMinus754 = new BitSet(new long[]{0x00000C0000000002L});
+    public static final BitSet FOLLOW_set_in_unaryExpressionNotPlusMinus756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_castExpression787 = new BitSet(new long[]{0x0000000000000F00L});
+    public static final BitSet FOLLOW_variableType_in_castExpression789 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_46_in_castExpression791 = new BitSet(new long[]{0x00003C0000001080L});
+    public static final BitSet FOLLOW_unaryExpression_in_castExpression793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_mathAtom_in_negativeExpression811 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_negativeExpression821 = new BitSet(new long[]{0x0000200000001080L});
+    public static final BitSet FOLLOW_mathAtom_in_negativeExpression824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_mathAtom846 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_additiveExpression_in_mathAtom849 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_46_in_mathAtom851 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IntegerAtom_in_mathAtom862 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Identifier_in_mathAtom880 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_arguments_in_mathAtom882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_arguments915 = new BitSet(new long[]{0x0000604000001080L});
+    public static final BitSet FOLLOW_expressionList_in_arguments918 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_46_in_arguments921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expression_in_expressionList941 = new BitSet(new long[]{0x0000000002000002L});
+    public static final BitSet FOLLOW_25_in_expressionList944 = new BitSet(new long[]{0x0000204000001080L});
+    public static final BitSet FOLLOW_expression_in_expressionList947 = new BitSet(new long[]{0x0000000002000002L});
     public static final BitSet FOLLOW_set_in_literal0 = new BitSet(new long[]{0x0000000000000002L});
 
 }

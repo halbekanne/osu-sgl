@@ -4,7 +4,7 @@ grammar SGL;
 
 options {
 	output = 'AST';
-	language = 'CSharp2'; 
+	//language = 'CSharp2'; 
 	
 	/* Backtracking: 
 	 * 1. step - guessing: look which way to go (by trying all possible ways until it finds the right way to the exit)
@@ -22,6 +22,8 @@ options {
 
 tokens {
 	VARDEF;
+	NEGATE;
+	LIBMETHOD;
 
 }
 
@@ -32,6 +34,16 @@ tokens {
 }
 
 @members{
+
+	// Error reporting
+	/*
+    private StdErrReporter errorReporter = new StdErrReporter();
+    public override void EmitErrorMessage(String msg)
+    {
+    	errorReporter.ReportError(msg);
+    }
+    */
+    
 	// For global variables (accessable anywhere)
 	//NullableDictionnary globalVariables = new NullableDictionnary();
 	
@@ -130,28 +142,28 @@ expression
 //    ;
     
 conditionalExpression
-    :   conditionalOrExpression ( '?' conditionalExpression ':'conditionalExpression )?
+    :   conditionalOrExpression ( '?'^ conditionalExpression ':'! conditionalExpression )?
     ;        
        
     
 // OR     
 conditionalOrExpression
-    :   conditionalAndExpression ( '||' conditionalAndExpression )*
+    :   conditionalAndExpression ( '||'^ conditionalAndExpression )*
     ;    
     
 // AND    
 conditionalAndExpression
-    :   equalityExpression ( '&&' equalityExpression )*
+    :   equalityExpression ( '&&'^ equalityExpression )*
     ;
     
 // Is (not) equal to    
 equalityExpression
-    :   relationalExpression ( ('==' | '!=') relationalExpression )*
+    :   relationalExpression ( ('=='^ | '!='^) relationalExpression )*
     ;    
     
 // Comparison <, > , <=, =>    
 relationalExpression
-    :   additiveExpression (('<'|'>'|'<='|'>=') additiveExpression)*
+    :   additiveExpression (('<'^|'>'^|'<='^|'>='^) additiveExpression)*
     ;            
     
 // + / -    
@@ -161,11 +173,8 @@ additiveExpression
     
 // * / / / %    
 multiplicativeExpression
-    :   e=mathAtom
-    (	'*' e=mathAtom
-    |	'/' e=mathAtom
-    |	'%' e=mathAtom
-    )*
+    :   negativeExpression
+    (('*'^|'/'^|'%'^) negativeExpression)*
     ;
     
 unaryExpression
@@ -188,23 +197,29 @@ castExpression
     ;  
 
 // (...) / value / variable / method like rand(...)  
+
+negativeExpression
+	:	mathAtom -> mathAtom
+	|	('-') mathAtom -> ^(NEGATE mathAtom)
+	;
+
 mathAtom
-    :   ('-')? 
-    (	'(' e=additiveExpression ')'
-    |   i=IntegerAtom
+    :	'('! additiveExpression ')'!
+    |   IntegerAtom
     
 //    |	f=Float
     //|   'new' creator
-//    |   Identifier ('.' Identifier)* arguments
-    );    
+	//|   Identifier ('.' Identifier)* arguments
+	|	Identifier arguments -> ^(LIBMETHOD Identifier arguments?)
+    ;  
 
 // arguments for methods aso.
 arguments
-    :   '(' expressionList? ')'
+    :   '('! expressionList? ')'!
     ;
 
 expressionList
-    :   expression (',' expression)*
+    :   expression (','! expression)*
     ;
 
 

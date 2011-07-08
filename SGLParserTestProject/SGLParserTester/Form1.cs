@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using SGL;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
+using System.Diagnostics;
 
 namespace WindowsFormsApplication4
 {
@@ -21,22 +22,44 @@ namespace WindowsFormsApplication4
         private void compileBtn_Click(object sender, EventArgs e)
         {
 
-            ANTLRStringStream sStream = new ANTLRStringStream(inputBox.Text);
-            SGLLexer lexer = new SGLLexer(sStream);
+            try
+            {
+                Stopwatch otherTime = new Stopwatch();
+                otherTime.Start();
+                ANTLRStringStream sStream = new ANTLRStringStream(inputBox.Text);
+                SGLLexer lexer = new SGLLexer(sStream);
 
-            CommonTokenStream tStream = new CommonTokenStream(lexer);
-
-            SGLParser parser = new SGLParser(tStream);
-            
-            //try
-            //{
-                CommonTree t = (CommonTree) parser.compilationUnit().Tree;
+                CommonTokenStream tStream = new CommonTokenStream(lexer);
+                
+                // Parsing
+                Stopwatch parseTime = new Stopwatch();
+                parseTime.Start();
+                SGLParser parser = new SGLParser(tStream);
+                CommonTree t = (CommonTree)parser.compilationUnit().Tree;
+                parseTime.Stop();
+                
+                // Printing tree
                 Console.WriteLine("; " + t.ToStringTree());
 
-                CommonTreeNodeStream  treeStream = new CommonTreeNodeStream(t);
+                // TreeWalking
+                CommonTreeNodeStream treeStream = new CommonTreeNodeStream(t);
+
+                Stopwatch walkingTime = new Stopwatch();
+                walkingTime.Start();
                 SGLTreeWalker tw = new SGLTreeWalker(treeStream);
                 tw.compilationUnit();
-/*
+                walkingTime.Stop();
+                otherTime.Stop();
+
+                Console.WriteLine("Time needed for parsing: " + parseTime.ElapsedMilliseconds + " ms (" + parseTime.Elapsed + ")");
+                Console.WriteLine("Time needed for tree walking: " + walkingTime.ElapsedMilliseconds + " ms (" + walkingTime.Elapsed + ")");
+                Console.WriteLine("Time needed for anything else (convertion etc.): " + (otherTime.ElapsedMilliseconds - parseTime.ElapsedMilliseconds - walkingTime.ElapsedMilliseconds) + " ms (" + (otherTime.Elapsed - parseTime.Elapsed - walkingTime.Elapsed) + ")");
+
+            }
+            catch (ParseException ex)
+            {
+                // Syntacitcal Error, parsing will abort
+                //Console.WriteLine(ex.StackTrace);
             }
             catch (Exception ex)
             {
@@ -44,7 +67,7 @@ namespace WindowsFormsApplication4
                 Console.WriteLine(ex.StackTrace);
 
             }
-            */
+            
 
             
         }
