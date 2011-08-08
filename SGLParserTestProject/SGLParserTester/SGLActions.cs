@@ -24,18 +24,65 @@ namespace SGL
             Console.WriteLine("OK: init the loc. variable scope");
         }
 
+        /// <summary>
+        /// Creates a new local variable
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="name"></param>
+        /// <param name="value"></param>
         public void NewLocalVariable(String type, String name, String value)
         {
             Console.WriteLine("Push local variable: " + type + "," + name + "," + value);
             VariableScope currentDic = localVariables.Pop();
-            currentDic.addVariable(type,name,value);
+            currentDic.AddVariable(type,name,value);
             localVariables.Push(currentDic);
+        }
+
+        /// <summary>
+        /// Creates a new local variable
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="name"></param>
+        /// <param name="value"></param>
+        public void AssignVariable(String name, String value)
+        {
+            Console.WriteLine("Assign variable: "  + name + " = " + value);
+            foreach (VariableScope searchDic in localVariables)
+            {
+                if (searchDic.IsVariable(name))
+                {
+                    // If the variable is in the scope
+                    searchDic.ChangeVariable(name, value);
+
+
+                    break;
+                }
+                
+            }
         }
 
 
 
-
-
+        /// <summary>
+        /// Searches for a local variable
+        /// </summary>
+        /// <param name="name"></param>
+        public String GetVariable(String name)
+        {
+            Console.WriteLine("Try to get variable: " + name);
+            foreach (VariableScope searchDic in localVariables)
+            {
+                try
+                {
+                    String value = searchDic.GetVariable(name);
+                    return value;
+                }
+                catch (Exception e)
+                {
+                }
+            }
+            throw new Exception("Variable " + name + " coudn't be found");
+        }
 
 
 
@@ -85,7 +132,6 @@ namespace SGL
             throw new Exception("Unable to multiply " + a + " with " + b);
         }
 
-
         public String Div(String a, String b)
         {
             if (IsInteger(a) && IsInteger(b))
@@ -97,6 +143,125 @@ namespace SGL
             }
             throw new Exception("Unable to divide " + a + " through " + b);
         }
+
+        public String Remainder(String a, String b)
+        {
+            if (IsInteger(a) && IsInteger(b))
+            {
+                // Both values are integers
+                int va = Int32.Parse(a);
+                int vb = Int32.Parse(b);
+                return (va % vb).ToString();
+            }
+            throw new Exception("Unable to divide " + a + " through " + b + " and return the remaining value");
+        }
+
+        public String ConditionLess(String a, String b)
+        {
+            if (IsInteger(a) && IsInteger(b))
+            {
+                // Both values are integers
+                int va = Int32.Parse(a);
+                int vb = Int32.Parse(b);
+                return va < vb ? "true" : "false";
+            }
+            throw new Exception("Unable check if " + a + " is less than " + b);
+        }
+
+        public String ConditionLessOrEqual(String a, String b)
+        {
+            if (IsInteger(a) && IsInteger(b))
+            {
+                // Both values are integers
+                int va = Int32.Parse(a);
+                int vb = Int32.Parse(b);
+                return va <= vb ? "true" : "false";
+            }
+            throw new Exception("Unable check if " + a + " is less than or equal to " + b);
+        }
+
+        public String ConditionGreater(String a, String b)
+        {
+            if (IsInteger(a) && IsInteger(b))
+            {
+                // Both values are integers
+                int va = Int32.Parse(a);
+                int vb = Int32.Parse(b);
+                return va > vb ? "true" : "false";
+            }
+            throw new Exception("Unable check if " + a + " is greater than " + b);
+        }
+
+        public String ConditionGreaterOrEqual(String a, String b)
+        {
+            if (IsInteger(a) && IsInteger(b))
+            {
+                // Both values are integers
+                int va = Int32.Parse(a);
+                int vb = Int32.Parse(b);
+                return va >= vb ? "true" : "false";
+            }
+            throw new Exception("Unable check if " + a + " is greater than or equal to " + b);
+        }
+
+        public String ConditionEqual(String a, String b)
+        {
+            if (IsInteger(a) && IsInteger(b))
+            {
+                // Both values are integers
+                int va = Int32.Parse(a);
+                int vb = Int32.Parse(b);
+                return va == vb ? "true" : "false";
+            }
+            throw new Exception("Unable check if " + a + " is equal to " + b);
+        }
+
+        public String ConditionNotEqual(String a, String b)
+        {
+            if (IsInteger(a) && IsInteger(b))
+            {
+                // Both values are integers
+                int va = Int32.Parse(a);
+                int vb = Int32.Parse(b);
+                return va != vb ? "true" : "false";
+            }
+            throw new Exception("Unable check if " + a + " is not equal to " + b);
+        }
+
+        public String ConditionBranch(String a, String b, String c)
+        {
+            if (IsBoolean(a))
+            {
+                // First value is a boolean value
+                return Boolean.Parse(a) ? b : c;
+            }
+            throw new Exception("Unable check if " + a + " is true or false");
+        }
+
+        public String ConnectiveAnd(String a, String b)
+        {
+            if (IsBoolean(a) && IsBoolean(b))
+            {
+                // Both values are boolean values
+                return (Boolean.Parse(a) && Boolean.Parse(b)).ToString();
+            }
+            throw new Exception("Unable check connect " + a + " AND " + b);
+        }
+
+        public String ConnectiveOr(String a, String b)
+        {
+            if (IsBoolean(a) && IsBoolean(b))
+            {
+                // Both values are boolean values
+                return (Boolean.Parse(a) || Boolean.Parse(b)).ToString();
+            }
+            throw new Exception("Unable check connect " + a + " OR " + b);
+        }
+
+
+
+
+
 
 
 
@@ -138,6 +303,26 @@ namespace SGL
                 return false;
             }
         }
+
+
+        /// <summary>
+        /// Checks if a given string can be converted to a boolean value.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <returns></returns>
+        private Boolean IsBoolean(String a)
+        {
+            try
+            {
+                Boolean value = Boolean.Parse(a);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
 
 
     }

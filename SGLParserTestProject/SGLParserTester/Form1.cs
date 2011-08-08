@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using SGL;
+using SGL.AntlrParser;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using System.Diagnostics;
@@ -47,7 +48,8 @@ namespace WindowsFormsApplication4
                 Stopwatch walkingTime = new Stopwatch();
                 walkingTime.Start();
                 SGLTreeWalker tw = new SGLTreeWalker(treeStream);
-                tw.compilationUnit();
+                SGLNode returned = tw.compilationUnit();
+                returned.Evaluate();
                 walkingTime.Stop();
                 otherTime.Stop();
 
@@ -55,11 +57,6 @@ namespace WindowsFormsApplication4
                 Console.WriteLine("Time needed for tree walking: " + walkingTime.ElapsedMilliseconds + " ms (" + walkingTime.Elapsed + ")");
                 Console.WriteLine("Time needed for anything else (convertion etc.): " + (otherTime.ElapsedMilliseconds - parseTime.ElapsedMilliseconds - walkingTime.ElapsedMilliseconds) + " ms (" + (otherTime.Elapsed - parseTime.Elapsed - walkingTime.Elapsed) + ")");
 
-            }
-            catch (ParseException ex)
-            {
-                // Syntacitcal Error, parsing will abort
-                //Console.WriteLine(ex.StackTrace);
             }
             catch (Exception ex)
             {

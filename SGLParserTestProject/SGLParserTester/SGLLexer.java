@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g 2011-07-08 18:35:30
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g 2011-08-07 18:23:29
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -8,17 +8,20 @@ import java.util.ArrayList;
 public class SGLLexer extends Lexer {
     public static final int T__29=29;
     public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int SGLIDDigit=19;
-    public static final int IntType=8;
+    public static final int SGLIDDigit=22;
+    public static final int IntType=10;
     public static final int EOF=-1;
-    public static final int Identifier=7;
-    public static final int StringType=10;
+    public static final int Identifier=9;
+    public static final int T__51=51;
+    public static final int T__52=52;
+    public static final int T__53=53;
+    public static final int T__54=54;
+    public static final int StringType=12;
+    public static final int SpriteAnimation=18;
     public static final int VARDEF=4;
-    public static final int COMMENT=24;
-    public static final int BooleanType=9;
+    public static final int COMMENT=27;
+    public static final int T__50=50;
+    public static final int BooleanType=11;
     public static final int T__42=42;
     public static final int T__43=43;
     public static final int T__40=40;
@@ -27,17 +30,19 @@ public class SGLLexer extends Lexer {
     public static final int T__47=47;
     public static final int T__44=44;
     public static final int T__45=45;
-    public static final int LIBMETHOD=6;
-    public static final int IntegerAtom=12;
-    public static final int FloatType=11;
-    public static final int StringAtom=14;
-    public static final int HEX_DIGIT=22;
-    public static final int NEGATE=5;
-    public static final int BooleanAtom=15;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int LIBMETHOD=7;
+    public static final int IntegerAtom=15;
+    public static final int FloatType=13;
+    public static final int StringAtom=19;
+    public static final int HEX_DIGIT=25;
+    public static final int NEGATE=6;
+    public static final int BooleanAtom=17;
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int WS=23;
+    public static final int WS=26;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
@@ -45,12 +50,14 @@ public class SGLLexer extends Lexer {
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int UnicodeEscape=20;
-    public static final int ClassType=17;
-    public static final int FloatAtom=13;
-    public static final int Letter=18;
-    public static final int EscapeSequence=16;
-    public static final int OctalEscape=21;
+    public static final int UnicodeEscape=23;
+    public static final int ASSIGN=5;
+    public static final int ObjectType=14;
+    public static final int FloatAtom=16;
+    public static final int EscapeSequence=20;
+    public static final int Letter=21;
+    public static final int OctalEscape=24;
+    public static final int STRING=8;
 
     // delegates
     // delegators
@@ -65,75 +72,15 @@ public class SGLLexer extends Lexer {
     }
     public String getGrammarFileName() { return "C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g"; }
 
-    // $ANTLR start "T__25"
-    public final void mT__25() throws RecognitionException {
-        try {
-            int _type = T__25;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:3:7: ( ',' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:3:9: ','
-            {
-            match(','); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__25"
-
-    // $ANTLR start "T__26"
-    public final void mT__26() throws RecognitionException {
-        try {
-            int _type = T__26;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:4:7: ( '=' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:4:9: '='
-            {
-            match('='); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__26"
-
-    // $ANTLR start "T__27"
-    public final void mT__27() throws RecognitionException {
-        try {
-            int _type = T__27;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:5:7: ( '?' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:5:9: '?'
-            {
-            match('?'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__27"
-
     // $ANTLR start "T__28"
     public final void mT__28() throws RecognitionException {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:6:7: ( ':' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:6:9: ':'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:3:7: ( ',' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:3:9: ','
             {
-            match(':'); 
+            match(','); 
 
             }
 
@@ -150,11 +97,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:7:7: ( '||' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:7:9: '||'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:4:7: ( '=' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:4:9: '='
             {
-            match("||"); 
-
+            match('='); 
 
             }
 
@@ -171,10 +117,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:8:7: ( '&&' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:8:9: '&&'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:5:7: ( 'while' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:5:9: 'while'
             {
-            match("&&"); 
+            match("while"); 
 
 
             }
@@ -192,11 +138,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:9:7: ( '==' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:9:9: '=='
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:6:7: ( '(' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:6:9: '('
             {
-            match("=="); 
-
+            match('('); 
 
             }
 
@@ -213,11 +158,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:10:7: ( '!=' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:10:9: '!='
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:7:7: ( ')' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:7:9: ')'
             {
-            match("!="); 
-
+            match(')'); 
 
             }
 
@@ -234,10 +178,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:11:7: ( '<' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:11:9: '<'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:8:7: ( '{' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:8:9: '{'
             {
-            match('<'); 
+            match('{'); 
 
             }
 
@@ -254,10 +198,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:12:7: ( '>' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:12:9: '>'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:9:7: ( '}' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:9:9: '}'
             {
-            match('>'); 
+            match('}'); 
 
             }
 
@@ -274,11 +218,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:13:7: ( '<=' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:13:9: '<='
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:10:7: ( '?' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:10:9: '?'
             {
-            match("<="); 
-
+            match('?'); 
 
             }
 
@@ -295,11 +238,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:14:7: ( '>=' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:14:9: '>='
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:11:7: ( ':' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:11:9: ':'
             {
-            match(">="); 
-
+            match(':'); 
 
             }
 
@@ -316,10 +258,11 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:15:7: ( '+' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:15:9: '+'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:12:7: ( '||' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:12:9: '||'
             {
-            match('+'); 
+            match("||"); 
+
 
             }
 
@@ -336,10 +279,11 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:16:7: ( '-' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:16:9: '-'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:13:7: ( '&&' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:13:9: '&&'
             {
-            match('-'); 
+            match("&&"); 
+
 
             }
 
@@ -356,10 +300,11 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:17:7: ( '*' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:17:9: '*'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:14:7: ( '==' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:14:9: '=='
             {
-            match('*'); 
+            match("=="); 
+
 
             }
 
@@ -376,10 +321,11 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:18:7: ( '/' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:18:9: '/'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:15:7: ( '!=' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:15:9: '!='
             {
-            match('/'); 
+            match("!="); 
+
 
             }
 
@@ -396,10 +342,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:19:7: ( '%' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:19:9: '%'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:16:7: ( '<' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:16:9: '<'
             {
-            match('%'); 
+            match('<'); 
 
             }
 
@@ -416,11 +362,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:20:7: ( '++' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:20:9: '++'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:17:7: ( '>' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:17:9: '>'
             {
-            match("++"); 
-
+            match('>'); 
 
             }
 
@@ -437,10 +382,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:21:7: ( '--' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:21:9: '--'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:18:7: ( '<=' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:18:9: '<='
             {
-            match("--"); 
+            match("<="); 
 
 
             }
@@ -458,10 +403,11 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:22:7: ( '!' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:22:9: '!'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:19:7: ( '>=' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:19:9: '>='
             {
-            match('!'); 
+            match(">="); 
+
 
             }
 
@@ -478,10 +424,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:23:7: ( '(' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:23:9: '('
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:20:7: ( '+' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:20:9: '+'
             {
-            match('('); 
+            match('+'); 
 
             }
 
@@ -498,10 +444,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:24:7: ( ')' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:24:9: ')'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:21:7: ( '-' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:21:9: '-'
             {
-            match(')'); 
+            match('-'); 
 
             }
 
@@ -518,8 +464,151 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:25:7: ( 'null' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:25:9: 'null'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:22:7: ( '*' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:22:9: '*'
+            {
+            match('*'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__47"
+
+    // $ANTLR start "T__48"
+    public final void mT__48() throws RecognitionException {
+        try {
+            int _type = T__48;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:23:7: ( '/' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:23:9: '/'
+            {
+            match('/'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__48"
+
+    // $ANTLR start "T__49"
+    public final void mT__49() throws RecognitionException {
+        try {
+            int _type = T__49;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:24:7: ( '%' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:24:9: '%'
+            {
+            match('%'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__49"
+
+    // $ANTLR start "T__50"
+    public final void mT__50() throws RecognitionException {
+        try {
+            int _type = T__50;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:25:7: ( '++' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:25:9: '++'
+            {
+            match("++"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__50"
+
+    // $ANTLR start "T__51"
+    public final void mT__51() throws RecognitionException {
+        try {
+            int _type = T__51;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:26:7: ( '--' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:26:9: '--'
+            {
+            match("--"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__51"
+
+    // $ANTLR start "T__52"
+    public final void mT__52() throws RecognitionException {
+        try {
+            int _type = T__52;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:27:7: ( '!' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:27:9: '!'
+            {
+            match('!'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__52"
+
+    // $ANTLR start "T__53"
+    public final void mT__53() throws RecognitionException {
+        try {
+            int _type = T__53;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:28:7: ( 'new' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:28:9: 'new'
+            {
+            match("new"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__53"
+
+    // $ANTLR start "T__54"
+    public final void mT__54() throws RecognitionException {
+        try {
+            int _type = T__54;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:29:7: ( 'null' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:29:9: 'null'
             {
             match("null"); 
 
@@ -532,17 +621,17 @@ public class SGLLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__47"
+    // $ANTLR end "T__54"
 
     // $ANTLR start "IntegerAtom"
     public final void mIntegerAtom() throws RecognitionException {
         try {
             int _type = IntegerAtom;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:249:5: ( ( '0' .. '9' )+ )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:249:7: ( '0' .. '9' )+
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:267:5: ( ( '0' .. '9' )+ )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:267:7: ( '0' .. '9' )+
             {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:249:7: ( '0' .. '9' )+
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:267:7: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -556,7 +645,7 @@ public class SGLLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:249:7: '0' .. '9'
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:267:7: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -588,14 +677,14 @@ public class SGLLexer extends Lexer {
         try {
             int _type = FloatAtom;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:253:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:271:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
             int alt6=3;
             alt6 = dfa6.predict(input);
             switch (alt6) {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:253:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:271:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
                     {
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:253:9: ( '0' .. '9' )+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:271:9: ( '0' .. '9' )+
                     int cnt2=0;
                     loop2:
                     do {
@@ -609,7 +698,7 @@ public class SGLLexer extends Lexer {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:253:10: '0' .. '9'
+                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:271:10: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -626,7 +715,7 @@ public class SGLLexer extends Lexer {
                     } while (true);
 
                     match('.'); 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:253:25: ( '0' .. '9' )*
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:271:25: ( '0' .. '9' )*
                     loop3:
                     do {
                         int alt3=2;
@@ -639,7 +728,7 @@ public class SGLLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:253:26: '0' .. '9'
+                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:271:26: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -655,10 +744,10 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:254:9: '.' ( '0' .. '9' )+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:272:9: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:254:13: ( '0' .. '9' )+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:272:13: ( '0' .. '9' )+
                     int cnt4=0;
                     loop4:
                     do {
@@ -672,7 +761,7 @@ public class SGLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:254:14: '0' .. '9'
+                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:272:14: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -692,9 +781,9 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:255:9: ( '0' .. '9' )+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:273:9: ( '0' .. '9' )+
                     {
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:255:9: ( '0' .. '9' )+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:273:9: ( '0' .. '9' )+
                     int cnt5=0;
                     loop5:
                     do {
@@ -708,7 +797,7 @@ public class SGLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:255:10: '0' .. '9'
+                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:273:10: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -742,11 +831,12 @@ public class SGLLexer extends Lexer {
         try {
             int _type = StringAtom;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:259:5: ( '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:259:8: '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:277:5: ( '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )+ '\"' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:277:8: '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )+ '\"'
             {
             match('\"'); 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:259:12: ( EscapeSequence | ~ ( '\\\\' | '\"' ) )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:277:12: ( EscapeSequence | ~ ( '\\\\' | '\"' ) )+
+            int cnt7=0;
             loop7:
             do {
                 int alt7=3;
@@ -762,14 +852,14 @@ public class SGLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:259:14: EscapeSequence
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:277:14: EscapeSequence
             	    {
             	    mEscapeSequence(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:259:31: ~ ( '\\\\' | '\"' )
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:277:31: ~ ( '\\\\' | '\"' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -785,8 +875,12 @@ public class SGLLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop7;
+            	    if ( cnt7 >= 1 ) break loop7;
+                        EarlyExitException eee =
+                            new EarlyExitException(7, input);
+                        throw eee;
                 }
+                cnt7++;
             } while (true);
 
             match('\"'); 
@@ -806,7 +900,7 @@ public class SGLLexer extends Lexer {
         try {
             int _type = BooleanAtom;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:263:5: ( 'true' | 'false' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:281:5: ( 'true' | 'false' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -824,7 +918,7 @@ public class SGLLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:263:9: 'true'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:281:9: 'true'
                     {
                     match("true"); 
 
@@ -832,7 +926,7 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:264:9: 'false'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:282:9: 'false'
                     {
                     match("false"); 
 
@@ -854,8 +948,8 @@ public class SGLLexer extends Lexer {
         try {
             int _type = IntType;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:268:2: ( 'int' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:268:4: 'int'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:286:2: ( 'int' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:286:4: 'int'
             {
             match("int"); 
 
@@ -875,8 +969,8 @@ public class SGLLexer extends Lexer {
         try {
             int _type = BooleanType;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:272:2: ( 'boolean' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:272:4: 'boolean'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:290:2: ( 'boolean' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:290:4: 'boolean'
             {
             match("boolean"); 
 
@@ -896,8 +990,8 @@ public class SGLLexer extends Lexer {
         try {
             int _type = StringType;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:276:2: ( 'string' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:276:4: 'string'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:294:2: ( 'string' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:294:4: 'string'
             {
             match("string"); 
 
@@ -917,8 +1011,8 @@ public class SGLLexer extends Lexer {
         try {
             int _type = FloatType;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:280:2: ( 'float' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:280:4: 'float'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:298:2: ( 'float' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:298:4: 'float'
             {
             match("float"); 
 
@@ -933,55 +1027,59 @@ public class SGLLexer extends Lexer {
     }
     // $ANTLR end "FloatType"
 
-    // $ANTLR start "ClassType"
-    public final void mClassType() throws RecognitionException {
+    // $ANTLR start "ObjectType"
+    public final void mObjectType() throws RecognitionException {
         try {
-            int _type = ClassType;
+            int _type = ObjectType;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:286:2: ( 'Object' | 'Sprite' | 'Animation' )
-            int alt9=3;
-            switch ( input.LA(1) ) {
-            case 'O':
-                {
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:304:2: ( 'Object' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:304:4: 'Object'
+            {
+            match("Object"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "ObjectType"
+
+    // $ANTLR start "SpriteAnimation"
+    public final void mSpriteAnimation() throws RecognitionException {
+        try {
+            int _type = SpriteAnimation;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:308:2: ( 'Sprite' | 'Animation' )
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( (LA9_0=='S') ) {
                 alt9=1;
-                }
-                break;
-            case 'S':
-                {
+            }
+            else if ( (LA9_0=='A') ) {
                 alt9=2;
-                }
-                break;
-            case 'A':
-                {
-                alt9=3;
-                }
-                break;
-            default:
+            }
+            else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
-
             switch (alt9) {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:286:4: 'Object'
-                    {
-                    match("Object"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:287:4: 'Sprite'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:308:4: 'Sprite'
                     {
                     match("Sprite"); 
 
 
                     }
                     break;
-                case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:288:4: 'Animation'
+                case 2 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:309:4: 'Animation'
                     {
                     match("Animation"); 
 
@@ -996,18 +1094,18 @@ public class SGLLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "ClassType"
+    // $ANTLR end "SpriteAnimation"
 
     // $ANTLR start "Identifier"
     public final void mIdentifier() throws RecognitionException {
         try {
             int _type = Identifier;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:294:5: ( Letter ( Letter | SGLIDDigit )* )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:294:9: Letter ( Letter | SGLIDDigit )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:315:5: ( Letter ( Letter | SGLIDDigit )* )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:315:9: Letter ( Letter | SGLIDDigit )*
             {
             mLetter(); 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:294:16: ( Letter | SGLIDDigit )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:315:16: ( Letter | SGLIDDigit )*
             loop10:
             do {
                 int alt10=2;
@@ -1054,7 +1152,7 @@ public class SGLLexer extends Lexer {
     // $ANTLR start "Letter"
     public final void mLetter() throws RecognitionException {
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:306:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:327:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:
             {
             if ( input.LA(1)=='$'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u1FFF')||(input.LA(1)>='\u3040' && input.LA(1)<='\u318F')||(input.LA(1)>='\u3300' && input.LA(1)<='\u337F')||(input.LA(1)>='\u3400' && input.LA(1)<='\u3D2D')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FFF')||(input.LA(1)>='\uF900' && input.LA(1)<='\uFAFF') ) {
@@ -1078,7 +1176,7 @@ public class SGLLexer extends Lexer {
     // $ANTLR start "SGLIDDigit"
     public final void mSGLIDDigit() throws RecognitionException {
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:323:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:344:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09EF')||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A6F')||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u1040' && input.LA(1)<='\u1049') ) {
@@ -1102,7 +1200,7 @@ public class SGLLexer extends Lexer {
     // $ANTLR start "EscapeSequence"
     public final void mEscapeSequence() throws RecognitionException {
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:344:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:365:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape )
             int alt11=3;
             int LA11_0 = input.LA(1);
 
@@ -1153,7 +1251,7 @@ public class SGLLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:344:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:365:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
                     {
                     match('\\'); 
                     if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -1169,14 +1267,14 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:345:9: UnicodeEscape
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:366:9: UnicodeEscape
                     {
                     mUnicodeEscape(); 
 
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:346:9: OctalEscape
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:367:9: OctalEscape
                     {
                     mOctalEscape(); 
 
@@ -1193,7 +1291,7 @@ public class SGLLexer extends Lexer {
     // $ANTLR start "OctalEscape"
     public final void mOctalEscape() throws RecognitionException {
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:351:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:372:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
             int alt12=3;
             int LA12_0 = input.LA(1);
 
@@ -1204,9 +1302,9 @@ public class SGLLexer extends Lexer {
                     int LA12_2 = input.LA(3);
 
                     if ( ((LA12_2>='0' && LA12_2<='7')) ) {
-                        int LA12_5 = input.LA(4);
+                        int LA12_4 = input.LA(4);
 
-                        if ( ((LA12_5>='0' && LA12_5<='7')) ) {
+                        if ( ((LA12_4>='0' && LA12_4<='7')) ) {
                             alt12=1;
                         }
                         else {
@@ -1239,25 +1337,25 @@ public class SGLLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:351:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:372:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
                     {
                     match('\\'); 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:351:14: ( '0' .. '3' )
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:351:15: '0' .. '3'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:372:14: ( '0' .. '3' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:372:15: '0' .. '3'
                     {
                     matchRange('0','3'); 
 
                     }
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:351:25: ( '0' .. '7' )
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:351:26: '0' .. '7'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:372:25: ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:372:26: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
                     }
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:351:36: ( '0' .. '7' )
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:351:37: '0' .. '7'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:372:36: ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:372:37: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
@@ -1267,18 +1365,18 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:352:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:373:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
                     {
                     match('\\'); 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:352:14: ( '0' .. '7' )
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:352:15: '0' .. '7'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:373:14: ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:373:15: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
                     }
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:352:25: ( '0' .. '7' )
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:352:26: '0' .. '7'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:373:25: ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:373:26: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
@@ -1288,11 +1386,11 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:353:9: '\\\\' ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:374:9: '\\\\' ( '0' .. '7' )
                     {
                     match('\\'); 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:353:14: ( '0' .. '7' )
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:353:15: '0' .. '7'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:374:14: ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:374:15: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
@@ -1312,8 +1410,8 @@ public class SGLLexer extends Lexer {
     // $ANTLR start "UnicodeEscape"
     public final void mUnicodeEscape() throws RecognitionException {
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:358:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:358:9: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:379:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:379:9: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
             {
             match('\\'); 
             match('u'); 
@@ -1333,8 +1431,8 @@ public class SGLLexer extends Lexer {
     // $ANTLR start "HEX_DIGIT"
     public final void mHEX_DIGIT() throws RecognitionException {
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:362:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:362:13: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:383:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:383:13: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
                 input.consume();
@@ -1359,8 +1457,8 @@ public class SGLLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:368:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:368:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:389:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:389:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
             {
             if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ' ) {
                 input.consume();
@@ -1388,7 +1486,7 @@ public class SGLLexer extends Lexer {
         try {
             int _type = COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:373:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:394:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -1416,11 +1514,11 @@ public class SGLLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:373:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:394:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
                     {
                     match("//"); 
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:373:14: (~ ( '\\n' | '\\r' ) )*
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:394:14: (~ ( '\\n' | '\\r' ) )*
                     loop13:
                     do {
                         int alt13=2;
@@ -1433,7 +1531,7 @@ public class SGLLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:373:14: ~ ( '\\n' | '\\r' )
+                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:394:14: ~ ( '\\n' | '\\r' )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1453,7 +1551,7 @@ public class SGLLexer extends Lexer {
                         }
                     } while (true);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:373:28: ( '\\r' )?
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:394:28: ( '\\r' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -1462,7 +1560,7 @@ public class SGLLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:373:28: '\\r'
+                            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:394:28: '\\r'
                             {
                             match('\r'); 
 
@@ -1477,11 +1575,11 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:374:9: '/*' ( options {greedy=false; } : . )* '*/'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:395:9: '/*' ( options {greedy=false; } : . )* '*/'
                     {
                     match("/*"); 
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:374:14: ( options {greedy=false; } : . )*
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:395:14: ( options {greedy=false; } : . )*
                     loop15:
                     do {
                         int alt15=2;
@@ -1506,7 +1604,7 @@ public class SGLLexer extends Lexer {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:374:42: .
+                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:395:42: .
                     	    {
                     	    matchAny(); 
 
@@ -1535,250 +1633,285 @@ public class SGLLexer extends Lexer {
     // $ANTLR end "COMMENT"
 
     public void mTokens() throws RecognitionException {
-        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:8: ( T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | IntegerAtom | FloatAtom | StringAtom | BooleanAtom | IntType | BooleanType | StringType | FloatType | ClassType | Identifier | WS | COMMENT )
-        int alt17=35;
+        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:8: ( T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | IntegerAtom | FloatAtom | StringAtom | BooleanAtom | IntType | BooleanType | StringType | FloatType | ObjectType | SpriteAnimation | Identifier | WS | COMMENT )
+        int alt17=40;
         alt17 = dfa17.predict(input);
         switch (alt17) {
             case 1 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:10: T__25
-                {
-                mT__25(); 
-
-                }
-                break;
-            case 2 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:16: T__26
-                {
-                mT__26(); 
-
-                }
-                break;
-            case 3 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:22: T__27
-                {
-                mT__27(); 
-
-                }
-                break;
-            case 4 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:28: T__28
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:10: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
-            case 5 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:34: T__29
+            case 2 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:16: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
-            case 6 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:40: T__30
+            case 3 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:22: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
-            case 7 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:46: T__31
+            case 4 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:28: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
-            case 8 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:52: T__32
+            case 5 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:34: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
-            case 9 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:58: T__33
+            case 6 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:40: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
-            case 10 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:64: T__34
+            case 7 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:46: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
-            case 11 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:70: T__35
+            case 8 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:52: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
-            case 12 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:76: T__36
+            case 9 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:58: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
-            case 13 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:82: T__37
+            case 10 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:64: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
-            case 14 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:88: T__38
+            case 11 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:70: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
-            case 15 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:94: T__39
+            case 12 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:76: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
-            case 16 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:100: T__40
+            case 13 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:82: T__40
                 {
                 mT__40(); 
 
                 }
                 break;
-            case 17 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:106: T__41
+            case 14 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:88: T__41
                 {
                 mT__41(); 
 
                 }
                 break;
-            case 18 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:112: T__42
+            case 15 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:94: T__42
                 {
                 mT__42(); 
 
                 }
                 break;
-            case 19 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:118: T__43
+            case 16 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:100: T__43
                 {
                 mT__43(); 
 
                 }
                 break;
-            case 20 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:124: T__44
+            case 17 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:106: T__44
                 {
                 mT__44(); 
 
                 }
                 break;
-            case 21 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:130: T__45
+            case 18 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:112: T__45
                 {
                 mT__45(); 
 
                 }
                 break;
-            case 22 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:136: T__46
+            case 19 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:118: T__46
                 {
                 mT__46(); 
 
                 }
                 break;
-            case 23 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:142: T__47
+            case 20 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:124: T__47
                 {
                 mT__47(); 
 
                 }
                 break;
+            case 21 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:130: T__48
+                {
+                mT__48(); 
+
+                }
+                break;
+            case 22 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:136: T__49
+                {
+                mT__49(); 
+
+                }
+                break;
+            case 23 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:142: T__50
+                {
+                mT__50(); 
+
+                }
+                break;
             case 24 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:148: IntegerAtom
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:148: T__51
+                {
+                mT__51(); 
+
+                }
+                break;
+            case 25 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:154: T__52
+                {
+                mT__52(); 
+
+                }
+                break;
+            case 26 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:160: T__53
+                {
+                mT__53(); 
+
+                }
+                break;
+            case 27 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:166: T__54
+                {
+                mT__54(); 
+
+                }
+                break;
+            case 28 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:172: IntegerAtom
                 {
                 mIntegerAtom(); 
 
                 }
                 break;
-            case 25 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:160: FloatAtom
+            case 29 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:184: FloatAtom
                 {
                 mFloatAtom(); 
 
                 }
                 break;
-            case 26 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:170: StringAtom
+            case 30 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:194: StringAtom
                 {
                 mStringAtom(); 
 
                 }
                 break;
-            case 27 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:181: BooleanAtom
+            case 31 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:205: BooleanAtom
                 {
                 mBooleanAtom(); 
 
                 }
                 break;
-            case 28 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:193: IntType
+            case 32 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:217: IntType
                 {
                 mIntType(); 
 
                 }
                 break;
-            case 29 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:201: BooleanType
+            case 33 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:225: BooleanType
                 {
                 mBooleanType(); 
 
                 }
                 break;
-            case 30 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:213: StringType
+            case 34 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:237: StringType
                 {
                 mStringType(); 
 
                 }
                 break;
-            case 31 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:224: FloatType
+            case 35 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:248: FloatType
                 {
                 mFloatType(); 
 
                 }
                 break;
-            case 32 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:234: ClassType
+            case 36 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:258: ObjectType
                 {
-                mClassType(); 
+                mObjectType(); 
 
                 }
                 break;
-            case 33 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:244: Identifier
+            case 37 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:269: SpriteAnimation
+                {
+                mSpriteAnimation(); 
+
+                }
+                break;
+            case 38 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:285: Identifier
                 {
                 mIdentifier(); 
 
                 }
                 break;
-            case 34 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:255: WS
+            case 39 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:296: WS
                 {
                 mWS(); 
 
                 }
                 break;
-            case 35 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:258: COMMENT
+            case 40 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGLParserTester\\SGL.g:1:299: COMMENT
                 {
                 mCOMMENT(); 
 
@@ -1793,7 +1926,7 @@ public class SGLLexer extends Lexer {
     protected DFA6 dfa6 = new DFA6(this);
     protected DFA17 dfa17 = new DFA17(this);
     static final String DFA6_eotS =
-        "\1\uffff\1\4\3\uffff";
+        "\1\uffff\1\3\3\uffff";
     static final String DFA6_eofS =
         "\5\uffff";
     static final String DFA6_minS =
@@ -1801,12 +1934,12 @@ public class SGLLexer extends Lexer {
     static final String DFA6_maxS =
         "\2\71\3\uffff";
     static final String DFA6_acceptS =
-        "\2\uffff\1\2\1\1\1\3";
+        "\2\uffff\1\2\1\3\1\1";
     static final String DFA6_specialS =
         "\5\uffff}>";
     static final String[] DFA6_transitionS = {
             "\1\2\1\uffff\12\1",
-            "\1\3\1\uffff\12\1",
+            "\1\4\1\uffff\12\1",
             "",
             "",
             ""
@@ -1842,176 +1975,197 @@ public class SGLLexer extends Lexer {
             this.transition = DFA6_transition;
         }
         public String getDescription() {
-            return "252:1: FloatAtom : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ );";
+            return "270:1: FloatAtom : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ );";
         }
     }
     static final String DFA17_eotS =
-        "\2\uffff\1\40\4\uffff\1\42\1\44\1\46\1\50\1\52\1\uffff\1\54\3\uffff"+
-        "\1\35\1\56\2\uffff\10\35\20\uffff\1\35\1\uffff\15\35\1\106\5\35"+
-        "\1\114\1\115\2\35\1\uffff\5\35\2\uffff\1\115\1\125\5\35\1\uffff"+
-        "\1\35\1\134\2\135\1\35\1\137\2\uffff\1\35\1\uffff\1\35\1\135";
+        "\2\uffff\1\43\1\40\10\uffff\1\46\1\50\1\52\1\54\1\56\1\uffff\1"+
+        "\60\1\uffff\1\40\1\63\2\uffff\10\40\4\uffff\1\40\14\uffff\2\40\1"+
+        "\uffff\12\40\1\112\4\40\1\117\6\40\1\uffff\1\126\1\127\2\40\1\uffff"+
+        "\5\40\1\137\2\uffff\1\127\1\140\5\40\2\uffff\1\40\1\147\1\150\1"+
+        "\151\1\40\1\153\3\uffff\1\40\1\uffff\1\40\1\151";
     static final String DFA17_eofS =
-        "\142\uffff";
+        "\156\uffff";
     static final String DFA17_minS =
-        "\1\11\1\uffff\1\75\4\uffff\3\75\1\53\1\55\1\uffff\1\52\3\uffff"+
-        "\1\165\1\56\2\uffff\1\162\1\141\1\156\1\157\1\164\1\142\1\160\1"+
-        "\156\20\uffff\1\154\1\uffff\1\165\1\154\1\157\1\164\1\157\1\162"+
-        "\1\152\1\162\1\151\1\154\1\145\1\163\1\141\1\44\1\154\1\151\1\145"+
-        "\1\151\1\155\2\44\1\145\1\164\1\uffff\1\145\1\156\1\143\1\164\1"+
-        "\141\2\uffff\2\44\1\141\1\147\1\164\1\145\1\164\1\uffff\1\156\3"+
-        "\44\1\151\1\44\2\uffff\1\157\1\uffff\1\156\1\44";
+        "\1\11\1\uffff\1\75\1\150\10\uffff\3\75\1\53\1\55\1\uffff\1\52\1"+
+        "\uffff\1\145\1\56\2\uffff\1\162\1\141\1\156\1\157\1\164\1\142\1"+
+        "\160\1\156\4\uffff\1\151\14\uffff\1\167\1\154\1\uffff\1\165\1\154"+
+        "\1\157\1\164\1\157\1\162\1\152\1\162\1\151\1\154\1\44\1\154\1\145"+
+        "\1\163\1\141\1\44\1\154\1\151\1\145\1\151\1\155\1\145\1\uffff\2"+
+        "\44\1\145\1\164\1\uffff\1\145\1\156\1\143\1\164\1\141\1\44\2\uffff"+
+        "\2\44\1\141\1\147\1\164\1\145\1\164\2\uffff\1\156\3\44\1\151\1\44"+
+        "\3\uffff\1\157\1\uffff\1\156\1\44";
     static final String DFA17_maxS =
-        "\1\ufaff\1\uffff\1\75\4\uffff\3\75\1\53\1\55\1\uffff\1\57\3\uffff"+
-        "\1\165\1\71\2\uffff\1\162\1\154\1\156\1\157\1\164\1\142\1\160\1"+
-        "\156\20\uffff\1\154\1\uffff\1\165\1\154\1\157\1\164\1\157\1\162"+
-        "\1\152\1\162\1\151\1\154\1\145\1\163\1\141\1\ufaff\1\154\1\151\1"+
-        "\145\1\151\1\155\2\ufaff\1\145\1\164\1\uffff\1\145\1\156\1\143\1"+
-        "\164\1\141\2\uffff\2\ufaff\1\141\1\147\1\164\1\145\1\164\1\uffff"+
-        "\1\156\3\ufaff\1\151\1\ufaff\2\uffff\1\157\1\uffff\1\156\1\ufaff";
+        "\1\ufaff\1\uffff\1\75\1\150\10\uffff\3\75\1\53\1\55\1\uffff\1\57"+
+        "\1\uffff\1\165\1\71\2\uffff\1\162\1\154\1\156\1\157\1\164\1\142"+
+        "\1\160\1\156\4\uffff\1\151\14\uffff\1\167\1\154\1\uffff\1\165\1"+
+        "\154\1\157\1\164\1\157\1\162\1\152\1\162\1\151\1\154\1\ufaff\1\154"+
+        "\1\145\1\163\1\141\1\ufaff\1\154\1\151\1\145\1\151\1\155\1\145\1"+
+        "\uffff\2\ufaff\1\145\1\164\1\uffff\1\145\1\156\1\143\1\164\1\141"+
+        "\1\ufaff\2\uffff\2\ufaff\1\141\1\147\1\164\1\145\1\164\2\uffff\1"+
+        "\156\3\ufaff\1\151\1\ufaff\3\uffff\1\157\1\uffff\1\156\1\ufaff";
     static final String DFA17_acceptS =
-        "\1\uffff\1\1\1\uffff\1\3\1\4\1\5\1\6\5\uffff\1\17\1\uffff\1\21"+
-        "\1\25\1\26\2\uffff\1\31\1\32\10\uffff\1\41\1\42\1\7\1\2\1\10\1\24"+
-        "\1\13\1\11\1\14\1\12\1\22\1\15\1\23\1\16\1\43\1\20\1\uffff\1\30"+
-        "\27\uffff\1\34\5\uffff\1\27\1\33\7\uffff\1\37\6\uffff\1\36\1\40"+
-        "\1\uffff\1\35\2\uffff";
+        "\1\uffff\1\1\2\uffff\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\5\uffff"+
+        "\1\24\1\uffff\1\26\2\uffff\1\35\1\36\10\uffff\1\46\1\47\1\14\1\2"+
+        "\1\uffff\1\15\1\31\1\20\1\16\1\21\1\17\1\27\1\22\1\30\1\23\1\50"+
+        "\1\25\2\uffff\1\34\26\uffff\1\32\4\uffff\1\40\6\uffff\1\33\1\37"+
+        "\7\uffff\1\3\1\43\6\uffff\1\42\1\44\1\45\1\uffff\1\41\2\uffff";
     static final String DFA17_specialS =
-        "\142\uffff}>";
+        "\156\uffff}>";
     static final String[] DFA17_transitionS = {
-            "\2\36\1\uffff\2\36\22\uffff\1\36\1\7\1\24\1\uffff\1\35\1\16"+
-            "\1\6\1\uffff\1\17\1\20\1\14\1\12\1\1\1\13\1\23\1\15\12\22\1"+
-            "\4\1\uffff\1\10\1\2\1\11\1\3\1\uffff\1\34\15\35\1\32\3\35\1"+
-            "\33\7\35\4\uffff\1\35\1\uffff\1\35\1\30\3\35\1\26\2\35\1\27"+
-            "\4\35\1\21\4\35\1\31\1\25\6\35\1\uffff\1\5\103\uffff\27\35\1"+
-            "\uffff\37\35\1\uffff\u1f08\35\u1040\uffff\u0150\35\u0170\uffff"+
-            "\u0080\35\u0080\uffff\u092e\35\u10d2\uffff\u5200\35\u5900\uffff"+
-            "\u0200\35",
+            "\2\41\1\uffff\2\41\22\uffff\1\41\1\14\1\27\1\uffff\1\40\1\23"+
+            "\1\13\1\uffff\1\4\1\5\1\21\1\17\1\1\1\20\1\26\1\22\12\25\1\11"+
+            "\1\uffff\1\15\1\2\1\16\1\10\1\uffff\1\37\15\40\1\35\3\40\1\36"+
+            "\7\40\4\uffff\1\40\1\uffff\1\40\1\33\3\40\1\31\2\40\1\32\4\40"+
+            "\1\24\4\40\1\34\1\30\2\40\1\3\3\40\1\6\1\12\1\7\102\uffff\27"+
+            "\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff\u0150\40\u0170"+
+            "\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff\u5200\40\u5900"+
+            "\uffff\u0200\40",
             "",
-            "\1\37",
+            "\1\42",
+            "\1\44",
             "",
             "",
             "",
             "",
-            "\1\41",
-            "\1\43",
+            "",
+            "",
+            "",
+            "",
             "\1\45",
             "\1\47",
             "\1\51",
-            "",
-            "\1\53\4\uffff\1\53",
-            "",
-            "",
-            "",
+            "\1\53",
             "\1\55",
-            "\1\23\1\uffff\12\22",
+            "",
+            "\1\57\4\uffff\1\57",
+            "",
+            "\1\61\17\uffff\1\62",
+            "\1\26\1\uffff\12\25",
             "",
             "",
-            "\1\57",
-            "\1\60\12\uffff\1\61",
-            "\1\62",
-            "\1\63",
             "\1\64",
-            "\1\65",
-            "\1\66",
+            "\1\65\12\uffff\1\66",
             "\1\67",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\70",
-            "",
             "\1\71",
             "\1\72",
             "\1\73",
             "\1\74",
+            "",
+            "",
+            "",
+            "",
             "\1\75",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\76",
             "\1\77",
+            "",
             "\1\100",
             "\1\101",
             "\1\102",
             "\1\103",
             "\1\104",
             "\1\105",
-            "\1\35\13\uffff\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32"+
-            "\35\105\uffff\27\35\1\uffff\37\35\1\uffff\u1f08\35\u1040\uffff"+
-            "\u0150\35\u0170\uffff\u0080\35\u0080\uffff\u092e\35\u10d2\uffff"+
-            "\u5200\35\u5900\uffff\u0200\35",
+            "\1\106",
             "\1\107",
             "\1\110",
             "\1\111",
-            "\1\112",
+            "\1\40\13\uffff\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32"+
+            "\40\105\uffff\27\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff"+
+            "\u0150\40\u0170\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff"+
+            "\u5200\40\u5900\uffff\u0200\40",
             "\1\113",
-            "\1\35\13\uffff\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32"+
-            "\35\105\uffff\27\35\1\uffff\37\35\1\uffff\u1f08\35\u1040\uffff"+
-            "\u0150\35\u0170\uffff\u0080\35\u0080\uffff\u092e\35\u10d2\uffff"+
-            "\u5200\35\u5900\uffff\u0200\35",
-            "\1\35\13\uffff\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32"+
-            "\35\105\uffff\27\35\1\uffff\37\35\1\uffff\u1f08\35\u1040\uffff"+
-            "\u0150\35\u0170\uffff\u0080\35\u0080\uffff\u092e\35\u10d2\uffff"+
-            "\u5200\35\u5900\uffff\u0200\35",
+            "\1\114",
+            "\1\115",
             "\1\116",
-            "\1\117",
-            "",
+            "\1\40\13\uffff\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32"+
+            "\40\105\uffff\27\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff"+
+            "\u0150\40\u0170\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff"+
+            "\u5200\40\u5900\uffff\u0200\40",
             "\1\120",
             "\1\121",
             "\1\122",
             "\1\123",
             "\1\124",
+            "\1\125",
             "",
-            "",
-            "\1\35\13\uffff\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32"+
-            "\35\105\uffff\27\35\1\uffff\37\35\1\uffff\u1f08\35\u1040\uffff"+
-            "\u0150\35\u0170\uffff\u0080\35\u0080\uffff\u092e\35\u10d2\uffff"+
-            "\u5200\35\u5900\uffff\u0200\35",
-            "\1\35\13\uffff\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32"+
-            "\35\105\uffff\27\35\1\uffff\37\35\1\uffff\u1f08\35\u1040\uffff"+
-            "\u0150\35\u0170\uffff\u0080\35\u0080\uffff\u092e\35\u10d2\uffff"+
-            "\u5200\35\u5900\uffff\u0200\35",
-            "\1\126",
-            "\1\127",
+            "\1\40\13\uffff\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32"+
+            "\40\105\uffff\27\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff"+
+            "\u0150\40\u0170\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff"+
+            "\u5200\40\u5900\uffff\u0200\40",
+            "\1\40\13\uffff\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32"+
+            "\40\105\uffff\27\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff"+
+            "\u0150\40\u0170\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff"+
+            "\u5200\40\u5900\uffff\u0200\40",
             "\1\130",
             "\1\131",
+            "",
             "\1\132",
-            "",
             "\1\133",
-            "\1\35\13\uffff\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32"+
-            "\35\105\uffff\27\35\1\uffff\37\35\1\uffff\u1f08\35\u1040\uffff"+
-            "\u0150\35\u0170\uffff\u0080\35\u0080\uffff\u092e\35\u10d2\uffff"+
-            "\u5200\35\u5900\uffff\u0200\35",
-            "\1\35\13\uffff\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32"+
-            "\35\105\uffff\27\35\1\uffff\37\35\1\uffff\u1f08\35\u1040\uffff"+
-            "\u0150\35\u0170\uffff\u0080\35\u0080\uffff\u092e\35\u10d2\uffff"+
-            "\u5200\35\u5900\uffff\u0200\35",
-            "\1\35\13\uffff\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32"+
-            "\35\105\uffff\27\35\1\uffff\37\35\1\uffff\u1f08\35\u1040\uffff"+
-            "\u0150\35\u0170\uffff\u0080\35\u0080\uffff\u092e\35\u10d2\uffff"+
-            "\u5200\35\u5900\uffff\u0200\35",
+            "\1\134",
+            "\1\135",
             "\1\136",
-            "\1\35\13\uffff\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32"+
-            "\35\105\uffff\27\35\1\uffff\37\35\1\uffff\u1f08\35\u1040\uffff"+
-            "\u0150\35\u0170\uffff\u0080\35\u0080\uffff\u092e\35\u10d2\uffff"+
-            "\u5200\35\u5900\uffff\u0200\35",
+            "\1\40\13\uffff\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32"+
+            "\40\105\uffff\27\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff"+
+            "\u0150\40\u0170\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff"+
+            "\u5200\40\u5900\uffff\u0200\40",
             "",
             "",
-            "\1\140",
-            "",
+            "\1\40\13\uffff\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32"+
+            "\40\105\uffff\27\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff"+
+            "\u0150\40\u0170\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff"+
+            "\u5200\40\u5900\uffff\u0200\40",
+            "\1\40\13\uffff\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32"+
+            "\40\105\uffff\27\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff"+
+            "\u0150\40\u0170\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff"+
+            "\u5200\40\u5900\uffff\u0200\40",
             "\1\141",
-            "\1\35\13\uffff\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32"+
-            "\35\105\uffff\27\35\1\uffff\37\35\1\uffff\u1f08\35\u1040\uffff"+
-            "\u0150\35\u0170\uffff\u0080\35\u0080\uffff\u092e\35\u10d2\uffff"+
-            "\u5200\35\u5900\uffff\u0200\35"
+            "\1\142",
+            "\1\143",
+            "\1\144",
+            "\1\145",
+            "",
+            "",
+            "\1\146",
+            "\1\40\13\uffff\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32"+
+            "\40\105\uffff\27\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff"+
+            "\u0150\40\u0170\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff"+
+            "\u5200\40\u5900\uffff\u0200\40",
+            "\1\40\13\uffff\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32"+
+            "\40\105\uffff\27\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff"+
+            "\u0150\40\u0170\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff"+
+            "\u5200\40\u5900\uffff\u0200\40",
+            "\1\40\13\uffff\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32"+
+            "\40\105\uffff\27\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff"+
+            "\u0150\40\u0170\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff"+
+            "\u5200\40\u5900\uffff\u0200\40",
+            "\1\152",
+            "\1\40\13\uffff\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32"+
+            "\40\105\uffff\27\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff"+
+            "\u0150\40\u0170\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff"+
+            "\u5200\40\u5900\uffff\u0200\40",
+            "",
+            "",
+            "",
+            "\1\154",
+            "",
+            "\1\155",
+            "\1\40\13\uffff\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32"+
+            "\40\105\uffff\27\40\1\uffff\37\40\1\uffff\u1f08\40\u1040\uffff"+
+            "\u0150\40\u0170\uffff\u0080\40\u0080\uffff\u092e\40\u10d2\uffff"+
+            "\u5200\40\u5900\uffff\u0200\40"
     };
 
     static final short[] DFA17_eot = DFA.unpackEncodedString(DFA17_eotS);
@@ -2044,7 +2198,7 @@ public class SGLLexer extends Lexer {
             this.transition = DFA17_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | IntegerAtom | FloatAtom | StringAtom | BooleanAtom | IntType | BooleanType | StringType | FloatType | ClassType | Identifier | WS | COMMENT );";
+            return "1:1: Tokens : ( T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | IntegerAtom | FloatAtom | StringAtom | BooleanAtom | IntType | BooleanType | StringType | FloatType | ObjectType | SpriteAnimation | Identifier | WS | COMMENT );";
         }
     }
  

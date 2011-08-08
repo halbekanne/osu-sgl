@@ -8,7 +8,7 @@
     <ProjectGuid>{25D1AE24-8712-4515-A6E5-1D59387382B0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SGL</RootNamespace>
+    <RootNamespace>SGLTest</RootNamespace>
     <AssemblyName>SGLParserTester</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -35,19 +35,19 @@
   <ItemGroup>
     <Reference Include="antlr.runtime, Version=2.7.7.3, Culture=neutral, PublicKeyToken=d7701e059243744f">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>antlr\antlr.runtime.dll</HintPath>
+      <HintPath>antlr_dll\antlr.runtime.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>antlr\Antlr3.Runtime.dll</HintPath>
+      <HintPath>antlr_dll\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Utility, Version=0.1.0.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>antlr\Antlr3.Utility.dll</HintPath>
+      <HintPath>antlr_dll\Antlr3.Utility.dll</HintPath>
     </Reference>
     <Reference Include="StringTemplate, Version=3.0.1.6846, Culture=neutral, PublicKeyToken=beee492b52c41e85, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>antlr\StringTemplate.dll</HintPath>
+      <HintPath>antlr_dll\StringTemplate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -59,7 +59,6 @@
   <ItemGroup>
     <Compile Include="IErrorReporter.cs" />
     <Compile Include="SGLActions.cs" />
-    <Compile Include="SGLTreeWalker.cs" />
     <Compile Include="VariableDictionary.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -69,8 +68,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SGLLexer.cs" />
-    <Compile Include="SGLParser.cs" />
     <Compile Include="VariableScope.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -95,6 +92,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="SGL.g" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SGL\SGL.csproj">
+      <Project>{C61D3773-D6C1-41FE-8459-8720AF9C7BC8}</Project>
+      <Name>SGL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

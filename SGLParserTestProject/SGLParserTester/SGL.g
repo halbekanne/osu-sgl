@@ -4,7 +4,7 @@ grammar SGL;
 
 options {
 	output = 'AST';
-	//language = 'CSharp2'; 
+	language = 'CSharp2'; 
 	
 	/* Backtracking: 
 	 * 1. step - guessing: look which way to go (by trying all possible ways until it finds the right way to the exit)
@@ -22,12 +22,14 @@ options {
 
 tokens {
 	VARDEF;
+	ASSIGN;
 	NEGATE;
 	LIBMETHOD;
+	STRING;
 
 }
 
-@namespace { SGL }
+@namespace { SGL.Parser }
 
 @header {
 	//using SGLParserTester;
@@ -68,49 +70,34 @@ tokens {
 
 // This is the starting rule, and should only contain the very first root element/statement that could appear
 compilationUnit
-	:	statement+ EOF
+	:	mainStatement+ EOF
 	;
+	
+mainStatement
+	:	statement
+	;	
 
 
 statement
 	//:  	variableDefinitionList
-	:  variableDefinitionList
+	:	variableDeclarationList // int a = 1, b = 2, c
+	|	variableAssignment -> ^(ASSIGN variableAssignment)// a = 4
+	|	whileLoop
 	;
 
 /* Statements */
 
 // int t = 1
 
-variableDefinitionList
-	:	variableType variableDefinition (',' variableDefinition)* -> ^(VARDEF variableType variableDefinition)+
+variableDeclarationList
+	:	variableType variableAssignment (',' variableAssignment)* -> ^(VARDEF variableType variableAssignment)+
 	;
 
-variableDefinition
+variableAssignment
 	: variableName ('=' expression)?  -> variableName expression?
 	;
 	
-simpleVariableDefinition
-	: variableType
-	;
-
-localVariableDeclarationStatement
-	: 	'boolean' variableName ('=' expression)?
-	|	'int' variableName ('=' expression)?
-	;
 	
-// t = t + 1	
-variableAssignmentStatement
-	:	variableDeclaration
-	;
-	
-	
-	
-
-
-// Only used for the first time declaration of a new variable
-variableDeclaration
-	:	variableName ('=' expression)?
-	;
 	
 	
 variableName
@@ -122,7 +109,33 @@ variableType
 	|	BooleanType
 	|	StringType
 	|	FloatType
+	|	ObjectType
 	;
+
+
+whileLoop
+	:	'while' '(' expression ')' 
+	(	statement -> ^('while' expression statement)
+	|	block -> ^('while' expression block)
+	) 
+	;
+
+block
+	:	'{' statement* '}' -> statement*
+	;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
     
@@ -206,11 +219,14 @@ negativeExpression
 mathAtom
     :	'('! additiveExpression ')'!
     |   IntegerAtom
-    
+    |	FloatAtom
+    |   BooleanAtom
 //    |	f=Float
-    //|   'new' creator
+    |   'new' SpriteAnimation arguments -> ^(SpriteAnimation arguments)
 	//|   Identifier ('.' Identifier)* arguments
+	|	Identifier -> Identifier
 	|	Identifier arguments -> ^(LIBMETHOD Identifier arguments?)
+	|	stringQuote
     ;  
 
 // arguments for methods aso.
@@ -233,7 +249,9 @@ literal
     ;    
     
     
-    
+stringQuote
+	:     StringAtom -> ^(STRING StringAtom)
+	;
       
     
 
@@ -256,7 +274,7 @@ FloatAtom
     ;
 
 StringAtom
-    :  '"' ( EscapeSequence | ~('\\'|'"') )* '"'
+    :  '"' ( EscapeSequence | ~('\\'|'"') )+ '"'
     ;
     
 BooleanAtom
@@ -282,11 +300,14 @@ FloatType
     
     
 // types for Pictures/Animations    
-ClassType
+ObjectType
 	:	'Object'
-	|	'Sprite'
+	;
+	
+SpriteAnimation
+	:	'Sprite'
 	|	'Animation'
-	;      
+	;	      
 
 
 // Use this for variable names, method names, and so on

@@ -6,7 +6,7 @@ options {
 	ASTLabelType=CommonTree;
 }
 
-@namespace { SGL }
+@namespace { SGL.Parser }
 
 @header {
 	using System.Collections.Generic;
@@ -39,48 +39,56 @@ options {
 	//	return output;
 	//}
 }
+compilationUnit [SGLNode node]
+@init { 
+  BlockNode bn = new BlockNode(); 
+  node = bn; 
+  Scope scope = new Scope(currentScope); 
+  currentScope = scope; 
+}  
+@after { 
+  currentScope = currentScope.parent(); 
+}  
+	:	mainStatement+ EOF { node = $mainStatement}
+	;	
+	
+mainStatement [SGLNode node]
+	:	statement
+	;	
 
-compilationUnit
-	:	(statement)+
+
+statement [SGLNode node]
+	//:  	variableDefinitionList
+	:	variableDeclarationList // int a = 1, b = 2, c
+	|	^(ASSIGN variableAssignment)// a = 4
+	|	whileLoop
 	;
-
-
-statement
-	:  	variableDefinitionList
+	
+whileLoop [SGLNode node]
+	:	^('while' expression statement*)
+	{
+	}
 	;
+	
 
 /* Statements */
 
 // int t = 1
 //action.NewLocalVariable($variableType.text,$variableName.text,$expression.text); 
-variableDefinitionList
+variableDeclarationList
 	:	^(VARDEF variableType variableName expression) { 	
 		action.NewLocalVariable($variableType.txt,$variableName.txt,$expression.txt); 
 	}
 	//|   ^(VARDEF variableType variableName)	{ 	action.NewLocalVariable($variableType.text,$variableName.text,"boo"); }
 	;
 
-variableDefinition
-	: variableName expression?
-	;
-
-localVariableDeclarationStatement
-	: 	'boolean' variableName ('=' expression)?
-	|	'int' variableName ('=' expression)?
-	;
-	
-// t = t + 1	
-variableAssignmentStatement
-	:	variableDeclaration
-	;
-	
-	
-	
 
 
 // Only used for the first time declaration of a new variable
-variableDeclaration
-	:	variableName ('=' expression)?
+variableAssignment
+	:	variableName expression? {
+		action.AssignVariable($variableName.txt,$expression.txt);
+	}
 	;
 	
 	
@@ -107,10 +115,20 @@ expression returns [string txt]
 	|	^('-' a=expression b=expression) { $txt = action.Sub($a.txt,$b.txt); }
 	|	^('*' a=expression b=expression) { $txt = action.Mult($a.txt,$b.txt); }
 	|	^('/' a=expression b=expression) { $txt = action.Div($a.txt,$b.txt); }
-	|	^('%' a=expression b=expression) //{ $txt = action.Remainder($a.txt,$b.txt); } 
+	|	^('%' a=expression b=expression) { $txt = action.Remainder($a.txt,$b.txt); } 
 	|	^(NEGATE a=expression) { $txt = action.Mult($a.txt,"-1"); }
-    |  	IntegerAtom { $txt = $IntegerAtom.text; }
-    |  	BooleanAtom { $txt = $BooleanAtom.text; }
+	|	^('<' a=expression b=expression) { $txt = action.ConditionLess($a.txt,$b.txt); }
+	|	^('<=' a=expression b=expression) { $txt = action.ConditionLessOrEqual($a.txt,$b.txt); }
+	|	^('>' a=expression b=expression) { $txt = action.ConditionGreater($a.txt,$b.txt); }
+	|	^('>=' a=expression b=expression) { $txt = action.ConditionGreaterOrEqual($a.txt,$b.txt); }
+	|	^('!=' a=expression b=expression) { $txt = action.ConditionNotEqual($a.txt,$b.txt); }
+	|	^('==' a=expression b=expression) { $txt = action.ConditionEqual($a.txt,$b.txt); }
+	|	^('&&' a=expression b=expression) { $txt = action.ConnectiveAnd($a.txt,$b.txt); }
+	|	^('||' a=expression b=expression) { $txt = action.ConnectiveOr($a.txt,$b.txt); }
+	|	^('?' a=expression b=expression c=expression) { $txt = action.ConditionBranch($a.txt,$b.txt,$c.txt); }
+	|	Identifier { $txt = action.GetVariable($Identifier.text); }
+	|  	IntegerAtom { $txt = $IntegerAtom.text; }
+	|  	BooleanAtom { $txt = $BooleanAtom.text; }
     //|	mathExpression
     ;    
     
