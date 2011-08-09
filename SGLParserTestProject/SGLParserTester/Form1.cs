@@ -61,6 +61,7 @@ namespace WindowsFormsApplication4
             catch (Exception ex)
             {
                 outputBox.Text = "Es ist ein Fehler aufgetreten.";
+                Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 
             }

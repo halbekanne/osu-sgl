@@ -25,6 +25,12 @@ namespace SGL
                 throw new Exception("v == null");
             }
             value = v;
+
+            if (value is Single)
+            {
+                value = ((Double)((Single)(value)));
+            }
+
             // only accept boolean, number or string types  
             if (!(IsBoolean() || IsInteger() || IsFloat() || IsString()))
             {
@@ -39,7 +45,14 @@ namespace SGL
 
         public Double AsFloat()
         {
-            return ((float)value);
+            try
+            {
+                return ((double)value);
+            }
+            catch
+            {
+                return ((double)this.AsInteger());
+            }
         }
 
         public int AsInteger()
@@ -111,7 +124,7 @@ namespace SGL
             if (this.IsFloat() && that.IsFloat())
             {
                 double diff = Math.Abs(this.AsFloat() - that.AsFloat());
-                return diff < 0.000001;
+                return diff < 0.00000000001;
             }
             else
             {
@@ -136,7 +149,7 @@ namespace SGL
 
         public Boolean IsFloat()
         {
-            return value is float;
+            return value is Double;
         }
 
         public Boolean IsNull()

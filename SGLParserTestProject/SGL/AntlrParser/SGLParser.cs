@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g 2011-08-08 22:22:14
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g 2011-08-09 22:45:58
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -1487,7 +1487,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          38, expression, commonBlock
+            	// elements:          38, commonBlock, expression
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -3070,7 +3070,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "mathAtom"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:245:1: mathAtom : ( '(' additiveExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' SpriteAnimation arguments -> ^( SpriteAnimation arguments ) | Identifier -> Identifier | Identifier arguments -> ^( LIBMETHOD Identifier ( arguments )? ) | stringQuote );
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:245:1: mathAtom : ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' SpriteAnimation arguments -> ^( SpriteAnimation arguments ) | Identifier -> Identifier | Identifier arguments -> ^( LIBMETHOD Identifier ( arguments )? ) | stringQuote );
     public SGLParser.mathAtom_return mathAtom() // throws RecognitionException [1]
     {   
         SGLParser.mathAtom_return retval = new SGLParser.mathAtom_return();
@@ -3087,7 +3087,7 @@ public partial class SGLParser : Parser
         IToken SpriteAnimation89 = null;
         IToken Identifier91 = null;
         IToken Identifier92 = null;
-        SGLParser.additiveExpression_return additiveExpression83 = default(SGLParser.additiveExpression_return);
+        SGLParser.conditionalExpression_return conditionalExpression83 = default(SGLParser.conditionalExpression_return);
 
         SGLParser.arguments_return arguments90 = default(SGLParser.arguments_return);
 
@@ -3111,22 +3111,22 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_arguments = new RewriteRuleSubtreeStream(adaptor,"rule arguments");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:246:5: ( '(' additiveExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' SpriteAnimation arguments -> ^( SpriteAnimation arguments ) | Identifier -> Identifier | Identifier arguments -> ^( LIBMETHOD Identifier ( arguments )? ) | stringQuote )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:246:5: ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' SpriteAnimation arguments -> ^( SpriteAnimation arguments ) | Identifier -> Identifier | Identifier arguments -> ^( LIBMETHOD Identifier ( arguments )? ) | stringQuote )
             int alt23 = 8;
             alt23 = dfa23.Predict(input);
             switch (alt23) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:246:7: '(' additiveExpression ')'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:246:7: '(' conditionalExpression ')'
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
                     	char_literal82=(IToken)Match(input,34,FOLLOW_34_in_mathAtom1058); 
-                    	PushFollow(FOLLOW_additiveExpression_in_mathAtom1061);
-                    	additiveExpression83 = additiveExpression();
+                    	PushFollow(FOLLOW_conditionalExpression_in_mathAtom1061);
+                    	conditionalExpression83 = conditionalExpression();
                     	state.followingStackPointer--;
 
-                    	adaptor.AddChild(root_0, additiveExpression83.Tree);
+                    	adaptor.AddChild(root_0, conditionalExpression83.Tree);
                     	char_literal84=(IToken)Match(input,35,FOLLOW_35_in_mathAtom1063); 
 
                     }
@@ -3253,7 +3253,7 @@ public partial class SGLParser : Parser
 
 
                     	// AST REWRITE
-                    	// elements:          Identifier, arguments
+                    	// elements:          arguments, Identifier
                     	// token labels:      
                     	// rule labels:       retval
                     	// token list labels: 
@@ -3709,7 +3709,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "stringQuote"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:280:1: stringQuote : StringAtom -> ^( STRING StringAtom ) ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:280:1: stringQuote : StringAtom -> StringAtom ;
     public SGLParser.stringQuote_return stringQuote() // throws RecognitionException [1]
     {   
         SGLParser.stringQuote_return retval = new SGLParser.stringQuote_return();
@@ -3724,7 +3724,7 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:281:2: ( StringAtom -> ^( STRING StringAtom ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:281:2: ( StringAtom -> StringAtom )
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:281:8: StringAtom
             {
             	StringAtom105=(IToken)Match(input,StringAtom,FOLLOW_StringAtom_in_stringQuote1337);  
@@ -3743,17 +3743,9 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 281:19: -> ^( STRING StringAtom )
+            	// 281:19: -> StringAtom
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:281:22: ^( STRING StringAtom )
-            	    {
-            	    object root_1 = (object)adaptor.GetNilNode();
-            	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(STRING, "STRING"), root_1);
-
-            	    adaptor.AddChild(root_1, stream_StringAtom.NextNode());
-
-            	    adaptor.AddChild(root_0, root_1);
-            	    }
+            	    adaptor.AddChild(root_0, stream_StringAtom.NextNode());
 
             	}
 
@@ -3842,7 +3834,7 @@ public partial class SGLParser : Parser
 
         override public string Description
         {
-            get { return "245:1: mathAtom : ( '(' additiveExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' SpriteAnimation arguments -> ^( SpriteAnimation arguments ) | Identifier -> Identifier | Identifier arguments -> ^( LIBMETHOD Identifier ( arguments )? ) | stringQuote );"; }
+            get { return "245:1: mathAtom : ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' SpriteAnimation arguments -> ^( SpriteAnimation arguments ) | Identifier -> Identifier | Identifier arguments -> ^( LIBMETHOD Identifier ( arguments )? ) | stringQuote );"; }
         }
 
     }
@@ -3931,7 +3923,7 @@ public partial class SGLParser : Parser
     public static readonly BitSet FOLLOW_50_in_negativeExpression1033 = new BitSet(new ulong[]{0x02000004005C1000UL});
     public static readonly BitSet FOLLOW_mathAtom_in_negativeExpression1036 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_34_in_mathAtom1058 = new BitSet(new ulong[]{0x02040004005C1000UL});
-    public static readonly BitSet FOLLOW_additiveExpression_in_mathAtom1061 = new BitSet(new ulong[]{0x0000000800000000UL});
+    public static readonly BitSet FOLLOW_conditionalExpression_in_mathAtom1061 = new BitSet(new ulong[]{0x0000000800000000UL});
     public static readonly BitSet FOLLOW_35_in_mathAtom1063 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_IntegerAtom_in_mathAtom1074 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_FloatAtom_in_mathAtom1082 = new BitSet(new ulong[]{0x0000000000000002UL});

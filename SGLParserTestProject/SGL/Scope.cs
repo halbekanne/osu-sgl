@@ -35,7 +35,6 @@ namespace SGL
                 if (!newVar) throw new Exception("The variable " + var + " doesn't exists.");
                 // A newly declared variable  
                 variables.Add(var, value);
-                Console.WriteLine("Assigned new variable " + var + " = " + value.AsInteger().ToString() + " in the current variable scope.");
             }
         }
 

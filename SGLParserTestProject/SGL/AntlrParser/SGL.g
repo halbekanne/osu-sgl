@@ -243,7 +243,7 @@ negativeExpression
 	;
 
 mathAtom
-    :	'('! additiveExpression ')'!
+    :	'('! conditionalExpression ')'!
     |   IntegerAtom
     |	FloatAtom
     |   BooleanAtom
@@ -278,7 +278,7 @@ literal
     
     
 stringQuote
-	:     StringAtom -> ^(STRING StringAtom)
+	:     StringAtom -> StringAtom
 	;
       
     

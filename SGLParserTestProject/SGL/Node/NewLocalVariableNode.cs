@@ -22,7 +22,6 @@ namespace SGL.Node
         public SGLValue Evaluate() {
 
             SGLValue exprV = expression.Evaluate();
-            Console.WriteLine(exprV.AsInteger().ToString());
             if (exprV == SGLValue.VOID)
             {
                 throw new Exception("can't assign VOID to " + name);
@@ -34,6 +33,7 @@ namespace SGL.Node
                 if (exprV.IsNumber())
                 {
                     scope.Assign(name, new SGLValue(exprV.AsInteger()), true);
+                    Console.WriteLine("New integer variable: " + name + " = " + exprV.AsInteger().ToString());
                 }
                 else
                 {
@@ -46,10 +46,24 @@ namespace SGL.Node
                 if (exprV.IsNumber())
                 {
                     scope.Assign(name, new SGLValue(exprV.AsFloat()), true);
+                    Console.WriteLine("New float variable: " + name + " = " + exprV.AsFloat().ToString());
                 }
                 else
                 {
                     throw new Exception(exprV.ToString() + " can't be parsed to a float value.");
+                }
+            }
+            else if (type.Equals("boolean"))
+            {
+                // Float hinzufügen
+                if (exprV.IsBoolean())
+                {
+                    scope.Assign(name, new SGLValue(exprV.AsBoolean()), true);
+                    Console.WriteLine("New boolean variable: " + name + " = " + exprV.AsBoolean().ToString());
+                }
+                else
+                {
+                    throw new Exception(exprV.ToString() + " can't be parsed to a boolean value.");
                 }
             }
             if (type.Equals("string"))
@@ -58,6 +72,7 @@ namespace SGL.Node
                 if (exprV.IsString())
                 {
                     scope.Assign(name, new SGLValue(exprV.AsString()), true);
+                    Console.WriteLine("New string variable: " + name + " = " + exprV.AsString());
                 }
                 else
                 {

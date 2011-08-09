@@ -120,104 +120,36 @@ variableType returns [String txt]
 
 // start rule for all sorts of expressions
 expression returns [SGLNode node]
-	:	^('+' a=expression b=expression) { node = new AddNode($a.node, $b.node); }
-	|	^('-' a=expression b=expression) { node = new SubNode($a.node, $b.node); }
-	|	^('*' a=expression b=expression) { node = new MultNode($a.node, $b.node); }
-	|	^('/' a=expression b=expression) { node = new DivNode($a.node, $b.node); }
-	|	^('%' a=expression b=expression) 
-	|	^(NEGATE a=expression)
-	|	^('<' a=expression b=expression)
-	|	^('<=' a=expression b=expression)
-	|	^('>' a=expression b=expression)
-	|	^('>=' a=expression b=expression)
-	|	^('!=' a=expression b=expression)
-	|	^('==' a=expression b=expression)
-	|	^('&&' a=expression b=expression)
-	|	^('||' a=expression b=expression)
-	|	^('?' a=expression b=expression c=expression)
-	|	Identifier
+	:	^('+' a=expression b=expression) { node = new MAddNode($a.node, $b.node); }
+	|	^('-' a=expression b=expression) { node = new MSubNode($a.node, $b.node); }
+	|	^('*' a=expression b=expression) { node = new MMultNode($a.node, $b.node); }
+	|	^('/' a=expression b=expression) { node = new MDivNode($a.node, $b.node); }
+	|	^('%' a=expression b=expression) { node = new MModNode($a.node, $b.node); }
+	|	^(NEGATE a=expression) { node = new MNegateNode($a.node); }
+	|	^('<' a=expression b=expression) { node = new CLTNode($a.node, $b.node); }
+	|	^('<=' a=expression b=expression) { node = new CLTEqualsNode($a.node, $b.node); }
+	|	^('>' a=expression b=expression) { node = new CGTNode($a.node, $b.node); }
+	|	^('>=' a=expression b=expression) { node = new CGTEqualsNode($a.node, $b.node); }
+	|	^('!=' a=expression b=expression) { node = new CNotEqualsNode($a.node, $b.node); }
+	|	^('==' a=expression b=expression) { node = new CEqualsNode($a.node, $b.node); }
+	|	^('&&' a=expression b=expression) { node = new CAndNode($a.node, $b.node); }
+	|	^('||' a=expression b=expression) { node = new COrNode($a.node, $b.node); }
+	|	^('?' a=expression b=expression c=expression) { node = new TernaryNode($a.node, $b.node, $c.node); }
 	|  	IntegerAtom { node = new AtomNode(int.Parse($IntegerAtom.text)); }
-	|	FloatAtom { node = new AtomNode(int.Parse($FloatAtom.text)); }
-	|  	BooleanAtom { node = new AtomNode(int.Parse($BooleanAtom.text)); }
+	|	FloatAtom { node = new AtomNode(float.Parse($FloatAtom.text)); }
+	|  	BooleanAtom { node = new AtomNode(Boolean.Parse($BooleanAtom.text)); }
+	|	StringAtom { node = new AtomNode($StringAtom.text); }
+	|	lookup { node = $lookup.node; }
     //|	mathExpression
     ;    
     
-// Simplified if-condition, (condition ? if-expression : else-expression)    
-//mathConditionalExpression
-//    :   booleanExpression ( '?' (mathConditionalExpression | mathExpression) ':' (mathConditionalExpression | mathExpression) )?
-//    ;
     
-conditionalExpression
-    :    conditionalOrExpression '?' conditionalExpression ':'conditionalExpression
-    ;        
-       
+lookup returns [SGLNode node]
+	:	Identifier { node = new IdentifierNode($Identifier.text, currentScope); }
+	;	    
     
-// OR     
-conditionalOrExpression
-    :   conditionalAndExpression ( '||' conditionalAndExpression )*
-    ;    
     
-// AND     
-conditionalAndExpression
-    :   equalityExpression ( '&&' equalityExpression )*
-    ;
-    
-// Is (not) equal to    
-equalityExpression
-    :   relationalExpression ( ('==' | '!=') relationalExpression )*
-    ;    
-    
-// Comparison <, > , <=, =>    
-relationalExpression
-    :   additiveExpression ( ('<'|'>'|'<='|'>=') additiveExpression )*
-    ;            
-    
-// + / -    
-additiveExpression
-    :   e=multiplicativeExpression
-    (	'+' e=multiplicativeExpression 
-    |	'-' e=multiplicativeExpression
-    )*
-    ;        
-    
-// * / / / %    
-multiplicativeExpression
-    :   e=mathAtom
-    (	'*' e=mathAtom
-    |	'/' e=mathAtom
-    |	'%' e=mathAtom
-    )*
-    ;
-    
-unaryExpression
-    :	'++' unaryExpression
-    |   '--' unaryExpression
-    |   unaryExpressionNotPlusMinus
-    ; 
 
-
-unaryExpressionNotPlusMinus
-    :   '!' unaryExpression
-    |   castExpression
-    //|   primary selector* ('++'|'--')?
-    |   mathAtom ('++'|'--')?
-    ;       
-
-// Int -> Float, ...    
-castExpression
-    :  '(' variableType ')' unaryExpression
-    ;  
-
-// (...) / value / variable / method like rand(...)  
-mathAtom
-    :   ('-')? 
-    (	'(' e=additiveExpression ')'
-    |   i=IntegerAtom
-    
-//    |	f=Float
-    //|   'new' creator
-//    |   Identifier ('.' Identifier)* arguments
-    );    
 
 // arguments for methods aso.
 arguments
