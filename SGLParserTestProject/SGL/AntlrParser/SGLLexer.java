@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g 2011-08-09 22:45:37
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g 2011-08-10 19:05:56
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -6,11 +6,16 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class SGLLexer extends Lexer {
-    public static final int SGLIDDigit=25;
-    public static final int IntType=13;
-    public static final int ID_LIST=6;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int SGLIDDigit=27;
+    public static final int IntType=15;
+    public static final int ID_LIST=8;
+    public static final int T__61=61;
+    public static final int T__60=60;
     public static final int EOF=-1;
-    public static final int Identifier=12;
+    public static final int Identifier=14;
+    public static final int IF=6;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__57=57;
@@ -19,12 +24,14 @@ public class SGLLexer extends Lexer {
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int StringType=15;
-    public static final int SpriteAnimation=21;
-    public static final int VARDEF=7;
-    public static final int COMMENT=30;
+    public static final int EXP=7;
+    public static final int StringType=17;
+    public static final int T__59=59;
+    public static final int SpriteAnimation=23;
+    public static final int COMMENT=32;
+    public static final int VARDEF=9;
     public static final int T__50=50;
-    public static final int BooleanType=14;
+    public static final int BooleanType=16;
     public static final int T__42=42;
     public static final int T__43=43;
     public static final int T__40=40;
@@ -35,33 +42,31 @@ public class SGLLexer extends Lexer {
     public static final int T__45=45;
     public static final int T__48=48;
     public static final int T__49=49;
-    public static final int LIBMETHOD=10;
-    public static final int IntegerAtom=18;
-    public static final int FloatType=16;
-    public static final int StringAtom=22;
-    public static final int HEX_DIGIT=28;
-    public static final int NEGATE=9;
-    public static final int BooleanAtom=20;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int WS=29;
+    public static final int LIBMETHOD=12;
+    public static final int IntegerAtom=20;
+    public static final int FloatType=18;
+    public static final int StringAtom=24;
+    public static final int NEGATE=11;
+    public static final int HEX_DIGIT=30;
+    public static final int BooleanAtom=22;
     public static final int T__33=33;
+    public static final int WS=31;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int UnicodeEscape=26;
+    public static final int UnicodeEscape=28;
     public static final int BLOCK=4;
-    public static final int ASSIGN=8;
+    public static final int ASSIGN=10;
     public static final int STATEMENTS=5;
-    public static final int ObjectType=17;
-    public static final int FloatAtom=19;
-    public static final int EscapeSequence=23;
-    public static final int Letter=24;
-    public static final int OctalEscape=27;
-    public static final int STRING=11;
+    public static final int ObjectType=19;
+    public static final int FloatAtom=21;
+    public static final int EscapeSequence=25;
+    public static final int Letter=26;
+    public static final int OctalEscape=29;
+    public static final int STRING=13;
 
     // delegates
     // delegators
@@ -76,56 +81,15 @@ public class SGLLexer extends Lexer {
     }
     public String getGrammarFileName() { return "C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g"; }
 
-    // $ANTLR start "T__31"
-    public final void mT__31() throws RecognitionException {
-        try {
-            int _type = T__31;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:3:7: ( '{' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:3:9: '{'
-            {
-            match('{'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__31"
-
-    // $ANTLR start "T__32"
-    public final void mT__32() throws RecognitionException {
-        try {
-            int _type = T__32;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:4:7: ( '}' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:4:9: '}'
-            {
-            match('}'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__32"
-
     // $ANTLR start "T__33"
     public final void mT__33() throws RecognitionException {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:5:7: ( 'method' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:5:9: 'method'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:3:7: ( '{' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:3:9: '{'
             {
-            match("method"); 
-
+            match('{'); 
 
             }
 
@@ -142,10 +106,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:6:7: ( '(' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:6:9: '('
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:4:7: ( '}' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:4:9: '}'
             {
-            match('('); 
+            match('}'); 
 
             }
 
@@ -162,10 +126,11 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:7:7: ( ')' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:7:9: ')'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:5:7: ( 'method' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:5:9: 'method'
             {
-            match(')'); 
+            match("method"); 
+
 
             }
 
@@ -182,10 +147,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:8:7: ( ',' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:8:9: ','
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:6:7: ( '(' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:6:9: '('
             {
-            match(','); 
+            match('('); 
 
             }
 
@@ -202,10 +167,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:9:7: ( '=' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:9:9: '='
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:7:7: ( ')' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:7:9: ')'
             {
-            match('='); 
+            match(')'); 
 
             }
 
@@ -222,11 +187,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:10:7: ( 'while' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:10:9: 'while'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:8:7: ( ';' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:8:9: ';'
             {
-            match("while"); 
-
+            match(';'); 
 
             }
 
@@ -243,10 +207,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:11:7: ( '?' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:11:9: '?'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:9:7: ( ',' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:9:9: ','
             {
-            match('?'); 
+            match(','); 
 
             }
 
@@ -263,10 +227,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:12:7: ( ':' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:12:9: ':'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:10:7: ( '=' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:10:9: '='
             {
-            match(':'); 
+            match('='); 
 
             }
 
@@ -283,10 +247,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:13:7: ( '||' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:13:9: '||'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:11:7: ( 'while' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:11:9: 'while'
             {
-            match("||"); 
+            match("while"); 
 
 
             }
@@ -304,10 +268,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:14:7: ( '&&' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:14:9: '&&'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:12:7: ( 'if' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:12:9: 'if'
             {
-            match("&&"); 
+            match("if"); 
 
 
             }
@@ -325,10 +289,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:15:7: ( '==' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:15:9: '=='
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:13:7: ( 'else' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:13:9: 'else'
             {
-            match("=="); 
+            match("else"); 
 
 
             }
@@ -346,11 +310,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:16:7: ( '!=' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:16:9: '!='
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:14:7: ( '?' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:14:9: '?'
             {
-            match("!="); 
-
+            match('?'); 
 
             }
 
@@ -367,10 +330,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:17:7: ( '<' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:17:9: '<'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:15:7: ( ':' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:15:9: ':'
             {
-            match('<'); 
+            match(':'); 
 
             }
 
@@ -387,10 +350,11 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:18:7: ( '>' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:18:9: '>'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:16:7: ( '||' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:16:9: '||'
             {
-            match('>'); 
+            match("||"); 
+
 
             }
 
@@ -407,10 +371,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:19:7: ( '<=' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:19:9: '<='
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:17:7: ( '&&' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:17:9: '&&'
             {
-            match("<="); 
+            match("&&"); 
 
 
             }
@@ -428,10 +392,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:20:7: ( '>=' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:20:9: '>='
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:18:7: ( '==' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:18:9: '=='
             {
-            match(">="); 
+            match("=="); 
 
 
             }
@@ -449,10 +413,11 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:21:7: ( '+' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:21:9: '+'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:19:7: ( '!=' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:19:9: '!='
             {
-            match('+'); 
+            match("!="); 
+
 
             }
 
@@ -469,10 +434,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:22:7: ( '-' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:22:9: '-'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:20:7: ( '<' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:20:9: '<'
             {
-            match('-'); 
+            match('<'); 
 
             }
 
@@ -489,10 +454,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:23:7: ( '*' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:23:9: '*'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:21:7: ( '>' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:21:9: '>'
             {
-            match('*'); 
+            match('>'); 
 
             }
 
@@ -509,10 +474,11 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:24:7: ( '/' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:24:9: '/'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:22:7: ( '<=' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:22:9: '<='
             {
-            match('/'); 
+            match("<="); 
+
 
             }
 
@@ -529,10 +495,11 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:25:7: ( '%' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:25:9: '%'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:23:7: ( '>=' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:23:9: '>='
             {
-            match('%'); 
+            match(">="); 
+
 
             }
 
@@ -549,11 +516,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:26:7: ( '++' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:26:9: '++'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:24:7: ( '+' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:24:9: '+'
             {
-            match("++"); 
-
+            match('+'); 
 
             }
 
@@ -570,11 +536,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:27:7: ( '--' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:27:9: '--'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:25:7: ( '-' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:25:9: '-'
             {
-            match("--"); 
-
+            match('-'); 
 
             }
 
@@ -591,10 +556,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:28:7: ( '!' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:28:9: '!'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:26:7: ( '*' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:26:9: '*'
             {
-            match('!'); 
+            match('*'); 
 
             }
 
@@ -611,11 +576,10 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:29:7: ( 'new' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:29:9: 'new'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:27:7: ( '/' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:27:9: '/'
             {
-            match("new"); 
-
+            match('/'); 
 
             }
 
@@ -632,8 +596,111 @@ public class SGLLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:30:7: ( 'null' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:30:9: 'null'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:28:7: ( '%' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:28:9: '%'
+            {
+            match('%'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__58"
+
+    // $ANTLR start "T__59"
+    public final void mT__59() throws RecognitionException {
+        try {
+            int _type = T__59;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:29:7: ( '++' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:29:9: '++'
+            {
+            match("++"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__59"
+
+    // $ANTLR start "T__60"
+    public final void mT__60() throws RecognitionException {
+        try {
+            int _type = T__60;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:30:7: ( '--' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:30:9: '--'
+            {
+            match("--"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__60"
+
+    // $ANTLR start "T__61"
+    public final void mT__61() throws RecognitionException {
+        try {
+            int _type = T__61;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:31:7: ( '!' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:31:9: '!'
+            {
+            match('!'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__61"
+
+    // $ANTLR start "T__62"
+    public final void mT__62() throws RecognitionException {
+        try {
+            int _type = T__62;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:32:7: ( 'new' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:32:9: 'new'
+            {
+            match("new"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__62"
+
+    // $ANTLR start "T__63"
+    public final void mT__63() throws RecognitionException {
+        try {
+            int _type = T__63;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:33:7: ( 'null' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:33:9: 'null'
             {
             match("null"); 
 
@@ -646,17 +713,17 @@ public class SGLLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__58"
+    // $ANTLR end "T__63"
 
     // $ANTLR start "IntegerAtom"
     public final void mIntegerAtom() throws RecognitionException {
         try {
             int _type = IntegerAtom;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:295:5: ( ( '0' .. '9' )+ )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:295:7: ( '0' .. '9' )+
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:323:5: ( ( '0' .. '9' )+ )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:323:7: ( '0' .. '9' )+
             {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:295:7: ( '0' .. '9' )+
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:323:7: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -670,7 +737,7 @@ public class SGLLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:295:7: '0' .. '9'
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:323:7: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -702,14 +769,14 @@ public class SGLLexer extends Lexer {
         try {
             int _type = FloatAtom;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:299:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:327:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
             int alt6=3;
             alt6 = dfa6.predict(input);
             switch (alt6) {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:299:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:327:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
                     {
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:299:9: ( '0' .. '9' )+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:327:9: ( '0' .. '9' )+
                     int cnt2=0;
                     loop2:
                     do {
@@ -723,7 +790,7 @@ public class SGLLexer extends Lexer {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:299:10: '0' .. '9'
+                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:327:10: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -740,7 +807,7 @@ public class SGLLexer extends Lexer {
                     } while (true);
 
                     match('.'); 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:299:25: ( '0' .. '9' )*
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:327:25: ( '0' .. '9' )*
                     loop3:
                     do {
                         int alt3=2;
@@ -753,7 +820,7 @@ public class SGLLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:299:26: '0' .. '9'
+                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:327:26: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -769,10 +836,10 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:300:9: '.' ( '0' .. '9' )+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:328:9: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:300:13: ( '0' .. '9' )+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:328:13: ( '0' .. '9' )+
                     int cnt4=0;
                     loop4:
                     do {
@@ -786,7 +853,7 @@ public class SGLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:300:14: '0' .. '9'
+                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:328:14: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -806,9 +873,9 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:301:9: ( '0' .. '9' )+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:329:9: ( '0' .. '9' )+
                     {
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:301:9: ( '0' .. '9' )+
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:329:9: ( '0' .. '9' )+
                     int cnt5=0;
                     loop5:
                     do {
@@ -822,7 +889,7 @@ public class SGLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:301:10: '0' .. '9'
+                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:329:10: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -856,11 +923,11 @@ public class SGLLexer extends Lexer {
         try {
             int _type = StringAtom;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:305:5: ( '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )+ '\"' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:305:8: '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )+ '\"'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:333:5: ( '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )+ '\"' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:333:8: '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )+ '\"'
             {
             match('\"'); 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:305:12: ( EscapeSequence | ~ ( '\\\\' | '\"' ) )+
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:333:12: ( EscapeSequence | ~ ( '\\\\' | '\"' ) )+
             int cnt7=0;
             loop7:
             do {
@@ -877,14 +944,14 @@ public class SGLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:305:14: EscapeSequence
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:333:14: EscapeSequence
             	    {
             	    mEscapeSequence(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:305:31: ~ ( '\\\\' | '\"' )
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:333:31: ~ ( '\\\\' | '\"' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -925,7 +992,7 @@ public class SGLLexer extends Lexer {
         try {
             int _type = BooleanAtom;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:309:5: ( 'true' | 'false' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:337:5: ( 'true' | 'false' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -943,7 +1010,7 @@ public class SGLLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:309:9: 'true'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:337:9: 'true'
                     {
                     match("true"); 
 
@@ -951,7 +1018,7 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:310:9: 'false'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:338:9: 'false'
                     {
                     match("false"); 
 
@@ -973,8 +1040,8 @@ public class SGLLexer extends Lexer {
         try {
             int _type = IntType;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:314:2: ( 'int' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:314:4: 'int'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:342:2: ( 'int' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:342:4: 'int'
             {
             match("int"); 
 
@@ -994,8 +1061,8 @@ public class SGLLexer extends Lexer {
         try {
             int _type = BooleanType;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:318:2: ( 'boolean' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:318:4: 'boolean'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:346:2: ( 'boolean' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:346:4: 'boolean'
             {
             match("boolean"); 
 
@@ -1015,8 +1082,8 @@ public class SGLLexer extends Lexer {
         try {
             int _type = StringType;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:322:2: ( 'string' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:322:4: 'string'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:350:2: ( 'string' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:350:4: 'string'
             {
             match("string"); 
 
@@ -1036,8 +1103,8 @@ public class SGLLexer extends Lexer {
         try {
             int _type = FloatType;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:326:2: ( 'float' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:326:4: 'float'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:354:2: ( 'float' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:354:4: 'float'
             {
             match("float"); 
 
@@ -1057,8 +1124,8 @@ public class SGLLexer extends Lexer {
         try {
             int _type = ObjectType;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:332:2: ( 'Object' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:332:4: 'Object'
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:360:2: ( 'Object' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:360:4: 'Object'
             {
             match("Object"); 
 
@@ -1078,7 +1145,7 @@ public class SGLLexer extends Lexer {
         try {
             int _type = SpriteAnimation;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:336:2: ( 'Sprite' | 'Animation' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:364:2: ( 'Sprite' | 'Animation' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1096,7 +1163,7 @@ public class SGLLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:336:4: 'Sprite'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:364:4: 'Sprite'
                     {
                     match("Sprite"); 
 
@@ -1104,7 +1171,7 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:337:4: 'Animation'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:365:4: 'Animation'
                     {
                     match("Animation"); 
 
@@ -1126,11 +1193,11 @@ public class SGLLexer extends Lexer {
         try {
             int _type = Identifier;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:343:5: ( Letter ( Letter | SGLIDDigit )* )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:343:9: Letter ( Letter | SGLIDDigit )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:371:5: ( Letter ( Letter | SGLIDDigit )* )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:371:9: Letter ( Letter | SGLIDDigit )*
             {
             mLetter(); 
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:343:16: ( Letter | SGLIDDigit )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:371:16: ( Letter | SGLIDDigit )*
             loop10:
             do {
                 int alt10=2;
@@ -1177,7 +1244,7 @@ public class SGLLexer extends Lexer {
     // $ANTLR start "Letter"
     public final void mLetter() throws RecognitionException {
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:355:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:383:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:
             {
             if ( input.LA(1)=='$'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u1FFF')||(input.LA(1)>='\u3040' && input.LA(1)<='\u318F')||(input.LA(1)>='\u3300' && input.LA(1)<='\u337F')||(input.LA(1)>='\u3400' && input.LA(1)<='\u3D2D')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FFF')||(input.LA(1)>='\uF900' && input.LA(1)<='\uFAFF') ) {
@@ -1201,7 +1268,7 @@ public class SGLLexer extends Lexer {
     // $ANTLR start "SGLIDDigit"
     public final void mSGLIDDigit() throws RecognitionException {
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:372:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:400:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09EF')||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A6F')||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u1040' && input.LA(1)<='\u1049') ) {
@@ -1225,7 +1292,7 @@ public class SGLLexer extends Lexer {
     // $ANTLR start "EscapeSequence"
     public final void mEscapeSequence() throws RecognitionException {
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:393:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:421:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape )
             int alt11=3;
             int LA11_0 = input.LA(1);
 
@@ -1276,7 +1343,7 @@ public class SGLLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:393:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:421:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
                     {
                     match('\\'); 
                     if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -1292,14 +1359,14 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:394:9: UnicodeEscape
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:422:9: UnicodeEscape
                     {
                     mUnicodeEscape(); 
 
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:395:9: OctalEscape
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:423:9: OctalEscape
                     {
                     mOctalEscape(); 
 
@@ -1316,7 +1383,7 @@ public class SGLLexer extends Lexer {
     // $ANTLR start "OctalEscape"
     public final void mOctalEscape() throws RecognitionException {
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:400:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:428:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
             int alt12=3;
             int LA12_0 = input.LA(1);
 
@@ -1327,9 +1394,9 @@ public class SGLLexer extends Lexer {
                     int LA12_2 = input.LA(3);
 
                     if ( ((LA12_2>='0' && LA12_2<='7')) ) {
-                        int LA12_4 = input.LA(4);
+                        int LA12_5 = input.LA(4);
 
-                        if ( ((LA12_4>='0' && LA12_4<='7')) ) {
+                        if ( ((LA12_5>='0' && LA12_5<='7')) ) {
                             alt12=1;
                         }
                         else {
@@ -1362,25 +1429,25 @@ public class SGLLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:400:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:428:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
                     {
                     match('\\'); 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:400:14: ( '0' .. '3' )
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:400:15: '0' .. '3'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:428:14: ( '0' .. '3' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:428:15: '0' .. '3'
                     {
                     matchRange('0','3'); 
 
                     }
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:400:25: ( '0' .. '7' )
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:400:26: '0' .. '7'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:428:25: ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:428:26: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
                     }
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:400:36: ( '0' .. '7' )
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:400:37: '0' .. '7'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:428:36: ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:428:37: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
@@ -1390,18 +1457,18 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:401:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:429:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
                     {
                     match('\\'); 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:401:14: ( '0' .. '7' )
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:401:15: '0' .. '7'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:429:14: ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:429:15: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
                     }
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:401:25: ( '0' .. '7' )
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:401:26: '0' .. '7'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:429:25: ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:429:26: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
@@ -1411,11 +1478,11 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:402:9: '\\\\' ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:430:9: '\\\\' ( '0' .. '7' )
                     {
                     match('\\'); 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:402:14: ( '0' .. '7' )
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:402:15: '0' .. '7'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:430:14: ( '0' .. '7' )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:430:15: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
@@ -1435,8 +1502,8 @@ public class SGLLexer extends Lexer {
     // $ANTLR start "UnicodeEscape"
     public final void mUnicodeEscape() throws RecognitionException {
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:407:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:407:9: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:435:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:435:9: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
             {
             match('\\'); 
             match('u'); 
@@ -1456,8 +1523,8 @@ public class SGLLexer extends Lexer {
     // $ANTLR start "HEX_DIGIT"
     public final void mHEX_DIGIT() throws RecognitionException {
         try {
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:411:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:411:13: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:439:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:439:13: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
                 input.consume();
@@ -1482,8 +1549,8 @@ public class SGLLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:417:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:417:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:445:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:445:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
             {
             if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ' ) {
                 input.consume();
@@ -1511,7 +1578,7 @@ public class SGLLexer extends Lexer {
         try {
             int _type = COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:422:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:450:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -1539,11 +1606,11 @@ public class SGLLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:422:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:450:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
                     {
                     match("//"); 
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:422:14: (~ ( '\\n' | '\\r' ) )*
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:450:14: (~ ( '\\n' | '\\r' ) )*
                     loop13:
                     do {
                         int alt13=2;
@@ -1556,7 +1623,7 @@ public class SGLLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:422:14: ~ ( '\\n' | '\\r' )
+                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:450:14: ~ ( '\\n' | '\\r' )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1576,7 +1643,7 @@ public class SGLLexer extends Lexer {
                         }
                     } while (true);
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:422:28: ( '\\r' )?
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:450:28: ( '\\r' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -1585,7 +1652,7 @@ public class SGLLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:422:28: '\\r'
+                            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:450:28: '\\r'
                             {
                             match('\r'); 
 
@@ -1600,11 +1667,11 @@ public class SGLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:423:9: '/*' ( options {greedy=false; } : . )* '*/'
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:451:9: '/*' ( options {greedy=false; } : . )* '*/'
                     {
                     match("/*"); 
 
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:423:14: ( options {greedy=false; } : . )*
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:451:14: ( options {greedy=false; } : . )*
                     loop15:
                     do {
                         int alt15=2;
@@ -1629,7 +1696,7 @@ public class SGLLexer extends Lexer {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:423:42: .
+                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:451:42: .
                     	    {
                     	    matchAny(); 
 
@@ -1658,292 +1725,313 @@ public class SGLLexer extends Lexer {
     // $ANTLR end "COMMENT"
 
     public void mTokens() throws RecognitionException {
-        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:8: ( T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | IntegerAtom | FloatAtom | StringAtom | BooleanAtom | IntType | BooleanType | StringType | FloatType | ObjectType | SpriteAnimation | Identifier | WS | COMMENT )
-        int alt17=41;
+        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:8: ( T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | IntegerAtom | FloatAtom | StringAtom | BooleanAtom | IntType | BooleanType | StringType | FloatType | ObjectType | SpriteAnimation | Identifier | WS | COMMENT )
+        int alt17=44;
         alt17 = dfa17.predict(input);
         switch (alt17) {
             case 1 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:10: T__31
-                {
-                mT__31(); 
-
-                }
-                break;
-            case 2 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:16: T__32
-                {
-                mT__32(); 
-
-                }
-                break;
-            case 3 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:22: T__33
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:10: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
-            case 4 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:28: T__34
+            case 2 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:16: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
-            case 5 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:34: T__35
+            case 3 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:22: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
-            case 6 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:40: T__36
+            case 4 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:28: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
-            case 7 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:46: T__37
+            case 5 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:34: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
-            case 8 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:52: T__38
+            case 6 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:40: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
-            case 9 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:58: T__39
+            case 7 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:46: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
-            case 10 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:64: T__40
+            case 8 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:52: T__40
                 {
                 mT__40(); 
 
                 }
                 break;
-            case 11 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:70: T__41
+            case 9 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:58: T__41
                 {
                 mT__41(); 
 
                 }
                 break;
-            case 12 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:76: T__42
+            case 10 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:64: T__42
                 {
                 mT__42(); 
 
                 }
                 break;
-            case 13 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:82: T__43
+            case 11 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:70: T__43
                 {
                 mT__43(); 
 
                 }
                 break;
-            case 14 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:88: T__44
+            case 12 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:76: T__44
                 {
                 mT__44(); 
 
                 }
                 break;
-            case 15 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:94: T__45
+            case 13 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:82: T__45
                 {
                 mT__45(); 
 
                 }
                 break;
-            case 16 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:100: T__46
+            case 14 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:88: T__46
                 {
                 mT__46(); 
 
                 }
                 break;
-            case 17 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:106: T__47
+            case 15 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:94: T__47
                 {
                 mT__47(); 
 
                 }
                 break;
-            case 18 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:112: T__48
+            case 16 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:100: T__48
                 {
                 mT__48(); 
 
                 }
                 break;
-            case 19 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:118: T__49
+            case 17 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:106: T__49
                 {
                 mT__49(); 
 
                 }
                 break;
-            case 20 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:124: T__50
+            case 18 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:112: T__50
                 {
                 mT__50(); 
 
                 }
                 break;
-            case 21 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:130: T__51
+            case 19 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:118: T__51
                 {
                 mT__51(); 
 
                 }
                 break;
-            case 22 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:136: T__52
+            case 20 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:124: T__52
                 {
                 mT__52(); 
 
                 }
                 break;
-            case 23 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:142: T__53
+            case 21 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:130: T__53
                 {
                 mT__53(); 
 
                 }
                 break;
-            case 24 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:148: T__54
+            case 22 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:136: T__54
                 {
                 mT__54(); 
 
                 }
                 break;
-            case 25 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:154: T__55
+            case 23 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:142: T__55
                 {
                 mT__55(); 
 
                 }
                 break;
-            case 26 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:160: T__56
+            case 24 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:148: T__56
                 {
                 mT__56(); 
 
                 }
                 break;
-            case 27 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:166: T__57
+            case 25 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:154: T__57
                 {
                 mT__57(); 
 
                 }
                 break;
-            case 28 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:172: T__58
+            case 26 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:160: T__58
                 {
                 mT__58(); 
 
                 }
                 break;
+            case 27 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:166: T__59
+                {
+                mT__59(); 
+
+                }
+                break;
+            case 28 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:172: T__60
+                {
+                mT__60(); 
+
+                }
+                break;
             case 29 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:178: IntegerAtom
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:178: T__61
+                {
+                mT__61(); 
+
+                }
+                break;
+            case 30 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:184: T__62
+                {
+                mT__62(); 
+
+                }
+                break;
+            case 31 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:190: T__63
+                {
+                mT__63(); 
+
+                }
+                break;
+            case 32 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:196: IntegerAtom
                 {
                 mIntegerAtom(); 
 
                 }
                 break;
-            case 30 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:190: FloatAtom
+            case 33 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:208: FloatAtom
                 {
                 mFloatAtom(); 
 
                 }
                 break;
-            case 31 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:200: StringAtom
+            case 34 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:218: StringAtom
                 {
                 mStringAtom(); 
 
                 }
                 break;
-            case 32 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:211: BooleanAtom
+            case 35 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:229: BooleanAtom
                 {
                 mBooleanAtom(); 
 
                 }
                 break;
-            case 33 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:223: IntType
+            case 36 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:241: IntType
                 {
                 mIntType(); 
 
                 }
                 break;
-            case 34 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:231: BooleanType
+            case 37 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:249: BooleanType
                 {
                 mBooleanType(); 
 
                 }
                 break;
-            case 35 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:243: StringType
+            case 38 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:261: StringType
                 {
                 mStringType(); 
 
                 }
                 break;
-            case 36 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:254: FloatType
+            case 39 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:272: FloatType
                 {
                 mFloatType(); 
 
                 }
                 break;
-            case 37 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:264: ObjectType
+            case 40 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:282: ObjectType
                 {
                 mObjectType(); 
 
                 }
                 break;
-            case 38 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:275: SpriteAnimation
+            case 41 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:293: SpriteAnimation
                 {
                 mSpriteAnimation(); 
 
                 }
                 break;
-            case 39 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:291: Identifier
+            case 42 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:309: Identifier
                 {
                 mIdentifier(); 
 
                 }
                 break;
-            case 40 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:302: WS
+            case 43 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:320: WS
                 {
                 mWS(); 
 
                 }
                 break;
-            case 41 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:305: COMMENT
+            case 44 :
+                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:323: COMMENT
                 {
                 mCOMMENT(); 
 
@@ -2007,211 +2095,226 @@ public class SGLLexer extends Lexer {
             this.transition = DFA6_transition;
         }
         public String getDescription() {
-            return "298:1: FloatAtom : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ );";
+            return "326:1: FloatAtom : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ );";
         }
     }
     static final String DFA17_eotS =
-        "\3\uffff\1\41\3\uffff\1\45\1\41\4\uffff\1\50\1\52\1\54\1\56\1\60"+
-        "\1\uffff\1\62\1\uffff\1\41\1\65\2\uffff\10\41\2\uffff\1\41\2\uffff"+
-        "\1\41\14\uffff\2\41\1\uffff\13\41\1\116\4\41\1\123\7\41\1\uffff"+
-        "\1\133\1\134\2\41\1\uffff\6\41\1\145\2\uffff\1\134\1\146\5\41\1"+
-        "\154\2\uffff\1\41\1\156\1\157\1\160\1\41\1\uffff\1\162\3\uffff\1"+
-        "\41\1\uffff\1\41\1\160";
+        "\3\uffff\1\43\4\uffff\1\47\3\43\4\uffff\1\55\1\57\1\61\1\63\1\65"+
+        "\1\uffff\1\67\1\uffff\1\43\1\72\2\uffff\7\43\2\uffff\1\43\2\uffff"+
+        "\1\43\1\105\2\43\14\uffff\2\43\1\uffff\12\43\1\uffff\1\124\1\43"+
+        "\1\126\13\43\1\uffff\1\142\1\uffff\1\143\1\144\10\43\1\155\3\uffff"+
+        "\1\144\1\156\5\43\1\164\2\uffff\1\43\1\166\1\167\1\170\1\43\1\uffff"+
+        "\1\172\3\uffff\1\43\1\uffff\1\43\1\170";
     static final String DFA17_eofS =
-        "\165\uffff";
+        "\175\uffff";
     static final String DFA17_minS =
-        "\1\11\2\uffff\1\145\3\uffff\1\75\1\150\4\uffff\3\75\1\53\1\55\1"+
-        "\uffff\1\52\1\uffff\1\145\1\56\2\uffff\1\162\1\141\1\156\1\157\1"+
-        "\164\1\142\1\160\1\156\2\uffff\1\164\2\uffff\1\151\14\uffff\1\167"+
-        "\1\154\1\uffff\1\165\1\154\1\157\1\164\1\157\1\162\1\152\1\162\1"+
-        "\151\1\150\1\154\1\44\1\154\1\145\1\163\1\141\1\44\1\154\1\151\1"+
-        "\145\1\151\1\155\1\157\1\145\1\uffff\2\44\1\145\1\164\1\uffff\1"+
-        "\145\1\156\1\143\1\164\1\141\1\144\1\44\2\uffff\2\44\1\141\1\147"+
-        "\1\164\1\145\1\164\1\44\2\uffff\1\156\3\44\1\151\1\uffff\1\44\3"+
-        "\uffff\1\157\1\uffff\1\156\1\44";
+        "\1\11\2\uffff\1\145\4\uffff\1\75\1\150\1\146\1\154\4\uffff\3\75"+
+        "\1\53\1\55\1\uffff\1\52\1\uffff\1\145\1\56\2\uffff\1\162\1\141\1"+
+        "\157\1\164\1\142\1\160\1\156\2\uffff\1\164\2\uffff\1\151\1\44\1"+
+        "\164\1\163\14\uffff\1\167\1\154\1\uffff\1\165\1\154\2\157\1\162"+
+        "\1\152\1\162\1\151\1\150\1\154\1\uffff\1\44\1\145\1\44\1\154\1\145"+
+        "\1\163\1\141\1\154\1\151\1\145\1\151\1\155\1\157\1\145\1\uffff\1"+
+        "\44\1\uffff\2\44\1\145\1\164\1\145\1\156\1\143\1\164\1\141\1\144"+
+        "\1\44\3\uffff\2\44\1\141\1\147\1\164\1\145\1\164\1\44\2\uffff\1"+
+        "\156\3\44\1\151\1\uffff\1\44\3\uffff\1\157\1\uffff\1\156\1\44";
     static final String DFA17_maxS =
-        "\1\ufaff\2\uffff\1\145\3\uffff\1\75\1\150\4\uffff\3\75\1\53\1\55"+
-        "\1\uffff\1\57\1\uffff\1\165\1\71\2\uffff\1\162\1\154\1\156\1\157"+
-        "\1\164\1\142\1\160\1\156\2\uffff\1\164\2\uffff\1\151\14\uffff\1"+
-        "\167\1\154\1\uffff\1\165\1\154\1\157\1\164\1\157\1\162\1\152\1\162"+
-        "\1\151\1\150\1\154\1\ufaff\1\154\1\145\1\163\1\141\1\ufaff\1\154"+
-        "\1\151\1\145\1\151\1\155\1\157\1\145\1\uffff\2\ufaff\1\145\1\164"+
-        "\1\uffff\1\145\1\156\1\143\1\164\1\141\1\144\1\ufaff\2\uffff\2\ufaff"+
-        "\1\141\1\147\1\164\1\145\1\164\1\ufaff\2\uffff\1\156\3\ufaff\1\151"+
-        "\1\uffff\1\ufaff\3\uffff\1\157\1\uffff\1\156\1\ufaff";
+        "\1\ufaff\2\uffff\1\145\4\uffff\1\75\1\150\1\156\1\154\4\uffff\3"+
+        "\75\1\53\1\55\1\uffff\1\57\1\uffff\1\165\1\71\2\uffff\1\162\1\154"+
+        "\1\157\1\164\1\142\1\160\1\156\2\uffff\1\164\2\uffff\1\151\1\ufaff"+
+        "\1\164\1\163\14\uffff\1\167\1\154\1\uffff\1\165\1\154\2\157\1\162"+
+        "\1\152\1\162\1\151\1\150\1\154\1\uffff\1\ufaff\1\145\1\ufaff\1\154"+
+        "\1\145\1\163\1\141\1\154\1\151\1\145\1\151\1\155\1\157\1\145\1\uffff"+
+        "\1\ufaff\1\uffff\2\ufaff\1\145\1\164\1\145\1\156\1\143\1\164\1\141"+
+        "\1\144\1\ufaff\3\uffff\2\ufaff\1\141\1\147\1\164\1\145\1\164\1\ufaff"+
+        "\2\uffff\1\156\3\ufaff\1\151\1\uffff\1\ufaff\3\uffff\1\157\1\uffff"+
+        "\1\156\1\ufaff";
     static final String DFA17_acceptS =
-        "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\1\6\2\uffff\1\11\1\12\1\13\1\14"+
-        "\5\uffff\1\25\1\uffff\1\27\2\uffff\1\36\1\37\10\uffff\1\47\1\50"+
-        "\1\uffff\1\15\1\7\1\uffff\1\16\1\32\1\21\1\17\1\22\1\20\1\30\1\23"+
-        "\1\31\1\24\1\51\1\26\2\uffff\1\35\30\uffff\1\33\4\uffff\1\41\7\uffff"+
-        "\1\34\1\40\10\uffff\1\10\1\44\5\uffff\1\3\1\uffff\1\43\1\45\1\46"+
-        "\1\uffff\1\42\2\uffff";
+        "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\1\6\1\7\4\uffff\1\14\1\15\1\16"+
+        "\1\17\5\uffff\1\30\1\uffff\1\32\2\uffff\1\41\1\42\7\uffff\1\52\1"+
+        "\53\1\uffff\1\20\1\10\4\uffff\1\21\1\35\1\24\1\22\1\25\1\23\1\33"+
+        "\1\26\1\34\1\27\1\54\1\31\2\uffff\1\40\12\uffff\1\12\16\uffff\1"+
+        "\44\1\uffff\1\36\13\uffff\1\13\1\37\1\43\10\uffff\1\11\1\47\5\uffff"+
+        "\1\3\1\uffff\1\46\1\50\1\51\1\uffff\1\45\2\uffff";
     static final String DFA17_specialS =
-        "\165\uffff}>";
+        "\175\uffff}>";
     static final String[] DFA17_transitionS = {
-            "\2\42\1\uffff\2\42\22\uffff\1\42\1\15\1\30\1\uffff\1\41\1\24"+
-            "\1\14\1\uffff\1\4\1\5\1\22\1\20\1\6\1\21\1\27\1\23\12\26\1\12"+
-            "\1\uffff\1\16\1\7\1\17\1\11\1\uffff\1\40\15\41\1\36\3\41\1\37"+
-            "\7\41\4\uffff\1\41\1\uffff\1\41\1\34\3\41\1\32\2\41\1\33\3\41"+
-            "\1\3\1\25\4\41\1\35\1\31\2\41\1\10\3\41\1\1\1\13\1\2\102\uffff"+
-            "\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff\u0150\41\u0170"+
-            "\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff\u5200\41\u5900"+
-            "\uffff\u0200\41",
+            "\2\44\1\uffff\2\44\22\uffff\1\44\1\20\1\33\1\uffff\1\43\1\27"+
+            "\1\17\1\uffff\1\4\1\5\1\25\1\23\1\7\1\24\1\32\1\26\12\31\1\15"+
+            "\1\6\1\21\1\10\1\22\1\14\1\uffff\1\42\15\43\1\40\3\43\1\41\7"+
+            "\43\4\uffff\1\43\1\uffff\1\43\1\36\2\43\1\13\1\35\2\43\1\12"+
+            "\3\43\1\3\1\30\4\43\1\37\1\34\2\43\1\11\3\43\1\1\1\16\1\2\102"+
+            "\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff\u0150"+
+            "\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff\u5200"+
+            "\43\u5900\uffff\u0200\43",
             "",
             "",
-            "\1\43",
+            "\1\45",
             "",
             "",
             "",
-            "\1\44",
+            "",
             "\1\46",
-            "",
-            "",
-            "",
-            "",
-            "\1\47",
-            "\1\51",
+            "\1\50",
+            "\1\51\7\uffff\1\52",
             "\1\53",
-            "\1\55",
-            "\1\57",
-            "",
-            "\1\61\4\uffff\1\61",
-            "",
-            "\1\63\17\uffff\1\64",
-            "\1\27\1\uffff\12\26",
             "",
             "",
-            "\1\66",
-            "\1\67\12\uffff\1\70",
-            "\1\71",
-            "\1\72",
+            "",
+            "",
+            "\1\54",
+            "\1\56",
+            "\1\60",
+            "\1\62",
+            "\1\64",
+            "",
+            "\1\66\4\uffff\1\66",
+            "",
+            "\1\70\17\uffff\1\71",
+            "\1\32\1\uffff\12\31",
+            "",
+            "",
             "\1\73",
-            "\1\74",
-            "\1\75",
+            "\1\74\12\uffff\1\75",
             "\1\76",
-            "",
-            "",
             "\1\77",
-            "",
-            "",
             "\1\100",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\101",
             "\1\102",
             "",
+            "",
             "\1\103",
+            "",
+            "",
             "\1\104",
-            "\1\105",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
             "\1\106",
             "\1\107",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\110",
             "\1\111",
+            "",
             "\1\112",
             "\1\113",
             "\1\114",
             "\1\115",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41",
+            "\1\116",
             "\1\117",
             "\1\120",
             "\1\121",
             "\1\122",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41",
-            "\1\124",
+            "\1\123",
+            "",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
             "\1\125",
-            "\1\126",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
             "\1\127",
             "\1\130",
             "\1\131",
             "\1\132",
-            "",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41",
+            "\1\133",
+            "\1\134",
             "\1\135",
             "\1\136",
-            "",
             "\1\137",
             "\1\140",
             "\1\141",
-            "\1\142",
-            "\1\143",
-            "\1\144",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41",
             "",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
             "",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
+            "\1\145",
+            "\1\146",
             "\1\147",
             "\1\150",
             "\1\151",
             "\1\152",
             "\1\153",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41",
+            "\1\154",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
             "",
             "",
-            "\1\155",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41",
+            "",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
+            "\1\157",
+            "\1\160",
             "\1\161",
-            "",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41",
-            "",
-            "",
-            "",
+            "\1\162",
             "\1\163",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
             "",
-            "\1\164",
-            "\1\41\13\uffff\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32"+
-            "\41\105\uffff\27\41\1\uffff\37\41\1\uffff\u1f08\41\u1040\uffff"+
-            "\u0150\41\u0170\uffff\u0080\41\u0080\uffff\u092e\41\u10d2\uffff"+
-            "\u5200\41\u5900\uffff\u0200\41"
+            "",
+            "\1\165",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
+            "\1\171",
+            "",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43",
+            "",
+            "",
+            "",
+            "\1\173",
+            "",
+            "\1\174",
+            "\1\43\13\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32"+
+            "\43\105\uffff\27\43\1\uffff\37\43\1\uffff\u1f08\43\u1040\uffff"+
+            "\u0150\43\u0170\uffff\u0080\43\u0080\uffff\u092e\43\u10d2\uffff"+
+            "\u5200\43\u5900\uffff\u0200\43"
     };
 
     static final short[] DFA17_eot = DFA.unpackEncodedString(DFA17_eotS);
@@ -2244,7 +2347,7 @@ public class SGLLexer extends Lexer {
             this.transition = DFA17_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | IntegerAtom | FloatAtom | StringAtom | BooleanAtom | IntType | BooleanType | StringType | FloatType | ObjectType | SpriteAnimation | Identifier | WS | COMMENT );";
+            return "1:1: Tokens : ( T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | IntegerAtom | FloatAtom | StringAtom | BooleanAtom | IntType | BooleanType | StringType | FloatType | ObjectType | SpriteAnimation | Identifier | WS | COMMENT );";
         }
     }
  

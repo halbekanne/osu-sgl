@@ -25,12 +25,14 @@ namespace SGL
                 throw new Exception("v == null");
             }
             value = v;
-
-            if (value is Single)
+            /*
+            if (value is Double)
             {
-                value = ((Double)((Single)(value)));
+                Console.WriteLine(((Double)value).ToString());
+                //value = System.Convert.ToDouble((float)value);
+                //double test = System.Convert.ToDouble((float)value);
             }
-
+            */
             // only accept boolean, number or string types  
             if (!(IsBoolean() || IsInteger() || IsFloat() || IsString()))
             {

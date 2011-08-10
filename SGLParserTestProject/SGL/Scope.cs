@@ -7,34 +7,38 @@ namespace SGL
     class Scope
     {
         private Scope parent;
-        private Dictionary<String, SGLValue> variables;// = new Dictionary<String, SGLValue>();
+        private Dictionary<String, SGLValue> varValues;// = new Dictionary<String, SGLValue>();
+        private Dictionary<String, String> varTypes;
 
         public Scope()
         {
             // only for the global scope, the parent is null  
             parent = null;
-            variables = new Dictionary<String, SGLValue>();
+            varValues = new Dictionary<String, SGLValue>();
+            varTypes = new Dictionary<String, String>();
         }
 
         public Scope(Scope p)
         {
             parent = p;
-            variables = new Dictionary<String, SGLValue>();
+            varValues = new Dictionary<String, SGLValue>();
+            varTypes = new Dictionary<String, String>();
         }
 
-        public void Assign(String var, SGLValue value, Boolean newVar)
+        public void Assign(String var, SGLValue value, Boolean newVar, String type)
         {
             if (Resolve(var) != null)
             {
                 if (newVar) throw new Exception("There is already such a variable");
-                // There is already such a variable, re-assign it  
+                // There is already such a variable, re-assign it
                 this.ReAssign(var, value);
             }
             else
             {
                 if (!newVar) throw new Exception("The variable " + var + " doesn't exists.");
                 // A newly declared variable  
-                variables.Add(var, value);
+                varValues.Add(var, value);
+                varTypes.Add(var, type);
             }
         }
 
@@ -45,7 +49,7 @@ namespace SGL
             // changing the variables would result in changes to the Maps from  
             // other "recursive scopes".  
             Scope s = new Scope();
-            s.variables = new Dictionary<String, SGLValue>(this.variables);
+            s.varValues = new Dictionary<String, SGLValue>(this.varValues);
             return s;
         }
 
@@ -61,10 +65,65 @@ namespace SGL
 
         private void ReAssign(String identifier, SGLValue value)
         {
-            if (variables.ContainsKey(identifier))
+            if (varValues.ContainsKey(identifier))
             {
-                // The variable is declared in this scope  
-                variables.Add(identifier, value);
+                // The variable is declared in this scope
+                String type = varTypes[identifier];
+                if (type.Equals("int"))
+                {
+                    if (value.IsInteger())
+                    {
+                        varValues[identifier] = value;
+                        Console.WriteLine("variable assign: " + identifier + " = " + value.AsInteger());
+                    }
+                    else if (value.IsFloat())
+                    {
+                        // Convert float expression to int
+                        varValues[identifier] = new SGLValue((int)Math.Floor(value.AsFloat()));
+                        Console.WriteLine("variable assign + convertion: " + identifier + " = " + (int)Math.Floor(value.AsFloat()));
+                    }
+                    else
+                    {
+                        throw new Exception("Can't assign " + value.ToString() + " to an integer variable");
+                    }
+                }
+                else if (type.Equals("float"))
+                {
+                    if (value.IsNumber())
+                    {
+                        varValues[identifier] = value;
+                        Console.WriteLine("variable assign: " + identifier + " = " + value.AsFloat());
+                    }
+                    else
+                    {
+                        throw new Exception("Can't assign " + value.ToString() + " to a float variable");
+                    }
+                }
+                else if (type.Equals("boolean"))
+                {
+                    if (value.IsBoolean())
+                    {
+                        varValues[identifier] = value;
+                        Console.WriteLine("variable assign: " + identifier + " = " + value.AsBoolean());
+                    }
+                    else
+                    {
+                        throw new Exception("Can't assign " + value.ToString() + " to a boolean variable");
+                    }
+                }
+                else if (type.Equals("string"))
+                {
+                    if (value.IsString())
+                    {
+                        varValues[identifier] = value;
+                        Console.WriteLine("variable assign: " + identifier + " = " + value.AsString());
+                    }
+                    else
+                    {
+                        throw new Exception("Can't assign " + value.ToString() + " to a string variable");
+                    }
+                }
+                
             }
             else if (parent != null)
             {
@@ -78,7 +137,7 @@ namespace SGL
         public SGLValue Resolve(String var)
         {
             SGLValue value;
-            variables.TryGetValue(var, out value);
+            varValues.TryGetValue(var, out value);
             if (value != null)
             {
                 // The variable resides in this scope  

@@ -1,1 +1,3 @@
-boolean x = (true || true) && (false || false)
+if (3 > 2) {
+int x = 1;
+}

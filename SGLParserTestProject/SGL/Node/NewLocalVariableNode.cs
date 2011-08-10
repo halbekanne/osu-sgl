@@ -30,10 +30,21 @@ namespace SGL.Node
             if (type.Equals("int"))
             {
                 // Integer hinzufügen
-                if (exprV.IsNumber())
+                if (exprV.IsInteger())
                 {
-                    scope.Assign(name, new SGLValue(exprV.AsInteger()), true);
+                    scope.Assign(name, new SGLValue(exprV.AsInteger()), true, type);
                     Console.WriteLine("New integer variable: " + name + " = " + exprV.AsInteger().ToString());
+                }
+                else if (exprV.IsFloat())
+                {
+                    // Convert float expression to int
+                    scope.Assign(name, new SGLValue((int)Math.Floor(exprV.AsFloat())), true, type);
+                    Console.WriteLine("New integer variable + convertion: " + name + " = " + (int)Math.Floor(exprV.AsFloat()));
+                }
+                else if (exprV == SGLValue.NULL)
+                {
+                    scope.Assign(name, new SGLValue(0), true, type);
+                    Console.WriteLine("New integer variable: " + name + " = " + 0);
                 }
                 else
                 {
@@ -45,8 +56,13 @@ namespace SGL.Node
                 // Float hinzufügen
                 if (exprV.IsNumber())
                 {
-                    scope.Assign(name, new SGLValue(exprV.AsFloat()), true);
+                    scope.Assign(name, new SGLValue(exprV.AsFloat()), true, type);
                     Console.WriteLine("New float variable: " + name + " = " + exprV.AsFloat().ToString());
+                }
+                else if (exprV == SGLValue.NULL)
+                {
+                    scope.Assign(name, new SGLValue(0.0), true, type);
+                    Console.WriteLine("New float variable: " + name + " = " + 0.0);
                 }
                 else
                 {
@@ -55,11 +71,16 @@ namespace SGL.Node
             }
             else if (type.Equals("boolean"))
             {
-                // Float hinzufügen
+                // Boolean hinzufügen
                 if (exprV.IsBoolean())
                 {
-                    scope.Assign(name, new SGLValue(exprV.AsBoolean()), true);
+                    scope.Assign(name, new SGLValue(exprV.AsBoolean()), true, type);
                     Console.WriteLine("New boolean variable: " + name + " = " + exprV.AsBoolean().ToString());
+                }
+                else if (exprV == SGLValue.NULL)
+                {
+                    scope.Assign(name, new SGLValue(false), true, type);
+                    Console.WriteLine("New boolean variable: " + name + " = " + false);
                 }
                 else
                 {
@@ -71,8 +92,13 @@ namespace SGL.Node
                 // String hinzufügen
                 if (exprV.IsString())
                 {
-                    scope.Assign(name, new SGLValue(exprV.AsString()), true);
+                    scope.Assign(name, new SGLValue(exprV.AsString()), true, type);
                     Console.WriteLine("New string variable: " + name + " = " + exprV.AsString());
+                }
+                else if (exprV == SGLValue.NULL)
+                {
+                    scope.Assign(name, new SGLValue("\"\""), true, type);
+                    Console.WriteLine("New string variable: " + name + " = " + 0);
                 }
                 else
                 {

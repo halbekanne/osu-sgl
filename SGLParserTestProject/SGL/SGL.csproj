@@ -62,6 +62,8 @@
     <Compile Include="Node\CAndNode.cs" />
     <Compile Include="Node\COrNode.cs" />
     <Compile Include="Node\IdentifierNode.cs" />
+    <Compile Include="Node\AssignVariableNode.cs" />
+    <Compile Include="Node\IfNode.cs" />
     <Compile Include="Node\TernaryNode.cs" />
     <Compile Include="Node\MNegateNode.cs" />
     <Compile Include="Node\MModNode.cs" />

@@ -68,8 +68,9 @@ block returns [SGLNode node]
 statement returns [SGLNode node]
 	//:  	variableDefinitionList
 	:	variableDeclaration { node = $variableDeclaration.node; } // int a = 1, b = 2, c
-	//|	^(ASSIGN variableAssignment)// a = 4
+	|	variableAssignment { node = $variableAssignment.node; } // a = 4
 	//|	whileLoop
+	|	ifStatement { node = $ifStatement.node; }
 	;
 /*	
 whileLoop
@@ -77,29 +78,41 @@ whileLoop
 	{
 	}
 	;
-*/	
+*/
+
+ifStatement returns [SGLNode node] 
+@init  { 
+  IfNode ifNode = new IfNode(); 
+  node = ifNode; 
+}   
+  :  ^(IF   
+       (^(EXP expression b1=block) { ifNode.AddChoice($expression.node,$b1.node); } )+   
+       (^(EXP b2=block) { ifNode.AddChoice(new AtomNode(true),$b2.node); } )?  
+     )  
+  ;  	
 
 /* Statements */
 
 // int t = 1
 //action.NewLocalVariable($variableType.text,$variableName.text,$expression.text); 
 variableDeclaration returns [SGLNode node]
-	:	^(VARDEF variableType variableName expression) { 	
-		node = new NewLocalVariableNode($variableType.txt,$variableName.txt,$expression.node,currentScope); 
-	}
+	:	^(VARDEF variableType variableName expression)  	
+	        { node = new NewLocalVariableNode($variableType.txt,$variableName.txt,$expression.node,currentScope); }
+	
+	| 	^(VARDEF variableType variableName)  
+		{ node = new NewLocalVariableNode($variableType.txt,$variableName.txt,new AtomNode(null),currentScope); }
 	//|   ^(VARDEF variableType variableName)	{ 	action.NewLocalVariable($variableType.text,$variableName.text,"boo"); }
 	;
 
 
 
 // Only used for the first time declaration of a new variable
-/*'
-variableAssignment
-	:	variableName expression? {
-		action.AssignVariable($variableName.txt,$expression.txt);
-	}
+
+variableAssignment returns [SGLNode node]
+	:	^(ASSIGN variableName expression)
+		{ node = new AssignVariableNode($variableName.txt,$expression.node, currentScope); }
 	;
-*/	
+	
 	
 variableName returns [String txt]
 	:	Identifier { txt = $Identifier.text; }
@@ -135,8 +148,8 @@ expression returns [SGLNode node]
 	|	^('&&' a=expression b=expression) { node = new CAndNode($a.node, $b.node); }
 	|	^('||' a=expression b=expression) { node = new COrNode($a.node, $b.node); }
 	|	^('?' a=expression b=expression c=expression) { node = new TernaryNode($a.node, $b.node, $c.node); }
-	|  	IntegerAtom { node = new AtomNode(int.Parse($IntegerAtom.text)); }
-	|	FloatAtom { node = new AtomNode(float.Parse($FloatAtom.text)); }
+	|  	IntegerAtom { node = new AtomNode(int.Parse($IntegerAtom.text, System.Globalization.CultureInfo.InvariantCulture)); }
+	|	FloatAtom { node = new AtomNode(Double.Parse($FloatAtom.text, System.Globalization.CultureInfo.InvariantCulture)); }
 	|  	BooleanAtom { node = new AtomNode(Boolean.Parse($BooleanAtom.text)); }
 	|	StringAtom { node = new AtomNode($StringAtom.text); }
 	|	lookup { node = $lookup.node; }

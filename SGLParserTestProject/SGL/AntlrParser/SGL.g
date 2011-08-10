@@ -23,6 +23,8 @@ options {
 tokens {
 	BLOCK;
 	STATEMENTS;
+	IF;
+	EXP;
 	ID_LIST;
 	VARDEF;
 	ASSIGN;
@@ -73,7 +75,7 @@ tokens {
 
 // This is the starting rule, and should only contain the very first root element/statement that could appear
 compilationUnit
-	:	mainBlock EOF
+	:	mainBlock
 	;
 	
 mainBlock
@@ -87,13 +89,13 @@ block
 	;
 	
 singleBlock
-	:	statement
-		-> ^(BLOCK ^(STATEMENTS statement))
+	:	semicolonStatement
+		-> ^(BLOCK ^(STATEMENTS semicolonStatement))
 	;
 	
 commonBlock
 	:	singleBlock
-	|	'{' block '}'
+	|	'{'! block '}'!
 	;	
 		 		     	
      	
@@ -106,11 +108,17 @@ mainStatement
 	:	statement
 	;	
 
+semicolonStatement
+	:	(variableDeclarationList // int a = 1, b = 2, c
+	|	variableAssignment // a = 4
+	)	';'!
+	;
+	
 
 statement
 	//:  	variableDefinitionList
-	:	variableDeclarationList // int a = 1, b = 2, c
-	|	variableAssignment -> ^(ASSIGN variableAssignment)// a = 4
+	:	semicolonStatement
+	|	ifStatement
 	|	whileLoop
 	;
 
@@ -119,12 +127,18 @@ statement
 // int t = 1
 
 variableDeclarationList
-	:	variableType variableAssignment (',' variableAssignment)* -> ^(VARDEF variableType variableAssignment)+
+	:	variableType variableDecAssignment (',' variableDecAssignment)* -> ^(VARDEF variableType variableDecAssignment)+
+	;
+
+variableDecAssignment
+	: variableName ('=' expression)?  -> variableName expression?
 	;
 
 variableAssignment
-	: variableName ('=' expression)?  -> variableName expression?
+	: variableName '=' expression  -> ^(ASSIGN variableName expression)
 	;
+
+
 	
 	
 	
@@ -146,6 +160,20 @@ whileLoop
 	:	'while' '(' expression ')' commonBlock -> ^('while' expression commonBlock)
 	;
 
+ifStatement
+	:	ifStat elseIfStat* elseStat? -> ^(IF ifStat elseIfStat* elseStat?)
+	;
+ifStat
+	:	'if' expression commonBlock -> ^(EXP expression commonBlock)
+	;
+
+elseIfStat
+	:	'else' 'if' expression commonBlock -> ^(EXP expression commonBlock)
+	;
+	
+elseStat
+	:	'else' commonBlock -> ^(EXP commonBlock)  
+	;		
 /*block
 	:	'{' statement* '}' -> statement*
 	;
