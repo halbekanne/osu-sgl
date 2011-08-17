@@ -1,0 +1,6 @@
+# Paths to exclude
+/bin
+/classes
+/obj
+/output
+
