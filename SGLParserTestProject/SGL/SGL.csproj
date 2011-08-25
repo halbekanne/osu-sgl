@@ -64,6 +64,10 @@
     <Compile Include="Node\IdentifierNode.cs" />
     <Compile Include="Node\AssignVariableNode.cs" />
     <Compile Include="Node\IfNode.cs" />
+    <Compile Include="Node\ForNode.cs" />
+    <Compile Include="Node\ObjectMehtodNode.cs" />
+    <Compile Include="Node\SpriteNode.cs" />
+    <Compile Include="Node\WhileNode.cs" />
     <Compile Include="Node\TernaryNode.cs" />
     <Compile Include="Node\MNegateNode.cs" />
     <Compile Include="Node\MModNode.cs" />
@@ -77,6 +81,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scope.cs" />
     <Compile Include="SGLNode.cs" />
+    <Compile Include="SGLObject.cs" />
     <Compile Include="SGLValue.cs" />
     <Compile Include="Sprite.cs" />
   </ItemGroup>

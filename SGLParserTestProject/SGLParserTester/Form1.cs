@@ -57,6 +57,8 @@ namespace WindowsFormsApplication4
                 Console.WriteLine("Time needed for tree walking: " + walkingTime.ElapsedMilliseconds + " ms (" + walkingTime.Elapsed + ")");
                 Console.WriteLine("Time needed for anything else (convertion etc.): " + (otherTime.ElapsedMilliseconds - parseTime.ElapsedMilliseconds - walkingTime.ElapsedMilliseconds) + " ms (" + (otherTime.Elapsed - parseTime.Elapsed - walkingTime.Elapsed) + ")");
 
+                outputBox.Text = tw.GetStoryboardCode().ToString();
+
             }
             catch (Exception ex)
             {

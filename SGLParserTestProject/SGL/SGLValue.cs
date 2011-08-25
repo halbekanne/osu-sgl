@@ -34,7 +34,7 @@ namespace SGL
             }
             */
             // only accept boolean, number or string types  
-            if (!(IsBoolean() || IsInteger() || IsFloat() || IsString()))
+            if (!(IsBoolean() || IsInteger() || IsFloat() || IsString() || IsObject()))
             {
                 throw new Exception("invalid type: " + v + " (" + v.GetType() + ")");
             }
@@ -65,6 +65,11 @@ namespace SGL
         public String AsString()
         {
             return (String)value;
+        }
+
+        public SGLObject AsObject()
+        {
+            return (SGLObject)value;
         }
 
         // Compare one value to another
@@ -167,6 +172,16 @@ namespace SGL
         public Boolean IsString()
         {
             return value is String;
+        }
+
+        public Boolean IsSprite()
+        {
+            return value is Sprite;
+        }
+
+        public Boolean IsObject()
+        {
+            return value is SGLObject;
         }
 
         public String ToString()

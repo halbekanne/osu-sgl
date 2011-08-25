@@ -11,6 +11,7 @@ namespace SGL.Node
         public AtomNode(Object v)
         {
             value = (v == null) ? SGLValue.NULL : new SGLValue(v);
+            //Console.WriteLine("AtomNode: " + value.ToString());
         }
 
         public SGLValue Evaluate()

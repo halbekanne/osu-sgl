@@ -30,8 +30,11 @@ tokens {
 	ASSIGN;
 	NEGATE;
 	LIBMETHOD;
+	OBJMETHOD;
 	STRING;
-
+	FORDEC;
+	FORCOND;
+	FORITER;
 }
 
 @namespace { SGL.AntlrParser }
@@ -111,8 +114,14 @@ mainStatement
 semicolonStatement
 	:	(variableDeclarationList // int a = 1, b = 2, c
 	|	variableAssignment // a = 4
+	|	objectMethod
 	)	';'!
 	;
+	
+oneLineStatement
+	:	variableDeclarationList
+	|	variableAssignment
+	;	
 	
 
 statement
@@ -120,6 +129,7 @@ statement
 	:	semicolonStatement
 	|	ifStatement
 	|	whileLoop
+	|	forLoop
 	;
 
 /* Statements */
@@ -156,9 +166,18 @@ variableType
 	;
 
 
-whileLoop
-	:	'while' '(' expression ')' commonBlock -> ^('while' expression commonBlock)
+objectMethod
+	:	variableName '.' Identifier '(' arguments? ')' -> ^(OBJMETHOD variableName Identifier arguments?)
 	;
+
+whileLoop
+	:	'while' expression commonBlock -> ^('while' expression commonBlock)
+	;
+	
+forLoop
+	:	'for' '(' dec=oneLineStatement? ';' cond=expression? ';' iter=oneLineStatement? ')' commonBlock
+	->	^('for' ^(FORDEC $dec)? ^(FORCOND $cond)? ^(FORITER $iter)?)
+	;	
 
 ifStatement
 	:	ifStat elseIfStat* elseStat? -> ^(IF ifStat elseIfStat* elseStat?)
@@ -276,16 +295,16 @@ mathAtom
     |	FloatAtom
     |   BooleanAtom
 //    |	f=Float
-    |   'new' SpriteAnimation arguments -> ^(SpriteAnimation arguments)
+    |   'new' SpriteAnimation '(' arguments? ')' -> ^(SpriteAnimation arguments?)
 	//|   Identifier ('.' Identifier)* arguments
 	|	Identifier -> Identifier
-	|	Identifier arguments -> ^(LIBMETHOD Identifier arguments?)
+	|	Identifier '(' arguments? ')' -> ^(LIBMETHOD Identifier arguments?)
 	|	stringQuote
     ;  
 
 // arguments for methods aso.
 arguments
-    :   '('! expressionList? ')'!
+    :    expressionList
     ;    
 
 expressionList
@@ -306,9 +325,10 @@ literal
     
     
 stringQuote
-	:     StringAtom -> StringAtom
+	:   StringAtom -> ^(STRING StringAtom)
 	;
-      
+
+     
     
 
 /* Lexer Rules 
@@ -329,14 +349,20 @@ FloatAtom
     |   ('0'..'9')+
     ;
 
-StringAtom
-    :  '"' ( EscapeSequence | ~('\\'|'"') )+ '"'
-    ;
     
 BooleanAtom
     :   'true'
     |   'false'
     ;
+    
+StringAtom
+@after {
+  //Text = (Text.Substring(1, Text.Length-2).Replace("\\\\(.)", "$1"));
+  //setText(getText().substring(1, getText().length()-1).replaceAll("\\\\(.)", "$1"));
+}
+    :   '"' ( EscapeSequence | ~('\\'|'"') )+ '"'
+    ;  
+    
    
 IntType
 	: 'int'
@@ -416,7 +442,6 @@ SGLIDDigit
 
 /* Escaptin Sequences */
 
-fragment
 EscapeSequence
     :   '\\' ('b'|'t'|'n'|'f'|'r'|'\"'|'\''|'\\')
     |   UnicodeEscape

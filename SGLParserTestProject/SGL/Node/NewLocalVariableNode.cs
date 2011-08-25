@@ -87,7 +87,7 @@ namespace SGL.Node
                     throw new Exception(exprV.ToString() + " can't be parsed to a boolean value.");
                 }
             }
-            if (type.Equals("string"))
+            else if (type.Equals("string"))
             {
                 // String hinzufügen
                 if (exprV.IsString())
@@ -103,6 +103,24 @@ namespace SGL.Node
                 else
                 {
                     throw new Exception(exprV.ToString() + " can't be parsed to a string.");
+                }
+            }
+            else if (type.Equals("Object"))
+            {
+                // String hinzufügen
+                if (exprV.IsObject())
+                {
+                    scope.Assign(name, new SGLValue(exprV.AsObject()), true, type);
+                    Console.WriteLine("New Object variable: " + name + " = ...");
+                }
+                else if (exprV == SGLValue.NULL)
+                {
+                    scope.Assign(name, new SGLValue("\"\""), true, type);
+                    Console.WriteLine("New Object variable: " + name + " = " + 0);
+                }
+                else
+                {
+                    throw new Exception("expression can't be parsed to an object.");
                 }
             }
 

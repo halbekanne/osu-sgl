@@ -9,6 +9,7 @@ namespace SGL
         private Scope parent;
         private Dictionary<String, SGLValue> varValues;// = new Dictionary<String, SGLValue>();
         private Dictionary<String, String> varTypes;
+        private int time = 0;
 
         public Scope()
         {
@@ -16,6 +17,10 @@ namespace SGL
             parent = null;
             varValues = new Dictionary<String, SGLValue>();
             varTypes = new Dictionary<String, String>();
+        }
+
+        public int GetTime() {
+            return time;
         }
 
         public Scope(Scope p)
@@ -153,7 +158,24 @@ namespace SGL
                 // Unknown variable  
                 return null;
             }
-        } 
+        }
+
+
+
+        public List<SGLObject> GetObjects()
+        {
+            List<SGLObject> objects = new List<SGLObject>();
+            foreach (KeyValuePair<String,String> pair in varTypes)
+            {
+                if (pair.Value.Equals("Object"))
+                {
+                    objects.Add(varValues[pair.Key].AsObject());
+                }
+            }
+
+            return objects;
+
+        }
 
 
 

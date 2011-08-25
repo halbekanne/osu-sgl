@@ -9,12 +9,33 @@ options {
 @namespace { SGL.AntlrParser }
 
 @header {
+	using System.Text;
 	using System.Collections.Generic;
 	using SGL.Node;
 }
 
 @members{
 	Scope currentScope = null;
+    private List<SGLObject> spriteObjects = new List<SGLObject>();
+    //private StringBuilder storyboardCode = new StringBuilder();
+    	
+    public StringBuilder GetStoryboardCode() {
+
+    	StringBuilder storyboardCode = new StringBuilder();
+        // sort the sprites and animations, lowest priority first
+        spriteObjects.Sort();
+
+        foreach (SGLObject currentObject in spriteObjects) {
+        	if (currentObject is Sprite)
+            {
+            	Sprite cSprite = (Sprite)currentObject;
+                cSprite.GenerateSbCode(storyboardCode);
+            }
+        }
+
+    	return storyboardCode;
+    }
+	
 	// Error reporting
     //private StdErrReporter errorReporter = new StdErrReporter();
     //public override void EmitErrorMessage(String msg)
@@ -52,10 +73,10 @@ mainStatement
 
 block returns [SGLNode node]
 @init { 
-  BlockNode bn = new BlockNode(); 
-  node = bn; 
   Scope scope = new Scope(currentScope); 
-  currentScope = scope; 
+  currentScope = scope;
+  BlockNode bn = new BlockNode(spriteObjects, currentScope); 
+  node = bn;  
 }  
 @after { 
   currentScope = currentScope.Parent(); 
@@ -69,16 +90,21 @@ statement returns [SGLNode node]
 	//:  	variableDefinitionList
 	:	variableDeclaration { node = $variableDeclaration.node; } // int a = 1, b = 2, c
 	|	variableAssignment { node = $variableAssignment.node; } // a = 4
-	//|	whileLoop
-	|	ifStatement { node = $ifStatement.node; }
+	|	objectMethod { node = $objectMethod.node; } // a.move(100,200)
+	|	ifStatement { node = $ifStatement.node; } 
+	|	whileLoop { node = $whileLoop.node; } 
 	;
-/*	
-whileLoop
-	:	^('while' expression statement*)
-	{
-	}
+	
+objectMethod returns [SGLNode node]
+	:	^(OBJMETHOD variableName Identifier arguments)
+	{ node = new ObjectMehtodNode($variableName.txt, $Identifier.text, $arguments.list, currentScope); }
+	;	
+	
+whileLoop returns [SGLNode node]
+	:	^('while' expression block)
+	{ node = new WhileNode($expression.node, $block.node); }
 	;
-*/
+
 
 ifStatement returns [SGLNode node] 
 @init  { 
@@ -123,6 +149,7 @@ variableType returns [String txt]
 	|	BooleanType { txt = $BooleanType.text; }
 	|	StringType { txt = $StringType.text; }
 	|	FloatType { txt = $FloatType.text; }
+	|	ObjectType { txt = $ObjectType.text; }
 	;
 
   
@@ -151,7 +178,8 @@ expression returns [SGLNode node]
 	|  	IntegerAtom { node = new AtomNode(int.Parse($IntegerAtom.text, System.Globalization.CultureInfo.InvariantCulture)); }
 	|	FloatAtom { node = new AtomNode(Double.Parse($FloatAtom.text, System.Globalization.CultureInfo.InvariantCulture)); }
 	|  	BooleanAtom { node = new AtomNode(Boolean.Parse($BooleanAtom.text)); }
-	|	StringAtom { node = new AtomNode($StringAtom.text); }
+	|	^(STRING StringAtom) { node = new AtomNode(($StringAtom.text).Substring(1, ($StringAtom.text).Length-1)); }
+	|	spriteObject { node = $spriteObject.node; }
 	|	lookup { node = $lookup.node; }
     //|	mathExpression
     ;    
@@ -161,12 +189,22 @@ lookup returns [SGLNode node]
 	:	Identifier { node = new IdentifierNode($Identifier.text, currentScope); }
 	;	    
     
+spriteObject returns [SGLNode node]
+	:   SpriteAnimation { node = new SpriteNode(); }
+	//^('Sprite' spriteArguments) { node = $spriteArguments.node; }
+	//|	^('Animation' animationArguments) { node = $animationArguments.node; }
+	;  
+	
+spriteArguments returns [SGLNode node]
+	:	filepath=expression { node = new SpriteNode($filepath.node); }
+	; 	
     
 
 
 // arguments for methods aso.
-arguments
-    :   '(' expressionList? ')'
+arguments returns [List<SGLNode> list]
+@init { list = new List<SGLNode>(); }
+    :   (expression {list.Add($expression.node);})*
     ;
 
 expressionList

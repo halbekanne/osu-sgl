@@ -7,10 +7,14 @@ namespace SGL.Node
     class BlockNode : SGLNode
     {
         private List<SGLNode> statements;
+        private List<SGLObject> spriteObjects;
+        private Scope scope;
 
-        public BlockNode()
+        public BlockNode(List<SGLObject> spriteObjects, Scope scope)
         {
             statements = new List<SGLNode>();
+            this.spriteObjects = spriteObjects;
+            this.scope = scope;
         }
 
         public void AddStatement(SGLNode stat)
@@ -29,6 +33,9 @@ namespace SGL.Node
                     return value;
                 }
             }
+
+            // For adding local variables to the list of sprites and animations
+            spriteObjects.AddRange(scope.GetObjects());
 
             // return VOID if no return was done earlier
             return SGLValue.VOID;
