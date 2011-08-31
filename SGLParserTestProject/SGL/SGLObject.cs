@@ -7,9 +7,9 @@ namespace SGL
     public class SGLObject : IComparable 
     {
         protected int priority;
-        protected SGLValue filepath;
-        protected SGLValue layer;
-        protected SGLValue origin;
+        protected String filepath;
+        protected String layer;
+        protected String origin;
         protected StringBuilder objectSbCode = new StringBuilder();
 
         public int GetPriority()
@@ -17,17 +17,17 @@ namespace SGL
             return priority;
         }
 
-        public SGLValue GetFilepath()
+        public String GetFilepath()
         {
             return filepath;
         }
 
-        public SGLValue GetLayer()
+        public String GetLayer()
         {
             return layer;
         }
 
-        public SGLValue GetOrigin()
+        public String GetOrigin()
         {
             return origin;
         }

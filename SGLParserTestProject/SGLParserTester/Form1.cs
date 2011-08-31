@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using SGL;
 using SGL.AntlrParser;
+using SGL.SGLUnit;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using System.Diagnostics;
@@ -15,6 +16,7 @@ namespace WindowsFormsApplication4
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -71,5 +73,14 @@ namespace WindowsFormsApplication4
 
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            UnitTester tester = new UnitTester();
+            tester.RunTests();
+        }
+
+
     }
 }

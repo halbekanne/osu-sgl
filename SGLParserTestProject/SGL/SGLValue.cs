@@ -184,6 +184,39 @@ namespace SGL
             return value is SGLObject;
         }
 
+        public Boolean IsOrigin()
+        {
+            String origin = AsString();
+            switch (origin)
+            {
+                case "TopLeft": return true;
+                case "TopCentre": return true;
+                case "TopRight": return true;
+                case "CentreLeft": return true;
+                case "Centre": return true;
+                case "CentreRight": return true;
+                case "BottomLeft": return true;
+                case "BottomCentre": return true;
+                case "BottomRight": return true;
+                default: return false;
+            }
+        }
+
+        public Boolean IsLayer()
+        {
+            String layer = AsString();
+            switch (layer)
+            {
+                case "Background": return true;
+                case "Fail": return true;
+                case "Pass": return true;
+                case "Foreground": return true;
+                default: return false;
+            }
+        }
+
+
+
         public String ToString()
         {
             return IsNull() ? "NULL" : IsVoid() ? "VOID" : ((String)value);

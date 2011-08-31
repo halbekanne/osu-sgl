@@ -35,6 +35,8 @@ tokens {
 	FORDEC;
 	FORCOND;
 	FORITER;
+	STRINGNOQUOTES;
+	PRINTLN;
 }
 
 @namespace { SGL.AntlrParser }
@@ -114,6 +116,7 @@ mainStatement
 semicolonStatement
 	:	(variableDeclarationList // int a = 1, b = 2, c
 	|	variableAssignment // a = 4
+	|	staticMethod
 	|	objectMethod
 	)	';'!
 	;
@@ -199,7 +202,9 @@ elseStat
 */
 
 
-
+staticMethod
+	:	'println' '(' expression ')' -> ^(PRINTLN expression)
+	;
 
 
 
@@ -300,7 +305,12 @@ mathAtom
 	|	Identifier -> Identifier
 	|	Identifier '(' arguments? ')' -> ^(LIBMETHOD Identifier arguments?)
 	|	stringQuote
+	|	Layer -> ^(STRINGNOQUOTES Layer)
+	|	Origin -> ^(STRINGNOQUOTES Origin)
     ;  
+    
+    
+
 
 // arguments for methods aso.
 arguments
@@ -357,7 +367,7 @@ BooleanAtom
     
 StringAtom
 @after {
-  //Text = (Text.Substring(1, Text.Length-2).Replace("\\\\(.)", "$1"));
+  //Text = (Text.Substring(0, Text.Length-1).Replace("\\\\(.)", "$1"));
   //setText(getText().substring(1, getText().length()-1).replaceAll("\\\\(.)", "$1"));
 }
     :   '"' ( EscapeSequence | ~('\\'|'"') )+ '"'
@@ -391,6 +401,24 @@ SpriteAnimation
 	|	'Animation'
 	;	      
 
+Layer
+	:	'Background' 
+	|	'Fail'
+	|	'Pass'
+	|	'Foreground'
+	;
+	
+Origin
+	:	'TopLeft'
+	|	'TopCentre'
+	|	'TopRight'
+	|	'CentreLeft'
+	|	'Centre'
+	|	'CentreRight'
+	|	'BottomLeft'
+	|	'BottomCentre'
+	|	'BottomRight'
+	;
 
 // Use this for variable names, method names, and so on
 Identifier 

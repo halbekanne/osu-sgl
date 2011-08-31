@@ -17,11 +17,21 @@ options {
 @members{
 	Scope currentScope = null;
     private List<SGLObject> spriteObjects = new List<SGLObject>();
+    
+    //Debug
+    //private TextBox debugConsole;
+    
+    //public void SetDebugTextBox(TextBox tb) {
+    //	debugConsole = tb;
+    //}
+    
     //private StringBuilder storyboardCode = new StringBuilder();
+    	
+    StringBuilder storyboardCode = new StringBuilder();	
     	
     public StringBuilder GetStoryboardCode() {
 
-    	StringBuilder storyboardCode = new StringBuilder();
+    	
         // sort the sprites and animations, lowest priority first
         spriteObjects.Sort();
 
@@ -90,9 +100,14 @@ statement returns [SGLNode node]
 	//:  	variableDefinitionList
 	:	variableDeclaration { node = $variableDeclaration.node; } // int a = 1, b = 2, c
 	|	variableAssignment { node = $variableAssignment.node; } // a = 4
+	|	staticMethod { node = $staticMethod.node; } // println()
 	|	objectMethod { node = $objectMethod.node; } // a.move(100,200)
 	|	ifStatement { node = $ifStatement.node; } 
 	|	whileLoop { node = $whileLoop.node; } 
+	;
+	
+staticMethod returns [SGLNode node]
+	:	^(PRINTLN expression) { node = new PrintlnNode(storyboardCode, $expression.node); }
 	;
 	
 objectMethod returns [SGLNode node]
@@ -178,7 +193,9 @@ expression returns [SGLNode node]
 	|  	IntegerAtom { node = new AtomNode(int.Parse($IntegerAtom.text, System.Globalization.CultureInfo.InvariantCulture)); }
 	|	FloatAtom { node = new AtomNode(Double.Parse($FloatAtom.text, System.Globalization.CultureInfo.InvariantCulture)); }
 	|  	BooleanAtom { node = new AtomNode(Boolean.Parse($BooleanAtom.text)); }
-	|	^(STRING StringAtom) { node = new AtomNode(($StringAtom.text).Substring(1, ($StringAtom.text).Length-1)); }
+	|	^(STRING StringAtom) { node = new AtomNode(($StringAtom.text).Substring(1, ($StringAtom.text).Length-2)); }
+	|	^(STRINGNOQUOTES Layer) { node = new AtomNode($Layer.text); }
+	|	^(STRINGNOQUOTES Origin) { node = new AtomNode($Origin.text); }
 	|	spriteObject { node = $spriteObject.node; }
 	|	lookup { node = $lookup.node; }
     //|	mathExpression
@@ -190,15 +207,10 @@ lookup returns [SGLNode node]
 	;	    
     
 spriteObject returns [SGLNode node]
-	:   SpriteAnimation { node = new SpriteNode(); }
+	:   ^(SpriteAnimation arguments) {  node = new SpriteNode($arguments.list); }
 	//^('Sprite' spriteArguments) { node = $spriteArguments.node; }
 	//|	^('Animation' animationArguments) { node = $animationArguments.node; }
-	;  
-	
-spriteArguments returns [SGLNode node]
-	:	filepath=expression { node = new SpriteNode($filepath.node); }
-	; 	
-    
+	;  	  
 
 
 // arguments for methods aso.

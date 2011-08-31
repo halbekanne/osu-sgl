@@ -65,6 +65,7 @@
     <Compile Include="Node\AssignVariableNode.cs" />
     <Compile Include="Node\IfNode.cs" />
     <Compile Include="Node\ForNode.cs" />
+    <Compile Include="Node\PrintlnNode.cs" />
     <Compile Include="Node\ObjectMehtodNode.cs" />
     <Compile Include="Node\SpriteNode.cs" />
     <Compile Include="Node\WhileNode.cs" />
@@ -82,6 +83,8 @@
     <Compile Include="Scope.cs" />
     <Compile Include="SGLNode.cs" />
     <Compile Include="SGLObject.cs" />
+    <Compile Include="SGLUnit\Unit.cs" />
+    <Compile Include="SGLUnit\UnitTester.cs" />
     <Compile Include="SGLValue.cs" />
     <Compile Include="Sprite.cs" />
   </ItemGroup>

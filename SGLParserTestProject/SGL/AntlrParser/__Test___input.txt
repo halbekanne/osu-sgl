@@ -1,2 +1,1 @@
-Object t = new Sprite();
-t.move(0,200,400);
+println(-1);
