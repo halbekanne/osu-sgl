@@ -47,14 +47,28 @@ namespace SGL
 
         public Double AsFloat()
         {
+
+            if (IsFloat())
+            {
+                return ((double)value);
+            }
+            else if (IsInteger())
+            {
+                return ((double)this.AsInteger());
+            }
+
+            throw new Exception("Value can't be converted to a float value");
+
+            /*
             try
             {
                 return ((double)value);
             }
-            catch
+            catch (System.InvalidCastException)
             {
                 return ((double)this.AsInteger());
             }
+             * */
         }
 
         public int AsInteger()

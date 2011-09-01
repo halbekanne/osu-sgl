@@ -6,32 +6,43 @@ namespace SGL.Node
 {
     class ForNode : SGLNode
     {
-        private String identifier;
-        private SGLNode startExpr;
-        private SGLNode stopExpr;
+        private SGLNode init;
+        private SGLNode condition;
+        private SGLNode iteration;
         private SGLNode block;
-        protected Scope scope;
 
-        public ForNode(String identifier, SGLNode startExpr)
+        public ForNode()
         {
-            //this.expression = expression;
-            //this.block = block;
+
+        }
+
+        public void SetInit(SGLNode init)
+        {
+            this.init = init;
+        }
+
+        public void SetCondition(SGLNode condition)
+        {
+            this.condition = condition;
+        }
+
+        public void SetIteration(SGLNode iteration)
+        {
+            this.iteration = iteration;
+        }
+
+        public void SetBlock(SGLNode block)
+        {
+            this.block = block;
         }
 
         public SGLValue Evaluate()
         {
 
-            /*while (expression.Evaluate().AsBoolean())
-            {
-
-                SGLValue returnValue = block.Evaluate();
-
-                if (returnValue != SGLValue.VOID)
-                {
-                    return returnValue;
-                }
+            for (init.Evaluate(); condition.Evaluate().AsBoolean(); iteration.Evaluate()) {
+                block.Evaluate();
             }
-            */
+
             return SGLValue.VOID;
         }
 

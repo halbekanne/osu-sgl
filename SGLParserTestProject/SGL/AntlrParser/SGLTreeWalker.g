@@ -100,10 +100,12 @@ statement returns [SGLNode node]
 	//:  	variableDefinitionList
 	:	variableDeclaration { node = $variableDeclaration.node; } // int a = 1, b = 2, c
 	|	variableAssignment { node = $variableAssignment.node; } // a = 4
+	|	variableUnaryChange { node = $variableUnaryChange.node; }
 	|	staticMethod { node = $staticMethod.node; } // println()
 	|	objectMethod { node = $objectMethod.node; } // a.move(100,200)
 	|	ifStatement { node = $ifStatement.node; } 
-	|	whileLoop { node = $whileLoop.node; } 
+	|	whileLoop { node = $whileLoop.node; }
+	|	forLoop { node = $forLoop.node; }
 	;
 	
 staticMethod returns [SGLNode node]
@@ -118,6 +120,15 @@ objectMethod returns [SGLNode node]
 whileLoop returns [SGLNode node]
 	:	^('while' expression block)
 	{ node = new WhileNode($expression.node, $block.node); }
+	;
+
+forLoop returns [SGLNode node]
+@init { 
+  ForNode forNode = new ForNode(); 
+  node = forNode;  
+}  
+	:	^('for' ^(FORDEC (dec=statement { forNode.SetInit($dec.node); } )?) ^(FORCOND (cond=expression { forNode.SetCondition($cond.node); })?) ^(FORITER (iter=statement { forNode.SetIteration($iter.node); })?) block)
+	{ forNode.SetBlock($block.node); }
 	;
 
 
@@ -198,8 +209,15 @@ expression returns [SGLNode node]
 	|	^(STRINGNOQUOTES Origin) { node = new AtomNode($Origin.text); }
 	|	spriteObject { node = $spriteObject.node; }
 	|	lookup { node = $lookup.node; }
+	|	variableUnaryChange { node = $variableUnaryChange.node; }
     //|	mathExpression
     ;    
+    
+    
+variableUnaryChange returns [SGLNode node]
+	:	^(VARINC Identifier) { node = new VarIncNode($Identifier.text, currentScope); }
+	|	^(VARDEC Identifier) { node = new VarIncNode($Identifier.text, currentScope); }
+	;    
     
     
 lookup returns [SGLNode node]

@@ -37,6 +37,8 @@ tokens {
 	FORITER;
 	STRINGNOQUOTES;
 	PRINTLN;
+	VARINC;
+	VARDEC;
 }
 
 @namespace { SGL.AntlrParser }
@@ -114,8 +116,9 @@ mainStatement
 	;	
 
 semicolonStatement
-	:	(variableDeclarationList // int a = 1, b = 2, c
-	|	variableAssignment // a = 4
+	:	(variableDeclarationList // int a = 1, b = 2, c;
+	|	variableAssignment // a = 4;
+	|	variableUnaryChange // i++;
 	|	staticMethod
 	|	objectMethod
 	)	';'!
@@ -124,6 +127,7 @@ semicolonStatement
 oneLineStatement
 	:	variableDeclarationList
 	|	variableAssignment
+	|	variableUnaryChange
 	;	
 	
 
@@ -179,7 +183,7 @@ whileLoop
 	
 forLoop
 	:	'for' '(' dec=oneLineStatement? ';' cond=expression? ';' iter=oneLineStatement? ')' commonBlock
-	->	^('for' ^(FORDEC $dec)? ^(FORCOND $cond)? ^(FORITER $iter)?)
+	->	^('for' ^(FORDEC $dec?) ^(FORCOND $cond?) ^(FORITER $iter?) commonBlock)
 	;	
 
 ifStatement
@@ -276,10 +280,9 @@ unaryExpression
 
 
 unaryExpressionNotPlusMinus
-    :   '!' unaryExpression
-    |   castExpression
-    //|   primary selector* ('++'|'--')?
-    |   mathAtom ('++'|'--')?
+    :   Identifier ('++' -> ^(VARINC Identifier)
+	|	'--' -> ^(VARDEC Identifier))
+	//'!' unaryExpression
     ;       
 
 // Int -> Float, ...    
@@ -290,8 +293,9 @@ castExpression
 // (...) / value / variable / method like rand(...)  
 
 negativeExpression
-	:	mathAtom -> mathAtom
-	|	('-') mathAtom -> ^(NEGATE mathAtom)
+	:	mathAtom
+	|	'-' mathAtom -> ^(NEGATE mathAtom)
+	|	unaryExpressionNotPlusMinus
 	;
 
 mathAtom
@@ -302,12 +306,17 @@ mathAtom
 //    |	f=Float
     |   'new' SpriteAnimation '(' arguments? ')' -> ^(SpriteAnimation arguments?)
 	//|   Identifier ('.' Identifier)* arguments
-	|	Identifier -> Identifier
+	|	Identifier
 	|	Identifier '(' arguments? ')' -> ^(LIBMETHOD Identifier arguments?)
 	|	stringQuote
 	|	Layer -> ^(STRINGNOQUOTES Layer)
 	|	Origin -> ^(STRINGNOQUOTES Origin)
     ;  
+    
+variableUnaryChange
+	:	Identifier ('++' -> ^(VARINC Identifier)
+	|	'--' -> ^(VARDEC Identifier))
+	;    
     
     
 
