@@ -20,13 +20,24 @@ namespace SGL.Node
 
             while (expression.Evaluate().AsBoolean())
             {
+                SGLValue returnValue = block.Evaluate();
+                if (returnValue != SGLValue.VOID)
+                {
+                    if (returnValue == SGLValue.BREAK)
+                    {
+                        Console.WriteLine("Break!");
+                        return SGLValue.VOID;
+                    }
+                }
 
+                /*
                 SGLValue returnValue = block.Evaluate();
 
                 if (returnValue != SGLValue.VOID)
                 {
                     return returnValue;
                 }
+                 * */
             }
 
             return SGLValue.VOID;

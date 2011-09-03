@@ -1,1 +1,4 @@
-int t = 2++;
+method int test(int x) {
+x++;
+}
+int x = 1;

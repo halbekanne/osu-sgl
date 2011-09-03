@@ -65,6 +65,8 @@
     <Compile Include="Node\AssignVariableNode.cs" />
     <Compile Include="Node\IfNode.cs" />
     <Compile Include="Node\ForNode.cs" />
+    <Compile Include="Node\BreakNode.cs" />
+    <Compile Include="Node\FunctionCallNode.cs" />
     <Compile Include="Node\VarIncNode.cs" />
     <Compile Include="Node\PrintlnNode.cs" />
     <Compile Include="Node\ObjectMehtodNode.cs" />

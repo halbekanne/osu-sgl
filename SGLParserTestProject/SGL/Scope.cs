@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SGL
 {
-    class Scope
+    public class Scope
     {
         private Scope parent;
         private Dictionary<String, SGLValue> varValues;// = new Dictionary<String, SGLValue>();
@@ -66,6 +66,19 @@ namespace SGL
         public Scope Parent()
         {
             return parent;
+        }
+
+        public int getParentNumber()
+        {
+            Scope current = this;
+            int parentNum = 0;
+            while (current.parent != null)
+            {
+                parentNum++;
+                current = current.parent;
+            }
+            return parentNum;
+
         }
 
         private void ReAssign(String identifier, SGLValue value)
@@ -160,6 +173,13 @@ namespace SGL
             }
         }
 
+
+        public void ClearVariables()
+        {
+            Console.WriteLine("Clear this scope (Parents: " + this.getParentNumber() + "), " + varValues.Count + " Variables to clear");
+            varValues = new Dictionary<String, SGLValue>();
+            varTypes = new Dictionary<String, String>();
+        }
 
 
         public List<SGLObject> GetObjects()

@@ -17,9 +17,12 @@ namespace SGL.Node
             this.name = name;
             this.expression = expression;
             this.scope = scope;
+            Console.WriteLine("Created New Variable node in Scope (Parents: " + scope.getParentNumber() + ")");
         }
 
         public SGLValue Evaluate() {
+
+            Console.WriteLine("Execute Variable in Scope (Parents: " + scope.getParentNumber() + ")");
 
             SGLValue exprV = expression.Evaluate();
             if (exprV == SGLValue.VOID)
@@ -97,7 +100,7 @@ namespace SGL.Node
                 }
                 else if (exprV == SGLValue.NULL)
                 {
-                    scope.Assign(name, new SGLValue("\"\""), true, type);
+                    scope.Assign(name, new SGLValue(""), true, type);
                     Console.WriteLine("New string variable: " + name + " = " + 0);
                 }
                 else

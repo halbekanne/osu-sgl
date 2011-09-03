@@ -40,6 +40,8 @@ namespace SGL.Node
                 throw new Exception("illegal println expression: " + this.ToString());
             }
 
+            Console.WriteLine("New SB Code: " + sb);
+
             return SGLValue.VOID;
   
         }

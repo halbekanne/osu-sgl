@@ -4,7 +4,7 @@ grammar SGL;
 
 options {
 	output = 'AST';
-	language = 'CSharp2'; 
+	language = 'CSharp2';
 	
 	/* Backtracking: 
 	 * 1. step - guessing: look which way to go (by trying all possible ways until it finds the right way to the exit)
@@ -39,15 +39,48 @@ tokens {
 	PRINTLN;
 	VARINC;
 	VARDEC;
+	BREAK;
+	PARAM_TYPE_LIST;
+	PARAM_NAME_LIST;
+	FUNC_CALL;
 }
 
 @namespace { SGL.AntlrParser }
 
 @header {
 	//using SGLParserTester;
+	using System.Collections.Generic;
+	using SGL;
 }
 
-@members{
+@members {
+
+        public Dictionary<String,Function> functions = new Dictionary<String,Function>();
+
+    	private void DefineFunction(String id, Object type, Object idList, Object block) {
+                // 'idList' is possibly null!  Create an empty tree in that case.  
+                CommonTree idListTree = idList == null ? new CommonTree() : (CommonTree)idList;
+
+                // 'type' is never null
+                String typeString = ((CommonTree)type).ToString();
+                Console.WriteLine("function found! Name: " + id + " returns " + typeString); 
+
+                // 'block' is never null 
+                CommonTree blockTree = (CommonTree)block;
+
+                // The function name with the exact same type of parameters after it, is the unique key 
+                String key = id;
+
+                Console.WriteLine("Adding the parameters:");
+                for (int a = 0; a < idListTree.GetChild(0).ChildCount; a++) {
+                    key += "-" + idListTree.GetChild(0).GetChild(a).ToString();
+                    Console.WriteLine("added " + idListTree.GetChild(0).GetChild(a).ToString());
+                }
+                //idListTree.GetChild(1).ChildCount;
+                functions.Add(key, new Function(id, typeString, idListTree, blockTree));
+                Console.WriteLine("Function " + id + " saved, unique key: " + key);
+        	}
+
 
 	// Error reporting
 	/*
@@ -105,11 +138,16 @@ commonBlock
 	|	'{'! block '}'!
 	;	
 		 		     	
-     	
+   	
 methodDef  
-  :	'method' Identifier '(' idList? ')' 
-  { /* implemented later */ } 
-  ;      		 	
+  :	'method' methodType Identifier '(' paramList? ')' commonBlock
+  { DefineFunction($Identifier.text, $methodType.tree, $paramList.tree, $commonBlock.tree); }  
+  ;
+  
+methodType
+	:	variableType
+	|	'void'
+	;        		 	
 	
 mainStatement
 	:	statement
@@ -119,8 +157,9 @@ semicolonStatement
 	:	(variableDeclarationList // int a = 1, b = 2, c;
 	|	variableAssignment // a = 4;
 	|	variableUnaryChange // i++;
-	|	staticMethod
+	|	functionCall
 	|	objectMethod
+	|	breakStat
 	)	';'!
 	;
 	
@@ -205,9 +244,14 @@ elseStat
 	;
 */
 
+breakStat
+	:	'break' -> BREAK
+	;
 
-staticMethod
-	:	'println' '(' expression ')' -> ^(PRINTLN expression)
+
+functionCall
+	:	Identifier '(' expressionList? ')' -> ^(FUNC_CALL Identifier expressionList?)
+	|	'println' '(' expression ')' -> ^(PRINTLN expression)
 	;
 
 
@@ -322,6 +366,7 @@ variableUnaryChange
 
 
 // arguments for methods aso.
+
 arguments
     :    expressionList
     ;    
@@ -330,8 +375,8 @@ expressionList
     :   expression (','! expression)*
     ;
 
-idList 
-  :  Identifier (',' Identifier)* -> ^(ID_LIST Identifier+) 
+paramList
+  :  variableType variableName (',' variableType variableName)* -> ^(PARAM_TYPE_LIST variableType+) ^(PARAM_NAME_LIST variableName+) 
   ; 
     
 literal 

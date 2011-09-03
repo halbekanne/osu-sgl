@@ -15,6 +15,7 @@ namespace SGL.Node
             statements = new List<SGLNode>();
             this.spriteObjects = spriteObjects;
             this.scope = scope;
+            Console.WriteLine("Created Block node with Scope (Parents: " + scope.getParentNumber() + ")");
         }
 
         public void AddStatement(SGLNode stat)
@@ -36,6 +37,10 @@ namespace SGL.Node
 
             // For adding local variables to the list of sprites and animations
             spriteObjects.AddRange(scope.GetObjects());
+
+            // Clear variables in scope for reuse
+            scope.ClearVariables();
+            Console.WriteLine("Cleared all variables in Scope (Parents: " + scope.getParentNumber() + ")");
 
             // return VOID if no return was done earlier
             return SGLValue.VOID;

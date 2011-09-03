@@ -45,6 +45,18 @@ options {
 
     	return storyboardCode;
     }
+    
+    
+      public Dictionary<String, Function> functions = null;
+      
+      public SGLTreeWalker(CommonTreeNodeStream nodes, Dictionary<String, Function> fns) : this(nodes, null, fns) {
+        
+      }
+      
+      public SGLTreeWalker(CommonTreeNodeStream nds, Scope sc, Dictionary<String, Function> fns) : this(nds) {
+        currentScope = sc;
+        functions = fns;
+      }
 	
 	// Error reporting
     //private StdErrReporter errorReporter = new StdErrReporter();
@@ -100,13 +112,24 @@ statement returns [SGLNode node]
 	//:  	variableDefinitionList
 	:	variableDeclaration { node = $variableDeclaration.node; } // int a = 1, b = 2, c
 	|	variableAssignment { node = $variableAssignment.node; } // a = 4
-	|	variableUnaryChange { node = $variableUnaryChange.node; }
+	|	variableUnaryChangeStatement { node = $variableUnaryChangeStatement.node; }
 	|	staticMethod { node = $staticMethod.node; } // println()
 	|	objectMethod { node = $objectMethod.node; } // a.move(100,200)
 	|	ifStatement { node = $ifStatement.node; } 
 	|	whileLoop { node = $whileLoop.node; }
 	|	forLoop { node = $forLoop.node; }
+	|	breakStat { node = $breakStat.node; }
+	|   functionCall   {node = $functionCall.node;}
 	;
+	
+	
+functionCall returns [SGLNode node]
+	:	^(FUNC_CALL Identifier arguments) { node = new FunctionCallNode($Identifier.text, $arguments.list, functions, storyboardCode); }
+	;	
+	
+breakStat returns [SGLNode node]
+	:	BREAK { node = new BreakNode(); }
+	;	
 	
 staticMethod returns [SGLNode node]
 	:	^(PRINTLN expression) { node = new PrintlnNode(storyboardCode, $expression.node); }
@@ -209,15 +232,20 @@ expression returns [SGLNode node]
 	|	^(STRINGNOQUOTES Origin) { node = new AtomNode($Origin.text); }
 	|	spriteObject { node = $spriteObject.node; }
 	|	lookup { node = $lookup.node; }
-	|	variableUnaryChange { node = $variableUnaryChange.node; }
+	|	variableUnaryChangeExpression { node = $variableUnaryChangeExpression.node; }
     //|	mathExpression
     ;    
     
     
-variableUnaryChange returns [SGLNode node]
-	:	^(VARINC Identifier) { node = new VarIncNode($Identifier.text, currentScope); }
-	|	^(VARDEC Identifier) { node = new VarIncNode($Identifier.text, currentScope); }
-	;    
+variableUnaryChangeStatement returns [SGLNode node]
+	:	^(VARINC Identifier) { node = new VarIncNode($Identifier.text, currentScope, false); }
+	|	^(VARDEC Identifier) { node = new VarIncNode($Identifier.text, currentScope, false); }
+	;
+	
+variableUnaryChangeExpression returns [SGLNode node]
+	:	^(VARINC Identifier) { node = new VarIncNode($Identifier.text, currentScope, true); }
+	|	^(VARDEC Identifier) { node = new VarIncNode($Identifier.text, currentScope, true); }
+	;	    
     
     
 lookup returns [SGLNode node]
@@ -234,11 +262,11 @@ spriteObject returns [SGLNode node]
 // arguments for methods aso.
 arguments returns [List<SGLNode> list]
 @init { list = new List<SGLNode>(); }
-    :   (expression {list.Add($expression.node);})*
+    :   (expression {list.Add($expression.node); })*
     ;
 
 expressionList
-    :   expression (',' expression)*
+    :   expression+
     ;
 
 

@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g 2011-09-01 02:41:41
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g 2011-09-03 21:40:23
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -46,6 +46,10 @@ public partial class SGLTreeWalker : TreeParser
 		"PRINTLN", 
 		"VARINC", 
 		"VARDEC", 
+		"BREAK", 
+		"PARAM_TYPE_LIST", 
+		"PARAM_NAME_LIST", 
+		"FUNC_CALL", 
 		"Identifier", 
 		"IntType", 
 		"BooleanType", 
@@ -72,6 +76,7 @@ public partial class SGLTreeWalker : TreeParser
 		"'method'", 
 		"'('", 
 		"')'", 
+		"'void'", 
 		"';'", 
 		"','", 
 		"'='", 
@@ -80,6 +85,7 @@ public partial class SGLTreeWalker : TreeParser
 		"'for'", 
 		"'if'", 
 		"'else'", 
+		"'break'", 
 		"'println'", 
 		"'?'", 
 		"':'", 
@@ -111,14 +117,17 @@ public partial class SGLTreeWalker : TreeParser
     public const int T__62 = 62;
     public const int OBJMETHOD = 13;
     public const int T__63 = 63;
-    public const int Origin = 33;
-    public const int SGLIDDigit = 37;
-    public const int IntType = 23;
+    public const int Origin = 37;
+    public const int SGLIDDigit = 41;
+    public const int PARAM_NAME_LIST = 24;
+    public const int IntType = 27;
     public const int ID_LIST = 8;
     public const int T__61 = 61;
     public const int T__60 = 60;
     public const int EOF = -1;
-    public const int Identifier = 22;
+    public const int BREAK = 22;
+    public const int Identifier = 26;
+    public const int FUNC_CALL = 25;
     public const int IF = 6;
     public const int T__55 = 55;
     public const int T__56 = 56;
@@ -130,51 +139,54 @@ public partial class SGLTreeWalker : TreeParser
     public const int T__54 = 54;
     public const int EXP = 7;
     public const int FORITER = 17;
-    public const int StringType = 25;
+    public const int StringType = 29;
     public const int PRINTLN = 19;
     public const int T__59 = 59;
-    public const int SpriteAnimation = 31;
-    public const int COMMENT = 42;
+    public const int SpriteAnimation = 35;
+    public const int COMMENT = 46;
     public const int STRINGNOQUOTES = 18;
     public const int VARDEF = 9;
     public const int T__50 = 50;
-    public const int BooleanType = 24;
+    public const int BooleanType = 28;
     public const int VARDEC = 21;
-    public const int T__43 = 43;
-    public const int T__46 = 46;
+    public const int T__80 = 80;
+    public const int T__81 = 81;
     public const int T__47 = 47;
-    public const int T__44 = 44;
-    public const int T__45 = 45;
     public const int T__48 = 48;
     public const int T__49 = 49;
     public const int LIBMETHOD = 12;
-    public const int IntegerAtom = 28;
+    public const int IntegerAtom = 32;
     public const int FORDEC = 15;
-    public const int FloatType = 26;
-    public const int StringAtom = 34;
+    public const int FloatType = 30;
+    public const int PARAM_TYPE_LIST = 23;
+    public const int StringAtom = 38;
     public const int NEGATE = 11;
-    public const int HEX_DIGIT = 40;
-    public const int BooleanAtom = 30;
+    public const int HEX_DIGIT = 44;
+    public const int BooleanAtom = 34;
     public const int T__71 = 71;
     public const int FORCOND = 16;
-    public const int WS = 41;
+    public const int WS = 45;
     public const int T__72 = 72;
     public const int T__70 = 70;
-    public const int UnicodeEscape = 38;
+    public const int UnicodeEscape = 42;
     public const int BLOCK = 4;
     public const int ASSIGN = 10;
-    public const int Layer = 32;
+    public const int Layer = 36;
     public const int STATEMENTS = 5;
-    public const int ObjectType = 27;
-    public const int FloatAtom = 29;
+    public const int ObjectType = 31;
+    public const int T__76 = 76;
+    public const int FloatAtom = 33;
     public const int T__75 = 75;
     public const int T__74 = 74;
     public const int VARINC = 20;
     public const int T__73 = 73;
-    public const int EscapeSequence = 35;
-    public const int Letter = 36;
-    public const int OctalEscape = 39;
+    public const int EscapeSequence = 39;
+    public const int Letter = 40;
+    public const int OctalEscape = 43;
+    public const int T__79 = 79;
+    public const int T__78 = 78;
     public const int STRING = 14;
+    public const int T__77 = 77;
 
     // delegates
     // delegators
@@ -232,6 +244,18 @@ public partial class SGLTreeWalker : TreeParser
 
         	return storyboardCode;
         }
+        
+        
+          public Dictionary<String, Function> functions = null;
+          
+          public SGLTreeWalker(CommonTreeNodeStream nodes, Dictionary<String, Function> fns) : this(nodes, null, fns) {
+            
+          }
+          
+          public SGLTreeWalker(CommonTreeNodeStream nds, Scope sc, Dictionary<String, Function> fns) : this(nds) {
+            currentScope = sc;
+            functions = fns;
+          }
     	
     	// Error reporting
         //private StdErrReporter errorReporter = new StdErrReporter();
@@ -260,7 +284,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "compilationUnit"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:73:1: compilationUnit returns [SGLNode node] : block ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:85:1: compilationUnit returns [SGLNode node] : block ;
     public SGLNode compilationUnit() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
@@ -270,8 +294,8 @@ public partial class SGLTreeWalker : TreeParser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:74:2: ( block )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:74:4: block
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:86:2: ( block )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:86:4: block
             {
             	PushFollow(FOLLOW_block_in_compilationUnit60);
             	block1 = block();
@@ -296,7 +320,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "block"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:84:1: block returns [SGLNode node] : ^( BLOCK ^( STATEMENTS ( statement )* ) ) ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:96:1: block returns [SGLNode node] : ^( BLOCK ^( STATEMENTS ( statement )* ) ) ;
     public SGLNode block() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
@@ -312,8 +336,8 @@ public partial class SGLTreeWalker : TreeParser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:94:2: ( ^( BLOCK ^( STATEMENTS ( statement )* ) ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:94:4: ^( BLOCK ^( STATEMENTS ( statement )* ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:106:2: ( ^( BLOCK ^( STATEMENTS ( statement )* ) ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:106:4: ^( BLOCK ^( STATEMENTS ( statement )* ) )
             {
             	Match(input,BLOCK,FOLLOW_BLOCK_in_block95); 
 
@@ -323,13 +347,13 @@ public partial class SGLTreeWalker : TreeParser
             	if ( input.LA(1) == Token.DOWN )
             	{
             	    Match(input, Token.DOWN, null); 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:95:24: ( statement )*
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:107:24: ( statement )*
             	    do 
             	    {
             	        int alt1 = 2;
             	        int LA1_0 = input.LA(1);
 
-            	        if ( (LA1_0 == IF || (LA1_0 >= VARDEF && LA1_0 <= ASSIGN) || LA1_0 == OBJMETHOD || (LA1_0 >= PRINTLN && LA1_0 <= VARDEC) || (LA1_0 >= 52 && LA1_0 <= 53)) )
+            	        if ( (LA1_0 == IF || (LA1_0 >= VARDEF && LA1_0 <= ASSIGN) || LA1_0 == OBJMETHOD || (LA1_0 >= PRINTLN && LA1_0 <= BREAK) || LA1_0 == FUNC_CALL || (LA1_0 >= 57 && LA1_0 <= 58)) )
             	        {
             	            alt1 = 1;
             	        }
@@ -338,7 +362,7 @@ public partial class SGLTreeWalker : TreeParser
             	        switch (alt1) 
             	    	{
             	    		case 1 :
-            	    		    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:95:25: statement
+            	    		    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:107:25: statement
             	    		    {
             	    		    	PushFollow(FOLLOW_statement_in_block114);
             	    		    	statement2 = statement();
@@ -383,7 +407,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "statement"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:99:1: statement returns [SGLNode node] : ( variableDeclaration | variableAssignment | variableUnaryChange | staticMethod | objectMethod | ifStatement | whileLoop | forLoop );
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:111:1: statement returns [SGLNode node] : ( variableDeclaration | variableAssignment | variableUnaryChangeStatement | staticMethod | objectMethod | ifStatement | whileLoop | forLoop | breakStat | functionCall );
     public SGLNode statement() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
@@ -392,7 +416,7 @@ public partial class SGLTreeWalker : TreeParser
 
         SGLNode variableAssignment4 = default(SGLNode);
 
-        SGLNode variableUnaryChange5 = default(SGLNode);
+        SGLNode variableUnaryChangeStatement5 = default(SGLNode);
 
         SGLNode staticMethod6 = default(SGLNode);
 
@@ -404,11 +428,15 @@ public partial class SGLTreeWalker : TreeParser
 
         SGLNode forLoop10 = default(SGLNode);
 
+        SGLNode breakStat11 = default(SGLNode);
+
+        SGLNode functionCall12 = default(SGLNode);
+
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:101:2: ( variableDeclaration | variableAssignment | variableUnaryChange | staticMethod | objectMethod | ifStatement | whileLoop | forLoop )
-            int alt2 = 8;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:113:2: ( variableDeclaration | variableAssignment | variableUnaryChangeStatement | staticMethod | objectMethod | ifStatement | whileLoop | forLoop | breakStat | functionCall )
+            int alt2 = 10;
             switch ( input.LA(1) ) 
             {
             case VARDEF:
@@ -442,14 +470,24 @@ public partial class SGLTreeWalker : TreeParser
                 alt2 = 6;
                 }
                 break;
-            case 52:
+            case 57:
             	{
                 alt2 = 7;
                 }
                 break;
-            case 53:
+            case 58:
             	{
                 alt2 = 8;
+                }
+                break;
+            case BREAK:
+            	{
+                alt2 = 9;
+                }
+                break;
+            case FUNC_CALL:
+            	{
+                alt2 = 10;
                 }
                 break;
             	default:
@@ -462,7 +500,7 @@ public partial class SGLTreeWalker : TreeParser
             switch (alt2) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:101:4: variableDeclaration
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:113:4: variableDeclaration
                     {
                     	PushFollow(FOLLOW_variableDeclaration_in_statement155);
                     	variableDeclaration3 = variableDeclaration();
@@ -473,7 +511,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:102:4: variableAssignment
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:114:4: variableAssignment
                     {
                     	PushFollow(FOLLOW_variableAssignment_in_statement163);
                     	variableAssignment4 = variableAssignment();
@@ -484,18 +522,18 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:103:4: variableUnaryChange
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:115:4: variableUnaryChangeStatement
                     {
-                    	PushFollow(FOLLOW_variableUnaryChange_in_statement171);
-                    	variableUnaryChange5 = variableUnaryChange();
+                    	PushFollow(FOLLOW_variableUnaryChangeStatement_in_statement171);
+                    	variableUnaryChangeStatement5 = variableUnaryChangeStatement();
                     	state.followingStackPointer--;
 
-                    	 node = variableUnaryChange5; 
+                    	 node = variableUnaryChangeStatement5; 
 
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:104:4: staticMethod
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:116:4: staticMethod
                     {
                     	PushFollow(FOLLOW_staticMethod_in_statement178);
                     	staticMethod6 = staticMethod();
@@ -506,7 +544,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 5 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:105:4: objectMethod
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:117:4: objectMethod
                     {
                     	PushFollow(FOLLOW_objectMethod_in_statement186);
                     	objectMethod7 = objectMethod();
@@ -517,7 +555,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 6 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:106:4: ifStatement
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:118:4: ifStatement
                     {
                     	PushFollow(FOLLOW_ifStatement_in_statement194);
                     	ifStatement8 = ifStatement();
@@ -528,7 +566,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 7 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:107:4: whileLoop
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:119:4: whileLoop
                     {
                     	PushFollow(FOLLOW_whileLoop_in_statement202);
                     	whileLoop9 = whileLoop();
@@ -539,13 +577,35 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 8 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:108:4: forLoop
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:120:4: forLoop
                     {
                     	PushFollow(FOLLOW_forLoop_in_statement209);
                     	forLoop10 = forLoop();
                     	state.followingStackPointer--;
 
                     	 node = forLoop10; 
+
+                    }
+                    break;
+                case 9 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:121:4: breakStat
+                    {
+                    	PushFollow(FOLLOW_breakStat_in_statement216);
+                    	breakStat11 = breakStat();
+                    	state.followingStackPointer--;
+
+                    	 node = breakStat11; 
+
+                    }
+                    break;
+                case 10 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:122:6: functionCall
+                    {
+                    	PushFollow(FOLLOW_functionCall_in_statement225);
+                    	functionCall12 = functionCall();
+                    	state.followingStackPointer--;
+
+                    	node = functionCall12;
 
                     }
                     break;
@@ -565,30 +625,103 @@ public partial class SGLTreeWalker : TreeParser
     // $ANTLR end "statement"
 
 
-    // $ANTLR start "staticMethod"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:111:1: staticMethod returns [SGLNode node] : ^( PRINTLN expression ) ;
-    public SGLNode staticMethod() // throws RecognitionException [1]
+    // $ANTLR start "functionCall"
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:126:1: functionCall returns [SGLNode node] : ^( FUNC_CALL Identifier arguments ) ;
+    public SGLNode functionCall() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
 
-        SGLNode expression11 = default(SGLNode);
+        CommonTree Identifier13 = null;
+        List<SGLNode> arguments14 = default(List<SGLNode>);
 
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:112:2: ( ^( PRINTLN expression ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:112:4: ^( PRINTLN expression )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:127:2: ( ^( FUNC_CALL Identifier arguments ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:127:4: ^( FUNC_CALL Identifier arguments )
             {
-            	Match(input,PRINTLN,FOLLOW_PRINTLN_in_staticMethod228); 
+            	Match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall248); 
 
             	Match(input, Token.DOWN, null); 
-            	PushFollow(FOLLOW_expression_in_staticMethod230);
-            	expression11 = expression();
+            	Identifier13=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_functionCall250); 
+            	PushFollow(FOLLOW_arguments_in_functionCall252);
+            	arguments14 = arguments();
             	state.followingStackPointer--;
 
 
             	Match(input, Token.UP, null); 
-            	 node = new PrintlnNode(storyboardCode, expression11); 
+            	 node = new FunctionCallNode(((Identifier13 != null) ? Identifier13.Text : null), arguments14, functions, storyboardCode); 
+
+            }
+
+        }
+        catch (RecognitionException re) 
+    	{
+            ReportError(re);
+            Recover(input,re);
+        }
+        finally 
+    	{
+        }
+        return node;
+    }
+    // $ANTLR end "functionCall"
+
+
+    // $ANTLR start "breakStat"
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:130:1: breakStat returns [SGLNode node] : BREAK ;
+    public SGLNode breakStat() // throws RecognitionException [1]
+    {   
+        SGLNode node = default(SGLNode);
+
+        try 
+    	{
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:131:2: ( BREAK )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:131:4: BREAK
+            {
+            	Match(input,BREAK,FOLLOW_BREAK_in_breakStat272); 
+            	 node = new BreakNode(); 
+
+            }
+
+        }
+        catch (RecognitionException re) 
+    	{
+            ReportError(re);
+            Recover(input,re);
+        }
+        finally 
+    	{
+        }
+        return node;
+    }
+    // $ANTLR end "breakStat"
+
+
+    // $ANTLR start "staticMethod"
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:134:1: staticMethod returns [SGLNode node] : ^( PRINTLN expression ) ;
+    public SGLNode staticMethod() // throws RecognitionException [1]
+    {   
+        SGLNode node = default(SGLNode);
+
+        SGLNode expression15 = default(SGLNode);
+
+
+        try 
+    	{
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:135:2: ( ^( PRINTLN expression ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:135:4: ^( PRINTLN expression )
+            {
+            	Match(input,PRINTLN,FOLLOW_PRINTLN_in_staticMethod292); 
+
+            	Match(input, Token.DOWN, null); 
+            	PushFollow(FOLLOW_expression_in_staticMethod294);
+            	expression15 = expression();
+            	state.followingStackPointer--;
+
+
+            	Match(input, Token.UP, null); 
+            	 node = new PrintlnNode(storyboardCode, expression15); 
 
             }
 
@@ -607,37 +740,37 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "objectMethod"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:115:1: objectMethod returns [SGLNode node] : ^( OBJMETHOD variableName Identifier arguments ) ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:138:1: objectMethod returns [SGLNode node] : ^( OBJMETHOD variableName Identifier arguments ) ;
     public SGLNode objectMethod() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
 
-        CommonTree Identifier13 = null;
-        String variableName12 = default(String);
+        CommonTree Identifier17 = null;
+        String variableName16 = default(String);
 
-        List<SGLNode> arguments14 = default(List<SGLNode>);
+        List<SGLNode> arguments18 = default(List<SGLNode>);
 
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:116:2: ( ^( OBJMETHOD variableName Identifier arguments ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:116:4: ^( OBJMETHOD variableName Identifier arguments )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:139:2: ( ^( OBJMETHOD variableName Identifier arguments ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:139:4: ^( OBJMETHOD variableName Identifier arguments )
             {
-            	Match(input,OBJMETHOD,FOLLOW_OBJMETHOD_in_objectMethod250); 
+            	Match(input,OBJMETHOD,FOLLOW_OBJMETHOD_in_objectMethod314); 
 
             	Match(input, Token.DOWN, null); 
-            	PushFollow(FOLLOW_variableName_in_objectMethod252);
-            	variableName12 = variableName();
+            	PushFollow(FOLLOW_variableName_in_objectMethod316);
+            	variableName16 = variableName();
             	state.followingStackPointer--;
 
-            	Identifier13=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_objectMethod254); 
-            	PushFollow(FOLLOW_arguments_in_objectMethod256);
-            	arguments14 = arguments();
+            	Identifier17=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_objectMethod318); 
+            	PushFollow(FOLLOW_arguments_in_objectMethod320);
+            	arguments18 = arguments();
             	state.followingStackPointer--;
 
 
             	Match(input, Token.UP, null); 
-            	 node = new ObjectMehtodNode(variableName12, ((Identifier13 != null) ? Identifier13.Text : null), arguments14, currentScope); 
+            	 node = new ObjectMehtodNode(variableName16, ((Identifier17 != null) ? Identifier17.Text : null), arguments18, currentScope); 
 
             }
 
@@ -656,35 +789,35 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "whileLoop"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:120:1: whileLoop returns [SGLNode node] : ^( 'while' expression block ) ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:143:1: whileLoop returns [SGLNode node] : ^( 'while' expression block ) ;
     public SGLNode whileLoop() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
 
-        SGLNode expression15 = default(SGLNode);
+        SGLNode expression19 = default(SGLNode);
 
-        SGLNode block16 = default(SGLNode);
+        SGLNode block20 = default(SGLNode);
 
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:121:2: ( ^( 'while' expression block ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:121:4: ^( 'while' expression block )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:144:2: ( ^( 'while' expression block ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:144:4: ^( 'while' expression block )
             {
-            	Match(input,52,FOLLOW_52_in_whileLoop278); 
+            	Match(input,57,FOLLOW_57_in_whileLoop342); 
 
             	Match(input, Token.DOWN, null); 
-            	PushFollow(FOLLOW_expression_in_whileLoop280);
-            	expression15 = expression();
+            	PushFollow(FOLLOW_expression_in_whileLoop344);
+            	expression19 = expression();
             	state.followingStackPointer--;
 
-            	PushFollow(FOLLOW_block_in_whileLoop282);
-            	block16 = block();
+            	PushFollow(FOLLOW_block_in_whileLoop346);
+            	block20 = block();
             	state.followingStackPointer--;
 
 
             	Match(input, Token.UP, null); 
-            	 node = new WhileNode(expression15, block16); 
+            	 node = new WhileNode(expression19, block20); 
 
             }
 
@@ -703,7 +836,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "forLoop"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:125:1: forLoop returns [SGLNode node] : ^( 'for' ^( FORDEC (dec= statement )? ) ^( FORCOND (cond= expression )? ) ^( FORITER (iter= statement )? ) block ) ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:148:1: forLoop returns [SGLNode node] : ^( 'for' ^( FORDEC (dec= statement )? ) ^( FORCOND (cond= expression )? ) ^( FORITER (iter= statement )? ) block ) ;
     public SGLNode forLoop() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
@@ -714,7 +847,7 @@ public partial class SGLTreeWalker : TreeParser
 
         SGLNode iter = default(SGLNode);
 
-        SGLNode block17 = default(SGLNode);
+        SGLNode block21 = default(SGLNode);
 
 
          
@@ -723,31 +856,31 @@ public partial class SGLTreeWalker : TreeParser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:130:2: ( ^( 'for' ^( FORDEC (dec= statement )? ) ^( FORCOND (cond= expression )? ) ^( FORITER (iter= statement )? ) block ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:130:4: ^( 'for' ^( FORDEC (dec= statement )? ) ^( FORCOND (cond= expression )? ) ^( FORITER (iter= statement )? ) block )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:153:2: ( ^( 'for' ^( FORDEC (dec= statement )? ) ^( FORCOND (cond= expression )? ) ^( FORITER (iter= statement )? ) block ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:153:4: ^( 'for' ^( FORDEC (dec= statement )? ) ^( FORCOND (cond= expression )? ) ^( FORITER (iter= statement )? ) block )
             {
-            	Match(input,53,FOLLOW_53_in_forLoop309); 
+            	Match(input,58,FOLLOW_58_in_forLoop373); 
 
             	Match(input, Token.DOWN, null); 
-            	Match(input,FORDEC,FOLLOW_FORDEC_in_forLoop312); 
+            	Match(input,FORDEC,FOLLOW_FORDEC_in_forLoop376); 
 
             	if ( input.LA(1) == Token.DOWN )
             	{
             	    Match(input, Token.DOWN, null); 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:130:21: (dec= statement )?
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:153:21: (dec= statement )?
             	    int alt3 = 2;
             	    int LA3_0 = input.LA(1);
 
-            	    if ( (LA3_0 == IF || (LA3_0 >= VARDEF && LA3_0 <= ASSIGN) || LA3_0 == OBJMETHOD || (LA3_0 >= PRINTLN && LA3_0 <= VARDEC) || (LA3_0 >= 52 && LA3_0 <= 53)) )
+            	    if ( (LA3_0 == IF || (LA3_0 >= VARDEF && LA3_0 <= ASSIGN) || LA3_0 == OBJMETHOD || (LA3_0 >= PRINTLN && LA3_0 <= BREAK) || LA3_0 == FUNC_CALL || (LA3_0 >= 57 && LA3_0 <= 58)) )
             	    {
             	        alt3 = 1;
             	    }
             	    switch (alt3) 
             	    {
             	        case 1 :
-            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:130:22: dec= statement
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:153:22: dec= statement
             	            {
-            	            	PushFollow(FOLLOW_statement_in_forLoop317);
+            	            	PushFollow(FOLLOW_statement_in_forLoop381);
             	            	dec = statement();
             	            	state.followingStackPointer--;
 
@@ -761,25 +894,25 @@ public partial class SGLTreeWalker : TreeParser
 
             	    Match(input, Token.UP, null); 
             	}
-            	Match(input,FORCOND,FOLLOW_FORCOND_in_forLoop326); 
+            	Match(input,FORCOND,FOLLOW_FORCOND_in_forLoop390); 
 
             	if ( input.LA(1) == Token.DOWN )
             	{
             	    Match(input, Token.DOWN, null); 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:130:82: (cond= expression )?
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:153:82: (cond= expression )?
             	    int alt4 = 2;
             	    int LA4_0 = input.LA(1);
 
-            	    if ( (LA4_0 == NEGATE || LA4_0 == STRING || LA4_0 == STRINGNOQUOTES || (LA4_0 >= VARINC && LA4_0 <= Identifier) || (LA4_0 >= IntegerAtom && LA4_0 <= SpriteAnimation) || LA4_0 == 57 || (LA4_0 >= 59 && LA4_0 <= 71)) )
+            	    if ( (LA4_0 == NEGATE || LA4_0 == STRING || LA4_0 == STRINGNOQUOTES || (LA4_0 >= VARINC && LA4_0 <= VARDEC) || LA4_0 == Identifier || (LA4_0 >= IntegerAtom && LA4_0 <= SpriteAnimation) || LA4_0 == 63 || (LA4_0 >= 65 && LA4_0 <= 77)) )
             	    {
             	        alt4 = 1;
             	    }
             	    switch (alt4) 
             	    {
             	        case 1 :
-            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:130:83: cond= expression
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:153:83: cond= expression
             	            {
-            	            	PushFollow(FOLLOW_expression_in_forLoop331);
+            	            	PushFollow(FOLLOW_expression_in_forLoop395);
             	            	cond = expression();
             	            	state.followingStackPointer--;
 
@@ -793,25 +926,25 @@ public partial class SGLTreeWalker : TreeParser
 
             	    Match(input, Token.UP, null); 
             	}
-            	Match(input,FORITER,FOLLOW_FORITER_in_forLoop339); 
+            	Match(input,FORITER,FOLLOW_FORITER_in_forLoop403); 
 
             	if ( input.LA(1) == Token.DOWN )
             	{
             	    Match(input, Token.DOWN, null); 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:130:150: (iter= statement )?
+            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:153:150: (iter= statement )?
             	    int alt5 = 2;
             	    int LA5_0 = input.LA(1);
 
-            	    if ( (LA5_0 == IF || (LA5_0 >= VARDEF && LA5_0 <= ASSIGN) || LA5_0 == OBJMETHOD || (LA5_0 >= PRINTLN && LA5_0 <= VARDEC) || (LA5_0 >= 52 && LA5_0 <= 53)) )
+            	    if ( (LA5_0 == IF || (LA5_0 >= VARDEF && LA5_0 <= ASSIGN) || LA5_0 == OBJMETHOD || (LA5_0 >= PRINTLN && LA5_0 <= BREAK) || LA5_0 == FUNC_CALL || (LA5_0 >= 57 && LA5_0 <= 58)) )
             	    {
             	        alt5 = 1;
             	    }
             	    switch (alt5) 
             	    {
             	        case 1 :
-            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:130:151: iter= statement
+            	            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:153:151: iter= statement
             	            {
-            	            	PushFollow(FOLLOW_statement_in_forLoop344);
+            	            	PushFollow(FOLLOW_statement_in_forLoop408);
             	            	iter = statement();
             	            	state.followingStackPointer--;
 
@@ -825,13 +958,13 @@ public partial class SGLTreeWalker : TreeParser
 
             	    Match(input, Token.UP, null); 
             	}
-            	PushFollow(FOLLOW_block_in_forLoop351);
-            	block17 = block();
+            	PushFollow(FOLLOW_block_in_forLoop415);
+            	block21 = block();
             	state.followingStackPointer--;
 
 
             	Match(input, Token.UP, null); 
-            	 forNode.SetBlock(block17); 
+            	 forNode.SetBlock(block21); 
 
             }
 
@@ -850,7 +983,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "ifStatement"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:135:1: ifStatement returns [SGLNode node] : ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:158:1: ifStatement returns [SGLNode node] : ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) ;
     public SGLNode ifStatement() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
@@ -859,7 +992,7 @@ public partial class SGLTreeWalker : TreeParser
 
         SGLNode b2 = default(SGLNode);
 
-        SGLNode expression18 = default(SGLNode);
+        SGLNode expression22 = default(SGLNode);
 
 
          
@@ -868,13 +1001,13 @@ public partial class SGLTreeWalker : TreeParser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:140:3: ( ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:140:6: ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:163:3: ( ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:163:6: ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? )
             {
-            	Match(input,IF,FOLLOW_IF_in_ifStatement384); 
+            	Match(input,IF,FOLLOW_IF_in_ifStatement448); 
 
             	Match(input, Token.DOWN, null); 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:141:8: ( ^( EXP expression b1= block ) )+
+            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:164:8: ( ^( EXP expression b1= block ) )+
             	int cnt6 = 0;
             	do 
             	{
@@ -889,7 +1022,7 @@ public partial class SGLTreeWalker : TreeParser
             	        {
             	            int LA6_3 = input.LA(3);
 
-            	            if ( (LA6_3 == NEGATE || LA6_3 == STRING || LA6_3 == STRINGNOQUOTES || (LA6_3 >= VARINC && LA6_3 <= Identifier) || (LA6_3 >= IntegerAtom && LA6_3 <= SpriteAnimation) || LA6_3 == 57 || (LA6_3 >= 59 && LA6_3 <= 71)) )
+            	            if ( (LA6_3 == NEGATE || LA6_3 == STRING || LA6_3 == STRINGNOQUOTES || (LA6_3 >= VARINC && LA6_3 <= VARDEC) || LA6_3 == Identifier || (LA6_3 >= IntegerAtom && LA6_3 <= SpriteAnimation) || LA6_3 == 63 || (LA6_3 >= 65 && LA6_3 <= 77)) )
             	            {
             	                alt6 = 1;
             	            }
@@ -904,22 +1037,22 @@ public partial class SGLTreeWalker : TreeParser
             	    switch (alt6) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:141:9: ^( EXP expression b1= block )
+            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:164:9: ^( EXP expression b1= block )
             			    {
-            			    	Match(input,EXP,FOLLOW_EXP_in_ifStatement398); 
+            			    	Match(input,EXP,FOLLOW_EXP_in_ifStatement462); 
 
             			    	Match(input, Token.DOWN, null); 
-            			    	PushFollow(FOLLOW_expression_in_ifStatement400);
-            			    	expression18 = expression();
+            			    	PushFollow(FOLLOW_expression_in_ifStatement464);
+            			    	expression22 = expression();
             			    	state.followingStackPointer--;
 
-            			    	PushFollow(FOLLOW_block_in_ifStatement404);
+            			    	PushFollow(FOLLOW_block_in_ifStatement468);
             			    	b1 = block();
             			    	state.followingStackPointer--;
 
 
             			    	Match(input, Token.UP, null); 
-            			    	 ifNode.AddChoice(expression18,b1); 
+            			    	 ifNode.AddChoice(expression22,b1); 
 
             			    }
             			    break;
@@ -936,7 +1069,7 @@ public partial class SGLTreeWalker : TreeParser
             	loop6:
             		;	// Stops C# compiler whining that label 'loop6' has no statements
 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:142:8: ( ^( EXP b2= block ) )?
+            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:165:8: ( ^( EXP b2= block ) )?
             	int alt7 = 2;
             	int LA7_0 = input.LA(1);
 
@@ -947,12 +1080,12 @@ public partial class SGLTreeWalker : TreeParser
             	switch (alt7) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:142:9: ^( EXP b2= block )
+            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:165:9: ^( EXP b2= block )
             	        {
-            	        	Match(input,EXP,FOLLOW_EXP_in_ifStatement424); 
+            	        	Match(input,EXP,FOLLOW_EXP_in_ifStatement488); 
 
             	        	Match(input, Token.DOWN, null); 
-            	        	PushFollow(FOLLOW_block_in_ifStatement428);
+            	        	PushFollow(FOLLOW_block_in_ifStatement492);
             	        	b2 = block();
             	        	state.followingStackPointer--;
 
@@ -985,70 +1118,70 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "variableDeclaration"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:150:1: variableDeclaration returns [SGLNode node] : ( ^( VARDEF variableType variableName expression ) | ^( VARDEF variableType variableName ) );
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:173:1: variableDeclaration returns [SGLNode node] : ( ^( VARDEF variableType variableName expression ) | ^( VARDEF variableType variableName ) );
     public SGLNode variableDeclaration() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
 
-        String variableType19 = default(String);
+        String variableType23 = default(String);
 
-        String variableName20 = default(String);
+        String variableName24 = default(String);
 
-        SGLNode expression21 = default(SGLNode);
+        SGLNode expression25 = default(SGLNode);
 
-        String variableType22 = default(String);
+        String variableType26 = default(String);
 
-        String variableName23 = default(String);
+        String variableName27 = default(String);
 
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:151:2: ( ^( VARDEF variableType variableName expression ) | ^( VARDEF variableType variableName ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:174:2: ( ^( VARDEF variableType variableName expression ) | ^( VARDEF variableType variableName ) )
             int alt8 = 2;
             alt8 = dfa8.Predict(input);
             switch (alt8) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:151:4: ^( VARDEF variableType variableName expression )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:174:4: ^( VARDEF variableType variableName expression )
                     {
-                    	Match(input,VARDEF,FOLLOW_VARDEF_in_variableDeclaration470); 
+                    	Match(input,VARDEF,FOLLOW_VARDEF_in_variableDeclaration534); 
 
                     	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_variableType_in_variableDeclaration472);
-                    	variableType19 = variableType();
+                    	PushFollow(FOLLOW_variableType_in_variableDeclaration536);
+                    	variableType23 = variableType();
                     	state.followingStackPointer--;
 
-                    	PushFollow(FOLLOW_variableName_in_variableDeclaration474);
-                    	variableName20 = variableName();
+                    	PushFollow(FOLLOW_variableName_in_variableDeclaration538);
+                    	variableName24 = variableName();
                     	state.followingStackPointer--;
 
-                    	PushFollow(FOLLOW_expression_in_variableDeclaration476);
-                    	expression21 = expression();
+                    	PushFollow(FOLLOW_expression_in_variableDeclaration540);
+                    	expression25 = expression();
                     	state.followingStackPointer--;
 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new NewLocalVariableNode(variableType19,variableName20,expression21,currentScope); 
+                    	 node = new NewLocalVariableNode(variableType23,variableName24,expression25,currentScope); 
 
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:154:5: ^( VARDEF variableType variableName )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:177:5: ^( VARDEF variableType variableName )
                     {
-                    	Match(input,VARDEF,FOLLOW_VARDEF_in_variableDeclaration500); 
+                    	Match(input,VARDEF,FOLLOW_VARDEF_in_variableDeclaration564); 
 
                     	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_variableType_in_variableDeclaration502);
-                    	variableType22 = variableType();
+                    	PushFollow(FOLLOW_variableType_in_variableDeclaration566);
+                    	variableType26 = variableType();
                     	state.followingStackPointer--;
 
-                    	PushFollow(FOLLOW_variableName_in_variableDeclaration504);
-                    	variableName23 = variableName();
+                    	PushFollow(FOLLOW_variableName_in_variableDeclaration568);
+                    	variableName27 = variableName();
                     	state.followingStackPointer--;
 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new NewLocalVariableNode(variableType22,variableName23,new AtomNode(null),currentScope); 
+                    	 node = new NewLocalVariableNode(variableType26,variableName27,new AtomNode(null),currentScope); 
 
                     }
                     break;
@@ -1069,35 +1202,35 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "variableAssignment"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:163:1: variableAssignment returns [SGLNode node] : ^( ASSIGN variableName expression ) ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:186:1: variableAssignment returns [SGLNode node] : ^( ASSIGN variableName expression ) ;
     public SGLNode variableAssignment() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
 
-        String variableName24 = default(String);
+        String variableName28 = default(String);
 
-        SGLNode expression25 = default(SGLNode);
+        SGLNode expression29 = default(SGLNode);
 
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:164:2: ( ^( ASSIGN variableName expression ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:164:4: ^( ASSIGN variableName expression )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:187:2: ( ^( ASSIGN variableName expression ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:187:4: ^( ASSIGN variableName expression )
             {
-            	Match(input,ASSIGN,FOLLOW_ASSIGN_in_variableAssignment533); 
+            	Match(input,ASSIGN,FOLLOW_ASSIGN_in_variableAssignment597); 
 
             	Match(input, Token.DOWN, null); 
-            	PushFollow(FOLLOW_variableName_in_variableAssignment535);
-            	variableName24 = variableName();
+            	PushFollow(FOLLOW_variableName_in_variableAssignment599);
+            	variableName28 = variableName();
             	state.followingStackPointer--;
 
-            	PushFollow(FOLLOW_expression_in_variableAssignment537);
-            	expression25 = expression();
+            	PushFollow(FOLLOW_expression_in_variableAssignment601);
+            	expression29 = expression();
             	state.followingStackPointer--;
 
 
             	Match(input, Token.UP, null); 
-            	 node = new AssignVariableNode(variableName24,expression25, currentScope); 
+            	 node = new AssignVariableNode(variableName28,expression29, currentScope); 
 
             }
 
@@ -1116,20 +1249,20 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "variableName"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:169:1: variableName returns [String txt] : Identifier ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:192:1: variableName returns [String txt] : Identifier ;
     public String variableName() // throws RecognitionException [1]
     {   
         String txt = default(String);
 
-        CommonTree Identifier26 = null;
+        CommonTree Identifier30 = null;
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:170:2: ( Identifier )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:170:4: Identifier
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:193:2: ( Identifier )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:193:4: Identifier
             {
-            	Identifier26=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_variableName560); 
-            	 txt = ((Identifier26 != null) ? Identifier26.Text : null); 
+            	Identifier30=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_variableName624); 
+            	 txt = ((Identifier30 != null) ? Identifier30.Text : null); 
 
             }
 
@@ -1148,20 +1281,20 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "variableType"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:173:1: variableType returns [String txt] : ( IntType | BooleanType | StringType | FloatType | ObjectType );
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:196:1: variableType returns [String txt] : ( IntType | BooleanType | StringType | FloatType | ObjectType );
     public String variableType() // throws RecognitionException [1]
     {   
         String txt = default(String);
 
-        CommonTree IntType27 = null;
-        CommonTree BooleanType28 = null;
-        CommonTree StringType29 = null;
-        CommonTree FloatType30 = null;
-        CommonTree ObjectType31 = null;
+        CommonTree IntType31 = null;
+        CommonTree BooleanType32 = null;
+        CommonTree StringType33 = null;
+        CommonTree FloatType34 = null;
+        CommonTree ObjectType35 = null;
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:174:2: ( IntType | BooleanType | StringType | FloatType | ObjectType )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:197:2: ( IntType | BooleanType | StringType | FloatType | ObjectType )
             int alt9 = 5;
             switch ( input.LA(1) ) 
             {
@@ -1200,42 +1333,42 @@ public partial class SGLTreeWalker : TreeParser
             switch (alt9) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:174:4: IntType
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:197:4: IntType
                     {
-                    	IntType27=(CommonTree)Match(input,IntType,FOLLOW_IntType_in_variableType578); 
-                    	 txt = ((IntType27 != null) ? IntType27.Text : null); 
+                    	IntType31=(CommonTree)Match(input,IntType,FOLLOW_IntType_in_variableType642); 
+                    	 txt = ((IntType31 != null) ? IntType31.Text : null); 
 
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:175:4: BooleanType
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:198:4: BooleanType
                     {
-                    	BooleanType28=(CommonTree)Match(input,BooleanType,FOLLOW_BooleanType_in_variableType585); 
-                    	 txt = ((BooleanType28 != null) ? BooleanType28.Text : null); 
+                    	BooleanType32=(CommonTree)Match(input,BooleanType,FOLLOW_BooleanType_in_variableType649); 
+                    	 txt = ((BooleanType32 != null) ? BooleanType32.Text : null); 
 
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:176:4: StringType
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:199:4: StringType
                     {
-                    	StringType29=(CommonTree)Match(input,StringType,FOLLOW_StringType_in_variableType592); 
-                    	 txt = ((StringType29 != null) ? StringType29.Text : null); 
+                    	StringType33=(CommonTree)Match(input,StringType,FOLLOW_StringType_in_variableType656); 
+                    	 txt = ((StringType33 != null) ? StringType33.Text : null); 
 
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:177:4: FloatType
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:200:4: FloatType
                     {
-                    	FloatType30=(CommonTree)Match(input,FloatType,FOLLOW_FloatType_in_variableType599); 
-                    	 txt = ((FloatType30 != null) ? FloatType30.Text : null); 
+                    	FloatType34=(CommonTree)Match(input,FloatType,FOLLOW_FloatType_in_variableType663); 
+                    	 txt = ((FloatType34 != null) ? FloatType34.Text : null); 
 
                     }
                     break;
                 case 5 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:178:4: ObjectType
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:201:4: ObjectType
                     {
-                    	ObjectType31=(CommonTree)Match(input,ObjectType,FOLLOW_ObjectType_in_variableType606); 
-                    	 txt = ((ObjectType31 != null) ? ObjectType31.Text : null); 
+                    	ObjectType35=(CommonTree)Match(input,ObjectType,FOLLOW_ObjectType_in_variableType670); 
+                    	 txt = ((ObjectType35 != null) ? ObjectType35.Text : null); 
 
                     }
                     break;
@@ -1256,48 +1389,48 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "expression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:188:1: expression returns [SGLNode node] : ( ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( NEGATE a= expression ) | ^( '<' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '?' a= expression b= expression c= expression ) | IntegerAtom | FloatAtom | BooleanAtom | ^( STRING StringAtom ) | ^( STRINGNOQUOTES Layer ) | ^( STRINGNOQUOTES Origin ) | spriteObject | lookup | variableUnaryChange );
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:211:1: expression returns [SGLNode node] : ( ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( NEGATE a= expression ) | ^( '<' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '?' a= expression b= expression c= expression ) | IntegerAtom | FloatAtom | BooleanAtom | ^( STRING StringAtom ) | ^( STRINGNOQUOTES Layer ) | ^( STRINGNOQUOTES Origin ) | spriteObject | lookup | variableUnaryChangeExpression );
     public SGLNode expression() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
 
-        CommonTree IntegerAtom32 = null;
-        CommonTree FloatAtom33 = null;
-        CommonTree BooleanAtom34 = null;
-        CommonTree StringAtom35 = null;
-        CommonTree Layer36 = null;
-        CommonTree Origin37 = null;
+        CommonTree IntegerAtom36 = null;
+        CommonTree FloatAtom37 = null;
+        CommonTree BooleanAtom38 = null;
+        CommonTree StringAtom39 = null;
+        CommonTree Layer40 = null;
+        CommonTree Origin41 = null;
         SGLNode a = default(SGLNode);
 
         SGLNode b = default(SGLNode);
 
         SGLNode c = default(SGLNode);
 
-        SGLNode spriteObject38 = default(SGLNode);
+        SGLNode spriteObject42 = default(SGLNode);
 
-        SGLNode lookup39 = default(SGLNode);
+        SGLNode lookup43 = default(SGLNode);
 
-        SGLNode variableUnaryChange40 = default(SGLNode);
+        SGLNode variableUnaryChangeExpression44 = default(SGLNode);
 
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:189:2: ( ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( NEGATE a= expression ) | ^( '<' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '?' a= expression b= expression c= expression ) | IntegerAtom | FloatAtom | BooleanAtom | ^( STRING StringAtom ) | ^( STRINGNOQUOTES Layer ) | ^( STRINGNOQUOTES Origin ) | spriteObject | lookup | variableUnaryChange )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:212:2: ( ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( NEGATE a= expression ) | ^( '<' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '?' a= expression b= expression c= expression ) | IntegerAtom | FloatAtom | BooleanAtom | ^( STRING StringAtom ) | ^( STRINGNOQUOTES Layer ) | ^( STRINGNOQUOTES Origin ) | spriteObject | lookup | variableUnaryChangeExpression )
             int alt10 = 24;
             alt10 = dfa10.Predict(input);
             switch (alt10) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:189:4: ^( '+' a= expression b= expression )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:212:4: ^( '+' a= expression b= expression )
                     {
-                    	Match(input,67,FOLLOW_67_in_expression646); 
+                    	Match(input,73,FOLLOW_73_in_expression710); 
 
                     	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_expression_in_expression650);
+                    	PushFollow(FOLLOW_expression_in_expression714);
                     	a = expression();
                     	state.followingStackPointer--;
 
-                    	PushFollow(FOLLOW_expression_in_expression654);
+                    	PushFollow(FOLLOW_expression_in_expression718);
                     	b = expression();
                     	state.followingStackPointer--;
 
@@ -1308,16 +1441,16 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:190:4: ^( '-' a= expression b= expression )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:213:4: ^( '-' a= expression b= expression )
                     {
-                    	Match(input,68,FOLLOW_68_in_expression663); 
+                    	Match(input,74,FOLLOW_74_in_expression727); 
 
                     	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_expression_in_expression667);
+                    	PushFollow(FOLLOW_expression_in_expression731);
                     	a = expression();
                     	state.followingStackPointer--;
 
-                    	PushFollow(FOLLOW_expression_in_expression671);
+                    	PushFollow(FOLLOW_expression_in_expression735);
                     	b = expression();
                     	state.followingStackPointer--;
 
@@ -1328,85 +1461,9 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:191:4: ^( '*' a= expression b= expression )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:214:4: ^( '*' a= expression b= expression )
                     {
-                    	Match(input,69,FOLLOW_69_in_expression680); 
-
-                    	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_expression_in_expression684);
-                    	a = expression();
-                    	state.followingStackPointer--;
-
-                    	PushFollow(FOLLOW_expression_in_expression688);
-                    	b = expression();
-                    	state.followingStackPointer--;
-
-
-                    	Match(input, Token.UP, null); 
-                    	 node = new MMultNode(a, b); 
-
-                    }
-                    break;
-                case 4 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:192:4: ^( '/' a= expression b= expression )
-                    {
-                    	Match(input,70,FOLLOW_70_in_expression697); 
-
-                    	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_expression_in_expression701);
-                    	a = expression();
-                    	state.followingStackPointer--;
-
-                    	PushFollow(FOLLOW_expression_in_expression705);
-                    	b = expression();
-                    	state.followingStackPointer--;
-
-
-                    	Match(input, Token.UP, null); 
-                    	 node = new MDivNode(a, b); 
-
-                    }
-                    break;
-                case 5 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:193:4: ^( '%' a= expression b= expression )
-                    {
-                    	Match(input,71,FOLLOW_71_in_expression714); 
-
-                    	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_expression_in_expression718);
-                    	a = expression();
-                    	state.followingStackPointer--;
-
-                    	PushFollow(FOLLOW_expression_in_expression722);
-                    	b = expression();
-                    	state.followingStackPointer--;
-
-
-                    	Match(input, Token.UP, null); 
-                    	 node = new MModNode(a, b); 
-
-                    }
-                    break;
-                case 6 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:194:4: ^( NEGATE a= expression )
-                    {
-                    	Match(input,NEGATE,FOLLOW_NEGATE_in_expression731); 
-
-                    	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_expression_in_expression735);
-                    	a = expression();
-                    	state.followingStackPointer--;
-
-
-                    	Match(input, Token.UP, null); 
-                    	 node = new MNegateNode(a); 
-
-                    }
-                    break;
-                case 7 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:195:4: ^( '<' a= expression b= expression )
-                    {
-                    	Match(input,63,FOLLOW_63_in_expression744); 
+                    	Match(input,75,FOLLOW_75_in_expression744); 
 
                     	Match(input, Token.DOWN, null); 
                     	PushFollow(FOLLOW_expression_in_expression748);
@@ -1419,14 +1476,14 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new CLTNode(a, b); 
+                    	 node = new MMultNode(a, b); 
 
                     }
                     break;
-                case 8 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:196:4: ^( '<=' a= expression b= expression )
+                case 4 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:215:4: ^( '/' a= expression b= expression )
                     {
-                    	Match(input,65,FOLLOW_65_in_expression761); 
+                    	Match(input,76,FOLLOW_76_in_expression761); 
 
                     	Match(input, Token.DOWN, null); 
                     	PushFollow(FOLLOW_expression_in_expression765);
@@ -1439,14 +1496,14 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new CLTEqualsNode(a, b); 
+                    	 node = new MDivNode(a, b); 
 
                     }
                     break;
-                case 9 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:197:4: ^( '>' a= expression b= expression )
+                case 5 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:216:4: ^( '%' a= expression b= expression )
                     {
-                    	Match(input,64,FOLLOW_64_in_expression778); 
+                    	Match(input,77,FOLLOW_77_in_expression778); 
 
                     	Match(input, Token.DOWN, null); 
                     	PushFollow(FOLLOW_expression_in_expression782);
@@ -1459,21 +1516,97 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new CGTNode(a, b); 
+                    	 node = new MModNode(a, b); 
 
                     }
                     break;
-                case 10 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:198:4: ^( '>=' a= expression b= expression )
+                case 6 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:217:4: ^( NEGATE a= expression )
                     {
-                    	Match(input,66,FOLLOW_66_in_expression795); 
+                    	Match(input,NEGATE,FOLLOW_NEGATE_in_expression795); 
 
                     	Match(input, Token.DOWN, null); 
                     	PushFollow(FOLLOW_expression_in_expression799);
                     	a = expression();
                     	state.followingStackPointer--;
 
-                    	PushFollow(FOLLOW_expression_in_expression803);
+
+                    	Match(input, Token.UP, null); 
+                    	 node = new MNegateNode(a); 
+
+                    }
+                    break;
+                case 7 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:218:4: ^( '<' a= expression b= expression )
+                    {
+                    	Match(input,69,FOLLOW_69_in_expression808); 
+
+                    	Match(input, Token.DOWN, null); 
+                    	PushFollow(FOLLOW_expression_in_expression812);
+                    	a = expression();
+                    	state.followingStackPointer--;
+
+                    	PushFollow(FOLLOW_expression_in_expression816);
+                    	b = expression();
+                    	state.followingStackPointer--;
+
+
+                    	Match(input, Token.UP, null); 
+                    	 node = new CLTNode(a, b); 
+
+                    }
+                    break;
+                case 8 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:219:4: ^( '<=' a= expression b= expression )
+                    {
+                    	Match(input,71,FOLLOW_71_in_expression825); 
+
+                    	Match(input, Token.DOWN, null); 
+                    	PushFollow(FOLLOW_expression_in_expression829);
+                    	a = expression();
+                    	state.followingStackPointer--;
+
+                    	PushFollow(FOLLOW_expression_in_expression833);
+                    	b = expression();
+                    	state.followingStackPointer--;
+
+
+                    	Match(input, Token.UP, null); 
+                    	 node = new CLTEqualsNode(a, b); 
+
+                    }
+                    break;
+                case 9 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:220:4: ^( '>' a= expression b= expression )
+                    {
+                    	Match(input,70,FOLLOW_70_in_expression842); 
+
+                    	Match(input, Token.DOWN, null); 
+                    	PushFollow(FOLLOW_expression_in_expression846);
+                    	a = expression();
+                    	state.followingStackPointer--;
+
+                    	PushFollow(FOLLOW_expression_in_expression850);
+                    	b = expression();
+                    	state.followingStackPointer--;
+
+
+                    	Match(input, Token.UP, null); 
+                    	 node = new CGTNode(a, b); 
+
+                    }
+                    break;
+                case 10 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:221:4: ^( '>=' a= expression b= expression )
+                    {
+                    	Match(input,72,FOLLOW_72_in_expression859); 
+
+                    	Match(input, Token.DOWN, null); 
+                    	PushFollow(FOLLOW_expression_in_expression863);
+                    	a = expression();
+                    	state.followingStackPointer--;
+
+                    	PushFollow(FOLLOW_expression_in_expression867);
                     	b = expression();
                     	state.followingStackPointer--;
 
@@ -1484,16 +1617,16 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 11 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:199:4: ^( '!=' a= expression b= expression )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:222:4: ^( '!=' a= expression b= expression )
                     {
-                    	Match(input,62,FOLLOW_62_in_expression812); 
+                    	Match(input,68,FOLLOW_68_in_expression876); 
 
                     	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_expression_in_expression816);
+                    	PushFollow(FOLLOW_expression_in_expression880);
                     	a = expression();
                     	state.followingStackPointer--;
 
-                    	PushFollow(FOLLOW_expression_in_expression820);
+                    	PushFollow(FOLLOW_expression_in_expression884);
                     	b = expression();
                     	state.followingStackPointer--;
 
@@ -1504,16 +1637,16 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 12 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:200:4: ^( '==' a= expression b= expression )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:223:4: ^( '==' a= expression b= expression )
                     {
-                    	Match(input,61,FOLLOW_61_in_expression829); 
+                    	Match(input,67,FOLLOW_67_in_expression893); 
 
                     	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_expression_in_expression833);
+                    	PushFollow(FOLLOW_expression_in_expression897);
                     	a = expression();
                     	state.followingStackPointer--;
 
-                    	PushFollow(FOLLOW_expression_in_expression837);
+                    	PushFollow(FOLLOW_expression_in_expression901);
                     	b = expression();
                     	state.followingStackPointer--;
 
@@ -1524,16 +1657,16 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 13 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:201:4: ^( '&&' a= expression b= expression )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:224:4: ^( '&&' a= expression b= expression )
                     {
-                    	Match(input,60,FOLLOW_60_in_expression846); 
+                    	Match(input,66,FOLLOW_66_in_expression910); 
 
                     	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_expression_in_expression850);
+                    	PushFollow(FOLLOW_expression_in_expression914);
                     	a = expression();
                     	state.followingStackPointer--;
 
-                    	PushFollow(FOLLOW_expression_in_expression854);
+                    	PushFollow(FOLLOW_expression_in_expression918);
                     	b = expression();
                     	state.followingStackPointer--;
 
@@ -1544,16 +1677,16 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 14 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:202:4: ^( '||' a= expression b= expression )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:225:4: ^( '||' a= expression b= expression )
                     {
-                    	Match(input,59,FOLLOW_59_in_expression863); 
+                    	Match(input,65,FOLLOW_65_in_expression927); 
 
                     	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_expression_in_expression867);
+                    	PushFollow(FOLLOW_expression_in_expression931);
                     	a = expression();
                     	state.followingStackPointer--;
 
-                    	PushFollow(FOLLOW_expression_in_expression871);
+                    	PushFollow(FOLLOW_expression_in_expression935);
                     	b = expression();
                     	state.followingStackPointer--;
 
@@ -1564,20 +1697,20 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 15 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:203:4: ^( '?' a= expression b= expression c= expression )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:226:4: ^( '?' a= expression b= expression c= expression )
                     {
-                    	Match(input,57,FOLLOW_57_in_expression880); 
+                    	Match(input,63,FOLLOW_63_in_expression944); 
 
                     	Match(input, Token.DOWN, null); 
-                    	PushFollow(FOLLOW_expression_in_expression884);
+                    	PushFollow(FOLLOW_expression_in_expression948);
                     	a = expression();
                     	state.followingStackPointer--;
 
-                    	PushFollow(FOLLOW_expression_in_expression888);
+                    	PushFollow(FOLLOW_expression_in_expression952);
                     	b = expression();
                     	state.followingStackPointer--;
 
-                    	PushFollow(FOLLOW_expression_in_expression892);
+                    	PushFollow(FOLLOW_expression_in_expression956);
                     	c = expression();
                     	state.followingStackPointer--;
 
@@ -1588,98 +1721,98 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 16 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:204:6: IntegerAtom
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:227:6: IntegerAtom
                     {
-                    	IntegerAtom32=(CommonTree)Match(input,IntegerAtom,FOLLOW_IntegerAtom_in_expression902); 
-                    	 node = new AtomNode(int.Parse(((IntegerAtom32 != null) ? IntegerAtom32.Text : null), System.Globalization.CultureInfo.InvariantCulture)); 
+                    	IntegerAtom36=(CommonTree)Match(input,IntegerAtom,FOLLOW_IntegerAtom_in_expression966); 
+                    	 node = new AtomNode(int.Parse(((IntegerAtom36 != null) ? IntegerAtom36.Text : null), System.Globalization.CultureInfo.InvariantCulture)); 
 
                     }
                     break;
                 case 17 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:205:4: FloatAtom
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:228:4: FloatAtom
                     {
-                    	FloatAtom33=(CommonTree)Match(input,FloatAtom,FOLLOW_FloatAtom_in_expression909); 
-                    	 node = new AtomNode(Double.Parse(((FloatAtom33 != null) ? FloatAtom33.Text : null), System.Globalization.CultureInfo.InvariantCulture)); 
+                    	FloatAtom37=(CommonTree)Match(input,FloatAtom,FOLLOW_FloatAtom_in_expression973); 
+                    	 node = new AtomNode(Double.Parse(((FloatAtom37 != null) ? FloatAtom37.Text : null), System.Globalization.CultureInfo.InvariantCulture)); 
 
                     }
                     break;
                 case 18 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:206:6: BooleanAtom
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:229:6: BooleanAtom
                     {
-                    	BooleanAtom34=(CommonTree)Match(input,BooleanAtom,FOLLOW_BooleanAtom_in_expression918); 
-                    	 node = new AtomNode(Boolean.Parse(((BooleanAtom34 != null) ? BooleanAtom34.Text : null))); 
+                    	BooleanAtom38=(CommonTree)Match(input,BooleanAtom,FOLLOW_BooleanAtom_in_expression982); 
+                    	 node = new AtomNode(Boolean.Parse(((BooleanAtom38 != null) ? BooleanAtom38.Text : null))); 
 
                     }
                     break;
                 case 19 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:207:4: ^( STRING StringAtom )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:230:4: ^( STRING StringAtom )
                     {
-                    	Match(input,STRING,FOLLOW_STRING_in_expression926); 
+                    	Match(input,STRING,FOLLOW_STRING_in_expression990); 
 
                     	Match(input, Token.DOWN, null); 
-                    	StringAtom35=(CommonTree)Match(input,StringAtom,FOLLOW_StringAtom_in_expression928); 
+                    	StringAtom39=(CommonTree)Match(input,StringAtom,FOLLOW_StringAtom_in_expression992); 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new AtomNode((((StringAtom35 != null) ? StringAtom35.Text : null)).Substring(1, (((StringAtom35 != null) ? StringAtom35.Text : null)).Length-2)); 
+                    	 node = new AtomNode((((StringAtom39 != null) ? StringAtom39.Text : null)).Substring(1, (((StringAtom39 != null) ? StringAtom39.Text : null)).Length-2)); 
 
                     }
                     break;
                 case 20 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:208:4: ^( STRINGNOQUOTES Layer )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:231:4: ^( STRINGNOQUOTES Layer )
                     {
-                    	Match(input,STRINGNOQUOTES,FOLLOW_STRINGNOQUOTES_in_expression937); 
+                    	Match(input,STRINGNOQUOTES,FOLLOW_STRINGNOQUOTES_in_expression1001); 
 
                     	Match(input, Token.DOWN, null); 
-                    	Layer36=(CommonTree)Match(input,Layer,FOLLOW_Layer_in_expression939); 
+                    	Layer40=(CommonTree)Match(input,Layer,FOLLOW_Layer_in_expression1003); 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new AtomNode(((Layer36 != null) ? Layer36.Text : null)); 
+                    	 node = new AtomNode(((Layer40 != null) ? Layer40.Text : null)); 
 
                     }
                     break;
                 case 21 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:209:4: ^( STRINGNOQUOTES Origin )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:232:4: ^( STRINGNOQUOTES Origin )
                     {
-                    	Match(input,STRINGNOQUOTES,FOLLOW_STRINGNOQUOTES_in_expression948); 
+                    	Match(input,STRINGNOQUOTES,FOLLOW_STRINGNOQUOTES_in_expression1012); 
 
                     	Match(input, Token.DOWN, null); 
-                    	Origin37=(CommonTree)Match(input,Origin,FOLLOW_Origin_in_expression950); 
+                    	Origin41=(CommonTree)Match(input,Origin,FOLLOW_Origin_in_expression1014); 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new AtomNode(((Origin37 != null) ? Origin37.Text : null)); 
+                    	 node = new AtomNode(((Origin41 != null) ? Origin41.Text : null)); 
 
                     }
                     break;
                 case 22 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:210:4: spriteObject
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:233:4: spriteObject
                     {
-                    	PushFollow(FOLLOW_spriteObject_in_expression958);
-                    	spriteObject38 = spriteObject();
+                    	PushFollow(FOLLOW_spriteObject_in_expression1022);
+                    	spriteObject42 = spriteObject();
                     	state.followingStackPointer--;
 
-                    	 node = spriteObject38; 
+                    	 node = spriteObject42; 
 
                     }
                     break;
                 case 23 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:211:4: lookup
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:234:4: lookup
                     {
-                    	PushFollow(FOLLOW_lookup_in_expression965);
-                    	lookup39 = lookup();
+                    	PushFollow(FOLLOW_lookup_in_expression1029);
+                    	lookup43 = lookup();
                     	state.followingStackPointer--;
 
-                    	 node = lookup39; 
+                    	 node = lookup43; 
 
                     }
                     break;
                 case 24 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:212:4: variableUnaryChange
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:235:4: variableUnaryChangeExpression
                     {
-                    	PushFollow(FOLLOW_variableUnaryChange_in_expression972);
-                    	variableUnaryChange40 = variableUnaryChange();
+                    	PushFollow(FOLLOW_variableUnaryChangeExpression_in_expression1036);
+                    	variableUnaryChangeExpression44 = variableUnaryChangeExpression();
                     	state.followingStackPointer--;
 
-                    	 node = variableUnaryChange40; 
+                    	 node = variableUnaryChangeExpression44; 
 
                     }
                     break;
@@ -1699,18 +1832,18 @@ public partial class SGLTreeWalker : TreeParser
     // $ANTLR end "expression"
 
 
-    // $ANTLR start "variableUnaryChange"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:217:1: variableUnaryChange returns [SGLNode node] : ( ^( VARINC Identifier ) | ^( VARDEC Identifier ) );
-    public SGLNode variableUnaryChange() // throws RecognitionException [1]
+    // $ANTLR start "variableUnaryChangeStatement"
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:240:1: variableUnaryChangeStatement returns [SGLNode node] : ( ^( VARINC Identifier ) | ^( VARDEC Identifier ) );
+    public SGLNode variableUnaryChangeStatement() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
 
-        CommonTree Identifier41 = null;
-        CommonTree Identifier42 = null;
+        CommonTree Identifier45 = null;
+        CommonTree Identifier46 = null;
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:218:2: ( ^( VARINC Identifier ) | ^( VARDEC Identifier ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:241:2: ( ^( VARINC Identifier ) | ^( VARDEC Identifier ) )
             int alt11 = 2;
             int LA11_0 = input.LA(1);
 
@@ -1732,28 +1865,28 @@ public partial class SGLTreeWalker : TreeParser
             switch (alt11) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:218:4: ^( VARINC Identifier )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:241:4: ^( VARINC Identifier )
                     {
-                    	Match(input,VARINC,FOLLOW_VARINC_in_variableUnaryChange1011); 
+                    	Match(input,VARINC,FOLLOW_VARINC_in_variableUnaryChangeStatement1075); 
 
                     	Match(input, Token.DOWN, null); 
-                    	Identifier41=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_variableUnaryChange1013); 
+                    	Identifier45=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_variableUnaryChangeStatement1077); 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new VarIncNode(((Identifier41 != null) ? Identifier41.Text : null), currentScope); 
+                    	 node = new VarIncNode(((Identifier45 != null) ? Identifier45.Text : null), currentScope, false); 
 
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:219:4: ^( VARDEC Identifier )
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:242:4: ^( VARDEC Identifier )
                     {
-                    	Match(input,VARDEC,FOLLOW_VARDEC_in_variableUnaryChange1022); 
+                    	Match(input,VARDEC,FOLLOW_VARDEC_in_variableUnaryChangeStatement1086); 
 
                     	Match(input, Token.DOWN, null); 
-                    	Identifier42=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_variableUnaryChange1024); 
+                    	Identifier46=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_variableUnaryChangeStatement1088); 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new VarIncNode(((Identifier42 != null) ? Identifier42.Text : null), currentScope); 
+                    	 node = new VarIncNode(((Identifier46 != null) ? Identifier46.Text : null), currentScope, false); 
 
                     }
                     break;
@@ -1770,24 +1903,98 @@ public partial class SGLTreeWalker : TreeParser
         }
         return node;
     }
-    // $ANTLR end "variableUnaryChange"
+    // $ANTLR end "variableUnaryChangeStatement"
+
+
+    // $ANTLR start "variableUnaryChangeExpression"
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:245:1: variableUnaryChangeExpression returns [SGLNode node] : ( ^( VARINC Identifier ) | ^( VARDEC Identifier ) );
+    public SGLNode variableUnaryChangeExpression() // throws RecognitionException [1]
+    {   
+        SGLNode node = default(SGLNode);
+
+        CommonTree Identifier47 = null;
+        CommonTree Identifier48 = null;
+
+        try 
+    	{
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:246:2: ( ^( VARINC Identifier ) | ^( VARDEC Identifier ) )
+            int alt12 = 2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0 == VARINC) )
+            {
+                alt12 = 1;
+            }
+            else if ( (LA12_0 == VARDEC) )
+            {
+                alt12 = 2;
+            }
+            else 
+            {
+                NoViableAltException nvae_d12s0 =
+                    new NoViableAltException("", 12, 0, input);
+
+                throw nvae_d12s0;
+            }
+            switch (alt12) 
+            {
+                case 1 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:246:4: ^( VARINC Identifier )
+                    {
+                    	Match(input,VARINC,FOLLOW_VARINC_in_variableUnaryChangeExpression1108); 
+
+                    	Match(input, Token.DOWN, null); 
+                    	Identifier47=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_variableUnaryChangeExpression1110); 
+
+                    	Match(input, Token.UP, null); 
+                    	 node = new VarIncNode(((Identifier47 != null) ? Identifier47.Text : null), currentScope, true); 
+
+                    }
+                    break;
+                case 2 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:247:4: ^( VARDEC Identifier )
+                    {
+                    	Match(input,VARDEC,FOLLOW_VARDEC_in_variableUnaryChangeExpression1119); 
+
+                    	Match(input, Token.DOWN, null); 
+                    	Identifier48=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_variableUnaryChangeExpression1121); 
+
+                    	Match(input, Token.UP, null); 
+                    	 node = new VarIncNode(((Identifier48 != null) ? Identifier48.Text : null), currentScope, true); 
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) 
+    	{
+            ReportError(re);
+            Recover(input,re);
+        }
+        finally 
+    	{
+        }
+        return node;
+    }
+    // $ANTLR end "variableUnaryChangeExpression"
 
 
     // $ANTLR start "lookup"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:223:1: lookup returns [SGLNode node] : Identifier ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:251:1: lookup returns [SGLNode node] : Identifier ;
     public SGLNode lookup() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
 
-        CommonTree Identifier43 = null;
+        CommonTree Identifier49 = null;
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:224:2: ( Identifier )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:224:4: Identifier
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:252:2: ( Identifier )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:252:4: Identifier
             {
-            	Identifier43=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_lookup1055); 
-            	 node = new IdentifierNode(((Identifier43 != null) ? Identifier43.Text : null), currentScope); 
+            	Identifier49=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_lookup1153); 
+            	 node = new IdentifierNode(((Identifier49 != null) ? Identifier49.Text : null), currentScope); 
 
             }
 
@@ -1806,32 +2013,32 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "spriteObject"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:227:1: spriteObject returns [SGLNode node] : ^( SpriteAnimation arguments ) ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:255:1: spriteObject returns [SGLNode node] : ^( SpriteAnimation arguments ) ;
     public SGLNode spriteObject() // throws RecognitionException [1]
     {   
         SGLNode node = default(SGLNode);
 
-        List<SGLNode> arguments44 = default(List<SGLNode>);
+        List<SGLNode> arguments50 = default(List<SGLNode>);
 
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:228:2: ( ^( SpriteAnimation arguments ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:228:6: ^( SpriteAnimation arguments )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:256:2: ( ^( SpriteAnimation arguments ) )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:256:6: ^( SpriteAnimation arguments )
             {
-            	Match(input,SpriteAnimation,FOLLOW_SpriteAnimation_in_spriteObject1084); 
+            	Match(input,SpriteAnimation,FOLLOW_SpriteAnimation_in_spriteObject1182); 
 
             	if ( input.LA(1) == Token.DOWN )
             	{
             	    Match(input, Token.DOWN, null); 
-            	    PushFollow(FOLLOW_arguments_in_spriteObject1086);
-            	    arguments44 = arguments();
+            	    PushFollow(FOLLOW_arguments_in_spriteObject1184);
+            	    arguments50 = arguments();
             	    state.followingStackPointer--;
 
 
             	    Match(input, Token.UP, null); 
             	}
-            	  node = new SpriteNode(arguments44); 
+            	  node = new SpriteNode(arguments50); 
 
             }
 
@@ -1850,91 +2057,27 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "arguments"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:235:1: arguments returns [List<SGLNode> list] : ( expression )* ;
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:263:1: arguments returns [List<SGLNode> list] : ( expression )* ;
     public List<SGLNode> arguments() // throws RecognitionException [1]
     {   
         List<SGLNode> list = default(List<SGLNode>);
 
-        SGLNode expression45 = default(SGLNode);
+        SGLNode expression51 = default(SGLNode);
 
 
          list = new List<SGLNode>(); 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:237:5: ( ( expression )* )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:237:9: ( expression )*
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:265:5: ( ( expression )* )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:265:9: ( expression )*
             {
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:237:9: ( expression )*
-            	do 
-            	{
-            	    int alt12 = 2;
-            	    int LA12_0 = input.LA(1);
-
-            	    if ( (LA12_0 == NEGATE || LA12_0 == STRING || LA12_0 == STRINGNOQUOTES || (LA12_0 >= VARINC && LA12_0 <= Identifier) || (LA12_0 >= IntegerAtom && LA12_0 <= SpriteAnimation) || LA12_0 == 57 || (LA12_0 >= 59 && LA12_0 <= 71)) )
-            	    {
-            	        alt12 = 1;
-            	    }
-
-
-            	    switch (alt12) 
-            		{
-            			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:237:10: expression
-            			    {
-            			    	PushFollow(FOLLOW_expression_in_arguments1126);
-            			    	expression45 = expression();
-            			    	state.followingStackPointer--;
-
-            			    	list.Add(expression45);
-
-            			    }
-            			    break;
-
-            			default:
-            			    goto loop12;
-            	    }
-            	} while (true);
-
-            	loop12:
-            		;	// Stops C# compiler whining that label 'loop12' has no statements
-
-
-            }
-
-        }
-        catch (RecognitionException re) 
-    	{
-            ReportError(re);
-            Recover(input,re);
-        }
-        finally 
-    	{
-        }
-        return list;
-    }
-    // $ANTLR end "arguments"
-
-
-    // $ANTLR start "expressionList"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:240:1: expressionList : expression ( ',' expression )* ;
-    public void expressionList() // throws RecognitionException [1]
-    {   
-        try 
-    	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:241:5: ( expression ( ',' expression )* )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:241:9: expression ( ',' expression )*
-            {
-            	PushFollow(FOLLOW_expression_in_expressionList1149);
-            	expression();
-            	state.followingStackPointer--;
-
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:241:20: ( ',' expression )*
+            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:265:9: ( expression )*
             	do 
             	{
             	    int alt13 = 2;
             	    int LA13_0 = input.LA(1);
 
-            	    if ( (LA13_0 == 49) )
+            	    if ( (LA13_0 == NEGATE || LA13_0 == STRING || LA13_0 == STRINGNOQUOTES || (LA13_0 >= VARINC && LA13_0 <= VARDEC) || LA13_0 == Identifier || (LA13_0 >= IntegerAtom && LA13_0 <= SpriteAnimation) || LA13_0 == 63 || (LA13_0 >= 65 && LA13_0 <= 77)) )
             	    {
             	        alt13 = 1;
             	    }
@@ -1943,13 +2086,13 @@ public partial class SGLTreeWalker : TreeParser
             	    switch (alt13) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:241:21: ',' expression
+            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:265:10: expression
             			    {
-            			    	Match(input,49,FOLLOW_49_in_expressionList1152); 
-            			    	PushFollow(FOLLOW_expression_in_expressionList1154);
-            			    	expression();
+            			    	PushFollow(FOLLOW_expression_in_arguments1224);
+            			    	expression51 = expression();
             			    	state.followingStackPointer--;
 
+            			    	list.Add(expression51); 
 
             			    }
             			    break;
@@ -1974,21 +2117,85 @@ public partial class SGLTreeWalker : TreeParser
         finally 
     	{
         }
+        return list;
+    }
+    // $ANTLR end "arguments"
+
+
+    // $ANTLR start "expressionList"
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:268:1: expressionList : ( expression )+ ;
+    public void expressionList() // throws RecognitionException [1]
+    {   
+        try 
+    	{
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:269:5: ( ( expression )+ )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:269:9: ( expression )+
+            {
+            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:269:9: ( expression )+
+            	int cnt14 = 0;
+            	do 
+            	{
+            	    int alt14 = 2;
+            	    int LA14_0 = input.LA(1);
+
+            	    if ( (LA14_0 == NEGATE || LA14_0 == STRING || LA14_0 == STRINGNOQUOTES || (LA14_0 >= VARINC && LA14_0 <= VARDEC) || LA14_0 == Identifier || (LA14_0 >= IntegerAtom && LA14_0 <= SpriteAnimation) || LA14_0 == 63 || (LA14_0 >= 65 && LA14_0 <= 77)) )
+            	    {
+            	        alt14 = 1;
+            	    }
+
+
+            	    switch (alt14) 
+            		{
+            			case 1 :
+            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:269:9: expression
+            			    {
+            			    	PushFollow(FOLLOW_expression_in_expressionList1247);
+            			    	expression();
+            			    	state.followingStackPointer--;
+
+
+            			    }
+            			    break;
+
+            			default:
+            			    if ( cnt14 >= 1 ) goto loop14;
+            		            EarlyExitException eee14 =
+            		                new EarlyExitException(14, input);
+            		            throw eee14;
+            	    }
+            	    cnt14++;
+            	} while (true);
+
+            	loop14:
+            		;	// Stops C# compiler whining that label 'loop14' has no statements
+
+
+            }
+
+        }
+        catch (RecognitionException re) 
+    	{
+            ReportError(re);
+            Recover(input,re);
+        }
+        finally 
+    	{
+        }
         return ;
     }
     // $ANTLR end "expressionList"
 
 
     // $ANTLR start "literal"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:246:1: literal : ( IntegerAtom | FloatAtom | StringAtom | BooleanAtom | 'null' );
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:274:1: literal : ( IntegerAtom | FloatAtom | StringAtom | BooleanAtom | 'null' );
     public void literal() // throws RecognitionException [1]
     {   
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:247:5: ( IntegerAtom | FloatAtom | StringAtom | BooleanAtom | 'null' )
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:275:5: ( IntegerAtom | FloatAtom | StringAtom | BooleanAtom | 'null' )
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGLTreeWalker.g:
             {
-            	if ( (input.LA(1) >= IntegerAtom && input.LA(1) <= BooleanAtom) || input.LA(1) == StringAtom || input.LA(1) == 75 ) 
+            	if ( (input.LA(1) >= IntegerAtom && input.LA(1) <= BooleanAtom) || input.LA(1) == StringAtom || input.LA(1) == 81 ) 
             	{
             	    input.Consume();
             	    state.errorRecovery = false;
@@ -2031,9 +2238,9 @@ public partial class SGLTreeWalker : TreeParser
     const string DFA8_eofS =
         "\x0b\uffff";
     const string DFA8_minS =
-        "\x01\x09\x01\x02\x01\x17\x05\x16\x01\x03\x02\uffff";
+        "\x01\x09\x01\x02\x01\x1b\x05\x1a\x01\x03\x02\uffff";
     const string DFA8_maxS =
-        "\x01\x09\x01\x02\x01\x1b\x05\x16\x01\x47\x02\uffff";
+        "\x01\x09\x01\x02\x01\x1f\x05\x1a\x01\x4d\x02\uffff";
     const string DFA8_acceptS =
         "\x09\uffff\x01\x02\x01\x01";
     const string DFA8_specialS =
@@ -2048,8 +2255,8 @@ public partial class SGLTreeWalker : TreeParser
             "\x01\x08",
             "\x01\x08",
             "\x01\x09\x07\uffff\x01\x0a\x02\uffff\x01\x0a\x03\uffff\x01"+
-            "\x0a\x01\uffff\x03\x0a\x05\uffff\x04\x0a\x19\uffff\x01\x0a\x01"+
-            "\uffff\x0d\x0a",
+            "\x0a\x01\uffff\x02\x0a\x04\uffff\x01\x0a\x05\uffff\x04\x0a\x1b"+
+            "\uffff\x01\x0a\x01\uffff\x0d\x0a",
             "",
             ""
     };
@@ -2080,7 +2287,7 @@ public partial class SGLTreeWalker : TreeParser
 
         override public string Description
         {
-            get { return "150:1: variableDeclaration returns [SGLNode node] : ( ^( VARDEF variableType variableName expression ) | ^( VARDEF variableType variableName ) );"; }
+            get { return "173:1: variableDeclaration returns [SGLNode node] : ( ^( VARDEF variableType variableName expression ) | ^( VARDEF variableType variableName ) );"; }
         }
 
     }
@@ -2090,9 +2297,9 @@ public partial class SGLTreeWalker : TreeParser
     const string DFA10_eofS =
         "\x1b\uffff";
     const string DFA10_minS =
-        "\x01\x0b\x13\uffff\x01\x02\x03\uffff\x01\x20\x02\uffff";
+        "\x01\x0b\x13\uffff\x01\x02\x03\uffff\x01\x24\x02\uffff";
     const string DFA10_maxS =
-        "\x01\x47\x13\uffff\x01\x02\x03\uffff\x01\x21\x02\uffff";
+        "\x01\x4d\x13\uffff\x01\x02\x03\uffff\x01\x25\x02\uffff";
     const string DFA10_acceptS =
         "\x01\uffff\x01\x01\x01\x02\x01\x03\x01\x04\x01\x05\x01\x06\x01"+
         "\x07\x01\x08\x01\x09\x01\x0a\x01\x0b\x01\x0c\x01\x0d\x01\x0e\x01"+
@@ -2102,9 +2309,10 @@ public partial class SGLTreeWalker : TreeParser
         "\x1b\uffff}>";
     static readonly string[] DFA10_transitionS = {
             "\x01\x06\x02\uffff\x01\x13\x03\uffff\x01\x14\x01\uffff\x02"+
-            "\x17\x01\x16\x05\uffff\x01\x10\x01\x11\x01\x12\x01\x15\x19\uffff"+
-            "\x01\x0f\x01\uffff\x01\x0e\x01\x0d\x01\x0c\x01\x0b\x01\x07\x01"+
-            "\x09\x01\x08\x01\x0a\x01\x01\x01\x02\x01\x03\x01\x04\x01\x05",
+            "\x17\x04\uffff\x01\x16\x05\uffff\x01\x10\x01\x11\x01\x12\x01"+
+            "\x15\x1b\uffff\x01\x0f\x01\uffff\x01\x0e\x01\x0d\x01\x0c\x01"+
+            "\x0b\x01\x07\x01\x09\x01\x08\x01\x0a\x01\x01\x01\x02\x01\x03"+
+            "\x01\x04\x01\x05",
             "",
             "",
             "",
@@ -2159,7 +2367,7 @@ public partial class SGLTreeWalker : TreeParser
 
         override public string Description
         {
-            get { return "188:1: expression returns [SGLNode node] : ( ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( NEGATE a= expression ) | ^( '<' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '?' a= expression b= expression c= expression ) | IntegerAtom | FloatAtom | BooleanAtom | ^( STRING StringAtom ) | ^( STRINGNOQUOTES Layer ) | ^( STRINGNOQUOTES Origin ) | spriteObject | lookup | variableUnaryChange );"; }
+            get { return "211:1: expression returns [SGLNode node] : ( ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( NEGATE a= expression ) | ^( '<' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '?' a= expression b= expression c= expression ) | IntegerAtom | FloatAtom | BooleanAtom | ^( STRING StringAtom ) | ^( STRINGNOQUOTES Layer ) | ^( STRINGNOQUOTES Origin ) | spriteObject | lookup | variableUnaryChangeExpression );"; }
         }
 
     }
@@ -2169,122 +2377,130 @@ public partial class SGLTreeWalker : TreeParser
     public static readonly BitSet FOLLOW_block_in_compilationUnit60 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_BLOCK_in_block95 = new BitSet(new ulong[]{0x0000000000000004UL});
     public static readonly BitSet FOLLOW_STATEMENTS_in_block111 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_statement_in_block114 = new BitSet(new ulong[]{0x0030000000382648UL});
+    public static readonly BitSet FOLLOW_statement_in_block114 = new BitSet(new ulong[]{0x0600000002782648UL});
     public static readonly BitSet FOLLOW_variableDeclaration_in_statement155 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_variableAssignment_in_statement163 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_variableUnaryChange_in_statement171 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_variableUnaryChangeStatement_in_statement171 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_staticMethod_in_statement178 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_objectMethod_in_statement186 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_ifStatement_in_statement194 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_whileLoop_in_statement202 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_forLoop_in_statement209 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_PRINTLN_in_staticMethod228 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_staticMethod230 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_OBJMETHOD_in_objectMethod250 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_variableName_in_objectMethod252 = new BitSet(new ulong[]{0x0000000000400000UL});
-    public static readonly BitSet FOLLOW_Identifier_in_objectMethod254 = new BitSet(new ulong[]{0xFA000000F0744808UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_arguments_in_objectMethod256 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_52_in_whileLoop278 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_whileLoop280 = new BitSet(new ulong[]{0x0000000000000010UL});
-    public static readonly BitSet FOLLOW_block_in_whileLoop282 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_53_in_forLoop309 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_FORDEC_in_forLoop312 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_statement_in_forLoop317 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_FORCOND_in_forLoop326 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_forLoop331 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_FORITER_in_forLoop339 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_statement_in_forLoop344 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_block_in_forLoop351 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_IF_in_ifStatement384 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_EXP_in_ifStatement398 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_ifStatement400 = new BitSet(new ulong[]{0x0000000000000010UL});
-    public static readonly BitSet FOLLOW_block_in_ifStatement404 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_EXP_in_ifStatement424 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_block_in_ifStatement428 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_VARDEF_in_variableDeclaration470 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_variableType_in_variableDeclaration472 = new BitSet(new ulong[]{0x0000000000400000UL});
-    public static readonly BitSet FOLLOW_variableName_in_variableDeclaration474 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_variableDeclaration476 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_VARDEF_in_variableDeclaration500 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_variableType_in_variableDeclaration502 = new BitSet(new ulong[]{0x0000000000400000UL});
-    public static readonly BitSet FOLLOW_variableName_in_variableDeclaration504 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_ASSIGN_in_variableAssignment533 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_variableName_in_variableAssignment535 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_variableAssignment537 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_Identifier_in_variableName560 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_IntType_in_variableType578 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_BooleanType_in_variableType585 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_StringType_in_variableType592 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_FloatType_in_variableType599 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_ObjectType_in_variableType606 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_67_in_expression646 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression650 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expression654 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_68_in_expression663 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression667 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expression671 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_69_in_expression680 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression684 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expression688 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_70_in_expression697 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression701 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expression705 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_71_in_expression714 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression718 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expression722 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_NEGATE_in_expression731 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_breakStat_in_statement216 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_functionCall_in_statement225 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_FUNC_CALL_in_functionCall248 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_Identifier_in_functionCall250 = new BitSet(new ulong[]{0x8000000F04344808UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_arguments_in_functionCall252 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_BREAK_in_breakStat272 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_PRINTLN_in_staticMethod292 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_staticMethod294 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_OBJMETHOD_in_objectMethod314 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_variableName_in_objectMethod316 = new BitSet(new ulong[]{0x0000000004000000UL});
+    public static readonly BitSet FOLLOW_Identifier_in_objectMethod318 = new BitSet(new ulong[]{0x8000000F04344808UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_arguments_in_objectMethod320 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_57_in_whileLoop342 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_whileLoop344 = new BitSet(new ulong[]{0x0000000000000010UL});
+    public static readonly BitSet FOLLOW_block_in_whileLoop346 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_58_in_forLoop373 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_FORDEC_in_forLoop376 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_statement_in_forLoop381 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_FORCOND_in_forLoop390 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_forLoop395 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_FORITER_in_forLoop403 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_statement_in_forLoop408 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_block_in_forLoop415 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_IF_in_ifStatement448 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_EXP_in_ifStatement462 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_ifStatement464 = new BitSet(new ulong[]{0x0000000000000010UL});
+    public static readonly BitSet FOLLOW_block_in_ifStatement468 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_EXP_in_ifStatement488 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_block_in_ifStatement492 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_VARDEF_in_variableDeclaration534 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_variableType_in_variableDeclaration536 = new BitSet(new ulong[]{0x0000000004000000UL});
+    public static readonly BitSet FOLLOW_variableName_in_variableDeclaration538 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_variableDeclaration540 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_VARDEF_in_variableDeclaration564 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_variableType_in_variableDeclaration566 = new BitSet(new ulong[]{0x0000000004000000UL});
+    public static readonly BitSet FOLLOW_variableName_in_variableDeclaration568 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_ASSIGN_in_variableAssignment597 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_variableName_in_variableAssignment599 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_variableAssignment601 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_Identifier_in_variableName624 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_IntType_in_variableType642 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_BooleanType_in_variableType649 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_StringType_in_variableType656 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_FloatType_in_variableType663 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_ObjectType_in_variableType670 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_73_in_expression710 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression714 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_expression718 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_74_in_expression727 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression731 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
     public static readonly BitSet FOLLOW_expression_in_expression735 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_63_in_expression744 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression748 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
+    public static readonly BitSet FOLLOW_75_in_expression744 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression748 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
     public static readonly BitSet FOLLOW_expression_in_expression752 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_65_in_expression761 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression765 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
+    public static readonly BitSet FOLLOW_76_in_expression761 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression765 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
     public static readonly BitSet FOLLOW_expression_in_expression769 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_64_in_expression778 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression782 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
+    public static readonly BitSet FOLLOW_77_in_expression778 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression782 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
     public static readonly BitSet FOLLOW_expression_in_expression786 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_66_in_expression795 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression799 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expression803 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_62_in_expression812 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression816 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expression820 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_61_in_expression829 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression833 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expression837 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_60_in_expression846 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression850 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expression854 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_59_in_expression863 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression867 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expression871 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_57_in_expression880 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_expression_in_expression884 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expression888 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expression892 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_IntegerAtom_in_expression902 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_FloatAtom_in_expression909 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_BooleanAtom_in_expression918 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_STRING_in_expression926 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_StringAtom_in_expression928 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_STRINGNOQUOTES_in_expression937 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_Layer_in_expression939 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_STRINGNOQUOTES_in_expression948 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_Origin_in_expression950 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_spriteObject_in_expression958 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_lookup_in_expression965 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_variableUnaryChange_in_expression972 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_VARINC_in_variableUnaryChange1011 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_Identifier_in_variableUnaryChange1013 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_VARDEC_in_variableUnaryChange1022 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_Identifier_in_variableUnaryChange1024 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_Identifier_in_lookup1055 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_SpriteAnimation_in_spriteObject1084 = new BitSet(new ulong[]{0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_arguments_in_spriteObject1086 = new BitSet(new ulong[]{0x0000000000000008UL});
-    public static readonly BitSet FOLLOW_expression_in_arguments1126 = new BitSet(new ulong[]{0xFA000000F0744802UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expressionList1149 = new BitSet(new ulong[]{0x0002000000000002UL});
-    public static readonly BitSet FOLLOW_49_in_expressionList1152 = new BitSet(new ulong[]{0xFA000000F0744800UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_expression_in_expressionList1154 = new BitSet(new ulong[]{0x0002000000000002UL});
+    public static readonly BitSet FOLLOW_NEGATE_in_expression795 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression799 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_69_in_expression808 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression812 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_expression816 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_71_in_expression825 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression829 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_expression833 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_70_in_expression842 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression846 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_expression850 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_72_in_expression859 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression863 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_expression867 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_68_in_expression876 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression880 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_expression884 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_67_in_expression893 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression897 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_expression901 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_66_in_expression910 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression914 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_expression918 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_65_in_expression927 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression931 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_expression935 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_63_in_expression944 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_expression948 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_expression952 = new BitSet(new ulong[]{0x8000000F04344800UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_expression956 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_IntegerAtom_in_expression966 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_FloatAtom_in_expression973 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_BooleanAtom_in_expression982 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_STRING_in_expression990 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_StringAtom_in_expression992 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_STRINGNOQUOTES_in_expression1001 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_Layer_in_expression1003 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_STRINGNOQUOTES_in_expression1012 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_Origin_in_expression1014 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_spriteObject_in_expression1022 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_lookup_in_expression1029 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_variableUnaryChangeExpression_in_expression1036 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_VARINC_in_variableUnaryChangeStatement1075 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_Identifier_in_variableUnaryChangeStatement1077 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_VARDEC_in_variableUnaryChangeStatement1086 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_Identifier_in_variableUnaryChangeStatement1088 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_VARINC_in_variableUnaryChangeExpression1108 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_Identifier_in_variableUnaryChangeExpression1110 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_VARDEC_in_variableUnaryChangeExpression1119 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_Identifier_in_variableUnaryChangeExpression1121 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_Identifier_in_lookup1153 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_SpriteAnimation_in_spriteObject1182 = new BitSet(new ulong[]{0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_arguments_in_spriteObject1184 = new BitSet(new ulong[]{0x0000000000000008UL});
+    public static readonly BitSet FOLLOW_expression_in_arguments1224 = new BitSet(new ulong[]{0x8000000F04344802UL,0x0000000000003FFEUL});
+    public static readonly BitSet FOLLOW_expression_in_expressionList1247 = new BitSet(new ulong[]{0x8000000F04344802UL,0x0000000000003FFEUL});
     public static readonly BitSet FOLLOW_set_in_literal0 = new BitSet(new ulong[]{0x0000000000000002UL});
 
 }

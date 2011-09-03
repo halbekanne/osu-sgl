@@ -8,11 +8,13 @@ namespace SGL.Node
     {
         private String identifier;
         private Scope scope;
+        private Boolean returnValue;
 
-        public VarIncNode(String identifier, Scope scope)
+        public VarIncNode(String identifier, Scope scope, Boolean returnValue)
         {
             this.identifier = identifier;
             this.scope = scope;
+            this.returnValue = returnValue;
         }
 
         public SGLValue Evaluate()
@@ -31,7 +33,14 @@ namespace SGL.Node
             {
                 SGLValue newValue = new SGLValue(value.AsInteger() + 1);
                 scope.Assign(identifier, newValue, false, "");
-                return newValue;
+                if (returnValue)
+                {
+                    return newValue;
+                }
+                else
+                {
+                    return SGLValue.VOID;
+                }
             }
 
             // float  
@@ -39,7 +48,14 @@ namespace SGL.Node
             {
                 SGLValue newValue = new SGLValue(value.AsFloat() + 1);
                 scope.Assign(identifier, newValue, false, "");
-                return newValue;
+                if (returnValue)
+                {
+                    return newValue;
+                }
+                else
+                {
+                    return SGLValue.VOID;
+                }
             }
 
             throw new Exception("illegal expression: " + this.ToString());

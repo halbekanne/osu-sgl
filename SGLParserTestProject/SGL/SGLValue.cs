@@ -8,12 +8,13 @@ namespace SGL
     {
         public static readonly SGLValue NULL = new SGLValue();
         public static readonly SGLValue VOID = new SGLValue();
+        public static readonly SGLValue BREAK = new SGLValue();
 
         private Object value;
 
         private SGLValue()
         {
-            // private constructor: only used for NULL and VOID  
+            // private constructor: only used for NULL, VOID and BREAK
             value = new Object();
         }
 
@@ -183,6 +184,11 @@ namespace SGL
             return this == VOID;
         }
 
+        public Boolean IsBreak()
+        {
+            return this == BREAK;
+        }
+
         public Boolean IsString()
         {
             return value is String;
@@ -230,10 +236,70 @@ namespace SGL
         }
 
 
+        public String GetVarType()
+        {
+            if (IsNull())
+            {
+                return "NULL";
+            }
+            else if (IsVoid())
+            {
+                return "VOID";
+            }
+            else if (IsBreak())
+            {
+                return "Break";
+            }
+            else if (IsInteger())
+            {
+                return "int";
+            }
+            else if (IsFloat())
+            {
+                return "float";
+            }
+            else if (IsBoolean())
+            {
+                return "boolean";
+            }
+            else if (IsString())
+            {
+                return "string";
+            }
+            throw new Exception("Unknown Type");
+        }
+
 
         public String ToString()
         {
-            return IsNull() ? "NULL" : IsVoid() ? "VOID" : ((String)value);
+            if (IsNull())
+            {
+                return "NULL";
+            }
+            else if (IsVoid())
+            {
+                return "VOID";
+            }
+            else if (IsBreak())
+            {
+                return "Break";
+            }
+            else if (IsInteger())
+            {
+                return AsInteger().ToString(System.Globalization.CultureInfo.InvariantCulture);
+            }
+            else if (IsFloat())
+            {
+                return AsFloat().ToString(System.Globalization.CultureInfo.InvariantCulture);
+            }
+            else if (IsBoolean())
+            {
+                return AsBoolean().ToString(System.Globalization.CultureInfo.InvariantCulture);
+            }
+            else
+            {
+                return value.ToString();
+            }
         }
 
     }

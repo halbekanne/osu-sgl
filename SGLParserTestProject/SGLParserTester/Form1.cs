@@ -33,7 +33,22 @@ namespace WindowsFormsApplication4
                 SGLLexer lexer = new SGLLexer(sStream);
 
                 CommonTokenStream tStream = new CommonTokenStream(lexer);
-                
+
+                /*
+
+                 * // create the parser  
+    TLParser parser = new TLParser(tokens);  
+      
+    // walk the tree  
+    CommonTree tree = (CommonTree)parser.parse().getTree();  
+    CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);  
+      
+    // pass the reference to the Map of functions to the tree walker  
+    TLTreeWalker walker = new TLTreeWalker(nodes, parser.functions);
+
+                */
+
+
                 // Parsing
                 Stopwatch parseTime = new Stopwatch();
                 parseTime.Start();
@@ -49,7 +64,7 @@ namespace WindowsFormsApplication4
 
                 Stopwatch walkingTime = new Stopwatch();
                 walkingTime.Start();
-                SGLTreeWalker tw = new SGLTreeWalker(treeStream);
+                SGLTreeWalker tw = new SGLTreeWalker(treeStream, parser.functions);
                 SGLNode returned = tw.compilationUnit();
                 returned.Evaluate();
                 walkingTime.Stop();
