@@ -15,9 +15,6 @@ namespace SGL
             this.filepath = filepath;
             this.layer = layer;
             this.origin = origin;
-
-            Console.WriteLine("Sprite created");
-        
         
         }
 

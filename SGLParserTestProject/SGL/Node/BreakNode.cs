@@ -16,6 +16,11 @@ namespace SGL.Node
             return SGLValue.BREAK;
         }
 
+        public int GetLine()
+        {
+            // This call should never occur
+            return -1;
+        }
 
     }
 }

@@ -9,12 +9,14 @@ namespace SGL.Node
         private String identifier;
         private Scope scope;
         private Boolean returnValue;
+        private int line;
 
-        public VarIncNode(String identifier, Scope scope, Boolean returnValue)
+        public VarIncNode(String identifier, Scope scope, Boolean returnValue, int line)
         {
             this.identifier = identifier;
             this.scope = scope;
             this.returnValue = returnValue;
+            this.line = line;
         }
 
         public SGLValue Evaluate()
@@ -24,7 +26,7 @@ namespace SGL.Node
             SGLValue value = scope.Resolve(identifier);
             if (value == null)
             {
-                throw new Exception("no such variable: " + this);
+                throw new SGLCompilerException(GetLine(), "unknown variable", "'" + value + "' cannot be resolved to a variable");
             }
 
 
@@ -58,9 +60,13 @@ namespace SGL.Node
                 }
             }
 
-            throw new Exception("illegal expression: " + this.ToString());
+            throw new SGLCompilerException(GetLine(), "type mismatch", "cannot convert from " + value.GetVarType() + " to int");
         }
 
+        public int GetLine()
+        {
+            return line;
+        }
 
     }
 }

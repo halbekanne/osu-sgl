@@ -1,4 +1,1 @@
-method int test(int x) {
-x++;
-}
-int x = 1;
+i++;

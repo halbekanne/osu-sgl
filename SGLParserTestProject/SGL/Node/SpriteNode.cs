@@ -10,12 +10,14 @@ namespace SGL.Node
         private String filepath;
         private String layer;
         private String origin;
+        private int line = -1;
 
 
         public SpriteNode(List<SGLNode> arguments)
         {
             // resolve arguments
             List<SGLValue> values = new List<SGLValue>();
+            
             foreach (SGLNode exprNode in arguments)
             {
                 values.Add(exprNode.Evaluate());
@@ -54,9 +56,19 @@ namespace SGL.Node
             }
 
             
+
+            // If at least one argument is in the list, we can define the line number
+            if (arguments.Count > 0)
+            {
+                line = arguments[0].GetLine();
+            }
         }
 
-
+        public int GetLine()
+        {
+            // -1 could be returned here if no argument was given, but the line number will be retrieved later
+            return line;
+        }
 
 
         public SGLValue Evaluate()

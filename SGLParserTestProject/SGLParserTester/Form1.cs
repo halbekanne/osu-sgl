@@ -24,65 +24,33 @@ namespace WindowsFormsApplication4
 
         private void compileBtn_Click(object sender, EventArgs e)
         {
+            outputBox.Text = "";
+            errorBox.Text = "";
 
             try
             {
-                Stopwatch otherTime = new Stopwatch();
-                otherTime.Start();
-                ANTLRStringStream sStream = new ANTLRStringStream(inputBox.Text);
-                SGLLexer lexer = new SGLLexer(sStream);
 
-                CommonTokenStream tStream = new CommonTokenStream(lexer);
+                SGL.Compiler compiler = new SGL.Compiler();
+                compiler.SetTimeRecording(true);
+                outputBox.Text = compiler.Run(inputBox.Text);
 
-                /*
-
-                 * // create the parser  
-    TLParser parser = new TLParser(tokens);  
-      
-    // walk the tree  
-    CommonTree tree = (CommonTree)parser.parse().getTree();  
-    CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);  
-      
-    // pass the reference to the Map of functions to the tree walker  
-    TLTreeWalker walker = new TLTreeWalker(nodes, parser.functions);
-
-                */
-
-
-                // Parsing
-                Stopwatch parseTime = new Stopwatch();
-                parseTime.Start();
-                SGLParser parser = new SGLParser(tStream);
-                CommonTree t = (CommonTree)parser.compilationUnit().Tree;
-                parseTime.Stop();
-                
-                // Printing tree
-                Console.WriteLine("; " + t.ToStringTree());
-
-                // TreeWalking
-                CommonTreeNodeStream treeStream = new CommonTreeNodeStream(t);
-
-                Stopwatch walkingTime = new Stopwatch();
-                walkingTime.Start();
-                SGLTreeWalker tw = new SGLTreeWalker(treeStream, parser.functions);
-                SGLNode returned = tw.compilationUnit();
-                returned.Evaluate();
-                walkingTime.Stop();
-                otherTime.Stop();
-
-                Console.WriteLine("Time needed for parsing: " + parseTime.ElapsedMilliseconds + " ms (" + parseTime.Elapsed + ")");
-                Console.WriteLine("Time needed for tree walking: " + walkingTime.ElapsedMilliseconds + " ms (" + walkingTime.Elapsed + ")");
-                Console.WriteLine("Time needed for anything else (convertion etc.): " + (otherTime.ElapsedMilliseconds - parseTime.ElapsedMilliseconds - walkingTime.ElapsedMilliseconds) + " ms (" + (otherTime.Elapsed - parseTime.Elapsed - walkingTime.Elapsed) + ")");
-
-                outputBox.Text = tw.GetStoryboardCode().ToString();
-
+            }
+            catch (SGLCompilerException ce)
+            {
+                if (ce.ErrorType.Equals("Antlr.Parser"))
+                {
+                    errorBox.Text = "Error (wrong syntax) on " + ce.Message;
+                }
+                else
+                {
+                    errorBox.Text = "Error (" + ce.ErrorType + ") on line " + ce.Line + ": " + ce.Message;
+                }
             }
             catch (Exception ex)
             {
                 outputBox.Text = "Es ist ein Fehler aufgetreten.";
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
-
             }
             
 

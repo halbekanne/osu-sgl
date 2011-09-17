@@ -38,12 +38,23 @@ namespace SGL.Node
 
         public SGLValue Evaluate()
         {
-
+            /*
+            Console.WriteLine("init: " + init.Evaluate());
+            Console.WriteLine("cond: " + condition.Evaluate());
+            Console.WriteLine("iteration: " + iteration.Evaluate());
+            */
+              
+            Console.WriteLine("--------------------------------------");
             for (init.Evaluate(); condition.Evaluate().AsBoolean(); iteration.Evaluate()) {
                 block.Evaluate();
             }
 
             return SGLValue.VOID;
+        }
+
+        public int GetLine()
+        {
+            return condition.GetLine();
         }
 
     }

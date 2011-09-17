@@ -17,6 +17,11 @@ namespace SGL.Node
 
         public SGLValue Evaluate()
         {
+            SGLValue exprV = expression.Evaluate();
+            if (!exprV.IsBoolean())
+            {
+                throw new SGLCompilerException(GetLine(), "type mismatch", "cannot convert from " + exprV.GetVarType() + " to boolean");
+            }
 
             while (expression.Evaluate().AsBoolean())
             {
@@ -25,7 +30,6 @@ namespace SGL.Node
                 {
                     if (returnValue == SGLValue.BREAK)
                     {
-                        Console.WriteLine("Break!");
                         return SGLValue.VOID;
                     }
                 }
@@ -41,6 +45,11 @@ namespace SGL.Node
             }
 
             return SGLValue.VOID;
+        }
+
+        public int GetLine()
+        {
+            return expression.GetLine();
         }
 
     }

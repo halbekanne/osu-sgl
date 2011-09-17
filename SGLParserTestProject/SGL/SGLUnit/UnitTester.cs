@@ -41,16 +41,16 @@ namespace SGL.SGLUnit
             // Variable handling
             units.Add(new Unit("Variable - Integer #1", "int a = 2; \r\n println(a);", "2"));
             units.Add(new Unit("Variable - Integer #2", "int a; \r\n println(a);", "0"));
-            units.Add(new Unit("Variable - Integer #3", "int a; \r\n a = 2 \r\n println(a);", "2"));
+            units.Add(new Unit("Variable - Integer #3", "int a; \r\n a = 2; \r\n println(a);", "2"));
             units.Add(new Unit("Variable - Float #1", "float a = 1.5; \r\n println(a);", "1.5"));
             units.Add(new Unit("Variable - Float #2", "float a; \r\n println(a);", "0"));
-            units.Add(new Unit("Variable - Float #3", "float a; \r\n a = 1.5 \r\n println(a);", "1.5"));
+            units.Add(new Unit("Variable - Float #3", "float a; \r\n a = 1.5; \r\n println(a);", "1.5"));
             units.Add(new Unit("Variable - Boolean #1", "boolean a = true; \r\n println(a);", "True"));
             units.Add(new Unit("Variable - Boolean #2", "boolean a; \r\n println(a);", "False"));
-            units.Add(new Unit("Variable - Boolean #3", "boolean a; \r\n a = true \r\n println(a);", "True"));
+            units.Add(new Unit("Variable - Boolean #3", "boolean a; \r\n a = true; \r\n println(a);", "True"));
             units.Add(new Unit("Variable - String #1", "string a = \"test\"; \r\n println(a);", "test"));
             units.Add(new Unit("Variable - String #2", "string a; \r\n println(a);", ""));
-            units.Add(new Unit("Variable - String #3", "string a; \r\n a = \"test\" \r\n println(a);", "test"));
+            units.Add(new Unit("Variable - String #3", "string a; \r\n a = \"test\"; \r\n println(a);", "test"));
 
             // IF-Statements
             units.Add(new Unit("If-Statements & Blocks #1 ", "if (3 > 2) println(2);", "2"));

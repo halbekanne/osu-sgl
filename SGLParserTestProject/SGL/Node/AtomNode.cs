@@ -7,11 +7,17 @@ namespace SGL.Node
     class AtomNode : SGLNode
     {
         private SGLValue value;
+        private int line = -1;
 
         public AtomNode(Object v)
         {
             value = (v == null) ? SGLValue.NULL : new SGLValue(v);
-            //Console.WriteLine("AtomNode: " + value.ToString());
+        }
+
+        public AtomNode(Object v, int line)
+        {
+            value = (v == null) ? SGLValue.NULL : new SGLValue(v);
+            this.line = line;
         }
 
         public SGLValue Evaluate()
@@ -19,12 +25,10 @@ namespace SGL.Node
             return value;
         }
 
-        public String ToString()
+        public int GetLine()
         {
-            return value.ToString();
+            return line;
         }
-
-
 
     }
 }

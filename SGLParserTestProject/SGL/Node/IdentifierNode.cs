@@ -8,11 +8,13 @@ namespace SGL.Node
     {
         private String identifier;
         private Scope scope;
+        private int line;
 
-        public IdentifierNode(String identifier, Scope scope)
+        public IdentifierNode(String identifier, Scope scope, int line)
         {
             this.identifier = identifier;
             this.scope = scope;
+            this.line = line;
         }
 
         public SGLValue Evaluate()
@@ -21,16 +23,17 @@ namespace SGL.Node
             SGLValue value = scope.Resolve(identifier);
             if (value == null)
             {
-                throw new Exception("no such variable: " + this);
+                throw new SGLCompilerException(GetLine(), "unknown variable","'" + identifier + "' cannot be resolved to a variable");
+                
             }
 
             return value;
         }
 
 
-        public String ToString()
+        public int GetLine()
         {
-            return identifier;
+            return this.line;
         }
 
 

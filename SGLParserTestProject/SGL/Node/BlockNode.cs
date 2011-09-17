@@ -15,12 +15,16 @@ namespace SGL.Node
             statements = new List<SGLNode>();
             this.spriteObjects = spriteObjects;
             this.scope = scope;
-            Console.WriteLine("Created Block node with Scope (Parents: " + scope.getParentNumber() + ")");
         }
 
         public void AddStatement(SGLNode stat)
         {
             statements.Add(stat);
+        }
+
+        public void AddOffset(int offset)
+        {
+            scope.AddOffset(offset);
         }
 
         public SGLValue Evaluate()
@@ -36,15 +40,38 @@ namespace SGL.Node
             }
 
             // For adding local variables to the list of sprites and animations
-            spriteObjects.AddRange(scope.GetObjects());
+            try
+            {
+                spriteObjects.AddRange(scope.GetObjects());
+            }
+            catch (SGLCompilerException sce)
+            {
+                if (sce.ErrorType.Equals("undeclared object"))
+                {
+                    sce.Line = GetLine();
+                    sce.Message = "declared object variable '" + sce.Message + "' has to be assigned at the end of the block (reported line number may be wrong)";
+                    throw sce;
+                }
+            }
 
             // Clear variables in scope for reuse
             scope.ClearVariables();
-            Console.WriteLine("Cleared all variables in Scope (Parents: " + scope.getParentNumber() + ")");
 
             // return VOID if no return was done earlier
             return SGLValue.VOID;
         }
 
+        public int GetLine()
+        {
+            // -1 could be returned here if no argument was given, but the line number will be retrieved later
+            if (statements.Count > 0)
+            {
+                return statements[0].GetLine();
+            }
+            else
+            {
+                return -1;
+            }
+        }
     }
 }

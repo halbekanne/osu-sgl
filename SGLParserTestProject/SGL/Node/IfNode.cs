@@ -39,8 +39,7 @@ namespace SGL.Node
               SGLValue value = ch.expression.Evaluate();  
   
               if(!value.IsBoolean()) {  
-                throw new Exception("illegal boolean expression " +   
-                    "inside if-statement: " + ch.expression);  
+                throw new SGLCompilerException(GetLine(), "type mismatch", "cannot convert from " + value.GetVarType() + " to boolean");
               }  
   
               if(value.AsBoolean()) {  
@@ -51,6 +50,11 @@ namespace SGL.Node
             return SGLValue.VOID;  
         }
 
+        public int GetLine()
+        {
+            // There must be at least one expression in the list
+            return choices[0].expression.GetLine();
+        }
 
     }
 }

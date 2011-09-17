@@ -6,6 +6,7 @@ namespace SGL
 {
     public interface SGLNode
     {
-        SGLValue Evaluate(); 
+        SGLValue Evaluate();
+        int GetLine();
     }
 }

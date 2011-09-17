@@ -23,63 +23,84 @@ options {
 tokens {
 	BLOCK;
 	STATEMENTS;
+	AT;
 	IF;
 	EXP;
 	ID_LIST;
 	VARDEF;
+	GLOBVARDEF;
 	ASSIGN;
 	NEGATE;
-	LIBMETHOD;
 	OBJMETHOD;
 	STRING;
 	FORDEC;
 	FORCOND;
 	FORITER;
 	STRINGNOQUOTES;
-	PRINTLN;
 	VARINC;
 	VARDEC;
 	BREAK;
 	PARAM_TYPE_LIST;
 	PARAM_NAME_LIST;
-	FUNC_CALL;
+	METH_CALL;
+	RETURN;
 }
 
-@namespace { SGL.AntlrParser }
+@lexer::namespace { SGL.AntlrParser }
+@parser::namespace { SGL.AntlrParser }
 
-@header {
-	//using SGLParserTester;
-	using System.Collections.Generic;
-	using SGL;
+@lexer::header {
+// -------------------------------------------------------------------------------------------------
+//                This is a generated file, please don't change anything in here!
+// -------------------------------------------------------------------------------------------------
+}
+
+@parser::header {
+// -------------------------------------------------------------------------------------------------
+//                This is a generated file, please don't change anything in here!
+// -------------------------------------------------------------------------------------------------
+
+using System.Collections.Generic;
+using SGL;
 }
 
 @members {
 
-        public Dictionary<String,Function> functions = new Dictionary<String,Function>();
+        public Dictionary<String,Method> methods = new Dictionary<String,Method>();
 
-    	private void DefineFunction(String id, Object type, Object idList, Object block) {
+    	private void DefineMethod(String id, Object type, Object idList, Object block) {
                 // 'idList' is possibly null!  Create an empty tree in that case.  
                 CommonTree idListTree = idList == null ? new CommonTree() : (CommonTree)idList;
 
                 // 'type' is never null
                 String typeString = ((CommonTree)type).ToString();
-                Console.WriteLine("function found! Name: " + id + " returns " + typeString); 
 
                 // 'block' is never null 
                 CommonTree blockTree = (CommonTree)block;
 
-                // The function name with the exact same type of parameters after it, is the unique key 
+                // The method name with the exact same type of parameters after it, is the unique key 
                 String key = id;
 
-                Console.WriteLine("Adding the parameters:");
-                for (int a = 0; a < idListTree.GetChild(0).ChildCount; a++) {
-                    key += "-" + idListTree.GetChild(0).GetChild(a).ToString();
-                    Console.WriteLine("added " + idListTree.GetChild(0).GetChild(a).ToString());
-                }
+					if (idListTree.ChildCount > 0)
+                    {
+                        for (int a = 0; a < idListTree.GetChild(0).ChildCount; a++)
+                        {
+                            key += "-" + idListTree.GetChild(0).GetChild(a).ToString();
+                        }
+                    }
+                
+                Console.WriteLine("method found: " + key);
+                
                 //idListTree.GetChild(1).ChildCount;
-                functions.Add(key, new Function(id, typeString, idListTree, blockTree));
-                Console.WriteLine("Function " + id + " saved, unique key: " + key);
+                methods.Add(key, new Method(id, typeString, idListTree, blockTree));
         	}
+        	
+		public override void EmitErrorMessage(string msg)
+            	{
+                	throw new SGLCompilerException(-1, "Antlr.Parser", msg);
+            	}	
+
+
 
 
 	// Error reporting
@@ -139,9 +160,9 @@ commonBlock
 	;	
 		 		     	
    	
-methodDef  
+methodDef
   :	'method' methodType Identifier '(' paramList? ')' commonBlock
-  { DefineFunction($Identifier.text, $methodType.tree, $paramList.tree, $commonBlock.tree); }  
+  { DefineMethod($Identifier.text, $methodType.tree, $paramList.tree, $commonBlock.tree); }  
   ;
   
 methodType
@@ -157,9 +178,10 @@ semicolonStatement
 	:	(variableDeclarationList // int a = 1, b = 2, c;
 	|	variableAssignment // a = 4;
 	|	variableUnaryChange // i++;
-	|	functionCall
+	|	methodCall
 	|	objectMethod
 	|	breakStat
+	|	returnStat
 	)	';'!
 	;
 	
@@ -174,6 +196,7 @@ statement
 	//:  	variableDefinitionList
 	:	semicolonStatement
 	|	ifStatement
+	|	atStatement
 	|	whileLoop
 	|	forLoop
 	;
@@ -184,6 +207,7 @@ statement
 
 variableDeclarationList
 	:	variableType variableDecAssignment (',' variableDecAssignment)* -> ^(VARDEF variableType variableDecAssignment)+
+	|	'global' variableType variableDecAssignment (',' variableDecAssignment)* -> ^(GLOBVARDEF variableType variableDecAssignment)+
 	;
 
 variableDecAssignment
@@ -244,14 +268,20 @@ elseStat
 	;
 */
 
+atStatement
+	:	'at' expression commonBlock -> ^(AT expression commonBlock)
+	;
+	
 breakStat
 	:	'break' -> BREAK
 	;
 
+returnStat
+	:	'return' expression -> ^(RETURN expression)
+	;
 
-functionCall
-	:	Identifier '(' expressionList? ')' -> ^(FUNC_CALL Identifier expressionList?)
-	|	'println' '(' expression ')' -> ^(PRINTLN expression)
+methodCall
+	:	Identifier '(' expressionList? ')' -> ^(METH_CALL Identifier expressionList?)
 	;
 
 
@@ -348,10 +378,11 @@ mathAtom
     |	FloatAtom
     |   BooleanAtom
 //    |	f=Float
-    |   'new' SpriteAnimation '(' arguments? ')' -> ^(SpriteAnimation arguments?)
+    |   'new' Sprite '(' arguments? ')' -> ^(Sprite arguments?)
+    |   'new' Animation '(' arguments? ')' -> ^(Animation arguments?)
 	//|   Identifier ('.' Identifier)* arguments
 	|	Identifier
-	|	Identifier '(' arguments? ')' -> ^(LIBMETHOD Identifier arguments?)
+	|	methodCall
 	|	stringQuote
 	|	Layer -> ^(STRINGNOQUOTES Layer)
 	|	Origin -> ^(STRINGNOQUOTES Origin)
@@ -424,7 +455,7 @@ StringAtom
   //Text = (Text.Substring(0, Text.Length-1).Replace("\\\\(.)", "$1"));
   //setText(getText().substring(1, getText().length()-1).replaceAll("\\\\(.)", "$1"));
 }
-    :   '"' ( EscapeSequence | ~('\\'|'"') )+ '"'
+    :   '"' ( EscapeSequence | ~('\\'|'"') )* '"'
     ;  
     
    
@@ -450,10 +481,13 @@ ObjectType
 	:	'Object'
 	;
 	
-SpriteAnimation
+Sprite
 	:	'Sprite'
-	|	'Animation'
-	;	      
+	;
+	
+Animation
+	:	'Animation'
+	;		      
 
 Layer
 	:	'Background' 

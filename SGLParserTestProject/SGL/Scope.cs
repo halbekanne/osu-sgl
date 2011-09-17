@@ -9,7 +9,8 @@ namespace SGL
         private Scope parent;
         private Dictionary<String, SGLValue> varValues;// = new Dictionary<String, SGLValue>();
         private Dictionary<String, String> varTypes;
-        private int time = 0;
+        private int offset = 0;
+        private List<SGLObject> spriteObjects = null;
 
         public Scope()
         {
@@ -19,8 +20,15 @@ namespace SGL
             varTypes = new Dictionary<String, String>();
         }
 
-        public int GetTime() {
-            return time;
+        public int GetOffset() {
+            return offset;
+        }
+
+        public void AddOffset(int offset)
+        {
+            this.offset = parent.GetOffset();
+            this.offset += offset;
+            Console.WriteLine("Set offset in scope " + getParentNumber() + " to " + this.offset);
         }
 
         public Scope(Scope p)
@@ -28,6 +36,7 @@ namespace SGL
             parent = p;
             varValues = new Dictionary<String, SGLValue>();
             varTypes = new Dictionary<String, String>();
+            Console.WriteLine("Parent offset in " + getParentNumber() + " was " + offset);
         }
 
         public void Assign(String var, SGLValue value, Boolean newVar, String type)
@@ -41,6 +50,7 @@ namespace SGL
             else
             {
                 if (!newVar) throw new Exception("The variable " + var + " doesn't exists.");
+                if (IsGlobalScope()) Console.WriteLine("This is the global scope year!");
                 // A newly declared variable  
                 varValues.Add(var, value);
                 varTypes.Add(var, type);
@@ -92,13 +102,11 @@ namespace SGL
                     if (value.IsInteger())
                     {
                         varValues[identifier] = value;
-                        Console.WriteLine("variable assign: " + identifier + " = " + value.AsInteger());
                     }
                     else if (value.IsFloat())
                     {
                         // Convert float expression to int
                         varValues[identifier] = new SGLValue((int)Math.Floor(value.AsFloat()));
-                        Console.WriteLine("variable assign + convertion: " + identifier + " = " + (int)Math.Floor(value.AsFloat()));
                     }
                     else
                     {
@@ -110,7 +118,6 @@ namespace SGL
                     if (value.IsNumber())
                     {
                         varValues[identifier] = value;
-                        Console.WriteLine("variable assign: " + identifier + " = " + value.AsFloat());
                     }
                     else
                     {
@@ -122,7 +129,6 @@ namespace SGL
                     if (value.IsBoolean())
                     {
                         varValues[identifier] = value;
-                        Console.WriteLine("variable assign: " + identifier + " = " + value.AsBoolean());
                     }
                     else
                     {
@@ -134,7 +140,19 @@ namespace SGL
                     if (value.IsString())
                     {
                         varValues[identifier] = value;
-                        Console.WriteLine("variable assign: " + identifier + " = " + value.AsString());
+                    }
+                    else
+                    {
+                        throw new Exception("Can't assign " + value.ToString() + " to a string variable");
+                    }
+                }
+                else if (type.Equals("Object"))
+                {
+                    if (value.IsObject())
+                    {
+                        // Add this object to the spriteObjects before the reassignment, so it don't get lost
+                        spriteObjects.Add(varValues[identifier].AsObject());
+                        varValues[identifier] = value;
                     }
                     else
                     {
@@ -176,7 +194,6 @@ namespace SGL
 
         public void ClearVariables()
         {
-            Console.WriteLine("Clear this scope (Parents: " + this.getParentNumber() + "), " + varValues.Count + " Variables to clear");
             varValues = new Dictionary<String, SGLValue>();
             varTypes = new Dictionary<String, String>();
         }
@@ -189,7 +206,18 @@ namespace SGL
             {
                 if (pair.Value.Equals("Object"))
                 {
-                    objects.Add(varValues[pair.Key].AsObject());
+                    try
+                    {
+                        objects.Add(varValues[pair.Key].AsObject());
+                    }
+                    catch (SGLCompilerException sce)
+                    {
+                        if (sce.ErrorType.Equals("undeclared object"))
+                        {
+                            sce.Message = pair.Key;
+                            throw sce;
+                        }
+                    }
                 }
             }
 
@@ -199,5 +227,10 @@ namespace SGL
 
 
 
+
+        public void SetSpriteObjects(List<SGLObject> spriteObjects)
+        {
+            this.spriteObjects = spriteObjects;
+        }
     }
 }

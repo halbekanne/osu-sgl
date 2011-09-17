@@ -49,7 +49,6 @@ namespace SGL
         public void AddSbCode(String sbCode)
         {
             objectSbCode.AppendLine(sbCode);
-            Console.WriteLine("Added code:" + sbCode);
         }
 
 

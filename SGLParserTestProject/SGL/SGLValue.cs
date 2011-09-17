@@ -9,6 +9,7 @@ namespace SGL
         public static readonly SGLValue NULL = new SGLValue();
         public static readonly SGLValue VOID = new SGLValue();
         public static readonly SGLValue BREAK = new SGLValue();
+        public static readonly SGLValue INVALID = new SGLValue();
 
         private Object value;
 
@@ -26,14 +27,7 @@ namespace SGL
                 throw new Exception("v == null");
             }
             value = v;
-            /*
-            if (value is Double)
-            {
-                Console.WriteLine(((Double)value).ToString());
-                //value = System.Convert.ToDouble((float)value);
-                //double test = System.Convert.ToDouble((float)value);
-            }
-            */
+
             // only accept boolean, number or string types  
             if (!(IsBoolean() || IsInteger() || IsFloat() || IsString() || IsObject()))
             {
@@ -84,7 +78,21 @@ namespace SGL
 
         public SGLObject AsObject()
         {
-            return (SGLObject)value;
+            try
+            {
+                return (SGLObject)value;
+            }
+            catch (InvalidCastException ice)
+            {
+                if (IsString() && AsString().Equals("undefined"))
+                {
+                    throw new SGLCompilerException(-1, "undeclared object", "");
+                }
+                else
+                {
+                    throw new SGLCompilerException(-1, "type mismatch", value.ToString() + "");
+                }
+            }
         }
 
         // Compare one value to another
@@ -124,11 +132,11 @@ namespace SGL
         }
 
         // Checks if one value is the same as another value
-        public Boolean Equals(Object o)
+        public override Boolean Equals(Object o)
         {
             if (this == VOID || o == VOID)
             {
-                throw new Exception("can't use VOID: " + this + " ==/!= " + o);
+                throw new SGLCompilerException(-1, "operator undefine", "the operator '=='/'=!' is undefined for the argument type(s) 'void'");
             }
             if (this == o)
             {
@@ -240,15 +248,15 @@ namespace SGL
         {
             if (IsNull())
             {
-                return "NULL";
+                return "null";
             }
             else if (IsVoid())
             {
-                return "VOID";
+                return "void";
             }
             else if (IsBreak())
             {
-                return "Break";
+                return "break";
             }
             else if (IsInteger())
             {
@@ -266,11 +274,15 @@ namespace SGL
             {
                 return "string";
             }
+            else if (IsObject())
+            {
+                return "Object";
+            }
             throw new Exception("Unknown Type");
         }
 
 
-        public String ToString()
+        public override String ToString()
         {
             if (IsNull())
             {

@@ -21,7 +21,6 @@ namespace SGL
         {
             // Push a dic for local variables
             localVariables.Push(new VariableScope());
-            Console.WriteLine("OK: init the loc. variable scope");
         }
 
         /// <summary>

@@ -8,13 +8,15 @@ namespace SGL.Node
     {
         private String name;
         private SGLNode expression;
-        private Scope scope; 
+        private Scope scope;
+        private List<SGLObject> spriteObjects;
 
-        public AssignVariableNode(String name, SGLNode expression, Scope scope)
+        public AssignVariableNode(String name, SGLNode expression,List<SGLObject> spriteObjects, Scope scope)
         {
             this.name = name;
             this.expression = expression;
             this.scope = scope;
+            this.spriteObjects = spriteObjects;
         }
 
         public SGLValue Evaluate() {
@@ -25,11 +27,16 @@ namespace SGL.Node
                 throw new Exception("can't assign VOID to " + name);
             }
 
+            scope.SetSpriteObjects(spriteObjects);
             scope.Assign(name, exprV, false, "");
 
             return SGLValue.VOID;
         }
 
+        public int GetLine()
+        {
+            return expression.GetLine();
+        }
 
     }
 }

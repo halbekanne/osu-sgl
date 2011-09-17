@@ -45,7 +45,8 @@ namespace SGL.SGLUnit
 
         public Boolean RunTest()
         {
-
+            try
+            {
             ANTLRStringStream sStream = new ANTLRStringStream(input);
             SGLLexer lexer = new SGLLexer(sStream);
 
@@ -82,6 +83,26 @@ namespace SGL.SGLUnit
                 return false;
             }
 
+            }
+            catch (SGLCompilerException ce)
+            {
+                if (ce.ErrorType.Equals("Antlr.Parser"))
+                {
+                    Console.WriteLine("Error (wrong syntax) on " + ce.Message);
+                }
+                else
+                {
+                    Console.WriteLine("Error (" + ce.ErrorType + ") on line " + ce.Line + ": " + ce.Message);
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Es ist ein Fehler aufgetreten.");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+                return false;
+            }
         }
 
     }

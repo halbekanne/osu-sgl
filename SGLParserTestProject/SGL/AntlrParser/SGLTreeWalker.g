@@ -9,13 +9,21 @@ options {
 @namespace { SGL.AntlrParser }
 
 @header {
-	using System.Text;
-	using System.Collections.Generic;
-	using SGL.Node;
+// -------------------------------------------------------------------------------------------------
+//                This is a generated file, please don't change anything in here!
+// -------------------------------------------------------------------------------------------------
+
+using System.Text;
+using System.Collections.Generic;
+using SGL.Node;
+using SGL.Node.Expression;
 }
 
 @members{
-	Scope currentScope = null;
+
+	Scope globalScope;
+	Scope currentScope;
+	
     private List<SGLObject> spriteObjects = new List<SGLObject>();
     
     //Debug
@@ -47,16 +55,24 @@ options {
     }
     
     
-      public Dictionary<String, Function> functions = null;
+      public Dictionary<String, Method> methods = null;
       
-      public SGLTreeWalker(CommonTreeNodeStream nodes, Dictionary<String, Function> fns) : this(nodes, null, fns) {
-        
-      }
+          public SGLTreeWalker(CommonTreeNodeStream nodes, Dictionary<String, Method> mths) : this(nodes) {
+            globalScope = new Scope();
+            currentScope = new Scope(globalScope);
+            methods = mths;
+          }
+          
+          public SGLTreeWalker(CommonTreeNodeStream nodes, Scope sc, Dictionary<String, Method> mths) : this(nodes) {
+            currentScope = sc;
+            globalScope = sc.Parent();
+            methods = mths;
+          }
       
-      public SGLTreeWalker(CommonTreeNodeStream nds, Scope sc, Dictionary<String, Function> fns) : this(nds) {
-        currentScope = sc;
-        functions = fns;
-      }
+	public override void EmitErrorMessage(string msg)
+	{
+		throw new SGLCompilerException(-1, "Antlr.Parser", msg);
+        }	      
 	
 	// Error reporting
     //private StdErrReporter errorReporter = new StdErrReporter();
@@ -113,31 +129,35 @@ statement returns [SGLNode node]
 	:	variableDeclaration { node = $variableDeclaration.node; } // int a = 1, b = 2, c
 	|	variableAssignment { node = $variableAssignment.node; } // a = 4
 	|	variableUnaryChangeStatement { node = $variableUnaryChangeStatement.node; }
-	|	staticMethod { node = $staticMethod.node; } // println()
 	|	objectMethod { node = $objectMethod.node; } // a.move(100,200)
-	|	ifStatement { node = $ifStatement.node; } 
+	|	ifStatement { node = $ifStatement.node; }
+	|	atStatement { node = $atStatement.node; } 
 	|	whileLoop { node = $whileLoop.node; }
 	|	forLoop { node = $forLoop.node; }
 	|	breakStat { node = $breakStat.node; }
-	|   functionCall   {node = $functionCall.node;}
+	|	returnStat { node = $returnStat.node; }
+	|   methodCall   {node = $methodCall.node;}
 	;
 	
+atStatement returns [SGLNode node]
+	:	^(AT expression block) { node = new AtNode($expression.node, $block.node); }
+	;
 	
-functionCall returns [SGLNode node]
-	:	^(FUNC_CALL Identifier arguments) { node = new FunctionCallNode($Identifier.text, $arguments.list, functions, storyboardCode); }
+returnStat returns [SGLNode node]
+	:	^(RETURN expression) { node = new ReturnNode($expression.node); }
+	;	
+		
+methodCall returns [SGLNode node]
+	:	^(METH_CALL Identifier arguments) { node = new MethodCallNode($Identifier.text, $arguments.list, methods, storyboardCode, globalScope, $Identifier.Line); }
 	;	
 	
 breakStat returns [SGLNode node]
 	:	BREAK { node = new BreakNode(); }
-	;	
-	
-staticMethod returns [SGLNode node]
-	:	^(PRINTLN expression) { node = new PrintlnNode(storyboardCode, $expression.node); }
 	;
 	
 objectMethod returns [SGLNode node]
 	:	^(OBJMETHOD variableName Identifier arguments)
-	{ node = new ObjectMehtodNode($variableName.txt, $Identifier.text, $arguments.list, currentScope); }
+	{ node = new ObjectMehtodNode($variableName.txt, $Identifier.text, $arguments.list, currentScope, $Identifier.Line); }
 	;	
 	
 whileLoop returns [SGLNode node]
@@ -146,10 +166,23 @@ whileLoop returns [SGLNode node]
 	;
 
 forLoop returns [SGLNode node]
-@init { 
-  ForNode forNode = new ForNode(); 
-  node = forNode;  
+@init {
+  // We have to use 2 Blocks for the for-Node to work correctly
+  // Create new block for the beginning of the for-Loop
+  Scope scope = new Scope(currentScope); 
+  currentScope = scope;
+  BlockNode bn = new BlockNode(spriteObjects, currentScope); 
+  
+  //Create the For-Node and add it to the block
+  ForNode forNode = new ForNode();
+  bn.AddStatement(forNode);
+  
+  // Return the block node
+  node = bn;
 }  
+@after { 
+  currentScope = currentScope.Parent(); 
+} 
 	:	^('for' ^(FORDEC (dec=statement { forNode.SetInit($dec.node); } )?) ^(FORCOND (cond=expression { forNode.SetCondition($cond.node); })?) ^(FORITER (iter=statement { forNode.SetIteration($iter.node); })?) block)
 	{ forNode.SetBlock($block.node); }
 	;
@@ -172,11 +205,16 @@ ifStatement returns [SGLNode node]
 //action.NewLocalVariable($variableType.text,$variableName.text,$expression.text); 
 variableDeclaration returns [SGLNode node]
 	:	^(VARDEF variableType variableName expression)  	
-	        { node = new NewLocalVariableNode($variableType.txt,$variableName.txt,$expression.node,currentScope); }
+	        { node = new DeclareVariableNode($variableType.txt,$variableName.txt,$expression.node,currentScope); }
 	
 	| 	^(VARDEF variableType variableName)  
-		{ node = new NewLocalVariableNode($variableType.txt,$variableName.txt,new AtomNode(null),currentScope); }
-	//|   ^(VARDEF variableType variableName)	{ 	action.NewLocalVariable($variableType.text,$variableName.text,"boo"); }
+		{ node = new DeclareVariableNode($variableType.txt,$variableName.txt,new AtomNode(null),currentScope); }
+		
+	|	^(GLOBVARDEF variableType variableName expression)  	
+	        { node = new DeclareVariableNode($variableType.txt,$variableName.txt,$expression.node,globalScope); }
+	
+	| 	^(GLOBVARDEF variableType variableName)  
+		{ node = new DeclareVariableNode($variableType.txt,$variableName.txt,new AtomNode(null),globalScope); }
 	;
 
 
@@ -185,7 +223,7 @@ variableDeclaration returns [SGLNode node]
 
 variableAssignment returns [SGLNode node]
 	:	^(ASSIGN variableName expression)
-		{ node = new AssignVariableNode($variableName.txt,$expression.node, currentScope); }
+		{ node = new AssignVariableNode($variableName.txt,$expression.node, spriteObjects, currentScope); }
 	;
 	
 	
@@ -209,53 +247,53 @@ variableType returns [String txt]
 
 // start rule for all sorts of expressions
 expression returns [SGLNode node]
-	:	^('+' a=expression b=expression) { node = new MAddNode($a.node, $b.node); }
-	|	^('-' a=expression b=expression) { node = new MSubNode($a.node, $b.node); }
-	|	^('*' a=expression b=expression) { node = new MMultNode($a.node, $b.node); }
-	|	^('/' a=expression b=expression) { node = new MDivNode($a.node, $b.node); }
-	|	^('%' a=expression b=expression) { node = new MModNode($a.node, $b.node); }
-	|	^(NEGATE a=expression) { node = new MNegateNode($a.node); }
-	|	^('<' a=expression b=expression) { node = new CLTNode($a.node, $b.node); }
-	|	^('<=' a=expression b=expression) { node = new CLTEqualsNode($a.node, $b.node); }
-	|	^('>' a=expression b=expression) { node = new CGTNode($a.node, $b.node); }
-	|	^('>=' a=expression b=expression) { node = new CGTEqualsNode($a.node, $b.node); }
-	|	^('!=' a=expression b=expression) { node = new CNotEqualsNode($a.node, $b.node); }
-	|	^('==' a=expression b=expression) { node = new CEqualsNode($a.node, $b.node); }
-	|	^('&&' a=expression b=expression) { node = new CAndNode($a.node, $b.node); }
-	|	^('||' a=expression b=expression) { node = new COrNode($a.node, $b.node); }
+	:	^('+' a=expression b=expression) { node = new AddNode($a.node, $b.node); }
+	|	^('-' a=expression b=expression) { node = new SubNode($a.node, $b.node); }
+	|	^('*' a=expression b=expression) { node = new MultNode($a.node, $b.node); }
+	|	^('/' a=expression b=expression) { node = new DivNode($a.node, $b.node); }
+	|	^('%' a=expression b=expression) { node = new ModNode($a.node, $b.node); }
+	|	^(NEGATE a=expression) { node = new NegateNode($a.node); }
+	|	^('<' a=expression b=expression) { node = new LTNode($a.node, $b.node); }
+	|	^('<=' a=expression b=expression) { node = new LTEqualsNode($a.node, $b.node); }
+	|	^('>' a=expression b=expression) { node = new GTNode($a.node, $b.node); }
+	|	^('>=' a=expression b=expression) { node = new GTEqualsNode($a.node, $b.node); }
+	|	^('!=' a=expression b=expression) { node = new NotEqualsNode($a.node, $b.node); }
+	|	^('==' a=expression b=expression) { node = new EqualsNode($a.node, $b.node); }
+	|	^('&&' a=expression b=expression) { node = new AndNode($a.node, $b.node); }
+	|	^('||' a=expression b=expression) { node = new OrNode($a.node, $b.node); }
 	|	^('?' a=expression b=expression c=expression) { node = new TernaryNode($a.node, $b.node, $c.node); }
-	|  	IntegerAtom { node = new AtomNode(int.Parse($IntegerAtom.text, System.Globalization.CultureInfo.InvariantCulture)); }
-	|	FloatAtom { node = new AtomNode(Double.Parse($FloatAtom.text, System.Globalization.CultureInfo.InvariantCulture)); }
-	|  	BooleanAtom { node = new AtomNode(Boolean.Parse($BooleanAtom.text)); }
-	|	^(STRING StringAtom) { node = new AtomNode(($StringAtom.text).Substring(1, ($StringAtom.text).Length-2)); }
-	|	^(STRINGNOQUOTES Layer) { node = new AtomNode($Layer.text); }
-	|	^(STRINGNOQUOTES Origin) { node = new AtomNode($Origin.text); }
-	|	spriteObject { node = $spriteObject.node; }
+	|  	IntegerAtom { node = new AtomNode(int.Parse($IntegerAtom.text, System.Globalization.CultureInfo.InvariantCulture), $IntegerAtom.Line); }
+	|	FloatAtom { node = new AtomNode(Double.Parse($FloatAtom.text, System.Globalization.CultureInfo.InvariantCulture), $FloatAtom.Line); }
+	|  	BooleanAtom { node = new AtomNode(Boolean.Parse($BooleanAtom.text), $BooleanAtom.Line); }
+	|	^(STRING StringAtom) { node = new AtomNode(($StringAtom.text).Substring(1, ($StringAtom.text).Length-2), $StringAtom.Line); }
+	|	^(STRINGNOQUOTES Layer) { node = new AtomNode($Layer.text, $Layer.Line); }
+	|	^(STRINGNOQUOTES Origin) { node = new AtomNode($Origin.text, $Origin.Line); }
+	|	sbObject { node = $sbObject.node; }
 	|	lookup { node = $lookup.node; }
 	|	variableUnaryChangeExpression { node = $variableUnaryChangeExpression.node; }
+	|	methodCall   {node = $methodCall.node;}
     //|	mathExpression
     ;    
     
     
 variableUnaryChangeStatement returns [SGLNode node]
-	:	^(VARINC Identifier) { node = new VarIncNode($Identifier.text, currentScope, false); }
-	|	^(VARDEC Identifier) { node = new VarIncNode($Identifier.text, currentScope, false); }
+	:	^(VARINC Identifier) { node = new VarIncNode($Identifier.text, currentScope, false, $Identifier.Line); }
+	|	^(VARDEC Identifier) { node = new VarDecNode($Identifier.text, currentScope, false, $Identifier.Line); }
 	;
 	
 variableUnaryChangeExpression returns [SGLNode node]
-	:	^(VARINC Identifier) { node = new VarIncNode($Identifier.text, currentScope, true); }
-	|	^(VARDEC Identifier) { node = new VarIncNode($Identifier.text, currentScope, true); }
+	:	^(VARINC Identifier) { node = new VarIncNode($Identifier.text, currentScope, true, $Identifier.Line); }
+	|	^(VARDEC Identifier) { node = new VarDecNode($Identifier.text, currentScope, true, $Identifier.Line); }
 	;	    
     
     
 lookup returns [SGLNode node]
-	:	Identifier { node = new IdentifierNode($Identifier.text, currentScope); }
+	:	Identifier { node = new IdentifierNode($Identifier.text, currentScope, $Identifier.Line); }
 	;	    
     
-spriteObject returns [SGLNode node]
-	:   ^(SpriteAnimation arguments) {  node = new SpriteNode($arguments.list); }
-	//^('Sprite' spriteArguments) { node = $spriteArguments.node; }
-	//|	^('Animation' animationArguments) { node = $animationArguments.node; }
+sbObject returns [SGLNode node]
+	:	^(Sprite arguments) {  node = new SpriteNode($arguments.list); }
+	|	^(Animation arguments) {  node = new AnimationNode($arguments.list); }
 	;  	  
 
 
