@@ -1,5 +1,0 @@
-int a = 1
-while(a < 3) {
-    int c = 1
-    a = a + 1
-}
