@@ -21,14 +21,24 @@ namespace SGL.Node
 
         public SGLValue Evaluate() {
 
-            SGLValue exprV = expression.Evaluate();
-            if (exprV == SGLValue.VOID)
+            try
             {
-                throw new Exception("can't assign VOID to " + name);
-            }
 
-            scope.SetSpriteObjects(spriteObjects);
-            scope.Assign(name, exprV, false, "");
+                SGLValue exprV = expression.Evaluate();
+                if (exprV == SGLValue.VOID)
+                {
+                    throw new SGLCompilerException(GetLine(), "assignment impossible", "Unable to assign VOID to a variable (" + name + ")");
+                }
+
+                scope.SetSpriteObjects(spriteObjects);
+                scope.Assign(name, exprV, false, "");
+
+            }
+            catch (SGLCompilerException sce)
+            {
+                sce.Line = GetLine();
+                throw sce;
+            }
 
             return SGLValue.VOID;
         }

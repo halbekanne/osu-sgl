@@ -21,19 +21,26 @@ namespace SGL.Node.Expression
             SGLValue a = lhs.Evaluate();
             SGLValue b = rhs.Evaluate();
 
-            // number + number  
-            if (a.IsInteger() && b.IsInteger())
+            // number + number
+            try
             {
-                return new SGLValue(a.AsInteger() / b.AsInteger());
+                if (a.IsInteger() && b.IsInteger())
+                {
+                    return new SGLValue(a.AsInteger() / b.AsInteger());
+                }
+
+                // float + number / number + float  
+                if (a.IsNumber() && b.IsNumber())
+                {
+                    return new SGLValue(a.AsFloat() / b.AsFloat());
+                }
+            }
+            catch (DivideByZeroException ex)
+            {
+                throw new SGLCompilerException(GetLine(), "divide by zero", "You tried to divide by zero, this isn't possible");
             }
 
-            // float + number / number + float  
-            if (a.IsNumber() && b.IsNumber())
-            {
-                return new SGLValue(a.AsFloat() / b.AsFloat());
-            }
-
-            throw new SGLCompilerException(GetLine(), "operator undefined", "the operator '-' is undefined for the argument types '" + a.GetVarType() + ", " + b.GetVarType() + "'");
+            throw new SGLCompilerException(GetLine(), "operator undefined", "the operator '/' is undefined for the argument types '" + a.GetVarType() + ", " + b.GetVarType() + "'");
             
         }
 

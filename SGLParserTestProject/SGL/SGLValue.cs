@@ -68,7 +68,7 @@ namespace SGL
 
         public int AsInteger()
         {
-            return ((int)value);
+            return (int)value;
         }
 
         public String AsString()
@@ -243,6 +243,17 @@ namespace SGL
             }
         }
 
+        public Boolean IsLoopType()
+        {
+            String loopType = AsString();
+            switch (loopType)
+            {
+                case "LoopForever": return true;
+                case "LoopOnce": return true;
+                default: return false;
+            }
+        }
+
 
         public String GetVarType()
         {
@@ -270,13 +281,25 @@ namespace SGL
             {
                 return "boolean";
             }
+            else if (IsObject())
+            {
+                return "object";
+            }
+            else if (IsLayer())
+            {
+                return "Layer";
+            }
+            else if (IsOrigin())
+            {
+                return "Origin";
+            }
+            else if (IsLoopType())
+            {
+                return "LoopType";
+            }
             else if (IsString())
             {
                 return "string";
-            }
-            else if (IsObject())
-            {
-                return "Object";
             }
             throw new Exception("Unknown Type");
         }

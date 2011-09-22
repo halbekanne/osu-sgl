@@ -386,6 +386,7 @@ mathAtom
 	|	stringQuote
 	|	Layer -> ^(STRINGNOQUOTES Layer)
 	|	Origin -> ^(STRINGNOQUOTES Origin)
+	|	LoopType -> ^(STRINGNOQUOTES LoopType)
     ;  
     
 variableUnaryChange
@@ -478,7 +479,7 @@ FloatType
     
 // types for Pictures/Animations    
 ObjectType
-	:	'Object'
+	:	'object'
 	;
 	
 Sprite
@@ -506,6 +507,11 @@ Origin
 	|	'BottomLeft'
 	|	'BottomCentre'
 	|	'BottomRight'
+	;
+	
+LoopType
+	:	'LoopForever'
+	|	'LoopOnce'
 	;
 
 // Use this for variable names, method names, and so on

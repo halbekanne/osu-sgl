@@ -21,102 +21,112 @@ namespace SGL.Node
 
         public SGLValue Evaluate() {
 
+            try
+            {
 
-            SGLValue exprV = expression.Evaluate();
+                SGLValue exprV = expression.Evaluate();
 
-            if (type.Equals("int"))
-            {
-                // Integer hinzufügen
-                if (exprV.IsInteger())
+                if (type.Equals("int"))
                 {
-                    scope.Assign(name, new SGLValue(exprV.AsInteger()), true, type);
+                    // Integer hinzufügen
+                    if (exprV.IsInteger())
+                    {
+                        scope.Assign(name, new SGLValue(exprV.AsInteger()), true, type);
+                    }
+                    else if (exprV.IsFloat())
+                    {
+                        // Convert float expression to int
+                        scope.Assign(name, new SGLValue((int)exprV.AsFloat()), true, type);
+                    }
+                    else if (exprV == SGLValue.NULL)
+                    {
+                        scope.Assign(name, new SGLValue(0), true, type);
+                    }
+                    else
+                    {
+                        throw new SGLCompilerException(expression.GetLine(), "type mismatch", "You can't assign an expression of type " + exprV.GetVarType() + " to an integer variable");
+                    }
                 }
-                else if (exprV.IsFloat())
+                else if (type.Equals("float"))
                 {
-                    // Convert float expression to int
-                    scope.Assign(name, new SGLValue((int)Math.Floor(exprV.AsFloat())), true, type);
+                    // Float hinzufügen
+                    if (exprV.IsNumber())
+                    {
+                        scope.Assign(name, new SGLValue(exprV.AsFloat()), true, type);
+                    }
+                    else if (exprV == SGLValue.NULL)
+                    {
+                        scope.Assign(name, new SGLValue(0.0), true, type);
+                    }
+                    else
+                    {
+                        throw new SGLCompilerException(expression.GetLine(), "type mismatch", "You can't assign an expression of type " + exprV.GetVarType() + " to a float variable");
+                    }
                 }
-                else if (exprV == SGLValue.NULL)
+                else if (type.Equals("boolean"))
                 {
-                    scope.Assign(name, new SGLValue(0), true, type);
+                    // Boolean hinzufügen
+                    if (exprV.IsBoolean())
+                    {
+                        scope.Assign(name, new SGLValue(exprV.AsBoolean()), true, type);
+                    }
+                    else if (exprV == SGLValue.NULL)
+                    {
+                        scope.Assign(name, new SGLValue(false), true, type);
+                    }
+                    else
+                    {
+                        throw new SGLCompilerException(expression.GetLine(), "type mismatch", "You can't assign an expression of type " + exprV.GetVarType() + " to a boolean variable");
+                    }
+                }
+                else if (type.Equals("string"))
+                {
+                    // String hinzufügen
+                    if (exprV.IsString())
+                    {
+                        scope.Assign(name, new SGLValue(exprV.AsString()), true, type);
+                    }
+                    else if (exprV == SGLValue.NULL)
+                    {
+                        scope.Assign(name, new SGLValue(""), true, type);
+                    }
+                    else
+                    {
+                        throw new SGLCompilerException(expression.GetLine(), "type mismatch", "You can't assign an expression of type " + exprV.GetVarType() + " to a string variable");
+                    }
+                }
+                else if (type.Equals("object"))
+                {
+                    // String hinzufügen
+                    if (exprV.IsObject())
+                    {
+                        scope.Assign(name, new SGLValue(exprV.AsObject()), true, type);
+                    }
+                    else if (exprV == SGLValue.NULL)
+                    {
+                        scope.Assign(name, new SGLValue("undefined"), true, type);
+                    }
+                    else
+                    {
+                        throw new SGLCompilerException(expression.GetLine(), "type mismatch", "You can't assign an expression of type " + exprV.GetVarType() + " to an object variable");
+
+                    }
                 }
                 else
                 {
-                    throw new SGLCompilerException(expression.GetLine(), "type mismatch", "cannot convert from " + exprV.GetVarType() + " to int");
+                    throw new SGLCompilerException(expression.GetLine(), "unknown type", "Unknown variable type (" + type + ")");
                 }
-            }
-            else if (type.Equals("float"))
-            {
-                // Float hinzufügen
-                if (exprV.IsNumber())
-                {
-                    scope.Assign(name, new SGLValue(exprV.AsFloat()), true, type);
-                }
-                else if (exprV == SGLValue.NULL)
-                {
-                    scope.Assign(name, new SGLValue(0.0), true, type);
-                }
-                else
-                {
-                    throw new SGLCompilerException(expression.GetLine(), "type mismatch", "cannot convert from " + exprV.GetVarType() + " to float");
-                
-                }
-            }
-            else if (type.Equals("boolean"))
-            {
-                // Boolean hinzufügen
-                if (exprV.IsBoolean())
-                {
-                    scope.Assign(name, new SGLValue(exprV.AsBoolean()), true, type);
-                }
-                else if (exprV == SGLValue.NULL)
-                {
-                    scope.Assign(name, new SGLValue(false), true, type);
-                }
-                else
-                {
-                    throw new SGLCompilerException(expression.GetLine(), "type mismatch", "cannot convert from " + exprV.GetVarType() + " to boolean");
-                
-                }
-            }
-            else if (type.Equals("string"))
-            {
-                // String hinzufügen
-                if (exprV.IsString())
-                {
-                    scope.Assign(name, new SGLValue(exprV.AsString()), true, type);
-                }
-                else if (exprV == SGLValue.NULL)
-                {
-                    scope.Assign(name, new SGLValue(""), true, type);
-                }
-                else
-                {
-                    throw new SGLCompilerException(expression.GetLine(), "type mismatch", "cannot convert from " + exprV.GetVarType() + " to string");
-                
-                }
-            }
-            else if (type.Equals("Object"))
-            {
-                // String hinzufügen
-                if (exprV.IsObject())
-                {
-                    scope.Assign(name, new SGLValue(exprV.AsObject()), true, type);
-                }
-                else if (exprV == SGLValue.NULL)
-                {
-                    scope.Assign(name, new SGLValue("undefined"), true, type);
-                }
-                else
-                {
-                    throw new SGLCompilerException(expression.GetLine(), "type mismatch", "cannot convert from " + exprV.GetVarType() + " to Object");
-                
-                }
-            }
 
 
+            }
+            catch (SGLCompilerException sce)
+            {
+                sce.Line = GetLine();
+                throw sce;
+            }
 
             return SGLValue.VOID;
+
         }
 
         public int GetLine()

@@ -30,3 +30,5 @@ C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\
 C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\obj\x86\Debug\SGLTest.Properties.Resources.resources
 C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\bin\Debug\SGL.dll
 C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\bin\Debug\SGL.pdb
+C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\bin\Debug\Puzzle.SyntaxBox.NET3.5.dll
+C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\obj\x86\Debug\SGLTest.SimpleSGLEditor.resources

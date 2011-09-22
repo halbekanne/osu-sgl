@@ -12,6 +12,15 @@ namespace SGL
         protected String origin;
         protected StringBuilder objectSbCode = new StringBuilder();
 
+        // Lists of commands
+        public List<SbCommand> moveCmds = new List<SbCommand>();
+        public List<SbCommand> moveXCmds = new List<SbCommand>();
+        public List<SbCommand> moveYCmds = new List<SbCommand>();
+        public List<SbCommand> fadeCmds = new List<SbCommand>();
+        public List<SbCommand> rotateCmds = new List<SbCommand>();
+        public List<SbCommand> scaleCmds = new List<SbCommand>();
+        public List<SbCommand> colorCmds = new List<SbCommand>();
+
         public int GetPriority()
         {
             return priority;
@@ -50,7 +59,6 @@ namespace SGL
         {
             objectSbCode.AppendLine(sbCode);
         }
-
 
     }
 }

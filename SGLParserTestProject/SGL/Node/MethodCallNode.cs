@@ -13,13 +13,15 @@ namespace SGL.Node
         private StringBuilder sb;
         private Scope globalScope;
         private int line;
+        private Random random;
 
-        public MethodCallNode(String identifier, List<SGLNode> parameters, Dictionary<String, Method> methods, StringBuilder sb, Scope globalScope, int line)
+        public MethodCallNode(String identifier, List<SGLNode> parameters, Dictionary<String, Method> methods, StringBuilder sb, Scope globalScope, Random random, int line)
         {
             this.identifier = identifier;
             this.parameters = parameters;
             this.methods = methods;
             this.sb = sb;
+            this.random = random;
             this.globalScope = globalScope;
             this.line = line;
         }
@@ -82,7 +84,8 @@ namespace SGL.Node
             }
             else if (key.Equals("rand-int-int"))
             {
-                return new RandomIntegerNode(parameter[0], parameter[1]).Evaluate();
+                Console.WriteLine("called random method");
+                return new RandomIntegerNode(parameter[0], parameter[1], this.random).Evaluate();
             }
             else if (key.StartsWith("pow-") && parameter.Count == 2 && parameter[0].IsNumber() && parameter[1].IsNumber())
             {
@@ -92,6 +95,23 @@ namespace SGL.Node
             {
                 return new RootNode(parameter[0], parameter[1]).Evaluate();
             }
+            else if (key.StartsWith("toInt-") && parameter.Count == 1)
+            {
+                return new IntNode(parameter[0]).Evaluate();
+            }
+            else if (key.StartsWith("toFloat-") && parameter.Count == 1)
+            {
+                return new FloatNode(parameter[0]).Evaluate();
+            }
+            else if (key.StartsWith("toString-") && parameter.Count == 1)
+            {
+                return new StringNode(parameter[0]).Evaluate();
+            }
+            else if (key.StartsWith("toBoolean-") && parameter.Count == 1)
+            {
+                return new BooleanNode(parameter[0]).Evaluate();
+            }
+            
 
             return SGLValue.INVALID;
 

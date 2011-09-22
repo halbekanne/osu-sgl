@@ -16,9 +16,21 @@ namespace SGL.Node.StaticMethod
 
         }
 
-        public SGLValue Evaluate() {
-            
-            return new SGLValue(Math.Pow(a.AsFloat(), b.AsFloat()));
+        public SGLValue Evaluate()  {
+            double x = Math.Pow(a.AsFloat(), b.AsFloat());
+            Console.WriteLine(x);
+            if (x == Double.PositiveInfinity) {
+                Console.WriteLine("zu groß");
+            }
+            else if (x == Double.NegativeInfinity)
+            {
+                Console.WriteLine("zu klein");
+            }
+            else if (x == Double.NaN)
+            {
+                Console.WriteLine("nicht definiert");
+            }
+            return new SGLValue(x);
         }
 
         public int GetLine() { return -1; }

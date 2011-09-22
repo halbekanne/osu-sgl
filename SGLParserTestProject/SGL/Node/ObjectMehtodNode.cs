@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SGL;
 
 namespace SGL.Node
 {
@@ -50,13 +51,17 @@ namespace SGL.Node
                 if (values.Count == 2)
                 {
                     CheckParameters("move", values, new String[] { "int", "int" });
-                    obj.AddSbCode(" M,0," + offset + "," + offset + ",," + values[0].ToString() + "," + values[1].ToString());
+                    double[] startParams = new double[] { values[0].AsInteger(), values[1].AsInteger() };
+                    obj.moveCmds.Add(new SbCommand(0, offset, offset, startParams, startParams));
+                    //obj.AddSbCode(" M,0," + offset + "," + offset + ",," + values[0].ToString() + "," + values[1].ToString());
                 }
                 else if (values.Count == 3)
                 {
                     CheckParameters("move", values, new String[] { "int", "int", "int" });
                     int time = offset + values[0].AsInteger();
-                    obj.AddSbCode(" M,0," + time + "," + time + ",," + values[1].ToString() + "," + values[2].ToString());
+                    double[] startParams = new double[] { values[1].AsInteger(), values[2].AsInteger() };
+                    obj.moveCmds.Add(new SbCommand(0, time, time, startParams, startParams));
+                    //obj.AddSbCode(" M,0," + time + "," + time + ",," + values[1].ToString() + "," + values[2].ToString());
                 }
                 else if (values.Count == 6)
                 {

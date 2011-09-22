@@ -8,18 +8,21 @@ namespace SGL.Node.StaticMethod
     {
         SGLValue start;
         SGLValue end;
+        Random random;
 
-        public RandomIntegerNode(SGLValue start, SGLValue end)
+        public RandomIntegerNode(SGLValue start, SGLValue end,  Random random)
         {
             this.start = start;
             this.end = end;
+            this.random = random;
 
         }
 
         public SGLValue Evaluate() {
-            
-            Random random = new Random();
-            return new SGLValue(random.Next(start.AsInteger(), end.AsInteger() + 1));
+
+            SGLValue randVal = new SGLValue(random.Next(start.AsInteger(), end.AsInteger() + 1));
+            Console.WriteLine("start: " + start + ", end: " + end + " - rand Value: " + randVal.AsInteger());
+            return randVal;
         }
 
         public int GetLine() { return -1; }

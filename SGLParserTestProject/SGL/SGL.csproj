@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Compiler.cs" />
     <Compile Include="ErrorReporter.cs" />
+    <Compile Include="Animation.cs" />
     <Compile Include="Method.cs" />
     <Compile Include="AntlrParser\SGLLexer.cs" />
     <Compile Include="AntlrParser\SGLParser.cs" />
@@ -72,6 +73,10 @@
     <Compile Include="Node\BreakNode.cs" />
     <Compile Include="Node\AnimationNode.cs" />
     <Compile Include="Node\MethodCallNode.cs" />
+    <Compile Include="Node\StaticMethod\IntNode.cs" />
+    <Compile Include="Node\StaticMethod\FloatNode.cs" />
+    <Compile Include="Node\StaticMethod\BooleanNode.cs" />
+    <Compile Include="Node\StaticMethod\StringNode.cs" />
     <Compile Include="Node\StaticMethod\RootNode.cs" />
     <Compile Include="Node\StaticMethod\PowNode.cs" />
     <Compile Include="Node\StaticMethod\RandomIntegerNode.cs" />
@@ -93,10 +98,12 @@
     <Compile Include="Node\DeclareVariableNode.cs" />
     <Compile Include="Node\Expression\SubNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SbCommand.cs" />
     <Compile Include="Scope.cs" />
     <Compile Include="SGLCompilerException.cs" />
     <Compile Include="SGLNode.cs" />
     <Compile Include="SGLObject.cs" />
+    <Compile Include="UnexpectedException.cs" />
     <Compile Include="SGLUnit\Unit.cs" />
     <Compile Include="SGLUnit\UnitTester.cs" />
     <Compile Include="SGLValue.cs" />

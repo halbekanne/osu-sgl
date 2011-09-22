@@ -7,6 +7,7 @@ using SGL.SGLUnit;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using System.Diagnostics;
+using System.Threading;
 
 namespace SGL
 {
@@ -39,6 +40,7 @@ namespace SGL
         /// <param name="input">A string containing SGL code.</param>
         /// <returns>A string containing osu! storyboard code.</returns>
         /// <exception cref="SGLCompilerException">Throws when the passed SGL code contains syntax or runtime exceptions.</exception>
+        /// <exception cref="UnexpectedException">Throws when unexpected Exceptions occured during the parsing process.</exception>
         /// <seealso cref="System.String"/>
         public String Run(String input)
         {
@@ -62,8 +64,13 @@ namespace SGL
             }
             catch (Exception ex)
             {
+                ErrorReporter errObj = new ErrorReporter(ex, input, treeString);
+                Thread errorReporter = new Thread(errObj.DoWork);
+                errorReporter.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+                errorReporter.Start();
+                Console.Write("-----------------------------------------------------------------------");
                 Console.WriteLine(ex.StackTrace);
-                throw ex;
+                throw new UnexpectedException(ex.Message, ex.StackTrace);
             }
 
             

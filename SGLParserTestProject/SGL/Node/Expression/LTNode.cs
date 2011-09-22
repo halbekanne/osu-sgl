@@ -30,7 +30,7 @@ namespace SGL.Node.Expression
             // string + string
             if (a.IsString() && b.IsString())
             {
-                return new SGLValue(a.AsString().CompareTo(b.AsString()) < -1);
+                return new SGLValue(a.AsString().CompareTo(b.AsString()) < 0);
             }
 
             throw new SGLCompilerException(GetLine(), "operator undefined", "the operator '<' is undefined for the argument types '" + a.GetVarType() + ", " + b.GetVarType() + "'");

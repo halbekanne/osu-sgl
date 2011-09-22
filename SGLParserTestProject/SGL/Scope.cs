@@ -43,13 +43,13 @@ namespace SGL
         {
             if (Resolve(var) != null)
             {
-                if (newVar) throw new Exception("There is already such a variable");
+                if (newVar) throw new SGLCompilerException(-1, "duplicate variable", "The variable '" + var + "' can only be declared once");
                 // There is already such a variable, re-assign it
                 this.ReAssign(var, value);
             }
             else
             {
-                if (!newVar) throw new Exception("The variable " + var + " doesn't exists.");
+                if (!newVar) throw new SGLCompilerException(-1, "unknown variable", "The variable '" + var + "' was not declared before");
                 if (IsGlobalScope()) Console.WriteLine("This is the global scope year!");
                 // A newly declared variable  
                 varValues.Add(var, value);
@@ -110,7 +110,7 @@ namespace SGL
                     }
                     else
                     {
-                        throw new Exception("Can't assign " + value.ToString() + " to an integer variable");
+                        throw new SGLCompilerException(-1, "type mismatch", "You can't assign an expression of type " + value.GetVarType() + " to an integer variable");
                     }
                 }
                 else if (type.Equals("float"))
@@ -121,7 +121,7 @@ namespace SGL
                     }
                     else
                     {
-                        throw new Exception("Can't assign " + value.ToString() + " to a float variable");
+                        throw new SGLCompilerException(-1, "type mismatch", "You can't assign an expression of type " + value.GetVarType() + " to a float variable");
                     }
                 }
                 else if (type.Equals("boolean"))
@@ -132,7 +132,7 @@ namespace SGL
                     }
                     else
                     {
-                        throw new Exception("Can't assign " + value.ToString() + " to a boolean variable");
+                        throw new SGLCompilerException(-1, "type mismatch", "You can't assign an expression of type " + value.GetVarType() + " to a boolean variable");
                     }
                 }
                 else if (type.Equals("string"))
@@ -143,10 +143,10 @@ namespace SGL
                     }
                     else
                     {
-                        throw new Exception("Can't assign " + value.ToString() + " to a string variable");
+                        throw new SGLCompilerException(-1, "type mismatch", "You can't assign an expression of type " + value.GetVarType() + " to a string variable");
                     }
                 }
-                else if (type.Equals("Object"))
+                else if (type.Equals("object"))
                 {
                     if (value.IsObject())
                     {
@@ -156,8 +156,12 @@ namespace SGL
                     }
                     else
                     {
-                        throw new Exception("Can't assign " + value.ToString() + " to a string variable");
+                        throw new SGLCompilerException(-1, "type mismatch", "You can't assign an expression of type " + value.GetVarType() + " to an object variable");
                     }
+                }
+                else
+                {
+                    throw new SGLCompilerException(-1, "unknown type", "Unknown variable type (" + type + ")");
                 }
                 
             }
@@ -204,10 +208,12 @@ namespace SGL
             List<SGLObject> objects = new List<SGLObject>();
             foreach (KeyValuePair<String,String> pair in varTypes)
             {
-                if (pair.Value.Equals("Object"))
+                Console.WriteLine("1: " + pair.Key);
+                if (pair.Value.Equals("object"))
                 {
                     try
                     {
+                        Console.WriteLine(2);
                         objects.Add(varValues[pair.Key].AsObject());
                     }
                     catch (SGLCompilerException sce)

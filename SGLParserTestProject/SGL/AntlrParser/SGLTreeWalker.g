@@ -24,6 +24,9 @@ using SGL.Node.Expression;
 	Scope globalScope;
 	Scope currentScope;
 	
+	// Random object
+	Random random = new Random();
+	
     private List<SGLObject> spriteObjects = new List<SGLObject>();
     
     //Debug
@@ -48,6 +51,11 @@ using SGL.Node.Expression;
             {
             	Sprite cSprite = (Sprite)currentObject;
                 cSprite.GenerateSbCode(storyboardCode);
+            }
+            else if (currentObject is Animation)
+            {
+            	Animation cAnimation = (Animation)currentObject;
+                cAnimation.GenerateSbCode(storyboardCode);
             }
         }
 
@@ -148,7 +156,7 @@ returnStat returns [SGLNode node]
 	;	
 		
 methodCall returns [SGLNode node]
-	:	^(METH_CALL Identifier arguments) { node = new MethodCallNode($Identifier.text, $arguments.list, methods, storyboardCode, globalScope, $Identifier.Line); }
+	:	^(METH_CALL Identifier arguments) { node = new MethodCallNode($Identifier.text, $arguments.list, methods, storyboardCode, globalScope, random, $Identifier.Line); }
 	;	
 	
 breakStat returns [SGLNode node]
@@ -268,6 +276,7 @@ expression returns [SGLNode node]
 	|	^(STRING StringAtom) { node = new AtomNode(($StringAtom.text).Substring(1, ($StringAtom.text).Length-2), $StringAtom.Line); }
 	|	^(STRINGNOQUOTES Layer) { node = new AtomNode($Layer.text, $Layer.Line); }
 	|	^(STRINGNOQUOTES Origin) { node = new AtomNode($Origin.text, $Origin.Line); }
+	|	^(STRINGNOQUOTES LoopType) { node = new AtomNode($LoopType.text, $LoopType.Line); }
 	|	sbObject { node = $sbObject.node; }
 	|	lookup { node = $lookup.node; }
 	|	variableUnaryChangeExpression { node = $variableUnaryChangeExpression.node; }
