@@ -41,7 +41,7 @@ namespace SGL
                                   + "input=" + input + "&"
                                   + "tree=" + tree;
                 String uri = @"http://www.osu-german.de/sglerror/";
-                Console.WriteLine("ok make http post: " + HttpPost(uri, parameters));
+                //Console.WriteLine("ok make http post: " + HttpPost(uri, parameters));
 
             }
         }

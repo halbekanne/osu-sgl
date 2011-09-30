@@ -263,7 +263,7 @@ public partial class SGLParser : Parser
                             }
                         }
                     
-                    Console.WriteLine("method found: " + key);
+                    //Console.WriteLine("method found: " + key);
                     
                     //idListTree.GetChild(1).ChildCount;
                     methods.Add(key, new Method(id, typeString, idListTree, blockTree));
