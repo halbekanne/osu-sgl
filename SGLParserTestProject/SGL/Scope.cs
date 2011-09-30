@@ -28,7 +28,7 @@ namespace SGL
         {
             this.offset = parent.GetOffset();
             this.offset += offset;
-            Console.WriteLine("Set offset in scope " + getParentNumber() + " to " + this.offset);
+            //Console.WriteLine("Set offset in scope " + getParentNumber() + " to " + this.offset);
         }
 
         public Scope(Scope p)
@@ -36,7 +36,7 @@ namespace SGL
             parent = p;
             varValues = new Dictionary<String, SGLValue>();
             varTypes = new Dictionary<String, String>();
-            Console.WriteLine("Parent offset in " + getParentNumber() + " was " + offset);
+            //Console.WriteLine("Parent offset in " + getParentNumber() + " was " + offset);
         }
 
         public void Assign(String var, SGLValue value, Boolean newVar, String type)
@@ -50,7 +50,7 @@ namespace SGL
             else
             {
                 if (!newVar) throw new SGLCompilerException(-1, "unknown variable", "The variable '" + var + "' was not declared before");
-                if (IsGlobalScope()) Console.WriteLine("This is the global scope year!");
+                //if (IsGlobalScope()) Console.WriteLine("This is the global scope year!");
                 // A newly declared variable  
                 varValues.Add(var, value);
                 varTypes.Add(var, type);
@@ -208,12 +208,12 @@ namespace SGL
             List<SGLObject> objects = new List<SGLObject>();
             foreach (KeyValuePair<String,String> pair in varTypes)
             {
-                Console.WriteLine("1: " + pair.Key);
+                //Console.WriteLine("1: " + pair.Key);
                 if (pair.Value.Equals("object"))
                 {
                     try
                     {
-                        Console.WriteLine(2);
+                        //Console.WriteLine(2);
                         objects.Add(varValues[pair.Key].AsObject());
                     }
                     catch (SGLCompilerException sce)

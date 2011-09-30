@@ -19,6 +19,7 @@ namespace SGL
         public List<SbCommand> fadeCmds = new List<SbCommand>();
         public List<SbCommand> rotateCmds = new List<SbCommand>();
         public List<SbCommand> scaleCmds = new List<SbCommand>();
+        public List<SbCommand> scaleVecCmds = new List<SbCommand>();
         public List<SbCommand> colorCmds = new List<SbCommand>();
 
         public int GetPriority()

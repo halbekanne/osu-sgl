@@ -21,7 +21,7 @@ namespace SGL.Node.StaticMethod
         public SGLValue Evaluate() {
 
             SGLValue randVal = new SGLValue(random.Next(start.AsInteger(), end.AsInteger() + 1));
-            Console.WriteLine("start: " + start + ", end: " + end + " - rand Value: " + randVal.AsInteger());
+            //Console.WriteLine("start: " + start + ", end: " + end + " - rand Value: " + randVal.AsInteger());
             return randVal;
         }
 

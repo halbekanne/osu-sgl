@@ -84,7 +84,7 @@ namespace SGL.Node
             }
             else if (key.Equals("rand-int-int"))
             {
-                Console.WriteLine("called random method");
+                //Console.WriteLine("called random method");
                 return new RandomIntegerNode(parameter[0], parameter[1], this.random).Evaluate();
             }
             else if (key.StartsWith("pow-") && parameter.Count == 2 && parameter[0].IsNumber() && parameter[1].IsNumber())

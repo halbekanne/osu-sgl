@@ -26,7 +26,7 @@ namespace SGL
             this.identifiers = ToList(identifiers,1);
             code = block;
             scope = new Scope();
-            Console.WriteLine("identifiers: " + this.identifiers.Count);
+            //Console.WriteLine("identifiers: " + this.identifiers.Count);
         }
 
         public Method(Method original)
@@ -104,18 +104,18 @@ namespace SGL
             List<String> ids = new List<String>();
 
             // convert the tree to a List of Strings
-            Console.WriteLine("1: " + childNum);
+            //Console.WriteLine("1: " + childNum);
             if (tree.ChildCount > 0)
             {
-                Console.WriteLine("2: " + childNum);
+                //Console.WriteLine("2: " + childNum);
                 for (int i = 0; i < tree.GetChild(childNum).ChildCount; i++)
                 {
-                    Console.WriteLine("3: " + childNum);
+                    //Console.WriteLine("3: " + childNum);
                     CommonTree child = (CommonTree)tree.GetChild(childNum).GetChild(i);
                     ids.Add(child.Text);
-                    Console.WriteLine("add to List (" + childNum + "): " + child.Text);
+                    //Console.WriteLine("add to List (" + childNum + "): " + child.Text);
                 }
-                Console.WriteLine("4: " + childNum);
+                //Console.WriteLine("4: " + childNum);
             }
             return ids;
         }

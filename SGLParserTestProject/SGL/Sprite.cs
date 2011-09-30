@@ -31,27 +31,31 @@ namespace SGL
             }
             foreach (SbCommand cmd in moveXCmds)
             {
-                storyboardCode.Append(" MX," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + (int)cmd.startParams[0] + "," + (int)cmd.endParams[0]);
+                storyboardCode.Append(" MX," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + ((int)cmd.startParams[0]).ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + ((int)cmd.endParams[0]).ToString(System.Globalization.CultureInfo.InvariantCulture));
             }
             foreach (SbCommand cmd in moveYCmds)
             {
-                storyboardCode.Append(" MY," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + (int)cmd.startParams[0] + "," + (int)cmd.endParams[0]);
+                storyboardCode.Append(" MY," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + ((int)cmd.startParams[0]).ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + ((int)cmd.endParams[0]).ToString(System.Globalization.CultureInfo.InvariantCulture));
             }
             foreach (SbCommand cmd in fadeCmds)
             {
-                storyboardCode.Append(" F," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0] + "," + cmd.endParams[0]);
+                storyboardCode.Append(" F," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture));
             }
             foreach (SbCommand cmd in scaleCmds)
             {
-                storyboardCode.Append(" S," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0] + "," + cmd.endParams[0]);
+                storyboardCode.Append(" S," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture));
+            }
+            foreach (SbCommand cmd in scaleVecCmds)
+            {
+                storyboardCode.Append(" V," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.startParams[1].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[1].ToString(System.Globalization.CultureInfo.InvariantCulture));
             }
             foreach (SbCommand cmd in rotateCmds)
             {
-                storyboardCode.Append(" R," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0] + "," + cmd.endParams[0]);
+                storyboardCode.Append(" R," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture));
             }
             foreach (SbCommand cmd in colorCmds)
             {
-                storyboardCode.Append(" C," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0] + "," + cmd.startParams[1] + "," + cmd.startParams[2] + "," + cmd.endParams[0] + "," + cmd.endParams[1] + "," + cmd.endParams[2]);
+                storyboardCode.Append(" C," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.startParams[1].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.startParams[2].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[1].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[2].ToString(System.Globalization.CultureInfo.InvariantCulture));
             }
 
 

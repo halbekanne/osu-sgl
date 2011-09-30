@@ -44,7 +44,7 @@ namespace SGL.Node
             Console.WriteLine("iteration: " + iteration.Evaluate());
             */
               
-            Console.WriteLine("--------------------------------------");
+            //Console.WriteLine("--------------------------------------");
             for (init.Evaluate(); condition.Evaluate().AsBoolean(); iteration.Evaluate()) {
                 block.Evaluate();
             }
