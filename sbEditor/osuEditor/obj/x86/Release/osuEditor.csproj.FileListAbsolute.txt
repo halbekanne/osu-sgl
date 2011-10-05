@@ -1,6 +1,0 @@
-D:\sgl4c#\gitrepo\sbEditor\osuEditor\obj\x86\Release\ResolveAssemblyReference.cache
-D:\sgl4c#\gitrepo\sbEditor\osuEditor\obj\x86\Release\osuEditor.OsuSbEditor.resources
-D:\sgl4c#\gitrepo\sbEditor\osuEditor\obj\x86\Release\osuEditor.Properties.Resources.resources
-D:\sgl4c#\gitrepo\sbEditor\osuEditor\obj\x86\Release\ResGen.read.1.tlog
-D:\sgl4c#\gitrepo\sbEditor\osuEditor\obj\x86\Release\ResGen.write.1.tlog
-D:\sgl4c#\gitrepo\sbEditor\osuEditor\obj\x86\Release\osuEditor.exe.licenses

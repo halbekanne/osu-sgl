@@ -51,22 +51,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="antlr.runtime, Version=2.7.7.3, Culture=neutral, PublicKeyToken=d7701e059243744f">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>antlr_dll\antlr.runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>antlr_dll\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Utility, Version=0.1.0.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>antlr_dll\Antlr3.Utility.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="StringTemplate, Version=3.0.1.6846, Culture=neutral, PublicKeyToken=beee492b52c41e85, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>antlr_dll\StringTemplate.dll</HintPath>
+    <Reference Include="Puzzle.SyntaxBox.NET2.0">
+      <HintPath>dll\Puzzle.SyntaxBox.NET2.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -120,17 +107,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SGL.g" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\sbEditor\Alsing.SyntaxBox\Alsing.SyntaxBox.NET.csproj">
-      <Project>{19EF75B2-B414-4EB0-9486-160FAF93E62C}</Project>
-      <Name>Alsing.SyntaxBox.NET</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SGL\SGL.csproj">
-      <Project>{C61D3773-D6C1-41FE-8459-8720AF9C7BC8}</Project>
-      <Name>SGL</Name>
-    </ProjectReference>
+    <None Include="SGL.syn">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -148,6 +127,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SGL\SGL.csproj">
+      <Project>{C61D3773-D6C1-41FE-8459-8720AF9C7BC8}</Project>
+      <Name>SGL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

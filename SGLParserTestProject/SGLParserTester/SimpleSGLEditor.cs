@@ -28,7 +28,8 @@ namespace SGLTest
         }
 
         private void SetSyntaxHighlighting() {
-            syntaxSGL.SyntaxFile = @"C:\Users\Dominik Halfkann\Documents\Visual Studio 2010\Projects\SGLParserTester\SGLParserTester\SGL.syn";
+            syntaxSGL.SyntaxFile = Application.StartupPath + @"\SGL.syn";
+            //Console.WriteLine("Path: " + Application.StartupPath + @"\SGL.syn");
             SGLBox.ShowScopeIndicator = true;
         }
 

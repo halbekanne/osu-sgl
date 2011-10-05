@@ -8,8 +8,6 @@ using System.Windows.Forms;
 using SGL;
 using SGL.AntlrParser;
 using SGL.SGLUnit;
-using Antlr.Runtime;
-using Antlr.Runtime.Tree;
 using System.Diagnostics;
 
 namespace WindowsFormsApplication4

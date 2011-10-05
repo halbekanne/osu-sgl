@@ -33,7 +33,7 @@ namespace osuEditor
             String text = owner.editorDocument.Text;
 
             // Additional Information
-            int startposition = owner.editorControl.Caret.Position;
+            int startposition = owner.editorControl.Caret.Position.X;
 
             // Suche search in text
             int index = text.IndexOf(search);
