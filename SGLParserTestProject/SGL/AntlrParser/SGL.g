@@ -380,7 +380,7 @@ mathAtom
 //    |	f=Float
     |   'new' Sprite '(' arguments? ')' -> ^(Sprite arguments?)
     |   'new' Animation '(' arguments? ')' -> ^(Animation arguments?)
-	//|   Identifier ('.' Identifier)* arguments
+	|   objectMethod
 	|	Identifier
 	|	methodCall
 	|	stringQuote

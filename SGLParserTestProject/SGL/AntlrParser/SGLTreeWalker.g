@@ -280,6 +280,7 @@ expression returns [SGLNode node]
 	|	sbObject { node = $sbObject.node; }
 	|	lookup { node = $lookup.node; }
 	|	variableUnaryChangeExpression { node = $variableUnaryChangeExpression.node; }
+	|	objectMethod {node = $objectMethod.node;}
 	|	methodCall   {node = $methodCall.node;}
     //|	mathExpression
     ;    

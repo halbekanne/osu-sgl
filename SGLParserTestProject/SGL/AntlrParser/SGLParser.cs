@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g 2011-09-22 18:55:03
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g 2011-10-06 21:26:47
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -263,7 +263,7 @@ public partial class SGLParser : Parser
                             }
                         }
                     
-                    //Console.WriteLine("method found: " + key);
+                    Console.WriteLine("method found: " + key);
                     
                     //idListTree.GetChild(1).ChildCount;
                     methods.Add(key, new Method(id, typeString, idListTree, blockTree));
@@ -1718,7 +1718,7 @@ public partial class SGLParser : Parser
 
 
                     	// AST REWRITE
-                    	// elements:          variableType, variableDecAssignment
+                    	// elements:          variableDecAssignment, variableType
                     	// token labels:      
                     	// rule labels:       retval
                     	// token list labels: 
@@ -1730,10 +1730,10 @@ public partial class SGLParser : Parser
                     	root_0 = (object)adaptor.GetNilNode();
                     	// 209:68: -> ( ^( VARDEF variableType variableDecAssignment ) )+
                     	{
-                    	    if ( !(stream_variableType.HasNext() || stream_variableDecAssignment.HasNext()) ) {
+                    	    if ( !(stream_variableDecAssignment.HasNext() || stream_variableType.HasNext()) ) {
                     	        throw new RewriteEarlyExitException();
                     	    }
-                    	    while ( stream_variableType.HasNext() || stream_variableDecAssignment.HasNext() )
+                    	    while ( stream_variableDecAssignment.HasNext() || stream_variableType.HasNext() )
                     	    {
                     	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:209:71: ^( VARDEF variableType variableDecAssignment )
                     	        {
@@ -1747,8 +1747,8 @@ public partial class SGLParser : Parser
                     	        }
 
                     	    }
-                    	    stream_variableType.Reset();
                     	    stream_variableDecAssignment.Reset();
+                    	    stream_variableType.Reset();
 
                     	}
 
@@ -1811,7 +1811,7 @@ public partial class SGLParser : Parser
 
 
                     	// AST REWRITE
-                    	// elements:          variableType, variableDecAssignment
+                    	// elements:          variableDecAssignment, variableType
                     	// token labels:      
                     	// rule labels:       retval
                     	// token list labels: 
@@ -1823,10 +1823,10 @@ public partial class SGLParser : Parser
                     	root_0 = (object)adaptor.GetNilNode();
                     	// 210:77: -> ( ^( GLOBVARDEF variableType variableDecAssignment ) )+
                     	{
-                    	    if ( !(stream_variableType.HasNext() || stream_variableDecAssignment.HasNext()) ) {
+                    	    if ( !(stream_variableDecAssignment.HasNext() || stream_variableType.HasNext()) ) {
                     	        throw new RewriteEarlyExitException();
                     	    }
-                    	    while ( stream_variableType.HasNext() || stream_variableDecAssignment.HasNext() )
+                    	    while ( stream_variableDecAssignment.HasNext() || stream_variableType.HasNext() )
                     	    {
                     	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:210:80: ^( GLOBVARDEF variableType variableDecAssignment )
                     	        {
@@ -1840,8 +1840,8 @@ public partial class SGLParser : Parser
                     	        }
 
                     	    }
-                    	    stream_variableType.Reset();
                     	    stream_variableDecAssignment.Reset();
+                    	    stream_variableType.Reset();
 
                     	}
 
@@ -1939,7 +1939,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          expression, variableName
+            	// elements:          variableName, expression
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -2293,7 +2293,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          variableName, Identifier, arguments
+            	// elements:          variableName, arguments, Identifier
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -2398,7 +2398,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          commonBlock, 61, expression
+            	// elements:          expression, 61, commonBlock
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -2591,7 +2591,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          cond, dec, iter, commonBlock, 62
+            	// elements:          iter, dec, 62, commonBlock, cond
             	// token labels:      
             	// rule labels:       retval, dec, iter, cond
             	// token list labels: 
@@ -2793,7 +2793,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          elseStat, elseIfStat, ifStat
+            	// elements:          elseIfStat, elseStat, ifStat
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -2904,7 +2904,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          commonBlock, expression
+            	// elements:          expression, commonBlock
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -3008,7 +3008,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          expression, commonBlock
+            	// elements:          commonBlock, expression
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -3195,7 +3195,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          commonBlock, expression
+            	// elements:          expression, commonBlock
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -4931,7 +4931,7 @@ public partial class SGLParser : Parser
             	{
                 int LA33_2 = input.LA(2);
 
-                if ( ((LA33_2 >= Identifier && LA33_2 <= ObjectType) || LA33_2 == 50 || (LA33_2 >= 53 && LA33_2 <= 54) || (LA33_2 >= 56 && LA33_2 <= 58) || (LA33_2 >= 66 && LA33_2 <= 82)) )
+                if ( ((LA33_2 >= Identifier && LA33_2 <= ObjectType) || LA33_2 == 50 || (LA33_2 >= 53 && LA33_2 <= 54) || (LA33_2 >= 56 && LA33_2 <= 58) || LA33_2 == 60 || (LA33_2 >= 66 && LA33_2 <= 82)) )
                 {
                     alt33 = 1;
                 }
@@ -5062,7 +5062,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "mathAtom"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:375:1: mathAtom : ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' Sprite '(' ( arguments )? ')' -> ^( Sprite ( arguments )? ) | 'new' Animation '(' ( arguments )? ')' -> ^( Animation ( arguments )? ) | Identifier | methodCall | stringQuote | Layer -> ^( STRINGNOQUOTES Layer ) | Origin -> ^( STRINGNOQUOTES Origin ) | LoopType -> ^( STRINGNOQUOTES LoopType ) );
+    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:375:1: mathAtom : ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' Sprite '(' ( arguments )? ')' -> ^( Sprite ( arguments )? ) | 'new' Animation '(' ( arguments )? ')' -> ^( Animation ( arguments )? ) | objectMethod | Identifier | methodCall | stringQuote | Layer -> ^( STRINGNOQUOTES Layer ) | Origin -> ^( STRINGNOQUOTES Origin ) | LoopType -> ^( STRINGNOQUOTES LoopType ) );
     public SGLParser.mathAtom_return mathAtom() // throws RecognitionException [1]
     {   
         SGLParser.mathAtom_return retval = new SGLParser.mathAtom_return();
@@ -5083,19 +5083,21 @@ public partial class SGLParser : Parser
         IToken Animation149 = null;
         IToken char_literal150 = null;
         IToken char_literal152 = null;
-        IToken Identifier153 = null;
-        IToken Layer156 = null;
-        IToken Origin157 = null;
-        IToken LoopType158 = null;
+        IToken Identifier154 = null;
+        IToken Layer157 = null;
+        IToken Origin158 = null;
+        IToken LoopType159 = null;
         SGLParser.conditionalExpression_return conditionalExpression138 = default(SGLParser.conditionalExpression_return);
 
         SGLParser.arguments_return arguments146 = default(SGLParser.arguments_return);
 
         SGLParser.arguments_return arguments151 = default(SGLParser.arguments_return);
 
-        SGLParser.methodCall_return methodCall154 = default(SGLParser.methodCall_return);
+        SGLParser.objectMethod_return objectMethod153 = default(SGLParser.objectMethod_return);
 
-        SGLParser.stringQuote_return stringQuote155 = default(SGLParser.stringQuote_return);
+        SGLParser.methodCall_return methodCall155 = default(SGLParser.methodCall_return);
+
+        SGLParser.stringQuote_return stringQuote156 = default(SGLParser.stringQuote_return);
 
 
         object char_literal137_tree=null;
@@ -5111,10 +5113,10 @@ public partial class SGLParser : Parser
         object Animation149_tree=null;
         object char_literal150_tree=null;
         object char_literal152_tree=null;
-        object Identifier153_tree=null;
-        object Layer156_tree=null;
-        object Origin157_tree=null;
-        object LoopType158_tree=null;
+        object Identifier154_tree=null;
+        object Layer157_tree=null;
+        object Origin158_tree=null;
+        object LoopType159_tree=null;
         RewriteRuleTokenStream stream_Layer = new RewriteRuleTokenStream(adaptor,"token Layer");
         RewriteRuleTokenStream stream_Animation = new RewriteRuleTokenStream(adaptor,"token Animation");
         RewriteRuleTokenStream stream_53 = new RewriteRuleTokenStream(adaptor,"token 53");
@@ -5126,8 +5128,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_arguments = new RewriteRuleSubtreeStream(adaptor,"rule arguments");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:376:5: ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' Sprite '(' ( arguments )? ')' -> ^( Sprite ( arguments )? ) | 'new' Animation '(' ( arguments )? ')' -> ^( Animation ( arguments )? ) | Identifier | methodCall | stringQuote | Layer -> ^( STRINGNOQUOTES Layer ) | Origin -> ^( STRINGNOQUOTES Origin ) | LoopType -> ^( STRINGNOQUOTES LoopType ) )
-            int alt36 = 12;
+            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:376:5: ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' Sprite '(' ( arguments )? ')' -> ^( Sprite ( arguments )? ) | 'new' Animation '(' ( arguments )? ')' -> ^( Animation ( arguments )? ) | objectMethod | Identifier | methodCall | stringQuote | Layer -> ^( STRINGNOQUOTES Layer ) | Origin -> ^( STRINGNOQUOTES Origin ) | LoopType -> ^( STRINGNOQUOTES LoopType ) )
+            int alt36 = 13;
             alt36 = dfa36.Predict(input);
             switch (alt36) 
             {
@@ -5299,7 +5301,7 @@ public partial class SGLParser : Parser
 
 
                     	// AST REWRITE
-                    	// elements:          arguments, Animation
+                    	// elements:          Animation, arguments
                     	// token labels:      
                     	// rule labels:       retval
                     	// token list labels: 
@@ -5333,48 +5335,61 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 7 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:384:4: Identifier
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:383:6: objectMethod
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	Identifier153=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_mathAtom1678); 
-                    		Identifier153_tree = (object)adaptor.Create(Identifier153);
-                    		adaptor.AddChild(root_0, Identifier153_tree);
+                    	PushFollow(FOLLOW_objectMethod_in_mathAtom1678);
+                    	objectMethod153 = objectMethod();
+                    	state.followingStackPointer--;
 
+                    	adaptor.AddChild(root_0, objectMethod153.Tree);
 
                     }
                     break;
                 case 8 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:385:4: methodCall
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:384:4: Identifier
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_methodCall_in_mathAtom1683);
-                    	methodCall154 = methodCall();
-                    	state.followingStackPointer--;
+                    	Identifier154=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_mathAtom1683); 
+                    		Identifier154_tree = (object)adaptor.Create(Identifier154);
+                    		adaptor.AddChild(root_0, Identifier154_tree);
 
-                    	adaptor.AddChild(root_0, methodCall154.Tree);
 
                     }
                     break;
                 case 9 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:386:4: stringQuote
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:385:4: methodCall
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_stringQuote_in_mathAtom1688);
-                    	stringQuote155 = stringQuote();
+                    	PushFollow(FOLLOW_methodCall_in_mathAtom1688);
+                    	methodCall155 = methodCall();
                     	state.followingStackPointer--;
 
-                    	adaptor.AddChild(root_0, stringQuote155.Tree);
+                    	adaptor.AddChild(root_0, methodCall155.Tree);
 
                     }
                     break;
                 case 10 :
+                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:386:4: stringQuote
+                    {
+                    	root_0 = (object)adaptor.GetNilNode();
+
+                    	PushFollow(FOLLOW_stringQuote_in_mathAtom1693);
+                    	stringQuote156 = stringQuote();
+                    	state.followingStackPointer--;
+
+                    	adaptor.AddChild(root_0, stringQuote156.Tree);
+
+                    }
+                    break;
+                case 11 :
                     // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:387:4: Layer
                     {
-                    	Layer156=(IToken)Match(input,Layer,FOLLOW_Layer_in_mathAtom1693);  
-                    	stream_Layer.Add(Layer156);
+                    	Layer157=(IToken)Match(input,Layer,FOLLOW_Layer_in_mathAtom1698);  
+                    	stream_Layer.Add(Layer157);
 
 
 
@@ -5406,11 +5421,11 @@ public partial class SGLParser : Parser
                     	retval.Tree = root_0;retval.Tree = root_0;
                     }
                     break;
-                case 11 :
+                case 12 :
                     // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:388:4: Origin
                     {
-                    	Origin157=(IToken)Match(input,Origin,FOLLOW_Origin_in_mathAtom1706);  
-                    	stream_Origin.Add(Origin157);
+                    	Origin158=(IToken)Match(input,Origin,FOLLOW_Origin_in_mathAtom1711);  
+                    	stream_Origin.Add(Origin158);
 
 
 
@@ -5442,11 +5457,11 @@ public partial class SGLParser : Parser
                     	retval.Tree = root_0;retval.Tree = root_0;
                     }
                     break;
-                case 12 :
+                case 13 :
                     // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:389:4: LoopType
                     {
-                    	LoopType158=(IToken)Match(input,LoopType,FOLLOW_LoopType_in_mathAtom1719);  
-                    	stream_LoopType.Add(LoopType158);
+                    	LoopType159=(IToken)Match(input,LoopType,FOLLOW_LoopType_in_mathAtom1724);  
+                    	stream_LoopType.Add(LoopType159);
 
 
 
@@ -5519,13 +5534,13 @@ public partial class SGLParser : Parser
 
         object root_0 = null;
 
-        IToken Identifier159 = null;
-        IToken string_literal160 = null;
+        IToken Identifier160 = null;
         IToken string_literal161 = null;
+        IToken string_literal162 = null;
 
-        object Identifier159_tree=null;
-        object string_literal160_tree=null;
+        object Identifier160_tree=null;
         object string_literal161_tree=null;
+        object string_literal162_tree=null;
         RewriteRuleTokenStream stream_83 = new RewriteRuleTokenStream(adaptor,"token 83");
         RewriteRuleTokenStream stream_Identifier = new RewriteRuleTokenStream(adaptor,"token Identifier");
         RewriteRuleTokenStream stream_84 = new RewriteRuleTokenStream(adaptor,"token 84");
@@ -5535,8 +5550,8 @@ public partial class SGLParser : Parser
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:393:2: ( Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) ) )
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:393:4: Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) )
             {
-            	Identifier159=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_variableUnaryChange1747);  
-            	stream_Identifier.Add(Identifier159);
+            	Identifier160=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_variableUnaryChange1752);  
+            	stream_Identifier.Add(Identifier160);
 
             	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:393:15: ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) )
             	int alt37 = 2;
@@ -5562,8 +5577,8 @@ public partial class SGLParser : Parser
             	    case 1 :
             	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:393:16: '++'
             	        {
-            	        	string_literal160=(IToken)Match(input,83,FOLLOW_83_in_variableUnaryChange1750);  
-            	        	stream_83.Add(string_literal160);
+            	        	string_literal161=(IToken)Match(input,83,FOLLOW_83_in_variableUnaryChange1755);  
+            	        	stream_83.Add(string_literal161);
 
 
 
@@ -5598,8 +5613,8 @@ public partial class SGLParser : Parser
             	    case 2 :
             	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:394:4: '--'
             	        {
-            	        	string_literal161=(IToken)Match(input,84,FOLLOW_84_in_variableUnaryChange1763);  
-            	        	stream_84.Add(string_literal161);
+            	        	string_literal162=(IToken)Match(input,84,FOLLOW_84_in_variableUnaryChange1768);  
+            	        	stream_84.Add(string_literal162);
 
 
 
@@ -5676,7 +5691,7 @@ public partial class SGLParser : Parser
 
         object root_0 = null;
 
-        SGLParser.expressionList_return expressionList162 = default(SGLParser.expressionList_return);
+        SGLParser.expressionList_return expressionList163 = default(SGLParser.expressionList_return);
 
 
 
@@ -5687,11 +5702,11 @@ public partial class SGLParser : Parser
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	PushFollow(FOLLOW_expressionList_in_arguments1806);
-            	expressionList162 = expressionList();
+            	PushFollow(FOLLOW_expressionList_in_arguments1811);
+            	expressionList163 = expressionList();
             	state.followingStackPointer--;
 
-            	adaptor.AddChild(root_0, expressionList162.Tree);
+            	adaptor.AddChild(root_0, expressionList163.Tree);
 
             }
 
@@ -5734,13 +5749,13 @@ public partial class SGLParser : Parser
 
         object root_0 = null;
 
-        IToken char_literal164 = null;
-        SGLParser.expression_return expression163 = default(SGLParser.expression_return);
+        IToken char_literal165 = null;
+        SGLParser.expression_return expression164 = default(SGLParser.expression_return);
 
-        SGLParser.expression_return expression165 = default(SGLParser.expression_return);
+        SGLParser.expression_return expression166 = default(SGLParser.expression_return);
 
 
-        object char_literal164_tree=null;
+        object char_literal165_tree=null;
 
         try 
     	{
@@ -5749,11 +5764,11 @@ public partial class SGLParser : Parser
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	PushFollow(FOLLOW_expression_in_expressionList1829);
-            	expression163 = expression();
+            	PushFollow(FOLLOW_expression_in_expressionList1834);
+            	expression164 = expression();
             	state.followingStackPointer--;
 
-            	adaptor.AddChild(root_0, expression163.Tree);
+            	adaptor.AddChild(root_0, expression164.Tree);
             	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:407:20: ( ',' expression )*
             	do 
             	{
@@ -5771,12 +5786,12 @@ public partial class SGLParser : Parser
             			case 1 :
             			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:407:21: ',' expression
             			    {
-            			    	char_literal164=(IToken)Match(input,57,FOLLOW_57_in_expressionList1832); 
-            			    	PushFollow(FOLLOW_expression_in_expressionList1835);
-            			    	expression165 = expression();
+            			    	char_literal165=(IToken)Match(input,57,FOLLOW_57_in_expressionList1837); 
+            			    	PushFollow(FOLLOW_expression_in_expressionList1840);
+            			    	expression166 = expression();
             			    	state.followingStackPointer--;
 
-            			    	adaptor.AddChild(root_0, expression165.Tree);
+            			    	adaptor.AddChild(root_0, expression166.Tree);
 
             			    }
             			    break;
@@ -5831,17 +5846,17 @@ public partial class SGLParser : Parser
 
         object root_0 = null;
 
-        IToken char_literal168 = null;
-        SGLParser.variableType_return variableType166 = default(SGLParser.variableType_return);
+        IToken char_literal169 = null;
+        SGLParser.variableType_return variableType167 = default(SGLParser.variableType_return);
 
-        SGLParser.variableName_return variableName167 = default(SGLParser.variableName_return);
+        SGLParser.variableName_return variableName168 = default(SGLParser.variableName_return);
 
-        SGLParser.variableType_return variableType169 = default(SGLParser.variableType_return);
+        SGLParser.variableType_return variableType170 = default(SGLParser.variableType_return);
 
-        SGLParser.variableName_return variableName170 = default(SGLParser.variableName_return);
+        SGLParser.variableName_return variableName171 = default(SGLParser.variableName_return);
 
 
-        object char_literal168_tree=null;
+        object char_literal169_tree=null;
         RewriteRuleTokenStream stream_57 = new RewriteRuleTokenStream(adaptor,"token 57");
         RewriteRuleSubtreeStream stream_variableType = new RewriteRuleSubtreeStream(adaptor,"rule variableType");
         RewriteRuleSubtreeStream stream_variableName = new RewriteRuleSubtreeStream(adaptor,"rule variableName");
@@ -5850,16 +5865,16 @@ public partial class SGLParser : Parser
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:411:3: ( variableType variableName ( ',' variableType variableName )* -> ^( PARAM_TYPE_LIST ( variableType )+ ) ^( PARAM_NAME_LIST ( variableName )+ ) )
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:411:6: variableType variableName ( ',' variableType variableName )*
             {
-            	PushFollow(FOLLOW_variableType_in_paramList1853);
-            	variableType166 = variableType();
+            	PushFollow(FOLLOW_variableType_in_paramList1858);
+            	variableType167 = variableType();
             	state.followingStackPointer--;
 
-            	stream_variableType.Add(variableType166.Tree);
-            	PushFollow(FOLLOW_variableName_in_paramList1855);
-            	variableName167 = variableName();
+            	stream_variableType.Add(variableType167.Tree);
+            	PushFollow(FOLLOW_variableName_in_paramList1860);
+            	variableName168 = variableName();
             	state.followingStackPointer--;
 
-            	stream_variableName.Add(variableName167.Tree);
+            	stream_variableName.Add(variableName168.Tree);
             	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:411:32: ( ',' variableType variableName )*
             	do 
             	{
@@ -5877,19 +5892,19 @@ public partial class SGLParser : Parser
             			case 1 :
             			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:411:33: ',' variableType variableName
             			    {
-            			    	char_literal168=(IToken)Match(input,57,FOLLOW_57_in_paramList1858);  
-            			    	stream_57.Add(char_literal168);
+            			    	char_literal169=(IToken)Match(input,57,FOLLOW_57_in_paramList1863);  
+            			    	stream_57.Add(char_literal169);
 
-            			    	PushFollow(FOLLOW_variableType_in_paramList1860);
-            			    	variableType169 = variableType();
+            			    	PushFollow(FOLLOW_variableType_in_paramList1865);
+            			    	variableType170 = variableType();
             			    	state.followingStackPointer--;
 
-            			    	stream_variableType.Add(variableType169.Tree);
-            			    	PushFollow(FOLLOW_variableName_in_paramList1862);
-            			    	variableName170 = variableName();
+            			    	stream_variableType.Add(variableType170.Tree);
+            			    	PushFollow(FOLLOW_variableName_in_paramList1867);
+            			    	variableName171 = variableName();
             			    	state.followingStackPointer--;
 
-            			    	stream_variableName.Add(variableName170.Tree);
+            			    	stream_variableName.Add(variableName171.Tree);
 
             			    }
             			    break;
@@ -5996,9 +6011,9 @@ public partial class SGLParser : Parser
 
         object root_0 = null;
 
-        IToken set171 = null;
+        IToken set172 = null;
 
-        object set171_tree=null;
+        object set172_tree=null;
 
         try 
     	{
@@ -6007,11 +6022,11 @@ public partial class SGLParser : Parser
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	set171 = (IToken)input.LT(1);
+            	set172 = (IToken)input.LT(1);
             	if ( (input.LA(1) >= IntegerAtom && input.LA(1) <= BooleanAtom) || input.LA(1) == StringAtom || input.LA(1) == 86 ) 
             	{
             	    input.Consume();
-            	    adaptor.AddChild(root_0, (object)adaptor.Create(set171));
+            	    adaptor.AddChild(root_0, (object)adaptor.Create(set172));
             	    state.errorRecovery = false;
             	}
             	else 
@@ -6062,9 +6077,9 @@ public partial class SGLParser : Parser
 
         object root_0 = null;
 
-        IToken StringAtom172 = null;
+        IToken StringAtom173 = null;
 
-        object StringAtom172_tree=null;
+        object StringAtom173_tree=null;
         RewriteRuleTokenStream stream_StringAtom = new RewriteRuleTokenStream(adaptor,"token StringAtom");
 
         try 
@@ -6072,8 +6087,8 @@ public partial class SGLParser : Parser
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:424:2: ( StringAtom -> ^( STRING StringAtom ) )
             // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:424:6: StringAtom
             {
-            	StringAtom172=(IToken)Match(input,StringAtom,FOLLOW_StringAtom_in_stringQuote1973);  
-            	stream_StringAtom.Add(StringAtom172);
+            	StringAtom173=(IToken)Match(input,StringAtom,FOLLOW_StringAtom_in_stringQuote1978);  
+            	stream_StringAtom.Add(StringAtom173);
 
 
 
@@ -6135,18 +6150,18 @@ public partial class SGLParser : Parser
 	}
 
     const string DFA36_eotS =
-        "\x0f\uffff";
+        "\x10\uffff";
     const string DFA36_eofS =
-        "\x0f\uffff";
+        "\x10\uffff";
     const string DFA36_minS =
-        "\x01\x1b\x04\uffff\x01\x24\x01\x1b\x08\uffff";
+        "\x01\x1b\x04\uffff\x01\x24\x01\x1b\x09\uffff";
     const string DFA36_maxS =
-        "\x01\x55\x04\uffff\x01\x25\x01\x52\x08\uffff";
+        "\x01\x55\x04\uffff\x01\x25\x01\x52\x09\uffff";
     const string DFA36_acceptS =
-        "\x01\uffff\x01\x01\x01\x02\x01\x03\x01\x04\x02\uffff\x01\x09\x01"+
-        "\x0a\x01\x0b\x01\x0c\x01\x05\x01\x06\x01\x08\x01\x07";
+        "\x01\uffff\x01\x01\x01\x02\x01\x03\x01\x04\x02\uffff\x01\x0a\x01"+
+        "\x0b\x01\x0c\x01\x0d\x01\x05\x01\x06\x01\x09\x01\x07\x01\x08";
     const string DFA36_specialS =
-        "\x0f\uffff}>";
+        "\x10\uffff}>";
     static readonly string[] DFA36_transitionS = {
             "\x01\x06\x05\uffff\x01\x02\x01\x03\x01\x04\x02\uffff\x01\x08"+
             "\x01\x09\x01\x0a\x01\x07\x0b\uffff\x01\x01\x1f\uffff\x01\x05",
@@ -6155,8 +6170,9 @@ public partial class SGLParser : Parser
             "",
             "",
             "\x01\x0b\x01\x0c",
-            "\x06\x0e\x11\uffff\x01\x0e\x02\uffff\x01\x0d\x01\x0e\x01\uffff"+
-            "\x03\x0e\x07\uffff\x11\x0e",
+            "\x06\x0f\x11\uffff\x01\x0f\x02\uffff\x01\x0d\x01\x0f\x01\uffff"+
+            "\x03\x0f\x01\uffff\x01\x0e\x05\uffff\x11\x0f",
+            "",
             "",
             "",
             "",
@@ -6193,7 +6209,7 @@ public partial class SGLParser : Parser
 
         override public string Description
         {
-            get { return "375:1: mathAtom : ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' Sprite '(' ( arguments )? ')' -> ^( Sprite ( arguments )? ) | 'new' Animation '(' ( arguments )? ')' -> ^( Animation ( arguments )? ) | Identifier | methodCall | stringQuote | Layer -> ^( STRINGNOQUOTES Layer ) | Origin -> ^( STRINGNOQUOTES Origin ) | LoopType -> ^( STRINGNOQUOTES LoopType ) );"; }
+            get { return "375:1: mathAtom : ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' Sprite '(' ( arguments )? ')' -> ^( Sprite ( arguments )? ) | 'new' Animation '(' ( arguments )? ')' -> ^( Animation ( arguments )? ) | objectMethod | Identifier | methodCall | stringQuote | Layer -> ^( STRINGNOQUOTES Layer ) | Origin -> ^( STRINGNOQUOTES Origin ) | LoopType -> ^( STRINGNOQUOTES LoopType ) );"; }
         }
 
     }
@@ -6355,26 +6371,27 @@ public partial class SGLParser : Parser
     public static readonly BitSet FOLLOW_53_in_mathAtom1657 = new BitSet(new ulong[]{0x006003CE08000000UL,0x0000000000208000UL});
     public static readonly BitSet FOLLOW_arguments_in_mathAtom1659 = new BitSet(new ulong[]{0x0040000000000000UL});
     public static readonly BitSet FOLLOW_54_in_mathAtom1662 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_Identifier_in_mathAtom1678 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_methodCall_in_mathAtom1683 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_stringQuote_in_mathAtom1688 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_Layer_in_mathAtom1693 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_Origin_in_mathAtom1706 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_LoopType_in_mathAtom1719 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_Identifier_in_variableUnaryChange1747 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000180000UL});
-    public static readonly BitSet FOLLOW_83_in_variableUnaryChange1750 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_84_in_variableUnaryChange1763 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_expressionList_in_arguments1806 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_expression_in_expressionList1829 = new BitSet(new ulong[]{0x0200000000000002UL});
-    public static readonly BitSet FOLLOW_57_in_expressionList1832 = new BitSet(new ulong[]{0x002003CE08000000UL,0x0000000000208000UL});
-    public static readonly BitSet FOLLOW_expression_in_expressionList1835 = new BitSet(new ulong[]{0x0200000000000002UL});
-    public static readonly BitSet FOLLOW_variableType_in_paramList1853 = new BitSet(new ulong[]{0x0000000008000000UL});
-    public static readonly BitSet FOLLOW_variableName_in_paramList1855 = new BitSet(new ulong[]{0x0200000000000002UL});
-    public static readonly BitSet FOLLOW_57_in_paramList1858 = new BitSet(new ulong[]{0x00000001F0000000UL});
-    public static readonly BitSet FOLLOW_variableType_in_paramList1860 = new BitSet(new ulong[]{0x0000000008000000UL});
-    public static readonly BitSet FOLLOW_variableName_in_paramList1862 = new BitSet(new ulong[]{0x0200000000000002UL});
+    public static readonly BitSet FOLLOW_objectMethod_in_mathAtom1678 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_Identifier_in_mathAtom1683 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_methodCall_in_mathAtom1688 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_stringQuote_in_mathAtom1693 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_Layer_in_mathAtom1698 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_Origin_in_mathAtom1711 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_LoopType_in_mathAtom1724 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_Identifier_in_variableUnaryChange1752 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000180000UL});
+    public static readonly BitSet FOLLOW_83_in_variableUnaryChange1755 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_84_in_variableUnaryChange1768 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_expressionList_in_arguments1811 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_expression_in_expressionList1834 = new BitSet(new ulong[]{0x0200000000000002UL});
+    public static readonly BitSet FOLLOW_57_in_expressionList1837 = new BitSet(new ulong[]{0x002003CE08000000UL,0x0000000000208000UL});
+    public static readonly BitSet FOLLOW_expression_in_expressionList1840 = new BitSet(new ulong[]{0x0200000000000002UL});
+    public static readonly BitSet FOLLOW_variableType_in_paramList1858 = new BitSet(new ulong[]{0x0000000008000000UL});
+    public static readonly BitSet FOLLOW_variableName_in_paramList1860 = new BitSet(new ulong[]{0x0200000000000002UL});
+    public static readonly BitSet FOLLOW_57_in_paramList1863 = new BitSet(new ulong[]{0x00000001F0000000UL});
+    public static readonly BitSet FOLLOW_variableType_in_paramList1865 = new BitSet(new ulong[]{0x0000000008000000UL});
+    public static readonly BitSet FOLLOW_variableName_in_paramList1867 = new BitSet(new ulong[]{0x0200000000000002UL});
     public static readonly BitSet FOLLOW_set_in_literal0 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_StringAtom_in_stringQuote1973 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_StringAtom_in_stringQuote1978 = new BitSet(new ulong[]{0x0000000000000002UL});
 
 }
 }
