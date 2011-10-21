@@ -31,6 +31,9 @@ namespace SGLTest
             syntaxSGL.SyntaxFile = Application.StartupPath + @"\SGL.syn";
             //Console.WriteLine("Path: " + Application.StartupPath + @"\SGL.syn");
             SGLBox.ShowScopeIndicator = true;
+
+            //
+            
         }
 
         private void compileSBButton_Click(object sender, EventArgs e)
@@ -134,6 +137,11 @@ namespace SGLTest
         }
 
         private void SGLBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CopyrightLabel_Click(object sender, EventArgs e)
         {
 
         }

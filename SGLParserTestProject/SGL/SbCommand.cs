@@ -6,27 +6,13 @@ namespace SGL
 {
     public class SbCommand : IComparable
     {
-        public int easing;
         public int startTime;
-        public int endTime;
-        public double[] startParams;
-        public double[] endParams;
-
-        public SbCommand(int easing, int startTime, int endTime, double[] startParams, double[] endParams)
-        {
-            this.easing = easing;
-            this.startTime = startTime;
-            this.endTime = endTime;
-            this.startParams = startParams;
-            this.endParams = endParams;
-        }
-
 
         public int CompareTo(Object o)
         {
-            if (o is SbCommand)
+            if (o is SbAnimation)
             {
-                return this.startTime - ((SbCommand)o).startTime;
+                return this.startTime - ((SbAnimation)o).startTime;
             }
             else
             {
@@ -35,5 +21,91 @@ namespace SGL
 
         }
 
+    }
+
+    public class SbLoop : SbCommand
+    {
+        protected List<SbAnimation> animations = new List<SbAnimation>();
+
+        public void AddAnimation(SbAnimation animation)
+        {
+            animations.Add(animation);
+        }
+
+        public List<SbAnimation> GetAnimationList()
+        {
+            return animations;
+        }
+    }
+
+    public class SbStandardLoop : SbLoop {
+
+        public int count;
+
+        /// <summary>
+        /// Cunstructor for normal loops
+        /// </summary>
+        /// <param name="loopStartTime"></param>
+        /// <param name="loopCount"></param>
+        public SbStandardLoop(int loopStartTime, int loopCount)
+        {
+            this.startTime = loopStartTime;
+            this.count = loopCount;
+        }
+
+    }
+
+
+    public class SbTriggerLoop : SbLoop {
+
+        public int endTime;
+        public String trigger;
+        
+
+        /// <summary>
+        /// Cunstructor for trigger loops
+        /// </summary>
+        /// <param name="loopStartTime"></param>
+        /// <param name="loopEndTime"></param>
+        /// <param name="trigger"></param>
+        public SbTriggerLoop(int loopStartTime, int loopCount, String trigger)
+        {
+            this.startTime = loopStartTime;
+            this.endTime = loopCount;
+            this.trigger = trigger;
+        }
+
+    }
+
+
+    public class SbAnimation : SbCommand {
+        public enum AnimationType { move, moveX, moveY, scale, scaleVec, fade, rotate, color }
+
+        public AnimationType animationType;
+        public int easing;
+        public int endTime;
+        public double[] startParams;
+        public double[] endParams;
+        
+        
+
+
+        /// <summary>
+        /// Cunstructor for normal storyboard commands
+        /// </summary>
+        /// <param name="easing"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="startParams"></param>
+        /// <param name="endParams"></param>
+        public SbAnimation(AnimationType animationType, int easing, int startTime, int endTime, double[] startParams, double[] endParams)
+        {
+            this.animationType = animationType;
+            this.easing = easing;
+            this.startTime = startTime;
+            this.endTime = endTime;
+            this.startParams = startParams;
+            this.endParams = endParams;
+        }
     }
 }

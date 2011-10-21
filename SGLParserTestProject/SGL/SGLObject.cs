@@ -17,15 +17,12 @@ namespace SGL
         public int x = 320, y = 240, red = 255, green = 255, blue = 255;
         public double opacity = 1, scaleX = 1, scaleY = 1, rotate = 1;
 
-        // Lists of commands
-        public List<SbCommand> moveCmds = new List<SbCommand>();
-        public List<SbCommand> moveXCmds = new List<SbCommand>();
-        public List<SbCommand> moveYCmds = new List<SbCommand>();
-        public List<SbCommand> fadeCmds = new List<SbCommand>();
-        public List<SbCommand> rotateCmds = new List<SbCommand>();
-        public List<SbCommand> scaleCmds = new List<SbCommand>();
-        public List<SbCommand> scaleVecCmds = new List<SbCommand>();
-        public List<SbCommand> colorCmds = new List<SbCommand>();
+        // loop specific
+        public Boolean loop = false;
+        public SbLoop loopObj = null; 
+
+        // List of commands
+        public List<SbCommand> commands = new List<SbCommand>();
 
         public int GetPriority()
         {
@@ -65,40 +62,79 @@ namespace SGL
         {
 
             // Add all the commands for this sprite
-            foreach (SbCommand cmd in moveCmds)
+            foreach (SbCommand cmd in commands)
             {
-                storyboardCode.Append(" M," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + (int)cmd.startParams[0] + "," + (int)cmd.startParams[1] + "," + (int)cmd.endParams[0] + "," + (int)cmd.endParams[1]);
-            }
-            foreach (SbCommand cmd in moveXCmds)
-            {
-                storyboardCode.Append(" MX," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + ((int)cmd.startParams[0]).ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + ((int)cmd.endParams[0]).ToString(System.Globalization.CultureInfo.InvariantCulture));
-            }
-            foreach (SbCommand cmd in moveYCmds)
-            {
-                storyboardCode.Append(" MY," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + ((int)cmd.startParams[0]).ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + ((int)cmd.endParams[0]).ToString(System.Globalization.CultureInfo.InvariantCulture));
-            }
-            foreach (SbCommand cmd in fadeCmds)
-            {
-                storyboardCode.Append(" F," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture));
-            }
-            foreach (SbCommand cmd in scaleCmds)
-            {
-                storyboardCode.Append(" S," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture));
-            }
-            foreach (SbCommand cmd in scaleVecCmds)
-            {
-                storyboardCode.Append(" V," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.startParams[1].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[1].ToString(System.Globalization.CultureInfo.InvariantCulture));
-            }
-            foreach (SbCommand cmd in rotateCmds)
-            {
-                storyboardCode.Append(" R," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture));
-            }
-            foreach (SbCommand cmd in colorCmds)
-            {
-                storyboardCode.Append(" C," + cmd.easing + "," + cmd.startTime + "," + cmd.endTime + "," + cmd.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.startParams[1].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.startParams[2].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[1].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmd.endParams[2].ToString(System.Globalization.CultureInfo.InvariantCulture));
+                if (cmd is SbAnimation)
+                {
+                    //SbAnimation cmdAnim = (SbAnimation)cmd;
+                    GetAnimationSbCode(storyboardCode, (SbAnimation)cmd);
+
+                }
+                else if (cmd is SbStandardLoop)
+                {
+                        SbStandardLoop cmdLoop = (SbStandardLoop)cmd;
+                        storyboardCode.Append(" L," + cmdLoop.startTime + "," + cmdLoop.count);
+                        storyboardCode.Append("\r\n");
+                        foreach (SbAnimation cmdAnim in cmdLoop.GetAnimationList())
+                        {
+                            storyboardCode.Append(" "); // Loop additional whitespace
+                            GetAnimationSbCode(storyboardCode, cmdAnim);
+                        }
+                }
+                else if (cmd is SbTriggerLoop)
+                {
+                    SbTriggerLoop cmdLoop = (SbTriggerLoop)cmd;
+                    storyboardCode.Append(" T," + cmdLoop.startTime + "," + cmdLoop.endTime + "," + cmdLoop.trigger);
+                    storyboardCode.Append("\r\n");
+                    foreach (SbAnimation cmdAnim in cmdLoop.GetAnimationList())
+                    {
+                        storyboardCode.Append(" "); // Loop additional whitespace
+                        GetAnimationSbCode(storyboardCode, cmdAnim);
+                    }
+                }
+                else
+                {
+                    throw new UnexpectedException("Unimplemented storyboard command type - Error should never occur", "");
+                }
+
             }
 
+
+
         }
+
+
+        /// <summary>
+        /// Generates storyboard code for one animation command
+        /// </summary>
+        /// <param name="storyboardCode"></param>
+        /// <param name="cmdAnim"></param>
+        private void GetAnimationSbCode(StringBuilder storyboardCode, SbAnimation cmdAnim)
+        {
+            switch (cmdAnim.animationType)
+            {
+                case SbAnimation.AnimationType.move: storyboardCode.Append(" M," + cmdAnim.easing + "," + cmdAnim.startTime + "," + cmdAnim.endTime + "," + (int)cmdAnim.startParams[0] + "," + (int)cmdAnim.startParams[1] + "," + (int)cmdAnim.endParams[0] + "," + (int)cmdAnim.endParams[1]);
+                    break;
+                case SbAnimation.AnimationType.moveX: storyboardCode.Append(" MX," + cmdAnim.easing + "," + cmdAnim.startTime + "," + cmdAnim.endTime + "," + ((int)cmdAnim.startParams[0]).ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + ((int)cmdAnim.endParams[0]).ToString(System.Globalization.CultureInfo.InvariantCulture));
+                    break;
+                case SbAnimation.AnimationType.moveY: storyboardCode.Append(" MY," + cmdAnim.easing + "," + cmdAnim.startTime + "," + cmdAnim.endTime + "," + ((int)cmdAnim.startParams[0]).ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + ((int)cmdAnim.endParams[0]).ToString(System.Globalization.CultureInfo.InvariantCulture));
+                    break;
+                case SbAnimation.AnimationType.fade: storyboardCode.Append(" F," + cmdAnim.easing + "," + cmdAnim.startTime + "," + cmdAnim.endTime + "," + cmdAnim.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmdAnim.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture));
+                    break;
+                case SbAnimation.AnimationType.scale: storyboardCode.Append(" S," + cmdAnim.easing + "," + cmdAnim.startTime + "," + cmdAnim.endTime + "," + cmdAnim.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmdAnim.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture));
+                    break;
+                case SbAnimation.AnimationType.scaleVec: storyboardCode.Append(" V," + cmdAnim.easing + "," + cmdAnim.startTime + "," + cmdAnim.endTime + "," + cmdAnim.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmdAnim.startParams[1].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmdAnim.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmdAnim.endParams[1].ToString(System.Globalization.CultureInfo.InvariantCulture));
+                    break;
+                case SbAnimation.AnimationType.rotate: storyboardCode.Append(" R," + cmdAnim.easing + "," + cmdAnim.startTime + "," + cmdAnim.endTime + "," + cmdAnim.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmdAnim.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture));
+                    break;
+                case SbAnimation.AnimationType.color: storyboardCode.Append(" C," + cmdAnim.easing + "," + cmdAnim.startTime + "," + cmdAnim.endTime + "," + cmdAnim.startParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmdAnim.startParams[1].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmdAnim.startParams[2].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmdAnim.endParams[0].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmdAnim.endParams[1].ToString(System.Globalization.CultureInfo.InvariantCulture) + "," + cmdAnim.endParams[2].ToString(System.Globalization.CultureInfo.InvariantCulture));
+                    break;
+                default: throw new UnexpectedException("Unimplemented animation type - Error should never occur", "");
+
+            }
+            storyboardCode.Append("\r\n");
+        }
+
 
         public void AddSbCode(String sbCode)
         {

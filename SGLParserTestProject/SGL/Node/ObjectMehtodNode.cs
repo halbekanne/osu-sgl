@@ -52,7 +52,7 @@ namespace SGL.Node
                 {
                     CheckParameters("move", values, new String[] { "int", "int" });
                     double[] startParams = new double[] { values[0].AsInteger(), values[1].AsInteger() };
-                    obj.moveCmds.Add(new SbCommand(0, offset, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.move, 0, offset, offset, startParams, startParams));
                     obj.x = values[0].AsInteger();
                     obj.y = values[1].AsInteger();
                     //obj.AddSbCode(" M,0," + offset + "," + offset + ",," + values[0].ToString() + "," + values[1].ToString());
@@ -62,7 +62,7 @@ namespace SGL.Node
                     CheckParameters("move", values, new String[] { "int", "int", "int" });
                     int time = offset + values[0].AsInteger();
                     double[] startParams = new double[] { values[1].AsInteger(), values[2].AsInteger() };
-                    obj.moveCmds.Add(new SbCommand(0, time, time, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.move, 0, time, time, startParams, startParams));
                     obj.x = values[1].AsInteger();
                     obj.y = values[2].AsInteger();
                     //obj.AddSbCode(" M,0," + time + "," + time + ",," + values[1].ToString() + "," + values[2].ToString());
@@ -74,7 +74,7 @@ namespace SGL.Node
                     int etime = offset + values[1].AsInteger();
                     double[] startParams = new double[] { values[2].AsInteger(), values[3].AsInteger() };
                     double[] endParams = new double[] { values[4].AsInteger(), values[5].AsInteger() };
-                    obj.moveCmds.Add(new SbCommand(0, stime, etime, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.move, 0, stime, etime, startParams, startParams));
                     obj.x = values[4].AsInteger();
                     obj.y = values[5].AsInteger();
                     //obj.AddSbCode(" M,0," + stime + "," + etime + "," + values[2].ToString() + "," + values[3].ToString() + "," + values[4].ToString() + "," + values[5].ToString());
@@ -88,7 +88,7 @@ namespace SGL.Node
                     int etime = offset + values[2].AsInteger();
                     double[] startParams = new double[] { values[3].AsInteger(), values[4].AsInteger() };
                     double[] endParams = new double[] { values[5].AsInteger(), values[6].AsInteger() };
-                    obj.moveCmds.Add(new SbCommand(easing, stime, etime, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.move, easing, stime, etime, startParams, startParams));
                     obj.x = values[5].AsInteger();
                     obj.y = values[6].AsInteger();
                     //obj.AddSbCode(" M," + values[0].ToString() + "," + stime + "," + etime + "," + values[3].ToString() + "," + values[4].ToString() + "," + values[5].ToString() + "," + values[6].ToString());
@@ -105,7 +105,7 @@ namespace SGL.Node
                     CheckParameters("fade", values, new String[] { "number" });
                     CheckRange("opacity", values[0], 0, 1);
                     double[] startParams = new double[] { values[0].AsFloat() };
-                    obj.fadeCmds.Add(new SbCommand(0, offset, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.fade, 0, offset, offset, startParams, startParams));
                     obj.opacity = values[0].AsFloat();
                     //obj.AddSbCode(" F,0," + offset + "," + offset + ",," + values[0].ToString());
                 }
@@ -115,7 +115,7 @@ namespace SGL.Node
                     CheckRange("opacity", values[1], 0, 1);
                     int time = offset + values[0].AsInteger();
                     double[] startParams = new double[] { values[1].AsFloat() };
-                    obj.fadeCmds.Add(new SbCommand(0, time, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.fade, 0, time, offset, startParams, startParams));
                     obj.opacity = values[1].AsFloat();
                     //obj.AddSbCode(" F,0," + time + "," + time + ",," + values[1].ToString());
                 }
@@ -128,7 +128,7 @@ namespace SGL.Node
                     int etime = offset + values[1].AsInteger();
                     double[] startParams = new double[] { values[2].AsFloat() };
                     double[] endParams = new double[] { values[3].AsFloat() };
-                    obj.fadeCmds.Add(new SbCommand(0, stime, etime, startParams, endParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.fade, 0, stime, etime, startParams, endParams));
                     obj.opacity = values[3].AsFloat();
                     //obj.AddSbCode(" F,0," + stime + "," + etime + "," + values[2].ToString() + "," + values[3].ToString());
                 }
@@ -143,7 +143,7 @@ namespace SGL.Node
                     int etime = offset + values[2].AsInteger();
                     double[] startParams = new double[] { values[3].AsFloat() };
                     double[] endParams = new double[] { values[4].AsFloat() };
-                    obj.fadeCmds.Add(new SbCommand(0, stime, etime, startParams, endParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.fade, 0, stime, etime, startParams, endParams));
                     obj.opacity = values[4].AsFloat();
                     //obj.AddSbCode(" F," + values[0].ToString() + "," + stime + "," + etime + "," + values[3].ToString() + "," + values[4].ToString());
                 }
@@ -159,7 +159,7 @@ namespace SGL.Node
                     CheckParameters("scale", values, new String[] { "number" });
                     CheckRange("scalefactor", values[0], 0);
                     double[] startParams = new double[] { values[0].AsFloat() };
-                    obj.scaleCmds.Add(new SbCommand(0, offset, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.scale, 0, offset, offset, startParams, startParams));
                     obj.scaleX = values[0].AsFloat();
                     obj.scaleY = values[0].AsFloat();
                     //obj.AddSbCode(" S,0," + offset + "," + offset + ",," + values[0].ToString());
@@ -170,7 +170,7 @@ namespace SGL.Node
                     CheckRange("scalefactor", values[0], 0);
                     int time = offset + values[0].AsInteger();
                     double[] startParams = new double[] { values[1].AsFloat() };
-                    obj.scaleCmds.Add(new SbCommand(0, time, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.scale, 0, time, offset, startParams, startParams));
                     obj.scaleX = values[1].AsFloat();
                     obj.scaleY = values[1].AsFloat();
                     //obj.AddSbCode(" S,0," + time + "," + time + ",," + values[1].ToString());
@@ -184,7 +184,7 @@ namespace SGL.Node
                     int etime = offset + values[1].AsInteger();
                     double[] startParams = new double[] { values[2].AsFloat() };
                     double[] endParams = new double[] { values[3].AsFloat() };
-                    obj.scaleCmds.Add(new SbCommand(0, stime, etime, startParams, endParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.scale, 0, stime, etime, startParams, endParams));
                     obj.scaleX = values[3].AsFloat();
                     obj.scaleY = values[3].AsFloat();
                     //obj.AddSbCode(" S,0," + stime + "," + etime + "," + values[2].ToString() + "," + values[3].ToString());
@@ -200,7 +200,7 @@ namespace SGL.Node
                     int etime = offset + values[2].AsInteger();
                     double[] startParams = new double[] { values[3].AsFloat() };
                     double[] endParams = new double[] { values[4].AsFloat() };
-                    obj.scaleCmds.Add(new SbCommand(0, stime, etime, startParams, endParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.scale, 0, stime, etime, startParams, endParams));
                     obj.scaleX = values[4].AsFloat();
                     obj.scaleY = values[4].AsFloat();
                     //obj.AddSbCode(" S," + values[0].ToString() + "," + stime + "," + etime + "," + values[3].ToString() + "," + values[4].ToString());
@@ -216,7 +216,7 @@ namespace SGL.Node
                 {
                     CheckParameters("rotate", values, new String[] { "number" });
                     double[] startParams = new double[] { values[0].AsFloat() };
-                    obj.rotateCmds.Add(new SbCommand(0, offset, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.rotate, 0, offset, offset, startParams, startParams));
                     obj.rotate = values[0].AsFloat();
                     //obj.AddSbCode(" R,0," + offset + "," + offset + ",," + values[0].ToString());
                 }
@@ -225,7 +225,7 @@ namespace SGL.Node
                     CheckParameters("rotate", values, new String[] { "int", "number" });
                     int time = offset + values[0].AsInteger();
                     double[] startParams = new double[] { values[1].AsFloat() };
-                    obj.rotateCmds.Add(new SbCommand(0, time, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.rotate, 0, time, offset, startParams, startParams));
                     obj.rotate = values[1].AsFloat();
                     //obj.AddSbCode(" R,0," + time + "," + time + ",," + values[1].ToString());
                 }
@@ -236,7 +236,7 @@ namespace SGL.Node
                     int etime = offset + values[1].AsInteger();
                     double[] startParams = new double[] { values[2].AsFloat() };
                     double[] endParams = new double[] { values[3].AsFloat() };
-                    obj.rotateCmds.Add(new SbCommand(0, stime, etime, startParams, endParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.rotate, 0, stime, etime, startParams, endParams));
                     obj.rotate = values[3].AsFloat();
                     //obj.AddSbCode(" R,0," + stime + "," + etime + "," + values[2].ToString() + "," + values[3].ToString());
                 }
@@ -249,7 +249,7 @@ namespace SGL.Node
                     int etime = offset + values[2].AsInteger();
                     double[] startParams = new double[] { values[3].AsFloat() };
                     double[] endParams = new double[] { values[4].AsFloat() };
-                    obj.rotateCmds.Add(new SbCommand(0, stime, etime, startParams, endParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.rotate, 0, stime, etime, startParams, endParams));
                     obj.rotate = values[4].AsFloat();
                     //obj.AddSbCode(" R," + values[0].ToString() + "," + stime + "," + etime + "," + values[3].ToString() + "," + values[4].ToString());
                 }
@@ -264,7 +264,7 @@ namespace SGL.Node
                 {
                     CheckParameters("moveX", values, new String[] { "int" });
                     double[] startParams = new double[] { values[0].AsInteger() };
-                    obj.moveXCmds.Add(new SbCommand(0, offset, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.moveX, 0, offset, offset, startParams, startParams));
                     obj.x = values[0].AsInteger();
                     //obj.AddSbCode(" MX,0," + offset + "," + offset + ",," + values[0].ToString());
                 }
@@ -273,7 +273,7 @@ namespace SGL.Node
                     CheckParameters("moveX", values, new String[] { "int", "int" });
                     int time = offset + values[0].AsInteger();
                     double[] startParams = new double[] { values[1].AsInteger() };
-                    obj.moveXCmds.Add(new SbCommand(0, time, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.moveX, 0, time, offset, startParams, startParams));
                     obj.x = values[1].AsInteger();
                     //obj.AddSbCode(" MX,0," + time + "," + time + ",," + values[1].ToString());
                 }
@@ -284,7 +284,7 @@ namespace SGL.Node
                     int etime = offset + values[1].AsInteger();
                     double[] startParams = new double[] { values[2].AsInteger() };
                     double[] endParams = new double[] { values[3].AsInteger() };
-                    obj.moveXCmds.Add(new SbCommand(0, stime, etime, startParams, endParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.moveX, 0, stime, etime, startParams, endParams));
                     obj.x = values[3].AsInteger();
                     //obj.AddSbCode(" MX,0," + stime + "," + etime + "," + values[2].ToString() + "," + values[3].ToString());
                 }
@@ -297,7 +297,7 @@ namespace SGL.Node
                     int etime = offset + values[2].AsInteger();
                     double[] startParams = new double[] { values[3].AsInteger() };
                     double[] endParams = new double[] { values[4].AsInteger() };
-                    obj.moveXCmds.Add(new SbCommand(0, stime, etime, startParams, endParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.moveX, 0, stime, etime, startParams, endParams));
                     obj.x = values[4].AsInteger();
                     //obj.AddSbCode(" MX," + values[0].ToString() + "," + stime + "," + etime + "," + values[3].ToString() + "," + values[4].ToString());
                 }
@@ -312,7 +312,7 @@ namespace SGL.Node
                 {
                     CheckParameters("moveY", values, new String[] { "int" });
                     double[] startParams = new double[] { values[0].AsInteger() };
-                    obj.moveYCmds.Add(new SbCommand(0, offset, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.moveY, 0, offset, offset, startParams, startParams));
                     obj.y = values[0].AsInteger();
                     //obj.AddSbCode(" MY,0," + offset + "," + offset + ",," + values[0].ToString());
                 }
@@ -321,7 +321,7 @@ namespace SGL.Node
                     CheckParameters("moveY", values, new String[] { "int", "int" });
                     int time = offset + values[0].AsInteger();
                     double[] startParams = new double[] { values[1].AsInteger() };
-                    obj.moveYCmds.Add(new SbCommand(0, time, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.moveY, 0, time, offset, startParams, startParams));
                     obj.y = values[1].AsInteger();
                     //obj.AddSbCode(" MY,0," + time + "," + time + ",," + values[1].ToString());
                 }
@@ -332,7 +332,7 @@ namespace SGL.Node
                     int etime = offset + values[1].AsInteger();
                     double[] startParams = new double[] { values[2].AsInteger() };
                     double[] endParams = new double[] { values[3].AsInteger() };
-                    obj.moveYCmds.Add(new SbCommand(0, stime, etime, startParams, endParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.moveY, 0, stime, etime, startParams, endParams));
                     obj.y = values[3].AsInteger();
                     //obj.AddSbCode(" MY,0," + stime + "," + etime + "," + values[2].ToString() + "," + values[3].ToString());
                 }
@@ -345,7 +345,7 @@ namespace SGL.Node
                     int etime = offset + values[2].AsInteger();
                     double[] startParams = new double[] { values[3].AsInteger() };
                     double[] endParams = new double[] { values[4].AsInteger() };
-                    obj.moveYCmds.Add(new SbCommand(0, stime, etime, startParams, endParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.moveY, 0, stime, etime, startParams, endParams));
                     obj.y = values[4].AsInteger();
                     //obj.AddSbCode(" MY," + values[0].ToString() + "," + stime + "," + etime + "," + values[3].ToString() + "," + values[4].ToString());
                 }
@@ -362,7 +362,7 @@ namespace SGL.Node
                     CheckRange("scalefactorX", values[0], 0);
                     CheckRange("scalefactorY", values[1], 0);
                     double[] startParams = new double[] { values[0].AsFloat(), values[1].AsFloat() };
-                    obj.scaleVecCmds.Add(new SbCommand(0, offset, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.scaleVec, 0, offset, offset, startParams, startParams));
                     obj.scaleX = values[0].AsFloat();
                     obj.scaleY = values[1].AsFloat();
                     //obj.AddSbCode(" V,0," + offset + "," + offset + ",," + values[0].ToString() + "," + values[1].ToString());
@@ -374,7 +374,7 @@ namespace SGL.Node
                     CheckRange("scalefactorY", values[2], 0);
                     int time = offset + values[0].AsInteger();
                     double[] startParams = new double[] { values[1].AsFloat(), values[2].AsFloat() };
-                    obj.scaleVecCmds.Add(new SbCommand(0, time, time, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.scaleVec, 0, time, time, startParams, startParams));
                     obj.scaleX = values[1].AsFloat();
                     obj.scaleY = values[2].AsFloat();
                     //obj.AddSbCode(" V,0," + time + "," + time + ",," + values[1].ToString() + "," + values[2].ToString());
@@ -390,7 +390,7 @@ namespace SGL.Node
                     int etime = offset + values[1].AsInteger();
                     double[] startParams = new double[] { values[2].AsFloat(), values[3].AsFloat() };
                     double[] endParams = new double[] { values[4].AsFloat(), values[5].AsFloat() };
-                    obj.scaleVecCmds.Add(new SbCommand(0, stime, etime, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.scaleVec, 0, stime, etime, startParams, startParams));
                     obj.scaleX = values[4].AsFloat();
                     obj.scaleY = values[5].AsFloat();
                     //obj.AddSbCode(" V,0," + stime + "," + etime + "," + values[2].ToString() + "," + values[3].ToString() + "," + values[4].ToString() + "," + values[5].ToString());
@@ -408,7 +408,7 @@ namespace SGL.Node
                     int etime = offset + values[2].AsInteger();
                     double[] startParams = new double[] { values[3].AsFloat(), values[4].AsFloat() };
                     double[] endParams = new double[] { values[5].AsFloat(), values[6].AsFloat() };
-                    obj.scaleVecCmds.Add(new SbCommand(easing, stime, etime, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.scaleVec, easing, stime, etime, startParams, startParams));
                     obj.scaleX = values[5].AsFloat();
                     obj.scaleY = values[6].AsFloat();
                     //obj.AddSbCode(" V," + values[0].ToString() + "," + stime + "," + etime + "," + values[3].ToString() + "," + values[4].ToString() + "," + values[5].ToString() + "," + values[6].ToString());
@@ -427,7 +427,7 @@ namespace SGL.Node
                     CheckRange("colorGreen", values[1], 0, 255);
                     CheckRange("colorBlue", values[2], 0, 255);
                     double[] startParams = new double[] { values[0].AsInteger(), values[1].AsInteger(), values[2].AsInteger() };
-                    obj.colorCmds.Add(new SbCommand(0, offset, offset, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.color, 0, offset, offset, startParams, startParams));
                     obj.red = values[0].AsInteger();
                     obj.green = values[1].AsInteger();
                     obj.blue = values[2].AsInteger();
@@ -441,7 +441,7 @@ namespace SGL.Node
                     CheckRange("colorBlue", values[3], 0, 255);
                     int time = offset + values[0].AsInteger();
                     double[] startParams = new double[] { values[1].AsInteger(), values[2].AsInteger(), values[3].AsInteger() };
-                    obj.colorCmds.Add(new SbCommand(0, time, time, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.color, 0, time, time, startParams, startParams));
                     obj.red = values[1].AsInteger();
                     obj.green = values[2].AsInteger();
                     obj.blue = values[3].AsInteger();
@@ -460,7 +460,7 @@ namespace SGL.Node
                     int etime = offset + values[1].AsInteger();
                     double[] startParams = new double[] { values[2].AsInteger(), values[3].AsInteger(), values[4].AsInteger() };
                     double[] endParams = new double[] { values[5].AsInteger(), values[6].AsInteger(), values[7].AsInteger() };
-                    obj.colorCmds.Add(new SbCommand(0, stime, etime, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.color, 0, stime, etime, startParams, startParams));
                     obj.red = values[5].AsInteger();
                     obj.green = values[6].AsInteger();
                     obj.blue = values[7].AsInteger();
@@ -481,7 +481,7 @@ namespace SGL.Node
                     int etime = offset + values[2].AsInteger();
                     double[] startParams = new double[] { values[3].AsInteger(), values[4].AsInteger(), values[5].AsInteger() };
                     double[] endParams = new double[] { values[6].AsInteger(), values[7].AsInteger(), values[8].AsInteger() };
-                    obj.colorCmds.Add(new SbCommand(easing, stime, etime, startParams, startParams));
+                    AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.color, easing, stime, etime, startParams, startParams));
                     obj.red = values[6].AsInteger();
                     obj.green = values[7].AsInteger();
                     obj.blue = values[8].AsInteger();
@@ -492,6 +492,33 @@ namespace SGL.Node
                     throw new SGLCompilerException(GetLine(), "method undefined", "The object method '" + method + "' is undefined for " + values.Count + " parameters.");
                 }
 
+            }
+            else if (method.Equals("startLoop"))
+            {
+                // Start a storaboard loop
+                if (values.Count == 2)
+                {
+                    CheckParameters("loop", values, new String[] { "int", "int" });
+                    AddCommandToList(obj, new SbStandardLoop(values[0].AsInteger(), values[1].AsInteger()));
+                }
+            }
+            else if (method.Equals("startTriggerLoop"))
+            {
+                // Start a trigger loop
+                if (values.Count == 3)
+                {
+                    CheckParameters("trigger loop", values, new String[] { "int", "int", "string" });
+                    AddCommandToList(obj, new SbTriggerLoop(values[0].AsInteger(), values[1].AsInteger(), values[2].AsString()));
+                }
+            }
+            else if (method.Equals("endLoop"))
+            {
+                // End a loop
+                if (values.Count == 0)
+                {
+                    obj.loop = false;
+                    obj.loopObj = null;
+                }
             }
             else if (method.Equals("getX"))
             {
@@ -517,6 +544,42 @@ namespace SGL.Node
 
 
             return SGLValue.VOID;
+        }
+
+
+
+        private void AddCommandToList(SGLObject obj, SbCommand cmd)
+        {
+            if (obj.loop)
+            {
+                // If we are in a loop, add the command to the loop's command list
+                if (cmd is SbAnimation) {
+                    obj.loopObj.AddAnimation((SbAnimation)cmd);
+                } else {
+                    throw new SGLCompilerException(GetLine(), "loop cascade", "loops can't be used inside a loop");
+                }
+
+            }
+            else
+            {
+                // Just add the command
+                obj.commands.Add(cmd);
+
+                if (cmd is SbLoop)
+                {
+                    // If we should add a loop
+                    if (cmd is SbStandardLoop)
+                    {
+                        obj.loopObj = (SbStandardLoop)cmd;
+                    }
+                    else
+                    {
+                        obj.loopObj = (SbTriggerLoop)cmd;
+                    }
+                    
+                    obj.loop = true;
+                }
+            }
         }
 
 
