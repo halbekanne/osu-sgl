@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComList.cs" />
     <Compile Include="Compiler.cs" />
     <Compile Include="ErrorReporter.cs" />
     <Compile Include="Animation.cs" />

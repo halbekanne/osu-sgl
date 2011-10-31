@@ -25,16 +25,26 @@ namespace SGL
 
     public class SbLoop : SbCommand
     {
-        protected List<SbAnimation> animations = new List<SbAnimation>();
+        protected ComList<SbCommand> animations = new ComList<SbCommand>();
+        protected int longest = 0;
 
         public void AddAnimation(SbAnimation animation)
         {
             animations.Add(animation);
+            if (animation.endTime > longest)
+            {
+                longest = animation.endTime;
+            }
         }
 
-        public List<SbAnimation> GetAnimationList()
+        public ComList<SbCommand> GetAnimationList()
         {
             return animations;
+        }
+
+        public int GetLongest()
+        {
+            return longest;
         }
     }
 
@@ -106,6 +116,13 @@ namespace SGL
             this.endTime = endTime;
             this.startParams = startParams;
             this.endParams = endParams;
+        }
+
+
+
+        public String ToString()
+        {
+            return "SbAnimation (" + animationType + "): " + easing + "," + startTime + "," + endTime + "," + startParams.ToString() + "," + endParams.ToString(); 
         }
     }
 }
