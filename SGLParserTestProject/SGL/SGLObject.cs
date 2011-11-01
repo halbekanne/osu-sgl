@@ -8,7 +8,7 @@ namespace SGL
     {
         public enum Attribute
         {
-            x, y, red, green, blue, opacity, scale, scaleX, scaleY, rotate
+            x, y, red, green, blue, opacity, scale, scaleX, scaleY, rotation
         }
 
         // Init
@@ -20,7 +20,7 @@ namespace SGL
 
         // Last attributes
         public int x = 320, y = 240, red = 255, green = 255, blue = 255;
-        public double opacity = 1, scaleX = 1, scaleY = 1, rotate = 1;
+        public double opacity = 1, scale = 1, scaleX = 1, scaleY = 1, rotation = 1;
 
         // loop specific
         public Boolean loop = false;
@@ -169,54 +169,261 @@ namespace SGL
             foreach (SbCommand command in comList)
             {
 
-                switch (attr)
+                if (command is SbStandardLoop)
                 {
-                    case Attribute.x:
-                        if (command is SbStandardLoop)
+                    SbStandardLoop loop = (SbStandardLoop)command;
+                    ComList<SbCommand> loopCommands = loop.GetAnimationList();
+                    for (int count = 0; count < loop.count; count++)
+                    {
+                        if (loop.startTime + (loop.GetLongest() * (count + 1)) >= time)
                         {
-                            SbStandardLoop loop = (SbStandardLoop)command;
-                            ComList<SbCommand> loopCommands = loop.GetAnimationList();
-                            for (int count = 0; count < loop.count; count++)
+                            int offset = loop.startTime + (loop.GetLongest() * count);
+                            return GetAttributeAtTime(loopCommands.GetOffsetList(offset), attr, time);
+                        }
+                    }
+                }
+                else if (command is SbTriggerLoop)
+                {
+                    // Do nothing
+                }
+                else
+                {
+
+                    switch (attr)
+                    {
+                        case Attribute.x:
+                            if (command is SbAnimation)
                             {
-                                if (loop.startTime + (loop.GetLongest() * (count + 1)) >= time)
+                                SbAnimation comAnim = (SbAnimation)command;
+                                if (comAnim.animationType == SbAnimation.AnimationType.move || comAnim.animationType == SbAnimation.AnimationType.moveX)
                                 {
-                                    int offset = loop.startTime + (loop.GetLongest() * count);
-                                    return GetAttributeAtTime(loopCommands.GetOffsetList(offset), attr, time);
+                                    if (comAnim.endTime >= time)
+                                    {
+                                        Console.WriteLine(comAnim.ToString());
+                                        // first, zero-base everything
+                                        int zeroEnd = comAnim.endTime - comAnim.startTime;
+                                        int zeroTime = time - comAnim.startTime;
+
+                                        // hand it over to the calc
+                                        float part = CalcAnimationPosition(zeroEnd, zeroTime, comAnim.easing);
+
+                                        // For move and moveX, parameter 0 is the x value
+                                        int span = (int)(comAnim.endParams[0] - comAnim.startParams[0]);
+                                        return (float)(comAnim.startParams[0] + (span * part));
+                                    }
                                 }
                             }
-                        }
-                        if (command is SbAnimation)
-                        {
-                            SbAnimation comAnim = (SbAnimation)command;
-                            if (comAnim.animationType == SbAnimation.AnimationType.move || comAnim.animationType == SbAnimation.AnimationType.moveX)
+                            break;
+                        case Attribute.y:
+                            if (command is SbAnimation)
                             {
-                                if (comAnim.endTime >= time)
+                                SbAnimation comAnim = (SbAnimation)command;
+                                if (comAnim.animationType == SbAnimation.AnimationType.move || comAnim.animationType == SbAnimation.AnimationType.moveY)
                                 {
-                                    Console.WriteLine(comAnim.ToString());
-                                    // should be the only event
-                                    // calculate X position
-                                    // first, zero-base everything
-                                    int zeroEnd = comAnim.endTime - comAnim.startTime;
-                                    int zeroTime = time - comAnim.startTime;
+                                    if (comAnim.endTime >= time)
+                                    {
+                                        Console.WriteLine(comAnim.ToString());
+                                        // first, zero-base everything
+                                        int zeroEnd = comAnim.endTime - comAnim.startTime;
+                                        int zeroTime = time - comAnim.startTime;
 
-                                    Console.WriteLine("zeroEnd: " + zeroEnd);
-                                    Console.WriteLine("zeroTime: " + zeroTime);
+                                        // hand it over to the calc
+                                        float part = CalcAnimationPosition(zeroEnd, zeroTime, comAnim.easing);
 
-                                    // hand it over to the calc
-                                    float part = CalcAnimationPosition(zeroEnd, zeroTime, comAnim.easing);
-
-
-
-                                    // For move and moveX, parameter 0 is the x value
-                                    int span = (int)(comAnim.endParams[0] - comAnim.startParams[0]);
-                                    Console.WriteLine("span: " + span);
-                                    Console.WriteLine("result: " + ((float)(comAnim.startParams[0] + (span * part))));
-                                    return (float)(comAnim.startParams[0] + (span * part));
+                                        // For move, parameter 1 is the y value, for moveY, 0
+                                        int paramNum = comAnim.animationType == SbAnimation.AnimationType.move ? 1 : 0;
+                                        int span = (int)(comAnim.endParams[paramNum] - comAnim.startParams[paramNum]);
+                                        return (float)(comAnim.startParams[paramNum] + (span * part));
+                                    }
                                 }
                             }
-                        }
-                        break;
+                            break;
+                        case Attribute.opacity:
+                            if (command is SbAnimation)
+                            {
+                                SbAnimation comAnim = (SbAnimation)command;
+                                if (comAnim.animationType == SbAnimation.AnimationType.fade)
+                                {
+                                    if (comAnim.endTime >= time)
+                                    {
+                                        Console.WriteLine(comAnim.ToString());
+                                        // first, zero-base everything
+                                        int zeroEnd = comAnim.endTime - comAnim.startTime;
+                                        int zeroTime = time - comAnim.startTime;
 
+                                        // hand it over to the calc
+                                        float part = CalcAnimationPosition(zeroEnd, zeroTime, comAnim.easing);
+
+                                        // 0
+                                        float span = (float)(comAnim.endParams[0] - comAnim.startParams[0]);
+                                        return (float)(comAnim.startParams[0] + (span * part));
+                                    }
+                                }
+                            }
+                            break;
+                        case Attribute.scale:
+                            if (command is SbAnimation)
+                            {
+                                SbAnimation comAnim = (SbAnimation)command;
+                                if (comAnim.animationType == SbAnimation.AnimationType.scale)
+                                {
+                                    if (comAnim.endTime >= time)
+                                    {
+                                        Console.WriteLine(comAnim.ToString());
+                                        // first, zero-base everything
+                                        int zeroEnd = comAnim.endTime - comAnim.startTime;
+                                        int zeroTime = time - comAnim.startTime;
+
+                                        // hand it over to the calc
+                                        float part = CalcAnimationPosition(zeroEnd, zeroTime, comAnim.easing);
+
+                                        // 0
+                                        float span = (float)(comAnim.endParams[0] - comAnim.startParams[0]);
+                                        return (float)(comAnim.startParams[0] + (span * part));
+                                    }
+                                }
+                            }
+                            break;
+                        case Attribute.scaleX:
+                            if (command is SbAnimation)
+                            {
+                                SbAnimation comAnim = (SbAnimation)command;
+                                if (comAnim.animationType == SbAnimation.AnimationType.scaleVec)
+                                {
+                                    if (comAnim.endTime >= time)
+                                    {
+                                        Console.WriteLine(comAnim.ToString());
+                                        // first, zero-base everything
+                                        int zeroEnd = comAnim.endTime - comAnim.startTime;
+                                        int zeroTime = time - comAnim.startTime;
+
+                                        // hand it over to the calc
+                                        float part = CalcAnimationPosition(zeroEnd, zeroTime, comAnim.easing);
+
+                                        // x = 0
+                                        float span = (float)(comAnim.endParams[0] - comAnim.startParams[0]);
+                                        return (float)(comAnim.startParams[0] + (span * part));
+                                    }
+                                }
+                            }
+                            break;
+                        case Attribute.scaleY:
+                            if (command is SbAnimation)
+                            {
+                                SbAnimation comAnim = (SbAnimation)command;
+                                if (comAnim.animationType == SbAnimation.AnimationType.scaleVec)
+                                {
+                                    if (comAnim.endTime >= time)
+                                    {
+                                        Console.WriteLine(comAnim.ToString());
+                                        // first, zero-base everything
+                                        int zeroEnd = comAnim.endTime - comAnim.startTime;
+                                        int zeroTime = time - comAnim.startTime;
+
+                                        // hand it over to the calc
+                                        float part = CalcAnimationPosition(zeroEnd, zeroTime, comAnim.easing);
+
+                                        // y = 1
+                                        float span = (float)(comAnim.endParams[1] - comAnim.startParams[1]);
+                                        return (float)(comAnim.startParams[1] + (span * part));
+                                    }
+                                }
+                            }
+                            break;
+                        case Attribute.rotation:
+                            if (command is SbAnimation)
+                            {
+                                SbAnimation comAnim = (SbAnimation)command;
+                                if (comAnim.animationType == SbAnimation.AnimationType.rotate)
+                                {
+                                    if (comAnim.endTime >= time)
+                                    {
+                                        Console.WriteLine(comAnim.ToString());
+                                        // first, zero-base everything
+                                        int zeroEnd = comAnim.endTime - comAnim.startTime;
+                                        int zeroTime = time - comAnim.startTime;
+
+                                        // hand it over to the calc
+                                        float part = CalcAnimationPosition(zeroEnd, zeroTime, comAnim.easing);
+
+                                        // 0
+                                        float span = (float)(comAnim.endParams[0] - comAnim.startParams[0]);
+                                        return (float)(comAnim.startParams[0] + (span * part));
+                                    }
+                                }
+                            }
+                            break;
+                        case Attribute.red:
+                            if (command is SbAnimation)
+                            {
+                                SbAnimation comAnim = (SbAnimation)command;
+                                if (comAnim.animationType == SbAnimation.AnimationType.color)
+                                {
+                                    if (comAnim.endTime >= time)
+                                    {
+                                        Console.WriteLine(comAnim.ToString());
+                                        // first, zero-base everything
+                                        int zeroEnd = comAnim.endTime - comAnim.startTime;
+                                        int zeroTime = time - comAnim.startTime;
+
+                                        // hand it over to the calc
+                                        float part = CalcAnimationPosition(zeroEnd, zeroTime, comAnim.easing);
+
+                                        // red = 0
+                                        int span = (int)(comAnim.endParams[0] - comAnim.startParams[0]);
+                                        return (float)(comAnim.startParams[0] + (span * part));
+                                    }
+                                }
+                            }
+                            break;
+                        case Attribute.green:
+                            if (command is SbAnimation)
+                            {
+                                SbAnimation comAnim = (SbAnimation)command;
+                                if (comAnim.animationType == SbAnimation.AnimationType.color)
+                                {
+                                    if (comAnim.endTime >= time)
+                                    {
+                                        Console.WriteLine(comAnim.ToString());
+                                        // first, zero-base everything
+                                        int zeroEnd = comAnim.endTime - comAnim.startTime;
+                                        int zeroTime = time - comAnim.startTime;
+
+                                        // hand it over to the calc
+                                        float part = CalcAnimationPosition(zeroEnd, zeroTime, comAnim.easing);
+
+                                        // green = 1
+                                        int span = (int)(comAnim.endParams[1] - comAnim.startParams[1]);
+                                        return (float)(comAnim.startParams[1] + (span * part));
+                                    }
+                                }
+                            }
+                            break;
+                        case Attribute.blue:
+                            if (command is SbAnimation)
+                            {
+                                SbAnimation comAnim = (SbAnimation)command;
+                                if (comAnim.animationType == SbAnimation.AnimationType.color)
+                                {
+                                    if (comAnim.endTime >= time)
+                                    {
+                                        Console.WriteLine(comAnim.ToString());
+                                        // first, zero-base everything
+                                        int zeroEnd = comAnim.endTime - comAnim.startTime;
+                                        int zeroTime = time - comAnim.startTime;
+
+                                        // hand it over to the calc
+                                        float part = CalcAnimationPosition(zeroEnd, zeroTime, comAnim.easing);
+
+                                        // blue = 2
+                                        int span = (int)(comAnim.endParams[2] - comAnim.startParams[2]);
+                                        return (float)(comAnim.startParams[2] + (span * part));
+                                    }
+                                }
+                            }
+                            break;
+                        default: throw new Exception("Attribute isn't implemented yet");
+                    }
                 }
 
 

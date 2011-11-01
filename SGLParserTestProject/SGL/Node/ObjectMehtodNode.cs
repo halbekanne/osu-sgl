@@ -160,8 +160,7 @@ namespace SGL.Node
                     CheckRange("scalefactor", values[0], 0);
                     double[] startParams = new double[] { values[0].AsFloat() };
                     AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.scale, 0, offset, offset, startParams, startParams));
-                    obj.scaleX = values[0].AsFloat();
-                    obj.scaleY = values[0].AsFloat();
+                    obj.scale = values[0].AsFloat();;
                     //obj.AddSbCode(" S,0," + offset + "," + offset + ",," + values[0].ToString());
                 }
                 else if (values.Count == 2)
@@ -171,8 +170,7 @@ namespace SGL.Node
                     int time = offset + values[0].AsInteger();
                     double[] startParams = new double[] { values[1].AsFloat() };
                     AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.scale, 0, time, offset, startParams, startParams));
-                    obj.scaleX = values[1].AsFloat();
-                    obj.scaleY = values[1].AsFloat();
+                    obj.scale = values[1].AsFloat();
                     //obj.AddSbCode(" S,0," + time + "," + time + ",," + values[1].ToString());
                 }
                 else if (values.Count == 4)
@@ -185,8 +183,7 @@ namespace SGL.Node
                     double[] startParams = new double[] { values[2].AsFloat() };
                     double[] endParams = new double[] { values[3].AsFloat() };
                     AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.scale, 0, stime, etime, startParams, endParams));
-                    obj.scaleX = values[3].AsFloat();
-                    obj.scaleY = values[3].AsFloat();
+                    obj.scale = values[3].AsFloat();
                     //obj.AddSbCode(" S,0," + stime + "," + etime + "," + values[2].ToString() + "," + values[3].ToString());
                 }
                 else if (values.Count == 5)
@@ -201,8 +198,7 @@ namespace SGL.Node
                     double[] startParams = new double[] { values[3].AsFloat() };
                     double[] endParams = new double[] { values[4].AsFloat() };
                     AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.scale, 0, stime, etime, startParams, endParams));
-                    obj.scaleX = values[4].AsFloat();
-                    obj.scaleY = values[4].AsFloat();
+                    obj.scale = values[4].AsFloat();
                     //obj.AddSbCode(" S," + values[0].ToString() + "," + stime + "," + etime + "," + values[3].ToString() + "," + values[4].ToString());
                 }
                 else
@@ -217,7 +213,7 @@ namespace SGL.Node
                     CheckParameters("rotate", values, new String[] { "number" });
                     double[] startParams = new double[] { values[0].AsFloat() };
                     AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.rotate, 0, offset, offset, startParams, startParams));
-                    obj.rotate = values[0].AsFloat();
+                    obj.rotation = values[0].AsFloat();
                     //obj.AddSbCode(" R,0," + offset + "," + offset + ",," + values[0].ToString());
                 }
                 else if (values.Count == 2)
@@ -226,7 +222,7 @@ namespace SGL.Node
                     int time = offset + values[0].AsInteger();
                     double[] startParams = new double[] { values[1].AsFloat() };
                     AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.rotate, 0, time, offset, startParams, startParams));
-                    obj.rotate = values[1].AsFloat();
+                    obj.rotation = values[1].AsFloat();
                     //obj.AddSbCode(" R,0," + time + "," + time + ",," + values[1].ToString());
                 }
                 else if (values.Count == 4)
@@ -237,7 +233,7 @@ namespace SGL.Node
                     double[] startParams = new double[] { values[2].AsFloat() };
                     double[] endParams = new double[] { values[3].AsFloat() };
                     AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.rotate, 0, stime, etime, startParams, endParams));
-                    obj.rotate = values[3].AsFloat();
+                    obj.rotation = values[3].AsFloat();
                     //obj.AddSbCode(" R,0," + stime + "," + etime + "," + values[2].ToString() + "," + values[3].ToString());
                 }
                 else if (values.Count == 5)
@@ -250,7 +246,7 @@ namespace SGL.Node
                     double[] startParams = new double[] { values[3].AsFloat() };
                     double[] endParams = new double[] { values[4].AsFloat() };
                     AddCommandToList(obj, new SbAnimation(SbAnimation.AnimationType.rotate, 0, stime, etime, startParams, endParams));
-                    obj.rotate = values[4].AsFloat();
+                    obj.rotation = values[4].AsFloat();
                     //obj.AddSbCode(" R," + values[0].ToString() + "," + stime + "," + etime + "," + values[3].ToString() + "," + values[4].ToString());
                 }
                 else
@@ -531,6 +527,159 @@ namespace SGL.Node
                 {
                     // Parameter representing a specific time, gonna look up/calc what x is at that time
                     return new SGLValue((int)obj.GetAttributeAtTime(SGLObject.Attribute.x,values[0].AsInteger()));
+                }
+                else
+                {
+                    throw new SGLCompilerException(GetLine(), "method undefined", "The object method '" + method + "' is undefined for " + values.Count + " parameters.");
+                }
+            }
+            else if (method.Equals("getY"))
+            {
+                if (values.Count == 0)
+                {
+                    // Simply returns the last value of x for this object
+                    return new SGLValue(obj.y);
+                }
+                else if (values.Count == 1)
+                {
+                    // Parameter representing a specific time, gonna look up/calc what x is at that time
+                    return new SGLValue((int)obj.GetAttributeAtTime(SGLObject.Attribute.y, values[0].AsInteger()));
+                }
+                else
+                {
+                    throw new SGLCompilerException(GetLine(), "method undefined", "The object method '" + method + "' is undefined for " + values.Count + " parameters.");
+                }
+            }
+            else if (method.Equals("getOpacity"))
+            {
+                if (values.Count == 0)
+                {
+                    // Simply returns the last value of x for this object
+                    return new SGLValue(obj.opacity);
+                }
+                else if (values.Count == 1)
+                {
+                    // Parameter representing a specific time, gonna look up/calc what x is at that time
+                    return new SGLValue((double)obj.GetAttributeAtTime(SGLObject.Attribute.opacity, values[0].AsInteger()));
+                }
+                else
+                {
+                    throw new SGLCompilerException(GetLine(), "method undefined", "The object method '" + method + "' is undefined for " + values.Count + " parameters.");
+                }
+            }
+            else if (method.Equals("getScale"))
+            {
+                if (values.Count == 0)
+                {
+                    // Simply returns the last value of x for this object
+                    return new SGLValue(obj.scale);
+                }
+                else if (values.Count == 1)
+                {
+                    // Parameter representing a specific time, gonna look up/calc what x is at that time
+                    return new SGLValue((double)obj.GetAttributeAtTime(SGLObject.Attribute.scale, values[0].AsInteger()));
+                }
+                else
+                {
+                    throw new SGLCompilerException(GetLine(), "method undefined", "The object method '" + method + "' is undefined for " + values.Count + " parameters.");
+                }
+            }
+            else if (method.Equals("getScaleX"))
+            {
+                if (values.Count == 0)
+                {
+                    // Simply returns the last value of x for this object
+                    return new SGLValue(obj.scaleX);
+                }
+                else if (values.Count == 1)
+                {
+                    // Parameter representing a specific time, gonna look up/calc what x is at that time
+                    return new SGLValue((double)obj.GetAttributeAtTime(SGLObject.Attribute.scaleX, values[0].AsInteger()));
+                }
+                else
+                {
+                    throw new SGLCompilerException(GetLine(), "method undefined", "The object method '" + method + "' is undefined for " + values.Count + " parameters.");
+                }
+            }
+            else if (method.Equals("getScaleY"))
+            {
+                if (values.Count == 0)
+                {
+                    // Simply returns the last value of x for this object
+                    return new SGLValue(obj.scaleY);
+                }
+                else if (values.Count == 1)
+                {
+                    // Parameter representing a specific time, gonna look up/calc what x is at that time
+                    return new SGLValue((double)obj.GetAttributeAtTime(SGLObject.Attribute.scaleY, values[0].AsInteger()));
+                }
+                else
+                {
+                    throw new SGLCompilerException(GetLine(), "method undefined", "The object method '" + method + "' is undefined for " + values.Count + " parameters.");
+                }
+            }
+            else if (method.Equals("getRotation"))
+            {
+                if (values.Count == 0)
+                {
+                    // Simply returns the last value of x for this object
+                    return new SGLValue(obj.rotation);
+                }
+                else if (values.Count == 1)
+                {
+                    // Parameter representing a specific time, gonna look up/calc what x is at that time
+                    return new SGLValue((double)obj.GetAttributeAtTime(SGLObject.Attribute.rotation, values[0].AsInteger()));
+                }
+                else
+                {
+                    throw new SGLCompilerException(GetLine(), "method undefined", "The object method '" + method + "' is undefined for " + values.Count + " parameters.");
+                }
+            }
+            else if (method.Equals("getRed"))
+            {
+                if (values.Count == 0)
+                {
+                    // Simply returns the last value of x for this object
+                    return new SGLValue(obj.red);
+                }
+                else if (values.Count == 1)
+                {
+                    // Parameter representing a specific time, gonna look up/calc what x is at that time
+                    return new SGLValue((int)obj.GetAttributeAtTime(SGLObject.Attribute.red, values[0].AsInteger()));
+                }
+                else
+                {
+                    throw new SGLCompilerException(GetLine(), "method undefined", "The object method '" + method + "' is undefined for " + values.Count + " parameters.");
+                }
+            }
+            else if (method.Equals("getGreen"))
+            {
+                if (values.Count == 0)
+                {
+                    // Simply returns the last value of x for this object
+                    return new SGLValue(obj.green);
+                }
+                else if (values.Count == 1)
+                {
+                    // Parameter representing a specific time, gonna look up/calc what x is at that time
+                    return new SGLValue((int)obj.GetAttributeAtTime(SGLObject.Attribute.green, values[0].AsInteger()));
+                }
+                else
+                {
+                    throw new SGLCompilerException(GetLine(), "method undefined", "The object method '" + method + "' is undefined for " + values.Count + " parameters.");
+                }
+            }
+            else if (method.Equals("getBlue"))
+            {
+                if (values.Count == 0)
+                {
+                    // Simply returns the last value of x for this object
+                    return new SGLValue(obj.blue);
+                }
+                else if (values.Count == 1)
+                {
+                    // Parameter representing a specific time, gonna look up/calc what x is at that time
+                    return new SGLValue((int)obj.GetAttributeAtTime(SGLObject.Attribute.blue, values[0].AsInteger()));
                 }
                 else
                 {
