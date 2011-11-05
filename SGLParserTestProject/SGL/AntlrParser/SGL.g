@@ -479,7 +479,7 @@ FloatType
     
 // types for Pictures/Animations    
 ObjectType
-	:	'object'
+	:	'Object'
 	;
 	
 Sprite

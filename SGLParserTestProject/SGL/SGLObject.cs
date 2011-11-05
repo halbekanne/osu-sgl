@@ -54,7 +54,17 @@ namespace SGL
         {
             if (o is SGLObject)
             {
-                return this.GetPriority() - ((SGLObject)o).GetPriority();
+                SGLObject obj = (SGLObject)o;
+                if (this.layer != obj.layer)
+                {
+                    // Sort by layer
+                    return GetLayerNumber(this.layer) - GetLayerNumber(obj.layer);
+                }
+                else
+                {
+                    // Sort by priority
+                    return this.GetPriority() - (obj).GetPriority();
+                }
             }
             else
             {
@@ -148,6 +158,18 @@ namespace SGL
 
 
         // Special methods
+        public int GetLayerNumber()
+        {
+            return GetLayerNumber(this.layer);
+        }
+
+        protected int GetLayerNumber(string layer) {
+            if (layer.Equals("Background")) return 0;
+            if (layer.Equals("Fail")) return 1;
+            if (layer.Equals("Pass")) return 2;
+            if (layer.Equals("Foreground")) return 3;
+            throw new Exception("Layer type undefined");
+        }
 
 
         public float GetAttributeAtTime(Attribute attr, int time)

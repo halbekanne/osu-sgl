@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using SGL;
 using System.Threading;
+using System.IO;
 
 namespace SGLTest
 {
@@ -31,6 +32,7 @@ namespace SGLTest
             syntaxSGL.SyntaxFile = Application.StartupPath + @"\SGL.syn";
             //Console.WriteLine("Path: " + Application.StartupPath + @"\SGL.syn");
             SGLBox.ShowScopeIndicator = true;
+            syntaxStoryboard.SyntaxFile = Application.StartupPath + @"\OSB.syn";
 
             //
             
@@ -123,7 +125,7 @@ namespace SGLTest
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            String input = Microsoft.VisualBasic.Interaction.InputBox("Please describe the error you found in the box below", "Error Report System", "Default", SystemInformation.PrimaryMonitorSize.Width / 2 - 100, SystemInformation.PrimaryMonitorSize.Height / 2 - 100);
+            String input = Microsoft.VisualBasic.Interaction.InputBox("Please describe the error you found in the box below", "Error Report System", "", SystemInformation.PrimaryMonitorSize.Width / 2 - 100, SystemInformation.PrimaryMonitorSize.Height / 2 - 100);
 
             if (input.Length > 10)
             {
@@ -144,6 +146,87 @@ namespace SGLTest
         private void CopyrightLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void miNew_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure that you want to make a new document? All unsaved changes will get lost.";
+            string caption = "Confirmation";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Display the MessageBox
+            result = MessageBox.Show(this, message, caption, buttons, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                // Clear all boxes
+                SGLBox.Document.Text = "";
+                storyboardBox.Document.Text = "";
+                errorBox.Text = "";
+                statusLabel.Text = "";
+            }
+        }
+
+        private void miOpen_Click(object sender, EventArgs e)
+        {
+            // Displays an OpenFileDialog so the user can select a file.
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Storyboard Generation File|*.sgf";
+            openFileDialog1.Title = "Select a File";
+
+            // Show the Dialog.
+            // If the user clicked OK in the dialog and
+            // a .sgf file was selected, open it.
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader reader = new StreamReader(openFileDialog1.OpenFile());
+                SGLBox.Document.Text = reader.ReadToEnd();
+            }
+        }
+
+        private void miSaveSgf_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Storyboard Generation File|*.sgf";
+            saveFileDialog1.Title = "Save the Storyboard Generation File";
+            saveFileDialog1.ShowDialog();
+
+            // If the file name is not an empty string open it for saving.
+            if (saveFileDialog1.FileName != "")
+            {
+                // Saves the Image via a FileStream created by the OpenFile method.
+                System.IO.StreamWriter file = new System.IO.StreamWriter(saveFileDialog1.OpenFile());
+                // Saves the Image in the appropriate ImageFormat based upon the
+                // File type selected in the dialog box.
+                // NOTE that the FilterIndex property is one-based.
+
+                file.Write(SGLBox.Document.Text);
+
+                file.Close();
+            }
+        }
+
+        private void miSaveOsb_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Osu Storyboard File|*.osb";
+            saveFileDialog1.Title = "Save the Storyboard File";
+            saveFileDialog1.ShowDialog();
+
+            // If the file name is not an empty string open it for saving.
+            if (saveFileDialog1.FileName != "")
+            {
+                // Saves the Image via a FileStream created by the OpenFile method.
+                System.IO.StreamWriter file = new System.IO.StreamWriter(saveFileDialog1.OpenFile());
+                // Saves the Image in the appropriate ImageFormat based upon the
+                // File type selected in the dialog box.
+                // NOTE that the FilterIndex property is one-based.
+
+                file.Write(storyboardBox.Document.Text);
+                
+                file.Close();
+            }
         }
 
 

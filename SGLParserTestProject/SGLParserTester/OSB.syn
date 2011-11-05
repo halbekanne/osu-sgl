@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Language Name="OSB" Startblock="OSB Code">
+    <Block Name="OSB Code" Style="OSB Code" IsMultiline="true">
+        <Bracket Start="[" End="]" Style="OSB Code" />
+		<Keywords>
+			<PatternGroup Name="Objects" Style="SGL Keyword" CaseSensitive="true">
+                     <Patterns>
+                       Sprite Animation
+                     </Patterns>
+            </PatternGroup>
+
+      <PatternGroup Name="Keywords" Style="SGL Types" CaseSensitive="true">
+        <Patterns>
+          Background Fail Pass Foreground
+          TopLeft TopCentre TopRight
+          CentreLeft Centre CentreRight
+          BottomLeft BottomCentre BottomRight
+        </Patterns>
+      </PatternGroup>
+			
+			<PatternGroup Name="Types" Style="SGL Class" CaseSensitive="true">
+                     <Patterns>
+                     F M MX MY S V R C L T P H A
+                     </Patterns>
+            </PatternGroup>
+		
+			<PatternGroup Name="Numbers" Style="SGL Number">
+				<Pattern Text="([0-9]+\.[0-9]*)" IsComplex="true" />
+				<Pattern Text="([0-9]+)" IsComplex="true" />
+			</PatternGroup>
+		</Keywords>
+		
+		<!-- Operators that can exist inside this block -->
+		<Operators>
+			<PatternGroup name="Operators" Style="SGL Operator">
+				<Pattern Text="," />
+			</PatternGroup>
+		</Operators>
+		
+		<ChildBlocks>
+			<Child Name="SGL String" />
+			<Child Name="SGL Multiline Comment" />
+			<Child Name="SGL Singleline Comment" />
+		</ChildBlocks>
+		
+		
+    </Block>
+	
+  
+	
+	<Block Name="SGL Multiline Comment" Style="SGL Comment" EscapeChar="" IsMultiline="true">
+		<Scope Start="/*" End="*/" Style="SGL Comment" Text="/*...*/"/>
+	</Block>
+	
+	<Block Name="SGL Singleline Comment" Style="SGL Comment" EscapeChar="" IsMultiline="false">
+		<Scope Start="//" End="" Style="SGL Comment" />
+	</Block>
+	
+	<Block Name="SGL String" Style="SGL String" EscapeChar="\" IsMultiline="false">
+		<Scope Start="&quot;" End="&quot;" EscapeChar="\" Style="SGL String" />
+	</Block>
+	
+	
+	
+	<Style Name="SGL Code"
+	ForeColor=""
+	BackColor=""
+	Bold="false"
+	Italic="false"
+	Underline="false" />
+	
+	<Style Name="SGL Operator"
+	ForeColor=""
+	BackColor=""
+	Bold="false"
+	Italic="false"
+	Underline="false" />
+	
+	<Style Name="SGL Block"
+	ForeColor=""
+	BackColor=""
+	Bold="false"
+	Italic="false"
+	Underline="false" />
+	
+	<Style Name="SGL Keyword"
+	ForeColor="Blue"
+	BackColor=""
+	Bold="true"
+	Italic="false"
+	Underline="false" />
+	
+	<Style Name="SGL Types"
+	ForeColor="Blue"
+	BackColor=""
+	Bold="false"
+	Italic="false"
+	Underline="false" />	
+	
+	<Style Name="SGL Comment"
+	ForeColor="Green"
+	BackColor=""
+	Bold="false"
+	Italic="false"
+	Underline="false" />
+	
+	<Style Name="SGL Number"
+	ForeColor="Teal"
+	BackColor=""
+	Bold="false"
+	Italic="false"
+	Underline="false" />
+	
+	<Style Name="SGL String"
+	ForeColor="Red"
+	BackColor=""
+	Bold="false"
+	Italic="false"
+	Underline="false" />
+	
+	<Style Name="SGL Class"
+	ForeColor="Indigo"
+	BackColor=""
+	Bold="false"
+	Italic="false"
+	Underline="false" />
+	
+</Language>

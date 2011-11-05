@@ -45,6 +45,13 @@
             this.compileSBButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.CopyrightLabel = new System.Windows.Forms.ToolStripLabel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.miOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.miSaveSgl = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSaveOsb = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl.SuspendLayout();
             this.tabSGL.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -52,6 +59,7 @@
             this.splitContainer1.SuspendLayout();
             this.tabSB.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -59,10 +67,10 @@
             this.tabControl.Controls.Add(this.tabSGL);
             this.tabControl.Controls.Add(this.tabSB);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Location = new System.Drawing.Point(0, 0);
+            this.tabControl.Location = new System.Drawing.Point(0, 24);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(804, 514);
+            this.tabControl.Size = new System.Drawing.Size(784, 513);
             this.tabControl.TabIndex = 0;
             // 
             // tabSGL
@@ -71,7 +79,7 @@
             this.tabSGL.Location = new System.Drawing.Point(4, 22);
             this.tabSGL.Name = "tabSGL";
             this.tabSGL.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSGL.Size = new System.Drawing.Size(796, 488);
+            this.tabSGL.Size = new System.Drawing.Size(776, 487);
             this.tabSGL.TabIndex = 0;
             this.tabSGL.Text = "SGL Code";
             this.tabSGL.UseVisualStyleBackColor = true;
@@ -90,8 +98,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.errorBox);
-            this.splitContainer1.Size = new System.Drawing.Size(790, 482);
-            this.splitContainer1.SplitterDistance = 381;
+            this.splitContainer1.Size = new System.Drawing.Size(770, 481);
+            this.splitContainer1.SplitterDistance = 380;
             this.splitContainer1.TabIndex = 0;
             // 
             // SGLBox
@@ -116,7 +124,7 @@
             this.SGLBox.LockCursorUpdate = false;
             this.SGLBox.Name = "SGLBox";
             this.SGLBox.ShowScopeIndicator = false;
-            this.SGLBox.Size = new System.Drawing.Size(790, 381);
+            this.SGLBox.Size = new System.Drawing.Size(770, 380);
             this.SGLBox.SmoothScroll = false;
             this.SGLBox.SplitviewH = -4;
             this.SGLBox.SplitviewV = -4;
@@ -140,7 +148,7 @@
             this.errorBox.Multiline = true;
             this.errorBox.Name = "errorBox";
             this.errorBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.errorBox.Size = new System.Drawing.Size(790, 97);
+            this.errorBox.Size = new System.Drawing.Size(770, 97);
             this.errorBox.TabIndex = 0;
             // 
             // tabSB
@@ -149,7 +157,7 @@
             this.tabSB.Location = new System.Drawing.Point(4, 22);
             this.tabSB.Name = "tabSB";
             this.tabSB.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSB.Size = new System.Drawing.Size(796, 488);
+            this.tabSB.Size = new System.Drawing.Size(776, 487);
             this.tabSB.TabIndex = 1;
             this.tabSB.Text = "Storyboard Code";
             this.tabSB.UseVisualStyleBackColor = true;
@@ -157,6 +165,7 @@
             // storyboardBox
             // 
             this.storyboardBox.ActiveView = Alsing.Windows.Forms.ActiveView.BottomRight;
+            this.storyboardBox.AllowBreakPoints = false;
             this.storyboardBox.AutoListPosition = null;
             this.storyboardBox.AutoListSelectedText = "a123";
             this.storyboardBox.AutoListVisible = false;
@@ -175,7 +184,7 @@
             this.storyboardBox.LockCursorUpdate = false;
             this.storyboardBox.Name = "storyboardBox";
             this.storyboardBox.ShowScopeIndicator = false;
-            this.storyboardBox.Size = new System.Drawing.Size(790, 482);
+            this.storyboardBox.Size = new System.Drawing.Size(770, 481);
             this.storyboardBox.SmoothScroll = false;
             this.storyboardBox.SplitviewH = -4;
             this.storyboardBox.SplitviewV = -4;
@@ -201,10 +210,10 @@
             this.compileSBButton,
             this.toolStripButton1,
             this.CopyrightLabel});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 514);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 537);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(804, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(784, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -249,13 +258,70 @@
             this.CopyrightLabel.Text = "SGL BETA 1.0 - Dominik Halfkann (2011)";
             this.CopyrightLabel.Click += new System.EventHandler(this.CopyrightLabel_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miNew,
+            this.miOpen,
+            this.toolStripSeparator1,
+            this.miSaveSgl,
+            this.miSaveOsb});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // miNew
+            // 
+            this.miNew.Name = "miNew";
+            this.miNew.Size = new System.Drawing.Size(152, 22);
+            this.miNew.Text = "New";
+            this.miNew.Click += new System.EventHandler(this.miNew_Click);
+            // 
+            // miOpen
+            // 
+            this.miOpen.Name = "miOpen";
+            this.miOpen.Size = new System.Drawing.Size(152, 22);
+            this.miOpen.Text = "Open...";
+            this.miOpen.Click += new System.EventHandler(this.miOpen_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // miSaveSgl
+            // 
+            this.miSaveSgl.Name = "miSaveSgl";
+            this.miSaveSgl.Size = new System.Drawing.Size(152, 22);
+            this.miSaveSgl.Text = "Save .sgf";
+            this.miSaveSgl.Click += new System.EventHandler(this.miSaveSgf_Click);
+            // 
+            // miSaveOsb
+            // 
+            this.miSaveOsb.Name = "miSaveOsb";
+            this.miSaveOsb.Size = new System.Drawing.Size(152, 22);
+            this.miSaveOsb.Text = "Save .osb";
+            this.miSaveOsb.Click += new System.EventHandler(this.miSaveOsb_Click);
+            // 
             // SimpleSGLEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 539);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "SimpleSGLEditor";
             this.Text = "SimpleSGLEditor";
             this.Load += new System.EventHandler(this.SimpleSGLEditor_Load);
@@ -268,6 +334,8 @@
             this.tabSB.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +358,12 @@
         private Alsing.SourceCode.SyntaxDocument syntaxStoryboard;
         private System.Windows.Forms.ToolStripLabel CopyrightLabel;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miNew;
+        private System.Windows.Forms.ToolStripMenuItem miOpen;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem miSaveSgl;
+        private System.Windows.Forms.ToolStripMenuItem miSaveOsb;
     }
 }

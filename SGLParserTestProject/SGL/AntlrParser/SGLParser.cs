@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g 2011-10-06 21:26:47
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g 2011-11-04 23:05:41
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -235,7 +235,7 @@ public partial class SGLParser : Parser
     }
 
     override public string GrammarFileName {
-		get { return "C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g"; }
+		get { return "D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g"; }
     }
 
 
@@ -313,7 +313,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "compilationUnit"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:138:1: compilationUnit : mainBlock ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:138:1: compilationUnit : mainBlock ;
     public SGLParser.compilationUnit_return compilationUnit() // throws RecognitionException [1]
     {   
         SGLParser.compilationUnit_return retval = new SGLParser.compilationUnit_return();
@@ -327,8 +327,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:139:2: ( mainBlock )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:139:4: mainBlock
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:139:2: ( mainBlock )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:139:4: mainBlock
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -371,7 +371,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "mainBlock"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:142:1: mainBlock : ( mainStatement | methodDef )* -> ^( BLOCK ^( STATEMENTS ( mainStatement )* ) ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:142:1: mainBlock : ( mainStatement | methodDef )* -> ^( BLOCK ^( STATEMENTS ( mainStatement )* ) ) ;
     public SGLParser.mainBlock_return mainBlock() // throws RecognitionException [1]
     {   
         SGLParser.mainBlock_return retval = new SGLParser.mainBlock_return();
@@ -388,10 +388,10 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_mainStatement = new RewriteRuleSubtreeStream(adaptor,"rule mainStatement");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:143:2: ( ( mainStatement | methodDef )* -> ^( BLOCK ^( STATEMENTS ( mainStatement )* ) ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:143:4: ( mainStatement | methodDef )*
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:143:2: ( ( mainStatement | methodDef )* -> ^( BLOCK ^( STATEMENTS ( mainStatement )* ) ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:143:4: ( mainStatement | methodDef )*
             {
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:143:4: ( mainStatement | methodDef )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:143:4: ( mainStatement | methodDef )*
             	do 
             	{
             	    int alt1 = 3;
@@ -410,7 +410,7 @@ public partial class SGLParser : Parser
             	    switch (alt1) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:143:5: mainStatement
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:143:5: mainStatement
             			    {
             			    	PushFollow(FOLLOW_mainStatement_in_mainBlock206);
             			    	mainStatement2 = mainStatement();
@@ -421,7 +421,7 @@ public partial class SGLParser : Parser
             			    }
             			    break;
             			case 2 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:143:21: methodDef
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:143:21: methodDef
             			    {
             			    	PushFollow(FOLLOW_methodDef_in_mainBlock210);
             			    	methodDef3 = methodDef();
@@ -455,17 +455,17 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 144:8: -> ^( BLOCK ^( STATEMENTS ( mainStatement )* ) )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:144:11: ^( BLOCK ^( STATEMENTS ( mainStatement )* ) )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:144:11: ^( BLOCK ^( STATEMENTS ( mainStatement )* ) )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(BLOCK, "BLOCK"), root_1);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:144:19: ^( STATEMENTS ( mainStatement )* )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:144:19: ^( STATEMENTS ( mainStatement )* )
             	    {
             	    object root_2 = (object)adaptor.GetNilNode();
             	    root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(STATEMENTS, "STATEMENTS"), root_2);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:144:32: ( mainStatement )*
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:144:32: ( mainStatement )*
             	    while ( stream_mainStatement.HasNext() )
             	    {
             	        adaptor.AddChild(root_2, stream_mainStatement.NextTree());
@@ -515,7 +515,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "block"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:147:1: block : ( statement )* -> ^( BLOCK ^( STATEMENTS ( statement )* ) ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:147:1: block : ( statement )* -> ^( BLOCK ^( STATEMENTS ( statement )* ) ) ;
     public SGLParser.block_return block() // throws RecognitionException [1]
     {   
         SGLParser.block_return retval = new SGLParser.block_return();
@@ -529,10 +529,10 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_statement = new RewriteRuleSubtreeStream(adaptor,"rule statement");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:148:2: ( ( statement )* -> ^( BLOCK ^( STATEMENTS ( statement )* ) ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:148:4: ( statement )*
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:148:2: ( ( statement )* -> ^( BLOCK ^( STATEMENTS ( statement )* ) ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:148:4: ( statement )*
             {
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:148:4: ( statement )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:148:4: ( statement )*
             	do 
             	{
             	    int alt2 = 2;
@@ -547,7 +547,7 @@ public partial class SGLParser : Parser
             	    switch (alt2) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:148:4: statement
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:148:4: statement
             			    {
             			    	PushFollow(FOLLOW_statement_in_block258);
             			    	statement4 = statement();
@@ -581,17 +581,17 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 149:3: -> ^( BLOCK ^( STATEMENTS ( statement )* ) )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:149:6: ^( BLOCK ^( STATEMENTS ( statement )* ) )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:149:6: ^( BLOCK ^( STATEMENTS ( statement )* ) )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(BLOCK, "BLOCK"), root_1);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:149:14: ^( STATEMENTS ( statement )* )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:149:14: ^( STATEMENTS ( statement )* )
             	    {
             	    object root_2 = (object)adaptor.GetNilNode();
             	    root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(STATEMENTS, "STATEMENTS"), root_2);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:149:27: ( statement )*
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:149:27: ( statement )*
             	    while ( stream_statement.HasNext() )
             	    {
             	        adaptor.AddChild(root_2, stream_statement.NextTree());
@@ -641,7 +641,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "singleBlock"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:152:1: singleBlock : semicolonStatement -> ^( BLOCK ^( STATEMENTS semicolonStatement ) ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:152:1: singleBlock : semicolonStatement -> ^( BLOCK ^( STATEMENTS semicolonStatement ) ) ;
     public SGLParser.singleBlock_return singleBlock() // throws RecognitionException [1]
     {   
         SGLParser.singleBlock_return retval = new SGLParser.singleBlock_return();
@@ -655,8 +655,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_semicolonStatement = new RewriteRuleSubtreeStream(adaptor,"rule semicolonStatement");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:153:2: ( semicolonStatement -> ^( BLOCK ^( STATEMENTS semicolonStatement ) ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:153:4: semicolonStatement
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:153:2: ( semicolonStatement -> ^( BLOCK ^( STATEMENTS semicolonStatement ) ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:153:4: semicolonStatement
             {
             	PushFollow(FOLLOW_semicolonStatement_in_singleBlock286);
             	semicolonStatement5 = semicolonStatement();
@@ -678,12 +678,12 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 154:3: -> ^( BLOCK ^( STATEMENTS semicolonStatement ) )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:154:6: ^( BLOCK ^( STATEMENTS semicolonStatement ) )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:154:6: ^( BLOCK ^( STATEMENTS semicolonStatement ) )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(BLOCK, "BLOCK"), root_1);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:154:14: ^( STATEMENTS semicolonStatement )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:154:14: ^( STATEMENTS semicolonStatement )
             	    {
             	    object root_2 = (object)adaptor.GetNilNode();
             	    root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(STATEMENTS, "STATEMENTS"), root_2);
@@ -732,7 +732,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "commonBlock"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:157:1: commonBlock : ( singleBlock | '{' block '}' );
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:157:1: commonBlock : ( singleBlock | '{' block '}' );
     public SGLParser.commonBlock_return commonBlock() // throws RecognitionException [1]
     {   
         SGLParser.commonBlock_return retval = new SGLParser.commonBlock_return();
@@ -752,7 +752,7 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:158:2: ( singleBlock | '{' block '}' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:158:2: ( singleBlock | '{' block '}' )
             int alt3 = 2;
             int LA3_0 = input.LA(1);
 
@@ -774,7 +774,7 @@ public partial class SGLParser : Parser
             switch (alt3) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:158:4: singleBlock
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:158:4: singleBlock
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -787,7 +787,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:159:4: '{' block '}'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:159:4: '{' block '}'
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -834,7 +834,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "methodDef"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:163:1: methodDef : 'method' methodType Identifier '(' ( paramList )? ')' commonBlock ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:163:1: methodDef : 'method' methodType Identifier '(' ( paramList )? ')' commonBlock ;
     public SGLParser.methodDef_return methodDef() // throws RecognitionException [1]
     {   
         SGLParser.methodDef_return retval = new SGLParser.methodDef_return();
@@ -860,8 +860,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:164:3: ( 'method' methodType Identifier '(' ( paramList )? ')' commonBlock )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:164:5: 'method' methodType Identifier '(' ( paramList )? ')' commonBlock
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:164:3: ( 'method' methodType Identifier '(' ( paramList )? ')' commonBlock )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:164:5: 'method' methodType Identifier '(' ( paramList )? ')' commonBlock
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -882,7 +882,7 @@ public partial class SGLParser : Parser
             		char_literal13_tree = (object)adaptor.Create(char_literal13);
             		adaptor.AddChild(root_0, char_literal13_tree);
 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:164:40: ( paramList )?
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:164:40: ( paramList )?
             	int alt4 = 2;
             	int LA4_0 = input.LA(1);
 
@@ -893,7 +893,7 @@ public partial class SGLParser : Parser
             	switch (alt4) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:164:40: paramList
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:164:40: paramList
             	        {
             	        	PushFollow(FOLLOW_paramList_in_methodDef360);
             	        	paramList14 = paramList();
@@ -950,7 +950,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "methodType"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:168:1: methodType : ( variableType | 'void' );
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:168:1: methodType : ( variableType | 'void' );
     public SGLParser.methodType_return methodType() // throws RecognitionException [1]
     {   
         SGLParser.methodType_return retval = new SGLParser.methodType_return();
@@ -966,7 +966,7 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:169:2: ( variableType | 'void' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:169:2: ( variableType | 'void' )
             int alt5 = 2;
             int LA5_0 = input.LA(1);
 
@@ -988,7 +988,7 @@ public partial class SGLParser : Parser
             switch (alt5) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:169:4: variableType
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:169:4: variableType
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -1001,7 +1001,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:170:4: 'void'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:170:4: 'void'
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -1045,7 +1045,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "mainStatement"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:173:1: mainStatement : statement ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:173:1: mainStatement : statement ;
     public SGLParser.mainStatement_return mainStatement() // throws RecognitionException [1]
     {   
         SGLParser.mainStatement_return retval = new SGLParser.mainStatement_return();
@@ -1059,8 +1059,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:174:2: ( statement )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:174:4: statement
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:174:2: ( statement )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:174:4: statement
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -1103,7 +1103,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "semicolonStatement"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:177:1: semicolonStatement : ( variableDeclarationList | variableAssignment | variableUnaryChange | methodCall | objectMethod | breakStat | returnStat ) ';' ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:177:1: semicolonStatement : ( variableDeclarationList | variableAssignment | variableUnaryChange | methodCall | objectMethod | breakStat | returnStat ) ';' ;
     public SGLParser.semicolonStatement_return semicolonStatement() // throws RecognitionException [1]
     {   
         SGLParser.semicolonStatement_return retval = new SGLParser.semicolonStatement_return();
@@ -1131,12 +1131,12 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:178:2: ( ( variableDeclarationList | variableAssignment | variableUnaryChange | methodCall | objectMethod | breakStat | returnStat ) ';' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:178:4: ( variableDeclarationList | variableAssignment | variableUnaryChange | methodCall | objectMethod | breakStat | returnStat ) ';'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:178:2: ( ( variableDeclarationList | variableAssignment | variableUnaryChange | methodCall | objectMethod | breakStat | returnStat ) ';' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:178:4: ( variableDeclarationList | variableAssignment | variableUnaryChange | methodCall | objectMethod | breakStat | returnStat ) ';'
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:178:4: ( variableDeclarationList | variableAssignment | variableUnaryChange | methodCall | objectMethod | breakStat | returnStat )
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:178:4: ( variableDeclarationList | variableAssignment | variableUnaryChange | methodCall | objectMethod | breakStat | returnStat )
             	int alt6 = 7;
             	switch ( input.LA(1) ) 
             	{
@@ -1204,7 +1204,7 @@ public partial class SGLParser : Parser
             	switch (alt6) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:178:5: variableDeclarationList
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:178:5: variableDeclarationList
             	        {
             	        	PushFollow(FOLLOW_variableDeclarationList_in_semicolonStatement427);
             	        	variableDeclarationList20 = variableDeclarationList();
@@ -1215,7 +1215,7 @@ public partial class SGLParser : Parser
             	        }
             	        break;
             	    case 2 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:179:4: variableAssignment
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:179:4: variableAssignment
             	        {
             	        	PushFollow(FOLLOW_variableAssignment_in_semicolonStatement433);
             	        	variableAssignment21 = variableAssignment();
@@ -1226,7 +1226,7 @@ public partial class SGLParser : Parser
             	        }
             	        break;
             	    case 3 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:180:4: variableUnaryChange
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:180:4: variableUnaryChange
             	        {
             	        	PushFollow(FOLLOW_variableUnaryChange_in_semicolonStatement439);
             	        	variableUnaryChange22 = variableUnaryChange();
@@ -1237,7 +1237,7 @@ public partial class SGLParser : Parser
             	        }
             	        break;
             	    case 4 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:181:4: methodCall
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:181:4: methodCall
             	        {
             	        	PushFollow(FOLLOW_methodCall_in_semicolonStatement445);
             	        	methodCall23 = methodCall();
@@ -1248,7 +1248,7 @@ public partial class SGLParser : Parser
             	        }
             	        break;
             	    case 5 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:182:4: objectMethod
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:182:4: objectMethod
             	        {
             	        	PushFollow(FOLLOW_objectMethod_in_semicolonStatement450);
             	        	objectMethod24 = objectMethod();
@@ -1259,7 +1259,7 @@ public partial class SGLParser : Parser
             	        }
             	        break;
             	    case 6 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:183:4: breakStat
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:183:4: breakStat
             	        {
             	        	PushFollow(FOLLOW_breakStat_in_semicolonStatement455);
             	        	breakStat25 = breakStat();
@@ -1270,7 +1270,7 @@ public partial class SGLParser : Parser
             	        }
             	        break;
             	    case 7 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:184:4: returnStat
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:184:4: returnStat
             	        {
             	        	PushFollow(FOLLOW_returnStat_in_semicolonStatement460);
             	        	returnStat26 = returnStat();
@@ -1318,7 +1318,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "oneLineStatement"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:188:1: oneLineStatement : ( variableDeclarationList | variableAssignment | variableUnaryChange );
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:188:1: oneLineStatement : ( variableDeclarationList | variableAssignment | variableUnaryChange );
     public SGLParser.oneLineStatement_return oneLineStatement() // throws RecognitionException [1]
     {   
         SGLParser.oneLineStatement_return retval = new SGLParser.oneLineStatement_return();
@@ -1336,7 +1336,7 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:189:2: ( variableDeclarationList | variableAssignment | variableUnaryChange )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:189:2: ( variableDeclarationList | variableAssignment | variableUnaryChange )
             int alt7 = 3;
             int LA7_0 = input.LA(1);
 
@@ -1374,7 +1374,7 @@ public partial class SGLParser : Parser
             switch (alt7) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:189:4: variableDeclarationList
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:189:4: variableDeclarationList
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -1387,7 +1387,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:190:4: variableAssignment
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:190:4: variableAssignment
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -1400,7 +1400,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:191:4: variableUnaryChange
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:191:4: variableUnaryChange
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -1445,7 +1445,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "statement"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:195:1: statement : ( semicolonStatement | ifStatement | atStatement | whileLoop | forLoop );
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:195:1: statement : ( semicolonStatement | ifStatement | atStatement | whileLoop | forLoop );
     public SGLParser.statement_return statement() // throws RecognitionException [1]
     {   
         SGLParser.statement_return retval = new SGLParser.statement_return();
@@ -1467,7 +1467,7 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:197:2: ( semicolonStatement | ifStatement | atStatement | whileLoop | forLoop )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:197:2: ( semicolonStatement | ifStatement | atStatement | whileLoop | forLoop )
             int alt8 = 5;
             switch ( input.LA(1) ) 
             {
@@ -1514,7 +1514,7 @@ public partial class SGLParser : Parser
             switch (alt8) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:197:4: semicolonStatement
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:197:4: semicolonStatement
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -1527,7 +1527,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:198:4: ifStatement
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:198:4: ifStatement
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -1540,7 +1540,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:199:4: atStatement
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:199:4: atStatement
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -1553,7 +1553,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:200:4: whileLoop
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:200:4: whileLoop
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -1566,7 +1566,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 5 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:201:4: forLoop
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:201:4: forLoop
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -1611,7 +1611,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "variableDeclarationList"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:208:1: variableDeclarationList : ( variableType variableDecAssignment ( ',' variableDecAssignment )* -> ( ^( VARDEF variableType variableDecAssignment ) )+ | 'global' variableType variableDecAssignment ( ',' variableDecAssignment )* -> ( ^( GLOBVARDEF variableType variableDecAssignment ) )+ );
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:208:1: variableDeclarationList : ( variableType variableDecAssignment ( ',' variableDecAssignment )* -> ( ^( VARDEF variableType variableDecAssignment ) )+ | 'global' variableType variableDecAssignment ( ',' variableDecAssignment )* -> ( ^( GLOBVARDEF variableType variableDecAssignment ) )+ );
     public SGLParser.variableDeclarationList_return variableDeclarationList() // throws RecognitionException [1]
     {   
         SGLParser.variableDeclarationList_return retval = new SGLParser.variableDeclarationList_return();
@@ -1644,7 +1644,7 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_variableDecAssignment = new RewriteRuleSubtreeStream(adaptor,"rule variableDecAssignment");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:209:2: ( variableType variableDecAssignment ( ',' variableDecAssignment )* -> ( ^( VARDEF variableType variableDecAssignment ) )+ | 'global' variableType variableDecAssignment ( ',' variableDecAssignment )* -> ( ^( GLOBVARDEF variableType variableDecAssignment ) )+ )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:209:2: ( variableType variableDecAssignment ( ',' variableDecAssignment )* -> ( ^( VARDEF variableType variableDecAssignment ) )+ | 'global' variableType variableDecAssignment ( ',' variableDecAssignment )* -> ( ^( GLOBVARDEF variableType variableDecAssignment ) )+ )
             int alt11 = 2;
             int LA11_0 = input.LA(1);
 
@@ -1666,7 +1666,7 @@ public partial class SGLParser : Parser
             switch (alt11) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:209:4: variableType variableDecAssignment ( ',' variableDecAssignment )*
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:209:4: variableType variableDecAssignment ( ',' variableDecAssignment )*
                     {
                     	PushFollow(FOLLOW_variableType_in_variableDeclarationList540);
                     	variableType36 = variableType();
@@ -1678,7 +1678,7 @@ public partial class SGLParser : Parser
                     	state.followingStackPointer--;
 
                     	stream_variableDecAssignment.Add(variableDecAssignment37.Tree);
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:209:39: ( ',' variableDecAssignment )*
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:209:39: ( ',' variableDecAssignment )*
                     	do 
                     	{
                     	    int alt9 = 2;
@@ -1693,7 +1693,7 @@ public partial class SGLParser : Parser
                     	    switch (alt9) 
                     		{
                     			case 1 :
-                    			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:209:40: ',' variableDecAssignment
+                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:209:40: ',' variableDecAssignment
                     			    {
                     			    	char_literal38=(IToken)Match(input,57,FOLLOW_57_in_variableDeclarationList545);  
                     			    	stream_57.Add(char_literal38);
@@ -1718,7 +1718,7 @@ public partial class SGLParser : Parser
 
 
                     	// AST REWRITE
-                    	// elements:          variableDecAssignment, variableType
+                    	// elements:          variableType, variableDecAssignment
                     	// token labels:      
                     	// rule labels:       retval
                     	// token list labels: 
@@ -1730,12 +1730,12 @@ public partial class SGLParser : Parser
                     	root_0 = (object)adaptor.GetNilNode();
                     	// 209:68: -> ( ^( VARDEF variableType variableDecAssignment ) )+
                     	{
-                    	    if ( !(stream_variableDecAssignment.HasNext() || stream_variableType.HasNext()) ) {
+                    	    if ( !(stream_variableType.HasNext() || stream_variableDecAssignment.HasNext()) ) {
                     	        throw new RewriteEarlyExitException();
                     	    }
-                    	    while ( stream_variableDecAssignment.HasNext() || stream_variableType.HasNext() )
+                    	    while ( stream_variableType.HasNext() || stream_variableDecAssignment.HasNext() )
                     	    {
-                    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:209:71: ^( VARDEF variableType variableDecAssignment )
+                    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:209:71: ^( VARDEF variableType variableDecAssignment )
                     	        {
                     	        object root_1 = (object)adaptor.GetNilNode();
                     	        root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(VARDEF, "VARDEF"), root_1);
@@ -1747,8 +1747,8 @@ public partial class SGLParser : Parser
                     	        }
 
                     	    }
-                    	    stream_variableDecAssignment.Reset();
                     	    stream_variableType.Reset();
+                    	    stream_variableDecAssignment.Reset();
 
                     	}
 
@@ -1756,7 +1756,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:210:4: 'global' variableType variableDecAssignment ( ',' variableDecAssignment )*
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:210:4: 'global' variableType variableDecAssignment ( ',' variableDecAssignment )*
                     {
                     	string_literal40=(IToken)Match(input,58,FOLLOW_58_in_variableDeclarationList565);  
                     	stream_58.Add(string_literal40);
@@ -1771,7 +1771,7 @@ public partial class SGLParser : Parser
                     	state.followingStackPointer--;
 
                     	stream_variableDecAssignment.Add(variableDecAssignment42.Tree);
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:210:48: ( ',' variableDecAssignment )*
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:210:48: ( ',' variableDecAssignment )*
                     	do 
                     	{
                     	    int alt10 = 2;
@@ -1786,7 +1786,7 @@ public partial class SGLParser : Parser
                     	    switch (alt10) 
                     		{
                     			case 1 :
-                    			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:210:49: ',' variableDecAssignment
+                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:210:49: ',' variableDecAssignment
                     			    {
                     			    	char_literal43=(IToken)Match(input,57,FOLLOW_57_in_variableDeclarationList572);  
                     			    	stream_57.Add(char_literal43);
@@ -1811,7 +1811,7 @@ public partial class SGLParser : Parser
 
 
                     	// AST REWRITE
-                    	// elements:          variableDecAssignment, variableType
+                    	// elements:          variableType, variableDecAssignment
                     	// token labels:      
                     	// rule labels:       retval
                     	// token list labels: 
@@ -1823,12 +1823,12 @@ public partial class SGLParser : Parser
                     	root_0 = (object)adaptor.GetNilNode();
                     	// 210:77: -> ( ^( GLOBVARDEF variableType variableDecAssignment ) )+
                     	{
-                    	    if ( !(stream_variableDecAssignment.HasNext() || stream_variableType.HasNext()) ) {
+                    	    if ( !(stream_variableType.HasNext() || stream_variableDecAssignment.HasNext()) ) {
                     	        throw new RewriteEarlyExitException();
                     	    }
-                    	    while ( stream_variableDecAssignment.HasNext() || stream_variableType.HasNext() )
+                    	    while ( stream_variableType.HasNext() || stream_variableDecAssignment.HasNext() )
                     	    {
-                    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:210:80: ^( GLOBVARDEF variableType variableDecAssignment )
+                    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:210:80: ^( GLOBVARDEF variableType variableDecAssignment )
                     	        {
                     	        object root_1 = (object)adaptor.GetNilNode();
                     	        root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(GLOBVARDEF, "GLOBVARDEF"), root_1);
@@ -1840,8 +1840,8 @@ public partial class SGLParser : Parser
                     	        }
 
                     	    }
-                    	    stream_variableDecAssignment.Reset();
                     	    stream_variableType.Reset();
+                    	    stream_variableDecAssignment.Reset();
 
                     	}
 
@@ -1881,7 +1881,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "variableDecAssignment"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:213:1: variableDecAssignment : variableName ( '=' expression )? -> variableName ( expression )? ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:213:1: variableDecAssignment : variableName ( '=' expression )? -> variableName ( expression )? ;
     public SGLParser.variableDecAssignment_return variableDecAssignment() // throws RecognitionException [1]
     {   
         SGLParser.variableDecAssignment_return retval = new SGLParser.variableDecAssignment_return();
@@ -1901,15 +1901,15 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_variableName = new RewriteRuleSubtreeStream(adaptor,"rule variableName");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:214:2: ( variableName ( '=' expression )? -> variableName ( expression )? )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:214:4: variableName ( '=' expression )?
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:214:2: ( variableName ( '=' expression )? -> variableName ( expression )? )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:214:4: variableName ( '=' expression )?
             {
             	PushFollow(FOLLOW_variableName_in_variableDecAssignment598);
             	variableName45 = variableName();
             	state.followingStackPointer--;
 
             	stream_variableName.Add(variableName45.Tree);
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:214:17: ( '=' expression )?
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:214:17: ( '=' expression )?
             	int alt12 = 2;
             	int LA12_0 = input.LA(1);
 
@@ -1920,7 +1920,7 @@ public partial class SGLParser : Parser
             	switch (alt12) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:214:18: '=' expression
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:214:18: '=' expression
             	        {
             	        	char_literal46=(IToken)Match(input,59,FOLLOW_59_in_variableDecAssignment601);  
             	        	stream_59.Add(char_literal46);
@@ -1952,7 +1952,7 @@ public partial class SGLParser : Parser
             	// 214:36: -> variableName ( expression )?
             	{
             	    adaptor.AddChild(root_0, stream_variableName.NextTree());
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:214:52: ( expression )?
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:214:52: ( expression )?
             	    if ( stream_expression.HasNext() )
             	    {
             	        adaptor.AddChild(root_0, stream_expression.NextTree());
@@ -1996,7 +1996,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "variableAssignment"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:217:1: variableAssignment : variableName '=' expression -> ^( ASSIGN variableName expression ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:217:1: variableAssignment : variableName '=' expression -> ^( ASSIGN variableName expression ) ;
     public SGLParser.variableAssignment_return variableAssignment() // throws RecognitionException [1]
     {   
         SGLParser.variableAssignment_return retval = new SGLParser.variableAssignment_return();
@@ -2016,8 +2016,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_variableName = new RewriteRuleSubtreeStream(adaptor,"rule variableName");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:218:2: ( variableName '=' expression -> ^( ASSIGN variableName expression ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:218:4: variableName '=' expression
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:218:2: ( variableName '=' expression -> ^( ASSIGN variableName expression ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:218:4: variableName '=' expression
             {
             	PushFollow(FOLLOW_variableName_in_variableAssignment624);
             	variableName48 = variableName();
@@ -2047,7 +2047,7 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 218:33: -> ^( ASSIGN variableName expression )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:218:36: ^( ASSIGN variableName expression )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:218:36: ^( ASSIGN variableName expression )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(ASSIGN, "ASSIGN"), root_1);
@@ -2094,7 +2094,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "variableName"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:226:1: variableName : Identifier ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:226:1: variableName : Identifier ;
     public SGLParser.variableName_return variableName() // throws RecognitionException [1]
     {   
         SGLParser.variableName_return retval = new SGLParser.variableName_return();
@@ -2108,8 +2108,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:227:2: ( Identifier )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:227:4: Identifier
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:227:2: ( Identifier )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:227:4: Identifier
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -2151,7 +2151,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "variableType"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:230:1: variableType : ( IntType | BooleanType | StringType | FloatType | ObjectType );
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:230:1: variableType : ( IntType | BooleanType | StringType | FloatType | ObjectType );
     public SGLParser.variableType_return variableType() // throws RecognitionException [1]
     {   
         SGLParser.variableType_return retval = new SGLParser.variableType_return();
@@ -2165,8 +2165,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:231:2: ( IntType | BooleanType | StringType | FloatType | ObjectType )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:231:2: ( IntType | BooleanType | StringType | FloatType | ObjectType )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -2217,7 +2217,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "objectMethod"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:239:1: objectMethod : variableName '.' Identifier '(' ( arguments )? ')' -> ^( OBJMETHOD variableName Identifier ( arguments )? ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:239:1: objectMethod : variableName '.' Identifier '(' ( arguments )? ')' -> ^( OBJMETHOD variableName Identifier ( arguments )? ) ;
     public SGLParser.objectMethod_return objectMethod() // throws RecognitionException [1]
     {   
         SGLParser.objectMethod_return retval = new SGLParser.objectMethod_return();
@@ -2246,8 +2246,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_variableName = new RewriteRuleSubtreeStream(adaptor,"rule variableName");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:240:2: ( variableName '.' Identifier '(' ( arguments )? ')' -> ^( OBJMETHOD variableName Identifier ( arguments )? ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:240:4: variableName '.' Identifier '(' ( arguments )? ')'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:240:2: ( variableName '.' Identifier '(' ( arguments )? ')' -> ^( OBJMETHOD variableName Identifier ( arguments )? ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:240:4: variableName '.' Identifier '(' ( arguments )? ')'
             {
             	PushFollow(FOLLOW_variableName_in_objectMethod703);
             	variableName53 = variableName();
@@ -2263,7 +2263,7 @@ public partial class SGLParser : Parser
             	char_literal56=(IToken)Match(input,53,FOLLOW_53_in_objectMethod709);  
             	stream_53.Add(char_literal56);
 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:240:36: ( arguments )?
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:240:36: ( arguments )?
             	int alt13 = 2;
             	int LA13_0 = input.LA(1);
 
@@ -2274,7 +2274,7 @@ public partial class SGLParser : Parser
             	switch (alt13) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:240:36: arguments
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:240:36: arguments
             	        {
             	        	PushFollow(FOLLOW_arguments_in_objectMethod711);
             	        	arguments57 = arguments();
@@ -2293,7 +2293,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          variableName, arguments, Identifier
+            	// elements:          arguments, Identifier, variableName
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -2305,14 +2305,14 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 240:51: -> ^( OBJMETHOD variableName Identifier ( arguments )? )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:240:54: ^( OBJMETHOD variableName Identifier ( arguments )? )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:240:54: ^( OBJMETHOD variableName Identifier ( arguments )? )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(OBJMETHOD, "OBJMETHOD"), root_1);
 
             	    adaptor.AddChild(root_1, stream_variableName.NextTree());
             	    adaptor.AddChild(root_1, stream_Identifier.NextNode());
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:240:90: ( arguments )?
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:240:90: ( arguments )?
             	    if ( stream_arguments.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_arguments.NextTree());
@@ -2359,7 +2359,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "whileLoop"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:243:1: whileLoop : 'while' expression commonBlock -> ^( 'while' expression commonBlock ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:243:1: whileLoop : 'while' expression commonBlock -> ^( 'while' expression commonBlock ) ;
     public SGLParser.whileLoop_return whileLoop() // throws RecognitionException [1]
     {   
         SGLParser.whileLoop_return retval = new SGLParser.whileLoop_return();
@@ -2379,8 +2379,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_commonBlock = new RewriteRuleSubtreeStream(adaptor,"rule commonBlock");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:244:2: ( 'while' expression commonBlock -> ^( 'while' expression commonBlock ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:244:4: 'while' expression commonBlock
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:244:2: ( 'while' expression commonBlock -> ^( 'while' expression commonBlock ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:244:4: 'while' expression commonBlock
             {
             	string_literal59=(IToken)Match(input,61,FOLLOW_61_in_whileLoop738);  
             	stream_61.Add(string_literal59);
@@ -2410,7 +2410,7 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 244:35: -> ^( 'while' expression commonBlock )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:244:38: ^( 'while' expression commonBlock )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:244:38: ^( 'while' expression commonBlock )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot(stream_61.NextNode(), root_1);
@@ -2457,7 +2457,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "forLoop"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:247:1: forLoop : 'for' '(' (dec= oneLineStatement )? ';' (cond= expression )? ';' (iter= oneLineStatement )? ')' commonBlock -> ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:247:1: forLoop : 'for' '(' (dec= oneLineStatement )? ';' (cond= expression )? ';' (iter= oneLineStatement )? ')' commonBlock -> ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock ) ;
     public SGLParser.forLoop_return forLoop() // throws RecognitionException [1]
     {   
         SGLParser.forLoop_return retval = new SGLParser.forLoop_return();
@@ -2493,8 +2493,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_oneLineStatement = new RewriteRuleSubtreeStream(adaptor,"rule oneLineStatement");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:248:2: ( 'for' '(' (dec= oneLineStatement )? ';' (cond= expression )? ';' (iter= oneLineStatement )? ')' commonBlock -> ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:248:4: 'for' '(' (dec= oneLineStatement )? ';' (cond= expression )? ';' (iter= oneLineStatement )? ')' commonBlock
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:248:2: ( 'for' '(' (dec= oneLineStatement )? ';' (cond= expression )? ';' (iter= oneLineStatement )? ')' commonBlock -> ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:248:4: 'for' '(' (dec= oneLineStatement )? ';' (cond= expression )? ';' (iter= oneLineStatement )? ')' commonBlock
             {
             	string_literal62=(IToken)Match(input,62,FOLLOW_62_in_forLoop764);  
             	stream_62.Add(string_literal62);
@@ -2502,7 +2502,7 @@ public partial class SGLParser : Parser
             	char_literal63=(IToken)Match(input,53,FOLLOW_53_in_forLoop766);  
             	stream_53.Add(char_literal63);
 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:248:17: (dec= oneLineStatement )?
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:248:17: (dec= oneLineStatement )?
             	int alt14 = 2;
             	int LA14_0 = input.LA(1);
 
@@ -2513,7 +2513,7 @@ public partial class SGLParser : Parser
             	switch (alt14) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:248:17: dec= oneLineStatement
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:248:17: dec= oneLineStatement
             	        {
             	        	PushFollow(FOLLOW_oneLineStatement_in_forLoop770);
             	        	dec = oneLineStatement();
@@ -2529,7 +2529,7 @@ public partial class SGLParser : Parser
             	char_literal64=(IToken)Match(input,56,FOLLOW_56_in_forLoop773);  
             	stream_56.Add(char_literal64);
 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:248:44: (cond= expression )?
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:248:44: (cond= expression )?
             	int alt15 = 2;
             	int LA15_0 = input.LA(1);
 
@@ -2540,7 +2540,7 @@ public partial class SGLParser : Parser
             	switch (alt15) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:248:44: cond= expression
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:248:44: cond= expression
             	        {
             	        	PushFollow(FOLLOW_expression_in_forLoop777);
             	        	cond = expression();
@@ -2556,7 +2556,7 @@ public partial class SGLParser : Parser
             	char_literal65=(IToken)Match(input,56,FOLLOW_56_in_forLoop780);  
             	stream_56.Add(char_literal65);
 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:248:65: (iter= oneLineStatement )?
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:248:65: (iter= oneLineStatement )?
             	int alt16 = 2;
             	int LA16_0 = input.LA(1);
 
@@ -2567,7 +2567,7 @@ public partial class SGLParser : Parser
             	switch (alt16) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:248:65: iter= oneLineStatement
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:248:65: iter= oneLineStatement
             	        {
             	        	PushFollow(FOLLOW_oneLineStatement_in_forLoop784);
             	        	iter = oneLineStatement();
@@ -2591,7 +2591,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          iter, dec, 62, commonBlock, cond
+            	// elements:          dec, commonBlock, cond, 62, iter
             	// token labels:      
             	// rule labels:       retval, dec, iter, cond
             	// token list labels: 
@@ -2606,17 +2606,17 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 249:2: -> ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:249:5: ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:249:5: ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot(stream_62.NextNode(), root_1);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:249:13: ^( FORDEC ( $dec)? )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:249:13: ^( FORDEC ( $dec)? )
             	    {
             	    object root_2 = (object)adaptor.GetNilNode();
             	    root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(FORDEC, "FORDEC"), root_2);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:249:22: ( $dec)?
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:249:22: ( $dec)?
             	    if ( stream_dec.HasNext() )
             	    {
             	        adaptor.AddChild(root_2, stream_dec.NextTree());
@@ -2626,12 +2626,12 @@ public partial class SGLParser : Parser
 
             	    adaptor.AddChild(root_1, root_2);
             	    }
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:249:29: ^( FORCOND ( $cond)? )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:249:29: ^( FORCOND ( $cond)? )
             	    {
             	    object root_2 = (object)adaptor.GetNilNode();
             	    root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(FORCOND, "FORCOND"), root_2);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:249:39: ( $cond)?
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:249:39: ( $cond)?
             	    if ( stream_cond.HasNext() )
             	    {
             	        adaptor.AddChild(root_2, stream_cond.NextTree());
@@ -2641,12 +2641,12 @@ public partial class SGLParser : Parser
 
             	    adaptor.AddChild(root_1, root_2);
             	    }
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:249:47: ^( FORITER ( $iter)? )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:249:47: ^( FORITER ( $iter)? )
             	    {
             	    object root_2 = (object)adaptor.GetNilNode();
             	    root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(FORITER, "FORITER"), root_2);
 
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:249:57: ( $iter)?
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:249:57: ( $iter)?
             	    if ( stream_iter.HasNext() )
             	    {
             	        adaptor.AddChild(root_2, stream_iter.NextTree());
@@ -2697,7 +2697,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "ifStatement"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:252:1: ifStatement : ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:252:1: ifStatement : ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) ;
     public SGLParser.ifStatement_return ifStatement() // throws RecognitionException [1]
     {   
         SGLParser.ifStatement_return retval = new SGLParser.ifStatement_return();
@@ -2717,15 +2717,15 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_elseStat = new RewriteRuleSubtreeStream(adaptor,"rule elseStat");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:253:2: ( ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:253:4: ifStat ( elseIfStat )* ( elseStat )?
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:253:2: ( ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:253:4: ifStat ( elseIfStat )* ( elseStat )?
             {
             	PushFollow(FOLLOW_ifStat_in_ifStatement834);
             	ifStat68 = ifStat();
             	state.followingStackPointer--;
 
             	stream_ifStat.Add(ifStat68.Tree);
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:253:11: ( elseIfStat )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:253:11: ( elseIfStat )*
             	do 
             	{
             	    int alt17 = 2;
@@ -2747,7 +2747,7 @@ public partial class SGLParser : Parser
             	    switch (alt17) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:253:11: elseIfStat
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:253:11: elseIfStat
             			    {
             			    	PushFollow(FOLLOW_elseIfStat_in_ifStatement836);
             			    	elseIfStat69 = elseIfStat();
@@ -2766,7 +2766,7 @@ public partial class SGLParser : Parser
             	loop17:
             		;	// Stops C# compiler whining that label 'loop17' has no statements
 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:253:23: ( elseStat )?
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:253:23: ( elseStat )?
             	int alt18 = 2;
             	int LA18_0 = input.LA(1);
 
@@ -2777,7 +2777,7 @@ public partial class SGLParser : Parser
             	switch (alt18) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:253:23: elseStat
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:253:23: elseStat
             	        {
             	        	PushFollow(FOLLOW_elseStat_in_ifStatement839);
             	        	elseStat70 = elseStat();
@@ -2793,7 +2793,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          elseIfStat, elseStat, ifStat
+            	// elements:          elseStat, ifStat, elseIfStat
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -2805,20 +2805,20 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 253:33: -> ^( IF ifStat ( elseIfStat )* ( elseStat )? )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:253:36: ^( IF ifStat ( elseIfStat )* ( elseStat )? )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:253:36: ^( IF ifStat ( elseIfStat )* ( elseStat )? )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(IF, "IF"), root_1);
 
             	    adaptor.AddChild(root_1, stream_ifStat.NextTree());
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:253:48: ( elseIfStat )*
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:253:48: ( elseIfStat )*
             	    while ( stream_elseIfStat.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_elseIfStat.NextTree());
 
             	    }
             	    stream_elseIfStat.Reset();
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:253:60: ( elseStat )?
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:253:60: ( elseStat )?
             	    if ( stream_elseStat.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_elseStat.NextTree());
@@ -2865,7 +2865,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "ifStat"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:255:1: ifStat : 'if' expression commonBlock -> ^( EXP expression commonBlock ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:255:1: ifStat : 'if' expression commonBlock -> ^( EXP expression commonBlock ) ;
     public SGLParser.ifStat_return ifStat() // throws RecognitionException [1]
     {   
         SGLParser.ifStat_return retval = new SGLParser.ifStat_return();
@@ -2885,8 +2885,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_commonBlock = new RewriteRuleSubtreeStream(adaptor,"rule commonBlock");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:256:2: ( 'if' expression commonBlock -> ^( EXP expression commonBlock ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:256:4: 'if' expression commonBlock
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:256:2: ( 'if' expression commonBlock -> ^( EXP expression commonBlock ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:256:4: 'if' expression commonBlock
             {
             	string_literal71=(IToken)Match(input,63,FOLLOW_63_in_ifStat864);  
             	stream_63.Add(string_literal71);
@@ -2916,7 +2916,7 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 256:32: -> ^( EXP expression commonBlock )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:256:35: ^( EXP expression commonBlock )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:256:35: ^( EXP expression commonBlock )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(EXP, "EXP"), root_1);
@@ -2963,7 +2963,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "elseIfStat"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:259:1: elseIfStat : 'else' 'if' expression commonBlock -> ^( EXP expression commonBlock ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:259:1: elseIfStat : 'else' 'if' expression commonBlock -> ^( EXP expression commonBlock ) ;
     public SGLParser.elseIfStat_return elseIfStat() // throws RecognitionException [1]
     {   
         SGLParser.elseIfStat_return retval = new SGLParser.elseIfStat_return();
@@ -2986,8 +2986,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_commonBlock = new RewriteRuleSubtreeStream(adaptor,"rule commonBlock");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:260:2: ( 'else' 'if' expression commonBlock -> ^( EXP expression commonBlock ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:260:4: 'else' 'if' expression commonBlock
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:260:2: ( 'else' 'if' expression commonBlock -> ^( EXP expression commonBlock ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:260:4: 'else' 'if' expression commonBlock
             {
             	string_literal74=(IToken)Match(input,64,FOLLOW_64_in_elseIfStat889);  
             	stream_64.Add(string_literal74);
@@ -3008,7 +3008,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          commonBlock, expression
+            	// elements:          expression, commonBlock
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -3020,7 +3020,7 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 260:39: -> ^( EXP expression commonBlock )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:260:42: ^( EXP expression commonBlock )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:260:42: ^( EXP expression commonBlock )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(EXP, "EXP"), root_1);
@@ -3067,7 +3067,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "elseStat"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:263:1: elseStat : 'else' commonBlock -> ^( EXP commonBlock ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:263:1: elseStat : 'else' commonBlock -> ^( EXP commonBlock ) ;
     public SGLParser.elseStat_return elseStat() // throws RecognitionException [1]
     {   
         SGLParser.elseStat_return retval = new SGLParser.elseStat_return();
@@ -3084,8 +3084,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_commonBlock = new RewriteRuleSubtreeStream(adaptor,"rule commonBlock");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:264:2: ( 'else' commonBlock -> ^( EXP commonBlock ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:264:4: 'else' commonBlock
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:264:2: ( 'else' commonBlock -> ^( EXP commonBlock ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:264:4: 'else' commonBlock
             {
             	string_literal78=(IToken)Match(input,64,FOLLOW_64_in_elseStat917);  
             	stream_64.Add(string_literal78);
@@ -3110,7 +3110,7 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 264:23: -> ^( EXP commonBlock )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:264:26: ^( EXP commonBlock )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:264:26: ^( EXP commonBlock )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(EXP, "EXP"), root_1);
@@ -3156,7 +3156,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "atStatement"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:271:1: atStatement : 'at' expression commonBlock -> ^( AT expression commonBlock ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:271:1: atStatement : 'at' expression commonBlock -> ^( AT expression commonBlock ) ;
     public SGLParser.atStatement_return atStatement() // throws RecognitionException [1]
     {   
         SGLParser.atStatement_return retval = new SGLParser.atStatement_return();
@@ -3176,8 +3176,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_commonBlock = new RewriteRuleSubtreeStream(adaptor,"rule commonBlock");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:272:2: ( 'at' expression commonBlock -> ^( AT expression commonBlock ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:272:4: 'at' expression commonBlock
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:272:2: ( 'at' expression commonBlock -> ^( AT expression commonBlock ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:272:4: 'at' expression commonBlock
             {
             	string_literal80=(IToken)Match(input,65,FOLLOW_65_in_atStatement944);  
             	stream_65.Add(string_literal80);
@@ -3195,7 +3195,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          expression, commonBlock
+            	// elements:          commonBlock, expression
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -3207,7 +3207,7 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 272:32: -> ^( AT expression commonBlock )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:272:35: ^( AT expression commonBlock )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:272:35: ^( AT expression commonBlock )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(AT, "AT"), root_1);
@@ -3254,7 +3254,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "breakStat"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:275:1: breakStat : 'break' -> BREAK ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:275:1: breakStat : 'break' -> BREAK ;
     public SGLParser.breakStat_return breakStat() // throws RecognitionException [1]
     {   
         SGLParser.breakStat_return retval = new SGLParser.breakStat_return();
@@ -3269,8 +3269,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:276:2: ( 'break' -> BREAK )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:276:4: 'break'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:276:2: ( 'break' -> BREAK )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:276:4: 'break'
             {
             	string_literal83=(IToken)Match(input,66,FOLLOW_66_in_breakStat970);  
             	stream_66.Add(string_literal83);
@@ -3328,7 +3328,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "returnStat"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:279:1: returnStat : 'return' expression -> ^( RETURN expression ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:279:1: returnStat : 'return' expression -> ^( RETURN expression ) ;
     public SGLParser.returnStat_return returnStat() // throws RecognitionException [1]
     {   
         SGLParser.returnStat_return retval = new SGLParser.returnStat_return();
@@ -3345,8 +3345,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:280:2: ( 'return' expression -> ^( RETURN expression ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:280:4: 'return' expression
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:280:2: ( 'return' expression -> ^( RETURN expression ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:280:4: 'return' expression
             {
             	string_literal84=(IToken)Match(input,67,FOLLOW_67_in_returnStat985);  
             	stream_67.Add(string_literal84);
@@ -3371,7 +3371,7 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 280:24: -> ^( RETURN expression )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:280:27: ^( RETURN expression )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:280:27: ^( RETURN expression )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(RETURN, "RETURN"), root_1);
@@ -3417,7 +3417,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "methodCall"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:283:1: methodCall : Identifier '(' ( expressionList )? ')' -> ^( METH_CALL Identifier ( expressionList )? ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:283:1: methodCall : Identifier '(' ( expressionList )? ')' -> ^( METH_CALL Identifier ( expressionList )? ) ;
     public SGLParser.methodCall_return methodCall() // throws RecognitionException [1]
     {   
         SGLParser.methodCall_return retval = new SGLParser.methodCall_return();
@@ -3440,8 +3440,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_expressionList = new RewriteRuleSubtreeStream(adaptor,"rule expressionList");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:284:2: ( Identifier '(' ( expressionList )? ')' -> ^( METH_CALL Identifier ( expressionList )? ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:284:4: Identifier '(' ( expressionList )? ')'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:284:2: ( Identifier '(' ( expressionList )? ')' -> ^( METH_CALL Identifier ( expressionList )? ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:284:4: Identifier '(' ( expressionList )? ')'
             {
             	Identifier86=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_methodCall1006);  
             	stream_Identifier.Add(Identifier86);
@@ -3449,7 +3449,7 @@ public partial class SGLParser : Parser
             	char_literal87=(IToken)Match(input,53,FOLLOW_53_in_methodCall1008);  
             	stream_53.Add(char_literal87);
 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:284:19: ( expressionList )?
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:284:19: ( expressionList )?
             	int alt19 = 2;
             	int LA19_0 = input.LA(1);
 
@@ -3460,7 +3460,7 @@ public partial class SGLParser : Parser
             	switch (alt19) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:284:19: expressionList
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:284:19: expressionList
             	        {
             	        	PushFollow(FOLLOW_expressionList_in_methodCall1010);
             	        	expressionList88 = expressionList();
@@ -3491,13 +3491,13 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 284:39: -> ^( METH_CALL Identifier ( expressionList )? )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:284:42: ^( METH_CALL Identifier ( expressionList )? )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:284:42: ^( METH_CALL Identifier ( expressionList )? )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(METH_CALL, "METH_CALL"), root_1);
 
             	    adaptor.AddChild(root_1, stream_Identifier.NextNode());
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:284:65: ( expressionList )?
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:284:65: ( expressionList )?
             	    if ( stream_expressionList.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_expressionList.NextTree());
@@ -3544,7 +3544,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "expression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:303:1: expression : conditionalExpression ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:303:1: expression : conditionalExpression ;
     public SGLParser.expression_return expression() // throws RecognitionException [1]
     {   
         SGLParser.expression_return retval = new SGLParser.expression_return();
@@ -3558,8 +3558,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:304:5: ( conditionalExpression )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:304:8: conditionalExpression
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:304:5: ( conditionalExpression )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:304:8: conditionalExpression
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -3602,7 +3602,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "conditionalExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:313:1: conditionalExpression : conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )? ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:313:1: conditionalExpression : conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )? ;
     public SGLParser.conditionalExpression_return conditionalExpression() // throws RecognitionException [1]
     {   
         SGLParser.conditionalExpression_return retval = new SGLParser.conditionalExpression_return();
@@ -3624,8 +3624,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:314:5: ( conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )? )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:314:9: conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )?
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:314:5: ( conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )? )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:314:9: conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )?
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -3634,7 +3634,7 @@ public partial class SGLParser : Parser
             	state.followingStackPointer--;
 
             	adaptor.AddChild(root_0, conditionalOrExpression91.Tree);
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:314:33: ( '?' conditionalExpression ':' conditionalExpression )?
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:314:33: ( '?' conditionalExpression ':' conditionalExpression )?
             	int alt20 = 2;
             	int LA20_0 = input.LA(1);
 
@@ -3645,7 +3645,7 @@ public partial class SGLParser : Parser
             	switch (alt20) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:314:35: '?' conditionalExpression ':' conditionalExpression
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:314:35: '?' conditionalExpression ':' conditionalExpression
             	        {
             	        	char_literal92=(IToken)Match(input,68,FOLLOW_68_in_conditionalExpression1115); 
             	        		char_literal92_tree = (object)adaptor.Create(char_literal92);
@@ -3702,7 +3702,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "conditionalOrExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:319:1: conditionalOrExpression : conditionalAndExpression ( '||' conditionalAndExpression )* ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:319:1: conditionalOrExpression : conditionalAndExpression ( '||' conditionalAndExpression )* ;
     public SGLParser.conditionalOrExpression_return conditionalOrExpression() // throws RecognitionException [1]
     {   
         SGLParser.conditionalOrExpression_return retval = new SGLParser.conditionalOrExpression_return();
@@ -3720,8 +3720,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:320:5: ( conditionalAndExpression ( '||' conditionalAndExpression )* )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:320:9: conditionalAndExpression ( '||' conditionalAndExpression )*
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:320:5: ( conditionalAndExpression ( '||' conditionalAndExpression )* )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:320:9: conditionalAndExpression ( '||' conditionalAndExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -3730,7 +3730,7 @@ public partial class SGLParser : Parser
             	state.followingStackPointer--;
 
             	adaptor.AddChild(root_0, conditionalAndExpression96.Tree);
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:320:34: ( '||' conditionalAndExpression )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:320:34: ( '||' conditionalAndExpression )*
             	do 
             	{
             	    int alt21 = 2;
@@ -3745,7 +3745,7 @@ public partial class SGLParser : Parser
             	    switch (alt21) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:320:36: '||' conditionalAndExpression
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:320:36: '||' conditionalAndExpression
             			    {
             			    	string_literal97=(IToken)Match(input,70,FOLLOW_70_in_conditionalOrExpression1170); 
             			    		string_literal97_tree = (object)adaptor.Create(string_literal97);
@@ -3802,7 +3802,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "conditionalAndExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:324:1: conditionalAndExpression : equalityExpression ( '&&' equalityExpression )* ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:324:1: conditionalAndExpression : equalityExpression ( '&&' equalityExpression )* ;
     public SGLParser.conditionalAndExpression_return conditionalAndExpression() // throws RecognitionException [1]
     {   
         SGLParser.conditionalAndExpression_return retval = new SGLParser.conditionalAndExpression_return();
@@ -3820,8 +3820,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:325:5: ( equalityExpression ( '&&' equalityExpression )* )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:325:9: equalityExpression ( '&&' equalityExpression )*
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:325:5: ( equalityExpression ( '&&' equalityExpression )* )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:325:9: equalityExpression ( '&&' equalityExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -3830,7 +3830,7 @@ public partial class SGLParser : Parser
             	state.followingStackPointer--;
 
             	adaptor.AddChild(root_0, equalityExpression99.Tree);
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:325:28: ( '&&' equalityExpression )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:325:28: ( '&&' equalityExpression )*
             	do 
             	{
             	    int alt22 = 2;
@@ -3845,7 +3845,7 @@ public partial class SGLParser : Parser
             	    switch (alt22) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:325:30: '&&' equalityExpression
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:325:30: '&&' equalityExpression
             			    {
             			    	string_literal100=(IToken)Match(input,71,FOLLOW_71_in_conditionalAndExpression1208); 
             			    		string_literal100_tree = (object)adaptor.Create(string_literal100);
@@ -3902,7 +3902,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "equalityExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:329:1: equalityExpression : relationalExpression ( ( '==' | '!=' ) relationalExpression )* ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:329:1: equalityExpression : relationalExpression ( ( '==' | '!=' ) relationalExpression )* ;
     public SGLParser.equalityExpression_return equalityExpression() // throws RecognitionException [1]
     {   
         SGLParser.equalityExpression_return retval = new SGLParser.equalityExpression_return();
@@ -3922,8 +3922,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:330:5: ( relationalExpression ( ( '==' | '!=' ) relationalExpression )* )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:330:9: relationalExpression ( ( '==' | '!=' ) relationalExpression )*
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:330:5: ( relationalExpression ( ( '==' | '!=' ) relationalExpression )* )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:330:9: relationalExpression ( ( '==' | '!=' ) relationalExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -3932,7 +3932,7 @@ public partial class SGLParser : Parser
             	state.followingStackPointer--;
 
             	adaptor.AddChild(root_0, relationalExpression102.Tree);
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:330:30: ( ( '==' | '!=' ) relationalExpression )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:330:30: ( ( '==' | '!=' ) relationalExpression )*
             	do 
             	{
             	    int alt24 = 2;
@@ -3947,9 +3947,9 @@ public partial class SGLParser : Parser
             	    switch (alt24) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:330:32: ( '==' | '!=' ) relationalExpression
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:330:32: ( '==' | '!=' ) relationalExpression
             			    {
-            			    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:330:32: ( '==' | '!=' )
+            			    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:330:32: ( '==' | '!=' )
             			    	int alt23 = 2;
             			    	int LA23_0 = input.LA(1);
 
@@ -3971,7 +3971,7 @@ public partial class SGLParser : Parser
             			    	switch (alt23) 
             			    	{
             			    	    case 1 :
-            			    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:330:33: '=='
+            			    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:330:33: '=='
             			    	        {
             			    	        	string_literal103=(IToken)Match(input,72,FOLLOW_72_in_equalityExpression1243); 
             			    	        		string_literal103_tree = (object)adaptor.Create(string_literal103);
@@ -3981,7 +3981,7 @@ public partial class SGLParser : Parser
             			    	        }
             			    	        break;
             			    	    case 2 :
-            			    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:330:41: '!='
+            			    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:330:41: '!='
             			    	        {
             			    	        	string_literal104=(IToken)Match(input,73,FOLLOW_73_in_equalityExpression1248); 
             			    	        		string_literal104_tree = (object)adaptor.Create(string_literal104);
@@ -4044,7 +4044,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "relationalExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:334:1: relationalExpression : additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )* ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:334:1: relationalExpression : additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )* ;
     public SGLParser.relationalExpression_return relationalExpression() // throws RecognitionException [1]
     {   
         SGLParser.relationalExpression_return retval = new SGLParser.relationalExpression_return();
@@ -4068,8 +4068,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:335:5: ( additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )* )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:335:9: additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )*
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:335:5: ( additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )* )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:335:9: additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -4078,7 +4078,7 @@ public partial class SGLParser : Parser
             	state.followingStackPointer--;
 
             	adaptor.AddChild(root_0, additiveExpression106.Tree);
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:335:28: ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:335:28: ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )*
             	do 
             	{
             	    int alt26 = 2;
@@ -4093,9 +4093,9 @@ public partial class SGLParser : Parser
             	    switch (alt26) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:335:29: ( '<' | '>' | '<=' | '>=' ) additiveExpression
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:335:29: ( '<' | '>' | '<=' | '>=' ) additiveExpression
             			    {
-            			    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:335:29: ( '<' | '>' | '<=' | '>=' )
+            			    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:335:29: ( '<' | '>' | '<=' | '>=' )
             			    	int alt25 = 4;
             			    	switch ( input.LA(1) ) 
             			    	{
@@ -4129,7 +4129,7 @@ public partial class SGLParser : Parser
             			    	switch (alt25) 
             			    	{
             			    	    case 1 :
-            			    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:335:30: '<'
+            			    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:335:30: '<'
             			    	        {
             			    	        	char_literal107=(IToken)Match(input,74,FOLLOW_74_in_relationalExpression1287); 
             			    	        		char_literal107_tree = (object)adaptor.Create(char_literal107);
@@ -4139,7 +4139,7 @@ public partial class SGLParser : Parser
             			    	        }
             			    	        break;
             			    	    case 2 :
-            			    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:335:35: '>'
+            			    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:335:35: '>'
             			    	        {
             			    	        	char_literal108=(IToken)Match(input,75,FOLLOW_75_in_relationalExpression1290); 
             			    	        		char_literal108_tree = (object)adaptor.Create(char_literal108);
@@ -4149,7 +4149,7 @@ public partial class SGLParser : Parser
             			    	        }
             			    	        break;
             			    	    case 3 :
-            			    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:335:40: '<='
+            			    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:335:40: '<='
             			    	        {
             			    	        	string_literal109=(IToken)Match(input,76,FOLLOW_76_in_relationalExpression1293); 
             			    	        		string_literal109_tree = (object)adaptor.Create(string_literal109);
@@ -4159,7 +4159,7 @@ public partial class SGLParser : Parser
             			    	        }
             			    	        break;
             			    	    case 4 :
-            			    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:335:46: '>='
+            			    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:335:46: '>='
             			    	        {
             			    	        	string_literal110=(IToken)Match(input,77,FOLLOW_77_in_relationalExpression1296); 
             			    	        		string_literal110_tree = (object)adaptor.Create(string_literal110);
@@ -4222,7 +4222,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "additiveExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:339:1: additiveExpression : multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:339:1: additiveExpression : multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* ;
     public SGLParser.additiveExpression_return additiveExpression() // throws RecognitionException [1]
     {   
         SGLParser.additiveExpression_return retval = new SGLParser.additiveExpression_return();
@@ -4242,8 +4242,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:340:5: ( multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:340:9: multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )*
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:340:5: ( multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:340:9: multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -4252,7 +4252,7 @@ public partial class SGLParser : Parser
             	state.followingStackPointer--;
 
             	adaptor.AddChild(root_0, multiplicativeExpression112.Tree);
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:340:34: ( ( '+' | '-' ) multiplicativeExpression )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:340:34: ( ( '+' | '-' ) multiplicativeExpression )*
             	do 
             	{
             	    int alt28 = 2;
@@ -4267,9 +4267,9 @@ public partial class SGLParser : Parser
             	    switch (alt28) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:340:35: ( '+' | '-' ) multiplicativeExpression
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:340:35: ( '+' | '-' ) multiplicativeExpression
             			    {
-            			    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:340:35: ( '+' | '-' )
+            			    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:340:35: ( '+' | '-' )
             			    	int alt27 = 2;
             			    	int LA27_0 = input.LA(1);
 
@@ -4291,7 +4291,7 @@ public partial class SGLParser : Parser
             			    	switch (alt27) 
             			    	{
             			    	    case 1 :
-            			    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:340:36: '+'
+            			    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:340:36: '+'
             			    	        {
             			    	        	char_literal113=(IToken)Match(input,78,FOLLOW_78_in_additiveExpression1342); 
             			    	        		char_literal113_tree = (object)adaptor.Create(char_literal113);
@@ -4301,7 +4301,7 @@ public partial class SGLParser : Parser
             			    	        }
             			    	        break;
             			    	    case 2 :
-            			    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:340:41: '-'
+            			    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:340:41: '-'
             			    	        {
             			    	        	char_literal114=(IToken)Match(input,79,FOLLOW_79_in_additiveExpression1345); 
             			    	        		char_literal114_tree = (object)adaptor.Create(char_literal114);
@@ -4364,7 +4364,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "multiplicativeExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:344:1: multiplicativeExpression : negativeExpression ( ( '*' | '/' | '%' ) negativeExpression )* ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:344:1: multiplicativeExpression : negativeExpression ( ( '*' | '/' | '%' ) negativeExpression )* ;
     public SGLParser.multiplicativeExpression_return multiplicativeExpression() // throws RecognitionException [1]
     {   
         SGLParser.multiplicativeExpression_return retval = new SGLParser.multiplicativeExpression_return();
@@ -4386,8 +4386,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:345:5: ( negativeExpression ( ( '*' | '/' | '%' ) negativeExpression )* )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:345:9: negativeExpression ( ( '*' | '/' | '%' ) negativeExpression )*
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:345:5: ( negativeExpression ( ( '*' | '/' | '%' ) negativeExpression )* )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:345:9: negativeExpression ( ( '*' | '/' | '%' ) negativeExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -4396,7 +4396,7 @@ public partial class SGLParser : Parser
             	state.followingStackPointer--;
 
             	adaptor.AddChild(root_0, negativeExpression116.Tree);
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:346:5: ( ( '*' | '/' | '%' ) negativeExpression )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:346:5: ( ( '*' | '/' | '%' ) negativeExpression )*
             	do 
             	{
             	    int alt30 = 2;
@@ -4411,9 +4411,9 @@ public partial class SGLParser : Parser
             	    switch (alt30) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:346:6: ( '*' | '/' | '%' ) negativeExpression
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:346:6: ( '*' | '/' | '%' ) negativeExpression
             			    {
-            			    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:346:6: ( '*' | '/' | '%' )
+            			    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:346:6: ( '*' | '/' | '%' )
             			    	int alt29 = 3;
             			    	switch ( input.LA(1) ) 
             			    	{
@@ -4442,7 +4442,7 @@ public partial class SGLParser : Parser
             			    	switch (alt29) 
             			    	{
             			    	    case 1 :
-            			    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:346:7: '*'
+            			    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:346:7: '*'
             			    	        {
             			    	        	char_literal117=(IToken)Match(input,80,FOLLOW_80_in_multiplicativeExpression1391); 
             			    	        		char_literal117_tree = (object)adaptor.Create(char_literal117);
@@ -4452,7 +4452,7 @@ public partial class SGLParser : Parser
             			    	        }
             			    	        break;
             			    	    case 2 :
-            			    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:346:12: '/'
+            			    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:346:12: '/'
             			    	        {
             			    	        	char_literal118=(IToken)Match(input,81,FOLLOW_81_in_multiplicativeExpression1394); 
             			    	        		char_literal118_tree = (object)adaptor.Create(char_literal118);
@@ -4462,7 +4462,7 @@ public partial class SGLParser : Parser
             			    	        }
             			    	        break;
             			    	    case 3 :
-            			    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:346:17: '%'
+            			    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:346:17: '%'
             			    	        {
             			    	        	char_literal119=(IToken)Match(input,82,FOLLOW_82_in_multiplicativeExpression1397); 
             			    	        		char_literal119_tree = (object)adaptor.Create(char_literal119);
@@ -4525,7 +4525,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "unaryExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:349:1: unaryExpression : ( '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus );
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:349:1: unaryExpression : ( '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus );
     public SGLParser.unaryExpression_return unaryExpression() // throws RecognitionException [1]
     {   
         SGLParser.unaryExpression_return retval = new SGLParser.unaryExpression_return();
@@ -4547,7 +4547,7 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:350:5: ( '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:350:5: ( '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus )
             int alt31 = 3;
             switch ( input.LA(1) ) 
             {
@@ -4576,7 +4576,7 @@ public partial class SGLParser : Parser
             switch (alt31) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:350:7: '++' unaryExpression
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:350:7: '++' unaryExpression
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -4593,7 +4593,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:351:9: '--' unaryExpression
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:351:9: '--' unaryExpression
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -4610,7 +4610,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:352:9: unaryExpressionNotPlusMinus
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:352:9: unaryExpressionNotPlusMinus
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -4655,7 +4655,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "unaryExpressionNotPlusMinus"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:356:1: unaryExpressionNotPlusMinus : Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:356:1: unaryExpressionNotPlusMinus : Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) ) ;
     public SGLParser.unaryExpressionNotPlusMinus_return unaryExpressionNotPlusMinus() // throws RecognitionException [1]
     {   
         SGLParser.unaryExpressionNotPlusMinus_return retval = new SGLParser.unaryExpressionNotPlusMinus_return();
@@ -4676,13 +4676,13 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:357:5: ( Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:357:9: Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:357:5: ( Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:357:9: Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) )
             {
             	Identifier126=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_unaryExpressionNotPlusMinus1469);  
             	stream_Identifier.Add(Identifier126);
 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:357:20: ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) )
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:357:20: ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) )
             	int alt32 = 2;
             	int LA32_0 = input.LA(1);
 
@@ -4704,7 +4704,7 @@ public partial class SGLParser : Parser
             	switch (alt32) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:357:21: '++'
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:357:21: '++'
             	        {
             	        	string_literal127=(IToken)Match(input,83,FOLLOW_83_in_unaryExpressionNotPlusMinus1472);  
             	        	stream_83.Add(string_literal127);
@@ -4724,7 +4724,7 @@ public partial class SGLParser : Parser
             	        	root_0 = (object)adaptor.GetNilNode();
             	        	// 357:26: -> ^( VARINC Identifier )
             	        	{
-            	        	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:357:29: ^( VARINC Identifier )
+            	        	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:357:29: ^( VARINC Identifier )
             	        	    {
             	        	    object root_1 = (object)adaptor.GetNilNode();
             	        	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(VARINC, "VARINC"), root_1);
@@ -4740,7 +4740,7 @@ public partial class SGLParser : Parser
             	        }
             	        break;
             	    case 2 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:358:4: '--'
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:358:4: '--'
             	        {
             	        	string_literal128=(IToken)Match(input,84,FOLLOW_84_in_unaryExpressionNotPlusMinus1485);  
             	        	stream_84.Add(string_literal128);
@@ -4760,7 +4760,7 @@ public partial class SGLParser : Parser
             	        	root_0 = (object)adaptor.GetNilNode();
             	        	// 358:9: -> ^( VARDEC Identifier )
             	        	{
-            	        	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:358:12: ^( VARDEC Identifier )
+            	        	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:358:12: ^( VARDEC Identifier )
             	        	    {
             	        	    object root_1 = (object)adaptor.GetNilNode();
             	        	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(VARDEC, "VARDEC"), root_1);
@@ -4812,7 +4812,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "castExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:363:1: castExpression : '(' variableType ')' unaryExpression ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:363:1: castExpression : '(' variableType ')' unaryExpression ;
     public SGLParser.castExpression_return castExpression() // throws RecognitionException [1]
     {   
         SGLParser.castExpression_return retval = new SGLParser.castExpression_return();
@@ -4832,8 +4832,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:364:5: ( '(' variableType ')' unaryExpression )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:364:8: '(' variableType ')' unaryExpression
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:364:5: ( '(' variableType ')' unaryExpression )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:364:8: '(' variableType ')' unaryExpression
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -4889,7 +4889,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "negativeExpression"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:369:1: negativeExpression : ( mathAtom | '-' mathAtom -> ^( NEGATE mathAtom ) | unaryExpressionNotPlusMinus );
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:369:1: negativeExpression : ( mathAtom | '-' mathAtom -> ^( NEGATE mathAtom ) | unaryExpressionNotPlusMinus );
     public SGLParser.negativeExpression_return negativeExpression() // throws RecognitionException [1]
     {   
         SGLParser.negativeExpression_return retval = new SGLParser.negativeExpression_return();
@@ -4910,7 +4910,7 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_mathAtom = new RewriteRuleSubtreeStream(adaptor,"rule mathAtom");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:370:2: ( mathAtom | '-' mathAtom -> ^( NEGATE mathAtom ) | unaryExpressionNotPlusMinus )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:370:2: ( mathAtom | '-' mathAtom -> ^( NEGATE mathAtom ) | unaryExpressionNotPlusMinus )
             int alt33 = 3;
             switch ( input.LA(1) ) 
             {
@@ -4963,7 +4963,7 @@ public partial class SGLParser : Parser
             switch (alt33) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:370:4: mathAtom
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:370:4: mathAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -4976,7 +4976,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:371:4: '-' mathAtom
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:371:4: '-' mathAtom
                     {
                     	char_literal134=(IToken)Match(input,79,FOLLOW_79_in_negativeExpression1551);  
                     	stream_79.Add(char_literal134);
@@ -5001,7 +5001,7 @@ public partial class SGLParser : Parser
                     	root_0 = (object)adaptor.GetNilNode();
                     	// 371:17: -> ^( NEGATE mathAtom )
                     	{
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:371:20: ^( NEGATE mathAtom )
+                    	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:371:20: ^( NEGATE mathAtom )
                     	    {
                     	    object root_1 = (object)adaptor.GetNilNode();
                     	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(NEGATE, "NEGATE"), root_1);
@@ -5017,7 +5017,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:372:4: unaryExpressionNotPlusMinus
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:372:4: unaryExpressionNotPlusMinus
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -5062,7 +5062,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "mathAtom"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:375:1: mathAtom : ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' Sprite '(' ( arguments )? ')' -> ^( Sprite ( arguments )? ) | 'new' Animation '(' ( arguments )? ')' -> ^( Animation ( arguments )? ) | objectMethod | Identifier | methodCall | stringQuote | Layer -> ^( STRINGNOQUOTES Layer ) | Origin -> ^( STRINGNOQUOTES Origin ) | LoopType -> ^( STRINGNOQUOTES LoopType ) );
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:375:1: mathAtom : ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' Sprite '(' ( arguments )? ')' -> ^( Sprite ( arguments )? ) | 'new' Animation '(' ( arguments )? ')' -> ^( Animation ( arguments )? ) | objectMethod | Identifier | methodCall | stringQuote | Layer -> ^( STRINGNOQUOTES Layer ) | Origin -> ^( STRINGNOQUOTES Origin ) | LoopType -> ^( STRINGNOQUOTES LoopType ) );
     public SGLParser.mathAtom_return mathAtom() // throws RecognitionException [1]
     {   
         SGLParser.mathAtom_return retval = new SGLParser.mathAtom_return();
@@ -5128,13 +5128,13 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_arguments = new RewriteRuleSubtreeStream(adaptor,"rule arguments");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:376:5: ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' Sprite '(' ( arguments )? ')' -> ^( Sprite ( arguments )? ) | 'new' Animation '(' ( arguments )? ')' -> ^( Animation ( arguments )? ) | objectMethod | Identifier | methodCall | stringQuote | Layer -> ^( STRINGNOQUOTES Layer ) | Origin -> ^( STRINGNOQUOTES Origin ) | LoopType -> ^( STRINGNOQUOTES LoopType ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:376:5: ( '(' conditionalExpression ')' | IntegerAtom | FloatAtom | BooleanAtom | 'new' Sprite '(' ( arguments )? ')' -> ^( Sprite ( arguments )? ) | 'new' Animation '(' ( arguments )? ')' -> ^( Animation ( arguments )? ) | objectMethod | Identifier | methodCall | stringQuote | Layer -> ^( STRINGNOQUOTES Layer ) | Origin -> ^( STRINGNOQUOTES Origin ) | LoopType -> ^( STRINGNOQUOTES LoopType ) )
             int alt36 = 13;
             alt36 = dfa36.Predict(input);
             switch (alt36) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:376:7: '(' conditionalExpression ')'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:376:7: '(' conditionalExpression ')'
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -5149,7 +5149,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:377:9: IntegerAtom
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:377:9: IntegerAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -5161,7 +5161,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:378:7: FloatAtom
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:378:7: FloatAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -5173,7 +5173,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:379:9: BooleanAtom
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:379:9: BooleanAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -5185,7 +5185,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 5 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:381:9: 'new' Sprite '(' ( arguments )? ')'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:381:9: 'new' Sprite '(' ( arguments )? ')'
                     {
                     	string_literal143=(IToken)Match(input,85,FOLLOW_85_in_mathAtom1625);  
                     	stream_85.Add(string_literal143);
@@ -5196,7 +5196,7 @@ public partial class SGLParser : Parser
                     	char_literal145=(IToken)Match(input,53,FOLLOW_53_in_mathAtom1629);  
                     	stream_53.Add(char_literal145);
 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:381:26: ( arguments )?
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:381:26: ( arguments )?
                     	int alt34 = 2;
                     	int LA34_0 = input.LA(1);
 
@@ -5207,7 +5207,7 @@ public partial class SGLParser : Parser
                     	switch (alt34) 
                     	{
                     	    case 1 :
-                    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:381:26: arguments
+                    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:381:26: arguments
                     	        {
                     	        	PushFollow(FOLLOW_arguments_in_mathAtom1631);
                     	        	arguments146 = arguments();
@@ -5238,12 +5238,12 @@ public partial class SGLParser : Parser
                     	root_0 = (object)adaptor.GetNilNode();
                     	// 381:41: -> ^( Sprite ( arguments )? )
                     	{
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:381:44: ^( Sprite ( arguments )? )
+                    	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:381:44: ^( Sprite ( arguments )? )
                     	    {
                     	    object root_1 = (object)adaptor.GetNilNode();
                     	    root_1 = (object)adaptor.BecomeRoot(stream_Sprite.NextNode(), root_1);
 
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:381:53: ( arguments )?
+                    	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:381:53: ( arguments )?
                     	    if ( stream_arguments.HasNext() )
                     	    {
                     	        adaptor.AddChild(root_1, stream_arguments.NextTree());
@@ -5260,7 +5260,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 6 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:382:9: 'new' Animation '(' ( arguments )? ')'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:382:9: 'new' Animation '(' ( arguments )? ')'
                     {
                     	string_literal148=(IToken)Match(input,85,FOLLOW_85_in_mathAtom1653);  
                     	stream_85.Add(string_literal148);
@@ -5271,7 +5271,7 @@ public partial class SGLParser : Parser
                     	char_literal150=(IToken)Match(input,53,FOLLOW_53_in_mathAtom1657);  
                     	stream_53.Add(char_literal150);
 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:382:29: ( arguments )?
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:382:29: ( arguments )?
                     	int alt35 = 2;
                     	int LA35_0 = input.LA(1);
 
@@ -5282,7 +5282,7 @@ public partial class SGLParser : Parser
                     	switch (alt35) 
                     	{
                     	    case 1 :
-                    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:382:29: arguments
+                    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:382:29: arguments
                     	        {
                     	        	PushFollow(FOLLOW_arguments_in_mathAtom1659);
                     	        	arguments151 = arguments();
@@ -5301,7 +5301,7 @@ public partial class SGLParser : Parser
 
 
                     	// AST REWRITE
-                    	// elements:          Animation, arguments
+                    	// elements:          arguments, Animation
                     	// token labels:      
                     	// rule labels:       retval
                     	// token list labels: 
@@ -5313,12 +5313,12 @@ public partial class SGLParser : Parser
                     	root_0 = (object)adaptor.GetNilNode();
                     	// 382:44: -> ^( Animation ( arguments )? )
                     	{
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:382:47: ^( Animation ( arguments )? )
+                    	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:382:47: ^( Animation ( arguments )? )
                     	    {
                     	    object root_1 = (object)adaptor.GetNilNode();
                     	    root_1 = (object)adaptor.BecomeRoot(stream_Animation.NextNode(), root_1);
 
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:382:59: ( arguments )?
+                    	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:382:59: ( arguments )?
                     	    if ( stream_arguments.HasNext() )
                     	    {
                     	        adaptor.AddChild(root_1, stream_arguments.NextTree());
@@ -5335,7 +5335,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 7 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:383:6: objectMethod
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:383:6: objectMethod
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -5348,7 +5348,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 8 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:384:4: Identifier
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:384:4: Identifier
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -5360,7 +5360,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 9 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:385:4: methodCall
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:385:4: methodCall
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -5373,7 +5373,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 10 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:386:4: stringQuote
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:386:4: stringQuote
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
@@ -5386,7 +5386,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 11 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:387:4: Layer
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:387:4: Layer
                     {
                     	Layer157=(IToken)Match(input,Layer,FOLLOW_Layer_in_mathAtom1698);  
                     	stream_Layer.Add(Layer157);
@@ -5406,7 +5406,7 @@ public partial class SGLParser : Parser
                     	root_0 = (object)adaptor.GetNilNode();
                     	// 387:10: -> ^( STRINGNOQUOTES Layer )
                     	{
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:387:13: ^( STRINGNOQUOTES Layer )
+                    	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:387:13: ^( STRINGNOQUOTES Layer )
                     	    {
                     	    object root_1 = (object)adaptor.GetNilNode();
                     	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(STRINGNOQUOTES, "STRINGNOQUOTES"), root_1);
@@ -5422,7 +5422,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 12 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:388:4: Origin
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:388:4: Origin
                     {
                     	Origin158=(IToken)Match(input,Origin,FOLLOW_Origin_in_mathAtom1711);  
                     	stream_Origin.Add(Origin158);
@@ -5442,7 +5442,7 @@ public partial class SGLParser : Parser
                     	root_0 = (object)adaptor.GetNilNode();
                     	// 388:11: -> ^( STRINGNOQUOTES Origin )
                     	{
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:388:14: ^( STRINGNOQUOTES Origin )
+                    	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:388:14: ^( STRINGNOQUOTES Origin )
                     	    {
                     	    object root_1 = (object)adaptor.GetNilNode();
                     	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(STRINGNOQUOTES, "STRINGNOQUOTES"), root_1);
@@ -5458,7 +5458,7 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 13 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:389:4: LoopType
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:389:4: LoopType
                     {
                     	LoopType159=(IToken)Match(input,LoopType,FOLLOW_LoopType_in_mathAtom1724);  
                     	stream_LoopType.Add(LoopType159);
@@ -5478,7 +5478,7 @@ public partial class SGLParser : Parser
                     	root_0 = (object)adaptor.GetNilNode();
                     	// 389:13: -> ^( STRINGNOQUOTES LoopType )
                     	{
-                    	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:389:16: ^( STRINGNOQUOTES LoopType )
+                    	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:389:16: ^( STRINGNOQUOTES LoopType )
                     	    {
                     	    object root_1 = (object)adaptor.GetNilNode();
                     	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(STRINGNOQUOTES, "STRINGNOQUOTES"), root_1);
@@ -5526,7 +5526,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "variableUnaryChange"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:392:1: variableUnaryChange : Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:392:1: variableUnaryChange : Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) ) ;
     public SGLParser.variableUnaryChange_return variableUnaryChange() // throws RecognitionException [1]
     {   
         SGLParser.variableUnaryChange_return retval = new SGLParser.variableUnaryChange_return();
@@ -5547,13 +5547,13 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:393:2: ( Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:393:4: Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:393:2: ( Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:393:4: Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) )
             {
             	Identifier160=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_variableUnaryChange1752);  
             	stream_Identifier.Add(Identifier160);
 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:393:15: ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) )
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:393:15: ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) )
             	int alt37 = 2;
             	int LA37_0 = input.LA(1);
 
@@ -5575,7 +5575,7 @@ public partial class SGLParser : Parser
             	switch (alt37) 
             	{
             	    case 1 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:393:16: '++'
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:393:16: '++'
             	        {
             	        	string_literal161=(IToken)Match(input,83,FOLLOW_83_in_variableUnaryChange1755);  
             	        	stream_83.Add(string_literal161);
@@ -5595,7 +5595,7 @@ public partial class SGLParser : Parser
             	        	root_0 = (object)adaptor.GetNilNode();
             	        	// 393:21: -> ^( VARINC Identifier )
             	        	{
-            	        	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:393:24: ^( VARINC Identifier )
+            	        	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:393:24: ^( VARINC Identifier )
             	        	    {
             	        	    object root_1 = (object)adaptor.GetNilNode();
             	        	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(VARINC, "VARINC"), root_1);
@@ -5611,7 +5611,7 @@ public partial class SGLParser : Parser
             	        }
             	        break;
             	    case 2 :
-            	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:394:4: '--'
+            	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:394:4: '--'
             	        {
             	        	string_literal162=(IToken)Match(input,84,FOLLOW_84_in_variableUnaryChange1768);  
             	        	stream_84.Add(string_literal162);
@@ -5631,7 +5631,7 @@ public partial class SGLParser : Parser
             	        	root_0 = (object)adaptor.GetNilNode();
             	        	// 394:9: -> ^( VARDEC Identifier )
             	        	{
-            	        	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:394:12: ^( VARDEC Identifier )
+            	        	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:394:12: ^( VARDEC Identifier )
             	        	    {
             	        	    object root_1 = (object)adaptor.GetNilNode();
             	        	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(VARDEC, "VARDEC"), root_1);
@@ -5683,7 +5683,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "arguments"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:402:1: arguments : expressionList ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:402:1: arguments : expressionList ;
     public SGLParser.arguments_return arguments() // throws RecognitionException [1]
     {   
         SGLParser.arguments_return retval = new SGLParser.arguments_return();
@@ -5697,8 +5697,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:403:5: ( expressionList )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:403:10: expressionList
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:403:5: ( expressionList )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:403:10: expressionList
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -5741,7 +5741,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "expressionList"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:406:1: expressionList : expression ( ',' expression )* ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:406:1: expressionList : expression ( ',' expression )* ;
     public SGLParser.expressionList_return expressionList() // throws RecognitionException [1]
     {   
         SGLParser.expressionList_return retval = new SGLParser.expressionList_return();
@@ -5759,8 +5759,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:407:5: ( expression ( ',' expression )* )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:407:9: expression ( ',' expression )*
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:407:5: ( expression ( ',' expression )* )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:407:9: expression ( ',' expression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -5769,7 +5769,7 @@ public partial class SGLParser : Parser
             	state.followingStackPointer--;
 
             	adaptor.AddChild(root_0, expression164.Tree);
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:407:20: ( ',' expression )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:407:20: ( ',' expression )*
             	do 
             	{
             	    int alt38 = 2;
@@ -5784,7 +5784,7 @@ public partial class SGLParser : Parser
             	    switch (alt38) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:407:21: ',' expression
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:407:21: ',' expression
             			    {
             			    	char_literal165=(IToken)Match(input,57,FOLLOW_57_in_expressionList1837); 
             			    	PushFollow(FOLLOW_expression_in_expressionList1840);
@@ -5838,7 +5838,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "paramList"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:410:1: paramList : variableType variableName ( ',' variableType variableName )* -> ^( PARAM_TYPE_LIST ( variableType )+ ) ^( PARAM_NAME_LIST ( variableName )+ ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:410:1: paramList : variableType variableName ( ',' variableType variableName )* -> ^( PARAM_TYPE_LIST ( variableType )+ ) ^( PARAM_NAME_LIST ( variableName )+ ) ;
     public SGLParser.paramList_return paramList() // throws RecognitionException [1]
     {   
         SGLParser.paramList_return retval = new SGLParser.paramList_return();
@@ -5862,8 +5862,8 @@ public partial class SGLParser : Parser
         RewriteRuleSubtreeStream stream_variableName = new RewriteRuleSubtreeStream(adaptor,"rule variableName");
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:411:3: ( variableType variableName ( ',' variableType variableName )* -> ^( PARAM_TYPE_LIST ( variableType )+ ) ^( PARAM_NAME_LIST ( variableName )+ ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:411:6: variableType variableName ( ',' variableType variableName )*
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:411:3: ( variableType variableName ( ',' variableType variableName )* -> ^( PARAM_TYPE_LIST ( variableType )+ ) ^( PARAM_NAME_LIST ( variableName )+ ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:411:6: variableType variableName ( ',' variableType variableName )*
             {
             	PushFollow(FOLLOW_variableType_in_paramList1858);
             	variableType167 = variableType();
@@ -5875,7 +5875,7 @@ public partial class SGLParser : Parser
             	state.followingStackPointer--;
 
             	stream_variableName.Add(variableName168.Tree);
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:411:32: ( ',' variableType variableName )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:411:32: ( ',' variableType variableName )*
             	do 
             	{
             	    int alt39 = 2;
@@ -5890,7 +5890,7 @@ public partial class SGLParser : Parser
             	    switch (alt39) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:411:33: ',' variableType variableName
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:411:33: ',' variableType variableName
             			    {
             			    	char_literal169=(IToken)Match(input,57,FOLLOW_57_in_paramList1863);  
             			    	stream_57.Add(char_literal169);
@@ -5920,7 +5920,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          variableName, variableType
+            	// elements:          variableType, variableName
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -5932,7 +5932,7 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 411:65: -> ^( PARAM_TYPE_LIST ( variableType )+ ) ^( PARAM_NAME_LIST ( variableName )+ )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:411:68: ^( PARAM_TYPE_LIST ( variableType )+ )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:411:68: ^( PARAM_TYPE_LIST ( variableType )+ )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(PARAM_TYPE_LIST, "PARAM_TYPE_LIST"), root_1);
@@ -5949,7 +5949,7 @@ public partial class SGLParser : Parser
 
             	    adaptor.AddChild(root_0, root_1);
             	    }
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:411:101: ^( PARAM_NAME_LIST ( variableName )+ )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:411:101: ^( PARAM_NAME_LIST ( variableName )+ )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(PARAM_NAME_LIST, "PARAM_NAME_LIST"), root_1);
@@ -6003,7 +6003,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "literal"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:414:1: literal : ( IntegerAtom | FloatAtom | StringAtom | BooleanAtom | 'null' );
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:414:1: literal : ( IntegerAtom | FloatAtom | StringAtom | BooleanAtom | 'null' );
     public SGLParser.literal_return literal() // throws RecognitionException [1]
     {   
         SGLParser.literal_return retval = new SGLParser.literal_return();
@@ -6017,8 +6017,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:415:5: ( IntegerAtom | FloatAtom | StringAtom | BooleanAtom | 'null' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:415:5: ( IntegerAtom | FloatAtom | StringAtom | BooleanAtom | 'null' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:
             {
             	root_0 = (object)adaptor.GetNilNode();
 
@@ -6069,7 +6069,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "stringQuote"
-    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:423:1: stringQuote : StringAtom -> ^( STRING StringAtom ) ;
+    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:423:1: stringQuote : StringAtom -> ^( STRING StringAtom ) ;
     public SGLParser.stringQuote_return stringQuote() // throws RecognitionException [1]
     {   
         SGLParser.stringQuote_return retval = new SGLParser.stringQuote_return();
@@ -6084,8 +6084,8 @@ public partial class SGLParser : Parser
 
         try 
     	{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:424:2: ( StringAtom -> ^( STRING StringAtom ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:424:6: StringAtom
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:424:2: ( StringAtom -> ^( STRING StringAtom ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:424:6: StringAtom
             {
             	StringAtom173=(IToken)Match(input,StringAtom,FOLLOW_StringAtom_in_stringQuote1978);  
             	stream_StringAtom.Add(StringAtom173);
@@ -6105,7 +6105,7 @@ public partial class SGLParser : Parser
             	root_0 = (object)adaptor.GetNilNode();
             	// 424:17: -> ^( STRING StringAtom )
             	{
-            	    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:424:20: ^( STRING StringAtom )
+            	    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:424:20: ^( STRING StringAtom )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(STRING, "STRING"), root_1);

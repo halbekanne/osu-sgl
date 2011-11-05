@@ -95,7 +95,7 @@ namespace SGL.Node
                         throw new SGLCompilerException(expression.GetLine(), "type mismatch", "You can't assign an expression of type " + exprV.GetVarType() + " to a string variable");
                     }
                 }
-                else if (type.Equals("object"))
+                else if (type.Equals("Object"))
                 {
                     // String hinzufügen
                     if (exprV.IsObject())

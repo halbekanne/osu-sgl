@@ -19,6 +19,8 @@ namespace SGL.Node.StaticMethod
         }
 
         public SGLValue Evaluate() {
+            // start must be lower than or equal to end
+            if (start.AsInteger() > end.AsInteger()) throw new SGLCompilerException(-1, "unexpected value", "'start' must be lower than or equal to 'end' in 'rand(start,end)'");
 
             SGLValue randVal = new SGLValue(random.Next(start.AsInteger(), end.AsInteger() + 1));
             //Console.WriteLine("start: " + start + ", end: " + end + " - rand Value: " + randVal.AsInteger());

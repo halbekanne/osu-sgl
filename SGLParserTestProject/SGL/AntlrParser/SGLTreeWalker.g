@@ -46,18 +46,44 @@ using SGL.Node.Expression;
         // sort the sprites and animations, lowest priority first
         spriteObjects.Sort();
 
-        foreach (SGLObject currentObject in spriteObjects) {
-        	if (currentObject is Sprite)
-            {
-            	Sprite cSprite = (Sprite)currentObject;
-                cSprite.GenerateSbCode(storyboardCode);
+			storyboardCode.AppendLine("[Events]");
+            storyboardCode.AppendLine("//Background and Video events");
+            storyboardCode.AppendLine("//Storyboard Layer 0 (Background)");
+            int currentLayer = 0;
+            foreach (SGLObject currentObject in spriteObjects) {
+                while (currentObject.GetLayerNumber() > currentLayer)
+                {
+                    currentLayer++;
+                    switch (currentLayer)
+                    {
+                        case 1: storyboardCode.AppendLine("//Storyboard Layer 1 (Fail)"); break;
+                        case 2: storyboardCode.AppendLine("//Storyboard Layer 2 (Pass)"); break;
+                        case 3: storyboardCode.AppendLine("//Storyboard Layer 3 (Foreground)"); break;
+                        default: throw new Exception("Undefined layer type");
+                    }
+                }
+            	if (currentObject is Sprite)
+                {
+                	Sprite cSprite = (Sprite)currentObject;
+                    cSprite.GenerateSbCode(storyboardCode);
+                }
+                else if (currentObject is Animation)
+                {
+                	Animation cAnimation = (Animation)currentObject;
+                    cAnimation.GenerateSbCode(storyboardCode);
+                }
             }
-            else if (currentObject is Animation)
+            while (3 > currentLayer)
             {
-            	Animation cAnimation = (Animation)currentObject;
-                cAnimation.GenerateSbCode(storyboardCode);
+                currentLayer++;
+                switch (currentLayer)
+                {
+                    case 1: storyboardCode.AppendLine("//Storyboard Layer 1 (Fail)"); break;
+                    case 2: storyboardCode.AppendLine("//Storyboard Layer 2 (Pass)"); break;
+                    case 3: storyboardCode.AppendLine("//Storyboard Layer 3 (Foreground)"); break;
+                    default: throw new Exception("Undefined layer type");
+                }
             }
-        }
 
     	return storyboardCode;
     }

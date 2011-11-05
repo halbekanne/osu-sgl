@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g 2011-10-06 21:26:47
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g 2011-11-04 23:05:42
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -124,7 +124,7 @@ public partial class SGLLexer : Lexer {
     
     override public string GrammarFileName
     {
-    	get { return "C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g";} 
+    	get { return "D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g";} 
     }
 
     // $ANTLR start "T__50"
@@ -134,8 +134,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__50;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:14:7: ( '{' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:14:9: '{'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:14:7: ( '{' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:14:9: '{'
             {
             	Match('{'); 
 
@@ -157,8 +157,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__51;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:15:7: ( '}' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:15:9: '}'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:15:7: ( '}' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:15:9: '}'
             {
             	Match('}'); 
 
@@ -180,8 +180,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__52;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:16:7: ( 'method' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:16:9: 'method'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:16:7: ( 'method' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:16:9: 'method'
             {
             	Match("method"); 
 
@@ -204,8 +204,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__53;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:17:7: ( '(' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:17:9: '('
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:17:7: ( '(' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:17:9: '('
             {
             	Match('('); 
 
@@ -227,8 +227,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__54;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:18:7: ( ')' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:18:9: ')'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:18:7: ( ')' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:18:9: ')'
             {
             	Match(')'); 
 
@@ -250,8 +250,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__55;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:19:7: ( 'void' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:19:9: 'void'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:19:7: ( 'void' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:19:9: 'void'
             {
             	Match("void"); 
 
@@ -274,8 +274,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__56;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:20:7: ( ';' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:20:9: ';'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:20:7: ( ';' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:20:9: ';'
             {
             	Match(';'); 
 
@@ -297,8 +297,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__57;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:21:7: ( ',' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:21:9: ','
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:21:7: ( ',' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:21:9: ','
             {
             	Match(','); 
 
@@ -320,8 +320,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__58;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:22:7: ( 'global' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:22:9: 'global'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:22:7: ( 'global' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:22:9: 'global'
             {
             	Match("global"); 
 
@@ -344,8 +344,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__59;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:23:7: ( '=' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:23:9: '='
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:23:7: ( '=' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:23:9: '='
             {
             	Match('='); 
 
@@ -367,8 +367,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__60;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:24:7: ( '.' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:24:9: '.'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:24:7: ( '.' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:24:9: '.'
             {
             	Match('.'); 
 
@@ -390,8 +390,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__61;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:25:7: ( 'while' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:25:9: 'while'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:25:7: ( 'while' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:25:9: 'while'
             {
             	Match("while"); 
 
@@ -414,8 +414,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__62;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:26:7: ( 'for' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:26:9: 'for'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:26:7: ( 'for' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:26:9: 'for'
             {
             	Match("for"); 
 
@@ -438,8 +438,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__63;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:27:7: ( 'if' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:27:9: 'if'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:27:7: ( 'if' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:27:9: 'if'
             {
             	Match("if"); 
 
@@ -462,8 +462,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__64;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:28:7: ( 'else' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:28:9: 'else'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:28:7: ( 'else' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:28:9: 'else'
             {
             	Match("else"); 
 
@@ -486,8 +486,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__65;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:29:7: ( 'at' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:29:9: 'at'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:29:7: ( 'at' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:29:9: 'at'
             {
             	Match("at"); 
 
@@ -510,8 +510,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__66;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:30:7: ( 'break' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:30:9: 'break'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:30:7: ( 'break' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:30:9: 'break'
             {
             	Match("break"); 
 
@@ -534,8 +534,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__67;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:31:7: ( 'return' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:31:9: 'return'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:31:7: ( 'return' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:31:9: 'return'
             {
             	Match("return"); 
 
@@ -558,8 +558,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__68;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:32:7: ( '?' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:32:9: '?'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:32:7: ( '?' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:32:9: '?'
             {
             	Match('?'); 
 
@@ -581,8 +581,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__69;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:33:7: ( ':' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:33:9: ':'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:33:7: ( ':' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:33:9: ':'
             {
             	Match(':'); 
 
@@ -604,8 +604,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__70;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:34:7: ( '||' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:34:9: '||'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:34:7: ( '||' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:34:9: '||'
             {
             	Match("||"); 
 
@@ -628,8 +628,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__71;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:35:7: ( '&&' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:35:9: '&&'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:35:7: ( '&&' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:35:9: '&&'
             {
             	Match("&&"); 
 
@@ -652,8 +652,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__72;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:36:7: ( '==' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:36:9: '=='
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:36:7: ( '==' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:36:9: '=='
             {
             	Match("=="); 
 
@@ -676,8 +676,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__73;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:37:7: ( '!=' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:37:9: '!='
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:37:7: ( '!=' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:37:9: '!='
             {
             	Match("!="); 
 
@@ -700,8 +700,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__74;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:38:7: ( '<' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:38:9: '<'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:38:7: ( '<' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:38:9: '<'
             {
             	Match('<'); 
 
@@ -723,8 +723,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__75;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:39:7: ( '>' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:39:9: '>'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:39:7: ( '>' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:39:9: '>'
             {
             	Match('>'); 
 
@@ -746,8 +746,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__76;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:40:7: ( '<=' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:40:9: '<='
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:40:7: ( '<=' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:40:9: '<='
             {
             	Match("<="); 
 
@@ -770,8 +770,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__77;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:41:7: ( '>=' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:41:9: '>='
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:41:7: ( '>=' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:41:9: '>='
             {
             	Match(">="); 
 
@@ -794,8 +794,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__78;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:42:7: ( '+' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:42:9: '+'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:42:7: ( '+' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:42:9: '+'
             {
             	Match('+'); 
 
@@ -817,8 +817,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__79;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:43:7: ( '-' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:43:9: '-'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:43:7: ( '-' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:43:9: '-'
             {
             	Match('-'); 
 
@@ -840,8 +840,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__80;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:44:7: ( '*' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:44:9: '*'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:44:7: ( '*' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:44:9: '*'
             {
             	Match('*'); 
 
@@ -863,8 +863,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__81;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:45:7: ( '/' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:45:9: '/'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:45:7: ( '/' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:45:9: '/'
             {
             	Match('/'); 
 
@@ -886,8 +886,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__82;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:46:7: ( '%' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:46:9: '%'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:46:7: ( '%' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:46:9: '%'
             {
             	Match('%'); 
 
@@ -909,8 +909,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__83;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:47:7: ( '++' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:47:9: '++'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:47:7: ( '++' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:47:9: '++'
             {
             	Match("++"); 
 
@@ -933,8 +933,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__84;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:48:7: ( '--' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:48:9: '--'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:48:7: ( '--' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:48:9: '--'
             {
             	Match("--"); 
 
@@ -957,8 +957,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__85;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:49:7: ( 'new' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:49:9: 'new'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:49:7: ( 'new' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:49:9: 'new'
             {
             	Match("new"); 
 
@@ -981,8 +981,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__86;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:50:7: ( 'null' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:50:9: 'null'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:50:7: ( 'null' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:50:9: 'null'
             {
             	Match("null"); 
 
@@ -1005,10 +1005,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = IntegerAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:439:5: ( ( '0' .. '9' )+ )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:439:7: ( '0' .. '9' )+
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:439:5: ( ( '0' .. '9' )+ )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:439:7: ( '0' .. '9' )+
             {
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:439:7: ( '0' .. '9' )+
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:439:7: ( '0' .. '9' )+
             	int cnt1 = 0;
             	do 
             	{
@@ -1024,7 +1024,7 @@ public partial class SGLLexer : Lexer {
             	    switch (alt1) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:439:7: '0' .. '9'
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:439:7: '0' .. '9'
             			    {
             			    	MatchRange('0','9'); 
 
@@ -1062,15 +1062,15 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = FloatAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:443:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:443:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
             int alt6 = 3;
             alt6 = dfa6.Predict(input);
             switch (alt6) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:443:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:443:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
                     {
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:443:9: ( '0' .. '9' )+
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:443:9: ( '0' .. '9' )+
                     	int cnt2 = 0;
                     	do 
                     	{
@@ -1086,7 +1086,7 @@ public partial class SGLLexer : Lexer {
                     	    switch (alt2) 
                     		{
                     			case 1 :
-                    			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:443:10: '0' .. '9'
+                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:443:10: '0' .. '9'
                     			    {
                     			    	MatchRange('0','9'); 
 
@@ -1106,7 +1106,7 @@ public partial class SGLLexer : Lexer {
                     		;	// Stops C# compiler whining that label 'loop2' has no statements
 
                     	Match('.'); 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:443:25: ( '0' .. '9' )*
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:443:25: ( '0' .. '9' )*
                     	do 
                     	{
                     	    int alt3 = 2;
@@ -1121,7 +1121,7 @@ public partial class SGLLexer : Lexer {
                     	    switch (alt3) 
                     		{
                     			case 1 :
-                    			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:443:26: '0' .. '9'
+                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:443:26: '0' .. '9'
                     			    {
                     			    	MatchRange('0','9'); 
 
@@ -1140,10 +1140,10 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:444:9: '.' ( '0' .. '9' )+
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:444:9: '.' ( '0' .. '9' )+
                     {
                     	Match('.'); 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:444:13: ( '0' .. '9' )+
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:444:13: ( '0' .. '9' )+
                     	int cnt4 = 0;
                     	do 
                     	{
@@ -1159,7 +1159,7 @@ public partial class SGLLexer : Lexer {
                     	    switch (alt4) 
                     		{
                     			case 1 :
-                    			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:444:14: '0' .. '9'
+                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:444:14: '0' .. '9'
                     			    {
                     			    	MatchRange('0','9'); 
 
@@ -1182,9 +1182,9 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:445:9: ( '0' .. '9' )+
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:445:9: ( '0' .. '9' )+
                     {
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:445:9: ( '0' .. '9' )+
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:445:9: ( '0' .. '9' )+
                     	int cnt5 = 0;
                     	do 
                     	{
@@ -1200,7 +1200,7 @@ public partial class SGLLexer : Lexer {
                     	    switch (alt5) 
                     		{
                     			case 1 :
-                    			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:445:10: '0' .. '9'
+                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:445:10: '0' .. '9'
                     			    {
                     			    	MatchRange('0','9'); 
 
@@ -1240,7 +1240,7 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = BooleanAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:450:5: ( 'true' | 'false' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:450:5: ( 'true' | 'false' )
             int alt7 = 2;
             int LA7_0 = input.LA(1);
 
@@ -1262,7 +1262,7 @@ public partial class SGLLexer : Lexer {
             switch (alt7) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:450:9: 'true'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:450:9: 'true'
                     {
                     	Match("true"); 
 
@@ -1270,7 +1270,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:451:9: 'false'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:451:9: 'false'
                     {
                     	Match("false"); 
 
@@ -1295,11 +1295,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = StringAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:459:5: ( '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:459:9: '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:459:5: ( '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:459:9: '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"'
             {
             	Match('\"'); 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:459:13: ( EscapeSequence | ~ ( '\\\\' | '\"' ) )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:459:13: ( EscapeSequence | ~ ( '\\\\' | '\"' ) )*
             	do 
             	{
             	    int alt8 = 3;
@@ -1318,14 +1318,14 @@ public partial class SGLLexer : Lexer {
             	    switch (alt8) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:459:15: EscapeSequence
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:459:15: EscapeSequence
             			    {
             			    	mEscapeSequence(); 
 
             			    }
             			    break;
             			case 2 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:459:32: ~ ( '\\\\' | '\"' )
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:459:32: ~ ( '\\\\' | '\"' )
             			    {
             			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '[') || (input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) 
             			    	{
@@ -1373,8 +1373,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = IntType;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:464:2: ( 'int' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:464:4: 'int'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:464:2: ( 'int' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:464:4: 'int'
             {
             	Match("int"); 
 
@@ -1397,8 +1397,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = BooleanType;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:468:2: ( 'boolean' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:468:4: 'boolean'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:468:2: ( 'boolean' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:468:4: 'boolean'
             {
             	Match("boolean"); 
 
@@ -1421,8 +1421,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = StringType;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:472:2: ( 'string' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:472:4: 'string'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:472:2: ( 'string' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:472:4: 'string'
             {
             	Match("string"); 
 
@@ -1445,8 +1445,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = FloatType;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:476:2: ( 'float' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:476:4: 'float'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:476:2: ( 'float' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:476:4: 'float'
             {
             	Match("float"); 
 
@@ -1469,10 +1469,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = ObjectType;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:482:2: ( 'object' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:482:4: 'object'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:482:2: ( 'Object' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:482:4: 'Object'
             {
-            	Match("object"); 
+            	Match("Object"); 
 
 
             }
@@ -1493,8 +1493,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Sprite;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:486:2: ( 'Sprite' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:486:4: 'Sprite'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:486:2: ( 'Sprite' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:486:4: 'Sprite'
             {
             	Match("Sprite"); 
 
@@ -1517,8 +1517,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Animation;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:490:2: ( 'Animation' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:490:4: 'Animation'
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:490:2: ( 'Animation' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:490:4: 'Animation'
             {
             	Match("Animation"); 
 
@@ -1541,7 +1541,7 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Layer;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:494:2: ( 'Background' | 'Fail' | 'Pass' | 'Foreground' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:494:2: ( 'Background' | 'Fail' | 'Pass' | 'Foreground' )
             int alt9 = 4;
             switch ( input.LA(1) ) 
             {
@@ -1586,7 +1586,7 @@ public partial class SGLLexer : Lexer {
             switch (alt9) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:494:4: 'Background'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:494:4: 'Background'
                     {
                     	Match("Background"); 
 
@@ -1594,7 +1594,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:495:4: 'Fail'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:495:4: 'Fail'
                     {
                     	Match("Fail"); 
 
@@ -1602,7 +1602,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:496:4: 'Pass'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:496:4: 'Pass'
                     {
                     	Match("Pass"); 
 
@@ -1610,7 +1610,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:497:4: 'Foreground'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:497:4: 'Foreground'
                     {
                     	Match("Foreground"); 
 
@@ -1635,13 +1635,13 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Origin;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:501:2: ( 'TopLeft' | 'TopCentre' | 'TopRight' | 'CentreLeft' | 'Centre' | 'CentreRight' | 'BottomLeft' | 'BottomCentre' | 'BottomRight' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:501:2: ( 'TopLeft' | 'TopCentre' | 'TopRight' | 'CentreLeft' | 'Centre' | 'CentreRight' | 'BottomLeft' | 'BottomCentre' | 'BottomRight' )
             int alt10 = 9;
             alt10 = dfa10.Predict(input);
             switch (alt10) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:501:4: 'TopLeft'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:501:4: 'TopLeft'
                     {
                     	Match("TopLeft"); 
 
@@ -1649,7 +1649,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:502:4: 'TopCentre'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:502:4: 'TopCentre'
                     {
                     	Match("TopCentre"); 
 
@@ -1657,7 +1657,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:503:4: 'TopRight'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:503:4: 'TopRight'
                     {
                     	Match("TopRight"); 
 
@@ -1665,7 +1665,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:504:4: 'CentreLeft'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:504:4: 'CentreLeft'
                     {
                     	Match("CentreLeft"); 
 
@@ -1673,7 +1673,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 5 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:505:4: 'Centre'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:505:4: 'Centre'
                     {
                     	Match("Centre"); 
 
@@ -1681,7 +1681,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 6 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:506:4: 'CentreRight'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:506:4: 'CentreRight'
                     {
                     	Match("CentreRight"); 
 
@@ -1689,7 +1689,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 7 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:507:4: 'BottomLeft'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:507:4: 'BottomLeft'
                     {
                     	Match("BottomLeft"); 
 
@@ -1697,7 +1697,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 8 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:508:4: 'BottomCentre'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:508:4: 'BottomCentre'
                     {
                     	Match("BottomCentre"); 
 
@@ -1705,7 +1705,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 9 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:509:4: 'BottomRight'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:509:4: 'BottomRight'
                     {
                     	Match("BottomRight"); 
 
@@ -1730,7 +1730,7 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = LoopType;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:513:2: ( 'LoopForever' | 'LoopOnce' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:513:2: ( 'LoopForever' | 'LoopOnce' )
             int alt11 = 2;
             int LA11_0 = input.LA(1);
 
@@ -1800,7 +1800,7 @@ public partial class SGLLexer : Lexer {
             switch (alt11) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:513:4: 'LoopForever'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:513:4: 'LoopForever'
                     {
                     	Match("LoopForever"); 
 
@@ -1808,7 +1808,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:514:4: 'LoopOnce'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:514:4: 'LoopOnce'
                     {
                     	Match("LoopOnce"); 
 
@@ -1833,11 +1833,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Identifier;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:519:5: ( Letter ( Letter | SGLIDDigit )* )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:519:9: Letter ( Letter | SGLIDDigit )*
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:519:5: ( Letter ( Letter | SGLIDDigit )* )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:519:9: Letter ( Letter | SGLIDDigit )*
             {
             	mLetter(); 
-            	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:519:16: ( Letter | SGLIDDigit )*
+            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:519:16: ( Letter | SGLIDDigit )*
             	do 
             	{
             	    int alt12 = 2;
@@ -1852,7 +1852,7 @@ public partial class SGLLexer : Lexer {
             	    switch (alt12) 
             		{
             			case 1 :
-            			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:
+            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:
             			    {
             			    	if ( input.LA(1) == '$' || (input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= 'A' && input.LA(1) <= 'Z') || input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z') || (input.LA(1) >= '\u00C0' && input.LA(1) <= '\u00D6') || (input.LA(1) >= '\u00D8' && input.LA(1) <= '\u00F6') || (input.LA(1) >= '\u00F8' && input.LA(1) <= '\u1FFF') || (input.LA(1) >= '\u3040' && input.LA(1) <= '\u318F') || (input.LA(1) >= '\u3300' && input.LA(1) <= '\u337F') || (input.LA(1) >= '\u3400' && input.LA(1) <= '\u3D2D') || (input.LA(1) >= '\u4E00' && input.LA(1) <= '\u9FFF') || (input.LA(1) >= '\uF900' && input.LA(1) <= '\uFAFF') ) 
             			    	{
@@ -1894,8 +1894,8 @@ public partial class SGLLexer : Lexer {
     {
     		try
     		{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:531:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:531:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:
             {
             	if ( input.LA(1) == '$' || (input.LA(1) >= 'A' && input.LA(1) <= 'Z') || input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z') || (input.LA(1) >= '\u00C0' && input.LA(1) <= '\u00D6') || (input.LA(1) >= '\u00D8' && input.LA(1) <= '\u00F6') || (input.LA(1) >= '\u00F8' && input.LA(1) <= '\u1FFF') || (input.LA(1) >= '\u3040' && input.LA(1) <= '\u318F') || (input.LA(1) >= '\u3300' && input.LA(1) <= '\u337F') || (input.LA(1) >= '\u3400' && input.LA(1) <= '\u3D2D') || (input.LA(1) >= '\u4E00' && input.LA(1) <= '\u9FFF') || (input.LA(1) >= '\uF900' && input.LA(1) <= '\uFAFF') ) 
             	{
@@ -1923,8 +1923,8 @@ public partial class SGLLexer : Lexer {
     {
     		try
     		{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:548:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:548:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:
             {
             	if ( (input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= '\u0660' && input.LA(1) <= '\u0669') || (input.LA(1) >= '\u06F0' && input.LA(1) <= '\u06F9') || (input.LA(1) >= '\u0966' && input.LA(1) <= '\u096F') || (input.LA(1) >= '\u09E6' && input.LA(1) <= '\u09EF') || (input.LA(1) >= '\u0A66' && input.LA(1) <= '\u0A6F') || (input.LA(1) >= '\u0AE6' && input.LA(1) <= '\u0AEF') || (input.LA(1) >= '\u0B66' && input.LA(1) <= '\u0B6F') || (input.LA(1) >= '\u0BE7' && input.LA(1) <= '\u0BEF') || (input.LA(1) >= '\u0C66' && input.LA(1) <= '\u0C6F') || (input.LA(1) >= '\u0CE6' && input.LA(1) <= '\u0CEF') || (input.LA(1) >= '\u0D66' && input.LA(1) <= '\u0D6F') || (input.LA(1) >= '\u0E50' && input.LA(1) <= '\u0E59') || (input.LA(1) >= '\u0ED0' && input.LA(1) <= '\u0ED9') || (input.LA(1) >= '\u1040' && input.LA(1) <= '\u1049') ) 
             	{
@@ -1954,7 +1954,7 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = EscapeSequence;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:568:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:568:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape )
             int alt13 = 3;
             int LA13_0 = input.LA(1);
 
@@ -2009,7 +2009,7 @@ public partial class SGLLexer : Lexer {
             switch (alt13) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:568:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:568:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
                     {
                     	Match('\\'); 
                     	if ( input.LA(1) == '\"' || input.LA(1) == '\'' || input.LA(1) == '\\' || input.LA(1) == 'b' || input.LA(1) == 'f' || input.LA(1) == 'n' || input.LA(1) == 'r' || input.LA(1) == 't' ) 
@@ -2027,14 +2027,14 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:569:9: UnicodeEscape
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:569:9: UnicodeEscape
                     {
                     	mUnicodeEscape(); 
 
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:570:9: OctalEscape
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:570:9: OctalEscape
                     {
                     	mOctalEscape(); 
 
@@ -2056,7 +2056,7 @@ public partial class SGLLexer : Lexer {
     {
     		try
     		{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:575:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
             int alt14 = 3;
             int LA14_0 = input.LA(1);
 
@@ -2114,25 +2114,25 @@ public partial class SGLLexer : Lexer {
             switch (alt14) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:575:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
                     {
                     	Match('\\'); 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:575:14: ( '0' .. '3' )
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:575:15: '0' .. '3'
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:14: ( '0' .. '3' )
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:15: '0' .. '3'
                     	{
                     		MatchRange('0','3'); 
 
                     	}
 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:575:25: ( '0' .. '7' )
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:575:26: '0' .. '7'
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:25: ( '0' .. '7' )
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:26: '0' .. '7'
                     	{
                     		MatchRange('0','7'); 
 
                     	}
 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:575:36: ( '0' .. '7' )
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:575:37: '0' .. '7'
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:36: ( '0' .. '7' )
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:37: '0' .. '7'
                     	{
                     		MatchRange('0','7'); 
 
@@ -2142,18 +2142,18 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:576:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:576:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
                     {
                     	Match('\\'); 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:576:14: ( '0' .. '7' )
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:576:15: '0' .. '7'
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:576:14: ( '0' .. '7' )
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:576:15: '0' .. '7'
                     	{
                     		MatchRange('0','7'); 
 
                     	}
 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:576:25: ( '0' .. '7' )
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:576:26: '0' .. '7'
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:576:25: ( '0' .. '7' )
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:576:26: '0' .. '7'
                     	{
                     		MatchRange('0','7'); 
 
@@ -2163,11 +2163,11 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:577:9: '\\\\' ( '0' .. '7' )
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:577:9: '\\\\' ( '0' .. '7' )
                     {
                     	Match('\\'); 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:577:14: ( '0' .. '7' )
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:577:15: '0' .. '7'
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:577:14: ( '0' .. '7' )
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:577:15: '0' .. '7'
                     	{
                     		MatchRange('0','7'); 
 
@@ -2190,8 +2190,8 @@ public partial class SGLLexer : Lexer {
     {
     		try
     		{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:582:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:582:9: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:582:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:582:9: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
             {
             	Match('\\'); 
             	Match('u'); 
@@ -2214,8 +2214,8 @@ public partial class SGLLexer : Lexer {
     {
     		try
     		{
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:586:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:586:13: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:586:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:586:13: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
             {
             	if ( (input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= 'A' && input.LA(1) <= 'F') || (input.LA(1) >= 'a' && input.LA(1) <= 'f') ) 
             	{
@@ -2245,8 +2245,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = WS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:592:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:592:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:592:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:592:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
             {
             	if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n') || (input.LA(1) >= '\f' && input.LA(1) <= '\r') || input.LA(1) == ' ' ) 
             	{
@@ -2279,7 +2279,7 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = COMMENT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:597:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
+            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:597:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
             int alt18 = 2;
             int LA18_0 = input.LA(1);
 
@@ -2313,11 +2313,11 @@ public partial class SGLLexer : Lexer {
             switch (alt18) 
             {
                 case 1 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:597:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:597:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
                     {
                     	Match("//"); 
 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:597:14: (~ ( '\\n' | '\\r' ) )*
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:597:14: (~ ( '\\n' | '\\r' ) )*
                     	do 
                     	{
                     	    int alt15 = 2;
@@ -2332,7 +2332,7 @@ public partial class SGLLexer : Lexer {
                     	    switch (alt15) 
                     		{
                     			case 1 :
-                    			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:597:14: ~ ( '\\n' | '\\r' )
+                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:597:14: ~ ( '\\n' | '\\r' )
                     			    {
                     			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t') || (input.LA(1) >= '\u000B' && input.LA(1) <= '\f') || (input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) 
                     			    	{
@@ -2357,7 +2357,7 @@ public partial class SGLLexer : Lexer {
                     	loop15:
                     		;	// Stops C# compiler whining that label 'loop15' has no statements
 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:597:28: ( '\\r' )?
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:597:28: ( '\\r' )?
                     	int alt16 = 2;
                     	int LA16_0 = input.LA(1);
 
@@ -2368,7 +2368,7 @@ public partial class SGLLexer : Lexer {
                     	switch (alt16) 
                     	{
                     	    case 1 :
-                    	        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:597:28: '\\r'
+                    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:597:28: '\\r'
                     	        {
                     	        	Match('\r'); 
 
@@ -2383,11 +2383,11 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:598:9: '/*' ( options {greedy=false; } : . )* '*/'
+                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:598:9: '/*' ( options {greedy=false; } : . )* '*/'
                     {
                     	Match("/*"); 
 
-                    	// C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:598:14: ( options {greedy=false; } : . )*
+                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:598:14: ( options {greedy=false; } : . )*
                     	do 
                     	{
                     	    int alt17 = 2;
@@ -2417,7 +2417,7 @@ public partial class SGLLexer : Lexer {
                     	    switch (alt17) 
                     		{
                     			case 1 :
-                    			    // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:598:42: .
+                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:598:42: .
                     			    {
                     			    	MatchAny(); 
 
@@ -2451,391 +2451,391 @@ public partial class SGLLexer : Lexer {
 
     override public void mTokens() // throws RecognitionException 
     {
-        // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:8: ( T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | IntegerAtom | FloatAtom | BooleanAtom | StringAtom | IntType | BooleanType | StringType | FloatType | ObjectType | Sprite | Animation | Layer | Origin | LoopType | Identifier | EscapeSequence | WS | COMMENT )
+        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:8: ( T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | IntegerAtom | FloatAtom | BooleanAtom | StringAtom | IntType | BooleanType | StringType | FloatType | ObjectType | Sprite | Animation | Layer | Origin | LoopType | Identifier | EscapeSequence | WS | COMMENT )
         int alt19 = 55;
         alt19 = dfa19.Predict(input);
         switch (alt19) 
         {
             case 1 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:10: T__50
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:10: T__50
                 {
                 	mT__50(); 
 
                 }
                 break;
             case 2 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:16: T__51
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:16: T__51
                 {
                 	mT__51(); 
 
                 }
                 break;
             case 3 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:22: T__52
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:22: T__52
                 {
                 	mT__52(); 
 
                 }
                 break;
             case 4 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:28: T__53
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:28: T__53
                 {
                 	mT__53(); 
 
                 }
                 break;
             case 5 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:34: T__54
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:34: T__54
                 {
                 	mT__54(); 
 
                 }
                 break;
             case 6 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:40: T__55
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:40: T__55
                 {
                 	mT__55(); 
 
                 }
                 break;
             case 7 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:46: T__56
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:46: T__56
                 {
                 	mT__56(); 
 
                 }
                 break;
             case 8 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:52: T__57
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:52: T__57
                 {
                 	mT__57(); 
 
                 }
                 break;
             case 9 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:58: T__58
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:58: T__58
                 {
                 	mT__58(); 
 
                 }
                 break;
             case 10 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:64: T__59
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:64: T__59
                 {
                 	mT__59(); 
 
                 }
                 break;
             case 11 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:70: T__60
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:70: T__60
                 {
                 	mT__60(); 
 
                 }
                 break;
             case 12 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:76: T__61
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:76: T__61
                 {
                 	mT__61(); 
 
                 }
                 break;
             case 13 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:82: T__62
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:82: T__62
                 {
                 	mT__62(); 
 
                 }
                 break;
             case 14 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:88: T__63
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:88: T__63
                 {
                 	mT__63(); 
 
                 }
                 break;
             case 15 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:94: T__64
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:94: T__64
                 {
                 	mT__64(); 
 
                 }
                 break;
             case 16 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:100: T__65
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:100: T__65
                 {
                 	mT__65(); 
 
                 }
                 break;
             case 17 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:106: T__66
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:106: T__66
                 {
                 	mT__66(); 
 
                 }
                 break;
             case 18 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:112: T__67
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:112: T__67
                 {
                 	mT__67(); 
 
                 }
                 break;
             case 19 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:118: T__68
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:118: T__68
                 {
                 	mT__68(); 
 
                 }
                 break;
             case 20 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:124: T__69
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:124: T__69
                 {
                 	mT__69(); 
 
                 }
                 break;
             case 21 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:130: T__70
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:130: T__70
                 {
                 	mT__70(); 
 
                 }
                 break;
             case 22 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:136: T__71
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:136: T__71
                 {
                 	mT__71(); 
 
                 }
                 break;
             case 23 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:142: T__72
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:142: T__72
                 {
                 	mT__72(); 
 
                 }
                 break;
             case 24 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:148: T__73
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:148: T__73
                 {
                 	mT__73(); 
 
                 }
                 break;
             case 25 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:154: T__74
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:154: T__74
                 {
                 	mT__74(); 
 
                 }
                 break;
             case 26 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:160: T__75
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:160: T__75
                 {
                 	mT__75(); 
 
                 }
                 break;
             case 27 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:166: T__76
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:166: T__76
                 {
                 	mT__76(); 
 
                 }
                 break;
             case 28 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:172: T__77
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:172: T__77
                 {
                 	mT__77(); 
 
                 }
                 break;
             case 29 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:178: T__78
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:178: T__78
                 {
                 	mT__78(); 
 
                 }
                 break;
             case 30 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:184: T__79
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:184: T__79
                 {
                 	mT__79(); 
 
                 }
                 break;
             case 31 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:190: T__80
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:190: T__80
                 {
                 	mT__80(); 
 
                 }
                 break;
             case 32 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:196: T__81
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:196: T__81
                 {
                 	mT__81(); 
 
                 }
                 break;
             case 33 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:202: T__82
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:202: T__82
                 {
                 	mT__82(); 
 
                 }
                 break;
             case 34 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:208: T__83
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:208: T__83
                 {
                 	mT__83(); 
 
                 }
                 break;
             case 35 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:214: T__84
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:214: T__84
                 {
                 	mT__84(); 
 
                 }
                 break;
             case 36 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:220: T__85
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:220: T__85
                 {
                 	mT__85(); 
 
                 }
                 break;
             case 37 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:226: T__86
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:226: T__86
                 {
                 	mT__86(); 
 
                 }
                 break;
             case 38 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:232: IntegerAtom
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:232: IntegerAtom
                 {
                 	mIntegerAtom(); 
 
                 }
                 break;
             case 39 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:244: FloatAtom
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:244: FloatAtom
                 {
                 	mFloatAtom(); 
 
                 }
                 break;
             case 40 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:254: BooleanAtom
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:254: BooleanAtom
                 {
                 	mBooleanAtom(); 
 
                 }
                 break;
             case 41 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:266: StringAtom
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:266: StringAtom
                 {
                 	mStringAtom(); 
 
                 }
                 break;
             case 42 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:277: IntType
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:277: IntType
                 {
                 	mIntType(); 
 
                 }
                 break;
             case 43 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:285: BooleanType
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:285: BooleanType
                 {
                 	mBooleanType(); 
 
                 }
                 break;
             case 44 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:297: StringType
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:297: StringType
                 {
                 	mStringType(); 
 
                 }
                 break;
             case 45 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:308: FloatType
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:308: FloatType
                 {
                 	mFloatType(); 
 
                 }
                 break;
             case 46 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:318: ObjectType
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:318: ObjectType
                 {
                 	mObjectType(); 
 
                 }
                 break;
             case 47 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:329: Sprite
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:329: Sprite
                 {
                 	mSprite(); 
 
                 }
                 break;
             case 48 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:336: Animation
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:336: Animation
                 {
                 	mAnimation(); 
 
                 }
                 break;
             case 49 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:346: Layer
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:346: Layer
                 {
                 	mLayer(); 
 
                 }
                 break;
             case 50 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:352: Origin
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:352: Origin
                 {
                 	mOrigin(); 
 
                 }
                 break;
             case 51 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:359: LoopType
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:359: LoopType
                 {
                 	mLoopType(); 
 
                 }
                 break;
             case 52 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:368: Identifier
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:368: Identifier
                 {
                 	mIdentifier(); 
 
                 }
                 break;
             case 53 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:379: EscapeSequence
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:379: EscapeSequence
                 {
                 	mEscapeSequence(); 
 
                 }
                 break;
             case 54 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:394: WS
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:394: WS
                 {
                 	mWS(); 
 
                 }
                 break;
             case 55 :
-                // C:\\Users\\Dominik Halfkann\\Documents\\Visual Studio 2010\\Projects\\SGLParserTester\\SGL\\AntlrParser\\SGL.g:1:397: COMMENT
+                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:397: COMMENT
                 {
                 	mCOMMENT(); 
 
@@ -3076,15 +3076,15 @@ public partial class SGLLexer : Lexer {
             "\x01\uffff\x01\x2d\x01\x1e\x01\x16\x01\uffff\x01\x04\x01\x05"+
             "\x01\x1c\x01\x1a\x01\x08\x01\x1b\x01\x0b\x01\x1d\x0a\x20\x01"+
             "\x14\x01\x07\x01\x18\x01\x0a\x01\x19\x01\x13\x01\uffff\x01\x26"+
-            "\x01\x27\x01\x2b\x02\x2d\x01\x28\x05\x2d\x01\x2c\x03\x2d\x01"+
-            "\x29\x02\x2d\x01\x25\x01\x2a\x06\x2d\x01\uffff\x01\x2e\x02\uffff"+
-            "\x01\x2d\x01\uffff\x01\x10\x01\x11\x02\x2d\x01\x0f\x01\x0d\x01"+
-            "\x09\x01\x2d\x01\x0e\x03\x2d\x01\x03\x01\x1f\x01\x24\x02\x2d"+
-            "\x01\x12\x01\x23\x01\x21\x01\x2d\x01\x06\x01\x0c\x03\x2d\x01"+
-            "\x01\x01\x15\x01\x02\x42\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
+            "\x01\x27\x01\x2b\x02\x2d\x01\x28\x05\x2d\x01\x2c\x02\x2d\x01"+
+            "\x24\x01\x29\x02\x2d\x01\x25\x01\x2a\x06\x2d\x01\uffff\x01\x2e"+
+            "\x02\uffff\x01\x2d\x01\uffff\x01\x10\x01\x11\x02\x2d\x01\x0f"+
+            "\x01\x0d\x01\x09\x01\x2d\x01\x0e\x03\x2d\x01\x03\x01\x1f\x03"+
+            "\x2d\x01\x12\x01\x23\x01\x21\x01\x2d\x01\x06\x01\x0c\x03\x2d"+
+            "\x01\x01\x01\x15\x01\x02\x42\uffff\x17\x2d\x01\uffff\x1f\x2d"+
+            "\x01\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080"+
+            "\x2d\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff"+
+            "\u0200\x2d",
             "",
             "",
             "\x01\x30",

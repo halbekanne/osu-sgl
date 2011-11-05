@@ -283,7 +283,7 @@ namespace SGL
             }
             else if (IsObject())
             {
-                return "object";
+                return "Object";
             }
             else if (IsLayer())
             {

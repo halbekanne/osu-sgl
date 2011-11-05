@@ -146,7 +146,7 @@ namespace SGL
                         throw new SGLCompilerException(-1, "type mismatch", "You can't assign an expression of type " + value.GetVarType() + " to a string variable");
                     }
                 }
-                else if (type.Equals("object"))
+                else if (type.Equals("Object"))
                 {
                     if (value.IsObject())
                     {
@@ -209,7 +209,7 @@ namespace SGL
             foreach (KeyValuePair<String,String> pair in varTypes)
             {
                 //Console.WriteLine("1: " + pair.Key);
-                if (pair.Value.Equals("object"))
+                if (pair.Value.Equals("Object"))
                 {
                     try
                     {
