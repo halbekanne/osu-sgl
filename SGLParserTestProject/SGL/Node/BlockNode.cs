@@ -9,6 +9,7 @@ namespace SGL.Node
         private List<SGLNode> statements;
         private List<SGLObject> spriteObjects;
         private Scope scope;
+        private int offset = 0;
 
         public BlockNode(List<SGLObject> spriteObjects, Scope scope)
         {
@@ -24,13 +25,15 @@ namespace SGL.Node
 
         public void AddOffset(int offset)
         {
-            scope.AddOffset(offset);
+            this.offset = offset;
+            //scope.AddOffset(offset);
         }
 
         public SGLValue Evaluate()
         {
             // handle offset
-            this.scope.AddOffset(this.scope.Parent().GetOffset());
+            //this.scope.ClearOffset();
+            this.scope.AddOffset(offset);
 
             foreach (SGLNode stat in statements)
             {

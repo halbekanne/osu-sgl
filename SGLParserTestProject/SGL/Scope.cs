@@ -27,8 +27,15 @@ namespace SGL
         public void AddOffset(int offset)
         {
             //this.offset = parent.GetOffset();
+            //Console.WriteLine("parent offset: " + parent.GetOffset());
+            this.offset = parent.GetOffset();
             this.offset += offset;
-            Console.WriteLine("Set offset in scope " + getParentNumber() + " to " + this.offset);
+            //Console.WriteLine("Set offset in scope " + getParentNumber() + " to " + this.offset);
+        }
+
+        public void ClearOffset()
+        {
+            this.offset = 0;
         }
 
         public Scope(Scope p)

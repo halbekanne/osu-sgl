@@ -234,6 +234,7 @@ namespace SGLTest
 
         private void SGLBox_KeyUp(object sender, KeyEventArgs e)
         {
+            /*
             Console.WriteLine(1);
 
 
@@ -254,7 +255,7 @@ namespace SGLTest
 
             // Request that the worker thread stop itself:
             //workerObject.RequestStop();
-
+            */
         }
 
         public class CheckSyntaxThread

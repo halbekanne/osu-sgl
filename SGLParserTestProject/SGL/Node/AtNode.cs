@@ -26,6 +26,7 @@ namespace SGL.Node
 
             // Add the offset in the expression to the current offset in the scope
             ((BlockNode)block).AddOffset(exprV.AsInteger());
+            //Console.WriteLine("At-Block changing offset: " + exprV.AsInteger());
 
             // Execute the block
             block.Evaluate();

@@ -26,20 +26,29 @@ namespace SGL
 
         public List<Error> Check(String input)
         {
-            //Lexing
-            ANTLRStringStream sStream = new ANTLRStringStream(input);
-            SGLLexer lexer = new SGLLexer(sStream);
+            try
+            {
+                //Lexing
+                ANTLRStringStream sStream = new ANTLRStringStream(input);
+                SGLLexer lexer = new SGLLexer(sStream);
 
-            CommonTokenStream tStream = new CommonTokenStream(lexer);
+                CommonTokenStream tStream = new CommonTokenStream(lexer);
 
-            // Parsing
-            SGLCheckerOTF parser = new SGLCheckerOTF(tStream);
-            CommonTree t = (CommonTree)parser.compilationUnit().Tree;
+                // Parsing
+                SGLCheckerOTF parser = new SGLCheckerOTF(tStream);
+                CommonTree t = (CommonTree)parser.compilationUnit().Tree;
 
-            // Printing tree
-            Console.WriteLine("; " + t.ToStringTree());
+                // Printing tree
+                Console.WriteLine("; " + t.ToStringTree());
 
-            return parser.errors;
+                return parser.errors;
+            }
+            catch (Exception ex)
+            {
+                return new List<Error>();
+            }
+
+            
         }
     }
 }
