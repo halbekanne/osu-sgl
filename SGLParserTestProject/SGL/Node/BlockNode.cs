@@ -29,6 +29,9 @@ namespace SGL.Node
 
         public SGLValue Evaluate()
         {
+            // handle offset
+            this.scope.AddOffset(this.scope.Parent().GetOffset());
+
             foreach (SGLNode stat in statements)
             {
                 SGLValue value = stat.Evaluate();

@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AntlrParser\SGLCheckerOTF.cs" />
+    <Compile Include="CheckerOTF.cs" />
     <Compile Include="ComList.cs" />
     <Compile Include="Compiler.cs" />
     <Compile Include="ErrorReporter.cs" />

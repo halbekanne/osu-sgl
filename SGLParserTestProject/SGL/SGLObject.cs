@@ -221,7 +221,7 @@ namespace SGL
                                 {
                                     if (comAnim.endTime >= time)
                                     {
-                                        Console.WriteLine(comAnim.ToString());
+                                        //Console.WriteLine(comAnim.ToString());
                                         // first, zero-base everything
                                         int zeroEnd = comAnim.endTime - comAnim.startTime;
                                         int zeroTime = time - comAnim.startTime;
@@ -244,7 +244,7 @@ namespace SGL
                                 {
                                     if (comAnim.endTime >= time)
                                     {
-                                        Console.WriteLine(comAnim.ToString());
+                                        //Console.WriteLine(comAnim.ToString());
                                         // first, zero-base everything
                                         int zeroEnd = comAnim.endTime - comAnim.startTime;
                                         int zeroTime = time - comAnim.startTime;
@@ -268,7 +268,7 @@ namespace SGL
                                 {
                                     if (comAnim.endTime >= time)
                                     {
-                                        Console.WriteLine(comAnim.ToString());
+                                        //Console.WriteLine(comAnim.ToString());
                                         // first, zero-base everything
                                         int zeroEnd = comAnim.endTime - comAnim.startTime;
                                         int zeroTime = time - comAnim.startTime;
@@ -291,7 +291,7 @@ namespace SGL
                                 {
                                     if (comAnim.endTime >= time)
                                     {
-                                        Console.WriteLine(comAnim.ToString());
+                                        //Console.WriteLine(comAnim.ToString());
                                         // first, zero-base everything
                                         int zeroEnd = comAnim.endTime - comAnim.startTime;
                                         int zeroTime = time - comAnim.startTime;
@@ -314,7 +314,7 @@ namespace SGL
                                 {
                                     if (comAnim.endTime >= time)
                                     {
-                                        Console.WriteLine(comAnim.ToString());
+                                        //Console.WriteLine(comAnim.ToString());
                                         // first, zero-base everything
                                         int zeroEnd = comAnim.endTime - comAnim.startTime;
                                         int zeroTime = time - comAnim.startTime;
@@ -337,7 +337,7 @@ namespace SGL
                                 {
                                     if (comAnim.endTime >= time)
                                     {
-                                        Console.WriteLine(comAnim.ToString());
+                                        //Console.WriteLine(comAnim.ToString());
                                         // first, zero-base everything
                                         int zeroEnd = comAnim.endTime - comAnim.startTime;
                                         int zeroTime = time - comAnim.startTime;
@@ -360,7 +360,7 @@ namespace SGL
                                 {
                                     if (comAnim.endTime >= time)
                                     {
-                                        Console.WriteLine(comAnim.ToString());
+                                        //Console.WriteLine(comAnim.ToString());
                                         // first, zero-base everything
                                         int zeroEnd = comAnim.endTime - comAnim.startTime;
                                         int zeroTime = time - comAnim.startTime;
@@ -383,7 +383,7 @@ namespace SGL
                                 {
                                     if (comAnim.endTime >= time)
                                     {
-                                        Console.WriteLine(comAnim.ToString());
+                                        //Console.WriteLine(comAnim.ToString());
                                         // first, zero-base everything
                                         int zeroEnd = comAnim.endTime - comAnim.startTime;
                                         int zeroTime = time - comAnim.startTime;
@@ -406,7 +406,7 @@ namespace SGL
                                 {
                                     if (comAnim.endTime >= time)
                                     {
-                                        Console.WriteLine(comAnim.ToString());
+                                        //Console.WriteLine(comAnim.ToString());
                                         // first, zero-base everything
                                         int zeroEnd = comAnim.endTime - comAnim.startTime;
                                         int zeroTime = time - comAnim.startTime;
@@ -429,7 +429,7 @@ namespace SGL
                                 {
                                     if (comAnim.endTime >= time)
                                     {
-                                        Console.WriteLine(comAnim.ToString());
+                                        //Console.WriteLine(comAnim.ToString());
                                         // first, zero-base everything
                                         int zeroEnd = comAnim.endTime - comAnim.startTime;
                                         int zeroTime = time - comAnim.startTime;
@@ -478,15 +478,15 @@ namespace SGL
             {
                 case 0: 
                     // Easing 0
-                    Console.WriteLine("0 part: " + (reqTime / (float)duration));
+                    //Console.WriteLine("0 part: " + (reqTime / (float)duration));
                     return reqTime / (float)duration;
                 case 1:
                     // Easing 1
-                    Console.WriteLine("1 part: " + (1 - (float)Math.Pow(reqTime / (float)duration, 2)));
+                    //Console.WriteLine("1 part: " + (1 - (float)Math.Pow(reqTime / (float)duration, 2)));
                     return 1 - (float)Math.Pow(reqTime / (float)duration, 2);
                 case 2:
                     // Easing 2
-                    Console.WriteLine("2 part: " + ((float)Math.Pow(reqTime / (float)duration, 2)));
+                    //Console.WriteLine("2 part: " + ((float)Math.Pow(reqTime / (float)duration, 2)));
                     return (float)Math.Pow(reqTime / (float)duration, 2);
             }
 

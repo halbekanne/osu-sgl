@@ -31,7 +31,7 @@ namespace SGL
         /// <param name="value"></param>
         public void NewLocalVariable(String type, String name, String value)
         {
-            Console.WriteLine("Push local variable: " + type + "," + name + "," + value);
+            //Console.WriteLine("Push local variable: " + type + "," + name + "," + value);
             VariableScope currentDic = localVariables.Pop();
             currentDic.AddVariable(type,name,value);
             localVariables.Push(currentDic);
@@ -45,7 +45,7 @@ namespace SGL
         /// <param name="value"></param>
         public void AssignVariable(String name, String value)
         {
-            Console.WriteLine("Assign variable: "  + name + " = " + value);
+            //Console.WriteLine("Assign variable: "  + name + " = " + value);
             foreach (VariableScope searchDic in localVariables)
             {
                 if (searchDic.IsVariable(name))
@@ -68,7 +68,7 @@ namespace SGL
         /// <param name="name"></param>
         public String GetVariable(String name)
         {
-            Console.WriteLine("Try to get variable: " + name);
+            //Console.WriteLine("Try to get variable: " + name);
             foreach (VariableScope searchDic in localVariables)
             {
                 try

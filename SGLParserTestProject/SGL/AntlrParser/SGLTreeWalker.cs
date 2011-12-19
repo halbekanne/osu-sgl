@@ -294,6 +294,9 @@ public partial class SGLTreeWalker : TreeParser
                     }
                 }
 
+                storyboardCode.AppendLine("//Storyboard Sound Samples");
+
+
         	return storyboardCode;
         }
         

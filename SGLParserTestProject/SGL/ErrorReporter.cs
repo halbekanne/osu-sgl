@@ -98,7 +98,7 @@ namespace SGL
             }
             catch (WebException ex)
             {
-                Console.WriteLine("HttpPost: Request error");
+                //Console.WriteLine("HttpPost: Request error");
             }
             finally
             {

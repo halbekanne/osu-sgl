@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using SGL;
 using System.Threading;
 using System.IO;
+using System.Diagnostics;
 
 namespace SGLTest
 {
@@ -15,6 +16,8 @@ namespace SGLTest
     {
 
         delegate void GetThisCallback(SimpleSGLEditor editor, String uri);
+
+        private DateTime lastChange = DateTime.Now;
 
         public SimpleSGLEditor()
         {
@@ -51,7 +54,7 @@ namespace SGLTest
             {
                 //Console.WriteLine("input Text: " + SGLBox.Document.Text);
                 SGL.Compiler compiler = new SGL.Compiler();
-                compiler.SetTimeRecording(true);
+                compiler.SetTimeRecording(false);
                 storyboardBox.Document.Text = compiler.Run(SGLBox.Document.Text);
 
                 statusLabel.Text = "";
@@ -229,6 +232,99 @@ namespace SGLTest
             }
         }
 
+        private void SGLBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            Console.WriteLine(1);
+
+
+            // Create the thread object. This does not start the thread.
+            //CheckSyntaxThread workerObject = new CheckSyntaxThread(this);
+            Thread workerThread = new Thread(new ThreadStart(this.CheckSyntax));
+
+            // Start the worker thread.
+            workerThread.Start();
+            Console.WriteLine("main thread: Starting worker thread...");
+
+            // Loop until worker thread activates.
+            while (!workerThread.IsAlive) ;
+
+            // Put the main thread to sleep for 1 millisecond to
+            // allow the worker thread to do some work:
+            Thread.Sleep(50);
+
+            // Request that the worker thread stop itself:
+            //workerObject.RequestStop();
+
+        }
+
+        public class CheckSyntaxThread
+        {
+            private SimpleSGLEditor editor;
+            public CheckSyntaxThread(SimpleSGLEditor editor)
+            {
+                this.editor = editor;
+            }
+            // This method will be called when the thread is started.
+            public void DoWork()
+            {
+                editor.CheckSyntax();
+            }
+
+        }
+
+        delegate void ClearCallback();
+        delegate void SetTextCallback(string text);
+
+        private void CheckSyntax()
+        {
+            CheckerOTF checker = new CheckerOTF();
+            List<CheckerOTF.Error> errors = checker.Check(SGLBox.Document.Text);
+
+            // clear
+            SGLBox.Document.ClearBookmarks();
+            this.ClearErr();
+
+            foreach (CheckerOTF.Error error in errors)
+            {
+                Console.WriteLine("error in line " + error.line + " : " + error.msg);
+                if (error.line < 1) error.line = 1;
+                Alsing.SourceCode.Row row = SGLBox.Document[error.line - 1];
+                row.Bookmarked = true;
+                this.SetTextErr(errorBox.Text + "line " + error.line + ": " + error.msg + "\r\n");
+            }
+        }
+
+        private void SetTextErr(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.errorBox.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetTextErr);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.errorBox.Text = text;
+            }
+        }
+
+        private void ClearErr()
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.errorBox.InvokeRequired)
+            {
+                ClearCallback d = new ClearCallback(ClearErr);
+                this.Invoke(d, new object[] { });
+            }
+            else
+            {
+                this.errorBox.Clear();
+            }
+        }
 
 
 

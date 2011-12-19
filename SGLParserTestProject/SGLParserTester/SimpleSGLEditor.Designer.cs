@@ -132,6 +132,7 @@
             this.SGLBox.TabIndex = 0;
             this.SGLBox.WhitespaceColor = System.Drawing.SystemColors.ControlDark;
             this.SGLBox.Click += new System.EventHandler(this.SGLBox_Click);
+            this.SGLBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SGLBox_KeyUp);
             // 
             // syntaxSGL
             // 
@@ -283,33 +284,33 @@
             // miNew
             // 
             this.miNew.Name = "miNew";
-            this.miNew.Size = new System.Drawing.Size(152, 22);
+            this.miNew.Size = new System.Drawing.Size(123, 22);
             this.miNew.Text = "New";
             this.miNew.Click += new System.EventHandler(this.miNew_Click);
             // 
             // miOpen
             // 
             this.miOpen.Name = "miOpen";
-            this.miOpen.Size = new System.Drawing.Size(152, 22);
+            this.miOpen.Size = new System.Drawing.Size(123, 22);
             this.miOpen.Text = "Open...";
             this.miOpen.Click += new System.EventHandler(this.miOpen_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
             // 
             // miSaveSgl
             // 
             this.miSaveSgl.Name = "miSaveSgl";
-            this.miSaveSgl.Size = new System.Drawing.Size(152, 22);
+            this.miSaveSgl.Size = new System.Drawing.Size(123, 22);
             this.miSaveSgl.Text = "Save .sgf";
             this.miSaveSgl.Click += new System.EventHandler(this.miSaveSgf_Click);
             // 
             // miSaveOsb
             // 
             this.miSaveOsb.Name = "miSaveOsb";
-            this.miSaveOsb.Size = new System.Drawing.Size(152, 22);
+            this.miSaveOsb.Size = new System.Drawing.Size(123, 22);
             this.miSaveOsb.Text = "Save .osb";
             this.miSaveOsb.Click += new System.EventHandler(this.miSaveOsb_Click);
             // 

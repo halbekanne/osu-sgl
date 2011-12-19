@@ -26,9 +26,9 @@ namespace SGL
 
         public void AddOffset(int offset)
         {
-            this.offset = parent.GetOffset();
+            //this.offset = parent.GetOffset();
             this.offset += offset;
-            //Console.WriteLine("Set offset in scope " + getParentNumber() + " to " + this.offset);
+            Console.WriteLine("Set offset in scope " + getParentNumber() + " to " + this.offset);
         }
 
         public Scope(Scope p)
@@ -36,6 +36,8 @@ namespace SGL
             parent = p;
             varValues = new Dictionary<String, SGLValue>();
             varTypes = new Dictionary<String, String>();
+            //offset = p.GetOffset();
+            //Console.WriteLine("Create new scope " + getParentNumber() + " with offset " + this.offset + " parent offset " + p.GetOffset());
             //Console.WriteLine("Parent offset in " + getParentNumber() + " was " + offset);
         }
 
