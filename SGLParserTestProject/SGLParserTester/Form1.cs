@@ -33,8 +33,9 @@ namespace WindowsFormsApplication4
                 outputBox.Text = compiler.Run(inputBox.Text);
 
             }
-            catch (SGLCompilerException ce)
+            catch (CompilerException ce)
             {
+                /*
                 if (ce.ErrorType.Equals("Antlr.Parser"))
                 {
                     errorBox.Text = "Error (wrong syntax) on " + ce.Message;
@@ -42,7 +43,7 @@ namespace WindowsFormsApplication4
                 else
                 {
                     errorBox.Text = "Error (" + ce.ErrorType + ") on line " + ce.Line + ": " + ce.Message;
-                }
+                }*/
             }
             catch (Exception ex)
             {
@@ -57,9 +58,15 @@ namespace WindowsFormsApplication4
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            /*
             UnitTester tester = new UnitTester();
-            tester.RunTests();
+            tester.RunTests();*/
+            try {
+                int t = 1;
+                int x = 4/(1-t);
+            } catch (Exception ex) {
+                ErrorReportForm errorReport = new ErrorReportForm(ex);
+            }
         }
 
 

@@ -54,7 +54,7 @@ namespace SGL.SGLUnit
 
             // Parsing
             SGLParser parser = new SGLParser(tStream);
-            CommonTree t = (CommonTree)parser.compilationUnit().Tree;
+            CommonTree t = (CommonTree)parser.main().Tree;
 
             // Printing tree
             Console.WriteLine("; " + t.ToStringTree());
@@ -63,7 +63,7 @@ namespace SGL.SGLUnit
             CommonTreeNodeStream treeStream = new CommonTreeNodeStream(t);
 
             SGLTreeWalker tw = new SGLTreeWalker(treeStream);
-            SGLNode returned = tw.compilationUnit();
+            Node returned = tw.main();
             returned.Evaluate();
 
 
@@ -84,7 +84,7 @@ namespace SGL.SGLUnit
             }
 
             }
-            catch (SGLCompilerException ce)
+            catch (CompilerException ce)
             {
                 if (ce.ErrorType.Equals("Antlr.Parser"))
                 {

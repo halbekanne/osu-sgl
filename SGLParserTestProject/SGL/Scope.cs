@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SGL.Types;
 
 namespace SGL
 {
     public class Scope
     {
         private Scope parent;
-        private Dictionary<String, SGLValue> varValues;// = new Dictionary<String, SGLValue>();
-        private Dictionary<String, String> varTypes;
+        private Dictionary<String, Value> variables;// = new Dictionary<String, SGLValue>();
         private int offset = 0;
-        private List<SGLObject> spriteObjects = null;
+        //private List<SpriteObject> spriteObjects = null;
 
         public Scope()
         {
             // only for the global scope, the parent is null  
             parent = null;
-            varValues = new Dictionary<String, SGLValue>();
-            varTypes = new Dictionary<String, String>();
+            variables = new Dictionary<String, Value>();
         }
 
         public int GetOffset() {
@@ -41,28 +40,24 @@ namespace SGL
         public Scope(Scope p)
         {
             parent = p;
-            varValues = new Dictionary<String, SGLValue>();
-            varTypes = new Dictionary<String, String>();
+            variables = new Dictionary<String, Value>();
             //offset = p.GetOffset();
             //Console.WriteLine("Create new scope " + getParentNumber() + " with offset " + this.offset + " parent offset " + p.GetOffset());
             //Console.WriteLine("Parent offset in " + getParentNumber() + " was " + offset);
         }
 
-        public void Assign(String var, SGLValue value, Boolean newVar, String type)
+        public void Assign(String var, Value value)
         {
             if (Resolve(var) != null)
             {
-                if (newVar) throw new SGLCompilerException(-1, "duplicate variable", "The variable '" + var + "' can only be declared once");
                 // There is already such a variable, re-assign it
                 this.ReAssign(var, value);
             }
             else
             {
-                if (!newVar) throw new SGLCompilerException(-1, "unknown variable", "The variable '" + var + "' was not declared before");
                 //if (IsGlobalScope()) Console.WriteLine("This is the global scope year!");
                 // A newly declared variable  
-                varValues.Add(var, value);
-                varTypes.Add(var, type);
+                variables.Add(var, value);
             }
         }
 
@@ -73,7 +68,7 @@ namespace SGL
             // changing the variables would result in changes to the Maps from  
             // other "recursive scopes".  
             Scope s = new Scope();
-            s.varValues = new Dictionary<String, SGLValue>(this.varValues);
+            s.variables = new Dictionary<String, Value>(this.variables);
             return s;
         }
 
@@ -100,22 +95,26 @@ namespace SGL
 
         }
 
-        private void ReAssign(String identifier, SGLValue value)
+        private void ReAssign(String identifier, Value value)
         {
-            if (varValues.ContainsKey(identifier))
+            if (variables.ContainsKey(identifier))
             {
+                variables[identifier] = value;
+
                 // The variable is declared in this scope
-                String type = varTypes[identifier];
+                /*SGLValue oldValue;
+                variables.TryGetValue(identifier, out oldValue);
+                String type = oldValue.GetVarType();
                 if (type.Equals("int"))
                 {
                     if (value.IsInteger())
                     {
-                        varValues[identifier] = value;
+                        variables[identifier] = value;
                     }
                     else if (value.IsFloat())
                     {
                         // Convert float expression to int
-                        varValues[identifier] = new SGLValue((int)Math.Floor(value.AsFloat()));
+                        variables[identifier] = new SGLValue((int)Math.Floor(value.AsFloat()));
                     }
                     else
                     {
@@ -126,7 +125,7 @@ namespace SGL
                 {
                     if (value.IsNumber())
                     {
-                        varValues[identifier] = value;
+                        variables[identifier] = value;
                     }
                     else
                     {
@@ -137,7 +136,7 @@ namespace SGL
                 {
                     if (value.IsBoolean())
                     {
-                        varValues[identifier] = value;
+                        variables[identifier] = value;
                     }
                     else
                     {
@@ -148,7 +147,7 @@ namespace SGL
                 {
                     if (value.IsString())
                     {
-                        varValues[identifier] = value;
+                        variables[identifier] = value;
                     }
                     else
                     {
@@ -160,8 +159,8 @@ namespace SGL
                     if (value.IsObject())
                     {
                         // Add this object to the spriteObjects before the reassignment, so it don't get lost
-                        spriteObjects.Add(varValues[identifier].AsObject());
-                        varValues[identifier] = value;
+                        spriteObjects.Add(variables[identifier].AsObject());
+                        variables[identifier] = value;
                     }
                     else
                     {
@@ -171,7 +170,7 @@ namespace SGL
                 else
                 {
                     throw new SGLCompilerException(-1, "unknown type", "Unknown variable type (" + type + ")");
-                }
+                }*/
                 
             }
             else if (parent != null)
@@ -183,10 +182,10 @@ namespace SGL
         }
 
 
-        public SGLValue Resolve(String var)
+        public Value Resolve(String var)
         {
-            SGLValue value;
-            varValues.TryGetValue(var, out value);
+            Value value;
+            variables.TryGetValue(var, out value);
             if (value != null)
             {
                 // The variable resides in this scope  
@@ -207,25 +206,24 @@ namespace SGL
 
         public void ClearVariables()
         {
-            varValues = new Dictionary<String, SGLValue>();
-            varTypes = new Dictionary<String, String>();
+            variables = new Dictionary<String, Value>();
         }
 
 
-        public List<SGLObject> GetObjects()
+        public List<SpriteObject> GetObjects()
         {
-            List<SGLObject> objects = new List<SGLObject>();
-            foreach (KeyValuePair<String,String> pair in varTypes)
+            List<SpriteObject> objects = new List<SpriteObject>();
+            foreach (KeyValuePair<String,Value> pair in variables)
             {
                 //Console.WriteLine("1: " + pair.Key);
-                if (pair.Value.Equals("Object"))
+                if (pair.Value.GetType().Equals("Object"))
                 {
                     try
                     {
                         //Console.WriteLine(2);
-                        objects.Add(varValues[pair.Key].AsObject());
+                        objects.Add(pair.Value.AsObject());
                     }
-                    catch (SGLCompilerException sce)
+                    catch (CompilerException sce)
                     {
                         if (sce.ErrorType.Equals("undeclared object"))
                         {
@@ -234,6 +232,11 @@ namespace SGL
                         }
                     }
                 }
+                else if (pair.Value.GetType().Equals("list"))
+                {
+                    // checks if objects are in that list or in nested lists
+                    objects.AddRange(getObjectsFromList(pair.Value));
+                }
             }
 
             return objects;
@@ -241,11 +244,29 @@ namespace SGL
         }
 
 
+        private List<SpriteObject> getObjectsFromList(Value listPointer)
+        {
+            // recursively checks if any object is in the list or any nested lists
+            List<SpriteObject> objects = new List<SpriteObject>();
+            foreach (Value item in listPointer.AsList())
+            {
+                if (item.GetType().Equals("Object"))
+                {
+                    objects.Add(item.AsObject());
+                }
+                else if (item.GetType().Equals("list"))
+                {
+                    objects.AddRange(getObjectsFromList(item));
+                }
+            }
+            return objects;
+        }
 
 
-        public void SetSpriteObjects(List<SGLObject> spriteObjects)
+        /*
+        public void SetSpriteObjects(List<SpriteObject> spriteObjects)
         {
             this.spriteObjects = spriteObjects;
-        }
+        }*/
     }
 }

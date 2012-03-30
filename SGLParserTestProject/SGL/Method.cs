@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using SGL;
-using SGL.AntlrParser;
+using SGL.Parser;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
+using SGL.Nodes;
 
 namespace SGL
 {
@@ -12,18 +13,15 @@ namespace SGL
     {
 
         private String id;
-        private String returnType;
-        private List<String> identTypes;
         private List<String> identifiers;
         private CommonTree code;
         private Scope scope;
+        private Random random;
 
-        public Method(String id, String type, CommonTree identifiers, CommonTree block)
+        public Method(String id, CommonTree identifiers, CommonTree block)
         {
             this.id = id;
-            this.returnType = type;
-            this.identTypes = ToList(identifiers,0);
-            this.identifiers = ToList(identifiers,1);
+            this.identifiers = ToList(identifiers);
             code = block;
             scope = new Scope();
             //Console.WriteLine("identifiers: " + this.identifiers.Count);
@@ -33,14 +31,12 @@ namespace SGL
         {
             // Used for recursively calling methods  
             id = original.id;
-            returnType = original.returnType;
-            identTypes = original.identTypes;
             identifiers = original.identifiers;
             code = original.code;
             scope = original.scope.Copy();
         }
 
-        public SGLValue Invoke(List<SGLNode> parameters, Dictionary<String, Method> functions, StringBuilder sb, Scope globalScope)
+        public Value Invoke(List<INode> parameters, Dictionary<String, Method> methods, Dictionary<String, ObjectMethod> objectMethods, StringBuilder sb, Scope globalScope, Random random)
         {
             // Test if the amount of parameters are the same as the identifiers of this method
             if (parameters.Count != identifiers.Count)
@@ -50,19 +46,20 @@ namespace SGL
             }
 
             // Convert the list of Nodes into Values
-            List<SGLValue> paramValues = new List<SGLValue>();
-            foreach(SGLNode currentNode in parameters) {
+            List<Value> paramValues = new List<Value>();
+            foreach(INode currentNode in parameters) {
                 paramValues.Add(currentNode.Evaluate());
             }
 
-            // Test if the type of parameters are the same as the identifiers
+            // Test if the type of parameters are the same as the identifiers - no need for this anymore
+            /*
             for (int i = 0; i < paramValues.Count; i++) {
                 if (!paramValues[i].GetVarType().Equals(identTypes[i]))
                 {
                     throw new Exception("illegal function call: " + paramValues.ToString() +
                     " does not match " + identTypes.ToString());
                 }
-            }
+            }*/
 
             // Add the methods scope as a child to the global scope
             scope = new Scope(globalScope);
@@ -71,25 +68,27 @@ namespace SGL
             // Assign all expression parameters to this method's identifiers  
             for (int i = 0; i < identifiers.Count; i++)
             {
-                scope.Assign(identifiers[i], paramValues[i], true, identTypes[i]);
+                scope.Assign(identifiers[i], paramValues[i]);
             }
 
             try
             {
                 // Create a tree walker to evaluate this method's code block  
                 CommonTreeNodeStream nodes = new CommonTreeNodeStream(code);
-                SGLTreeWalker walker = new SGLTreeWalker(nodes, scope, functions);
+                SGLTreeWalker walker = new SGLTreeWalker(nodes, scope, methods, objectMethods);
+                walker.SetRandomizer(random);
 
                 // Ok executing the function then
-                SGLValue returnValue = walker.compilationUnit().Evaluate();
+                Value returnValue = walker.main().Evaluate();
 
                 // Add Function's SB to the main SB
                 sb.Append(walker.GetStoryboardCode().ToString());
 
-                if (!returnValue.GetVarType().Equals(this.returnType))
+                // we shouldn't check the return type
+                /*if (!returnValue.GetVarType().Equals(this.returnType))
                 {
                     throw new Exception("The method doesn't return the expected return type (" + returnValue.ToString()  + " is not from type " + this.returnType + ")");
-                }
+                }*/
                 return returnValue;
             }
             catch (RecognitionException e)
@@ -99,19 +98,18 @@ namespace SGL
             }
         }
 
-        private List<String> ToList(CommonTree tree, int childNum)
+        private List<String> ToList(CommonTree tree)
         {
             List<String> ids = new List<String>();
-
             // convert the tree to a List of Strings
             //Console.WriteLine("1: " + childNum);
             if (tree.ChildCount > 0)
             {
                 //Console.WriteLine("2: " + childNum);
-                for (int i = 0; i < tree.GetChild(childNum).ChildCount; i++)
+                for (int i = 0; i < tree.ChildCount; i++)
                 {
                     //Console.WriteLine("3: " + childNum);
-                    CommonTree child = (CommonTree)tree.GetChild(childNum).GetChild(i);
+                    CommonTree child = (CommonTree)tree.GetChild(i);
                     ids.Add(child.Text);
                     //Console.WriteLine("add to List (" + childNum + "): " + child.Text);
                 }

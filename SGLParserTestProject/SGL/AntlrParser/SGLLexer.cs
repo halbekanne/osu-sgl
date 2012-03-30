@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g 2011-11-04 23:05:42
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 D:\\sgl4c#\\NewSGLGramma\\SGL.g 2012-03-28 19:59:22
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -28,82 +28,85 @@ public partial class SGLLexer : Lexer {
     public const int T__64 = 64;
     public const int T__65 = 65;
     public const int T__62 = 62;
-    public const int OBJMETHOD = 14;
+    public const int VAR_LIST = 16;
     public const int T__63 = 63;
-    public const int Origin = 39;
-    public const int Sprite = 36;
-    public const int SGLIDDigit = 44;
-    public const int PARAM_NAME_LIST = 24;
-    public const int IntType = 28;
+    public const int IntAtom = 31;
+    public const int Sprite = 39;
+    public const int EXP_LIST = 15;
+    public const int LoopTypeAtom = 36;
     public const int T__61 = 61;
-    public const int ID_LIST = 9;
-    public const int EOF = -1;
+    public const int UTF8Letter = 46;
     public const int T__60 = 60;
-    public const int BREAK = 22;
-    public const int Identifier = 27;
-    public const int IF = 7;
+    public const int EOF = -1;
+    public const int HexDigit = 44;
+    public const int BREAK = 19;
+    public const int Identifier = 29;
+    public const int Lyrics = 43;
+    public const int IF = 22;
+    public const int AT = 21;
     public const int T__55 = 55;
-    public const int AT = 6;
     public const int T__56 = 56;
     public const int T__57 = 57;
     public const int T__58 = 58;
     public const int T__51 = 51;
-    public const int Animation = 37;
+    public const int Animation = 40;
     public const int T__52 = 52;
     public const int T__53 = 53;
     public const int T__54 = 54;
-    public const int EXP = 8;
-    public const int FORITER = 18;
-    public const int StringType = 30;
+    public const int Comment = 48;
+    public const int EXP = 23;
+    public const int FORITER = 26;
     public const int T__59 = 59;
-    public const int LoopType = 40;
-    public const int RETURN = 26;
-    public const int COMMENT = 49;
-    public const int STRINGNOQUOTES = 19;
-    public const int VARDEF = 10;
+    public const int INT_NEGATE = 7;
+    public const int UTF8Digit = 47;
+    public const int RETURN = 20;
+    public const int WhiteSpace = 49;
     public const int T__50 = 50;
-    public const int GLOBVARDEF = 11;
-    public const int VARDEC = 21;
-    public const int BooleanType = 29;
+    public const int VARDEC = 10;
+    public const int OriginAtom = 35;
+    public const int Null = 38;
+    public const int LayerAtom = 34;
+    public const int GLOBAL_ASSIGN = 28;
     public const int T__80 = 80;
     public const int T__81 = 81;
     public const int T__82 = 82;
     public const int T__83 = 83;
-    public const int IntegerAtom = 33;
-    public const int FORDEC = 16;
-    public const int FloatType = 31;
-    public const int PARAM_TYPE_LIST = 23;
-    public const int StringAtom = 41;
-    public const int METH_CALL = 25;
-    public const int NEGATE = 13;
-    public const int HEX_DIGIT = 47;
+    public const int FORDEC = 24;
+    public const int StringAtom = 30;
+    public const int METH_CALL = 17;
+    public const int INDEXES = 12;
+    public const int ColorAtom = 37;
     public const int T__85 = 85;
     public const int T__84 = 84;
+    public const int LIST = 14;
+    public const int T__87 = 87;
     public const int T__86 = 86;
-    public const int BooleanAtom = 35;
+    public const int T__89 = 89;
+    public const int List = 41;
+    public const int T__88 = 88;
+    public const int BOOL_NEGATE = 8;
+    public const int BooleanAtom = 33;
+    public const int LOOKUP = 13;
     public const int T__71 = 71;
-    public const int FORCOND = 17;
-    public const int WS = 48;
+    public const int FORCOND = 25;
     public const int T__72 = 72;
+    public const int VARIABLE = 11;
     public const int T__70 = 70;
-    public const int UnicodeEscape = 45;
     public const int BLOCK = 4;
-    public const int ASSIGN = 12;
-    public const int Layer = 38;
-    public const int STATEMENTS = 5;
-    public const int ObjectType = 32;
+    public const int ASSIGN = 5;
+    public const int VarStartChar = 42;
+    public const int OBJ_METH_CALL = 18;
     public const int T__76 = 76;
-    public const int FloatAtom = 34;
+    public const int GLOBAL = 27;
+    public const int FloatAtom = 32;
     public const int T__75 = 75;
     public const int T__74 = 74;
-    public const int VARINC = 20;
+    public const int VARINC = 9;
     public const int T__73 = 73;
-    public const int EscapeSequence = 42;
-    public const int Letter = 43;
-    public const int OctalEscape = 46;
+    public const int EscapeSequence = 45;
     public const int T__79 = 79;
     public const int T__78 = 78;
-    public const int STRING = 15;
+    public const int STRING = 6;
     public const int T__77 = 77;
 
     // delegates
@@ -124,7 +127,7 @@ public partial class SGLLexer : Lexer {
     
     override public string GrammarFileName
     {
-    	get { return "D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g";} 
+    	get { return "D:\\sgl4c#\\NewSGLGramma\\SGL.g";} 
     }
 
     // $ANTLR start "T__50"
@@ -134,8 +137,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__50;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:14:7: ( '{' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:14:9: '{'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:14:7: ( '{' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:14:9: '{'
             {
             	Match('{'); 
 
@@ -157,8 +160,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__51;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:15:7: ( '}' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:15:9: '}'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:15:7: ( '}' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:15:9: '}'
             {
             	Match('}'); 
 
@@ -180,11 +183,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__52;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:16:7: ( 'method' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:16:9: 'method'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:16:7: ( ';' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:16:9: ';'
             {
-            	Match("method"); 
-
+            	Match(';'); 
 
             }
 
@@ -204,10 +206,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__53;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:17:7: ( '(' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:17:9: '('
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:17:7: ( ',' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:17:9: ','
             {
-            	Match('('); 
+            	Match(','); 
 
             }
 
@@ -227,10 +229,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__54;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:18:7: ( ')' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:18:9: ')'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:18:7: ( 'global' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:18:9: 'global'
             {
-            	Match(')'); 
+            	Match("global"); 
+
 
             }
 
@@ -250,11 +253,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__55;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:19:7: ( 'void' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:19:9: 'void'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:19:7: ( '=' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:19:9: '='
             {
-            	Match("void"); 
-
+            	Match('='); 
 
             }
 
@@ -274,10 +276,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__56;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:20:7: ( ';' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:20:9: ';'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:20:7: ( '[' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:20:9: '['
             {
-            	Match(';'); 
+            	Match('['); 
 
             }
 
@@ -297,10 +299,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__57;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:21:7: ( ',' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:21:9: ','
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:21:7: ( ']' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:21:9: ']'
             {
-            	Match(','); 
+            	Match(']'); 
 
             }
 
@@ -320,11 +322,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__58;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:22:7: ( 'global' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:22:9: 'global'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:22:7: ( '.' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:22:9: '.'
             {
-            	Match("global"); 
-
+            	Match('.'); 
 
             }
 
@@ -344,10 +345,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__59;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:23:7: ( '=' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:23:9: '='
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:23:7: ( '(' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:23:9: '('
             {
-            	Match('='); 
+            	Match('('); 
 
             }
 
@@ -367,10 +368,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__60;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:24:7: ( '.' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:24:9: '.'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:24:7: ( ')' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:24:9: ')'
             {
-            	Match('.'); 
+            	Match(')'); 
 
             }
 
@@ -390,10 +391,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__61;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:25:7: ( 'while' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:25:9: 'while'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:25:7: ( 'method' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:25:9: 'method'
             {
-            	Match("while"); 
+            	Match("method"); 
 
 
             }
@@ -414,10 +415,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__62;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:26:7: ( 'for' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:26:9: 'for'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:26:7: ( 'object method' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:26:9: 'object method'
             {
-            	Match("for"); 
+            	Match("object method"); 
 
 
             }
@@ -438,11 +439,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__63;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:27:7: ( 'if' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:27:9: 'if'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:27:7: ( '?' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:27:9: '?'
             {
-            	Match("if"); 
-
+            	Match('?'); 
 
             }
 
@@ -462,11 +462,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__64;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:28:7: ( 'else' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:28:9: 'else'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:28:7: ( ':' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:28:9: ':'
             {
-            	Match("else"); 
-
+            	Match(':'); 
 
             }
 
@@ -486,10 +485,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__65;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:29:7: ( 'at' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:29:9: 'at'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:29:7: ( '||' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:29:9: '||'
             {
-            	Match("at"); 
+            	Match("||"); 
 
 
             }
@@ -510,10 +509,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__66;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:30:7: ( 'break' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:30:9: 'break'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:30:7: ( '&&' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:30:9: '&&'
             {
-            	Match("break"); 
+            	Match("&&"); 
 
 
             }
@@ -534,10 +533,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__67;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:31:7: ( 'return' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:31:9: 'return'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:31:7: ( '==' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:31:9: '=='
             {
-            	Match("return"); 
+            	Match("=="); 
 
 
             }
@@ -558,10 +557,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__68;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:32:7: ( '?' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:32:9: '?'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:32:7: ( '!=' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:32:9: '!='
             {
-            	Match('?'); 
+            	Match("!="); 
+
 
             }
 
@@ -581,10 +581,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__69;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:33:7: ( ':' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:33:9: ':'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:33:7: ( '<' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:33:9: '<'
             {
-            	Match(':'); 
+            	Match('<'); 
 
             }
 
@@ -604,11 +604,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__70;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:34:7: ( '||' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:34:9: '||'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:34:7: ( '>' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:34:9: '>'
             {
-            	Match("||"); 
-
+            	Match('>'); 
 
             }
 
@@ -628,10 +627,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__71;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:35:7: ( '&&' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:35:9: '&&'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:35:7: ( '<=' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:35:9: '<='
             {
-            	Match("&&"); 
+            	Match("<="); 
 
 
             }
@@ -652,10 +651,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__72;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:36:7: ( '==' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:36:9: '=='
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:36:7: ( '>=' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:36:9: '>='
             {
-            	Match("=="); 
+            	Match(">="); 
 
 
             }
@@ -676,11 +675,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__73;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:37:7: ( '!=' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:37:9: '!='
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:37:7: ( '+' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:37:9: '+'
             {
-            	Match("!="); 
-
+            	Match('+'); 
 
             }
 
@@ -700,10 +698,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__74;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:38:7: ( '<' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:38:9: '<'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:38:7: ( '-' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:38:9: '-'
             {
-            	Match('<'); 
+            	Match('-'); 
 
             }
 
@@ -723,10 +721,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__75;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:39:7: ( '>' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:39:9: '>'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:39:7: ( '*' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:39:9: '*'
             {
-            	Match('>'); 
+            	Match('*'); 
 
             }
 
@@ -746,11 +744,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__76;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:40:7: ( '<=' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:40:9: '<='
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:40:7: ( '/' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:40:9: '/'
             {
-            	Match("<="); 
-
+            	Match('/'); 
 
             }
 
@@ -770,11 +767,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__77;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:41:7: ( '>=' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:41:9: '>='
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:41:7: ( '%' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:41:9: '%'
             {
-            	Match(">="); 
-
+            	Match('%'); 
 
             }
 
@@ -794,10 +790,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__78;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:42:7: ( '+' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:42:9: '+'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:42:7: ( '^' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:42:9: '^'
             {
-            	Match('+'); 
+            	Match('^'); 
 
             }
 
@@ -817,10 +813,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__79;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:43:7: ( '-' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:43:9: '-'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:43:7: ( '!' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:43:9: '!'
             {
-            	Match('-'); 
+            	Match('!'); 
 
             }
 
@@ -840,10 +836,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__80;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:44:7: ( '*' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:44:9: '*'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:44:7: ( '++' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:44:9: '++'
             {
-            	Match('*'); 
+            	Match("++"); 
+
 
             }
 
@@ -863,10 +860,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__81;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:45:7: ( '/' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:45:9: '/'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:45:7: ( '--' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:45:9: '--'
             {
-            	Match('/'); 
+            	Match("--"); 
+
 
             }
 
@@ -886,10 +884,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__82;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:46:7: ( '%' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:46:9: '%'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:46:7: ( 'new' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:46:9: 'new'
             {
-            	Match('%'); 
+            	Match("new"); 
+
 
             }
 
@@ -909,10 +908,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__83;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:47:7: ( '++' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:47:9: '++'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:47:7: ( 'break' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:47:9: 'break'
             {
-            	Match("++"); 
+            	Match("break"); 
 
 
             }
@@ -933,10 +932,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__84;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:48:7: ( '--' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:48:9: '--'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:48:7: ( 'return' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:48:9: 'return'
             {
-            	Match("--"); 
+            	Match("return"); 
 
 
             }
@@ -957,10 +956,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__85;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:49:7: ( 'new' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:49:9: 'new'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:49:7: ( 'while' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:49:9: 'while'
             {
-            	Match("new"); 
+            	Match("while"); 
 
 
             }
@@ -981,10 +980,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__86;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:50:7: ( 'null' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:50:9: 'null'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:50:7: ( 'for' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:50:9: 'for'
             {
-            	Match("null"); 
+            	Match("for"); 
 
 
             }
@@ -998,50 +997,17 @@ public partial class SGLLexer : Lexer {
     }
     // $ANTLR end "T__86"
 
-    // $ANTLR start "IntegerAtom"
-    public void mIntegerAtom() // throws RecognitionException [2]
+    // $ANTLR start "T__87"
+    public void mT__87() // throws RecognitionException [2]
     {
     		try
     		{
-            int _type = IntegerAtom;
+            int _type = T__87;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:439:5: ( ( '0' .. '9' )+ )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:439:7: ( '0' .. '9' )+
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:51:7: ( 'if' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:51:9: 'if'
             {
-            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:439:7: ( '0' .. '9' )+
-            	int cnt1 = 0;
-            	do 
-            	{
-            	    int alt1 = 2;
-            	    int LA1_0 = input.LA(1);
-
-            	    if ( ((LA1_0 >= '0' && LA1_0 <= '9')) )
-            	    {
-            	        alt1 = 1;
-            	    }
-
-
-            	    switch (alt1) 
-            		{
-            			case 1 :
-            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:439:7: '0' .. '9'
-            			    {
-            			    	MatchRange('0','9'); 
-
-            			    }
-            			    break;
-
-            			default:
-            			    if ( cnt1 >= 1 ) goto loop1;
-            		            EarlyExitException eee1 =
-            		                new EarlyExitException(1, input);
-            		            throw eee1;
-            	    }
-            	    cnt1++;
-            	} while (true);
-
-            	loop1:
-            		;	// Stops C# compiler whining that label 'loop1' has no statements
+            	Match("if"); 
 
 
             }
@@ -1053,177 +1019,23 @@ public partial class SGLLexer : Lexer {
     	{
         }
     }
-    // $ANTLR end "IntegerAtom"
+    // $ANTLR end "T__87"
 
-    // $ANTLR start "FloatAtom"
-    public void mFloatAtom() // throws RecognitionException [2]
+    // $ANTLR start "T__88"
+    public void mT__88() // throws RecognitionException [2]
     {
     		try
     		{
-            int _type = FloatAtom;
+            int _type = T__88;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:443:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
-            int alt6 = 3;
-            alt6 = dfa6.Predict(input);
-            switch (alt6) 
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:52:7: ( 'else' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:52:9: 'else'
             {
-                case 1 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:443:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
-                    {
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:443:9: ( '0' .. '9' )+
-                    	int cnt2 = 0;
-                    	do 
-                    	{
-                    	    int alt2 = 2;
-                    	    int LA2_0 = input.LA(1);
+            	Match("else"); 
 
-                    	    if ( ((LA2_0 >= '0' && LA2_0 <= '9')) )
-                    	    {
-                    	        alt2 = 1;
-                    	    }
-
-
-                    	    switch (alt2) 
-                    		{
-                    			case 1 :
-                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:443:10: '0' .. '9'
-                    			    {
-                    			    	MatchRange('0','9'); 
-
-                    			    }
-                    			    break;
-
-                    			default:
-                    			    if ( cnt2 >= 1 ) goto loop2;
-                    		            EarlyExitException eee2 =
-                    		                new EarlyExitException(2, input);
-                    		            throw eee2;
-                    	    }
-                    	    cnt2++;
-                    	} while (true);
-
-                    	loop2:
-                    		;	// Stops C# compiler whining that label 'loop2' has no statements
-
-                    	Match('.'); 
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:443:25: ( '0' .. '9' )*
-                    	do 
-                    	{
-                    	    int alt3 = 2;
-                    	    int LA3_0 = input.LA(1);
-
-                    	    if ( ((LA3_0 >= '0' && LA3_0 <= '9')) )
-                    	    {
-                    	        alt3 = 1;
-                    	    }
-
-
-                    	    switch (alt3) 
-                    		{
-                    			case 1 :
-                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:443:26: '0' .. '9'
-                    			    {
-                    			    	MatchRange('0','9'); 
-
-                    			    }
-                    			    break;
-
-                    			default:
-                    			    goto loop3;
-                    	    }
-                    	} while (true);
-
-                    	loop3:
-                    		;	// Stops C# compiler whining that label 'loop3' has no statements
-
-
-                    }
-                    break;
-                case 2 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:444:9: '.' ( '0' .. '9' )+
-                    {
-                    	Match('.'); 
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:444:13: ( '0' .. '9' )+
-                    	int cnt4 = 0;
-                    	do 
-                    	{
-                    	    int alt4 = 2;
-                    	    int LA4_0 = input.LA(1);
-
-                    	    if ( ((LA4_0 >= '0' && LA4_0 <= '9')) )
-                    	    {
-                    	        alt4 = 1;
-                    	    }
-
-
-                    	    switch (alt4) 
-                    		{
-                    			case 1 :
-                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:444:14: '0' .. '9'
-                    			    {
-                    			    	MatchRange('0','9'); 
-
-                    			    }
-                    			    break;
-
-                    			default:
-                    			    if ( cnt4 >= 1 ) goto loop4;
-                    		            EarlyExitException eee4 =
-                    		                new EarlyExitException(4, input);
-                    		            throw eee4;
-                    	    }
-                    	    cnt4++;
-                    	} while (true);
-
-                    	loop4:
-                    		;	// Stops C# compiler whining that label 'loop4' has no statements
-
-
-                    }
-                    break;
-                case 3 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:445:9: ( '0' .. '9' )+
-                    {
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:445:9: ( '0' .. '9' )+
-                    	int cnt5 = 0;
-                    	do 
-                    	{
-                    	    int alt5 = 2;
-                    	    int LA5_0 = input.LA(1);
-
-                    	    if ( ((LA5_0 >= '0' && LA5_0 <= '9')) )
-                    	    {
-                    	        alt5 = 1;
-                    	    }
-
-
-                    	    switch (alt5) 
-                    		{
-                    			case 1 :
-                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:445:10: '0' .. '9'
-                    			    {
-                    			    	MatchRange('0','9'); 
-
-                    			    }
-                    			    break;
-
-                    			default:
-                    			    if ( cnt5 >= 1 ) goto loop5;
-                    		            EarlyExitException eee5 =
-                    		                new EarlyExitException(5, input);
-                    		            throw eee5;
-                    	    }
-                    	    cnt5++;
-                    	} while (true);
-
-                    	loop5:
-                    		;	// Stops C# compiler whining that label 'loop5' has no statements
-
-
-                    }
-                    break;
 
             }
+
             state.type = _type;
             state.channel = _channel;
         }
@@ -1231,7 +1043,54 @@ public partial class SGLLexer : Lexer {
     	{
         }
     }
-    // $ANTLR end "FloatAtom"
+    // $ANTLR end "T__88"
+
+    // $ANTLR start "T__89"
+    public void mT__89() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            int _type = T__89;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:53:7: ( 'at' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:53:9: 'at'
+            {
+            	Match("at"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "T__89"
+
+    // $ANTLR start "VarStartChar"
+    public void mVarStartChar() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            int _type = VarStartChar;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:428:2: ( '$' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:428:4: '$'
+            {
+            	Match('$'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "VarStartChar"
 
     // $ANTLR start "BooleanAtom"
     public void mBooleanAtom() // throws RecognitionException [2]
@@ -1240,29 +1099,29 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = BooleanAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:450:5: ( 'true' | 'false' )
-            int alt7 = 2;
-            int LA7_0 = input.LA(1);
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:433:5: ( 'true' | 'false' )
+            int alt1 = 2;
+            int LA1_0 = input.LA(1);
 
-            if ( (LA7_0 == 't') )
+            if ( (LA1_0 == 't') )
             {
-                alt7 = 1;
+                alt1 = 1;
             }
-            else if ( (LA7_0 == 'f') )
+            else if ( (LA1_0 == 'f') )
             {
-                alt7 = 2;
+                alt1 = 2;
             }
             else 
             {
-                NoViableAltException nvae_d7s0 =
-                    new NoViableAltException("", 7, 0, input);
+                NoViableAltException nvae_d1s0 =
+                    new NoViableAltException("", 1, 0, input);
 
-                throw nvae_d7s0;
+                throw nvae_d1s0;
             }
-            switch (alt7) 
+            switch (alt1) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:450:9: 'true'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:433:9: 'true'
                     {
                     	Match("true"); 
 
@@ -1270,7 +1129,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:451:9: 'false'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:434:9: 'false'
                     {
                     	Match("false"); 
 
@@ -1288,95 +1147,17 @@ public partial class SGLLexer : Lexer {
     }
     // $ANTLR end "BooleanAtom"
 
-    // $ANTLR start "StringAtom"
-    public void mStringAtom() // throws RecognitionException [2]
+    // $ANTLR start "Null"
+    public void mNull() // throws RecognitionException [2]
     {
     		try
     		{
-            int _type = StringAtom;
+            int _type = Null;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:459:5: ( '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:459:9: '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:438:2: ( 'null' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:438:4: 'null'
             {
-            	Match('\"'); 
-            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:459:13: ( EscapeSequence | ~ ( '\\\\' | '\"' ) )*
-            	do 
-            	{
-            	    int alt8 = 3;
-            	    int LA8_0 = input.LA(1);
-
-            	    if ( (LA8_0 == '\\') )
-            	    {
-            	        alt8 = 1;
-            	    }
-            	    else if ( ((LA8_0 >= '\u0000' && LA8_0 <= '!') || (LA8_0 >= '#' && LA8_0 <= '[') || (LA8_0 >= ']' && LA8_0 <= '\uFFFF')) )
-            	    {
-            	        alt8 = 2;
-            	    }
-
-
-            	    switch (alt8) 
-            		{
-            			case 1 :
-            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:459:15: EscapeSequence
-            			    {
-            			    	mEscapeSequence(); 
-
-            			    }
-            			    break;
-            			case 2 :
-            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:459:32: ~ ( '\\\\' | '\"' )
-            			    {
-            			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '[') || (input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) 
-            			    	{
-            			    	    input.Consume();
-
-            			    	}
-            			    	else 
-            			    	{
-            			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
-            			    	    Recover(mse);
-            			    	    throw mse;}
-
-
-            			    }
-            			    break;
-
-            			default:
-            			    goto loop8;
-            	    }
-            	} while (true);
-
-            	loop8:
-            		;	// Stops C# compiler whining that label 'loop8' has no statements
-
-            	Match('\"'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-
-              //Text = (Text.Substring(0, Text.Length-1).Replace("\\\\(.)", "$1"));
-              //setText(getText().substring(1, getText().length()-1).replaceAll("\\\\(.)", "$1"));
-        }
-        finally 
-    	{
-        }
-    }
-    // $ANTLR end "StringAtom"
-
-    // $ANTLR start "IntType"
-    public void mIntType() // throws RecognitionException [2]
-    {
-    		try
-    		{
-            int _type = IntType;
-    	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:464:2: ( 'int' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:464:4: 'int'
-            {
-            	Match("int"); 
+            	Match("null"); 
 
 
             }
@@ -1388,103 +1169,7 @@ public partial class SGLLexer : Lexer {
     	{
         }
     }
-    // $ANTLR end "IntType"
-
-    // $ANTLR start "BooleanType"
-    public void mBooleanType() // throws RecognitionException [2]
-    {
-    		try
-    		{
-            int _type = BooleanType;
-    	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:468:2: ( 'boolean' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:468:4: 'boolean'
-            {
-            	Match("boolean"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally 
-    	{
-        }
-    }
-    // $ANTLR end "BooleanType"
-
-    // $ANTLR start "StringType"
-    public void mStringType() // throws RecognitionException [2]
-    {
-    		try
-    		{
-            int _type = StringType;
-    	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:472:2: ( 'string' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:472:4: 'string'
-            {
-            	Match("string"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally 
-    	{
-        }
-    }
-    // $ANTLR end "StringType"
-
-    // $ANTLR start "FloatType"
-    public void mFloatType() // throws RecognitionException [2]
-    {
-    		try
-    		{
-            int _type = FloatType;
-    	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:476:2: ( 'float' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:476:4: 'float'
-            {
-            	Match("float"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally 
-    	{
-        }
-    }
-    // $ANTLR end "FloatType"
-
-    // $ANTLR start "ObjectType"
-    public void mObjectType() // throws RecognitionException [2]
-    {
-    		try
-    		{
-            int _type = ObjectType;
-    	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:482:2: ( 'Object' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:482:4: 'Object'
-            {
-            	Match("Object"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally 
-    	{
-        }
-    }
-    // $ANTLR end "ObjectType"
+    // $ANTLR end "Null"
 
     // $ANTLR start "Sprite"
     public void mSprite() // throws RecognitionException [2]
@@ -1493,8 +1178,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Sprite;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:486:2: ( 'Sprite' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:486:4: 'Sprite'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:444:2: ( 'Sprite' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:444:4: 'Sprite'
             {
             	Match("Sprite"); 
 
@@ -1517,8 +1202,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Animation;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:490:2: ( 'Animation' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:490:4: 'Animation'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:448:2: ( 'Animation' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:448:4: 'Animation'
             {
             	Match("Animation"); 
 
@@ -1534,59 +1219,107 @@ public partial class SGLLexer : Lexer {
     }
     // $ANTLR end "Animation"
 
-    // $ANTLR start "Layer"
-    public void mLayer() // throws RecognitionException [2]
+    // $ANTLR start "Lyrics"
+    public void mLyrics() // throws RecognitionException [2]
     {
     		try
     		{
-            int _type = Layer;
+            int _type = Lyrics;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:494:2: ( 'Background' | 'Fail' | 'Pass' | 'Foreground' )
-            int alt9 = 4;
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:452:2: ( 'Lyrics' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:452:4: 'Lyrics'
+            {
+            	Match("Lyrics"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "Lyrics"
+
+    // $ANTLR start "List"
+    public void mList() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            int _type = List;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:456:2: ( 'List' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:456:4: 'List'
+            {
+            	Match("List"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "List"
+
+    // $ANTLR start "LayerAtom"
+    public void mLayerAtom() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            int _type = LayerAtom;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:460:2: ( 'Background' | 'Fail' | 'Pass' | 'Foreground' )
+            int alt2 = 4;
             switch ( input.LA(1) ) 
             {
             case 'B':
             	{
-                alt9 = 1;
+                alt2 = 1;
                 }
                 break;
             case 'F':
             	{
-                int LA9_2 = input.LA(2);
+                int LA2_2 = input.LA(2);
 
-                if ( (LA9_2 == 'a') )
+                if ( (LA2_2 == 'a') )
                 {
-                    alt9 = 2;
+                    alt2 = 2;
                 }
-                else if ( (LA9_2 == 'o') )
+                else if ( (LA2_2 == 'o') )
                 {
-                    alt9 = 4;
+                    alt2 = 4;
                 }
                 else 
                 {
-                    NoViableAltException nvae_d9s2 =
-                        new NoViableAltException("", 9, 2, input);
+                    NoViableAltException nvae_d2s2 =
+                        new NoViableAltException("", 2, 2, input);
 
-                    throw nvae_d9s2;
+                    throw nvae_d2s2;
                 }
                 }
                 break;
             case 'P':
             	{
-                alt9 = 3;
+                alt2 = 3;
                 }
                 break;
             	default:
-            	    NoViableAltException nvae_d9s0 =
-            	        new NoViableAltException("", 9, 0, input);
+            	    NoViableAltException nvae_d2s0 =
+            	        new NoViableAltException("", 2, 0, input);
 
-            	    throw nvae_d9s0;
+            	    throw nvae_d2s0;
             }
 
-            switch (alt9) 
+            switch (alt2) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:494:4: 'Background'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:460:4: 'Background'
                     {
                     	Match("Background"); 
 
@@ -1594,7 +1327,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:495:4: 'Fail'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:461:4: 'Fail'
                     {
                     	Match("Fail"); 
 
@@ -1602,7 +1335,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 3 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:496:4: 'Pass'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:462:4: 'Pass'
                     {
                     	Match("Pass"); 
 
@@ -1610,7 +1343,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 4 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:497:4: 'Foreground'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:463:4: 'Foreground'
                     {
                     	Match("Foreground"); 
 
@@ -1626,22 +1359,22 @@ public partial class SGLLexer : Lexer {
     	{
         }
     }
-    // $ANTLR end "Layer"
+    // $ANTLR end "LayerAtom"
 
-    // $ANTLR start "Origin"
-    public void mOrigin() // throws RecognitionException [2]
+    // $ANTLR start "OriginAtom"
+    public void mOriginAtom() // throws RecognitionException [2]
     {
     		try
     		{
-            int _type = Origin;
+            int _type = OriginAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:501:2: ( 'TopLeft' | 'TopCentre' | 'TopRight' | 'CentreLeft' | 'Centre' | 'CentreRight' | 'BottomLeft' | 'BottomCentre' | 'BottomRight' )
-            int alt10 = 9;
-            alt10 = dfa10.Predict(input);
-            switch (alt10) 
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:467:2: ( 'TopLeft' | 'TopCentre' | 'TopRight' | 'CentreLeft' | 'Centre' | 'CentreRight' | 'BottomLeft' | 'BottomCentre' | 'BottomRight' )
+            int alt3 = 9;
+            alt3 = dfa3.Predict(input);
+            switch (alt3) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:501:4: 'TopLeft'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:467:4: 'TopLeft'
                     {
                     	Match("TopLeft"); 
 
@@ -1649,7 +1382,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:502:4: 'TopCentre'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:468:4: 'TopCentre'
                     {
                     	Match("TopCentre"); 
 
@@ -1657,7 +1390,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 3 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:503:4: 'TopRight'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:469:4: 'TopRight'
                     {
                     	Match("TopRight"); 
 
@@ -1665,7 +1398,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 4 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:504:4: 'CentreLeft'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:470:4: 'CentreLeft'
                     {
                     	Match("CentreLeft"); 
 
@@ -1673,7 +1406,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 5 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:505:4: 'Centre'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:471:4: 'Centre'
                     {
                     	Match("Centre"); 
 
@@ -1681,7 +1414,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 6 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:506:4: 'CentreRight'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:472:4: 'CentreRight'
                     {
                     	Match("CentreRight"); 
 
@@ -1689,7 +1422,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 7 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:507:4: 'BottomLeft'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:473:4: 'BottomLeft'
                     {
                     	Match("BottomLeft"); 
 
@@ -1697,7 +1430,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 8 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:508:4: 'BottomCentre'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:474:4: 'BottomCentre'
                     {
                     	Match("BottomCentre"); 
 
@@ -1705,7 +1438,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 9 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:509:4: 'BottomRight'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:475:4: 'BottomRight'
                     {
                     	Match("BottomRight"); 
 
@@ -1721,86 +1454,86 @@ public partial class SGLLexer : Lexer {
     	{
         }
     }
-    // $ANTLR end "Origin"
+    // $ANTLR end "OriginAtom"
 
-    // $ANTLR start "LoopType"
-    public void mLoopType() // throws RecognitionException [2]
+    // $ANTLR start "LoopTypeAtom"
+    public void mLoopTypeAtom() // throws RecognitionException [2]
     {
     		try
     		{
-            int _type = LoopType;
+            int _type = LoopTypeAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:513:2: ( 'LoopForever' | 'LoopOnce' )
-            int alt11 = 2;
-            int LA11_0 = input.LA(1);
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:479:2: ( 'LoopForever' | 'LoopOnce' )
+            int alt4 = 2;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA11_0 == 'L') )
+            if ( (LA4_0 == 'L') )
             {
-                int LA11_1 = input.LA(2);
+                int LA4_1 = input.LA(2);
 
-                if ( (LA11_1 == 'o') )
+                if ( (LA4_1 == 'o') )
                 {
-                    int LA11_2 = input.LA(3);
+                    int LA4_2 = input.LA(3);
 
-                    if ( (LA11_2 == 'o') )
+                    if ( (LA4_2 == 'o') )
                     {
-                        int LA11_3 = input.LA(4);
+                        int LA4_3 = input.LA(4);
 
-                        if ( (LA11_3 == 'p') )
+                        if ( (LA4_3 == 'p') )
                         {
-                            int LA11_4 = input.LA(5);
+                            int LA4_4 = input.LA(5);
 
-                            if ( (LA11_4 == 'F') )
+                            if ( (LA4_4 == 'F') )
                             {
-                                alt11 = 1;
+                                alt4 = 1;
                             }
-                            else if ( (LA11_4 == 'O') )
+                            else if ( (LA4_4 == 'O') )
                             {
-                                alt11 = 2;
+                                alt4 = 2;
                             }
                             else 
                             {
-                                NoViableAltException nvae_d11s4 =
-                                    new NoViableAltException("", 11, 4, input);
+                                NoViableAltException nvae_d4s4 =
+                                    new NoViableAltException("", 4, 4, input);
 
-                                throw nvae_d11s4;
+                                throw nvae_d4s4;
                             }
                         }
                         else 
                         {
-                            NoViableAltException nvae_d11s3 =
-                                new NoViableAltException("", 11, 3, input);
+                            NoViableAltException nvae_d4s3 =
+                                new NoViableAltException("", 4, 3, input);
 
-                            throw nvae_d11s3;
+                            throw nvae_d4s3;
                         }
                     }
                     else 
                     {
-                        NoViableAltException nvae_d11s2 =
-                            new NoViableAltException("", 11, 2, input);
+                        NoViableAltException nvae_d4s2 =
+                            new NoViableAltException("", 4, 2, input);
 
-                        throw nvae_d11s2;
+                        throw nvae_d4s2;
                     }
                 }
                 else 
                 {
-                    NoViableAltException nvae_d11s1 =
-                        new NoViableAltException("", 11, 1, input);
+                    NoViableAltException nvae_d4s1 =
+                        new NoViableAltException("", 4, 1, input);
 
-                    throw nvae_d11s1;
+                    throw nvae_d4s1;
                 }
             }
             else 
             {
-                NoViableAltException nvae_d11s0 =
-                    new NoViableAltException("", 11, 0, input);
+                NoViableAltException nvae_d4s0 =
+                    new NoViableAltException("", 4, 0, input);
 
-                throw nvae_d11s0;
+                throw nvae_d4s0;
             }
-            switch (alt11) 
+            switch (alt4) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:513:4: 'LoopForever'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:479:4: 'LoopForever'
                     {
                     	Match("LoopForever"); 
 
@@ -1808,7 +1541,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:514:4: 'LoopOnce'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:480:4: 'LoopOnce'
                     {
                     	Match("LoopOnce"); 
 
@@ -1824,37 +1557,385 @@ public partial class SGLLexer : Lexer {
     	{
         }
     }
-    // $ANTLR end "LoopType"
+    // $ANTLR end "LoopTypeAtom"
 
-    // $ANTLR start "Identifier"
-    public void mIdentifier() // throws RecognitionException [2]
+    // $ANTLR start "ColorAtom"
+    public void mColorAtom() // throws RecognitionException [2]
     {
     		try
     		{
-            int _type = Identifier;
+            int _type = ColorAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:519:5: ( Letter ( Letter | SGLIDDigit )* )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:519:9: Letter ( Letter | SGLIDDigit )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:484:2: ( '#' HexDigit HexDigit HexDigit | '#' HexDigit HexDigit HexDigit HexDigit HexDigit HexDigit )
+            int alt5 = 2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0 == '#') )
             {
-            	mLetter(); 
-            	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:519:16: ( Letter | SGLIDDigit )*
+                int LA5_1 = input.LA(2);
+
+                if ( ((LA5_1 >= '0' && LA5_1 <= '9') || (LA5_1 >= 'A' && LA5_1 <= 'F') || (LA5_1 >= 'a' && LA5_1 <= 'f')) )
+                {
+                    int LA5_2 = input.LA(3);
+
+                    if ( ((LA5_2 >= '0' && LA5_2 <= '9') || (LA5_2 >= 'A' && LA5_2 <= 'F') || (LA5_2 >= 'a' && LA5_2 <= 'f')) )
+                    {
+                        int LA5_3 = input.LA(4);
+
+                        if ( ((LA5_3 >= '0' && LA5_3 <= '9') || (LA5_3 >= 'A' && LA5_3 <= 'F') || (LA5_3 >= 'a' && LA5_3 <= 'f')) )
+                        {
+                            int LA5_4 = input.LA(5);
+
+                            if ( ((LA5_4 >= '0' && LA5_4 <= '9') || (LA5_4 >= 'A' && LA5_4 <= 'F') || (LA5_4 >= 'a' && LA5_4 <= 'f')) )
+                            {
+                                alt5 = 2;
+                            }
+                            else 
+                            {
+                                alt5 = 1;}
+                        }
+                        else 
+                        {
+                            NoViableAltException nvae_d5s3 =
+                                new NoViableAltException("", 5, 3, input);
+
+                            throw nvae_d5s3;
+                        }
+                    }
+                    else 
+                    {
+                        NoViableAltException nvae_d5s2 =
+                            new NoViableAltException("", 5, 2, input);
+
+                        throw nvae_d5s2;
+                    }
+                }
+                else 
+                {
+                    NoViableAltException nvae_d5s1 =
+                        new NoViableAltException("", 5, 1, input);
+
+                    throw nvae_d5s1;
+                }
+            }
+            else 
+            {
+                NoViableAltException nvae_d5s0 =
+                    new NoViableAltException("", 5, 0, input);
+
+                throw nvae_d5s0;
+            }
+            switch (alt5) 
+            {
+                case 1 :
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:484:4: '#' HexDigit HexDigit HexDigit
+                    {
+                    	Match('#'); 
+                    	mHexDigit(); 
+                    	mHexDigit(); 
+                    	mHexDigit(); 
+
+                    }
+                    break;
+                case 2 :
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:485:4: '#' HexDigit HexDigit HexDigit HexDigit HexDigit HexDigit
+                    {
+                    	Match('#'); 
+                    	mHexDigit(); 
+                    	mHexDigit(); 
+                    	mHexDigit(); 
+                    	mHexDigit(); 
+                    	mHexDigit(); 
+                    	mHexDigit(); 
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "ColorAtom"
+
+    // $ANTLR start "IntAtom"
+    public void mIntAtom() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            int _type = IntAtom;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:489:5: ( ( '0' .. '9' )+ )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:489:7: ( '0' .. '9' )+
+            {
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:489:7: ( '0' .. '9' )+
+            	int cnt6 = 0;
             	do 
             	{
-            	    int alt12 = 2;
+            	    int alt6 = 2;
+            	    int LA6_0 = input.LA(1);
+
+            	    if ( ((LA6_0 >= '0' && LA6_0 <= '9')) )
+            	    {
+            	        alt6 = 1;
+            	    }
+
+
+            	    switch (alt6) 
+            		{
+            			case 1 :
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:489:7: '0' .. '9'
+            			    {
+            			    	MatchRange('0','9'); 
+
+            			    }
+            			    break;
+
+            			default:
+            			    if ( cnt6 >= 1 ) goto loop6;
+            		            EarlyExitException eee6 =
+            		                new EarlyExitException(6, input);
+            		            throw eee6;
+            	    }
+            	    cnt6++;
+            	} while (true);
+
+            	loop6:
+            		;	// Stops C# compiler whining that label 'loop6' has no statements
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "IntAtom"
+
+    // $ANTLR start "FloatAtom"
+    public void mFloatAtom() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            int _type = FloatAtom;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:493:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
+            int alt11 = 3;
+            alt11 = dfa11.Predict(input);
+            switch (alt11) 
+            {
+                case 1 :
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:493:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
+                    {
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:493:9: ( '0' .. '9' )+
+                    	int cnt7 = 0;
+                    	do 
+                    	{
+                    	    int alt7 = 2;
+                    	    int LA7_0 = input.LA(1);
+
+                    	    if ( ((LA7_0 >= '0' && LA7_0 <= '9')) )
+                    	    {
+                    	        alt7 = 1;
+                    	    }
+
+
+                    	    switch (alt7) 
+                    		{
+                    			case 1 :
+                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:493:10: '0' .. '9'
+                    			    {
+                    			    	MatchRange('0','9'); 
+
+                    			    }
+                    			    break;
+
+                    			default:
+                    			    if ( cnt7 >= 1 ) goto loop7;
+                    		            EarlyExitException eee7 =
+                    		                new EarlyExitException(7, input);
+                    		            throw eee7;
+                    	    }
+                    	    cnt7++;
+                    	} while (true);
+
+                    	loop7:
+                    		;	// Stops C# compiler whining that label 'loop7' has no statements
+
+                    	Match('.'); 
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:493:25: ( '0' .. '9' )*
+                    	do 
+                    	{
+                    	    int alt8 = 2;
+                    	    int LA8_0 = input.LA(1);
+
+                    	    if ( ((LA8_0 >= '0' && LA8_0 <= '9')) )
+                    	    {
+                    	        alt8 = 1;
+                    	    }
+
+
+                    	    switch (alt8) 
+                    		{
+                    			case 1 :
+                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:493:26: '0' .. '9'
+                    			    {
+                    			    	MatchRange('0','9'); 
+
+                    			    }
+                    			    break;
+
+                    			default:
+                    			    goto loop8;
+                    	    }
+                    	} while (true);
+
+                    	loop8:
+                    		;	// Stops C# compiler whining that label 'loop8' has no statements
+
+
+                    }
+                    break;
+                case 2 :
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:494:9: '.' ( '0' .. '9' )+
+                    {
+                    	Match('.'); 
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:494:13: ( '0' .. '9' )+
+                    	int cnt9 = 0;
+                    	do 
+                    	{
+                    	    int alt9 = 2;
+                    	    int LA9_0 = input.LA(1);
+
+                    	    if ( ((LA9_0 >= '0' && LA9_0 <= '9')) )
+                    	    {
+                    	        alt9 = 1;
+                    	    }
+
+
+                    	    switch (alt9) 
+                    		{
+                    			case 1 :
+                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:494:14: '0' .. '9'
+                    			    {
+                    			    	MatchRange('0','9'); 
+
+                    			    }
+                    			    break;
+
+                    			default:
+                    			    if ( cnt9 >= 1 ) goto loop9;
+                    		            EarlyExitException eee9 =
+                    		                new EarlyExitException(9, input);
+                    		            throw eee9;
+                    	    }
+                    	    cnt9++;
+                    	} while (true);
+
+                    	loop9:
+                    		;	// Stops C# compiler whining that label 'loop9' has no statements
+
+
+                    }
+                    break;
+                case 3 :
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:495:9: ( '0' .. '9' )+
+                    {
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:495:9: ( '0' .. '9' )+
+                    	int cnt10 = 0;
+                    	do 
+                    	{
+                    	    int alt10 = 2;
+                    	    int LA10_0 = input.LA(1);
+
+                    	    if ( ((LA10_0 >= '0' && LA10_0 <= '9')) )
+                    	    {
+                    	        alt10 = 1;
+                    	    }
+
+
+                    	    switch (alt10) 
+                    		{
+                    			case 1 :
+                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:495:10: '0' .. '9'
+                    			    {
+                    			    	MatchRange('0','9'); 
+
+                    			    }
+                    			    break;
+
+                    			default:
+                    			    if ( cnt10 >= 1 ) goto loop10;
+                    		            EarlyExitException eee10 =
+                    		                new EarlyExitException(10, input);
+                    		            throw eee10;
+                    	    }
+                    	    cnt10++;
+                    	} while (true);
+
+                    	loop10:
+                    		;	// Stops C# compiler whining that label 'loop10' has no statements
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "FloatAtom"
+
+    // $ANTLR start "StringAtom"
+    public void mStringAtom() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            int _type = StringAtom;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:500:5: ( '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:500:8: '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"'
+            {
+            	Match('\"'); 
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:500:12: ( EscapeSequence | ~ ( '\\\\' | '\"' ) )*
+            	do 
+            	{
+            	    int alt12 = 3;
             	    int LA12_0 = input.LA(1);
 
-            	    if ( (LA12_0 == '$' || (LA12_0 >= '0' && LA12_0 <= '9') || (LA12_0 >= 'A' && LA12_0 <= 'Z') || LA12_0 == '_' || (LA12_0 >= 'a' && LA12_0 <= 'z') || (LA12_0 >= '\u00C0' && LA12_0 <= '\u00D6') || (LA12_0 >= '\u00D8' && LA12_0 <= '\u00F6') || (LA12_0 >= '\u00F8' && LA12_0 <= '\u1FFF') || (LA12_0 >= '\u3040' && LA12_0 <= '\u318F') || (LA12_0 >= '\u3300' && LA12_0 <= '\u337F') || (LA12_0 >= '\u3400' && LA12_0 <= '\u3D2D') || (LA12_0 >= '\u4E00' && LA12_0 <= '\u9FFF') || (LA12_0 >= '\uF900' && LA12_0 <= '\uFAFF')) )
+            	    if ( (LA12_0 == '\\') )
             	    {
             	        alt12 = 1;
+            	    }
+            	    else if ( ((LA12_0 >= '\u0000' && LA12_0 <= '!') || (LA12_0 >= '#' && LA12_0 <= '[') || (LA12_0 >= ']' && LA12_0 <= '\uFFFF')) )
+            	    {
+            	        alt12 = 2;
             	    }
 
 
             	    switch (alt12) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:500:14: EscapeSequence
             			    {
-            			    	if ( input.LA(1) == '$' || (input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= 'A' && input.LA(1) <= 'Z') || input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z') || (input.LA(1) >= '\u00C0' && input.LA(1) <= '\u00D6') || (input.LA(1) >= '\u00D8' && input.LA(1) <= '\u00F6') || (input.LA(1) >= '\u00F8' && input.LA(1) <= '\u1FFF') || (input.LA(1) >= '\u3040' && input.LA(1) <= '\u318F') || (input.LA(1) >= '\u3300' && input.LA(1) <= '\u337F') || (input.LA(1) >= '\u3400' && input.LA(1) <= '\u3D2D') || (input.LA(1) >= '\u4E00' && input.LA(1) <= '\u9FFF') || (input.LA(1) >= '\uF900' && input.LA(1) <= '\uFAFF') ) 
+            			    	mEscapeSequence(); 
+
+            			    }
+            			    break;
+            			case 2 :
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:500:31: ~ ( '\\\\' | '\"' )
+            			    {
+            			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '[') || (input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) 
             			    	{
             			    	    input.Consume();
 
@@ -1877,6 +1958,70 @@ public partial class SGLLexer : Lexer {
             	loop12:
             		;	// Stops C# compiler whining that label 'loop12' has no statements
 
+            	Match('\"'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "StringAtom"
+
+    // $ANTLR start "Identifier"
+    public void mIdentifier() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            int _type = Identifier;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:505:5: ( UTF8Letter ( UTF8Letter | UTF8Digit )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:505:9: UTF8Letter ( UTF8Letter | UTF8Digit )*
+            {
+            	mUTF8Letter(); 
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:505:20: ( UTF8Letter | UTF8Digit )*
+            	do 
+            	{
+            	    int alt13 = 2;
+            	    int LA13_0 = input.LA(1);
+
+            	    if ( ((LA13_0 >= '0' && LA13_0 <= '9') || (LA13_0 >= 'A' && LA13_0 <= 'Z') || LA13_0 == '_' || (LA13_0 >= 'a' && LA13_0 <= 'z') || (LA13_0 >= '\u00C0' && LA13_0 <= '\u00D6') || (LA13_0 >= '\u00D8' && LA13_0 <= '\u00F6') || (LA13_0 >= '\u00F8' && LA13_0 <= '\u1FFF') || (LA13_0 >= '\u3040' && LA13_0 <= '\u318F') || (LA13_0 >= '\u3300' && LA13_0 <= '\u337F') || (LA13_0 >= '\u3400' && LA13_0 <= '\u3D2D') || (LA13_0 >= '\u4E00' && LA13_0 <= '\u9FFF') || (LA13_0 >= '\uF900' && LA13_0 <= '\uFAFF')) )
+            	    {
+            	        alt13 = 1;
+            	    }
+
+
+            	    switch (alt13) 
+            		{
+            			case 1 :
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:
+            			    {
+            			    	if ( (input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= 'A' && input.LA(1) <= 'Z') || input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z') || (input.LA(1) >= '\u00C0' && input.LA(1) <= '\u00D6') || (input.LA(1) >= '\u00D8' && input.LA(1) <= '\u00F6') || (input.LA(1) >= '\u00F8' && input.LA(1) <= '\u1FFF') || (input.LA(1) >= '\u3040' && input.LA(1) <= '\u318F') || (input.LA(1) >= '\u3300' && input.LA(1) <= '\u337F') || (input.LA(1) >= '\u3400' && input.LA(1) <= '\u3D2D') || (input.LA(1) >= '\u4E00' && input.LA(1) <= '\u9FFF') || (input.LA(1) >= '\uF900' && input.LA(1) <= '\uFAFF') ) 
+            			    	{
+            			    	    input.Consume();
+
+            			    	}
+            			    	else 
+            			    	{
+            			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
+            			    	    Recover(mse);
+            			    	    throw mse;}
+
+
+            			    }
+            			    break;
+
+            			default:
+            			    goto loop13;
+            	    }
+            	} while (true);
+
+            	loop13:
+            		;	// Stops C# compiler whining that label 'loop13' has no statements
+
 
             }
 
@@ -1889,154 +2034,169 @@ public partial class SGLLexer : Lexer {
     }
     // $ANTLR end "Identifier"
 
-    // $ANTLR start "Letter"
-    public void mLetter() // throws RecognitionException [2]
+    // $ANTLR start "Comment"
+    public void mComment() // throws RecognitionException [2]
     {
     		try
     		{
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:531:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:
-            {
-            	if ( input.LA(1) == '$' || (input.LA(1) >= 'A' && input.LA(1) <= 'Z') || input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z') || (input.LA(1) >= '\u00C0' && input.LA(1) <= '\u00D6') || (input.LA(1) >= '\u00D8' && input.LA(1) <= '\u00F6') || (input.LA(1) >= '\u00F8' && input.LA(1) <= '\u1FFF') || (input.LA(1) >= '\u3040' && input.LA(1) <= '\u318F') || (input.LA(1) >= '\u3300' && input.LA(1) <= '\u337F') || (input.LA(1) >= '\u3400' && input.LA(1) <= '\u3D2D') || (input.LA(1) >= '\u4E00' && input.LA(1) <= '\u9FFF') || (input.LA(1) >= '\uF900' && input.LA(1) <= '\uFAFF') ) 
-            	{
-            	    input.Consume();
-
-            	}
-            	else 
-            	{
-            	    MismatchedSetException mse = new MismatchedSetException(null,input);
-            	    Recover(mse);
-            	    throw mse;}
-
-
-            }
-
-        }
-        finally 
-    	{
-        }
-    }
-    // $ANTLR end "Letter"
-
-    // $ANTLR start "SGLIDDigit"
-    public void mSGLIDDigit() // throws RecognitionException [2]
-    {
-    		try
-    		{
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:548:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:
-            {
-            	if ( (input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= '\u0660' && input.LA(1) <= '\u0669') || (input.LA(1) >= '\u06F0' && input.LA(1) <= '\u06F9') || (input.LA(1) >= '\u0966' && input.LA(1) <= '\u096F') || (input.LA(1) >= '\u09E6' && input.LA(1) <= '\u09EF') || (input.LA(1) >= '\u0A66' && input.LA(1) <= '\u0A6F') || (input.LA(1) >= '\u0AE6' && input.LA(1) <= '\u0AEF') || (input.LA(1) >= '\u0B66' && input.LA(1) <= '\u0B6F') || (input.LA(1) >= '\u0BE7' && input.LA(1) <= '\u0BEF') || (input.LA(1) >= '\u0C66' && input.LA(1) <= '\u0C6F') || (input.LA(1) >= '\u0CE6' && input.LA(1) <= '\u0CEF') || (input.LA(1) >= '\u0D66' && input.LA(1) <= '\u0D6F') || (input.LA(1) >= '\u0E50' && input.LA(1) <= '\u0E59') || (input.LA(1) >= '\u0ED0' && input.LA(1) <= '\u0ED9') || (input.LA(1) >= '\u1040' && input.LA(1) <= '\u1049') ) 
-            	{
-            	    input.Consume();
-
-            	}
-            	else 
-            	{
-            	    MismatchedSetException mse = new MismatchedSetException(null,input);
-            	    Recover(mse);
-            	    throw mse;}
-
-
-            }
-
-        }
-        finally 
-    	{
-        }
-    }
-    // $ANTLR end "SGLIDDigit"
-
-    // $ANTLR start "EscapeSequence"
-    public void mEscapeSequence() // throws RecognitionException [2]
-    {
-    		try
-    		{
-            int _type = EscapeSequence;
+            int _type = Comment;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:568:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape )
-            int alt13 = 3;
-            int LA13_0 = input.LA(1);
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:512:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
+            int alt17 = 2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA13_0 == '\\') )
+            if ( (LA17_0 == '/') )
             {
-                switch ( input.LA(2) ) 
+                int LA17_1 = input.LA(2);
+
+                if ( (LA17_1 == '/') )
                 {
-                case '\"':
-                case '\'':
-                case '\\':
-                case 'b':
-                case 'f':
-                case 'n':
-                case 'r':
-                case 't':
-                	{
-                    alt13 = 1;
-                    }
-                    break;
-                case 'u':
-                	{
-                    alt13 = 2;
-                    }
-                    break;
-                case '0':
-                case '1':
-                case '2':
-                case '3':
-                case '4':
-                case '5':
-                case '6':
-                case '7':
-                	{
-                    alt13 = 3;
-                    }
-                    break;
-                	default:
-                	    NoViableAltException nvae_d13s1 =
-                	        new NoViableAltException("", 13, 1, input);
-
-                	    throw nvae_d13s1;
+                    alt17 = 1;
                 }
+                else if ( (LA17_1 == '*') )
+                {
+                    alt17 = 2;
+                }
+                else 
+                {
+                    NoViableAltException nvae_d17s1 =
+                        new NoViableAltException("", 17, 1, input);
 
+                    throw nvae_d17s1;
+                }
             }
             else 
             {
-                NoViableAltException nvae_d13s0 =
-                    new NoViableAltException("", 13, 0, input);
+                NoViableAltException nvae_d17s0 =
+                    new NoViableAltException("", 17, 0, input);
 
-                throw nvae_d13s0;
+                throw nvae_d17s0;
             }
-            switch (alt13) 
+            switch (alt17) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:568:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:512:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
                     {
-                    	Match('\\'); 
-                    	if ( input.LA(1) == '\"' || input.LA(1) == '\'' || input.LA(1) == '\\' || input.LA(1) == 'b' || input.LA(1) == 'f' || input.LA(1) == 'n' || input.LA(1) == 'r' || input.LA(1) == 't' ) 
+                    	Match("//"); 
+
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:512:14: (~ ( '\\n' | '\\r' ) )*
+                    	do 
                     	{
-                    	    input.Consume();
+                    	    int alt14 = 2;
+                    	    int LA14_0 = input.LA(1);
+
+                    	    if ( ((LA14_0 >= '\u0000' && LA14_0 <= '\t') || (LA14_0 >= '\u000B' && LA14_0 <= '\f') || (LA14_0 >= '\u000E' && LA14_0 <= '\uFFFF')) )
+                    	    {
+                    	        alt14 = 1;
+                    	    }
+
+
+                    	    switch (alt14) 
+                    		{
+                    			case 1 :
+                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:512:14: ~ ( '\\n' | '\\r' )
+                    			    {
+                    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t') || (input.LA(1) >= '\u000B' && input.LA(1) <= '\f') || (input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) 
+                    			    	{
+                    			    	    input.Consume();
+
+                    			    	}
+                    			    	else 
+                    			    	{
+                    			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
+                    			    	    Recover(mse);
+                    			    	    throw mse;}
+
+
+                    			    }
+                    			    break;
+
+                    			default:
+                    			    goto loop14;
+                    	    }
+                    	} while (true);
+
+                    	loop14:
+                    		;	// Stops C# compiler whining that label 'loop14' has no statements
+
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:512:28: ( '\\r' )?
+                    	int alt15 = 2;
+                    	int LA15_0 = input.LA(1);
+
+                    	if ( (LA15_0 == '\r') )
+                    	{
+                    	    alt15 = 1;
+                    	}
+                    	switch (alt15) 
+                    	{
+                    	    case 1 :
+                    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:512:28: '\\r'
+                    	        {
+                    	        	Match('\r'); 
+
+                    	        }
+                    	        break;
 
                     	}
-                    	else 
-                    	{
-                    	    MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	    Recover(mse);
-                    	    throw mse;}
 
+                    	Match('\n'); 
+                    	_channel=HIDDEN;
 
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:569:9: UnicodeEscape
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:513:9: '/*' ( options {greedy=false; } : . )* '*/'
                     {
-                    	mUnicodeEscape(); 
+                    	Match("/*"); 
 
-                    }
-                    break;
-                case 3 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:570:9: OctalEscape
-                    {
-                    	mOctalEscape(); 
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:513:14: ( options {greedy=false; } : . )*
+                    	do 
+                    	{
+                    	    int alt16 = 2;
+                    	    int LA16_0 = input.LA(1);
+
+                    	    if ( (LA16_0 == '*') )
+                    	    {
+                    	        int LA16_1 = input.LA(2);
+
+                    	        if ( (LA16_1 == '/') )
+                    	        {
+                    	            alt16 = 2;
+                    	        }
+                    	        else if ( ((LA16_1 >= '\u0000' && LA16_1 <= '.') || (LA16_1 >= '0' && LA16_1 <= '\uFFFF')) )
+                    	        {
+                    	            alt16 = 1;
+                    	        }
+
+
+                    	    }
+                    	    else if ( ((LA16_0 >= '\u0000' && LA16_0 <= ')') || (LA16_0 >= '+' && LA16_0 <= '\uFFFF')) )
+                    	    {
+                    	        alt16 = 1;
+                    	    }
+
+
+                    	    switch (alt16) 
+                    		{
+                    			case 1 :
+                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:513:42: .
+                    			    {
+                    			    	MatchAny(); 
+
+                    			    }
+                    			    break;
+
+                    			default:
+                    			    goto loop16;
+                    	    }
+                    	} while (true);
+
+                    	loop16:
+                    		;	// Stops C# compiler whining that label 'loop16' has no statements
+
+                    	Match("*/"); 
+
+                    	_channel=HIDDEN;
 
                     }
                     break;
@@ -2049,206 +2209,19 @@ public partial class SGLLexer : Lexer {
     	{
         }
     }
-    // $ANTLR end "EscapeSequence"
+    // $ANTLR end "Comment"
 
-    // $ANTLR start "OctalEscape"
-    public void mOctalEscape() // throws RecognitionException [2]
+    // $ANTLR start "WhiteSpace"
+    public void mWhiteSpace() // throws RecognitionException [2]
     {
     		try
     		{
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
-            int alt14 = 3;
-            int LA14_0 = input.LA(1);
-
-            if ( (LA14_0 == '\\') )
-            {
-                int LA14_1 = input.LA(2);
-
-                if ( ((LA14_1 >= '0' && LA14_1 <= '3')) )
-                {
-                    int LA14_2 = input.LA(3);
-
-                    if ( ((LA14_2 >= '0' && LA14_2 <= '7')) )
-                    {
-                        int LA14_4 = input.LA(4);
-
-                        if ( ((LA14_4 >= '0' && LA14_4 <= '7')) )
-                        {
-                            alt14 = 1;
-                        }
-                        else 
-                        {
-                            alt14 = 2;}
-                    }
-                    else 
-                    {
-                        alt14 = 3;}
-                }
-                else if ( ((LA14_1 >= '4' && LA14_1 <= '7')) )
-                {
-                    int LA14_3 = input.LA(3);
-
-                    if ( ((LA14_3 >= '0' && LA14_3 <= '7')) )
-                    {
-                        alt14 = 2;
-                    }
-                    else 
-                    {
-                        alt14 = 3;}
-                }
-                else 
-                {
-                    NoViableAltException nvae_d14s1 =
-                        new NoViableAltException("", 14, 1, input);
-
-                    throw nvae_d14s1;
-                }
-            }
-            else 
-            {
-                NoViableAltException nvae_d14s0 =
-                    new NoViableAltException("", 14, 0, input);
-
-                throw nvae_d14s0;
-            }
-            switch (alt14) 
-            {
-                case 1 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
-                    {
-                    	Match('\\'); 
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:14: ( '0' .. '3' )
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:15: '0' .. '3'
-                    	{
-                    		MatchRange('0','3'); 
-
-                    	}
-
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:25: ( '0' .. '7' )
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:26: '0' .. '7'
-                    	{
-                    		MatchRange('0','7'); 
-
-                    	}
-
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:36: ( '0' .. '7' )
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:575:37: '0' .. '7'
-                    	{
-                    		MatchRange('0','7'); 
-
-                    	}
-
-
-                    }
-                    break;
-                case 2 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:576:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
-                    {
-                    	Match('\\'); 
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:576:14: ( '0' .. '7' )
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:576:15: '0' .. '7'
-                    	{
-                    		MatchRange('0','7'); 
-
-                    	}
-
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:576:25: ( '0' .. '7' )
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:576:26: '0' .. '7'
-                    	{
-                    		MatchRange('0','7'); 
-
-                    	}
-
-
-                    }
-                    break;
-                case 3 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:577:9: '\\\\' ( '0' .. '7' )
-                    {
-                    	Match('\\'); 
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:577:14: ( '0' .. '7' )
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:577:15: '0' .. '7'
-                    	{
-                    		MatchRange('0','7'); 
-
-                    	}
-
-
-                    }
-                    break;
-
-            }
-        }
-        finally 
-    	{
-        }
-    }
-    // $ANTLR end "OctalEscape"
-
-    // $ANTLR start "UnicodeEscape"
-    public void mUnicodeEscape() // throws RecognitionException [2]
-    {
-    		try
-    		{
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:582:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:582:9: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
-            {
-            	Match('\\'); 
-            	Match('u'); 
-            	mHEX_DIGIT(); 
-            	mHEX_DIGIT(); 
-            	mHEX_DIGIT(); 
-            	mHEX_DIGIT(); 
-
-            }
-
-        }
-        finally 
-    	{
-        }
-    }
-    // $ANTLR end "UnicodeEscape"
-
-    // $ANTLR start "HEX_DIGIT"
-    public void mHEX_DIGIT() // throws RecognitionException [2]
-    {
-    		try
-    		{
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:586:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:586:13: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
-            {
-            	if ( (input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= 'A' && input.LA(1) <= 'F') || (input.LA(1) >= 'a' && input.LA(1) <= 'f') ) 
-            	{
-            	    input.Consume();
-
-            	}
-            	else 
-            	{
-            	    MismatchedSetException mse = new MismatchedSetException(null,input);
-            	    Recover(mse);
-            	    throw mse;}
-
-
-            }
-
-        }
-        finally 
-    	{
-        }
-    }
-    // $ANTLR end "HEX_DIGIT"
-
-    // $ANTLR start "WS"
-    public void mWS() // throws RecognitionException [2]
-    {
-    		try
-    		{
-            int _type = WS;
+            int _type = WhiteSpace;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:592:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:592:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:517:2: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:517:6: ( ' ' | '\\t' | '\\r' | '\\n' )
             {
-            	if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n') || (input.LA(1) >= '\f' && input.LA(1) <= '\r') || input.LA(1) == ' ' ) 
+            	if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n') || input.LA(1) == '\r' || input.LA(1) == ' ' ) 
             	{
             	    input.Consume();
 
@@ -2270,574 +2243,528 @@ public partial class SGLLexer : Lexer {
     	{
         }
     }
-    // $ANTLR end "WS"
+    // $ANTLR end "WhiteSpace"
 
-    // $ANTLR start "COMMENT"
-    public void mCOMMENT() // throws RecognitionException [2]
+    // $ANTLR start "UTF8Letter"
+    public void mUTF8Letter() // throws RecognitionException [2]
     {
     		try
     		{
-            int _type = COMMENT;
-    	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:597:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
-            int alt18 = 2;
-            int LA18_0 = input.LA(1);
-
-            if ( (LA18_0 == '/') )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:531:5: ( '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:
             {
-                int LA18_1 = input.LA(2);
+            	if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z') || input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z') || (input.LA(1) >= '\u00C0' && input.LA(1) <= '\u00D6') || (input.LA(1) >= '\u00D8' && input.LA(1) <= '\u00F6') || (input.LA(1) >= '\u00F8' && input.LA(1) <= '\u1FFF') || (input.LA(1) >= '\u3040' && input.LA(1) <= '\u318F') || (input.LA(1) >= '\u3300' && input.LA(1) <= '\u337F') || (input.LA(1) >= '\u3400' && input.LA(1) <= '\u3D2D') || (input.LA(1) >= '\u4E00' && input.LA(1) <= '\u9FFF') || (input.LA(1) >= '\uF900' && input.LA(1) <= '\uFAFF') ) 
+            	{
+            	    input.Consume();
 
-                if ( (LA18_1 == '/') )
-                {
-                    alt18 = 1;
-                }
-                else if ( (LA18_1 == '*') )
-                {
-                    alt18 = 2;
-                }
-                else 
-                {
-                    NoViableAltException nvae_d18s1 =
-                        new NoViableAltException("", 18, 1, input);
+            	}
+            	else 
+            	{
+            	    MismatchedSetException mse = new MismatchedSetException(null,input);
+            	    Recover(mse);
+            	    throw mse;}
 
-                    throw nvae_d18s1;
-                }
-            }
-            else 
-            {
-                NoViableAltException nvae_d18s0 =
-                    new NoViableAltException("", 18, 0, input);
-
-                throw nvae_d18s0;
-            }
-            switch (alt18) 
-            {
-                case 1 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:597:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
-                    {
-                    	Match("//"); 
-
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:597:14: (~ ( '\\n' | '\\r' ) )*
-                    	do 
-                    	{
-                    	    int alt15 = 2;
-                    	    int LA15_0 = input.LA(1);
-
-                    	    if ( ((LA15_0 >= '\u0000' && LA15_0 <= '\t') || (LA15_0 >= '\u000B' && LA15_0 <= '\f') || (LA15_0 >= '\u000E' && LA15_0 <= '\uFFFF')) )
-                    	    {
-                    	        alt15 = 1;
-                    	    }
-
-
-                    	    switch (alt15) 
-                    		{
-                    			case 1 :
-                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:597:14: ~ ( '\\n' | '\\r' )
-                    			    {
-                    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t') || (input.LA(1) >= '\u000B' && input.LA(1) <= '\f') || (input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) 
-                    			    	{
-                    			    	    input.Consume();
-
-                    			    	}
-                    			    	else 
-                    			    	{
-                    			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
-                    			    	    Recover(mse);
-                    			    	    throw mse;}
-
-
-                    			    }
-                    			    break;
-
-                    			default:
-                    			    goto loop15;
-                    	    }
-                    	} while (true);
-
-                    	loop15:
-                    		;	// Stops C# compiler whining that label 'loop15' has no statements
-
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:597:28: ( '\\r' )?
-                    	int alt16 = 2;
-                    	int LA16_0 = input.LA(1);
-
-                    	if ( (LA16_0 == '\r') )
-                    	{
-                    	    alt16 = 1;
-                    	}
-                    	switch (alt16) 
-                    	{
-                    	    case 1 :
-                    	        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:597:28: '\\r'
-                    	        {
-                    	        	Match('\r'); 
-
-                    	        }
-                    	        break;
-
-                    	}
-
-                    	Match('\n'); 
-                    	_channel=HIDDEN;
-
-                    }
-                    break;
-                case 2 :
-                    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:598:9: '/*' ( options {greedy=false; } : . )* '*/'
-                    {
-                    	Match("/*"); 
-
-                    	// D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:598:14: ( options {greedy=false; } : . )*
-                    	do 
-                    	{
-                    	    int alt17 = 2;
-                    	    int LA17_0 = input.LA(1);
-
-                    	    if ( (LA17_0 == '*') )
-                    	    {
-                    	        int LA17_1 = input.LA(2);
-
-                    	        if ( (LA17_1 == '/') )
-                    	        {
-                    	            alt17 = 2;
-                    	        }
-                    	        else if ( ((LA17_1 >= '\u0000' && LA17_1 <= '.') || (LA17_1 >= '0' && LA17_1 <= '\uFFFF')) )
-                    	        {
-                    	            alt17 = 1;
-                    	        }
-
-
-                    	    }
-                    	    else if ( ((LA17_0 >= '\u0000' && LA17_0 <= ')') || (LA17_0 >= '+' && LA17_0 <= '\uFFFF')) )
-                    	    {
-                    	        alt17 = 1;
-                    	    }
-
-
-                    	    switch (alt17) 
-                    		{
-                    			case 1 :
-                    			    // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:598:42: .
-                    			    {
-                    			    	MatchAny(); 
-
-                    			    }
-                    			    break;
-
-                    			default:
-                    			    goto loop17;
-                    	    }
-                    	} while (true);
-
-                    	loop17:
-                    		;	// Stops C# compiler whining that label 'loop17' has no statements
-
-                    	Match("*/"); 
-
-                    	_channel=HIDDEN;
-
-                    }
-                    break;
 
             }
-            state.type = _type;
-            state.channel = _channel;
+
         }
         finally 
     	{
         }
     }
-    // $ANTLR end "COMMENT"
+    // $ANTLR end "UTF8Letter"
+
+    // $ANTLR start "UTF8Digit"
+    public void mUTF8Digit() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:547:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:
+            {
+            	if ( (input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= '\u0660' && input.LA(1) <= '\u0669') || (input.LA(1) >= '\u06F0' && input.LA(1) <= '\u06F9') || (input.LA(1) >= '\u0966' && input.LA(1) <= '\u096F') || (input.LA(1) >= '\u09E6' && input.LA(1) <= '\u09EF') || (input.LA(1) >= '\u0A66' && input.LA(1) <= '\u0A6F') || (input.LA(1) >= '\u0AE6' && input.LA(1) <= '\u0AEF') || (input.LA(1) >= '\u0B66' && input.LA(1) <= '\u0B6F') || (input.LA(1) >= '\u0BE7' && input.LA(1) <= '\u0BEF') || (input.LA(1) >= '\u0C66' && input.LA(1) <= '\u0C6F') || (input.LA(1) >= '\u0CE6' && input.LA(1) <= '\u0CEF') || (input.LA(1) >= '\u0D66' && input.LA(1) <= '\u0D6F') || (input.LA(1) >= '\u0E50' && input.LA(1) <= '\u0E59') || (input.LA(1) >= '\u0ED0' && input.LA(1) <= '\u0ED9') || (input.LA(1) >= '\u1040' && input.LA(1) <= '\u1049') ) 
+            	{
+            	    input.Consume();
+
+            	}
+            	else 
+            	{
+            	    MismatchedSetException mse = new MismatchedSetException(null,input);
+            	    Recover(mse);
+            	    throw mse;}
+
+
+            }
+
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "UTF8Digit"
+
+    // $ANTLR start "HexDigit"
+    public void mHexDigit() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:565:10: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:565:12: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+            {
+            	if ( (input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= 'A' && input.LA(1) <= 'F') || (input.LA(1) >= 'a' && input.LA(1) <= 'f') ) 
+            	{
+            	    input.Consume();
+
+            	}
+            	else 
+            	{
+            	    MismatchedSetException mse = new MismatchedSetException(null,input);
+            	    Recover(mse);
+            	    throw mse;}
+
+
+            }
+
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "HexDigit"
+
+    // $ANTLR start "EscapeSequence"
+    public void mEscapeSequence() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:569:5: ( '\\\\' ( 'n' | 'r' | '\\\"' | '\\\\' ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:569:9: '\\\\' ( 'n' | 'r' | '\\\"' | '\\\\' )
+            {
+            	Match('\\'); 
+            	if ( input.LA(1) == '\"' || input.LA(1) == '\\' || input.LA(1) == 'n' || input.LA(1) == 'r' ) 
+            	{
+            	    input.Consume();
+
+            	}
+            	else 
+            	{
+            	    MismatchedSetException mse = new MismatchedSetException(null,input);
+            	    Recover(mse);
+            	    throw mse;}
+
+
+            }
+
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "EscapeSequence"
 
     override public void mTokens() // throws RecognitionException 
     {
-        // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:8: ( T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | IntegerAtom | FloatAtom | BooleanAtom | StringAtom | IntType | BooleanType | StringType | FloatType | ObjectType | Sprite | Animation | Layer | Origin | LoopType | Identifier | EscapeSequence | WS | COMMENT )
-        int alt19 = 55;
-        alt19 = dfa19.Predict(input);
-        switch (alt19) 
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:8: ( T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | VarStartChar | BooleanAtom | Null | Sprite | Animation | Lyrics | List | LayerAtom | OriginAtom | LoopTypeAtom | ColorAtom | IntAtom | FloatAtom | StringAtom | Identifier | Comment | WhiteSpace )
+        int alt18 = 57;
+        alt18 = dfa18.Predict(input);
+        switch (alt18) 
         {
             case 1 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:10: T__50
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:10: T__50
                 {
                 	mT__50(); 
 
                 }
                 break;
             case 2 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:16: T__51
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:16: T__51
                 {
                 	mT__51(); 
 
                 }
                 break;
             case 3 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:22: T__52
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:22: T__52
                 {
                 	mT__52(); 
 
                 }
                 break;
             case 4 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:28: T__53
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:28: T__53
                 {
                 	mT__53(); 
 
                 }
                 break;
             case 5 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:34: T__54
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:34: T__54
                 {
                 	mT__54(); 
 
                 }
                 break;
             case 6 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:40: T__55
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:40: T__55
                 {
                 	mT__55(); 
 
                 }
                 break;
             case 7 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:46: T__56
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:46: T__56
                 {
                 	mT__56(); 
 
                 }
                 break;
             case 8 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:52: T__57
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:52: T__57
                 {
                 	mT__57(); 
 
                 }
                 break;
             case 9 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:58: T__58
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:58: T__58
                 {
                 	mT__58(); 
 
                 }
                 break;
             case 10 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:64: T__59
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:64: T__59
                 {
                 	mT__59(); 
 
                 }
                 break;
             case 11 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:70: T__60
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:70: T__60
                 {
                 	mT__60(); 
 
                 }
                 break;
             case 12 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:76: T__61
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:76: T__61
                 {
                 	mT__61(); 
 
                 }
                 break;
             case 13 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:82: T__62
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:82: T__62
                 {
                 	mT__62(); 
 
                 }
                 break;
             case 14 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:88: T__63
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:88: T__63
                 {
                 	mT__63(); 
 
                 }
                 break;
             case 15 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:94: T__64
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:94: T__64
                 {
                 	mT__64(); 
 
                 }
                 break;
             case 16 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:100: T__65
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:100: T__65
                 {
                 	mT__65(); 
 
                 }
                 break;
             case 17 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:106: T__66
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:106: T__66
                 {
                 	mT__66(); 
 
                 }
                 break;
             case 18 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:112: T__67
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:112: T__67
                 {
                 	mT__67(); 
 
                 }
                 break;
             case 19 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:118: T__68
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:118: T__68
                 {
                 	mT__68(); 
 
                 }
                 break;
             case 20 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:124: T__69
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:124: T__69
                 {
                 	mT__69(); 
 
                 }
                 break;
             case 21 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:130: T__70
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:130: T__70
                 {
                 	mT__70(); 
 
                 }
                 break;
             case 22 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:136: T__71
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:136: T__71
                 {
                 	mT__71(); 
 
                 }
                 break;
             case 23 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:142: T__72
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:142: T__72
                 {
                 	mT__72(); 
 
                 }
                 break;
             case 24 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:148: T__73
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:148: T__73
                 {
                 	mT__73(); 
 
                 }
                 break;
             case 25 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:154: T__74
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:154: T__74
                 {
                 	mT__74(); 
 
                 }
                 break;
             case 26 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:160: T__75
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:160: T__75
                 {
                 	mT__75(); 
 
                 }
                 break;
             case 27 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:166: T__76
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:166: T__76
                 {
                 	mT__76(); 
 
                 }
                 break;
             case 28 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:172: T__77
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:172: T__77
                 {
                 	mT__77(); 
 
                 }
                 break;
             case 29 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:178: T__78
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:178: T__78
                 {
                 	mT__78(); 
 
                 }
                 break;
             case 30 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:184: T__79
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:184: T__79
                 {
                 	mT__79(); 
 
                 }
                 break;
             case 31 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:190: T__80
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:190: T__80
                 {
                 	mT__80(); 
 
                 }
                 break;
             case 32 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:196: T__81
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:196: T__81
                 {
                 	mT__81(); 
 
                 }
                 break;
             case 33 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:202: T__82
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:202: T__82
                 {
                 	mT__82(); 
 
                 }
                 break;
             case 34 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:208: T__83
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:208: T__83
                 {
                 	mT__83(); 
 
                 }
                 break;
             case 35 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:214: T__84
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:214: T__84
                 {
                 	mT__84(); 
 
                 }
                 break;
             case 36 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:220: T__85
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:220: T__85
                 {
                 	mT__85(); 
 
                 }
                 break;
             case 37 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:226: T__86
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:226: T__86
                 {
                 	mT__86(); 
 
                 }
                 break;
             case 38 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:232: IntegerAtom
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:232: T__87
                 {
-                	mIntegerAtom(); 
+                	mT__87(); 
 
                 }
                 break;
             case 39 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:244: FloatAtom
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:238: T__88
                 {
-                	mFloatAtom(); 
+                	mT__88(); 
 
                 }
                 break;
             case 40 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:254: BooleanAtom
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:244: T__89
+                {
+                	mT__89(); 
+
+                }
+                break;
+            case 41 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:250: VarStartChar
+                {
+                	mVarStartChar(); 
+
+                }
+                break;
+            case 42 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:263: BooleanAtom
                 {
                 	mBooleanAtom(); 
 
                 }
                 break;
-            case 41 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:266: StringAtom
-                {
-                	mStringAtom(); 
-
-                }
-                break;
-            case 42 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:277: IntType
-                {
-                	mIntType(); 
-
-                }
-                break;
             case 43 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:285: BooleanType
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:275: Null
                 {
-                	mBooleanType(); 
+                	mNull(); 
 
                 }
                 break;
             case 44 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:297: StringType
-                {
-                	mStringType(); 
-
-                }
-                break;
-            case 45 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:308: FloatType
-                {
-                	mFloatType(); 
-
-                }
-                break;
-            case 46 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:318: ObjectType
-                {
-                	mObjectType(); 
-
-                }
-                break;
-            case 47 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:329: Sprite
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:280: Sprite
                 {
                 	mSprite(); 
 
                 }
                 break;
-            case 48 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:336: Animation
+            case 45 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:287: Animation
                 {
                 	mAnimation(); 
 
                 }
                 break;
-            case 49 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:346: Layer
+            case 46 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:297: Lyrics
                 {
-                	mLayer(); 
+                	mLyrics(); 
+
+                }
+                break;
+            case 47 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:304: List
+                {
+                	mList(); 
+
+                }
+                break;
+            case 48 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:309: LayerAtom
+                {
+                	mLayerAtom(); 
+
+                }
+                break;
+            case 49 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:319: OriginAtom
+                {
+                	mOriginAtom(); 
 
                 }
                 break;
             case 50 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:352: Origin
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:330: LoopTypeAtom
                 {
-                	mOrigin(); 
+                	mLoopTypeAtom(); 
 
                 }
                 break;
             case 51 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:359: LoopType
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:343: ColorAtom
                 {
-                	mLoopType(); 
+                	mColorAtom(); 
 
                 }
                 break;
             case 52 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:368: Identifier
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:353: IntAtom
+                {
+                	mIntAtom(); 
+
+                }
+                break;
+            case 53 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:361: FloatAtom
+                {
+                	mFloatAtom(); 
+
+                }
+                break;
+            case 54 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:371: StringAtom
+                {
+                	mStringAtom(); 
+
+                }
+                break;
+            case 55 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:382: Identifier
                 {
                 	mIdentifier(); 
 
                 }
                 break;
-            case 53 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:379: EscapeSequence
+            case 56 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:393: Comment
                 {
-                	mEscapeSequence(); 
+                	mComment(); 
 
                 }
                 break;
-            case 54 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:394: WS
+            case 57 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:401: WhiteSpace
                 {
-                	mWS(); 
-
-                }
-                break;
-            case 55 :
-                // D:\\sgl4c#\\gitrepo\\SGLParserTestProject\\SGL\\AntlrParser\\SGL.g:1:397: COMMENT
-                {
-                	mCOMMENT(); 
+                	mWhiteSpace(); 
 
                 }
                 break;
@@ -2847,84 +2774,33 @@ public partial class SGLLexer : Lexer {
     }
 
 
-    protected DFA6 dfa6;
-    protected DFA10 dfa10;
-    protected DFA19 dfa19;
+    protected DFA3 dfa3;
+    protected DFA11 dfa11;
+    protected DFA18 dfa18;
 	private void InitializeCyclicDFAs()
 	{
-	    this.dfa6 = new DFA6(this);
-	    this.dfa10 = new DFA10(this);
-	    this.dfa19 = new DFA19(this);
+	    this.dfa3 = new DFA3(this);
+	    this.dfa11 = new DFA11(this);
+	    this.dfa18 = new DFA18(this);
 	}
 
-    const string DFA6_eotS =
-        "\x01\uffff\x01\x03\x03\uffff";
-    const string DFA6_eofS =
-        "\x05\uffff";
-    const string DFA6_minS =
-        "\x02\x2e\x03\uffff";
-    const string DFA6_maxS =
-        "\x02\x39\x03\uffff";
-    const string DFA6_acceptS =
-        "\x02\uffff\x01\x02\x01\x03\x01\x01";
-    const string DFA6_specialS =
-        "\x05\uffff}>";
-    static readonly string[] DFA6_transitionS = {
-            "\x01\x02\x01\uffff\x0a\x01",
-            "\x01\x04\x01\uffff\x0a\x01",
-            "",
-            "",
-            ""
-    };
-
-    static readonly short[] DFA6_eot = DFA.UnpackEncodedString(DFA6_eotS);
-    static readonly short[] DFA6_eof = DFA.UnpackEncodedString(DFA6_eofS);
-    static readonly char[] DFA6_min = DFA.UnpackEncodedStringToUnsignedChars(DFA6_minS);
-    static readonly char[] DFA6_max = DFA.UnpackEncodedStringToUnsignedChars(DFA6_maxS);
-    static readonly short[] DFA6_accept = DFA.UnpackEncodedString(DFA6_acceptS);
-    static readonly short[] DFA6_special = DFA.UnpackEncodedString(DFA6_specialS);
-    static readonly short[][] DFA6_transition = DFA.UnpackEncodedStringArray(DFA6_transitionS);
-
-    protected class DFA6 : DFA
-    {
-        public DFA6(BaseRecognizer recognizer)
-        {
-            this.recognizer = recognizer;
-            this.decisionNumber = 6;
-            this.eot = DFA6_eot;
-            this.eof = DFA6_eof;
-            this.min = DFA6_min;
-            this.max = DFA6_max;
-            this.accept = DFA6_accept;
-            this.special = DFA6_special;
-            this.transition = DFA6_transition;
-
-        }
-
-        override public string Description
-        {
-            get { return "442:1: FloatAtom : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ );"; }
-        }
-
-    }
-
-    const string DFA10_eotS =
+    const string DFA3_eotS =
         "\x11\uffff\x01\x15\x07\uffff";
-    const string DFA10_eofS =
+    const string DFA3_eofS =
         "\x19\uffff";
-    const string DFA10_minS =
+    const string DFA3_minS =
         "\x01\x42\x01\x6f\x01\x65\x01\x6f\x01\x70\x01\x6e\x01\x74\x01\x43"+
         "\x02\x74\x03\uffff\x01\x72\x01\x6f\x01\x65\x01\x6d\x01\x4c\x01\x43"+
         "\x06\uffff";
-    const string DFA10_maxS =
+    const string DFA3_maxS =
         "\x01\x54\x01\x6f\x01\x65\x01\x6f\x01\x70\x01\x6e\x01\x74\x01\x52"+
         "\x02\x74\x03\uffff\x01\x72\x01\x6f\x01\x65\x01\x6d\x02\x52\x06\uffff";
-    const string DFA10_acceptS =
+    const string DFA3_acceptS =
         "\x0a\uffff\x01\x01\x01\x02\x01\x03\x06\uffff\x01\x04\x01\x06\x01"+
         "\x05\x01\x07\x01\x08\x01\x09";
-    const string DFA10_specialS =
+    const string DFA3_specialS =
         "\x19\uffff}>";
-    static readonly string[] DFA10_transitionS = {
+    static readonly string[] DFA3_transitionS = {
             "\x01\x03\x01\x02\x10\uffff\x01\x01",
             "\x01\x04",
             "\x01\x05",
@@ -2952,225 +2828,275 @@ public partial class SGLLexer : Lexer {
             ""
     };
 
-    static readonly short[] DFA10_eot = DFA.UnpackEncodedString(DFA10_eotS);
-    static readonly short[] DFA10_eof = DFA.UnpackEncodedString(DFA10_eofS);
-    static readonly char[] DFA10_min = DFA.UnpackEncodedStringToUnsignedChars(DFA10_minS);
-    static readonly char[] DFA10_max = DFA.UnpackEncodedStringToUnsignedChars(DFA10_maxS);
-    static readonly short[] DFA10_accept = DFA.UnpackEncodedString(DFA10_acceptS);
-    static readonly short[] DFA10_special = DFA.UnpackEncodedString(DFA10_specialS);
-    static readonly short[][] DFA10_transition = DFA.UnpackEncodedStringArray(DFA10_transitionS);
+    static readonly short[] DFA3_eot = DFA.UnpackEncodedString(DFA3_eotS);
+    static readonly short[] DFA3_eof = DFA.UnpackEncodedString(DFA3_eofS);
+    static readonly char[] DFA3_min = DFA.UnpackEncodedStringToUnsignedChars(DFA3_minS);
+    static readonly char[] DFA3_max = DFA.UnpackEncodedStringToUnsignedChars(DFA3_maxS);
+    static readonly short[] DFA3_accept = DFA.UnpackEncodedString(DFA3_acceptS);
+    static readonly short[] DFA3_special = DFA.UnpackEncodedString(DFA3_specialS);
+    static readonly short[][] DFA3_transition = DFA.UnpackEncodedStringArray(DFA3_transitionS);
 
-    protected class DFA10 : DFA
+    protected class DFA3 : DFA
     {
-        public DFA10(BaseRecognizer recognizer)
+        public DFA3(BaseRecognizer recognizer)
         {
             this.recognizer = recognizer;
-            this.decisionNumber = 10;
-            this.eot = DFA10_eot;
-            this.eof = DFA10_eof;
-            this.min = DFA10_min;
-            this.max = DFA10_max;
-            this.accept = DFA10_accept;
-            this.special = DFA10_special;
-            this.transition = DFA10_transition;
+            this.decisionNumber = 3;
+            this.eot = DFA3_eot;
+            this.eof = DFA3_eof;
+            this.min = DFA3_min;
+            this.max = DFA3_max;
+            this.accept = DFA3_accept;
+            this.special = DFA3_special;
+            this.transition = DFA3_transition;
 
         }
 
         override public string Description
         {
-            get { return "500:1: Origin : ( 'TopLeft' | 'TopCentre' | 'TopRight' | 'CentreLeft' | 'Centre' | 'CentreRight' | 'BottomLeft' | 'BottomCentre' | 'BottomRight' );"; }
+            get { return "466:1: OriginAtom : ( 'TopLeft' | 'TopCentre' | 'TopRight' | 'CentreLeft' | 'Centre' | 'CentreRight' | 'BottomLeft' | 'BottomCentre' | 'BottomRight' );"; }
         }
 
     }
 
-    const string DFA19_eotS =
-        "\x03\uffff\x01\x2d\x02\uffff\x01\x2d\x02\uffff\x01\x2d\x01\x34"+
-        "\x01\x36\x07\x2d\x05\uffff\x01\x43\x01\x45\x01\x47\x01\x49\x01\uffff"+
-        "\x01\x4b\x01\uffff\x01\x2d\x01\x4e\x01\x2d\x01\uffff\x0a\x2d\x03"+
-        "\uffff\x03\x2d\x04\uffff\x04\x2d\x01\x63\x02\x2d\x01\x66\x03\x2d"+
-        "\x0a\uffff\x02\x2d\x01\uffff\x11\x2d\x01\x7d\x02\x2d\x01\uffff\x01"+
-        "\u0080\x01\x2d\x01\uffff\x03\x2d\x01\u0085\x0f\x2d\x01\u0097\x02"+
-        "\x2d\x01\uffff\x02\x2d\x01\uffff\x01\u009c\x03\x2d\x01\uffff\x01"+
-        "\u00a0\x01\u00a1\x06\x2d\x01\u00a8\x01\x2d\x01\u00a8\x06\x2d\x01"+
-        "\uffff\x01\x2d\x01\u00b2\x01\u00a1\x01\u00b3\x01\uffff\x01\u00b4"+
-        "\x02\x2d\x02\uffff\x06\x2d\x01\uffff\x07\x2d\x01\u00c4\x01\u00c5"+
-        "\x03\uffff\x01\x2d\x01\u00c7\x01\u00c8\x01\u00c9\x01\u00ca\x07\x2d"+
-        "\x01\u00d6\x02\x2d\x02\uffff\x01\u00d9\x04\uffff\x06\x2d\x01\u00d6"+
-        "\x04\x2d\x01\uffff\x02\x2d\x01\uffff\x07\x2d\x01\u00d6\x03\x2d\x01"+
-        "\u00f0\x01\u00f1\x05\x2d\x01\u00d6\x03\x2d\x02\uffff\x01\u00a8\x01"+
-        "\u00d6\x02\x2d\x01\u00a8\x01\u00d6\x03\x2d\x02\u00d6\x01\u00f0\x01"+
-        "\u00d6";
-    const string DFA19_eofS =
-        "\u00ff\uffff";
-    const string DFA19_minS =
-        "\x01\x09\x02\uffff\x01\x65\x02\uffff\x01\x6f\x02\uffff\x01\x6c"+
-        "\x01\x3d\x01\x30\x01\x68\x01\x61\x01\x66\x01\x6c\x01\x74\x01\x6f"+
-        "\x01\x65\x05\uffff\x02\x3d\x01\x2b\x01\x2d\x01\uffff\x01\x2a\x01"+
-        "\uffff\x01\x65\x01\x2e\x01\x72\x01\uffff\x01\x74\x01\x62\x01\x70"+
-        "\x01\x6e\x03\x61\x01\x6f\x01\x65\x01\x6f\x03\uffff\x01\x74\x01\x69"+
-        "\x01\x6f\x04\uffff\x01\x69\x01\x72\x01\x6c\x01\x6f\x01\x24\x01\x74"+
-        "\x01\x73\x01\x24\x01\x65\x01\x6f\x01\x74\x0a\uffff\x01\x77\x01\x6c"+
-        "\x01\uffff\x01\x75\x01\x72\x01\x6a\x01\x72\x01\x69\x01\x63\x01\x74"+
-        "\x01\x69\x01\x72\x01\x73\x01\x70\x01\x6e\x01\x6f\x01\x68\x01\x64"+
-        "\x01\x62\x01\x6c\x01\x24\x01\x73\x01\x61\x01\uffff\x01\x24\x01\x65"+
-        "\x01\uffff\x01\x61\x01\x6c\x01\x75\x01\x24\x01\x6c\x01\x65\x01\x69"+
-        "\x01\x65\x01\x69\x01\x6d\x01\x6b\x01\x74\x01\x6c\x01\x65\x01\x73"+
-        "\x01\x43\x01\x74\x01\x70\x01\x6f\x01\x24\x01\x61\x01\x65\x01\uffff"+
-        "\x01\x65\x01\x74\x01\uffff\x01\x24\x01\x6b\x01\x65\x01\x72\x01\uffff"+
-        "\x02\x24\x01\x6e\x01\x63\x01\x74\x01\x61\x01\x67\x01\x6f\x01\x24"+
-        "\x01\x67\x01\x24\x02\x65\x01\x69\x01\x72\x01\x46\x01\x64\x01\uffff"+
-        "\x01\x6c\x03\x24\x01\uffff\x01\x24\x01\x61\x01\x6e\x02\uffff\x01"+
-        "\x67\x01\x74\x01\x65\x01\x74\x01\x72\x01\x6d\x01\uffff\x01\x72\x01"+
-        "\x66\x01\x6e\x01\x67\x01\x65\x01\x6f\x01\x6e\x02\x24\x03\uffff\x01"+
-        "\x6e\x04\x24\x01\x69\x01\x6f\x01\x43\x01\x6f\x02\x74\x01\x68\x01"+
-        "\x24\x01\x72\x01\x63\x02\uffff\x01\x24\x04\uffff\x01\x6f\x01\x75"+
-        "\x02\x65\x01\x69\x01\x75\x01\x24\x01\x72\x01\x74\x01\x65\x01\x69"+
-        "\x01\uffff\x02\x65\x01\uffff\x02\x6e\x01\x66\x01\x6e\x01\x67\x01"+
-        "\x6e\x01\x65\x01\x24\x01\x66\x01\x67\x01\x76\x02\x24\x01\x64\x02"+
-        "\x74\x01\x68\x01\x64\x01\x24\x01\x74\x01\x68\x01\x65\x02\uffff\x02"+
-        "\x24\x01\x72\x01\x74\x02\x24\x01\x74\x01\x72\x01\x65\x04\x24";
-    const string DFA19_maxS =
-        "\x01\ufaff\x02\uffff\x01\x65\x02\uffff\x01\x6f\x02\uffff\x01\x6c"+
-        "\x01\x3d\x01\x39\x01\x68\x01\x6f\x01\x6e\x01\x6c\x01\x74\x01\x72"+
-        "\x01\x65\x05\uffff\x02\x3d\x01\x2b\x01\x2d\x01\uffff\x01\x2f\x01"+
-        "\uffff\x01\x75\x01\x39\x01\x72\x01\uffff\x01\x74\x01\x62\x01\x70"+
-        "\x01\x6e\x02\x6f\x01\x61\x01\x6f\x01\x65\x01\x6f\x03\uffff\x01\x74"+
-        "\x01\x69\x01\x6f\x04\uffff\x01\x69\x01\x72\x01\x6c\x01\x6f\x01\ufaff"+
-        "\x01\x74\x01\x73\x01\ufaff\x01\x65\x01\x6f\x01\x74\x0a\uffff\x01"+
-        "\x77\x01\x6c\x01\uffff\x01\x75\x01\x72\x01\x6a\x01\x72\x01\x69\x01"+
-        "\x63\x01\x74\x01\x69\x01\x72\x01\x73\x01\x70\x01\x6e\x01\x6f\x01"+
-        "\x68\x01\x64\x01\x62\x01\x6c\x01\ufaff\x01\x73\x01\x61\x01\uffff"+
-        "\x01\ufaff\x01\x65\x01\uffff\x01\x61\x01\x6c\x01\x75\x01\ufaff\x01"+
-        "\x6c\x01\x65\x01\x69\x01\x65\x01\x69\x01\x6d\x01\x6b\x01\x74\x01"+
-        "\x6c\x01\x65\x01\x73\x01\x52\x01\x74\x01\x70\x01\x6f\x01\ufaff\x01"+
-        "\x61\x01\x65\x01\uffff\x01\x65\x01\x74\x01\uffff\x01\ufaff\x01\x6b"+
-        "\x01\x65\x01\x72\x01\uffff\x02\ufaff\x01\x6e\x01\x63\x01\x74\x01"+
-        "\x61\x01\x67\x01\x6f\x01\ufaff\x01\x67\x01\ufaff\x02\x65\x01\x69"+
-        "\x01\x72\x01\x4f\x01\x64\x01\uffff\x01\x6c\x03\ufaff\x01\uffff\x01"+
-        "\ufaff\x01\x61\x01\x6e\x02\uffff\x01\x67\x01\x74\x01\x65\x01\x74"+
-        "\x01\x72\x01\x6d\x01\uffff\x01\x72\x01\x66\x01\x6e\x01\x67\x01\x65"+
-        "\x01\x6f\x01\x6e\x02\ufaff\x03\uffff\x01\x6e\x04\ufaff\x01\x69\x01"+
-        "\x6f\x01\x52\x01\x6f\x02\x74\x01\x68\x01\ufaff\x01\x72\x01\x63\x02"+
-        "\uffff\x01\ufaff\x04\uffff\x01\x6f\x01\x75\x02\x65\x01\x69\x01\x75"+
-        "\x01\ufaff\x01\x72\x01\x74\x01\x65\x01\x69\x01\uffff\x02\x65\x01"+
-        "\uffff\x02\x6e\x01\x66\x01\x6e\x01\x67\x01\x6e\x01\x65\x01\ufaff"+
-        "\x01\x66\x01\x67\x01\x76\x02\ufaff\x01\x64\x02\x74\x01\x68\x01\x64"+
-        "\x01\ufaff\x01\x74\x01\x68\x01\x65\x02\uffff\x02\ufaff\x01\x72\x01"+
-        "\x74\x02\ufaff\x01\x74\x01\x72\x01\x65\x04\ufaff";
-    const string DFA19_acceptS =
-        "\x01\uffff\x01\x01\x01\x02\x01\uffff\x01\x04\x01\x05\x01\uffff"+
-        "\x01\x07\x01\x08\x0a\uffff\x01\x13\x01\x14\x01\x15\x01\x16\x01\x18"+
-        "\x04\uffff\x01\x1f\x01\uffff\x01\x21\x03\uffff\x01\x29\x0a\uffff"+
-        "\x01\x34\x01\x35\x01\x36\x03\uffff\x01\x17\x01\x0a\x01\x27\x01\x0b"+
-        "\x0b\uffff\x01\x1b\x01\x19\x01\x1c\x01\x1a\x01\x22\x01\x1d\x01\x23"+
-        "\x01\x1e\x01\x37\x01\x20\x02\uffff\x01\x26\x14\uffff\x01\x0e\x02"+
-        "\uffff\x01\x10\x16\uffff\x01\x0d\x02\uffff\x01\x2a\x04\uffff\x01"+
-        "\x24\x11\uffff\x01\x06\x04\uffff\x01\x0f\x03\uffff\x01\x25\x01\x28"+
-        "\x06\uffff\x01\x31\x09\uffff\x01\x0c\x01\x2d\x01\x11\x0f\uffff\x01"+
-        "\x03\x01\x09\x01\uffff\x01\x12\x01\x2c\x01\x2e\x01\x2f\x0b\uffff"+
-        "\x01\x32\x02\uffff\x01\x2b\x16\uffff\x01\x33\x01\x30\x0d\uffff";
-    const string DFA19_specialS =
-        "\u00ff\uffff}>";
-    static readonly string[] DFA19_transitionS = {
-            "\x02\x2f\x01\uffff\x02\x2f\x12\uffff\x01\x2f\x01\x17\x01\x22"+
-            "\x01\uffff\x01\x2d\x01\x1e\x01\x16\x01\uffff\x01\x04\x01\x05"+
-            "\x01\x1c\x01\x1a\x01\x08\x01\x1b\x01\x0b\x01\x1d\x0a\x20\x01"+
-            "\x14\x01\x07\x01\x18\x01\x0a\x01\x19\x01\x13\x01\uffff\x01\x26"+
-            "\x01\x27\x01\x2b\x02\x2d\x01\x28\x05\x2d\x01\x2c\x02\x2d\x01"+
-            "\x24\x01\x29\x02\x2d\x01\x25\x01\x2a\x06\x2d\x01\uffff\x01\x2e"+
-            "\x02\uffff\x01\x2d\x01\uffff\x01\x10\x01\x11\x02\x2d\x01\x0f"+
-            "\x01\x0d\x01\x09\x01\x2d\x01\x0e\x03\x2d\x01\x03\x01\x1f\x03"+
-            "\x2d\x01\x12\x01\x23\x01\x21\x01\x2d\x01\x06\x01\x0c\x03\x2d"+
-            "\x01\x01\x01\x15\x01\x02\x42\uffff\x17\x2d\x01\uffff\x1f\x2d"+
-            "\x01\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080"+
-            "\x2d\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff"+
-            "\u0200\x2d",
+    const string DFA11_eotS =
+        "\x01\uffff\x01\x04\x03\uffff";
+    const string DFA11_eofS =
+        "\x05\uffff";
+    const string DFA11_minS =
+        "\x02\x2e\x03\uffff";
+    const string DFA11_maxS =
+        "\x02\x39\x03\uffff";
+    const string DFA11_acceptS =
+        "\x02\uffff\x01\x02\x01\x01\x01\x03";
+    const string DFA11_specialS =
+        "\x05\uffff}>";
+    static readonly string[] DFA11_transitionS = {
+            "\x01\x02\x01\uffff\x0a\x01",
+            "\x01\x03\x01\uffff\x0a\x01",
             "",
             "",
-            "\x01\x30",
+            ""
+    };
+
+    static readonly short[] DFA11_eot = DFA.UnpackEncodedString(DFA11_eotS);
+    static readonly short[] DFA11_eof = DFA.UnpackEncodedString(DFA11_eofS);
+    static readonly char[] DFA11_min = DFA.UnpackEncodedStringToUnsignedChars(DFA11_minS);
+    static readonly char[] DFA11_max = DFA.UnpackEncodedStringToUnsignedChars(DFA11_maxS);
+    static readonly short[] DFA11_accept = DFA.UnpackEncodedString(DFA11_acceptS);
+    static readonly short[] DFA11_special = DFA.UnpackEncodedString(DFA11_specialS);
+    static readonly short[][] DFA11_transition = DFA.UnpackEncodedStringArray(DFA11_transitionS);
+
+    protected class DFA11 : DFA
+    {
+        public DFA11(BaseRecognizer recognizer)
+        {
+            this.recognizer = recognizer;
+            this.decisionNumber = 11;
+            this.eot = DFA11_eot;
+            this.eof = DFA11_eof;
+            this.min = DFA11_min;
+            this.max = DFA11_max;
+            this.accept = DFA11_accept;
+            this.special = DFA11_special;
+            this.transition = DFA11_transition;
+
+        }
+
+        override public string Description
+        {
+            get { return "492:1: FloatAtom : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ );"; }
+        }
+
+    }
+
+    const string DFA18_eotS =
+        "\x05\uffff\x01\x30\x01\x34\x02\uffff\x01\x35\x02\uffff\x02\x30"+
+        "\x04\uffff\x01\x3a\x01\x3c\x01\x3e\x01\x40\x01\x42\x01\uffff\x01"+
+        "\x44\x02\uffff\x08\x30\x01\uffff\x09\x30\x01\uffff\x01\x5c\x03\uffff"+
+        "\x01\x30\x04\uffff\x02\x30\x0c\uffff\x07\x30\x01\x67\x01\x30\x01"+
+        "\x69\x0d\x30\x01\uffff\x03\x30\x01\x7a\x04\x30\x01\x7f\x01\x30\x01"+
+        "\uffff\x01\x30\x01\uffff\x10\x30\x01\uffff\x01\u0094\x03\x30\x01"+
+        "\uffff\x01\x30\x01\u0099\x01\u009a\x03\x30\x01\u009e\x03\x30\x01"+
+        "\u00a3\x01\x30\x01\u00a3\x07\x30\x01\uffff\x01\u00ac\x01\x30\x01"+
+        "\u00ae\x01\u009a\x02\uffff\x03\x30\x01\uffff\x04\x30\x01\uffff\x05"+
+        "\x30\x01\u00bb\x01\u00bc\x01\x30\x01\uffff\x01\u00be\x01\uffff\x01"+
+        "\u00bf\x01\x30\x01\u00c1\x08\x30\x01\u00ce\x05\uffff\x01\x30\x01"+
+        "\uffff\x07\x30\x01\u00ce\x04\x30\x01\uffff\x02\x30\x01\u00dd\x06"+
+        "\x30\x01\u00ce\x02\x30\x01\u00e6\x01\x30\x01\uffff\x05\x30\x01\u00ce"+
+        "\x02\x30\x01\uffff\x01\x30\x01\u00a3\x01\u00ce\x02\x30\x01\u00a3"+
+        "\x01\u00ce\x01\x30\x01\u00dd\x01\x30\x03\u00ce";
+    const string DFA18_eofS =
+        "\u00f4\uffff";
+    const string DFA18_minS =
+        "\x01\x09\x04\uffff\x01\x6c\x01\x3d\x02\uffff\x01\x30\x02\uffff"+
+        "\x01\x65\x01\x62\x04\uffff\x03\x3d\x01\x2b\x01\x2d\x01\uffff\x01"+
+        "\x2a\x02\uffff\x01\x65\x01\x72\x01\x65\x01\x68\x01\x61\x01\x66\x01"+
+        "\x6c\x01\x74\x01\uffff\x01\x72\x01\x70\x01\x6e\x01\x69\x03\x61\x01"+
+        "\x6f\x01\x65\x01\uffff\x01\x2e\x03\uffff\x01\x6f\x04\uffff\x01\x74"+
+        "\x01\x6a\x0c\uffff\x01\x77\x01\x6c\x01\x65\x01\x74\x01\x69\x01\x72"+
+        "\x01\x6c\x01\x30\x01\x73\x01\x30\x01\x75\x01\x72\x01\x69\x01\x72"+
+        "\x01\x73\x01\x6f\x01\x63\x01\x74\x01\x69\x01\x72\x01\x73\x01\x70"+
+        "\x01\x6e\x01\uffff\x01\x62\x01\x68\x01\x65\x01\x30\x01\x6c\x01\x61"+
+        "\x01\x75\x01\x6c\x01\x30\x01\x73\x01\uffff\x01\x65\x01\uffff\x01"+
+        "\x65\x01\x69\x01\x6d\x01\x69\x01\x74\x01\x70\x01\x6b\x01\x74\x01"+
+        "\x6c\x01\x65\x01\x73\x01\x43\x01\x74\x01\x61\x01\x6f\x01\x63\x01"+
+        "\uffff\x01\x30\x01\x6b\x01\x72\x01\x65\x01\uffff\x01\x65\x02\x30"+
+        "\x01\x74\x01\x61\x01\x63\x01\x30\x01\x46\x01\x67\x01\x6f\x01\x30"+
+        "\x01\x67\x01\x30\x02\x65\x01\x69\x01\x72\x01\x6c\x01\x64\x01\x74"+
+        "\x01\uffff\x01\x30\x01\x6e\x02\x30\x02\uffff\x01\x65\x01\x74\x01"+
+        "\x73\x01\uffff\x01\x6f\x01\x6e\x01\x72\x01\x6d\x01\uffff\x01\x72"+
+        "\x01\x66\x01\x6e\x01\x67\x01\x65\x02\x30\x01\x20\x01\uffff\x01\x30"+
+        "\x01\uffff\x01\x30\x01\x69\x01\x30\x01\x72\x01\x63\x01\x6f\x01\x43"+
+        "\x01\x6f\x02\x74\x01\x68\x01\x30\x05\uffff\x01\x6f\x01\uffff\x02"+
+        "\x65\x01\x75\x02\x65\x01\x69\x01\x75\x01\x30\x01\x72\x01\x74\x01"+
+        "\x65\x01\x69\x01\uffff\x01\x6e\x01\x76\x01\x30\x01\x6e\x01\x66\x01"+
+        "\x6e\x01\x67\x01\x6e\x01\x65\x01\x30\x01\x66\x01\x67\x01\x30\x01"+
+        "\x65\x01\uffff\x01\x64\x02\x74\x01\x68\x01\x64\x01\x30\x01\x74\x01"+
+        "\x68\x01\uffff\x01\x72\x02\x30\x01\x72\x01\x74\x02\x30\x01\x74\x01"+
+        "\x30\x01\x65\x03\x30";
+    const string DFA18_maxS =
+        "\x01\ufaff\x04\uffff\x01\x6c\x01\x3d\x02\uffff\x01\x39\x02\uffff"+
+        "\x01\x65\x01\x62\x04\uffff\x03\x3d\x01\x2b\x01\x2d\x01\uffff\x01"+
+        "\x2f\x02\uffff\x01\x75\x01\x72\x01\x65\x01\x68\x01\x6f\x01\x66\x01"+
+        "\x6c\x01\x74\x01\uffff\x01\x72\x01\x70\x01\x6e\x01\x79\x02\x6f\x01"+
+        "\x61\x01\x6f\x01\x65\x01\uffff\x01\x39\x03\uffff\x01\x6f\x04\uffff"+
+        "\x01\x74\x01\x6a\x0c\uffff\x01\x77\x01\x6c\x01\x65\x01\x74\x01\x69"+
+        "\x01\x72\x01\x6c\x01\ufaff\x01\x73\x01\ufaff\x01\x75\x01\x72\x01"+
+        "\x69\x01\x72\x01\x73\x01\x6f\x01\x63\x01\x74\x01\x69\x01\x72\x01"+
+        "\x73\x01\x70\x01\x6e\x01\uffff\x01\x62\x01\x68\x01\x65\x01\ufaff"+
+        "\x01\x6c\x01\x61\x01\x75\x01\x6c\x01\ufaff\x01\x73\x01\uffff\x01"+
+        "\x65\x01\uffff\x01\x65\x01\x69\x01\x6d\x01\x69\x01\x74\x01\x70\x01"+
+        "\x6b\x01\x74\x01\x6c\x01\x65\x01\x73\x01\x52\x01\x74\x01\x61\x01"+
+        "\x6f\x01\x63\x01\uffff\x01\ufaff\x01\x6b\x01\x72\x01\x65\x01\uffff"+
+        "\x01\x65\x02\ufaff\x01\x74\x01\x61\x01\x63\x01\ufaff\x01\x4f\x01"+
+        "\x67\x01\x6f\x01\ufaff\x01\x67\x01\ufaff\x02\x65\x01\x69\x01\x72"+
+        "\x01\x6c\x01\x64\x01\x74\x01\uffff\x01\ufaff\x01\x6e\x02\ufaff\x02"+
+        "\uffff\x01\x65\x01\x74\x01\x73\x01\uffff\x01\x6f\x01\x6e\x01\x72"+
+        "\x01\x6d\x01\uffff\x01\x72\x01\x66\x01\x6e\x01\x67\x01\x65\x02\ufaff"+
+        "\x01\x20\x01\uffff\x01\ufaff\x01\uffff\x01\ufaff\x01\x69\x01\ufaff"+
+        "\x01\x72\x01\x63\x01\x6f\x01\x52\x01\x6f\x02\x74\x01\x68\x01\ufaff"+
+        "\x05\uffff\x01\x6f\x01\uffff\x02\x65\x01\x75\x02\x65\x01\x69\x01"+
+        "\x75\x01\ufaff\x01\x72\x01\x74\x01\x65\x01\x69\x01\uffff\x01\x6e"+
+        "\x01\x76\x01\ufaff\x01\x6e\x01\x66\x01\x6e\x01\x67\x01\x6e\x01\x65"+
+        "\x01\ufaff\x01\x66\x01\x67\x01\ufaff\x01\x65\x01\uffff\x01\x64\x02"+
+        "\x74\x01\x68\x01\x64\x01\ufaff\x01\x74\x01\x68\x01\uffff\x01\x72"+
+        "\x02\ufaff\x01\x72\x01\x74\x02\ufaff\x01\x74\x01\ufaff\x01\x65\x03"+
+        "\ufaff";
+    const string DFA18_acceptS =
+        "\x01\uffff\x01\x01\x01\x02\x01\x03\x01\x04\x02\uffff\x01\x07\x01"+
+        "\x08\x01\uffff\x01\x0a\x01\x0b\x02\uffff\x01\x0e\x01\x0f\x01\x10"+
+        "\x01\x11\x05\uffff\x01\x1a\x01\uffff\x01\x1c\x01\x1d\x08\uffff\x01"+
+        "\x29\x09\uffff\x01\x33\x01\uffff\x01\x36\x01\x37\x01\x39\x01\uffff"+
+        "\x01\x12\x01\x06\x01\x09\x01\x35\x02\uffff\x01\x13\x01\x1e\x01\x16"+
+        "\x01\x14\x01\x17\x01\x15\x01\x1f\x01\x18\x01\x20\x01\x19\x01\x38"+
+        "\x01\x1b\x17\uffff\x01\x34\x0a\uffff\x01\x26\x01\uffff\x01\x28\x10"+
+        "\uffff\x01\x21\x04\uffff\x01\x25\x14\uffff\x01\x2b\x04\uffff\x01"+
+        "\x27\x01\x2a\x03\uffff\x01\x2f\x04\uffff\x01\x30\x08\uffff\x01\x22"+
+        "\x01\uffff\x01\x24\x0c\uffff\x01\x05\x01\x0c\x01\x0d\x01\x23\x01"+
+        "\x2c\x01\uffff\x01\x2e\x0c\uffff\x01\x31\x0e\uffff\x01\x32\x08\uffff"+
+        "\x01\x2d\x0d\uffff";
+    const string DFA18_specialS =
+        "\u00f4\uffff}>";
+    static readonly string[] DFA18_transitionS = {
+            "\x02\x31\x02\uffff\x01\x31\x12\uffff\x01\x31\x01\x12\x01\x2f"+
+            "\x01\x2d\x01\x23\x01\x19\x01\x11\x01\uffff\x01\x0a\x01\x0b\x01"+
+            "\x17\x01\x15\x01\x04\x01\x16\x01\x09\x01\x18\x0a\x2e\x01\x0f"+
+            "\x01\x03\x01\x13\x01\x06\x01\x14\x01\x0e\x01\uffff\x01\x26\x01"+
+            "\x28\x01\x2c\x02\x30\x01\x29\x05\x30\x01\x27\x03\x30\x01\x2a"+
+            "\x02\x30\x01\x25\x01\x2b\x06\x30\x01\x07\x01\uffff\x01\x08\x01"+
+            "\x1a\x01\x30\x01\uffff\x01\x22\x01\x1c\x02\x30\x01\x21\x01\x1f"+
+            "\x01\x05\x01\x30\x01\x20\x03\x30\x01\x0c\x01\x1b\x01\x0d\x02"+
+            "\x30\x01\x1d\x01\x30\x01\x24\x02\x30\x01\x1e\x03\x30\x01\x01"+
+            "\x01\x10\x01\x02\x42\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff"+
+            "\u1f08\x30\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080"+
+            "\uffff\u092e\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "",
             "",
-            "\x01\x31",
             "",
             "",
             "\x01\x32",
             "\x01\x33",
-            "\x0a\x35",
+            "",
+            "",
+            "\x0a\x36",
+            "",
+            "",
             "\x01\x37",
-            "\x01\x39\x0a\uffff\x01\x3a\x02\uffff\x01\x38",
-            "\x01\x3b\x07\uffff\x01\x3c",
+            "\x01\x38",
+            "",
+            "",
+            "",
+            "",
+            "\x01\x39",
+            "\x01\x3b",
             "\x01\x3d",
-            "\x01\x3e",
-            "\x01\x40\x02\uffff\x01\x3f",
+            "\x01\x3f",
             "\x01\x41",
             "",
+            "\x01\x43\x04\uffff\x01\x43",
             "",
             "",
-            "",
-            "",
-            "\x01\x42",
-            "\x01\x44",
-            "\x01\x46",
+            "\x01\x45\x0f\uffff\x01\x46",
+            "\x01\x47",
             "\x01\x48",
+            "\x01\x49",
+            "\x01\x4b\x0d\uffff\x01\x4a",
+            "\x01\x4c",
+            "\x01\x4d",
+            "\x01\x4e",
             "",
-            "\x01\x4a\x04\uffff\x01\x4a",
-            "",
-            "\x01\x4c\x0f\uffff\x01\x4d",
-            "\x01\x35\x01\uffff\x0a\x20",
             "\x01\x4f",
-            "",
             "\x01\x50",
             "\x01\x51",
-            "\x01\x52",
-            "\x01\x53",
-            "\x01\x54\x0d\uffff\x01\x55",
-            "\x01\x56\x0d\uffff\x01\x57",
-            "\x01\x58",
+            "\x01\x53\x05\uffff\x01\x54\x09\uffff\x01\x52",
+            "\x01\x55\x0d\uffff\x01\x56",
+            "\x01\x57\x0d\uffff\x01\x58",
             "\x01\x59",
             "\x01\x5a",
             "\x01\x5b",
             "",
+            "\x01\x36\x01\uffff\x0a\x2e",
             "",
             "",
-            "\x01\x5c",
+            "",
             "\x01\x5d",
+            "",
+            "",
+            "",
+            "",
             "\x01\x5e",
-            "",
-            "",
-            "",
-            "",
             "\x01\x5f",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\x01\x60",
             "\x01\x61",
             "\x01\x62",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
+            "\x01\x63",
             "\x01\x64",
             "\x01\x65",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x67",
+            "\x01\x66",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\x68",
-            "\x01\x69",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\x6a",
             "\x01\x6b",
-            "",
             "\x01\x6c",
             "\x01\x6d",
             "\x01\x6e",
@@ -3182,35 +3108,30 @@ public partial class SGLLexer : Lexer {
             "\x01\x74",
             "\x01\x75",
             "\x01\x76",
+            "",
             "\x01\x77",
             "\x01\x78",
             "\x01\x79",
-            "\x01\x7a",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\x7b",
             "\x01\x7c",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
+            "\x01\x7d",
             "\x01\x7e",
-            "\x01\x7f",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
+            "\x01\u0080",
             "",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
             "\x01\u0081",
             "",
             "\x01\u0082",
             "\x01\u0083",
             "\x01\u0084",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
+            "\x01\u0085",
             "\x01\u0086",
             "\x01\u0087",
             "\x01\u0088",
@@ -3218,300 +3139,247 @@ public partial class SGLLexer : Lexer {
             "\x01\u008a",
             "\x01\u008b",
             "\x01\u008c",
-            "\x01\u008d",
-            "\x01\u008e",
-            "\x01\u008f",
+            "\x01\u008e\x08\uffff\x01\u008d\x05\uffff\x01\u008f",
             "\x01\u0090",
-            "\x01\u0092\x08\uffff\x01\u0091\x05\uffff\x01\u0093",
-            "\x01\u0094",
+            "\x01\u0091",
+            "\x01\u0092",
+            "\x01\u0093",
+            "",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u0095",
             "\x01\u0096",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
+            "\x01\u0097",
+            "",
             "\x01\u0098",
-            "\x01\u0099",
-            "",
-            "\x01\u009a",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u009b",
-            "",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
+            "\x01\u009c",
             "\x01\u009d",
-            "\x01\u009e",
-            "\x01\u009f",
-            "",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
+            "\x01\u009f\x08\uffff\x01\u00a0",
+            "\x01\u00a1",
             "\x01\u00a2",
-            "\x01\u00a3",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00a4",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00a5",
             "\x01\u00a6",
             "\x01\u00a7",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
+            "\x01\u00a8",
             "\x01\u00a9",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
             "\x01\u00aa",
             "\x01\u00ab",
-            "\x01\u00ac",
+            "",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00ad",
-            "\x01\u00ae\x08\uffff\x01\u00af",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
+            "",
+            "",
+            "\x01\u00af",
             "\x01\u00b0",
-            "",
             "\x01\u00b1",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
             "",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
+            "\x01\u00b2",
+            "\x01\u00b3",
+            "\x01\u00b4",
             "\x01\u00b5",
+            "",
             "\x01\u00b6",
-            "",
-            "",
             "\x01\u00b7",
             "\x01\u00b8",
             "\x01\u00b9",
             "\x01\u00ba",
-            "\x01\u00bb",
-            "\x01\u00bc",
-            "",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00bd",
-            "\x01\u00be",
-            "\x01\u00bf",
+            "",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
+            "",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00c0",
-            "\x01\u00c1",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00c2",
             "\x01\u00c3",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "",
-            "",
-            "",
-            "\x01\u00c6",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
+            "\x01\u00c4",
+            "\x01\u00c6\x08\uffff\x01\u00c5\x05\uffff\x01\u00c7",
+            "\x01\u00c8",
+            "\x01\u00c9",
+            "\x01\u00ca",
             "\x01\u00cb",
-            "\x01\u00cc",
-            "\x01\u00ce\x08\uffff\x01\u00cd\x05\uffff\x01\u00cf",
+            "\x0a\x30\x07\uffff\x0b\x30\x01\u00cc\x05\x30\x01\u00cd\x08"+
+            "\x30\x04\uffff\x01\x30\x01\uffff\x1a\x30\x45\uffff\x17\x30\x01"+
+            "\uffff\x1f\x30\x01\uffff\u1f08\x30\u1040\uffff\u0150\x30\u0170"+
+            "\uffff\u0080\x30\u0080\uffff\u092e\x30\u10d2\uffff\u5200\x30"+
+            "\u5900\uffff\u0200\x30",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\x01\u00cf",
+            "",
             "\x01\u00d0",
             "\x01\u00d1",
             "\x01\u00d2",
             "\x01\u00d3",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x0b\x2d\x01\u00d4\x05"+
-            "\x2d\x01\u00d5\x08\x2d\x04\uffff\x01\x2d\x01\uffff\x1a\x2d\x45"+
-            "\uffff\x17\x2d\x01\uffff\x1f\x2d\x01\uffff\u1f08\x2d\u1040\uffff"+
-            "\u0150\x2d\u0170\uffff\u0080\x2d\u0080\uffff\u092e\x2d\u10d2"+
-            "\uffff\u5200\x2d\u5900\uffff\u0200\x2d",
+            "\x01\u00d4",
+            "\x01\u00d5",
+            "\x01\u00d6",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00d7",
             "\x01\u00d8",
-            "",
-            "",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "",
-            "",
-            "",
-            "",
+            "\x01\u00d9",
             "\x01\u00da",
+            "",
             "\x01\u00db",
             "\x01\u00dc",
-            "\x01\u00dd",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00de",
             "\x01\u00df",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
             "\x01\u00e0",
             "\x01\u00e1",
             "\x01\u00e2",
             "\x01\u00e3",
-            "",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00e4",
             "\x01\u00e5",
-            "",
-            "\x01\u00e6",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00e7",
+            "",
             "\x01\u00e8",
             "\x01\u00e9",
             "\x01\u00ea",
             "\x01\u00eb",
             "\x01\u00ec",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00ed",
             "\x01\u00ee",
+            "",
             "\x01\u00ef",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
+            "\x01\u00f0",
+            "\x01\u00f1",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00f2",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
             "\x01\u00f3",
-            "\x01\u00f4",
-            "\x01\u00f5",
-            "\x01\u00f6",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\u00f7",
-            "\x01\u00f8",
-            "\x01\u00f9",
-            "",
-            "",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\u00fa",
-            "\x01\u00fb",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\u00fc",
-            "\x01\u00fd",
-            "\x01\u00fe",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d",
-            "\x01\x2d\x0b\uffff\x0a\x2d\x07\uffff\x1a\x2d\x04\uffff\x01"+
-            "\x2d\x01\uffff\x1a\x2d\x45\uffff\x17\x2d\x01\uffff\x1f\x2d\x01"+
-            "\uffff\u1f08\x2d\u1040\uffff\u0150\x2d\u0170\uffff\u0080\x2d"+
-            "\u0080\uffff\u092e\x2d\u10d2\uffff\u5200\x2d\u5900\uffff\u0200"+
-            "\x2d"
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30",
+            "\x0a\x30\x07\uffff\x1a\x30\x04\uffff\x01\x30\x01\uffff\x1a"+
+            "\x30\x45\uffff\x17\x30\x01\uffff\x1f\x30\x01\uffff\u1f08\x30"+
+            "\u1040\uffff\u0150\x30\u0170\uffff\u0080\x30\u0080\uffff\u092e"+
+            "\x30\u10d2\uffff\u5200\x30\u5900\uffff\u0200\x30"
     };
 
-    static readonly short[] DFA19_eot = DFA.UnpackEncodedString(DFA19_eotS);
-    static readonly short[] DFA19_eof = DFA.UnpackEncodedString(DFA19_eofS);
-    static readonly char[] DFA19_min = DFA.UnpackEncodedStringToUnsignedChars(DFA19_minS);
-    static readonly char[] DFA19_max = DFA.UnpackEncodedStringToUnsignedChars(DFA19_maxS);
-    static readonly short[] DFA19_accept = DFA.UnpackEncodedString(DFA19_acceptS);
-    static readonly short[] DFA19_special = DFA.UnpackEncodedString(DFA19_specialS);
-    static readonly short[][] DFA19_transition = DFA.UnpackEncodedStringArray(DFA19_transitionS);
+    static readonly short[] DFA18_eot = DFA.UnpackEncodedString(DFA18_eotS);
+    static readonly short[] DFA18_eof = DFA.UnpackEncodedString(DFA18_eofS);
+    static readonly char[] DFA18_min = DFA.UnpackEncodedStringToUnsignedChars(DFA18_minS);
+    static readonly char[] DFA18_max = DFA.UnpackEncodedStringToUnsignedChars(DFA18_maxS);
+    static readonly short[] DFA18_accept = DFA.UnpackEncodedString(DFA18_acceptS);
+    static readonly short[] DFA18_special = DFA.UnpackEncodedString(DFA18_specialS);
+    static readonly short[][] DFA18_transition = DFA.UnpackEncodedStringArray(DFA18_transitionS);
 
-    protected class DFA19 : DFA
+    protected class DFA18 : DFA
     {
-        public DFA19(BaseRecognizer recognizer)
+        public DFA18(BaseRecognizer recognizer)
         {
             this.recognizer = recognizer;
-            this.decisionNumber = 19;
-            this.eot = DFA19_eot;
-            this.eof = DFA19_eof;
-            this.min = DFA19_min;
-            this.max = DFA19_max;
-            this.accept = DFA19_accept;
-            this.special = DFA19_special;
-            this.transition = DFA19_transition;
+            this.decisionNumber = 18;
+            this.eot = DFA18_eot;
+            this.eof = DFA18_eof;
+            this.min = DFA18_min;
+            this.max = DFA18_max;
+            this.accept = DFA18_accept;
+            this.special = DFA18_special;
+            this.transition = DFA18_transition;
 
         }
 
         override public string Description
         {
-            get { return "1:1: Tokens : ( T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | IntegerAtom | FloatAtom | BooleanAtom | StringAtom | IntType | BooleanType | StringType | FloatType | ObjectType | Sprite | Animation | Layer | Origin | LoopType | Identifier | EscapeSequence | WS | COMMENT );"; }
+            get { return "1:1: Tokens : ( T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | VarStartChar | BooleanAtom | Null | Sprite | Animation | Lyrics | List | LayerAtom | OriginAtom | LoopTypeAtom | ColorAtom | IntAtom | FloatAtom | StringAtom | Identifier | Comment | WhiteSpace );"; }
         }
 
     }

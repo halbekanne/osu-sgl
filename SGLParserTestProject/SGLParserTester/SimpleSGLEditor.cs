@@ -61,7 +61,7 @@ namespace SGLTest
                 tabControl.SelectedTab = tabSB;
 
             }
-            catch (SGLCompilerException ce)
+            catch (CompilerException ce)
             {
                 statusLabel.Text = "Error occured";
 

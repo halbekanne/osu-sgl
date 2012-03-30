@@ -36,7 +36,7 @@ namespace SGL
 
                 // Parsing
                 SGLCheckerOTF parser = new SGLCheckerOTF(tStream);
-                CommonTree t = (CommonTree)parser.compilationUnit().Tree;
+                CommonTree t = (CommonTree)parser.main().Tree;
 
                 // Printing tree
                 Console.WriteLine("; " + t.ToStringTree());

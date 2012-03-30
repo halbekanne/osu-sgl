@@ -25,8 +25,9 @@ namespace SGL
     /// </remarks>
     public class Compiler
     {
-        private Boolean timeRecording = false;
+        private Boolean timeRecording = true;
         private Dictionary<String, Method> methods;
+        private Dictionary<String, ObjectMethod> objectMethods;
         private String treeString = "undefined";
 
         public Compiler()
@@ -39,7 +40,7 @@ namespace SGL
         /// </summary>
         /// <param name="input">A string containing SGL code.</param>
         /// <returns>A string containing osu! storyboard code.</returns>
-        /// <exception cref="SGLCompilerException">Throws when the passed SGL code contains syntax or runtime exceptions.</exception>
+        /// <exception cref="CompilerException">Throws when the passed SGL code contains syntax or runtime exceptions.</exception>
         /// <exception cref="UnexpectedException">Throws when unexpected Exceptions occured during the parsing process.</exception>
         /// <seealso cref="System.String"/>
         public String Run(String input)
@@ -56,18 +57,27 @@ namespace SGL
                 // Step 3: Compiling the tree into storyboard code
                 String output = GenerateStoryboardCode(tree);
 
+                output = "[Events]\r\n" +
+                    "//Background and Video events\r\n" +
+                    "//Storyboard Layer 0 (Background)\r\n" +
+                    "//Storyboard Layer 1 (Fail)\r\n" +
+                    "//Storyboard Layer 2 (Pass)\r\n" +
+                    "//Storyboard Layer 3 (Foreground)\r\n" + output + "\r\n" +
+                    "//Storyboard Sound Samples";
+
                 return output;
             }
-            catch (SGLCompilerException sce)
+            catch (CompilerException sce)
             {
                 throw sce;
             }
             catch (Exception ex)
             {
+                /*
                 ErrorReporter errObj = new ErrorReporter(ex, input, treeString);
                 Thread errorReporter = new Thread(errObj.DoWork);
                 errorReporter.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-                errorReporter.Start();
+                errorReporter.Start();*/
                 Console.Write("-----------------------------------------------------------------------");
                 Console.WriteLine(ex.StackTrace);
                 throw new UnexpectedException(ex.Message, ex.StackTrace);
@@ -98,19 +108,29 @@ namespace SGL
 
         private CommonTokenStream GenerateTokens(String input)
         {
-            Stopwatch timeNeeded = timeRecording ? new Stopwatch() : null;
-            if (timeRecording) timeNeeded.Start();
-
-            // Lexer: Converting the string into tokens
-            SGLLexer lexer = new SGLLexer(new ANTLRStringStream(input));
-            CommonTokenStream tokenStream = new CommonTokenStream(lexer);
-
-            if (timeRecording)
+            try
             {
-                timeNeeded.Stop();
-                Console.WriteLine("Time needed for converting the string into tokens: " + timeNeeded.ElapsedMilliseconds + " ms (" + timeNeeded.Elapsed + ")");
+                Stopwatch timeNeeded = timeRecording ? new Stopwatch() : null;
+                if (timeRecording) timeNeeded.Start();
+
+                // Lexer: Converting the string into tokens
+
+                SGLLexer lexer = new SGLLexer(new ANTLRStringStream(input));
+
+                CommonTokenStream tokenStream = new CommonTokenStream(lexer);
+
+                if (timeRecording)
+                {
+                    timeNeeded.Stop();
+                    Console.WriteLine("Time needed for converting the string into tokens: " + timeNeeded.ElapsedMilliseconds + " ms (" + timeNeeded.Elapsed + ")");
+                }
+                return tokenStream;
             }
-            return tokenStream;
+            catch (Exception e)
+            {
+                throw e;
+            }
+            
         }
 
 
@@ -121,12 +141,16 @@ namespace SGL
 
             // Treewalker: Compiling the abstract syntax tree to storyboard code
             SGLParser parser = new SGLParser(input);
-            CommonTree ast = (CommonTree)parser.compilationUnit().Tree;
+            CommonTree ast = (CommonTree)parser.main().Tree;
             this.treeString = ast.ToStringTree();
             CommonTreeNodeStream astStream = new CommonTreeNodeStream(ast);
 
             // Saving the methods for the treewalker
             this.methods = parser.methods;
+            this.objectMethods = parser.objectMethods;
+
+            // Print tree
+            Console.WriteLine(this.treeString);
 
             if (timeRecording)
             {
@@ -144,8 +168,8 @@ namespace SGL
             if (timeRecording) timeNeeded.Start();
 
             // Parser: Converting the tokens into an abstract syntax tree
-            SGLTreeWalker treewalker = new SGLTreeWalker(input, this.methods);
-            treewalker.compilationUnit().Evaluate();
+            SGLTreeWalker treewalker = new SGLTreeWalker(input, this.methods, this.objectMethods);
+            treewalker.main().Evaluate();
             String output = treewalker.GetStoryboardCode().ToString();
 
             if (timeRecording)
@@ -157,9 +181,17 @@ namespace SGL
         }
 
 
+        public static void BuildLibrary()
+        {
+            // get the library
+            Global library = Global.GetInstance();
 
+            // empty library
+            library.Empty();
 
-
+            // register methods
+            library.RegisterMethod();
+        }
 
     }
 }

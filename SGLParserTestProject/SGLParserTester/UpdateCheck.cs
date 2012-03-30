@@ -20,6 +20,7 @@ namespace SGLTest
 
         public void DoWork()
         {
+            /*
             String uri = @"http://www.osu-german.de/sglerror/update.php";
             String updateRaw = HttpPost(uri, "");
             String[] update = updateRaw.Split('|');
@@ -30,7 +31,7 @@ namespace SGLTest
                     editor.ShowUpdateAvaliable(editor, update[1]);
                 }
 
-            }
+            }*/
 
         }
 
