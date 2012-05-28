@@ -2,19 +2,20 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C61D3773-D6C1-41FE-8459-8720AF9C7BC8}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{ECFA9E48-757A-4B09-B495-35C4F11546A5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SGL</RootNamespace>
     <AssemblyName>SGL</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +24,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,6 +33,35 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SGL.Tester</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Class.cs" />
+    <Compile Include="Classes\Sprite.cs" />
+    <Compile Include="Classes\Subclass.cs" />
+    <Compile Include="Elements\Scope.cs" />
+    <Compile Include="Methods\SinMethod.cs" />
+    <Compile Include="Methods\UserMethod.cs" />
+    <Compile Include="Nodes\AssignVariableNode.cs" />
+    <Compile Include="Nodes\AtomNode.cs" />
+    <Compile Include="Elements\GlobalMemory.cs" />
+    <Compile Include="Elements\Library.cs" />
+    <Compile Include="Elements\Value.cs" />
+    <Compile Include="Elements\ValueType.cs" />
+    <Compile Include="Methods\Method.cs" />
+    <Compile Include="Nodes\INode.cs" />
+    <Compile Include="Nodes\InstanciateClassNode.cs" />
+    <Compile Include="Antlr\SGLLexer.cs" />
+    <Compile Include="Antlr\SGLParser.cs" />
+    <Compile Include="Antlr\SGLTreeWalker.cs" />
+    <Compile Include="Storyboard\Animation.cs" />
+    <Compile Include="Storyboard\AnimationType.cs" />
+    <Compile Include="Storyboard\Command.cs" />
+    <Compile Include="Storyboard\SpriteObject.cs" />
+    <Compile Include="Tester.cs" />
+    <Compile Include="Storyboard\VisualObject.cs" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="antlr.runtime">
       <HintPath>dll\antlr\antlr.runtime.dll</HintPath>
@@ -45,119 +76,8 @@
       <HintPath>dll\antlr\StringTemplate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ErrorReportForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ErrorReportForm.Designer.cs">
-      <DependentUpon>ErrorReportForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Nodes\AbstractArgumentListNode.cs" />
-    <Compile Include="Nodes\Methods\IMethod.cs" />
-    <Compile Include="Nodes\Methods\UserMethod.cs" />
-    <Compile Include="Nodes\Operators\AbstractTernaryOperatorNode.cs" />
-    <Compile Include="Parser\SGLCheckerOTF.cs" />
-    <Compile Include="CheckerOTF.cs" />
-    <Compile Include="ComList.cs" />
-    <Compile Include="Compiler.cs" />
-    <Compile Include="ErrorReporter.cs" />
-    <Compile Include="Global.cs" />
-    <Compile Include="Nodes\Methods\AbstractUserMethod.cs" />
-    <Compile Include="Nodes\ObjectMethods\ObjectMethod.cs" />
-    <Compile Include="Nodes\Blocks\AbstractBlockNode.cs" />
-    <Compile Include="Nodes\Classes\AbstractClassNode.cs" />
-    <Compile Include="Nodes\Operators\AbstractBinaryOperatorNode.cs" />
-    <Compile Include="Nodes\Operators\AbstractUnaryOperatorNode.cs" />
-    <Compile Include="Nodes\Operators\Arithmetical\NegateBoolNode.cs" />
-    <Compile Include="Nodes\Operators\Arithmetical\PowNode.cs" />
-    <Compile Include="Nodes\LookupNode.cs" />
-    <Compile Include="Nodes\ObjectMethodCallNode.cs" />
-    <Compile Include="ObjectMethod.cs" />
-    <Compile Include="Nodes\ListNode.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Types\Animation.cs" />
-    <Compile Include="Method.cs" />
-    <Compile Include="Parser\SGLLexer.cs" />
-    <Compile Include="Parser\SGLParser.cs" />
-    <Compile Include="Parser\SGLTreeWalker.cs" />
-    <Compile Include="Nodes\Blocks\AtNode.cs" />
-    <Compile Include="Nodes\Operators\Logical\EqualsNode.cs" />
-    <Compile Include="Nodes\Operators\Logical\NotEqualsNode.cs" />
-    <Compile Include="Nodes\Operators\Logical\LowerThanNode.cs" />
-    <Compile Include="Nodes\Operators\Logical\LowerThanEqualsNode.cs" />
-    <Compile Include="Nodes\Operators\Logical\GreaterThanNode.cs" />
-    <Compile Include="Nodes\Operators\Logical\GreaterThanEqualsNode.cs" />
-    <Compile Include="Nodes\Operators\Logical\AndNode.cs" />
-    <Compile Include="Nodes\Operators\Logical\OrNode.cs" />
-    <Compile Include="Nodes\IdentifierNode.cs" />
-    <Compile Include="Nodes\AssignVariableNode.cs" />
-    <Compile Include="Nodes\Blocks\IfNode.cs" />
-    <Compile Include="Nodes\Blocks\ForNode.cs" />
-    <Compile Include="Nodes\BreakNode.cs" />
-    <Compile Include="Nodes\Classes\AnimationNode.cs" />
-    <Compile Include="Nodes\MethodCallNode.cs" />
-    <Compile Include="Nodes\StaticMethod\IntNode.cs" />
-    <Compile Include="Nodes\StaticMethod\FloatNode.cs" />
-    <Compile Include="Nodes\StaticMethod\BooleanNode.cs" />
-    <Compile Include="Nodes\StaticMethod\StringNode.cs" />
-    <Compile Include="Nodes\StaticMethod\RootNode.cs" />
-    <Compile Include="Nodes\StaticMethod\PowNodeOld.cs" />
-    <Compile Include="Nodes\StaticMethod\RandomIntegerNode.cs" />
-    <Compile Include="Nodes\VarDecNode.cs" />
-    <Compile Include="Nodes\ReturnNode.cs" />
-    <Compile Include="Nodes\VarIncNode.cs" />
-    <Compile Include="Nodes\StaticMethod\PrintlnNode.cs" />
-    <Compile Include="Nodes\ObjectMehtodNode.cs" />
-    <Compile Include="Nodes\Classes\SpriteNode.cs" />
-    <Compile Include="Nodes\Blocks\WhileNode.cs" />
-    <Compile Include="Nodes\Operators\Misc\ConditionalNode.cs" />
-    <Compile Include="Nodes\Operators\Arithmetical\NegateIntNode.cs" />
-    <Compile Include="Nodes\Operators\Arithmetical\ModNode.cs" />
-    <Compile Include="Nodes\Operators\Arithmetical\AddNode.cs" />
-    <Compile Include="Nodes\AtomNode.cs" />
-    <Compile Include="Nodes\Blocks\BlockNode.cs" />
-    <Compile Include="Nodes\Operators\Arithmetical\DivNode.cs" />
-    <Compile Include="Nodes\Operators\Arithmetical\MultNode.cs" />
-    <Compile Include="Nodes\Operators\Arithmetical\SubNode.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SbCommand.cs" />
-    <Compile Include="Scope.cs" />
-    <Compile Include="CompilerException.cs" />
-    <Compile Include="Nodes\INode.cs" />
-    <Compile Include="Types\Lyrics.cs" />
-    <Compile Include="Types\ReturnValue.cs" />
-    <Compile Include="Types\SpriteObject.cs" />
-    <Compile Include="UnexpectedException.cs" />
-    <Compile Include="SGLUnit\Unit.cs" />
-    <Compile Include="SGLUnit\UnitTester.cs" />
-    <Compile Include="Value.cs" />
-    <Compile Include="Types\Sprite.cs" />
-    <Compile Include="ValueType.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ErrorReportForm.resx">
-      <DependentUpon>ErrorReportForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\derpy_hooves_error.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

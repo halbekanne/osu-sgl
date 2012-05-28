@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+# Visual C# Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend", "SGLParserTester\Frontend.csproj", "{25D1AE24-8712-4515-A6E5-1D59387382B0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D46C69FA-C7B2-4B34-A8EB-5EEB5869BCA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGL", "SGL\SGL.csproj", "{C61D3773-D6C1-41FE-8459-8720AF9C7BC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGLOld", "SGLOld\SGLOld.csproj", "{C61D3773-D6C1-41FE-8459-8720AF9C7BC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGL", "SGL\SGL.csproj", "{ECFA9E48-757A-4B09-B495-35C4F11546A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{4CD0639E-C13D-4A3F-B120-C387DB6498BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,26 @@ Global
 		{C61D3773-D6C1-41FE-8459-8720AF9C7BC8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C61D3773-D6C1-41FE-8459-8720AF9C7BC8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C61D3773-D6C1-41FE-8459-8720AF9C7BC8}.Release|x86.ActiveCfg = Release|Any CPU
+		{ECFA9E48-757A-4B09-B495-35C4F11546A5}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{ECFA9E48-757A-4B09-B495-35C4F11546A5}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{ECFA9E48-757A-4B09-B495-35C4F11546A5}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{ECFA9E48-757A-4B09-B495-35C4F11546A5}.Debug|x86.ActiveCfg = Debug|x86
+		{ECFA9E48-757A-4B09-B495-35C4F11546A5}.Debug|x86.Build.0 = Debug|x86
+		{ECFA9E48-757A-4B09-B495-35C4F11546A5}.Release|Any CPU.ActiveCfg = Release|x86
+		{ECFA9E48-757A-4B09-B495-35C4F11546A5}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{ECFA9E48-757A-4B09-B495-35C4F11546A5}.Release|Mixed Platforms.Build.0 = Release|x86
+		{ECFA9E48-757A-4B09-B495-35C4F11546A5}.Release|x86.ActiveCfg = Release|x86
+		{ECFA9E48-757A-4B09-B495-35C4F11546A5}.Release|x86.Build.0 = Release|x86
+		{4CD0639E-C13D-4A3F-B120-C387DB6498BF}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4CD0639E-C13D-4A3F-B120-C387DB6498BF}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{4CD0639E-C13D-4A3F-B120-C387DB6498BF}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{4CD0639E-C13D-4A3F-B120-C387DB6498BF}.Debug|x86.ActiveCfg = Debug|x86
+		{4CD0639E-C13D-4A3F-B120-C387DB6498BF}.Debug|x86.Build.0 = Debug|x86
+		{4CD0639E-C13D-4A3F-B120-C387DB6498BF}.Release|Any CPU.ActiveCfg = Release|x86
+		{4CD0639E-C13D-4A3F-B120-C387DB6498BF}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{4CD0639E-C13D-4A3F-B120-C387DB6498BF}.Release|Mixed Platforms.Build.0 = Release|x86
+		{4CD0639E-C13D-4A3F-B120-C387DB6498BF}.Release|x86.ActiveCfg = Release|x86
+		{4CD0639E-C13D-4A3F-B120-C387DB6498BF}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

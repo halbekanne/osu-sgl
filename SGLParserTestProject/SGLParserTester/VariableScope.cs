@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGL
+namespace SGLOld
 {
     /// <summary>
     /// Contains memory for all variable types

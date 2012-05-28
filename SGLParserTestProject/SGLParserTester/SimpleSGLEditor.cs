@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using SGL;
+using SGLOld;
 using System.Threading;
 using System.IO;
 using System.Diagnostics;
@@ -53,7 +53,7 @@ namespace SGLTest
             try
             {
                 //Console.WriteLine("input Text: " + SGLBox.Document.Text);
-                SGL.Compiler compiler = new SGL.Compiler();
+                SGLOld.Compiler compiler = new SGLOld.Compiler();
                 compiler.SetTimeRecording(false);
                 storyboardBox.Document.Text = compiler.Run(SGLBox.Document.Text);
 

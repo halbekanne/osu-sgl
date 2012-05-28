@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGL
+namespace SGLOld
 {
     public interface IErrorReporter
     {

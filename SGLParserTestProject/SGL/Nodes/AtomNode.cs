@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SGL.Nodes;
+using SGL.Elements;
 
 namespace SGL.Nodes
 {
@@ -9,14 +11,23 @@ namespace SGL.Nodes
         private Value value;
         private int line = -1;
 
-        public AtomNode(Object v)
+        public AtomNode(Value value, ValType type)
         {
-            value = (v == null) ? Value.NULL : new Value(v);
+            if (type == ValType.String)
+            {
+                // escape sequences
+                String newString = value.StringValue;
+                newString = newString.Replace("\\\\", "\\");
+                newString = newString.Replace("\\\"", "\"");
+                value = new Value(newString, ValType.String);
+            }
+
+            value = (value == null) ? Value.NULL : new Value(value,type);
         }
 
-        public AtomNode(Object v, int line)
+        public AtomNode(Value value, ValType type, int line)
+            : this(value, type)
         {
-            value = (v == null) ? Value.NULL : new Value(v);
             this.line = line;
         }
 

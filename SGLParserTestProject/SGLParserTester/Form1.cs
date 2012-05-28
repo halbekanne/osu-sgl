@@ -5,9 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using SGL;
-using SGL.AntlrParser;
-using SGL.SGLUnit;
+using SGLOld;
+using SGLOld.AntlrParser;
+using SGLOld.SGLUnit;
 using System.Diagnostics;
 
 namespace WindowsFormsApplication4
@@ -28,7 +28,7 @@ namespace WindowsFormsApplication4
             try
             {
 
-                SGL.Compiler compiler = new SGL.Compiler();
+                SGLOld.Compiler compiler = new SGLOld.Compiler();
                 compiler.SetTimeRecording(true);
                 outputBox.Text = compiler.Run(inputBox.Text);
 

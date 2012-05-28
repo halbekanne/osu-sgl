@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGL
+namespace SGLOld
 {
     /// <summary>
     /// This class handles all actions the SGLTreeWalker will invoke. It saves Variables and does all the technical SGL stuff.
