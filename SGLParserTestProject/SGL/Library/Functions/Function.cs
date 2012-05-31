@@ -4,15 +4,35 @@ using System.Linq;
 using System.Text;
 using SGL.Elements;
 
-namespace SGL.Methods
+namespace SGL.Library.Functions
 {
-    abstract class Method
+    abstract class Function
     {
-
-        public abstract Value InvokeMethod(List<Value> parameters);
-        
         /*
+        protected Function(string name)
+        {
+            this.name = name;
+        }
+
         protected String name;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }*/
+
+        public abstract Value InvokeFunction(List<Value> parameters);
+
+        public abstract bool TestPatameters(List<Value> parameters);
+
+        
+
+        
+
+        /*
         protected ValType returnType;
         protected List<ValType> parameterTypes;
 

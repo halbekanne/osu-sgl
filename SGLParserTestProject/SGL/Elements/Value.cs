@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
-using SGL.Classes;
+using SGL.Library.Classes;
 
 namespace SGL.Elements
 {
@@ -229,6 +229,31 @@ namespace SGL.Elements
         }
 
 
+        public String TypeString
+        {
+            get
+            {
+                switch (type)
+                {
+                    case ValType.Boolean: return "Boolean";
+                    case ValType.Break: return "Break";
+                    case ValType.Double: return "Double";
+                    case ValType.Integer: return "Integer";
+                    case ValType.Layer: return "Layer";
+                    case ValType.List: return "List";
+                    case ValType.LoopType: return "LoopType";
+                    case ValType.Null: return "Null";
+                    case ValType.Object: return "Object";
+                    case ValType.Origin: return "Origin";
+                    case ValType.Return: return "Return";
+                    case ValType.String: return "String";
+                    case ValType.Void: return "Void";
+                    default: return "unknown";
+                }
+            }
+        }
+
+        /*
         public static String TypeToString(ValType type) {
             switch (type)
             {
@@ -247,7 +272,7 @@ namespace SGL.Elements
                 case ValType.Void: return "Void";
                 default: return "unknown";
             }
-        }
+        }*/
 
         /// <summary>
         /// TypeCompare method to ensure implizit convertion from int to float and vice versa.
@@ -279,14 +304,28 @@ namespace SGL.Elements
         }
 
         
-        public static bool TypeCompare(List<Value> value, params ValType[] acceptedTypes)
+        public static bool TypeCompare(List<Value> valueList, params ValType[] acceptedTypes)
         {
-            if (value.Count != acceptedTypes.Length) return false;
+            if (valueList.Count != acceptedTypes.Length) return false;
             foreach (ValType type in acceptedTypes)
             {
-                if (value.Type == type) return true;
+                if (valueList.Type == type) return true;
             }
             return false;
+        }
+
+        public static string PrintTypeList(List<Value> valueList)
+        {
+            String output = "";
+            for (int i = 0; i < valueList.Count; i++)
+            {
+                output += valueList[i].TypeString;
+                if (i < valueList.Count - 1)
+                {
+                    output += ", ";
+                }
+            }
+            return output;
         }
 
 

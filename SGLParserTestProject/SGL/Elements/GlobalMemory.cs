@@ -26,7 +26,33 @@ namespace SGL.Elements
 
 
         private Random random = new Random();
+        private Scope globalScope = new Scope();
+        private Stack<CallItem> callStack = new Stack<CallItem>();
+        private String currentCall = "main";
         private List<VisualObject> storyboardObjects = new List<VisualObject>();
+
+        public String CurrentCall
+        {
+            get
+            {
+                return currentCall;
+            }
+        }
+
+        public void AddCallToStack(CallItem callItem)
+        {
+            callStack.Push(new CallItem(currentCall, callItem.Line));
+            currentCall = callItem.Call;
+        }
+
+        public Stack<CallItem> CallStack
+        {
+            get
+            {
+                return callStack;
+            }
+        }
+
 
         public void RegisterVisualObject(VisualObject vo)
         {
@@ -38,6 +64,14 @@ namespace SGL.Elements
             get
             {
                 return random;
+            }
+        }
+
+        public Scope GlobalScope
+        {
+            get
+            {
+                return globalScope;
             }
         }
 

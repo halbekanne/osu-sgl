@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SGL.Classes
+namespace SGL.Library.Classes
 {
     public class Subclass : Class
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using SGL.Elements;
 
-namespace SGL.Classes
+namespace SGL.Library.Classes
 {
     public abstract class Class
     {

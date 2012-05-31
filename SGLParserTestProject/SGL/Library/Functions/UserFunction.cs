@@ -6,33 +6,31 @@ using Antlr.Runtime.Tree;
 using SGL.Elements;
 using SGL.Antlr;
 
-namespace SGL.Methods
+namespace SGL.Library.Functions
 {
     /// <summary>
     /// A method defined by "method [name]() { ... } in the actuall SGL code."
     /// </summary>
-    class UserMethod : Method
+    class UserFunction : Function
     {
-        private String name;
         private List<String> patameterNames;
         private CommonTreeNodeStream methodBody;
 
-
         // method xyt(param1, param2) {
-        public UserMethod(String name, List<String> parameterNames, CommonTreeNodeStream methodBody)
+        public UserFunction(String name, List<String> parameterNames, CommonTreeNodeStream methodBody)
+            : base(name)
         {
-            this.name = name;
             this.patameterNames = parameterNames;
             this.methodBody = methodBody;
         }
 
-        public override Value InvokeMethod(List<Value> parameters)
+        public override Value InvokeFunction(List<Value> parameters)
         {
             if (parameters.Count == patameterNames.Count)
             {
                 // create new scope for the method call
                 Scope methodScope = new Scope();
-                for (int i = 0; i < parameterNames.Count; i++)
+                for (int i = 0; i < patameterNames.Count; i++)
                 {
                     methodScope.Assign(parameterNames[i], parameters[i]);
                 }
@@ -40,7 +38,7 @@ namespace SGL.Methods
                 // Create a tree walker to evaluate this method's code block  
                 CommonTreeNodeStream nodes = new CommonTreeNodeStream(methodBody);
                 SGLTreeWalker walker = new SGLTreeWalker(nodes, methodScope);
-                
+
                 // Ok executing the function then
                 Value returnValue = walker.main().Evaluate();
 

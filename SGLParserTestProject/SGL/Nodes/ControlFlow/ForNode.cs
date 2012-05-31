@@ -1,28 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SGL.Elements;
 
-namespace SGLOld.Nodes.Blocks
+namespace SGL.Nodes.ControlFlow
 {
-    class ForNode : INode
+    class ForNode : AbstractNode
     {
-        private INode init;
-        private INode condition;
-        private INode iteration;
-        private INode block;
+        private AbstractNode init;
+        private AbstractNode condition;
+        private AbstractNode iteration;
+        private AbstractNode block;
 
         public ForNode()
         {
 
         }
 
-        public INode Init {
+        public AbstractNode Init {
             set {
                 this.init = value;
             }
         }
 
-        public INode Condition
+        public AbstractNode Condition
         {
             set
             {
@@ -30,7 +31,7 @@ namespace SGLOld.Nodes.Blocks
             }
         }
 
-        public INode Iteration
+        public AbstractNode Iteration
         {
             set
             {
@@ -38,7 +39,7 @@ namespace SGLOld.Nodes.Blocks
             }
         }
 
-        public INode Block
+        public AbstractNode Block
         {
             set
             {
@@ -46,7 +47,7 @@ namespace SGLOld.Nodes.Blocks
             }
         }
 
-        public Value Evaluate()
+        public override Value Invoke()
         {
             /*
             Console.WriteLine("init: " + init.Evaluate());
@@ -55,7 +56,7 @@ namespace SGLOld.Nodes.Blocks
             */
               
             //Console.WriteLine("--------------------------------------");
-            for (init.Evaluate(); condition.Evaluate().AsBoolean(); iteration.Evaluate()) {
+            for (init.Evaluate(); condition.Evaluate().BoolValue; iteration.Evaluate()) {
                 block.Evaluate();
             }
 

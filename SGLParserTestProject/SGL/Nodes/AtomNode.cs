@@ -6,7 +6,7 @@ using SGL.Elements;
 
 namespace SGL.Nodes
 {
-    class AtomNode : INode
+    class AtomNode : AbstractNode
     {
         private Value value;
         private int line = -1;
@@ -31,7 +31,7 @@ namespace SGL.Nodes
             this.line = line;
         }
 
-        public Value Evaluate()
+        public Value Invoke()
         {
             return value;
         }

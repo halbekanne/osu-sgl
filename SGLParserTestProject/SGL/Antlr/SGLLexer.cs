@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 D:\\sgl4c#\\NewSGLGramma\\SGL.g 2012-05-28 20:09:24
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 D:\\sgl4c#\\NewSGLGramma\\SGL.g 2012-05-30 19:13:15
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -30,61 +30,62 @@ public partial class SGLLexer : Lexer {
     public const int T__62 = 62;
     public const int VAR_LIST = 16;
     public const int T__63 = 63;
-    public const int IntAtom = 31;
-    public const int Sprite = 39;
+    public const int IntAtom = 30;
+    public const int Sprite = 38;
     public const int EXP_LIST = 15;
-    public const int LoopTypeAtom = 36;
+    public const int LoopTypeAtom = 35;
     public const int T__61 = 61;
-    public const int UTF8Letter = 46;
+    public const int UTF8Letter = 45;
     public const int T__60 = 60;
     public const int EOF = -1;
-    public const int HexDigit = 44;
+    public const int HexDigit = 43;
     public const int BREAK = 19;
-    public const int Identifier = 29;
-    public const int Lyrics = 43;
+    public const int Identifier = 28;
+    public const int Lyrics = 42;
     public const int IF = 22;
+    public const int FUNC_CALL = 17;
     public const int AT = 21;
     public const int T__55 = 55;
     public const int T__56 = 56;
     public const int T__57 = 57;
     public const int T__58 = 58;
     public const int T__51 = 51;
-    public const int Animation = 40;
+    public const int Animation = 39;
     public const int T__52 = 52;
     public const int T__53 = 53;
     public const int T__54 = 54;
-    public const int Comment = 48;
+    public const int Comment = 47;
     public const int EXP = 23;
+    public const int OBJ_FUNC_CALL = 18;
     public const int FORITER = 26;
     public const int T__59 = 59;
     public const int INT_NEGATE = 7;
-    public const int UTF8Digit = 47;
+    public const int UTF8Digit = 46;
     public const int RETURN = 20;
-    public const int WhiteSpace = 49;
+    public const int WhiteSpace = 48;
     public const int T__50 = 50;
     public const int VARDEC = 10;
-    public const int OriginAtom = 35;
-    public const int Null = 38;
-    public const int LayerAtom = 34;
-    public const int GLOBAL_ASSIGN = 28;
+    public const int OriginAtom = 34;
+    public const int Null = 37;
+    public const int LayerAtom = 33;
+    public const int GLOBAL_ASSIGN = 27;
     public const int T__80 = 80;
     public const int T__81 = 81;
     public const int T__82 = 82;
     public const int T__83 = 83;
+    public const int T__49 = 49;
     public const int FORDEC = 24;
-    public const int StringAtom = 30;
-    public const int METH_CALL = 17;
+    public const int StringAtom = 29;
     public const int INDEXES = 12;
-    public const int ColorAtom = 37;
+    public const int ColorAtom = 36;
     public const int T__85 = 85;
     public const int T__84 = 84;
     public const int LIST = 14;
     public const int T__87 = 87;
     public const int T__86 = 86;
-    public const int List = 41;
-    public const int T__88 = 88;
+    public const int List = 40;
     public const int BOOL_NEGATE = 8;
-    public const int BooleanAtom = 33;
+    public const int BooleanAtom = 32;
     public const int LOOKUP = 13;
     public const int T__71 = 71;
     public const int FORCOND = 25;
@@ -93,16 +94,14 @@ public partial class SGLLexer : Lexer {
     public const int T__70 = 70;
     public const int BLOCK = 4;
     public const int ASSIGN = 5;
-    public const int VarStartInit = 42;
-    public const int OBJ_METH_CALL = 18;
+    public const int VarStartInit = 41;
     public const int T__76 = 76;
-    public const int GLOBAL = 27;
-    public const int FloatAtom = 32;
+    public const int FloatAtom = 31;
     public const int T__75 = 75;
     public const int T__74 = 74;
     public const int VARINC = 9;
     public const int T__73 = 73;
-    public const int EscapeSequence = 45;
+    public const int EscapeSequence = 44;
     public const int T__79 = 79;
     public const int T__78 = 78;
     public const int STRING = 6;
@@ -129,6 +128,29 @@ public partial class SGLLexer : Lexer {
     	get { return "D:\\sgl4c#\\NewSGLGramma\\SGL.g";} 
     }
 
+    // $ANTLR start "T__49"
+    public void mT__49() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            int _type = T__49;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:14:7: ( '{' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:14:9: '{'
+            {
+            	Match('{'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "T__49"
+
     // $ANTLR start "T__50"
     public void mT__50() // throws RecognitionException [2]
     {
@@ -136,10 +158,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__50;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:14:7: ( '{' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:14:9: '{'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:15:7: ( '}' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:15:9: '}'
             {
-            	Match('{'); 
+            	Match('}'); 
 
             }
 
@@ -159,10 +181,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__51;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:15:7: ( '}' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:15:9: '}'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:16:7: ( ';' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:16:9: ';'
             {
-            	Match('}'); 
+            	Match(';'); 
 
             }
 
@@ -182,10 +204,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__52;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:16:7: ( ';' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:16:9: ';'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:17:7: ( ',' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:17:9: ','
             {
-            	Match(';'); 
+            	Match(','); 
 
             }
 
@@ -205,10 +227,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__53;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:17:7: ( ',' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:17:9: ','
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:18:7: ( 'global' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:18:9: 'global'
             {
-            	Match(','); 
+            	Match("global"); 
+
 
             }
 
@@ -228,11 +251,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__54;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:18:7: ( 'global' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:18:9: 'global'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:19:7: ( '=' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:19:9: '='
             {
-            	Match("global"); 
-
+            	Match('='); 
 
             }
 
@@ -252,10 +274,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__55;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:19:7: ( '=' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:19:9: '='
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:20:7: ( '[' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:20:9: '['
             {
-            	Match('='); 
+            	Match('['); 
 
             }
 
@@ -275,10 +297,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__56;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:20:7: ( '[' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:20:9: '['
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:21:7: ( ']' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:21:9: ']'
             {
-            	Match('['); 
+            	Match(']'); 
 
             }
 
@@ -298,10 +320,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__57;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:21:7: ( ']' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:21:9: ']'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:22:7: ( '.' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:22:9: '.'
             {
-            	Match(']'); 
+            	Match('.'); 
 
             }
 
@@ -321,10 +343,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__58;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:22:7: ( '.' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:22:9: '.'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:23:7: ( '(' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:23:9: '('
             {
-            	Match('.'); 
+            	Match('('); 
 
             }
 
@@ -344,10 +366,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__59;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:23:7: ( '(' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:23:9: '('
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:24:7: ( ')' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:24:9: ')'
             {
-            	Match('('); 
+            	Match(')'); 
 
             }
 
@@ -367,10 +389,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__60;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:24:7: ( ')' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:24:9: ')'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:25:7: ( 'method' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:25:9: 'method'
             {
-            	Match(')'); 
+            	Match("method"); 
+
 
             }
 
@@ -390,11 +413,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__61;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:25:7: ( 'method' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:25:9: 'method'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:26:7: ( '?' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:26:9: '?'
             {
-            	Match("method"); 
-
+            	Match('?'); 
 
             }
 
@@ -414,10 +436,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__62;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:26:7: ( '?' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:26:9: '?'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:27:7: ( ':' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:27:9: ':'
             {
-            	Match('?'); 
+            	Match(':'); 
 
             }
 
@@ -437,10 +459,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__63;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:27:7: ( ':' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:27:9: ':'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:28:7: ( '||' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:28:9: '||'
             {
-            	Match(':'); 
+            	Match("||"); 
+
 
             }
 
@@ -460,10 +483,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__64;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:28:7: ( '||' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:28:9: '||'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:29:7: ( '&&' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:29:9: '&&'
             {
-            	Match("||"); 
+            	Match("&&"); 
 
 
             }
@@ -484,10 +507,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__65;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:29:7: ( '&&' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:29:9: '&&'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:30:7: ( '==' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:30:9: '=='
             {
-            	Match("&&"); 
+            	Match("=="); 
 
 
             }
@@ -508,10 +531,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__66;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:30:7: ( '==' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:30:9: '=='
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:31:7: ( '!=' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:31:9: '!='
             {
-            	Match("=="); 
+            	Match("!="); 
 
 
             }
@@ -532,11 +555,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__67;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:31:7: ( '!=' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:31:9: '!='
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:32:7: ( '<' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:32:9: '<'
             {
-            	Match("!="); 
-
+            	Match('<'); 
 
             }
 
@@ -556,10 +578,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__68;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:32:7: ( '<' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:32:9: '<'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:33:7: ( '>' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:33:9: '>'
             {
-            	Match('<'); 
+            	Match('>'); 
 
             }
 
@@ -579,10 +601,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__69;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:33:7: ( '>' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:33:9: '>'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:34:7: ( '<=' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:34:9: '<='
             {
-            	Match('>'); 
+            	Match("<="); 
+
 
             }
 
@@ -602,10 +625,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__70;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:34:7: ( '<=' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:34:9: '<='
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:35:7: ( '>=' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:35:9: '>='
             {
-            	Match("<="); 
+            	Match(">="); 
 
 
             }
@@ -626,11 +649,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__71;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:35:7: ( '>=' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:35:9: '>='
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:36:7: ( '+' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:36:9: '+'
             {
-            	Match(">="); 
-
+            	Match('+'); 
 
             }
 
@@ -650,10 +672,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__72;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:36:7: ( '+' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:36:9: '+'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:37:7: ( '-' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:37:9: '-'
             {
-            	Match('+'); 
+            	Match('-'); 
 
             }
 
@@ -673,10 +695,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__73;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:37:7: ( '-' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:37:9: '-'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:38:7: ( '*' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:38:9: '*'
             {
-            	Match('-'); 
+            	Match('*'); 
 
             }
 
@@ -696,10 +718,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__74;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:38:7: ( '*' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:38:9: '*'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:39:7: ( '/' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:39:9: '/'
             {
-            	Match('*'); 
+            	Match('/'); 
 
             }
 
@@ -719,10 +741,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__75;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:39:7: ( '/' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:39:9: '/'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:40:7: ( '%' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:40:9: '%'
             {
-            	Match('/'); 
+            	Match('%'); 
 
             }
 
@@ -742,10 +764,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__76;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:40:7: ( '%' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:40:9: '%'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:41:7: ( '^' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:41:9: '^'
             {
-            	Match('%'); 
+            	Match('^'); 
 
             }
 
@@ -765,10 +787,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__77;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:41:7: ( '^' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:41:9: '^'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:42:7: ( '!' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:42:9: '!'
             {
-            	Match('^'); 
+            	Match('!'); 
 
             }
 
@@ -788,10 +810,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__78;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:42:7: ( '!' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:42:9: '!'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:43:7: ( '++' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:43:9: '++'
             {
-            	Match('!'); 
+            	Match("++"); 
+
 
             }
 
@@ -811,10 +834,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__79;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:43:7: ( '++' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:43:9: '++'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:44:7: ( '--' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:44:9: '--'
             {
-            	Match("++"); 
+            	Match("--"); 
 
 
             }
@@ -835,10 +858,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__80;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:44:7: ( '--' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:44:9: '--'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:45:7: ( 'new' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:45:9: 'new'
             {
-            	Match("--"); 
+            	Match("new"); 
 
 
             }
@@ -859,10 +882,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__81;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:45:7: ( 'new' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:45:9: 'new'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:46:7: ( 'break' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:46:9: 'break'
             {
-            	Match("new"); 
+            	Match("break"); 
 
 
             }
@@ -883,10 +906,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__82;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:46:7: ( 'break' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:46:9: 'break'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:47:7: ( 'return' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:47:9: 'return'
             {
-            	Match("break"); 
+            	Match("return"); 
 
 
             }
@@ -907,10 +930,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__83;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:47:7: ( 'return' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:47:9: 'return'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:48:7: ( 'while' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:48:9: 'while'
             {
-            	Match("return"); 
+            	Match("while"); 
 
 
             }
@@ -931,10 +954,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__84;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:48:7: ( 'while' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:48:9: 'while'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:49:7: ( 'for' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:49:9: 'for'
             {
-            	Match("while"); 
+            	Match("for"); 
 
 
             }
@@ -955,10 +978,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__85;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:49:7: ( 'for' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:49:9: 'for'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:50:7: ( 'if' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:50:9: 'if'
             {
-            	Match("for"); 
+            	Match("if"); 
 
 
             }
@@ -979,10 +1002,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__86;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:50:7: ( 'if' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:50:9: 'if'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:51:7: ( 'else' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:51:9: 'else'
             {
-            	Match("if"); 
+            	Match("else"); 
 
 
             }
@@ -1003,30 +1026,6 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = T__87;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:51:7: ( 'else' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:51:9: 'else'
-            {
-            	Match("else"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally 
-    	{
-        }
-    }
-    // $ANTLR end "T__87"
-
-    // $ANTLR start "T__88"
-    public void mT__88() // throws RecognitionException [2]
-    {
-    		try
-    		{
-            int _type = T__88;
-    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // D:\\sgl4c#\\NewSGLGramma\\SGL.g:52:7: ( 'at' )
             // D:\\sgl4c#\\NewSGLGramma\\SGL.g:52:9: 'at'
             {
@@ -1042,7 +1041,7 @@ public partial class SGLLexer : Lexer {
     	{
         }
     }
-    // $ANTLR end "T__88"
+    // $ANTLR end "T__87"
 
     // $ANTLR start "VarStartInit"
     public void mVarStartInit() // throws RecognitionException [2]
@@ -1051,8 +1050,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = VarStartInit;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:433:2: ( 'var' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:433:4: 'var'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:432:2: ( 'var' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:432:4: 'var'
             {
             	Match("var"); 
 
@@ -1075,7 +1074,7 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = BooleanAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:438:5: ( 'true' | 'false' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:437:5: ( 'true' | 'false' )
             int alt1 = 2;
             int LA1_0 = input.LA(1);
 
@@ -1097,7 +1096,7 @@ public partial class SGLLexer : Lexer {
             switch (alt1) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:438:9: 'true'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:437:9: 'true'
                     {
                     	Match("true"); 
 
@@ -1105,7 +1104,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:439:9: 'false'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:438:9: 'false'
                     {
                     	Match("false"); 
 
@@ -1130,8 +1129,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Null;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:443:2: ( 'null' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:443:4: 'null'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:442:2: ( 'null' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:442:4: 'null'
             {
             	Match("null"); 
 
@@ -1154,8 +1153,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Sprite;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:449:2: ( 'Sprite' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:449:4: 'Sprite'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:448:2: ( 'Sprite' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:448:4: 'Sprite'
             {
             	Match("Sprite"); 
 
@@ -1178,8 +1177,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Animation;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:453:2: ( 'Animation' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:453:4: 'Animation'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:452:2: ( 'Animation' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:452:4: 'Animation'
             {
             	Match("Animation"); 
 
@@ -1202,8 +1201,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Lyrics;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:457:2: ( 'Lyrics' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:457:4: 'Lyrics'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:456:2: ( 'Lyrics' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:456:4: 'Lyrics'
             {
             	Match("Lyrics"); 
 
@@ -1226,8 +1225,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = List;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:461:2: ( 'List' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:461:4: 'List'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:460:2: ( 'List' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:460:4: 'List'
             {
             	Match("List"); 
 
@@ -1250,7 +1249,7 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = LayerAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:465:2: ( 'Background' | 'Fail' | 'Pass' | 'Foreground' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:464:2: ( 'Background' | 'Fail' | 'Pass' | 'Foreground' )
             int alt2 = 4;
             switch ( input.LA(1) ) 
             {
@@ -1295,7 +1294,7 @@ public partial class SGLLexer : Lexer {
             switch (alt2) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:465:4: 'Background'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:464:4: 'Background'
                     {
                     	Match("Background"); 
 
@@ -1303,7 +1302,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:466:4: 'Fail'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:465:4: 'Fail'
                     {
                     	Match("Fail"); 
 
@@ -1311,7 +1310,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 3 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:467:4: 'Pass'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:466:4: 'Pass'
                     {
                     	Match("Pass"); 
 
@@ -1319,7 +1318,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 4 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:468:4: 'Foreground'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:467:4: 'Foreground'
                     {
                     	Match("Foreground"); 
 
@@ -1344,13 +1343,13 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = OriginAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:472:2: ( 'TopLeft' | 'TopCentre' | 'TopRight' | 'CentreLeft' | 'Centre' | 'CentreRight' | 'BottomLeft' | 'BottomCentre' | 'BottomRight' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:471:2: ( 'TopLeft' | 'TopCentre' | 'TopRight' | 'CentreLeft' | 'Centre' | 'CentreRight' | 'BottomLeft' | 'BottomCentre' | 'BottomRight' )
             int alt3 = 9;
             alt3 = dfa3.Predict(input);
             switch (alt3) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:472:4: 'TopLeft'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:471:4: 'TopLeft'
                     {
                     	Match("TopLeft"); 
 
@@ -1358,7 +1357,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:473:4: 'TopCentre'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:472:4: 'TopCentre'
                     {
                     	Match("TopCentre"); 
 
@@ -1366,7 +1365,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 3 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:474:4: 'TopRight'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:473:4: 'TopRight'
                     {
                     	Match("TopRight"); 
 
@@ -1374,7 +1373,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 4 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:475:4: 'CentreLeft'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:474:4: 'CentreLeft'
                     {
                     	Match("CentreLeft"); 
 
@@ -1382,7 +1381,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 5 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:476:4: 'Centre'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:475:4: 'Centre'
                     {
                     	Match("Centre"); 
 
@@ -1390,7 +1389,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 6 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:477:4: 'CentreRight'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:476:4: 'CentreRight'
                     {
                     	Match("CentreRight"); 
 
@@ -1398,7 +1397,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 7 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:478:4: 'BottomLeft'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:477:4: 'BottomLeft'
                     {
                     	Match("BottomLeft"); 
 
@@ -1406,7 +1405,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 8 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:479:4: 'BottomCentre'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:478:4: 'BottomCentre'
                     {
                     	Match("BottomCentre"); 
 
@@ -1414,7 +1413,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 9 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:480:4: 'BottomRight'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:479:4: 'BottomRight'
                     {
                     	Match("BottomRight"); 
 
@@ -1439,7 +1438,7 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = LoopTypeAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:484:2: ( 'LoopForever' | 'LoopOnce' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:483:2: ( 'LoopForever' | 'LoopOnce' )
             int alt4 = 2;
             int LA4_0 = input.LA(1);
 
@@ -1509,7 +1508,7 @@ public partial class SGLLexer : Lexer {
             switch (alt4) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:484:4: 'LoopForever'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:483:4: 'LoopForever'
                     {
                     	Match("LoopForever"); 
 
@@ -1517,7 +1516,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:485:4: 'LoopOnce'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:484:4: 'LoopOnce'
                     {
                     	Match("LoopOnce"); 
 
@@ -1542,7 +1541,7 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = ColorAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:489:2: ( '#' HexDigit HexDigit HexDigit | '#' HexDigit HexDigit HexDigit HexDigit HexDigit HexDigit )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:488:2: ( '#' HexDigit HexDigit HexDigit | '#' HexDigit HexDigit HexDigit HexDigit HexDigit HexDigit )
             int alt5 = 2;
             int LA5_0 = input.LA(1);
 
@@ -1604,7 +1603,7 @@ public partial class SGLLexer : Lexer {
             switch (alt5) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:489:4: '#' HexDigit HexDigit HexDigit
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:488:4: '#' HexDigit HexDigit HexDigit
                     {
                     	Match('#'); 
                     	mHexDigit(); 
@@ -1614,7 +1613,7 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:490:4: '#' HexDigit HexDigit HexDigit HexDigit HexDigit HexDigit
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:489:4: '#' HexDigit HexDigit HexDigit HexDigit HexDigit HexDigit
                     {
                     	Match('#'); 
                     	mHexDigit(); 
@@ -1644,10 +1643,10 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = IntAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:494:5: ( ( '0' .. '9' )+ )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:494:7: ( '0' .. '9' )+
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:493:5: ( ( '0' .. '9' )+ )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:493:7: ( '0' .. '9' )+
             {
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:494:7: ( '0' .. '9' )+
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:493:7: ( '0' .. '9' )+
             	int cnt6 = 0;
             	do 
             	{
@@ -1663,7 +1662,7 @@ public partial class SGLLexer : Lexer {
             	    switch (alt6) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:494:7: '0' .. '9'
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:493:7: '0' .. '9'
             			    {
             			    	MatchRange('0','9'); 
 
@@ -1701,15 +1700,15 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = FloatAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:498:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:497:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
             int alt11 = 3;
             alt11 = dfa11.Predict(input);
             switch (alt11) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:498:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:497:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
                     {
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:498:9: ( '0' .. '9' )+
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:497:9: ( '0' .. '9' )+
                     	int cnt7 = 0;
                     	do 
                     	{
@@ -1725,7 +1724,7 @@ public partial class SGLLexer : Lexer {
                     	    switch (alt7) 
                     		{
                     			case 1 :
-                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:498:10: '0' .. '9'
+                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:497:10: '0' .. '9'
                     			    {
                     			    	MatchRange('0','9'); 
 
@@ -1745,7 +1744,7 @@ public partial class SGLLexer : Lexer {
                     		;	// Stops C# compiler whining that label 'loop7' has no statements
 
                     	Match('.'); 
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:498:25: ( '0' .. '9' )*
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:497:25: ( '0' .. '9' )*
                     	do 
                     	{
                     	    int alt8 = 2;
@@ -1760,7 +1759,7 @@ public partial class SGLLexer : Lexer {
                     	    switch (alt8) 
                     		{
                     			case 1 :
-                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:498:26: '0' .. '9'
+                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:497:26: '0' .. '9'
                     			    {
                     			    	MatchRange('0','9'); 
 
@@ -1779,10 +1778,10 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:499:9: '.' ( '0' .. '9' )+
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:498:9: '.' ( '0' .. '9' )+
                     {
                     	Match('.'); 
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:499:13: ( '0' .. '9' )+
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:498:13: ( '0' .. '9' )+
                     	int cnt9 = 0;
                     	do 
                     	{
@@ -1798,7 +1797,7 @@ public partial class SGLLexer : Lexer {
                     	    switch (alt9) 
                     		{
                     			case 1 :
-                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:499:14: '0' .. '9'
+                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:498:14: '0' .. '9'
                     			    {
                     			    	MatchRange('0','9'); 
 
@@ -1821,9 +1820,9 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 3 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:500:9: ( '0' .. '9' )+
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:499:9: ( '0' .. '9' )+
                     {
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:500:9: ( '0' .. '9' )+
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:499:9: ( '0' .. '9' )+
                     	int cnt10 = 0;
                     	do 
                     	{
@@ -1839,7 +1838,7 @@ public partial class SGLLexer : Lexer {
                     	    switch (alt10) 
                     		{
                     			case 1 :
-                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:500:10: '0' .. '9'
+                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:499:10: '0' .. '9'
                     			    {
                     			    	MatchRange('0','9'); 
 
@@ -1879,11 +1878,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = StringAtom;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:505:5: ( '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:505:8: '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:504:5: ( '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:504:8: '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"'
             {
             	Match('\"'); 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:505:12: ( EscapeSequence | ~ ( '\\\\' | '\"' ) )*
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:504:12: ( EscapeSequence | ~ ( '\\\\' | '\"' ) )*
             	do 
             	{
             	    int alt12 = 3;
@@ -1902,14 +1901,14 @@ public partial class SGLLexer : Lexer {
             	    switch (alt12) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:505:14: EscapeSequence
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:504:14: EscapeSequence
             			    {
             			    	mEscapeSequence(); 
 
             			    }
             			    break;
             			case 2 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:505:31: ~ ( '\\\\' | '\"' )
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:504:31: ~ ( '\\\\' | '\"' )
             			    {
             			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '[') || (input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) 
             			    	{
@@ -1954,11 +1953,11 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Identifier;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:510:5: ( UTF8Letter ( UTF8Letter | UTF8Digit )* )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:510:9: UTF8Letter ( UTF8Letter | UTF8Digit )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:509:5: ( UTF8Letter ( UTF8Letter | UTF8Digit )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:509:9: UTF8Letter ( UTF8Letter | UTF8Digit )*
             {
             	mUTF8Letter(); 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:510:20: ( UTF8Letter | UTF8Digit )*
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:509:20: ( UTF8Letter | UTF8Digit )*
             	do 
             	{
             	    int alt13 = 2;
@@ -2017,7 +2016,7 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = Comment;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:517:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:516:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
             int alt17 = 2;
             int LA17_0 = input.LA(1);
 
@@ -2051,11 +2050,11 @@ public partial class SGLLexer : Lexer {
             switch (alt17) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:517:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:516:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
                     {
                     	Match("//"); 
 
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:517:14: (~ ( '\\n' | '\\r' ) )*
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:516:14: (~ ( '\\n' | '\\r' ) )*
                     	do 
                     	{
                     	    int alt14 = 2;
@@ -2070,7 +2069,7 @@ public partial class SGLLexer : Lexer {
                     	    switch (alt14) 
                     		{
                     			case 1 :
-                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:517:14: ~ ( '\\n' | '\\r' )
+                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:516:14: ~ ( '\\n' | '\\r' )
                     			    {
                     			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t') || (input.LA(1) >= '\u000B' && input.LA(1) <= '\f') || (input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) 
                     			    	{
@@ -2095,7 +2094,7 @@ public partial class SGLLexer : Lexer {
                     	loop14:
                     		;	// Stops C# compiler whining that label 'loop14' has no statements
 
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:517:28: ( '\\r' )?
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:516:28: ( '\\r' )?
                     	int alt15 = 2;
                     	int LA15_0 = input.LA(1);
 
@@ -2106,7 +2105,7 @@ public partial class SGLLexer : Lexer {
                     	switch (alt15) 
                     	{
                     	    case 1 :
-                    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:517:28: '\\r'
+                    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:516:28: '\\r'
                     	        {
                     	        	Match('\r'); 
 
@@ -2121,11 +2120,11 @@ public partial class SGLLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:518:9: '/*' ( options {greedy=false; } : . )* '*/'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:517:9: '/*' ( options {greedy=false; } : . )* '*/'
                     {
                     	Match("/*"); 
 
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:518:14: ( options {greedy=false; } : . )*
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:517:14: ( options {greedy=false; } : . )*
                     	do 
                     	{
                     	    int alt16 = 2;
@@ -2155,7 +2154,7 @@ public partial class SGLLexer : Lexer {
                     	    switch (alt16) 
                     		{
                     			case 1 :
-                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:518:42: .
+                    			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:517:42: .
                     			    {
                     			    	MatchAny(); 
 
@@ -2194,8 +2193,8 @@ public partial class SGLLexer : Lexer {
     		{
             int _type = WhiteSpace;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:522:2: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:522:6: ( ' ' | '\\t' | '\\r' | '\\n' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:521:2: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:521:6: ( ' ' | '\\t' | '\\r' | '\\n' )
             {
             	if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n') || input.LA(1) == '\r' || input.LA(1) == ' ' ) 
             	{
@@ -2226,7 +2225,7 @@ public partial class SGLLexer : Lexer {
     {
     		try
     		{
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:536:5: ( '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:535:5: ( '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
             // D:\\sgl4c#\\NewSGLGramma\\SGL.g:
             {
             	if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z') || input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z') || (input.LA(1) >= '\u00C0' && input.LA(1) <= '\u00D6') || (input.LA(1) >= '\u00D8' && input.LA(1) <= '\u00F6') || (input.LA(1) >= '\u00F8' && input.LA(1) <= '\u1FFF') || (input.LA(1) >= '\u3040' && input.LA(1) <= '\u318F') || (input.LA(1) >= '\u3300' && input.LA(1) <= '\u337F') || (input.LA(1) >= '\u3400' && input.LA(1) <= '\u3D2D') || (input.LA(1) >= '\u4E00' && input.LA(1) <= '\u9FFF') || (input.LA(1) >= '\uF900' && input.LA(1) <= '\uFAFF') ) 
@@ -2255,7 +2254,7 @@ public partial class SGLLexer : Lexer {
     {
     		try
     		{
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:552:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:551:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
             // D:\\sgl4c#\\NewSGLGramma\\SGL.g:
             {
             	if ( (input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= '\u0660' && input.LA(1) <= '\u0669') || (input.LA(1) >= '\u06F0' && input.LA(1) <= '\u06F9') || (input.LA(1) >= '\u0966' && input.LA(1) <= '\u096F') || (input.LA(1) >= '\u09E6' && input.LA(1) <= '\u09EF') || (input.LA(1) >= '\u0A66' && input.LA(1) <= '\u0A6F') || (input.LA(1) >= '\u0AE6' && input.LA(1) <= '\u0AEF') || (input.LA(1) >= '\u0B66' && input.LA(1) <= '\u0B6F') || (input.LA(1) >= '\u0BE7' && input.LA(1) <= '\u0BEF') || (input.LA(1) >= '\u0C66' && input.LA(1) <= '\u0C6F') || (input.LA(1) >= '\u0CE6' && input.LA(1) <= '\u0CEF') || (input.LA(1) >= '\u0D66' && input.LA(1) <= '\u0D6F') || (input.LA(1) >= '\u0E50' && input.LA(1) <= '\u0E59') || (input.LA(1) >= '\u0ED0' && input.LA(1) <= '\u0ED9') || (input.LA(1) >= '\u1040' && input.LA(1) <= '\u1049') ) 
@@ -2284,8 +2283,8 @@ public partial class SGLLexer : Lexer {
     {
     		try
     		{
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:570:10: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:570:12: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:569:10: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:569:12: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
             {
             	if ( (input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= 'A' && input.LA(1) <= 'F') || (input.LA(1) >= 'a' && input.LA(1) <= 'f') ) 
             	{
@@ -2313,8 +2312,8 @@ public partial class SGLLexer : Lexer {
     {
     		try
     		{
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:574:5: ( '\\\\' ( 'n' | 'r' | '\\\"' | '\\\\' ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:574:9: '\\\\' ( 'n' | 'r' | '\\\"' | '\\\\' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:573:5: ( '\\\\' ( 'n' | 'r' | '\\\"' | '\\\\' ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:573:9: '\\\\' ( 'n' | 'r' | '\\\"' | '\\\\' )
             {
             	Match('\\'); 
             	if ( input.LA(1) == '\"' || input.LA(1) == '\\' || input.LA(1) == 'n' || input.LA(1) == 'r' ) 
@@ -2340,281 +2339,281 @@ public partial class SGLLexer : Lexer {
 
     override public void mTokens() // throws RecognitionException 
     {
-        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:8: ( T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | VarStartInit | BooleanAtom | Null | Sprite | Animation | Lyrics | List | LayerAtom | OriginAtom | LoopTypeAtom | ColorAtom | IntAtom | FloatAtom | StringAtom | Identifier | Comment | WhiteSpace )
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:8: ( T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | VarStartInit | BooleanAtom | Null | Sprite | Animation | Lyrics | List | LayerAtom | OriginAtom | LoopTypeAtom | ColorAtom | IntAtom | FloatAtom | StringAtom | Identifier | Comment | WhiteSpace )
         int alt18 = 56;
         alt18 = dfa18.Predict(input);
         switch (alt18) 
         {
             case 1 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:10: T__50
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:10: T__49
+                {
+                	mT__49(); 
+
+                }
+                break;
+            case 2 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:16: T__50
                 {
                 	mT__50(); 
 
                 }
                 break;
-            case 2 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:16: T__51
+            case 3 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:22: T__51
                 {
                 	mT__51(); 
 
                 }
                 break;
-            case 3 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:22: T__52
+            case 4 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:28: T__52
                 {
                 	mT__52(); 
 
                 }
                 break;
-            case 4 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:28: T__53
+            case 5 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:34: T__53
                 {
                 	mT__53(); 
 
                 }
                 break;
-            case 5 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:34: T__54
+            case 6 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:40: T__54
                 {
                 	mT__54(); 
 
                 }
                 break;
-            case 6 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:40: T__55
+            case 7 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:46: T__55
                 {
                 	mT__55(); 
 
                 }
                 break;
-            case 7 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:46: T__56
+            case 8 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:52: T__56
                 {
                 	mT__56(); 
 
                 }
                 break;
-            case 8 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:52: T__57
+            case 9 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:58: T__57
                 {
                 	mT__57(); 
 
                 }
                 break;
-            case 9 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:58: T__58
+            case 10 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:64: T__58
                 {
                 	mT__58(); 
 
                 }
                 break;
-            case 10 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:64: T__59
+            case 11 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:70: T__59
                 {
                 	mT__59(); 
 
                 }
                 break;
-            case 11 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:70: T__60
+            case 12 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:76: T__60
                 {
                 	mT__60(); 
 
                 }
                 break;
-            case 12 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:76: T__61
+            case 13 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:82: T__61
                 {
                 	mT__61(); 
 
                 }
                 break;
-            case 13 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:82: T__62
+            case 14 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:88: T__62
                 {
                 	mT__62(); 
 
                 }
                 break;
-            case 14 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:88: T__63
+            case 15 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:94: T__63
                 {
                 	mT__63(); 
 
                 }
                 break;
-            case 15 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:94: T__64
+            case 16 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:100: T__64
                 {
                 	mT__64(); 
 
                 }
                 break;
-            case 16 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:100: T__65
+            case 17 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:106: T__65
                 {
                 	mT__65(); 
 
                 }
                 break;
-            case 17 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:106: T__66
+            case 18 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:112: T__66
                 {
                 	mT__66(); 
 
                 }
                 break;
-            case 18 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:112: T__67
+            case 19 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:118: T__67
                 {
                 	mT__67(); 
 
                 }
                 break;
-            case 19 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:118: T__68
+            case 20 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:124: T__68
                 {
                 	mT__68(); 
 
                 }
                 break;
-            case 20 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:124: T__69
+            case 21 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:130: T__69
                 {
                 	mT__69(); 
 
                 }
                 break;
-            case 21 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:130: T__70
+            case 22 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:136: T__70
                 {
                 	mT__70(); 
 
                 }
                 break;
-            case 22 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:136: T__71
+            case 23 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:142: T__71
                 {
                 	mT__71(); 
 
                 }
                 break;
-            case 23 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:142: T__72
+            case 24 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:148: T__72
                 {
                 	mT__72(); 
 
                 }
                 break;
-            case 24 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:148: T__73
+            case 25 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:154: T__73
                 {
                 	mT__73(); 
 
                 }
                 break;
-            case 25 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:154: T__74
+            case 26 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:160: T__74
                 {
                 	mT__74(); 
 
                 }
                 break;
-            case 26 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:160: T__75
+            case 27 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:166: T__75
                 {
                 	mT__75(); 
 
                 }
                 break;
-            case 27 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:166: T__76
+            case 28 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:172: T__76
                 {
                 	mT__76(); 
 
                 }
                 break;
-            case 28 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:172: T__77
+            case 29 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:178: T__77
                 {
                 	mT__77(); 
 
                 }
                 break;
-            case 29 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:178: T__78
+            case 30 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:184: T__78
                 {
                 	mT__78(); 
 
                 }
                 break;
-            case 30 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:184: T__79
+            case 31 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:190: T__79
                 {
                 	mT__79(); 
 
                 }
                 break;
-            case 31 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:190: T__80
+            case 32 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:196: T__80
                 {
                 	mT__80(); 
 
                 }
                 break;
-            case 32 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:196: T__81
+            case 33 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:202: T__81
                 {
                 	mT__81(); 
 
                 }
                 break;
-            case 33 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:202: T__82
+            case 34 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:208: T__82
                 {
                 	mT__82(); 
 
                 }
                 break;
-            case 34 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:208: T__83
+            case 35 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:214: T__83
                 {
                 	mT__83(); 
 
                 }
                 break;
-            case 35 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:214: T__84
+            case 36 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:220: T__84
                 {
                 	mT__84(); 
 
                 }
                 break;
-            case 36 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:220: T__85
+            case 37 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:226: T__85
                 {
                 	mT__85(); 
 
                 }
                 break;
-            case 37 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:226: T__86
+            case 38 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:232: T__86
                 {
                 	mT__86(); 
 
                 }
                 break;
-            case 38 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:232: T__87
+            case 39 :
+                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:238: T__87
                 {
                 	mT__87(); 
-
-                }
-                break;
-            case 39 :
-                // D:\\sgl4c#\\NewSGLGramma\\SGL.g:1:238: T__88
-                {
-                	mT__88(); 
 
                 }
                 break;
@@ -2823,7 +2822,7 @@ public partial class SGLLexer : Lexer {
 
         override public string Description
         {
-            get { return "471:1: OriginAtom : ( 'TopLeft' | 'TopCentre' | 'TopRight' | 'CentreLeft' | 'Centre' | 'CentreRight' | 'BottomLeft' | 'BottomCentre' | 'BottomRight' );"; }
+            get { return "470:1: OriginAtom : ( 'TopLeft' | 'TopCentre' | 'TopRight' | 'CentreLeft' | 'Centre' | 'CentreRight' | 'BottomLeft' | 'BottomCentre' | 'BottomRight' );"; }
         }
 
     }
@@ -2874,7 +2873,7 @@ public partial class SGLLexer : Lexer {
 
         override public string Description
         {
-            get { return "497:1: FloatAtom : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ );"; }
+            get { return "496:1: FloatAtom : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ );"; }
         }
 
     }
@@ -3346,7 +3345,7 @@ public partial class SGLLexer : Lexer {
 
         override public string Description
         {
-            get { return "1:1: Tokens : ( T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | VarStartInit | BooleanAtom | Null | Sprite | Animation | Lyrics | List | LayerAtom | OriginAtom | LoopTypeAtom | ColorAtom | IntAtom | FloatAtom | StringAtom | Identifier | Comment | WhiteSpace );"; }
+            get { return "1:1: Tokens : ( T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | VarStartInit | BooleanAtom | Null | Sprite | Animation | Lyrics | List | LayerAtom | OriginAtom | LoopTypeAtom | ColorAtom | IntAtom | FloatAtom | StringAtom | Identifier | Comment | WhiteSpace );"; }
         }
 
     }

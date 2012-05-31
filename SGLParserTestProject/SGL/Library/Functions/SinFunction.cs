@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using SGL.Elements;
 
-namespace SGL.Methods
+namespace SGL.Library.Functions
 {
-    class SinMethod : Method
+    class SinFunction : Function
     {
 
         private Value sin(double value)
@@ -14,7 +14,7 @@ namespace SGL.Methods
             return new Value(Math.Sin(value), ValType.Double);
         }
 
-        public override Elements.Value InvokeMethod(List<Value> param)
+        public override Elements.Value InvokeFunction(List<Value> param)
         {
             if (Value.TypeCompare(param, ValType.Double)) return sin(param[0].DoubleValue);
 

@@ -5,7 +5,7 @@ using System.Text;
 using SGL.Storyboard;
 using SGL.Elements;
 
-namespace SGL.Classes
+namespace SGL.Library.Classes
 {
     class Sprite : Class
     {
@@ -40,7 +40,7 @@ namespace SGL.Classes
         public Class CreateObject(List<Value> param)
         {
             if (Value.TypeCompare(param, ValType.String)) return new Sprite(param[0].StringValue);
-            throw new Exception();
+            else throw new CompilerException(-1, 312);
         }
 
         public Value InvokeMethod(String name, List<Value> param)
