@@ -59,6 +59,15 @@ namespace SGL.Elements
             return false;
         }
 
+        public bool IsFunctionKnown(String funcName)
+        {
+            if (functions.ContainsKey(funcName))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void RegisterClass(string name, Class cls)
         {
             classes.Add(name, cls);

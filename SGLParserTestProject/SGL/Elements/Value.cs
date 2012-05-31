@@ -287,11 +287,6 @@ namespace SGL.Elements
 
         public bool TypeEquals(ValType acceptedType)
         {
-            int c = 1;
-            float b = (float)3.5;
-            c.CompareTo(b);
-
-
             switch (acceptedType)
             {
                 case ValType.Integer:

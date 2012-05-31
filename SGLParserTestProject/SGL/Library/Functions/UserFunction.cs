@@ -13,24 +13,23 @@ namespace SGL.Library.Functions
     /// </summary>
     class UserFunction : Function
     {
-        private List<String> patameterNames;
+        private List<String> parameterNames;
         private CommonTreeNodeStream methodBody;
 
         // method xyt(param1, param2) {
         public UserFunction(String name, List<String> parameterNames, CommonTreeNodeStream methodBody)
-            : base(name)
         {
-            this.patameterNames = parameterNames;
+            this.parameterNames = parameterNames;
             this.methodBody = methodBody;
         }
 
-        public override Value InvokeFunction(List<Value> parameters)
+        public override Value Invoke(List<Value> parameters)
         {
-            if (parameters.Count == patameterNames.Count)
+            if (parameters.Count == parameterNames.Count)
             {
                 // create new scope for the method call
                 Scope methodScope = new Scope();
-                for (int i = 0; i < patameterNames.Count; i++)
+                for (int i = 0; i < parameterNames.Count; i++)
                 {
                     methodScope.Assign(parameterNames[i], parameters[i]);
                 }
@@ -48,8 +47,9 @@ namespace SGL.Library.Functions
                     throw new Exception("The method doesn't return the expected return type (" + returnValue.ToString()  + " is not from type " + this.returnType + ")");
                 }*/
                 return returnValue;
-
             }
+            // TODO: Exception
+            throw new Exception();
         }
 
 

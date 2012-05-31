@@ -4,23 +4,24 @@ using System.Linq;
 using System.Text;
 using SGL.Elements;
 using SGL.Library.Classes;
+using SGL.Library.Functions;
 
 namespace SGL.Nodes
 {
-    class InstanciateClassNode : AbstractNode
+    class InvokeFunctionNode : AbstractNode
     {
-        private String className;
+        private String funcName;
         private List<AbstractNode> parameters;
         private int line;
 
-        public InstanciateClassNode(String className, List<AbstractNode> parameters, int line)
+        public InvokeFunctionNode(String funcName, List<AbstractNode> parameters, int line)
         {
-            // It's checked weather or not the classname itself exists in order to avoid typos at an early state
-            if (!LibraryManager.Instance.IsClassKnown(className))
+            // It's checked weather or not the function name itself exists in order to avoid typos at an early state
+            if (!LibraryManager.Instance.IsFunctionKnown(funcName))
             {
-                throw new CompilerException(line, 311, className);
+                throw new CompilerException(line, 301, funcName);
             }
-            this.className = className;
+            this.funcName = funcName;
             this.parameters = parameters;
         }
 
@@ -33,8 +34,8 @@ namespace SGL.Nodes
                 values.Add(node.Evaluate());
             }
 
-            Class classObj = LibraryManager.Instance.GetClass(className, values);
-            return new Value(classObj, ValType.Object);
+            Function function = LibraryManager.Instance.GetFunction(funcName, values);
+            return function.Invoke(values);
         }
 
         public override int Line

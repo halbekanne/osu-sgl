@@ -63,7 +63,7 @@ namespace SGL.Nodes.ControlFlow
             return Value.VOID;
         }
 
-        public int Line
+        public override int Line
         {
             get
             {

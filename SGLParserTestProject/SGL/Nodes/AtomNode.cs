@@ -31,14 +31,17 @@ namespace SGL.Nodes
             this.line = line;
         }
 
-        public Value Invoke()
+        public override Value Invoke()
         {
             return value;
         }
 
-        public int GetLine()
+        public override int Line
         {
-            return line;
+            get
+            {
+                return line;
+            }
         }
 
     }

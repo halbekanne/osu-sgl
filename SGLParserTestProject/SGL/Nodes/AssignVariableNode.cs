@@ -92,7 +92,7 @@ namespace SGL.Nodes
             return Value.VOID;
         }
 
-        public int Line
+        public override int Line
         {
             get
             {

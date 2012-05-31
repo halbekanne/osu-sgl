@@ -43,7 +43,7 @@
     <Compile Include="Elements\CompilerException.cs" />
     <Compile Include="Elements\Scope.cs" />
     <Compile Include="Elements\CallItem.cs" />
-    <Compile Include="Library\Functions\SinFunction.cs" />
+    <Compile Include="Library\Functions\Calculation\SinFunction.cs" />
     <Compile Include="Library\Functions\UserFunction.cs" />
     <Compile Include="Nodes\AssignVariableNode.cs" />
     <Compile Include="Nodes\AtomNode.cs" />
@@ -58,6 +58,27 @@
     <Compile Include="Antlr\SGLLexer.cs" />
     <Compile Include="Antlr\SGLParser.cs" />
     <Compile Include="Antlr\SGLTreeWalker.cs" />
+    <Compile Include="Nodes\InvokeFunctionNode.cs" />
+    <Compile Include="Nodes\Operators\AbstractBinaryOperatorNode.cs" />
+    <Compile Include="Nodes\Operators\AbstractTernaryOperatorNode.cs" />
+    <Compile Include="Nodes\Operators\AbstractUnaryOperatorNode.cs" />
+    <Compile Include="Nodes\Operators\Arithmetical\AddNode.cs" />
+    <Compile Include="Nodes\Operators\Arithmetical\DivNode.cs" />
+    <Compile Include="Nodes\Operators\Arithmetical\ModNode.cs" />
+    <Compile Include="Nodes\Operators\Arithmetical\MultNode.cs" />
+    <Compile Include="Nodes\Operators\Arithmetical\NegateBoolNode.cs" />
+    <Compile Include="Nodes\Operators\Arithmetical\NegateIntNode.cs" />
+    <Compile Include="Nodes\Operators\Arithmetical\PowNode.cs" />
+    <Compile Include="Nodes\Operators\Arithmetical\SubNode.cs" />
+    <Compile Include="Nodes\Operators\Logical\AndNode.cs" />
+    <Compile Include="Nodes\Operators\Logical\EqualsNode.cs" />
+    <Compile Include="Nodes\Operators\Logical\GreaterThanEqualsNode.cs" />
+    <Compile Include="Nodes\Operators\Logical\GreaterThanNode.cs" />
+    <Compile Include="Nodes\Operators\Logical\LowerThanEqualsNode.cs" />
+    <Compile Include="Nodes\Operators\Logical\LowerThanNode.cs" />
+    <Compile Include="Nodes\Operators\Logical\NotEqualsNode.cs" />
+    <Compile Include="Nodes\Operators\Logical\OrNode.cs" />
+    <Compile Include="Nodes\Operators\Misc\ConditionalNode.cs" />
     <Compile Include="Storyboard\Animation.cs" />
     <Compile Include="Storyboard\AnimationType.cs" />
     <Compile Include="Storyboard\Command.cs" />
@@ -81,7 +102,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Nodes\Operators\" />
+    <Folder Include="Library\Functions\Conversion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

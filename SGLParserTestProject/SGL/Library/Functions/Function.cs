@@ -24,7 +24,7 @@ namespace SGL.Library.Functions
             }
         }*/
 
-        public abstract Value InvokeFunction(List<Value> parameters);
+        public abstract Value Invoke(List<Value> parameters);
 
         public abstract bool TestPatameters(List<Value> parameters);
 
