@@ -28,7 +28,7 @@ namespace SGL.Nodes.Operators.Misc
 
             if (condValue.Type != ValType.Boolean)
             {
-                throw new CompilerException(GetLine(), 206, condValue.TypeString);
+                throw new CompilerException(Line, 206, condValue.TypeString);
             }
 
             return condValue.BoolValue ? ifNode.Evaluate() : elseNode.Evaluate();
