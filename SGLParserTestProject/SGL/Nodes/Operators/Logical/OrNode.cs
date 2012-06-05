@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SGL.Elements;
 
 namespace SGL.Nodes.Operators.Logical
 {
@@ -8,19 +9,16 @@ namespace SGL.Nodes.Operators.Logical
     {
         public OrNode(AbstractNode node1, AbstractNode node2) : base(node1, node2) { }
 
-        public override String GetName()
+        public override Value Operate(Value value1, Value value2)
         {
-            return "||";
-        }
-
-        public override bool CheckArguments(ValType type1, ValType type2)
-        {
-            return type1 == ValType.Boolean && type2 == ValType.Boolean;
-        }
-
-        public override Value Operate(Value value1, Value value2, ValType type1, ValType type2)
-        {
-            return new Value(value1.AsBoolean() || value2.AsBoolean());
+            if (value1.Type == ValType.Boolean && value2.Type == ValType.Boolean)
+            {
+                return new Value(value1.BoolValue || value2.BoolValue, ValType.Boolean);
+            }
+            else
+            {
+                throw new CompilerException(Line, 202, "||", value1.TypeString, value2.TypeString);
+            }
         }
     }
 }

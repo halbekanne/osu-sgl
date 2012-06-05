@@ -17,7 +17,7 @@ namespace SGL.Nodes.Operators.Arithmetical
                 // both integer
                 return new Value(value1.IntValue + value2.IntValue, ValType.Integer);
             }
-            else if (value1.TypeEquals(ValType.Double) && value1.TypeEquals(ValType.Double))
+            else if (value1.TypeEquals(ValType.Double) && value2.TypeEquals(ValType.Double))
             {
                 // both double or integer
                 return new Value(value1.DoubleValue + value2.DoubleValue, ValType.Double);

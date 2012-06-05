@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SGL.Elements;
 
 namespace SGL.Nodes.Operators.Misc
 {
@@ -20,24 +21,25 @@ namespace SGL.Nodes.Operators.Misc
             this.elseNode = elseNode;
         }
 
-        public Value Evaluate()
+        protected override Value Invoke()
         {
 
-            Value a = conditionNode.Evaluate();
-            ValType aType = a.GetType();
+            Value condValue = conditionNode.Evaluate();
 
-            if (aType != ValType.Boolean)
+            if (condValue.Type != ValType.Boolean)
             {
-                throw new CompilerException(GetLine(), 206, new String[] { Value.TypeToString(aType) });
+                throw new CompilerException(GetLine(), 206, condValue.TypeString);
             }
 
-            return a.AsBoolean() ? ifNode.Evaluate() : elseNode.Evaluate();
+            return condValue.BoolValue ? ifNode.Evaluate() : elseNode.Evaluate();
         }
 
-        public int GetLine()
+        public override int Line
         {
-            return conditionNode.GetLine();
+            get
+            {
+                return conditionNode.Line;
+            }
         }
-        
     }
 }

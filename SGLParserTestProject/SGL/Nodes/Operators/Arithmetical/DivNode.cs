@@ -12,7 +12,7 @@ namespace SGL.Nodes.Operators.Arithmetical
 
         public override Value Operate(Value value1, Value value2)
         {
-            if (value1.Type == ValType.Double || value2.Type == ValType.Double)
+            if (value1.TypeEquals(ValType.Double) && value2.TypeEquals(ValType.Double))
             {
                 // 1.423 / 2; => Float
                 if (value2.DoubleValue == 0)

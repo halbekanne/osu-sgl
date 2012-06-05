@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SGL.Elements;
 
 namespace SGL.Nodes.Operators.Logical
 {
@@ -8,28 +9,21 @@ namespace SGL.Nodes.Operators.Logical
     {
         public LowerThanEqualsNode(AbstractNode node1, AbstractNode node2) : base(node1, node2) { }
 
-        public override String GetName()
-        {
-            return "<=";
-        }
-
-        public override bool CheckArguments(ValType type1, ValType type2)
-        {
-            return (type1 == ValType.Float || type1 == ValType.Integer) && (type2 == ValType.Float || type2 == ValType.Integer) ||
-                (type1 == ValType.String && type2 == ValType.String);
-        }
-
-        public override Value Operate(Value value1, Value value2, ValType type1, ValType type2)
+        public override Value Operate(Value value1, Value value2)
         {
 
-            if ((type1 == ValType.Float || type1 == ValType.Integer) && (type2 == ValType.Float || type2 == ValType.Integer))
+            if (value1.TypeEquals(ValType.Double) && value2.TypeEquals(ValType.Double))
             {
-                return new Value(value1.AsFloat() <= value2.AsFloat());
+                return new Value(value1.DoubleValue <= value2.DoubleValue, ValType.Boolean);
+            }
+            else if (value1.Type == ValType.String && value2.Type == ValType.String)
+            {
+                // Strings
+                return new Value(value1.StringValue.CompareTo(value2.StringValue) <= 0, ValType.String);
             }
             else
             {
-                // Strings
-                return new Value(value1.AsString().CompareTo(value2.AsString()) <= 0);
+                throw new CompilerException(Line, 202, "<=", value1.TypeString, value2.TypeString);
             }
 
         }
