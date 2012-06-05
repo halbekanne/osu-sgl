@@ -1,47 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SGL.Elements;
 
 namespace SGL.Nodes.Operators.Arithmetical
 {
-    class SubNode : AbstractNode
+    class SubNode : AbstractBinaryOperatorNode
     {
-        private AbstractNode lhs;
-        private AbstractNode rhs;
+        public SubNode(AbstractNode node1, AbstractNode node2) : base(node1, node2) { }
 
-        public SubNode(AbstractNode lhs, AbstractNode rhs)
+        public override Value Operate(Value value1, Value value2)
         {
-            this.lhs = lhs;
-            this.rhs = rhs;
-        }
-
-        public Value Evaluate()
-        {
-
-            Value a = lhs.Evaluate();
-            Value b = rhs.Evaluate();
-
-            // number + number  
-            if (a.IsInteger() && b.IsInteger())
+            if (value1.TypeEquals(ValType.Double) && value2.TypeEquals(ValType.Double))
             {
-                return new Value(a.AsInteger() - b.AsInteger());
+                // 1.423 - 2; => Float
+                return new Value(value1.DoubleValue - value2.DoubleValue, ValType.Double);
             }
-
-            // float + number / number + float  
-            if (a.IsNumber() && b.IsNumber())
+            else if (value1.Type == ValType.Integer || value1.Type == ValType.Integer)
             {
-                return new Value(a.AsFloat() - b.AsFloat());
+                // 5 - 4; => Integer
+                return new Value(value1.IntValue - value2.IntValue, ValType.Integer);
             }
-
-            throw new CompilerException(GetLine(), "operator undefined", "the operator '-' is undefined for the argument types '" + a.GetType() + ", " + b.GetType() + "'");
-            
+            else
+            {
+                throw new CompilerException(Line, 202, "-", value1.TypeString, value2.TypeString);
+            }
         }
-
-        public int GetLine()
-        {
-            return lhs.GetLine();
-        }
-
-
     }
 }

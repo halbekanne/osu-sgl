@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SGL.Elements;
 
 namespace SGL.Nodes.Operators.Arithmetical
 {
@@ -8,28 +9,19 @@ namespace SGL.Nodes.Operators.Arithmetical
     {
         public NegateIntNode(AbstractNode node) : base(node) { }
 
-        public override String Name
+        public override Value Operate(Value value)
         {
-            get
+            if (value.Type == ValType.Integer)
             {
-                return "-";
+                return new Value(value.IntValue* (-1), ValType.Integer);
             }
-        }
-
-        public override bool CheckArguments(ValType type)
-        {
-            return type == ValType.Integer || type == ValType.Float;
-        }
-
-        public override Value Operate(Value value, ValType type)
-        {
-            if (type == ValType.Integer)
+            else if (value.Type == ValType.Double)
             {
-                return new Value(value.AsInteger() * (-1));
+                return new Value(value.DoubleValue * (-1), ValType.Double);
             }
             else
             {
-                return new Value(value.AsFloat() * (-1));
+                throw new CompilerException(Line, 201, "-", value.TypeString);
             }
         }
     }

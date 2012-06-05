@@ -24,9 +24,9 @@ namespace SGL.Elements
                 case 101: return "Wrong syntax: " + args[0];
 
                 // Operators and variable assignments
-                case 201: return "The operator " + args[0] + " is undefined for the argument type " + args[1];
-                case 202: return "The operator " + args[0] + " is undefined for the argument types " + args[1] + ", " + args[2];
-                case 203: return "The operator " + args[0] + " is undefined for the argument types " + args[1] + ", " + args[2] + ", " + args[3];
+                case 201: return "The operator " + args[0] + " is undefined for the argument type (" + args[1] + ").";
+                case 202: return "The operator " + args[0] + " is undefined for the argument types (" + args[1] + ", " + args[2] + ").";
+                case 203: return "The operator " + args[0] + " is undefined for the argument types (" + args[1] + ", " + args[2] + ", " + args[3] + ").";
                 case 204: return "You can't compare a value of type " + args[0] + " with a value of type " + args[1] + ", they should normally be from the same type";
                 case 205: return "You can't divide by 0 unless you are Chuck Norris";
                 case 206: return "The conditional operator (? :) expexted the first argument type to be Boolean but was " + args[0];
@@ -40,6 +40,11 @@ namespace SGL.Elements
                 case 303: return "The function " + args[0] + " already exists with that number of arguments (" + args[1] + "), two functions with the same number of arguments would be ambiguous.";
                 case 311: return "The class '" + args[0] + "' doesn't exist. Please check for typos.";
                 case 312: return "The class '" + args[0] + "' has no constructor for the following parameter types: (" + args[1] + ").";
+
+                // other
+                case 401: return "The resulting value is smaller than the smallest possible " + args[0] + " value supported by the OS.";
+                case 402: return "The resulting value is bigger than the biggest possible " + args[0] + " value supported by the OS.";
+                case 403: return "The resulting value is NaN, meaning that it's impossible to return a(n) " + args[0] + " value.";
 
                 // Should never occur
                 default: return "Unknown exception - An error message for the error code '" + errorCode + "' isn't specified.";

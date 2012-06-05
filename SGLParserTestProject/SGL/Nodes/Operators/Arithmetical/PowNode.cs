@@ -1,80 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SGL.Elements;
 
 namespace SGL.Nodes.Operators.Arithmetical
 {
-    class PowNode : AbstractNode
+    class PowNode : AbstractBinaryOperatorNode
     {
         private AbstractNode lhs;
         private AbstractNode rhs;
 
-        public PowNode(AbstractNode lhs, AbstractNode rhs)
-        {
-            this.lhs = lhs;
-            this.rhs = rhs;
-        }
+        public PowNode(AbstractNode node1, AbstractNode node2) : base(node1, node2) { }
 
-        public Value Evaluate()
+        public override Value Operate(Value value1, Value value2)
         {
 
-            Value a = lhs.Evaluate();
-            Value b = rhs.Evaluate();
-            
-            // number + number  
-            if (a.IsInteger() && b.IsInteger())
+            // number + number
+            if (value1.Type == ValType.Integer && value2.Type == ValType.Integer)
             {
-                double x = Math.Pow(a.AsFloat(), b.AsFloat());
+                double x = Math.Pow(value1.DoubleValue, value1.DoubleValue);
                 //Console.WriteLine(x);
                 if (x == Double.PositiveInfinity)
                 {
-                    Console.WriteLine("too big");
+                    throw new CompilerException(Line, 402, "Double");
                 }
                 else if (x == Double.NegativeInfinity)
                 {
-                    Console.WriteLine("too small");
+                    throw new CompilerException(Line, 401, "Double");
                 }
                 else if (x == Double.NaN)
                 {
-                    Console.WriteLine("undefined");
+                    throw new CompilerException(Line, 403, "Double");
                 }
 
                 int Int;
                 bool isInt = Int32.TryParse(x.ToString(), out Int);
                 if (isInt)
-                    return new Value(Int);
+                    return new Value(Int, ValType.Integer);
                 else
-                    return new Value(x);
+                    return new Value(x, ValType.Double);
             }
-
             // float + number / number + float  
-            if (a.IsNumber() && b.IsNumber())
+            else if (value1.TypeEquals(ValType.Double) && value2.TypeEquals(ValType.Double))
             {
-                double x = Math.Pow(a.AsFloat(), b.AsFloat());
+                double x = Math.Pow(value1.DoubleValue, value1.DoubleValue);
                 //Console.WriteLine(x);
                 if (x == Double.PositiveInfinity)
                 {
-                    Console.WriteLine("too big");
+                    throw new CompilerException(Line, 402, "Double");
                 }
                 else if (x == Double.NegativeInfinity)
                 {
-                    Console.WriteLine("too small");
+                    throw new CompilerException(Line, 401, "Double");
                 }
                 else if (x == Double.NaN)
                 {
-                    Console.WriteLine("undefined");
+                    throw new CompilerException(Line, 403, "Double");
                 }
-                return new Value(x);
+                return new Value(x, ValType.Double);
             }
-
-            throw new CompilerException(GetLine(), "operator undefined", "the operator '*' is undefined for the argument types '" + a.GetType() + ", " + b.GetType() + "'");
-            
+            else
+            {
+                throw new CompilerException(Line, 202, "^", value1.TypeString, value2.TypeString);
+            }
         }
-
-        public int GetLine()
-        {
-            return lhs.GetLine();
-        }
-
     }
 }
