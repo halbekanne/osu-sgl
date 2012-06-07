@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend", "SGLParserTester\Frontend.csproj", "{25D1AE24-8712-4515-A6E5-1D59387382B0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ECFA9E48-757A-4B09-B495-35C4F11546A5} = {ECFA9E48-757A-4B09-B495-35C4F11546A5}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D46C69FA-C7B2-4B34-A8EB-5EEB5869BCA0}"
 EndProject

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using SGL.Library.Classes;
 using System.Reflection;
 using SGL.Library.Functions;
+using SGL.Library.Functions.Calculation;
+using SGL.Library.Functions.IO;
 
 namespace SGL.Elements
 {
@@ -18,6 +20,7 @@ namespace SGL.Elements
 
         private LibraryManager() { 
             RegisterClasses();
+            RegisterFunctions();
         }
 
         public static LibraryManager Instance
@@ -35,6 +38,7 @@ namespace SGL.Elements
         private void RegisterFunctions()
         {
             this.RegisterFunction("sin", new SinFunction());
+            this.RegisterFunction("print", new PrintFunction());
         }
 
         // memory for classes
@@ -43,7 +47,7 @@ namespace SGL.Elements
         // memory for methods
         private Dictionary<string, Function> functions = new Dictionary<string, Function>();
 
-        public Function GetFunction(string name, List<Value> parameters);
+        //public Function GetFunction(string name, List<Value> parameters);
 
         /// <summary>
         /// Tests if a class is known by the Library and was registered before.
@@ -110,7 +114,29 @@ namespace SGL.Elements
         }
 
 
-
+        public Function GetFunction(string name, List<Value> parameters)
+        {
+            // look if the function exists
+            if (functions.ContainsKey(name))
+            {
+                try
+                {
+                    return functions[name];
+                }
+                catch (CompilerException ce)
+                {
+                    if (ce.ErrorCode == 312)
+                    {
+                        ce.SetArguments(name, Value.PrintTypeList(parameters));
+                    }
+                    throw ce;
+                }
+            }
+            else
+            {
+                throw new CompilerException(-1, 311, name, Value.PrintTypeList(parameters));
+            }
+        }
 
 
 

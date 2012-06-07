@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 
 namespace SGL.Storyboard
@@ -44,7 +44,7 @@ namespace SGL.Storyboard
             : this(animationType, 0, 0, 0, startParams, startParams)
         { }
 
-        override private void GetStoryboardCode(StringBuilder storyboardCode)
+        public override void AddSoryboardCode(StringBuilder storyboardCode)
         {
             switch (animationType)
             {
@@ -72,7 +72,7 @@ namespace SGL.Storyboard
 
 
 
-        public String ToString()
+        public override String ToString()
         {
             return "SbAnimation (" + animationType + "): " + easing + "," + startTime + "," + endTime + "," + startParams.ToString() + "," + endParams.ToString(); 
         }

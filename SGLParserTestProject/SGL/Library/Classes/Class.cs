@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using SGL.Elements;
 
@@ -9,7 +9,7 @@ namespace SGL.Library.Classes
     public abstract class Class
     {
         //public abstract void Test();
-        public abstract String GetClassName();
+        public abstract String Name { get; }
 
         public abstract Value InvokeMethod(String name, List<Value> parameters);
         public abstract Class CreateObject(List<Value> parameters);

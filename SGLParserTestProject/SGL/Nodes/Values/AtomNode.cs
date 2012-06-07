@@ -22,7 +22,7 @@ namespace SGL.Nodes.Values
                 value = new Value(newString, ValType.String);
             }
 
-            value = (value == null) ? Value.NULL : new Value(value,type);
+            this.value = (value == null) ? Value.NULL : new Value(value,type);
         }
 
         public AtomNode(object value, ValType type, int line)

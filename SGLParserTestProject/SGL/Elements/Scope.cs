@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SGL.Storyboard;
 
 namespace SGL.Elements
 {
@@ -211,16 +212,18 @@ namespace SGL.Elements
 
         public List<SpriteObject> GetObjects()
         {
+            // TODO: delete this thing?
             List<SpriteObject> objects = new List<SpriteObject>();
+            return objects;/*
             foreach (KeyValuePair<String,Value> pair in variables)
             {
                 //Console.WriteLine("1: " + pair.Key);
-                if (pair.Value.GetType().Equals("Object"))
+                if (pair.Value.Type == ValType.Object)
                 {
                     try
                     {
                         //Console.WriteLine(2);
-                        objects.Add(pair.Value.AsObject());
+                        objects.Add(pair.Value.ObjectValue);
                     }
                     catch (CompilerException sce)
                     {
@@ -238,15 +241,18 @@ namespace SGL.Elements
                 }
             }
 
-            return objects;
+            return objects;*/
 
         }
 
 
         private List<SpriteObject> getObjectsFromList(Value listPointer)
         {
+            //TODO: delete this because it's not nessecary to check for objects in scopes?
             // recursively checks if any object is in the list or any nested lists
             List<SpriteObject> objects = new List<SpriteObject>();
+            return objects;
+            /*
             foreach (Value item in listPointer.AsList())
             {
                 if (item.GetType().Equals("Object"))
@@ -258,7 +264,7 @@ namespace SGL.Elements
                     objects.AddRange(getObjectsFromList(item));
                 }
             }
-            return objects;
+            return objects;*/
         }
 
 

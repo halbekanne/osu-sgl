@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using SGL.Storyboard;
 using SGL.Elements;
@@ -37,13 +37,13 @@ namespace SGL.Library.Classes
             return Value.VOID;
         }
 
-        public Class CreateObject(List<Value> param)
+        public override Class CreateObject(List<Value> param)
         {
             if (Value.TypeCompare(param, ValType.String)) return new Sprite(param[0].StringValue);
             else throw new CompilerException(-1, 312);
         }
 
-        public Value InvokeMethod(String name, List<Value> param)
+        public override Value InvokeMethod(String name, List<Value> param)
         {
             if (name.Equals("fade"))
             {
@@ -51,6 +51,11 @@ namespace SGL.Library.Classes
             }
             //TODO: Exception
             throw new Exception();
+        }
+
+        public override string Name
+        {
+            get { return "Sprite"; }
         }
 
     }

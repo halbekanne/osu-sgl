@@ -5,10 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using SGLOld;
-using SGLOld.AntlrParser;
-using SGLOld.SGLUnit;
+using SGL;
+using SGL.Antlr;
 using System.Diagnostics;
+using SGL.Elements;
 
 namespace WindowsFormsApplication4
 {
@@ -28,7 +28,7 @@ namespace WindowsFormsApplication4
             try
             {
 
-                SGLOld.Compiler compiler = new SGLOld.Compiler();
+                Compiler compiler = new Compiler();
                 compiler.SetTimeRecording(true);
                 outputBox.Text = compiler.Run(inputBox.Text);
 
@@ -65,8 +65,14 @@ namespace WindowsFormsApplication4
                 int t = 1;
                 int x = 4/(1-t);
             } catch (Exception ex) {
-                ErrorReportForm errorReport = new ErrorReportForm(ex);
+                //ErrorReportForm errorReport = new ErrorReportForm(ex);
+                throw;
             }
+        }
+
+        private void inputBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 

@@ -18,27 +18,16 @@ namespace SGL.Nodes.Operators
             this.node = node;
         }
 
-        public abstract Value Operate(Value value, ValType type);
-
-        public abstract bool CheckArguments(ValType type);
+        protected abstract Value Operate(Value value);
 
         protected override Value Invoke()
         {
             Value value = node.Evaluate();
+            return Operate(value);
 
-            ValType type = value.Type;
-
-            if (CheckArguments(type))
-            {
-                return Operate(value, type);
-            }
-            else
-            {
-                throw new CompilerException(Line, 201, Name, value.TypeString);
-            }
+            //throw new CompilerException(Line, 201, Name, value.TypeString);
+            
         }
-
-        public abstract String Name { get; }
 
         public override int Line {
             get

@@ -9,6 +9,8 @@ using SGLOld;
 using System.Threading;
 using System.IO;
 using System.Diagnostics;
+using SGL;
+using SGL.Elements;
 
 namespace SGLTest
 {
@@ -53,7 +55,7 @@ namespace SGLTest
             try
             {
                 //Console.WriteLine("input Text: " + SGLBox.Document.Text);
-                SGLOld.Compiler compiler = new SGLOld.Compiler();
+                Compiler compiler = new Compiler();
                 compiler.SetTimeRecording(false);
                 storyboardBox.Document.Text = compiler.Run(SGLBox.Document.Text);
 
@@ -65,22 +67,16 @@ namespace SGLTest
             {
                 statusLabel.Text = "Error occured";
 
-                if (ce.ErrorType.Equals("Antlr.Parser"))
-                {
-                    errorBox.Text = "Error (wrong syntax) on " + ce.Message;
-                }
-                else
-                {
-                    errorBox.Text = "Error (" + ce.ErrorType + ") on line " + ce.Line + ": " + ce.Message;
-                }
+
+                errorBox.Text = ce.GetExceptionAsString();
             }
-            catch (UnexpectedException ue)
+            catch (Exception ue)
             {
                 statusLabel.Text = "Unexpected error occured";
 
                 errorBox.Text = "An unexpected error occured (Error was reported automatically):\r\n" +
-                ue.title + "\r\n" +
-                ue.trueStackTrace;
+                ue.Message + "\r\n" +
+                ue.StackTrace;
             }
             finally
             {
@@ -133,10 +129,10 @@ namespace SGLTest
             if (input.Length > 10)
             {
                 // Report error
-                ErrorReporter errObj = new ErrorReporter(new Exception(input), SGLBox.Document.Text, "undefined");
+                /*ErrorReporter errObj = new ErrorReporter(new Exception(input), SGLBox.Document.Text, "undefined");
                 Thread errorReporter = new Thread(errObj.DoWork);
                 errorReporter.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-                errorReporter.Start();
+                errorReporter.Start();*/
             }
 
         }
@@ -278,6 +274,7 @@ namespace SGLTest
 
         private void CheckSyntax()
         {
+            /*
             CheckerOTF checker = new CheckerOTF();
             List<CheckerOTF.Error> errors = checker.Check(SGLBox.Document.Text);
 
@@ -292,7 +289,7 @@ namespace SGLTest
                 Alsing.SourceCode.Row row = SGLBox.Document[error.line - 1];
                 row.Bookmarked = true;
                 this.SetTextErr(errorBox.Text + "line " + error.line + ": " + error.msg + "\r\n");
-            }
+            }*/
         }
 
         private void SetTextErr(string text)

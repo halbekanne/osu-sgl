@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 
 namespace SGL.Storyboard
 {
-    abstract class Command : IComparable
+    public abstract class Command : IComparable
     {
         public int startTime;
 

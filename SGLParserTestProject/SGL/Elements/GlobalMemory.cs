@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using SGL.Storyboard;
 
@@ -12,7 +12,7 @@ namespace SGL.Elements
     /// </summary>
     class GlobalMemory
     {
-        private static readonly GlobalMemory instance = new GlobalMemory();
+        private static GlobalMemory instance = new GlobalMemory();
 
         private GlobalMemory() { }
 
@@ -24,6 +24,10 @@ namespace SGL.Elements
             }
         }
 
+        public static void Clear()
+        {
+            instance = new GlobalMemory();
+        }
 
         private Random random = new Random();
         private Scope globalScope = new Scope();

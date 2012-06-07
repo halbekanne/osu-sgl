@@ -132,9 +132,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SGLOld\SGLOld.csproj">
-      <Project>{C61D3773-D6C1-41FE-8459-8720AF9C7BC8}</Project>
-      <Name>SGLOld</Name>
+    <ProjectReference Include="..\SGL\SGL.csproj">
+      <Project>{ECFA9E48-757A-4B09-B495-35C4F11546A5}</Project>
+      <Name>SGL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

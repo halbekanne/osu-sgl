@@ -22,7 +22,7 @@ namespace SGL.Elements
 
         private ValType type;
 
-        public object Value
+        public object RawValue
         {
             get
             {
@@ -44,7 +44,7 @@ namespace SGL.Elements
             {
                 // TODO: Exception
                 if (type == ValType.Integer || type == ValType.Double) return (int)value;
-                else throw new Exception();
+                else throw new InvalidOperationException();
             }
         }
 
@@ -54,7 +54,7 @@ namespace SGL.Elements
             {
                 // TODO: Exception
                 if (type == ValType.Double || type == ValType.Integer) return (double)value;
-                else throw new Exception();
+                else throw new InvalidOperationException();
             }
         }
 
@@ -64,7 +64,7 @@ namespace SGL.Elements
             {
                 // TODO: Exception
                 if (type == ValType.Boolean) return (bool)value;
-                else throw new Exception();
+                else throw new InvalidOperationException();
             }
         }
 
@@ -74,7 +74,7 @@ namespace SGL.Elements
             {
                 // TODO: Exception
                 if (type == ValType.String) return (string)value;
-                else throw new Exception();
+                else throw new InvalidOperationException();
             }
         }
 
@@ -84,7 +84,7 @@ namespace SGL.Elements
             {
                 // TODO: Exception
                 if (type == ValType.Object) return (Class)value;
-                else throw new Exception();
+                else throw new InvalidOperationException();
             }
         }
 
@@ -94,7 +94,7 @@ namespace SGL.Elements
             {
                 // TODO: Exception
                 if (type == ValType.Object) return (List<Value>)value;
-                else throw new Exception();
+                else throw new InvalidOperationException();
             }
         }
 
@@ -104,7 +104,7 @@ namespace SGL.Elements
             {
                 // TODO: Exception
                 if (type == ValType.Return) return (Value)value;
-                else throw new Exception();
+                else throw new InvalidOperationException();
             }
         }
 
@@ -143,10 +143,10 @@ namespace SGL.Elements
             try
             {
                 // this comparison can fail, but it may be covered by the next comparisons
-                if (this.Value is IComparable && that.Value is IComparable)
+                if (this.RawValue is IComparable && that.RawValue is IComparable)
                 {
                     // if both can be compared, use that to compare both
-                    return ((IComparable)this.Value).CompareTo(that.Value);
+                    return ((IComparable)this.RawValue).CompareTo(that.RawValue);
                 }
             }
             finally
@@ -201,9 +201,12 @@ namespace SGL.Elements
             }
         }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
 
-
-        public String ToString()
+        public override String ToString()
         {
             switch (type)
             {
@@ -311,11 +314,12 @@ namespace SGL.Elements
         public static bool TypeCompare(List<Value> valueList, params ValType[] acceptedTypes)
         {
             if (valueList.Count != acceptedTypes.Length) return false;
-            foreach (ValType type in acceptedTypes)
+            for (int i = 0; i < acceptedTypes.Length; i++)
             {
-                if (valueList.Type == type) return true;
+                ValType acceptedType = acceptedTypes[i];
+                if (valueList[i].Type != acceptedType) return false;
             }
-            return false;
+            return true;
         }
 
         public static string PrintTypeList(List<Value> valueList)

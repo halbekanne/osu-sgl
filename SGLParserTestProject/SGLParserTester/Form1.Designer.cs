@@ -47,7 +47,8 @@
             this.inputBox.Size = new System.Drawing.Size(586, 197);
             this.inputBox.TabIndex = 0;
             this.inputBox.Text = "println(\"Hello World\");\r\nObject o = new Sprite(0, \"something.png\", Foreground, To" +
-                "pLeft);";
+    "pLeft);";
+            this.inputBox.TextChanged += new System.EventHandler(this.inputBox_TextChanged);
             // 
             // outputBox
             // 

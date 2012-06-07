@@ -46,7 +46,7 @@ namespace SGL.Nodes.Operators
                 {
                     // Catch all CompilerExceptions and add the line number.
                     sce.Line = Line;
-                    throw sce;
+                    throw;
                 }
             }
             else

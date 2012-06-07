@@ -16,7 +16,7 @@ namespace SGL.Nodes
         /// This method is sealed because subclasses should allways override Invoke() instead!
         /// </summary>
         /// <returns>Returns the result of the evaluation.</returns>
-        public sealed Value Evaluate()
+        public Value Evaluate()
         {
             try
             {
@@ -24,11 +24,11 @@ namespace SGL.Nodes
             }
             catch (CompilerException ce)
             {
-                if (ce.Line == null || ce.Line <= 0)
+                if (ce.Line < 1)
                 {
                     ce.Line = this.Line;
                 }
-                throw ce;
+                throw;
             }
         }
 

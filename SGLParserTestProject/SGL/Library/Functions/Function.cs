@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using SGL.Elements;
 
@@ -26,7 +26,7 @@ namespace SGL.Library.Functions
 
         public abstract Value Invoke(List<Value> parameters);
 
-        public abstract bool TestPatameters(List<Value> parameters);
+        //public abstract bool TestPatameters(List<Value> parameters);
 
         
 

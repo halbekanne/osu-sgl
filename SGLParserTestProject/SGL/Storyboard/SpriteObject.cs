@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 
 namespace SGL.Storyboard
 {
-    class SpriteObject : VisualObject
+    public class SpriteObject : VisualObject
     {
 
 
@@ -15,7 +15,7 @@ namespace SGL.Storyboard
       
 
 
-        override public String GetStoryboardInitCode()
+        override protected String GetStoryboardInitCode()
         {
             return "Sprite," + layer + "," + origin + ",\"" + filepath + "\",320,240";
         }
