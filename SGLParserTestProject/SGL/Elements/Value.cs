@@ -43,7 +43,7 @@ namespace SGL.Elements
             get
             {
                 // TODO: Exception
-                if (type == ValType.Integer) return (int)value;
+                if (type == ValType.Integer || type == ValType.Double) return (int)value;
                 else throw new Exception();
             }
         }
@@ -98,6 +98,15 @@ namespace SGL.Elements
             }
         }
 
+        public Value ReturnValue
+        {
+            get
+            {
+                // TODO: Exception
+                if (type == ValType.Return) return (Value)value;
+                else throw new Exception();
+            }
+        }
 
         private Value()
         {

@@ -1,0 +1,35 @@
+﻿Checked:
+ - Namespaces
+
+TODO:
+ - InvokeFunctionNode with object variable
+
+
+Operators
+	Arithmetical	adapted
+		- Add	adapted
+		- Sub	adapted
+		- DiV	adapted
+		- Mod	adapted
+		- Mult	adapted
+		- Pow	adapted
+		- NegateBool	adapted
+		- NegateInt		adapted
+	Logical
+		- And	adapted
+		- Or	adapted
+		- Equals	adapted
+		- NotEquals	adapted
+		- Greater	adapted
+		- Lower		adapted
+		- GreaterThan	adapted
+		- LowerThan		adapted
+	Misc
+		- Conditional	adapted
+ControlFlow
+	- For	adapted
+	- If
+	- While
+	- At
+Values
+	-

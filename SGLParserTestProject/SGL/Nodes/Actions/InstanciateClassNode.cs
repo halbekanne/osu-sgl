@@ -5,7 +5,7 @@ using System.Text;
 using SGL.Elements;
 using SGL.Library.Classes;
 
-namespace SGL.Nodes
+namespace SGL.Nodes.Actions
 {
     class InstanciateClassNode : AbstractNode
     {
@@ -25,7 +25,7 @@ namespace SGL.Nodes
         }
 
 
-        public override Value Invoke()
+        protected override Value Invoke()
         {
             List<Value> values = new List<Value>();
             foreach (AbstractNode node in parameters)

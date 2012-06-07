@@ -26,7 +26,7 @@ namespace SGL.Nodes.Operators
 
         public abstract bool CheckArguments(ValType type1, ValType type2, ValType type3);
 
-        public Value Evaluate()
+        protected override Value Invoke()
         {
             Value value1 = node1.Evaluate();
             Value value2 = node2.Evaluate();

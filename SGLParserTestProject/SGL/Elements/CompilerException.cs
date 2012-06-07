@@ -23,7 +23,7 @@ namespace SGL.Elements
                 // Antlr specific
                 case 101: return "Wrong syntax: " + args[0];
 
-                // Operators and variable assignments
+                // Operators, variable assignments, type sanity checks...
                 case 201: return "The operator " + args[0] + " is undefined for the argument type (" + args[1] + ").";
                 case 202: return "The operator " + args[0] + " is undefined for the argument types (" + args[1] + ", " + args[2] + ").";
                 case 203: return "The operator " + args[0] + " is undefined for the argument types (" + args[1] + ", " + args[2] + ", " + args[3] + ").";
@@ -33,6 +33,10 @@ namespace SGL.Elements
                 case 211: return "'" + args[0] + "' cannot be resolved to a variable. Check if the variable name is spelled correctly";
                 case 212: return "Indexes must have a numeric value, but the " + args[0] + ". index value of '" + args[1] + "' is from type " + args[2];
                 case 213: return "The variable '" + args[0] + "' at it's "+args[1]+". sub-level is from type " + args[2] + ", but is accessed as a list";
+                case 214: return "Indexes must have a numeric value, but this one is from type " + args[0] + ".";
+                case 215: return "A value from type " + args[0] + " is accessed as a list.";
+                case 216: return "A value from type " + args[0] + " was expected, but was " + args[1] + ".";
+                case 217: return "The " + args[0] + " value in a(n) " + args[1] + "-statement must be from type " + args[2] + ", but was " + args[3] + ".";
 
                 // Functions and classes
                 case 301: return "The function " + args[0] + " doesn't exist. Please check for typos.";

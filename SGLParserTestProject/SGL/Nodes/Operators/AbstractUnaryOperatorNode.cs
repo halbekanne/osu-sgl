@@ -22,7 +22,7 @@ namespace SGL.Nodes.Operators
 
         public abstract bool CheckArguments(ValType type);
 
-        public override Value Invoke()
+        protected override Value Invoke()
         {
             Value value = node.Evaluate();
 

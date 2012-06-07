@@ -13,9 +13,10 @@ namespace SGL.Nodes
     {
         /// <summary>
         /// Evaluates this node which normally causes underlying nodes to evaluate first. The returning value can then be used by the parent nodes.
+        /// This method is sealed because subclasses should allways override Invoke() instead!
         /// </summary>
         /// <returns>Returns the result of the evaluation.</returns>
-        public Value Evaluate()
+        public sealed Value Evaluate()
         {
             try
             {

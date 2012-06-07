@@ -47,7 +47,7 @@ namespace SGL.Nodes.ControlFlow
             }
         }
 
-        public override Value Invoke()
+        protected override Value Invoke()
         {
             /*
             Console.WriteLine("init: " + init.Evaluate());

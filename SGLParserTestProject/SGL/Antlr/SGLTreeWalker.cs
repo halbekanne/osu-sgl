@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g 2012-05-31 20:49:19
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g 2012-06-07 14:29:11
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -14,6 +14,13 @@ using System.Text;
 using System.Collections.Generic;
 using SGL.Elements;
 using SGL.Nodes;
+using SGL.Nodes.Actions;
+using SGL.Nodes.ControlFlow;
+using SGL.Nodes.Operators;
+using SGL.Nodes.Operators.Arithmetical;
+using SGL.Nodes.Operators.Logical;
+using SGL.Nodes.Operators.Misc;
+using SGL.Nodes.Values;
 
 
 using System;
@@ -236,20 +243,20 @@ public partial class SGLTreeWalker : TreeParser
     	
     	private Boolean isMain = false;
           
-        public SGLTreeWalker(CommonTreeNodeStream nodes) : this(nodes) {
-        	currentScope = new Scope();
-        	isMain = true;
+    	public SGLTreeWalker(CommonTreeNodeStream nodes, Boolean isMain) : this(nodes) {
+        	this.currentScope = new Scope();
+        	this.isMain = isMain;
         }
         
         public SGLTreeWalker(CommonTreeNodeStream nodes, Scope sc) : this(nodes) {
-        	currentScope = sc;
+        	this.currentScope = sc;
         }
           
     	public override void EmitErrorMessage(string msg)
     	{
-    		//throw new SGLCompilerException(-1, "Antlr.Parser", msg);
-    		throw new Exception(msg);
-        }     
+    		throw new CompilerException(-1, 101, msg);
+    		//throw new Exception(msg);
+        }      
     	
     	// Sprite objects
         
@@ -320,7 +327,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "main"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:118:1: main returns [AbstractNode node] : block ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:125:1: main returns [AbstractNode node] : block ;
     public AbstractNode main() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
@@ -330,8 +337,8 @@ public partial class SGLTreeWalker : TreeParser
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:119:2: ( block )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:119:4: block
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:126:2: ( block )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:126:4: block
             {
             	PushFollow(FOLLOW_block_in_main69);
             	block1 = block();
@@ -356,7 +363,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "block"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:123:1: block returns [AbstractNode node] : ^( BLOCK ( statement )* ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:130:1: block returns [AbstractNode node] : ^( BLOCK ( statement )* ) ;
     public AbstractNode block() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
@@ -367,20 +374,20 @@ public partial class SGLTreeWalker : TreeParser
          
           Scope scope = new Scope(currentScope); 
           currentScope = scope;
-          BlockNode bn = new BlockNode(spriteObjects, currentScope); 
+          BlockNode bn = new BlockNode(currentScope); 
           node = bn;  
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:133:2: ( ^( BLOCK ( statement )* ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:133:4: ^( BLOCK ( statement )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:140:2: ( ^( BLOCK ( statement )* ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:140:4: ^( BLOCK ( statement )* )
             {
             	Match(input,BLOCK,FOLLOW_BLOCK_in_block104); 
 
             	if ( input.LA(1) == Token.DOWN )
             	{
             	    Match(input, Token.DOWN, null); 
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:134:10: ( statement )*
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:141:10: ( statement )*
             	    do 
             	    {
             	        int alt1 = 2;
@@ -395,7 +402,7 @@ public partial class SGLTreeWalker : TreeParser
             	        switch (alt1) 
             	    	{
             	    		case 1 :
-            	    		    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:134:11: statement
+            	    		    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:141:11: statement
             	    		    {
             	    		    	PushFollow(FOLLOW_statement_in_block119);
             	    		    	statement2 = statement();
@@ -438,7 +445,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "statement"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:139:1: statement returns [AbstractNode node] : ( assignment | unaryExpression | functionCall | objectFunctionCall | ifStatement | atStatement | whileLoop | forLoop | breakStat | returnStat );
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:146:1: statement returns [AbstractNode node] : ( assignment | unaryExpression | functionCall | objectFunctionCall | ifStatement | atStatement | whileLoop | forLoop | breakStat | returnStat );
     public AbstractNode statement() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
@@ -466,7 +473,7 @@ public partial class SGLTreeWalker : TreeParser
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:141:2: ( assignment | unaryExpression | functionCall | objectFunctionCall | ifStatement | atStatement | whileLoop | forLoop | breakStat | returnStat )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:148:2: ( assignment | unaryExpression | functionCall | objectFunctionCall | ifStatement | atStatement | whileLoop | forLoop | breakStat | returnStat )
             int alt2 = 10;
             switch ( input.LA(1) ) 
             {
@@ -532,7 +539,7 @@ public partial class SGLTreeWalker : TreeParser
             switch (alt2) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:141:4: assignment
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:148:4: assignment
                     {
                     	PushFollow(FOLLOW_assignment_in_statement163);
                     	assignment3 = assignment();
@@ -543,7 +550,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:142:4: unaryExpression
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:149:4: unaryExpression
                     {
                     	PushFollow(FOLLOW_unaryExpression_in_statement171);
                     	unaryExpression4 = unaryExpression();
@@ -554,7 +561,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 3 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:143:4: functionCall
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:150:4: functionCall
                     {
                     	PushFollow(FOLLOW_functionCall_in_statement178);
                     	functionCall5 = functionCall();
@@ -565,7 +572,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 4 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:144:4: objectFunctionCall
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:151:4: objectFunctionCall
                     {
                     	PushFollow(FOLLOW_objectFunctionCall_in_statement186);
                     	objectFunctionCall6 = objectFunctionCall();
@@ -576,7 +583,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 5 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:145:4: ifStatement
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:152:4: ifStatement
                     {
                     	PushFollow(FOLLOW_ifStatement_in_statement194);
                     	ifStatement7 = ifStatement();
@@ -587,7 +594,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 6 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:146:4: atStatement
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:153:4: atStatement
                     {
                     	PushFollow(FOLLOW_atStatement_in_statement201);
                     	atStatement8 = atStatement();
@@ -598,7 +605,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 7 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:147:4: whileLoop
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:154:4: whileLoop
                     {
                     	PushFollow(FOLLOW_whileLoop_in_statement209);
                     	whileLoop9 = whileLoop();
@@ -609,7 +616,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 8 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:148:4: forLoop
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:155:4: forLoop
                     {
                     	PushFollow(FOLLOW_forLoop_in_statement216);
                     	forLoop10 = forLoop();
@@ -620,7 +627,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 9 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:149:4: breakStat
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:156:4: breakStat
                     {
                     	PushFollow(FOLLOW_breakStat_in_statement223);
                     	breakStat11 = breakStat();
@@ -631,7 +638,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 10 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:150:4: returnStat
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:157:4: returnStat
                     {
                     	PushFollow(FOLLOW_returnStat_in_statement230);
                     	returnStat12 = returnStat();
@@ -658,7 +665,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "atStatement"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:154:1: atStatement returns [AbstractNode node] : ^( AT expression block ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:161:1: atStatement returns [AbstractNode node] : ^( AT expression block ) ;
     public AbstractNode atStatement() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
@@ -670,8 +677,8 @@ public partial class SGLTreeWalker : TreeParser
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:155:2: ( ^( AT expression block ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:155:4: ^( AT expression block )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:162:2: ( ^( AT expression block ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:162:4: ^( AT expression block )
             {
             	Match(input,AT,FOLLOW_AT_in_atStatement255); 
 
@@ -705,7 +712,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "returnStat"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:158:1: returnStat returns [AbstractNode node] : ^( RETURN ( expression )? ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:165:1: returnStat returns [AbstractNode node] : ^( RETURN ( expression )? ) ;
     public AbstractNode returnStat() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
@@ -715,15 +722,15 @@ public partial class SGLTreeWalker : TreeParser
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:159:2: ( ^( RETURN ( expression )? ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:159:4: ^( RETURN ( expression )? )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:166:2: ( ^( RETURN ( expression )? ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:166:4: ^( RETURN ( expression )? )
             {
             	Match(input,RETURN,FOLLOW_RETURN_in_returnStat279); 
 
             	if ( input.LA(1) == Token.DOWN )
             	{
             	    Match(input, Token.DOWN, null); 
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:159:13: ( expression )?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:166:13: ( expression )?
             	    int alt3 = 2;
             	    int LA3_0 = input.LA(1);
 
@@ -734,7 +741,7 @@ public partial class SGLTreeWalker : TreeParser
             	    switch (alt3) 
             	    {
             	        case 1 :
-            	            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:159:13: expression
+            	            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:166:13: expression
             	            {
             	            	PushFollow(FOLLOW_expression_in_returnStat281);
             	            	expression15 = expression();
@@ -768,7 +775,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "functionCall"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:162:1: functionCall returns [AbstractNode node] : ^( FUNC_CALL Identifier ( expressionList )? ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:169:1: functionCall returns [AbstractNode node] : ^( FUNC_CALL Identifier ( expressionList )? ) ;
     public AbstractNode functionCall() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
@@ -779,14 +786,14 @@ public partial class SGLTreeWalker : TreeParser
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:163:2: ( ^( FUNC_CALL Identifier ( expressionList )? ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:163:4: ^( FUNC_CALL Identifier ( expressionList )? )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:170:2: ( ^( FUNC_CALL Identifier ( expressionList )? ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:170:4: ^( FUNC_CALL Identifier ( expressionList )? )
             {
             	Match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall304); 
 
             	Match(input, Token.DOWN, null); 
             	Identifier16=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_functionCall306); 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:163:27: ( expressionList )?
+            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:170:27: ( expressionList )?
             	int alt4 = 2;
             	int LA4_0 = input.LA(1);
 
@@ -797,7 +804,7 @@ public partial class SGLTreeWalker : TreeParser
             	switch (alt4) 
             	{
             	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:163:27: expressionList
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:170:27: expressionList
             	        {
             	        	PushFollow(FOLLOW_expressionList_in_functionCall308);
             	        	expressionList17 = expressionList();
@@ -811,7 +818,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
             	Match(input, Token.UP, null); 
-            	 node = new FunctionCallNode(((Identifier16 != null) ? Identifier16.Text : null), expressionList17, Identifier16.Line); 
+            	 node = new InvokeFunctionNode(((Identifier16 != null) ? Identifier16.Text : null), expressionList17, Identifier16.Line); 
 
             }
 
@@ -830,18 +837,20 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "breakStat"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:166:1: breakStat returns [AbstractNode node] : BREAK ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:173:1: breakStat returns [AbstractNode node] : BREAK ;
     public AbstractNode breakStat() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
 
+        CommonTree BREAK18 = null;
+
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:167:2: ( BREAK )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:167:4: BREAK
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:174:2: ( BREAK )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:174:4: BREAK
             {
-            	Match(input,BREAK,FOLLOW_BREAK_in_breakStat329); 
-            	 node = new BreakNode(); 
+            	BREAK18=(CommonTree)Match(input,BREAK,FOLLOW_BREAK_in_breakStat329); 
+            	 node = new BreakNode(BREAK18.Line); 
 
             }
 
@@ -860,32 +869,32 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "objectFunctionCall"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:170:1: objectFunctionCall returns [AbstractNode node] : ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:177:1: objectFunctionCall returns [AbstractNode node] : ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? ) ;
     public AbstractNode objectFunctionCall() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
 
-        CommonTree Identifier20 = null;
-        String variable18 = default(String);
+        CommonTree Identifier21 = null;
+        String variable19 = default(String);
 
-        List<AbstractNode> indexes19 = default(List<AbstractNode>);
+        List<AbstractNode> indexes20 = default(List<AbstractNode>);
 
-        List<AbstractNode> expressionList21 = default(List<AbstractNode>);
+        List<AbstractNode> expressionList22 = default(List<AbstractNode>);
 
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:171:2: ( ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:171:4: ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:178:2: ( ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:178:4: ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? )
             {
             	Match(input,OBJ_FUNC_CALL,FOLLOW_OBJ_FUNC_CALL_in_objectFunctionCall348); 
 
             	Match(input, Token.DOWN, null); 
             	PushFollow(FOLLOW_variable_in_objectFunctionCall350);
-            	variable18 = variable();
+            	variable19 = variable();
             	state.followingStackPointer--;
 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:171:29: ( indexes )?
+            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:178:29: ( indexes )?
             	int alt5 = 2;
             	int LA5_0 = input.LA(1);
 
@@ -896,10 +905,10 @@ public partial class SGLTreeWalker : TreeParser
             	switch (alt5) 
             	{
             	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:171:29: indexes
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:178:29: indexes
             	        {
             	        	PushFollow(FOLLOW_indexes_in_objectFunctionCall352);
-            	        	indexes19 = indexes();
+            	        	indexes20 = indexes();
             	        	state.followingStackPointer--;
 
 
@@ -908,8 +917,8 @@ public partial class SGLTreeWalker : TreeParser
 
             	}
 
-            	Identifier20=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_objectFunctionCall355); 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:171:49: ( expressionList )?
+            	Identifier21=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_objectFunctionCall355); 
+            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:178:49: ( expressionList )?
             	int alt6 = 2;
             	int LA6_0 = input.LA(1);
 
@@ -920,10 +929,10 @@ public partial class SGLTreeWalker : TreeParser
             	switch (alt6) 
             	{
             	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:171:49: expressionList
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:178:49: expressionList
             	        {
             	        	PushFollow(FOLLOW_expressionList_in_objectFunctionCall357);
-            	        	expressionList21 = expressionList();
+            	        	expressionList22 = expressionList();
             	        	state.followingStackPointer--;
 
 
@@ -934,7 +943,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
             	Match(input, Token.UP, null); 
-            	 node = new FunctionCallNode(variable18, indexes19, ((Identifier20 != null) ? Identifier20.Text : null), expressionList21, Identifier20.Line); 
+            	 node = new InvokeFunctionNode(variable19, indexes20, ((Identifier21 != null) ? Identifier21.Text : null), expressionList22, Identifier21.Line); 
 
             }
 
@@ -953,35 +962,35 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "whileLoop"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:175:1: whileLoop returns [AbstractNode node] : ^( 'while' expression block ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:182:1: whileLoop returns [AbstractNode node] : ^( 'while' expression block ) ;
     public AbstractNode whileLoop() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
 
-        AbstractNode expression22 = default(AbstractNode);
+        AbstractNode expression23 = default(AbstractNode);
 
-        AbstractNode block23 = default(AbstractNode);
+        AbstractNode block24 = default(AbstractNode);
 
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:176:2: ( ^( 'while' expression block ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:176:4: ^( 'while' expression block )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:183:2: ( ^( 'while' expression block ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:183:4: ^( 'while' expression block )
             {
             	Match(input,83,FOLLOW_83_in_whileLoop380); 
 
             	Match(input, Token.DOWN, null); 
             	PushFollow(FOLLOW_expression_in_whileLoop382);
-            	expression22 = expression();
+            	expression23 = expression();
             	state.followingStackPointer--;
 
             	PushFollow(FOLLOW_block_in_whileLoop384);
-            	block23 = block();
+            	block24 = block();
             	state.followingStackPointer--;
 
 
             	Match(input, Token.UP, null); 
-            	 node = new WhileNode(expression22, block23); 
+            	 node = new WhileNode(expression23, block24); 
 
             }
 
@@ -1000,7 +1009,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "ifStatement"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:180:1: ifStatement returns [AbstractNode node] : ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:187:1: ifStatement returns [AbstractNode node] : ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) ;
     public AbstractNode ifStatement() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
@@ -1009,7 +1018,7 @@ public partial class SGLTreeWalker : TreeParser
 
         AbstractNode b2 = default(AbstractNode);
 
-        AbstractNode expression24 = default(AbstractNode);
+        AbstractNode expression25 = default(AbstractNode);
 
 
          
@@ -1018,13 +1027,13 @@ public partial class SGLTreeWalker : TreeParser
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:185:3: ( ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:185:6: ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:192:3: ( ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:192:6: ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? )
             {
             	Match(input,IF,FOLLOW_IF_in_ifStatement417); 
 
             	Match(input, Token.DOWN, null); 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:186:8: ( ^( EXP expression b1= block ) )+
+            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:193:8: ( ^( EXP expression b1= block ) )+
             	int cnt7 = 0;
             	do 
             	{
@@ -1054,13 +1063,13 @@ public partial class SGLTreeWalker : TreeParser
             	    switch (alt7) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:186:9: ^( EXP expression b1= block )
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:193:9: ^( EXP expression b1= block )
             			    {
             			    	Match(input,EXP,FOLLOW_EXP_in_ifStatement431); 
 
             			    	Match(input, Token.DOWN, null); 
             			    	PushFollow(FOLLOW_expression_in_ifStatement433);
-            			    	expression24 = expression();
+            			    	expression25 = expression();
             			    	state.followingStackPointer--;
 
             			    	PushFollow(FOLLOW_block_in_ifStatement437);
@@ -1069,7 +1078,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
             			    	Match(input, Token.UP, null); 
-            			    	 ifNode.AddChoice(expression24,b1); 
+            			    	 ifNode.AddChoice(expression25,b1); 
 
             			    }
             			    break;
@@ -1086,7 +1095,7 @@ public partial class SGLTreeWalker : TreeParser
             	loop7:
             		;	// Stops C# compiler whining that label 'loop7' has no statements
 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:187:8: ( ^( EXP b2= block ) )?
+            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:194:8: ( ^( EXP b2= block ) )?
             	int alt8 = 2;
             	int LA8_0 = input.LA(1);
 
@@ -1097,7 +1106,7 @@ public partial class SGLTreeWalker : TreeParser
             	switch (alt8) 
             	{
             	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:187:9: ^( EXP b2= block )
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:194:9: ^( EXP b2= block )
             	        {
             	        	Match(input,EXP,FOLLOW_EXP_in_ifStatement457); 
 
@@ -1108,7 +1117,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
             	        	Match(input, Token.UP, null); 
-            	        	 ifNode.AddChoice(new AtomNode(true),b2); 
+            	        	 ifNode.AddChoice(new AtomNode(true, ValType.Boolean),b2); 
 
             	        }
             	        break;
@@ -1135,7 +1144,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "forLoop"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:191:1: forLoop returns [AbstractNode node] : ^( 'for' ^( FORDEC (dec= statement )? ) ^( FORCOND (cond= expression )? ) ^( FORITER (iter= statement )? ) block ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:198:1: forLoop returns [AbstractNode node] : ^( 'for' ^( FORDEC (dec= statement )? ) ^( FORCOND (cond= expression )? ) ^( FORITER (iter= statement )? ) block ) ;
     public AbstractNode forLoop() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
@@ -1146,7 +1155,7 @@ public partial class SGLTreeWalker : TreeParser
 
         AbstractNode iter = default(AbstractNode);
 
-        AbstractNode block25 = default(AbstractNode);
+        AbstractNode block26 = default(AbstractNode);
 
 
 
@@ -1154,7 +1163,7 @@ public partial class SGLTreeWalker : TreeParser
           // Create new block for the beginning of the for-Loop
           Scope scope = new Scope(currentScope); 
           currentScope = scope;
-          BlockNode bn = new BlockNode(spriteObjects, currentScope); 
+          BlockNode bn = new BlockNode(currentScope); 
           
           //Create the For-Node and add it to the block
           ForNode forNode = new ForNode();
@@ -1165,8 +1174,8 @@ public partial class SGLTreeWalker : TreeParser
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:209:2: ( ^( 'for' ^( FORDEC (dec= statement )? ) ^( FORCOND (cond= expression )? ) ^( FORITER (iter= statement )? ) block ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:209:4: ^( 'for' ^( FORDEC (dec= statement )? ) ^( FORCOND (cond= expression )? ) ^( FORITER (iter= statement )? ) block )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:216:2: ( ^( 'for' ^( FORDEC (dec= statement )? ) ^( FORCOND (cond= expression )? ) ^( FORITER (iter= statement )? ) block ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:216:4: ^( 'for' ^( FORDEC (dec= statement )? ) ^( FORCOND (cond= expression )? ) ^( FORITER (iter= statement )? ) block )
             {
             	Match(input,84,FOLLOW_84_in_forLoop510); 
 
@@ -1176,7 +1185,7 @@ public partial class SGLTreeWalker : TreeParser
             	if ( input.LA(1) == Token.DOWN )
             	{
             	    Match(input, Token.DOWN, null); 
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:209:21: (dec= statement )?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:216:21: (dec= statement )?
             	    int alt9 = 2;
             	    int LA9_0 = input.LA(1);
 
@@ -1187,7 +1196,7 @@ public partial class SGLTreeWalker : TreeParser
             	    switch (alt9) 
             	    {
             	        case 1 :
-            	            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:209:22: dec= statement
+            	            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:216:22: dec= statement
             	            {
             	            	PushFollow(FOLLOW_statement_in_forLoop518);
             	            	dec = statement();
@@ -1208,7 +1217,7 @@ public partial class SGLTreeWalker : TreeParser
             	if ( input.LA(1) == Token.DOWN )
             	{
             	    Match(input, Token.DOWN, null); 
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:209:80: (cond= expression )?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:216:80: (cond= expression )?
             	    int alt10 = 2;
             	    int LA10_0 = input.LA(1);
 
@@ -1219,7 +1228,7 @@ public partial class SGLTreeWalker : TreeParser
             	    switch (alt10) 
             	    {
             	        case 1 :
-            	            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:209:81: cond= expression
+            	            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:216:81: cond= expression
             	            {
             	            	PushFollow(FOLLOW_expression_in_forLoop532);
             	            	cond = expression();
@@ -1240,7 +1249,7 @@ public partial class SGLTreeWalker : TreeParser
             	if ( input.LA(1) == Token.DOWN )
             	{
             	    Match(input, Token.DOWN, null); 
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:209:146: (iter= statement )?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:216:146: (iter= statement )?
             	    int alt11 = 2;
             	    int LA11_0 = input.LA(1);
 
@@ -1251,7 +1260,7 @@ public partial class SGLTreeWalker : TreeParser
             	    switch (alt11) 
             	    {
             	        case 1 :
-            	            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:209:147: iter= statement
+            	            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:216:147: iter= statement
             	            {
             	            	PushFollow(FOLLOW_statement_in_forLoop545);
             	            	iter = statement();
@@ -1268,12 +1277,12 @@ public partial class SGLTreeWalker : TreeParser
             	    Match(input, Token.UP, null); 
             	}
             	PushFollow(FOLLOW_block_in_forLoop552);
-            	block25 = block();
+            	block26 = block();
             	state.followingStackPointer--;
 
 
             	Match(input, Token.UP, null); 
-            	 forNode.Block = block25; 
+            	 forNode.Block = block26; 
 
             }
 
@@ -1295,24 +1304,24 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "expressionList"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:214:1: expressionList returns [List<AbstractNode> list] : ^( EXP_LIST ( expression )+ ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:221:1: expressionList returns [List<AbstractNode> list] : ^( EXP_LIST ( expression )+ ) ;
     public List<AbstractNode> expressionList() // throws RecognitionException [1]
     {   
         List<AbstractNode> list = default(List<AbstractNode>);
 
-        AbstractNode expression26 = default(AbstractNode);
+        AbstractNode expression27 = default(AbstractNode);
 
 
          list = new List<AbstractNode>(); 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:216:5: ( ^( EXP_LIST ( expression )+ ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:216:7: ^( EXP_LIST ( expression )+ )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:223:5: ( ^( EXP_LIST ( expression )+ ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:223:7: ^( EXP_LIST ( expression )+ )
             {
             	Match(input,EXP_LIST,FOLLOW_EXP_LIST_in_expressionList584); 
 
             	Match(input, Token.DOWN, null); 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:217:7: ( expression )+
+            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:224:7: ( expression )+
             	int cnt12 = 0;
             	do 
             	{
@@ -1328,13 +1337,13 @@ public partial class SGLTreeWalker : TreeParser
             	    switch (alt12) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:217:8: expression
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:224:8: expression
             			    {
             			    	PushFollow(FOLLOW_expression_in_expressionList596);
-            			    	expression26 = expression();
+            			    	expression27 = expression();
             			    	state.followingStackPointer--;
 
-            			    	list.Add(expression26);
+            			    	list.Add(expression27);
 
             			    }
             			    break;
@@ -1371,24 +1380,24 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "indexes"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:221:1: indexes returns [List<AbstractNode> list] : ^( INDEXES ( expression )+ ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:228:1: indexes returns [List<AbstractNode> list] : ^( INDEXES ( expression )+ ) ;
     public List<AbstractNode> indexes() // throws RecognitionException [1]
     {   
         List<AbstractNode> list = default(List<AbstractNode>);
 
-        AbstractNode expression27 = default(AbstractNode);
+        AbstractNode expression28 = default(AbstractNode);
 
 
          list = new List<AbstractNode>(); 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:223:3: ( ^( INDEXES ( expression )+ ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:223:6: ^( INDEXES ( expression )+ )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:230:3: ( ^( INDEXES ( expression )+ ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:230:6: ^( INDEXES ( expression )+ )
             {
             	Match(input,INDEXES,FOLLOW_INDEXES_in_indexes634); 
 
             	Match(input, Token.DOWN, null); 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:224:5: ( expression )+
+            	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:231:5: ( expression )+
             	int cnt13 = 0;
             	do 
             	{
@@ -1404,13 +1413,13 @@ public partial class SGLTreeWalker : TreeParser
             	    switch (alt13) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:224:6: expression
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:231:6: expression
             			    {
             			    	PushFollow(FOLLOW_expression_in_indexes642);
-            			    	expression27 = expression();
+            			    	expression28 = expression();
             			    	state.followingStackPointer--;
 
-            			    	list.Add(expression27);
+            			    	list.Add(expression28);
 
             			    }
             			    break;
@@ -1447,20 +1456,20 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "variable"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:228:1: variable returns [String txt] : Identifier ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:235:1: variable returns [String txt] : Identifier ;
     public String variable() // throws RecognitionException [1]
     {   
         String txt = default(String);
 
-        CommonTree Identifier28 = null;
+        CommonTree Identifier29 = null;
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:229:2: ( Identifier )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:229:4: Identifier
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:236:2: ( Identifier )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:236:4: Identifier
             {
-            	Identifier28=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_variable673); 
-            	 txt = ((Identifier28 != null) ? Identifier28.Text : null); 
+            	Identifier29=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_variable673); 
+            	 txt = ((Identifier29 != null) ? Identifier29.Text : null); 
 
             }
 
@@ -1479,25 +1488,25 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "assignment"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:232:1: assignment returns [AbstractNode node] : ( ^( ASSIGN Identifier ( indexes )? ( expression )? ) | ^( GLOBAL_ASSIGN Identifier ( indexes )? ( expression )? ) );
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:239:1: assignment returns [AbstractNode node] : ( ^( ASSIGN Identifier ( indexes )? ( expression )? ) | ^( GLOBAL_ASSIGN Identifier ( indexes )? ( expression )? ) );
     public AbstractNode assignment() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
 
-        CommonTree Identifier31 = null;
-        CommonTree Identifier34 = null;
-        List<AbstractNode> indexes29 = default(List<AbstractNode>);
+        CommonTree Identifier30 = null;
+        CommonTree Identifier33 = null;
+        List<AbstractNode> indexes31 = default(List<AbstractNode>);
 
-        AbstractNode expression30 = default(AbstractNode);
+        AbstractNode expression32 = default(AbstractNode);
 
-        List<AbstractNode> indexes32 = default(List<AbstractNode>);
+        List<AbstractNode> indexes34 = default(List<AbstractNode>);
 
-        AbstractNode expression33 = default(AbstractNode);
+        AbstractNode expression35 = default(AbstractNode);
 
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:233:2: ( ^( ASSIGN Identifier ( indexes )? ( expression )? ) | ^( GLOBAL_ASSIGN Identifier ( indexes )? ( expression )? ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:240:2: ( ^( ASSIGN Identifier ( indexes )? ( expression )? ) | ^( GLOBAL_ASSIGN Identifier ( indexes )? ( expression )? ) )
             int alt18 = 2;
             int LA18_0 = input.LA(1);
 
@@ -1519,13 +1528,13 @@ public partial class SGLTreeWalker : TreeParser
             switch (alt18) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:233:4: ^( ASSIGN Identifier ( indexes )? ( expression )? )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:240:4: ^( ASSIGN Identifier ( indexes )? ( expression )? )
                     {
                     	Match(input,ASSIGN,FOLLOW_ASSIGN_in_assignment692); 
 
                     	Match(input, Token.DOWN, null); 
-                    	Identifier31=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_assignment694); 
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:233:24: ( indexes )?
+                    	Identifier30=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_assignment694); 
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:240:24: ( indexes )?
                     	int alt14 = 2;
                     	int LA14_0 = input.LA(1);
 
@@ -1536,10 +1545,10 @@ public partial class SGLTreeWalker : TreeParser
                     	switch (alt14) 
                     	{
                     	    case 1 :
-                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:233:24: indexes
+                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:240:24: indexes
                     	        {
                     	        	PushFollow(FOLLOW_indexes_in_assignment696);
-                    	        	indexes29 = indexes();
+                    	        	indexes31 = indexes();
                     	        	state.followingStackPointer--;
 
 
@@ -1548,7 +1557,7 @@ public partial class SGLTreeWalker : TreeParser
 
                     	}
 
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:233:33: ( expression )?
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:240:33: ( expression )?
                     	int alt15 = 2;
                     	int LA15_0 = input.LA(1);
 
@@ -1559,10 +1568,10 @@ public partial class SGLTreeWalker : TreeParser
                     	switch (alt15) 
                     	{
                     	    case 1 :
-                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:233:33: expression
+                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:240:33: expression
                     	        {
                     	        	PushFollow(FOLLOW_expression_in_assignment699);
-                    	        	expression30 = expression();
+                    	        	expression32 = expression();
                     	        	state.followingStackPointer--;
 
 
@@ -1573,18 +1582,18 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new AssignVariableNode($variable.txt,indexes29,expression30,currentScope,Identifier31.Line); 
+                    	 node = new AssignVariableNode(((Identifier30 != null) ? Identifier30.Text : null),indexes31,expression32,currentScope,Identifier30.Line); 
 
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:236:4: ^( GLOBAL_ASSIGN Identifier ( indexes )? ( expression )? )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:243:4: ^( GLOBAL_ASSIGN Identifier ( indexes )? ( expression )? )
                     {
                     	Match(input,GLOBAL_ASSIGN,FOLLOW_GLOBAL_ASSIGN_in_assignment724); 
 
                     	Match(input, Token.DOWN, null); 
-                    	Identifier34=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_assignment726); 
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:236:31: ( indexes )?
+                    	Identifier33=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_assignment726); 
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:243:31: ( indexes )?
                     	int alt16 = 2;
                     	int LA16_0 = input.LA(1);
 
@@ -1595,10 +1604,10 @@ public partial class SGLTreeWalker : TreeParser
                     	switch (alt16) 
                     	{
                     	    case 1 :
-                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:236:31: indexes
+                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:243:31: indexes
                     	        {
                     	        	PushFollow(FOLLOW_indexes_in_assignment728);
-                    	        	indexes32 = indexes();
+                    	        	indexes34 = indexes();
                     	        	state.followingStackPointer--;
 
 
@@ -1607,7 +1616,7 @@ public partial class SGLTreeWalker : TreeParser
 
                     	}
 
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:236:40: ( expression )?
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:243:40: ( expression )?
                     	int alt17 = 2;
                     	int LA17_0 = input.LA(1);
 
@@ -1618,10 +1627,10 @@ public partial class SGLTreeWalker : TreeParser
                     	switch (alt17) 
                     	{
                     	    case 1 :
-                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:236:40: expression
+                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:243:40: expression
                     	        {
                     	        	PushFollow(FOLLOW_expression_in_assignment731);
-                    	        	expression33 = expression();
+                    	        	expression35 = expression();
                     	        	state.followingStackPointer--;
 
 
@@ -1632,7 +1641,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new AssignVariableNode($variable.txt,indexes32,expression33,Identifier34.Line); 
+                    	 node = new AssignVariableNode(((Identifier33 != null) ? Identifier33.Text : null),indexes34,expression35,Identifier33.Line); 
 
                     }
                     break;
@@ -1653,35 +1662,35 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "expression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:241:1: expression returns [AbstractNode node] : ( ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( INT_NEGATE a= expression ) | ^( BOOL_NEGATE a= expression ) | ^( '<' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '?' a= expression b= expression c= expression ) | IntAtom | FloatAtom | BooleanAtom | ^( STRING StringAtom ) | LayerAtom | OriginAtom | LoopTypeAtom | Null | instantiateClass | lookup | unaryExpression );
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:248:1: expression returns [AbstractNode node] : ( ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( INT_NEGATE a= expression ) | ^( BOOL_NEGATE a= expression ) | ^( '<' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '?' a= expression b= expression c= expression ) | IntAtom | FloatAtom | BooleanAtom | ^( STRING StringAtom ) | LayerAtom | OriginAtom | LoopTypeAtom | Null | instantiateClass | lookup | unaryExpression );
     public AbstractNode expression() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
 
-        CommonTree IntAtom35 = null;
-        CommonTree FloatAtom36 = null;
-        CommonTree BooleanAtom37 = null;
-        CommonTree StringAtom38 = null;
-        CommonTree LayerAtom39 = null;
-        CommonTree OriginAtom40 = null;
-        CommonTree LoopTypeAtom41 = null;
-        CommonTree Null42 = null;
+        CommonTree IntAtom36 = null;
+        CommonTree FloatAtom37 = null;
+        CommonTree BooleanAtom38 = null;
+        CommonTree StringAtom39 = null;
+        CommonTree LayerAtom40 = null;
+        CommonTree OriginAtom41 = null;
+        CommonTree LoopTypeAtom42 = null;
+        CommonTree Null43 = null;
         AbstractNode a = default(AbstractNode);
 
         AbstractNode b = default(AbstractNode);
 
         AbstractNode c = default(AbstractNode);
 
-        AbstractNode instantiateClass43 = default(AbstractNode);
+        AbstractNode instantiateClass44 = default(AbstractNode);
 
-        AbstractNode lookup44 = default(AbstractNode);
+        AbstractNode lookup45 = default(AbstractNode);
 
-        AbstractNode unaryExpression45 = default(AbstractNode);
+        AbstractNode unaryExpression46 = default(AbstractNode);
 
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:242:2: ( ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( INT_NEGATE a= expression ) | ^( BOOL_NEGATE a= expression ) | ^( '<' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '?' a= expression b= expression c= expression ) | IntAtom | FloatAtom | BooleanAtom | ^( STRING StringAtom ) | LayerAtom | OriginAtom | LoopTypeAtom | Null | instantiateClass | lookup | unaryExpression )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:249:2: ( ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( INT_NEGATE a= expression ) | ^( BOOL_NEGATE a= expression ) | ^( '<' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '?' a= expression b= expression c= expression ) | IntAtom | FloatAtom | BooleanAtom | ^( STRING StringAtom ) | LayerAtom | OriginAtom | LoopTypeAtom | Null | instantiateClass | lookup | unaryExpression )
             int alt19 = 28;
             switch ( input.LA(1) ) 
             {
@@ -1836,7 +1845,7 @@ public partial class SGLTreeWalker : TreeParser
             switch (alt19) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:242:4: ^( '+' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:249:4: ^( '+' a= expression b= expression )
                     {
                     	Match(input,71,FOLLOW_71_in_expression766); 
 
@@ -1856,7 +1865,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:243:4: ^( '-' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:250:4: ^( '-' a= expression b= expression )
                     {
                     	Match(input,72,FOLLOW_72_in_expression783); 
 
@@ -1876,7 +1885,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 3 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:244:4: ^( '*' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:251:4: ^( '*' a= expression b= expression )
                     {
                     	Match(input,73,FOLLOW_73_in_expression800); 
 
@@ -1896,7 +1905,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 4 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:245:4: ^( '/' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:252:4: ^( '/' a= expression b= expression )
                     {
                     	Match(input,74,FOLLOW_74_in_expression817); 
 
@@ -1916,7 +1925,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 5 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:246:4: ^( '%' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:253:4: ^( '%' a= expression b= expression )
                     {
                     	Match(input,75,FOLLOW_75_in_expression834); 
 
@@ -1936,7 +1945,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 6 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:247:4: ^( '^' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:254:4: ^( '^' a= expression b= expression )
                     {
                     	Match(input,76,FOLLOW_76_in_expression851); 
 
@@ -1956,7 +1965,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 7 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:248:4: ^( INT_NEGATE a= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:255:4: ^( INT_NEGATE a= expression )
                     {
                     	Match(input,INT_NEGATE,FOLLOW_INT_NEGATE_in_expression868); 
 
@@ -1972,7 +1981,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 8 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:249:4: ^( BOOL_NEGATE a= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:256:4: ^( BOOL_NEGATE a= expression )
                     {
                     	Match(input,BOOL_NEGATE,FOLLOW_BOOL_NEGATE_in_expression881); 
 
@@ -1988,7 +1997,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 9 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:250:4: ^( '<' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:257:4: ^( '<' a= expression b= expression )
                     {
                     	Match(input,67,FOLLOW_67_in_expression894); 
 
@@ -2003,12 +2012,12 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new LTNode(a, b); 
+                    	 node = new LowerThanNode(a, b); 
 
                     }
                     break;
                 case 10 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:251:4: ^( '<=' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:258:4: ^( '<=' a= expression b= expression )
                     {
                     	Match(input,69,FOLLOW_69_in_expression911); 
 
@@ -2023,12 +2032,12 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new LTEqualsNode(a, b); 
+                    	 node = new LowerThanEqualsNode(a, b); 
 
                     }
                     break;
                 case 11 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:252:4: ^( '>' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:259:4: ^( '>' a= expression b= expression )
                     {
                     	Match(input,68,FOLLOW_68_in_expression928); 
 
@@ -2043,12 +2052,12 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new GTNode(a, b); 
+                    	 node = new GreaterThanNode(a, b); 
 
                     }
                     break;
                 case 12 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:253:4: ^( '>=' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:260:4: ^( '>=' a= expression b= expression )
                     {
                     	Match(input,70,FOLLOW_70_in_expression945); 
 
@@ -2063,12 +2072,12 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new GTEqualsNode(a, b); 
+                    	 node = new GreaterThanEqualsNode(a, b); 
 
                     }
                     break;
                 case 13 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:254:4: ^( '!=' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:261:4: ^( '!=' a= expression b= expression )
                     {
                     	Match(input,66,FOLLOW_66_in_expression962); 
 
@@ -2088,7 +2097,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 14 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:255:4: ^( '==' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:262:4: ^( '==' a= expression b= expression )
                     {
                     	Match(input,65,FOLLOW_65_in_expression979); 
 
@@ -2108,7 +2117,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 15 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:256:4: ^( '&&' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:263:4: ^( '&&' a= expression b= expression )
                     {
                     	Match(input,64,FOLLOW_64_in_expression996); 
 
@@ -2128,7 +2137,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 16 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:257:4: ^( '||' a= expression b= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:264:4: ^( '||' a= expression b= expression )
                     {
                     	Match(input,63,FOLLOW_63_in_expression1013); 
 
@@ -2148,7 +2157,7 @@ public partial class SGLTreeWalker : TreeParser
                     }
                     break;
                 case 17 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:258:4: ^( '?' a= expression b= expression c= expression )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:265:4: ^( '?' a= expression b= expression c= expression )
                     {
                     	Match(input,61,FOLLOW_61_in_expression1030); 
 
@@ -2167,109 +2176,109 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new TernaryNode(a, b, c); 
+                    	 node = new ConditionalNode(a, b, c); 
 
                     }
                     break;
                 case 18 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:259:6: IntAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:266:6: IntAtom
                     {
-                    	IntAtom35=(CommonTree)Match(input,IntAtom,FOLLOW_IntAtom_in_expression1052); 
-                    	 node = new AtomNode(int.Parse(((IntAtom35 != null) ? IntAtom35.Text : null), System.Globalization.CultureInfo.InvariantCulture), ValType.Integer, IntAtom35.Line); 
+                    	IntAtom36=(CommonTree)Match(input,IntAtom,FOLLOW_IntAtom_in_expression1052); 
+                    	 node = new AtomNode(int.Parse(((IntAtom36 != null) ? IntAtom36.Text : null), System.Globalization.CultureInfo.InvariantCulture), ValType.Integer, IntAtom36.Line); 
 
                     }
                     break;
                 case 19 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:260:4: FloatAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:267:4: FloatAtom
                     {
-                    	FloatAtom36=(CommonTree)Match(input,FloatAtom,FOLLOW_FloatAtom_in_expression1059); 
-                    	 node = new AtomNode(Double.Parse(((FloatAtom36 != null) ? FloatAtom36.Text : null), System.Globalization.CultureInfo.InvariantCulture), ValType.Double,  FloatAtom36.Line); 
+                    	FloatAtom37=(CommonTree)Match(input,FloatAtom,FOLLOW_FloatAtom_in_expression1059); 
+                    	 node = new AtomNode(Double.Parse(((FloatAtom37 != null) ? FloatAtom37.Text : null), System.Globalization.CultureInfo.InvariantCulture), ValType.Double,  FloatAtom37.Line); 
 
                     }
                     break;
                 case 20 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:261:6: BooleanAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:268:6: BooleanAtom
                     {
-                    	BooleanAtom37=(CommonTree)Match(input,BooleanAtom,FOLLOW_BooleanAtom_in_expression1068); 
-                    	 node = new AtomNode(Boolean.Parse(((BooleanAtom37 != null) ? BooleanAtom37.Text : null)), ValType.Boolean, BooleanAtom37.Line); 
+                    	BooleanAtom38=(CommonTree)Match(input,BooleanAtom,FOLLOW_BooleanAtom_in_expression1068); 
+                    	 node = new AtomNode(Boolean.Parse(((BooleanAtom38 != null) ? BooleanAtom38.Text : null)), ValType.Boolean, BooleanAtom38.Line); 
 
                     }
                     break;
                 case 21 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:262:4: ^( STRING StringAtom )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:269:4: ^( STRING StringAtom )
                     {
                     	Match(input,STRING,FOLLOW_STRING_in_expression1076); 
 
                     	Match(input, Token.DOWN, null); 
-                    	StringAtom38=(CommonTree)Match(input,StringAtom,FOLLOW_StringAtom_in_expression1078); 
+                    	StringAtom39=(CommonTree)Match(input,StringAtom,FOLLOW_StringAtom_in_expression1078); 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new AtomNode((((StringAtom38 != null) ? StringAtom38.Text : null)).Substring(1, (((StringAtom38 != null) ? StringAtom38.Text : null)).Length-2), ValType.String, StringAtom38.Line); 
+                    	 node = new AtomNode((((StringAtom39 != null) ? StringAtom39.Text : null)).Substring(1, (((StringAtom39 != null) ? StringAtom39.Text : null)).Length-2), ValType.String, StringAtom39.Line); 
 
                     }
                     break;
                 case 22 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:263:4: LayerAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:270:4: LayerAtom
                     {
-                    	LayerAtom39=(CommonTree)Match(input,LayerAtom,FOLLOW_LayerAtom_in_expression1086); 
-                    	 node = new AtomNode(((LayerAtom39 != null) ? LayerAtom39.Text : null), ValType.Layer, LayerAtom39.Line); 
+                    	LayerAtom40=(CommonTree)Match(input,LayerAtom,FOLLOW_LayerAtom_in_expression1086); 
+                    	 node = new AtomNode(((LayerAtom40 != null) ? LayerAtom40.Text : null), ValType.Layer, LayerAtom40.Line); 
 
                     }
                     break;
                 case 23 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:264:4: OriginAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:271:4: OriginAtom
                     {
-                    	OriginAtom40=(CommonTree)Match(input,OriginAtom,FOLLOW_OriginAtom_in_expression1093); 
-                    	 node = new AtomNode(((OriginAtom40 != null) ? OriginAtom40.Text : null), ValType.Origin, OriginAtom40.Line); 
+                    	OriginAtom41=(CommonTree)Match(input,OriginAtom,FOLLOW_OriginAtom_in_expression1093); 
+                    	 node = new AtomNode(((OriginAtom41 != null) ? OriginAtom41.Text : null), ValType.Origin, OriginAtom41.Line); 
 
                     }
                     break;
                 case 24 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:265:4: LoopTypeAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:272:4: LoopTypeAtom
                     {
-                    	LoopTypeAtom41=(CommonTree)Match(input,LoopTypeAtom,FOLLOW_LoopTypeAtom_in_expression1100); 
-                    	 node = new AtomNode(((LoopTypeAtom41 != null) ? LoopTypeAtom41.Text : null), ValType.LoopType, LoopTypeAtom41.Line); 
+                    	LoopTypeAtom42=(CommonTree)Match(input,LoopTypeAtom,FOLLOW_LoopTypeAtom_in_expression1100); 
+                    	 node = new AtomNode(((LoopTypeAtom42 != null) ? LoopTypeAtom42.Text : null), ValType.LoopType, LoopTypeAtom42.Line); 
 
                     }
                     break;
                 case 25 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:267:4: Null
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:274:4: Null
                     {
-                    	Null42=(CommonTree)Match(input,Null,FOLLOW_Null_in_expression1109); 
-                    	 node = new AtomNode(((Null42 != null) ? Null42.Text : null), Null42.Line); 
+                    	Null43=(CommonTree)Match(input,Null,FOLLOW_Null_in_expression1109); 
+                    	 node = new AtomNode(((Null43 != null) ? Null43.Text : null), Null43.Line); 
 
                     }
                     break;
                 case 26 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:268:4: instantiateClass
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:275:4: instantiateClass
                     {
                     	PushFollow(FOLLOW_instantiateClass_in_expression1116);
-                    	instantiateClass43 = instantiateClass();
+                    	instantiateClass44 = instantiateClass();
                     	state.followingStackPointer--;
 
-                    	 node = instantiateClass43; 
+                    	 node = instantiateClass44; 
 
                     }
                     break;
                 case 27 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:269:4: lookup
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:276:4: lookup
                     {
                     	PushFollow(FOLLOW_lookup_in_expression1123);
-                    	lookup44 = lookup();
+                    	lookup45 = lookup();
                     	state.followingStackPointer--;
 
-                    	 node = lookup44; 
+                    	 node = lookup45; 
 
                     }
                     break;
                 case 28 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:270:4: unaryExpression
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:277:4: unaryExpression
                     {
                     	PushFollow(FOLLOW_unaryExpression_in_expression1130);
-                    	unaryExpression45 = unaryExpression();
+                    	unaryExpression46 = unaryExpression();
                     	state.followingStackPointer--;
 
-                    	 node = unaryExpression45; 
+                    	 node = unaryExpression46; 
 
                     }
                     break;
@@ -2290,17 +2299,17 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "unaryExpression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:274:1: unaryExpression returns [AbstractNode node] : ( ^( VARINC Identifier ) | ^( VARDEC Identifier ) );
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:281:1: unaryExpression returns [AbstractNode node] : ( ^( VARINC Identifier ) | ^( VARDEC Identifier ) );
     public AbstractNode unaryExpression() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
 
-        CommonTree Identifier46 = null;
         CommonTree Identifier47 = null;
+        CommonTree Identifier48 = null;
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:275:5: ( ^( VARINC Identifier ) | ^( VARDEC Identifier ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:282:5: ( ^( VARINC Identifier ) | ^( VARDEC Identifier ) )
             int alt20 = 2;
             int LA20_0 = input.LA(1);
 
@@ -2322,28 +2331,28 @@ public partial class SGLTreeWalker : TreeParser
             switch (alt20) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:275:9: ^( VARINC Identifier )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:282:9: ^( VARINC Identifier )
                     {
                     	Match(input,VARINC,FOLLOW_VARINC_in_unaryExpression1168); 
 
                     	Match(input, Token.DOWN, null); 
-                    	Identifier46=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_unaryExpression1170); 
+                    	Identifier47=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_unaryExpression1170); 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new VarIncNode(((Identifier46 != null) ? Identifier46.Text : null), currentScope, Identifier46.Line); 
+                    	 node = new VarIncNode(((Identifier47 != null) ? Identifier47.Text : null), currentScope, Identifier47.Line); 
 
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:276:4: ^( VARDEC Identifier )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:283:4: ^( VARDEC Identifier )
                     {
                     	Match(input,VARDEC,FOLLOW_VARDEC_in_unaryExpression1179); 
 
                     	Match(input, Token.DOWN, null); 
-                    	Identifier47=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_unaryExpression1181); 
+                    	Identifier48=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_unaryExpression1181); 
 
                     	Match(input, Token.UP, null); 
-                    	 node = new VarDecNode(((Identifier47 != null) ? Identifier47.Text : null), currentScope, Identifier47.Line); 
+                    	 node = new VarDecNode(((Identifier48 != null) ? Identifier48.Text : null), currentScope, Identifier48.Line); 
 
                     }
                     break;
@@ -2364,26 +2373,26 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "instantiateClass"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:280:1: instantiateClass returns [AbstractNode node] : ^( Identifier ( expressionList )? ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:287:1: instantiateClass returns [AbstractNode node] : ^( Identifier ( expressionList )? ) ;
     public AbstractNode instantiateClass() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
 
-        CommonTree Identifier48 = null;
-        List<AbstractNode> expressionList49 = default(List<AbstractNode>);
+        CommonTree Identifier49 = null;
+        List<AbstractNode> expressionList50 = default(List<AbstractNode>);
 
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:281:2: ( ^( Identifier ( expressionList )? ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:281:4: ^( Identifier ( expressionList )? )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:288:2: ( ^( Identifier ( expressionList )? ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:288:4: ^( Identifier ( expressionList )? )
             {
-            	Identifier48=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_instantiateClass1203); 
+            	Identifier49=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_instantiateClass1203); 
 
             	if ( input.LA(1) == Token.DOWN )
             	{
             	    Match(input, Token.DOWN, null); 
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:281:17: ( expressionList )?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:288:17: ( expressionList )?
             	    int alt21 = 2;
             	    int LA21_0 = input.LA(1);
 
@@ -2394,10 +2403,10 @@ public partial class SGLTreeWalker : TreeParser
             	    switch (alt21) 
             	    {
             	        case 1 :
-            	            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:281:17: expressionList
+            	            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:288:17: expressionList
             	            {
             	            	PushFollow(FOLLOW_expressionList_in_instantiateClass1205);
-            	            	expressionList49 = expressionList();
+            	            	expressionList50 = expressionList();
             	            	state.followingStackPointer--;
 
 
@@ -2409,7 +2418,7 @@ public partial class SGLTreeWalker : TreeParser
 
             	    Match(input, Token.UP, null); 
             	}
-            	  node = new InstanciateClassNode(((Identifier48 != null) ? Identifier48.Text : null), expressionList49, Identifier48.Line); 
+            	  node = new InstanciateClassNode(((Identifier49 != null) ? Identifier49.Text : null), expressionList50, Identifier49.Line); 
 
             }
 
@@ -2428,22 +2437,22 @@ public partial class SGLTreeWalker : TreeParser
 
 
     // $ANTLR start "lookup"
-    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:284:1: lookup returns [AbstractNode node] : ( ^( LOOKUP objectFunctionCall (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP functionCall (i= indexes )? ) );
+    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:291:1: lookup returns [AbstractNode node] : ( ^( LOOKUP objectFunctionCall (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP functionCall (i= indexes )? ) );
     public AbstractNode lookup() // throws RecognitionException [1]
     {   
         AbstractNode node = default(AbstractNode);
 
-        CommonTree Identifier51 = null;
+        CommonTree Identifier52 = null;
         List<AbstractNode> i = default(List<AbstractNode>);
 
-        AbstractNode objectFunctionCall50 = default(AbstractNode);
+        AbstractNode objectFunctionCall51 = default(AbstractNode);
 
-        AbstractNode functionCall52 = default(AbstractNode);
+        AbstractNode functionCall53 = default(AbstractNode);
 
 
         try 
     	{
-            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:285:3: ( ^( LOOKUP objectFunctionCall (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP functionCall (i= indexes )? ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:292:3: ( ^( LOOKUP objectFunctionCall (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP functionCall (i= indexes )? ) )
             int alt25 = 3;
             int LA25_0 = input.LA(1);
 
@@ -2496,16 +2505,16 @@ public partial class SGLTreeWalker : TreeParser
             switch (alt25) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:285:6: ^( LOOKUP objectFunctionCall (i= indexes )? )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:292:6: ^( LOOKUP objectFunctionCall (i= indexes )? )
                     {
                     	Match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1232); 
 
                     	Match(input, Token.DOWN, null); 
                     	PushFollow(FOLLOW_objectFunctionCall_in_lookup1234);
-                    	objectFunctionCall50 = objectFunctionCall();
+                    	objectFunctionCall51 = objectFunctionCall();
                     	state.followingStackPointer--;
 
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:285:35: (i= indexes )?
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:292:35: (i= indexes )?
                     	int alt22 = 2;
                     	int LA22_0 = input.LA(1);
 
@@ -2516,7 +2525,7 @@ public partial class SGLTreeWalker : TreeParser
                     	switch (alt22) 
                     	{
                     	    case 1 :
-                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:285:35: i= indexes
+                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:292:35: i= indexes
                     	        {
                     	        	PushFollow(FOLLOW_indexes_in_lookup1238);
                     	        	i = indexes();
@@ -2530,18 +2539,18 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	node = i != null ? new LookupNode(objectFunctionCall50, i) : objectFunctionCall50;
+                    	node = i != null ? new LookupNode(objectFunctionCall51, i) : objectFunctionCall51;
 
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:286:6: ^( LOOKUP Identifier (i= indexes )? )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:293:6: ^( LOOKUP Identifier (i= indexes )? )
                     {
                     	Match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1250); 
 
                     	Match(input, Token.DOWN, null); 
-                    	Identifier51=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_lookup1252); 
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:286:27: (i= indexes )?
+                    	Identifier52=(CommonTree)Match(input,Identifier,FOLLOW_Identifier_in_lookup1252); 
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:293:27: (i= indexes )?
                     	int alt23 = 2;
                     	int LA23_0 = input.LA(1);
 
@@ -2552,7 +2561,7 @@ public partial class SGLTreeWalker : TreeParser
                     	switch (alt23) 
                     	{
                     	    case 1 :
-                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:286:27: i= indexes
+                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:293:27: i= indexes
                     	        {
                     	        	PushFollow(FOLLOW_indexes_in_lookup1256);
                     	        	i = indexes();
@@ -2566,22 +2575,22 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	AbstractNode identNode = new IdentifierNode(((Identifier51 != null) ? Identifier51.Text : null), currentScope, Identifier51.Line);
+                    	AbstractNode identNode = new IdentifierNode(((Identifier52 != null) ? Identifier52.Text : null), currentScope, Identifier52.Line);
                     	  	node = i != null ? new LookupNode(identNode, i) : identNode;
 
                     }
                     break;
                 case 3 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:289:6: ^( LOOKUP functionCall (i= indexes )? )
+                    // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:296:6: ^( LOOKUP functionCall (i= indexes )? )
                     {
                     	Match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1279); 
 
                     	Match(input, Token.DOWN, null); 
                     	PushFollow(FOLLOW_functionCall_in_lookup1281);
-                    	functionCall52 = functionCall();
+                    	functionCall53 = functionCall();
                     	state.followingStackPointer--;
 
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:289:29: (i= indexes )?
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:296:29: (i= indexes )?
                     	int alt24 = 2;
                     	int LA24_0 = input.LA(1);
 
@@ -2592,7 +2601,7 @@ public partial class SGLTreeWalker : TreeParser
                     	switch (alt24) 
                     	{
                     	    case 1 :
-                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:289:29: i= indexes
+                    	        // D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g:296:29: i= indexes
                     	        {
                     	        	PushFollow(FOLLOW_indexes_in_lookup1285);
                     	        	i = indexes();
@@ -2606,7 +2615,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
                     	Match(input, Token.UP, null); 
-                    	node = i != null ? new LookupNode(functionCall52, i) : node = functionCall52;
+                    	node = i != null ? new LookupNode(functionCall53, i) : node = functionCall53;
 
                     }
                     break;

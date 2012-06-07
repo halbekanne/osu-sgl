@@ -20,11 +20,11 @@ namespace SGL.Nodes.Operators
             this.node2 = node2;
         }
 
-        public abstract Value Operate(Value value1, Value value2);
+        protected abstract Value Operate(Value value1, Value value2);
 
         //public abstract bool CheckArguments(ValType type1, ValType type2);
 
-        public Value Evaluate()
+        protected override Value Invoke()
         {
             Value value1 = node1.Evaluate();
             Value value2 = node2.Evaluate();

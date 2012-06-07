@@ -45,8 +45,14 @@
     <Compile Include="Elements\CallItem.cs" />
     <Compile Include="Library\Functions\Calculation\SinFunction.cs" />
     <Compile Include="Library\Functions\UserFunction.cs" />
-    <Compile Include="Nodes\AssignVariableNode.cs" />
-    <Compile Include="Nodes\AtomNode.cs" />
+    <Compile Include="Nodes\Actions\AssignVariableNode.cs" />
+    <Compile Include="Nodes\Actions\VarDecNode.cs" />
+    <Compile Include="Nodes\Actions\VarIncNode.cs" />
+    <Compile Include="Nodes\ControlFlow\AtNode.cs" />
+    <Compile Include="Nodes\ControlFlow\BlockNode.cs" />
+    <Compile Include="Nodes\ControlFlow\IfNode.cs" />
+    <Compile Include="Nodes\ControlFlow\WhileNode.cs" />
+    <Compile Include="Nodes\Values\AtomNode.cs" />
     <Compile Include="Elements\GlobalMemory.cs" />
     <Compile Include="Elements\LibraryManager.cs" />
     <Compile Include="Elements\Value.cs" />
@@ -54,11 +60,11 @@
     <Compile Include="Library\Functions\Function.cs" />
     <Compile Include="Nodes\ControlFlow\ForNode.cs" />
     <Compile Include="Nodes\AbstractNode.cs" />
-    <Compile Include="Nodes\InstanciateClassNode.cs" />
+    <Compile Include="Nodes\Actions\InstanciateClassNode.cs" />
     <Compile Include="Antlr\SGLLexer.cs" />
     <Compile Include="Antlr\SGLParser.cs" />
     <Compile Include="Antlr\SGLTreeWalker.cs" />
-    <Compile Include="Nodes\InvokeFunctionNode.cs" />
+    <Compile Include="Nodes\Actions\InvokeFunctionNode.cs" />
     <Compile Include="Nodes\Operators\AbstractBinaryOperatorNode.cs" />
     <Compile Include="Nodes\Operators\AbstractTernaryOperatorNode.cs" />
     <Compile Include="Nodes\Operators\AbstractUnaryOperatorNode.cs" />
@@ -79,6 +85,11 @@
     <Compile Include="Nodes\Operators\Logical\NotEqualsNode.cs" />
     <Compile Include="Nodes\Operators\Logical\OrNode.cs" />
     <Compile Include="Nodes\Operators\Misc\ConditionalNode.cs" />
+    <Compile Include="Nodes\Values\BreakNode.cs" />
+    <Compile Include="Nodes\Values\IdentifierNode.cs" />
+    <Compile Include="Nodes\Values\ListNode.cs" />
+    <Compile Include="Nodes\Values\LookupNode.cs" />
+    <Compile Include="Nodes\Values\ReturnNode.cs" />
     <Compile Include="Storyboard\Animation.cs" />
     <Compile Include="Storyboard\AnimationType.cs" />
     <Compile Include="Storyboard\Command.cs" />
@@ -103,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Library\Functions\Conversion\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Nodes\nodes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

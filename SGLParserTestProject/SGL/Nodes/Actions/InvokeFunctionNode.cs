@@ -6,7 +6,7 @@ using SGL.Elements;
 using SGL.Library.Classes;
 using SGL.Library.Functions;
 
-namespace SGL.Nodes
+namespace SGL.Nodes.Actions
 {
     class InvokeFunctionNode : AbstractNode
     {
@@ -25,8 +25,19 @@ namespace SGL.Nodes
             this.parameters = parameters;
         }
 
+        public InvokeFunctionNode(String objectVar, List<AbstractNode> indexes, String funcName, List<AbstractNode> parameters, int line)
+        {
+            // TODO: Do stuff
+            // It's checked weather or not the function name itself exists in order to avoid typos at an early state
+            if (!LibraryManager.Instance.IsFunctionKnown(funcName))
+            {
+                throw new CompilerException(line, 301, funcName);
+            }
+            this.funcName = funcName;
+            this.parameters = parameters;
+        }
 
-        public override Value Invoke()
+        protected override Value Invoke()
         {
             List<Value> values = new List<Value>();
             foreach (AbstractNode node in parameters)

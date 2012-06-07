@@ -9,7 +9,7 @@ namespace SGL.Nodes.Operators.Arithmetical
     {
         public NegateBoolNode(AbstractNode node) : base(node) { }
 
-        public override Value Operate(Value value)
+        protected override Value Operate(Value value)
         {
             if (value.Type == ValType.Boolean)
             {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using SGL.Elements;
 
-namespace SGL.Nodes
+namespace SGL.Nodes.Actions
 {
     class AssignVariableNode : AbstractNode
     {
@@ -32,7 +32,7 @@ namespace SGL.Nodes
             this.line = line;
         }
 
-        public override Value Invoke()
+        protected override Value Invoke()
         {
             Value exprV = expression.Evaluate();
 

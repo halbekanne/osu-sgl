@@ -9,7 +9,7 @@ namespace SGL.Nodes.Operators.Logical
     {
         public OrNode(AbstractNode node1, AbstractNode node2) : base(node1, node2) { }
 
-        public override Value Operate(Value value1, Value value2)
+        protected override Value Operate(Value value1, Value value2)
         {
             if (value1.Type == ValType.Boolean && value2.Type == ValType.Boolean)
             {

@@ -203,7 +203,7 @@ namespace SGL.Elements
         }
 
 
-        public void ClearVariables()
+        public void ClearScope()
         {
             variables = new Dictionary<String, Value>();
         }
