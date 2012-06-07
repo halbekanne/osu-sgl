@@ -7,7 +7,7 @@ namespace SGL.Storyboard
 {
     public abstract class VisualObject
     {
-        private List<Command> storyboardCommands;
+        private List<Command> storyboardCommands = new List<Command>();
 
         protected string layer;
         protected string origin;

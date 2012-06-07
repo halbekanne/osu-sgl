@@ -21,7 +21,7 @@ namespace SGL.Library.Classes
         private Sprite(String path)
         {
             this.path = path;
-
+            InitializiseSpriteObject();
         }
 
         private void InitializiseSpriteObject()

@@ -43,7 +43,8 @@ namespace SGL.Elements
             get
             {
                 // TODO: Exception
-                if (type == ValType.Integer || type == ValType.Double) return (int)value;
+                if (type == ValType.Integer) return (int)value;
+                else if (type == ValType.Double) return Convert.ToInt32((double)value);
                 else throw new InvalidOperationException();
             }
         }
@@ -53,7 +54,8 @@ namespace SGL.Elements
             get
             {
                 // TODO: Exception
-                if (type == ValType.Double || type == ValType.Integer) return (double)value;
+                if (type == ValType.Double) return (double)value;
+                else if (type == ValType.Integer) return Convert.ToDouble((int)value);
                 else throw new InvalidOperationException();
             }
         }

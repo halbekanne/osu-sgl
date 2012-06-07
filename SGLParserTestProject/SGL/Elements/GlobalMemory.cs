@@ -35,6 +35,21 @@ namespace SGL.Elements
         private String currentCall = "main";
         private List<VisualObject> storyboardObjects = new List<VisualObject>();
 
+        private String debug = "";
+
+        public void debugAddLine(String line)
+        {
+            debug += line + "\r\n";
+        }
+
+        public String DebugString
+        {
+            get
+            {
+                return debug;
+            }
+        }
+
         public String CurrentCall
         {
             get
@@ -76,6 +91,21 @@ namespace SGL.Elements
             get
             {
                 return globalScope;
+            }
+        }
+
+        public StringBuilder StoryboardCode
+        {
+            get
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (VisualObject storyboardObject in storyboardObjects)
+                {
+                    storyboardObject.GenerateSbCode(sb);
+                }
+
+                // TODO: make the storyboard code actually working
+                return sb;
             }
         }
 

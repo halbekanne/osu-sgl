@@ -114,6 +114,9 @@
     <Compile Include="Storyboard\Command.cs" />
     <Compile Include="Storyboard\SpriteObject.cs" />
     <Compile Include="Storyboard\VisualObject.cs" />
+    <Compile Include="Tests\AbstractTest.cs" />
+    <Compile Include="Tests\Tester.cs" />
+    <Compile Include="Tests\Values\Variable1Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="antlr.runtime">

@@ -19,7 +19,7 @@ namespace SGL.Nodes.Values
                 String newString = (String)value;
                 newString = newString.Replace("\\\\", "\\");
                 newString = newString.Replace("\\\"", "\"");
-                value = new Value(newString, ValType.String);
+                value = newString;
             }
 
             this.value = (value == null) ? Value.NULL : new Value(value,type);

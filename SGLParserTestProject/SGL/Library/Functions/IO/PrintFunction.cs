@@ -10,7 +10,7 @@ namespace SGL.Library.Functions.IO
 
         private void print(object value)
         {
-            Console.WriteLine(value.ToString());
+            GlobalMemory.Instance.debugAddLine(value.ToString());
         }
 
         public override Value Invoke(List<Value> param)

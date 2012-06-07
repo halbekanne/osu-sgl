@@ -46,14 +46,20 @@ namespace SGL
             try
             {
 
+                //Console.WriteLine("Input:" + input);
                 // Step 1: Converting the input stream into tokens
                 CommonTokenStream tokens = GenerateTokens(input);
 
+                //Console.WriteLine("Tokens:" + tokens.ToString());
                 // Step 2: Converting the tokens into a tree
                 CommonTreeNodeStream tree = GenerateTree(tokens);
+                
+                // Preparation: Clearing the GlobalMemory
+                this.Clear();
 
                 // Step 3: Compiling the tree into storyboard code
                 String output = GenerateStoryboardCode(tree);
+                String debug = GlobalMemory.Instance.DebugString;
 
                 output = "[Events]\r\n" +
                     "//Background and Video events\r\n" +
@@ -62,6 +68,13 @@ namespace SGL
                     "//Storyboard Layer 2 (Pass)\r\n" +
                     "//Storyboard Layer 3 (Foreground)\r\n" + output + "\r\n" +
                     "//Storyboard Sound Samples";
+
+                if (!debug.Equals(""))
+                {
+                    output = "Debug:\r\n" + debug + "\r\nStoryboard:\r\n" + output;
+                }
+
+                
 
                 return output;
             }
@@ -149,7 +162,7 @@ namespace SGL
             this.objectMethods = parser.objectMethods;*/
 
             // Print tree
-            Console.WriteLine(this.treeString);
+            Console.WriteLine("Tree:" + ast.ToStringTree());
 
             if (timeRecording)
             {
@@ -170,7 +183,7 @@ namespace SGL
             SGLTreeWalker treewalker = new SGLTreeWalker(input, true);
             treewalker.main().Evaluate();
             //String output = treewalker.GetStoryboardCode().ToString();
-            String output = "";
+            String output = GlobalMemory.Instance.StoryboardCode.ToString();
 
             if (timeRecording)
             {
@@ -181,7 +194,7 @@ namespace SGL
         }
 
 
-        public static void BuildLibrary()
+        private void Clear()
         {
 
             GlobalMemory.Clear();
