@@ -39,6 +39,7 @@ namespace SGL.Nodes.Actions
             this.parameters = parameters;
             this.objectVar = objectVar;
             this.scope = scope;
+            this.line = line;
         }
 
         protected override Value Invoke()
