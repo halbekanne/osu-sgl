@@ -10,8 +10,10 @@ namespace SGL.Nodes.Actions
 {
     class InvokeFunctionNode : AbstractNode
     {
+        private String objectVar;
         private String funcName;
         private List<AbstractNode> parameters;
+        private Scope scope;
         private int line;
 
         public InvokeFunctionNode(String funcName, List<AbstractNode> parameters, int line)
@@ -25,28 +27,49 @@ namespace SGL.Nodes.Actions
             this.parameters = parameters;
         }
 
-        public InvokeFunctionNode(String objectVar, List<AbstractNode> indexes, String funcName, List<AbstractNode> parameters, int line)
+        public InvokeFunctionNode(String objectVar, List<AbstractNode> indexes, String funcName, List<AbstractNode> parameters, Scope scope, int line)
         {
             // TODO: Do stuff
             // It's checked weather or not the function name itself exists in order to avoid typos at an early state
-            if (!LibraryManager.Instance.IsFunctionKnown(funcName))
+            /*if (!LibraryManager.Instance.IsFunctionKnown(funcName))
             {
                 throw new CompilerException(line, 301, funcName);
-            }
+            }*/
             this.funcName = funcName;
             this.parameters = parameters;
+            this.objectVar = objectVar;
+            this.scope = scope;
         }
 
         protected override Value Invoke()
         {
-            List<Value> values = new List<Value>();
-            foreach (AbstractNode node in parameters)
+            if (objectVar != null && scope != null)
             {
-                values.Add(node.Evaluate());
-            }
+                List<Value> values = new List<Value>();
+                foreach (AbstractNode node in parameters)
+                {
+                    values.Add(node.Evaluate());
+                }
 
-            Function function = LibraryManager.Instance.GetFunction(funcName, values);
-            return function.Invoke(values);
+                Value resolvedValue = scope.Resolve(objectVar);
+                if (resolvedValue.Type == ValType.Object)
+                {
+                    Class objectInstance = resolvedValue.ObjectValue;
+                    return objectInstance.InvokeMethod(funcName, values);
+                }
+                throw new Exception("bla");
+            }
+            else
+            {
+                List<Value> values = new List<Value>();
+                foreach (AbstractNode node in parameters)
+                {
+                    values.Add(node.Evaluate());
+                }
+
+                Function function = LibraryManager.Instance.GetFunction(funcName, values);
+                return function.Invoke(values);
+            }
         }
 
         public override int Line

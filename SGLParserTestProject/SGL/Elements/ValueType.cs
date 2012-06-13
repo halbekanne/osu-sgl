@@ -2,7 +2,7 @@
 {
     public enum ValType
     {
-        Integer, Double, Boolean, String, List,
+        Integer, StrictInteger, Double, StrictDouble, Boolean, String, List,
         Object, Layer, Origin, LoopType,
         Null, Void, Break, Return
     }

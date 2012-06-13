@@ -37,6 +37,7 @@ namespace SGL.Elements
                 case 215: return "A value from type " + args[0] + " is accessed as a list.";
                 case 216: return "A value from type " + args[0] + " was expected, but was " + args[1] + ".";
                 case 217: return "The " + args[0] + " value in a(n) " + args[1] + "-statement must be from type " + args[2] + ", but was " + args[3] + ".";
+                
 
                 // Functions and classes
                 case 301: return "The function " + args[0] + " doesn't exist. Please check for typos.";
@@ -44,10 +45,13 @@ namespace SGL.Elements
                 case 303: return "The function " + args[0] + " already exists with that number of arguments (" + args[1] + "), two functions with the same number of arguments would be ambiguous.";
                 case 311: return "The class '" + args[0] + "' doesn't exist. Please check for typos.";
                 case 312: return "The class '" + args[0] + "' has no constructor for the following parameter types: (" + args[1] + ").";
+                case 313: return "The method '" + args[1] + "' from the class '" + args[0] + "' was called, but the parameters given weren't expected by this method: (" + args[2] + ").";
+                case 314: return "The method '" + args[1] + "' from the class '" + args[0] + "' doesn't exist.";
+                case 315: return "The value for easing must be between 0 and 2 but was " + args[0] + ".";
 
                 // other
-                case 401: return "The resulting value is smaller than the smallest possible " + args[0] + " value supported by the OS.";
-                case 402: return "The resulting value is bigger than the biggest possible " + args[0] + " value supported by the OS.";
+                case 401: return "The resulting value is smaller than the smallest representable " + args[0] + " value.";
+                case 402: return "The resulting value is bigger than the biggest representable " + args[0] + " value.";
                 case 403: return "The resulting value is NaN, meaning that it's impossible to return a(n) " + args[0] + " value.";
 
                 // Should never occur
@@ -65,7 +69,7 @@ namespace SGL.Elements
             set
             {
                 // Add line information only if previous nodes didn't add this information
-                if (this.line != -1)
+                if (this.line < 1)
                 {
                     this.line = value;
                 }

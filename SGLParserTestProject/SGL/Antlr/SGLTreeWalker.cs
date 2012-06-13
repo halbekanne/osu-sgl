@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g 2012-06-07 20:45:04
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 D:\\sgl4c#\\NewSGLGramma\\SGLTreeWalker.g 2012-06-12 20:12:13
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -937,7 +937,7 @@ public partial class SGLTreeWalker : TreeParser
 
 
             	Match(input, Token.UP, null); 
-            	 node = new InvokeFunctionNode(variable19, indexes20, ((Identifier21 != null) ? Identifier21.Text : null), expressionList22, Identifier21.Line); 
+            	 node = new InvokeFunctionNode(variable19, indexes20, ((Identifier21 != null) ? Identifier21.Text : null), expressionList22, currentScope, Identifier21.Line); 
 
             }
 

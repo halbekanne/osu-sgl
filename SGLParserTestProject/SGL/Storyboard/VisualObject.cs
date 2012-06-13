@@ -5,13 +5,14 @@ using System.Text;
 
 namespace SGL.Storyboard
 {
-    public abstract class VisualObject
+    public abstract class VisualObject : IComparable
     {
         private List<Command> storyboardCommands = new List<Command>();
 
-        protected string layer;
-        protected string origin;
+        protected string layer = "Foreground";
+        protected string origin = "Centre";
         protected string filepath;
+        protected int priority = 0;
 
         public VisualObject(string layer, string origin, string filepath)
         {
@@ -40,5 +41,44 @@ namespace SGL.Storyboard
         }
 
         protected abstract String GetStoryboardInitCode();
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+
+            // sort order: 1. layer, 2. priority
+            VisualObject that = obj as VisualObject;
+            if (that != null)
+            {
+                int layerCompare = this.LayerToInt().CompareTo(that.LayerToInt());
+                if (layerCompare != 0) return layerCompare;
+                else
+                {
+                    return this.Priority.CompareTo(that.Priority);
+                }
+            } 
+            else
+                throw new ArgumentException("Object is not a VisualObject");
+        }
+
+        public int LayerToInt()
+        {
+            switch (this.layer)
+            {
+                case "Background": return 0;
+                case "Fail": return 1;
+                case "Pass": return 2;
+                case "Foreground": return 3;
+                default: throw new Exception("unknown layer type");
+            }
+        }
+
+        public int Priority
+        {
+            get
+            {
+                return priority;
+            }
+        }
     }
 }

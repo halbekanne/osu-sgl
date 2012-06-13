@@ -99,10 +99,41 @@ namespace SGL.Elements
             get
             {
                 StringBuilder sb = new StringBuilder();
+                sb.Append("//Background and Video events\r\n");
+
+                // sort all sbObjects: 1. layer, 2. priority
+                storyboardObjects.Sort();
+
+                int layer = -1;
                 foreach (VisualObject storyboardObject in storyboardObjects)
                 {
+                    while (layer < storyboardObject.LayerToInt())
+                    {
+                        layer++;
+                        switch (layer)
+                        {
+                            case 0: sb.Append("//Storyboard Layer 0 (Background)\r\n"); break;
+                            case 1: sb.Append("//Storyboard Layer 1 (Fail)\r\n"); break;
+                            case 2: sb.Append("//Storyboard Layer 2 (Pass)\r\n"); break;
+                            case 3: sb.Append("//Storyboard Layer 3 (Foreground)\r\n"); break;
+                        }
+                    }
                     storyboardObject.GenerateSbCode(sb);
                 }
+
+                while (layer < 3)
+                {
+                    layer++;
+                    switch (layer)
+                    {
+                        case 0: sb.Append("//Storyboard Layer 0 (Background)\r\n"); break;
+                        case 1: sb.Append("//Storyboard Layer 1 (Fail)\r\n"); break;
+                        case 2: sb.Append("//Storyboard Layer 2 (Pass)\r\n"); break;
+                        case 3: sb.Append("//Storyboard Layer 3 (Foreground)\r\n"); break;
+                    }
+                }
+
+                sb.Append("//Storyboard Sound Samples");
 
                 // TODO: make the storyboard code actually working
                 return sb;

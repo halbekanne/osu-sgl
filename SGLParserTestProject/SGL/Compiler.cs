@@ -61,13 +61,13 @@ namespace SGL
                 String output = GenerateStoryboardCode(tree);
                 String debug = GlobalMemory.Instance.DebugString;
 
-                output = "[Events]\r\n" +
+                /*output = "[Events]\r\n" +
                     "//Background and Video events\r\n" +
                     "//Storyboard Layer 0 (Background)\r\n" +
                     "//Storyboard Layer 1 (Fail)\r\n" +
                     "//Storyboard Layer 2 (Pass)\r\n" +
                     "//Storyboard Layer 3 (Foreground)\r\n" + output + "\r\n" +
-                    "//Storyboard Sound Samples";
+                    "//Storyboard Sound Samples";*/
 
                 if (!debug.Equals(""))
                 {

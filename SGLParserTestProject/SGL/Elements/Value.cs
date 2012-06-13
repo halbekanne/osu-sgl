@@ -307,6 +307,10 @@ namespace SGL.Elements
                     return type == ValType.Integer || type == ValType.Double;
                 case ValType.Double:
                     return type == ValType.Integer || type == ValType.Double;
+                case ValType.StrictInteger: 
+                    return type == ValType.Integer;
+                case ValType.StrictDouble: 
+                    return type == ValType.Double;
                 default:
                     return type == acceptedType;
             }
@@ -319,7 +323,7 @@ namespace SGL.Elements
             for (int i = 0; i < acceptedTypes.Length; i++)
             {
                 ValType acceptedType = acceptedTypes[i];
-                if (valueList[i].Type != acceptedType) return false;
+                if (!valueList[i].TypeEquals(acceptedType)) return false;
             }
             return true;
         }

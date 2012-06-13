@@ -22,6 +22,7 @@ namespace SGL.Nodes.Actions
             }
             this.className = className;
             this.parameters = parameters;
+            this.line = line;
         }
 
 
