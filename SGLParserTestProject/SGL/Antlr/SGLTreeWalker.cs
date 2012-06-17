@@ -236,13 +236,17 @@ public partial class SGLTreeWalker : TreeParser
     	Scope currentScope;
     	
     	private Boolean isMain = false;
-          
-    	public SGLTreeWalker(CommonTreeNodeStream nodes, Boolean isMain) : this(nodes) {
+
+        public SGLTreeWalker(ITreeNodeStream nodes, Boolean isMain)
+            : this(nodes)
+        {
         	this.currentScope = new Scope();
         	this.isMain = isMain;
         }
-        
-        public SGLTreeWalker(CommonTreeNodeStream nodes, Scope sc) : this(nodes) {
+
+        public SGLTreeWalker(ITreeNodeStream nodes, Scope sc)
+            : this(nodes)
+        {
         	this.currentScope = sc;
         }
           

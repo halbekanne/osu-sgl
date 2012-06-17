@@ -50,13 +50,13 @@ namespace SGL
                 // Step 1: Converting the input stream into tokens
                 CommonTokenStream tokens = GenerateTokens(input);
 
+                // Preparation: Clearing the GlobalMemory
+                this.Clear();
+
                 //Console.WriteLine("Tokens:" + tokens.ToString());
                 // Step 2: Converting the tokens into a tree
                 CommonTreeNodeStream tree = GenerateTree(tokens);
                 
-                // Preparation: Clearing the GlobalMemory
-                this.Clear();
-
                 // Step 3: Compiling the tree into storyboard code
                 String output = GenerateStoryboardCode(tree);
                 String debug = GlobalMemory.Instance.DebugString;

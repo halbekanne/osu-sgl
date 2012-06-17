@@ -100,11 +100,12 @@ namespace SGL.Elements
                 String trace = GetStackTrace();
                 if (trace != null)
                 {
-                    return "Error at line " + this.line + " (" + GlobalMemory.Instance.CurrentCall + "): " + GetErrorMessage(errorCode, args) + "\r\n" + trace;
+                    //return "Error at line " + this.line + " (" + GlobalMemory.Instance.CurrentCall + "): " + GetErrorMessage(errorCode, args) + "\r\n" + trace;
+                    return "Error: " + GetErrorMessage(errorCode, args) + "\r\n\toccurred at line "  + this.line + " (" + GlobalMemory.Instance.CurrentCall + ")" + "\r\n" + trace;
                 }
                 else
                 {
-                    return "Error at line " + this.line + " (" + GlobalMemory.Instance.CurrentCall + "): " + GetErrorMessage(errorCode, args);
+                    return "Error: " + GetErrorMessage(errorCode, args) + "\r\n\toccurred at line " + this.line + " (" + GlobalMemory.Instance.CurrentCall + ")";
                 }
             }
         }
@@ -121,7 +122,7 @@ namespace SGL.Elements
             {
                 String traceRoute = "";
                 foreach (CallItem item in callStack) {
-                    traceRoute += " arising from line " + item.Line + " (" + item.Call + ")\r\n";
+                    traceRoute += "\tarising from line " + item.Line + " (" + item.Call + ")\r\n";
                 }
                 return traceRoute;
             }
