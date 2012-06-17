@@ -19,12 +19,13 @@ namespace SGL.Nodes.Actions
         public InvokeFunctionNode(String funcName, List<AbstractNode> parameters, int line)
         {
             // It's checked weather or not the function name itself exists in order to avoid typos at an early state
-            if (!LibraryManager.Instance.IsFunctionKnown(funcName))
+            if (!LibraryManager.Instance.IsFunctionKnown(funcName) && !GlobalMemory.Instance.IsFunctionKnown(funcName))
             {
                 throw new CompilerException(line, 301, funcName);
             }
             this.funcName = funcName;
             this.parameters = parameters;
+            this.line = line;
         }
 
         public InvokeFunctionNode(String objectVar, List<AbstractNode> indexes, String funcName, List<AbstractNode> parameters, Scope scope, int line)
@@ -57,6 +58,7 @@ namespace SGL.Nodes.Actions
                 {
                     Class objectInstance = resolvedValue.ObjectValue;
                     return objectInstance.InvokeMethod(funcName, values);
+
                 }
                 throw new Exception("bla");
             }
@@ -68,8 +70,21 @@ namespace SGL.Nodes.Actions
                     values.Add(node.Evaluate());
                 }
 
-                Function function = LibraryManager.Instance.GetFunction(funcName, values);
-                return function.Invoke(values);
+                Function function;
+                if (LibraryManager.Instance.IsFunctionKnown(funcName))
+                {
+                    function = LibraryManager.Instance.GetFunction(funcName, values);
+                    return function.Invoke(values);
+                }
+                else
+                {
+                    GlobalMemory.Instance.AddCallToStack(new CallItem(funcName, Line));
+                    function = GlobalMemory.Instance.GetFunction(funcName, values);
+                    Value returnValue = function.Invoke(values);
+                    GlobalMemory.Instance.PopLastCall();
+                    return returnValue;
+                }
+                
             }
         }
 

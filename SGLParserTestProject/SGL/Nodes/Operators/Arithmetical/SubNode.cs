@@ -16,7 +16,7 @@ namespace SGL.Nodes.Operators.Arithmetical
                 // 1.423 - 2; => Float
                 return new Value(value1.DoubleValue - value2.DoubleValue, ValType.Double);
             }
-            else if (value1.Type == ValType.Integer && value1.Type == ValType.Integer)
+            else if (value1.Type == ValType.Integer && value2.Type == ValType.Integer)
             {
                 // 5 - 4; => Integer
                 return new Value(value1.IntValue - value2.IntValue, ValType.Integer);

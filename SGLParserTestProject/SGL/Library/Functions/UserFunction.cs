@@ -14,13 +14,17 @@ namespace SGL.Library.Functions
     class UserFunction : Function
     {
         private List<String> parameterNames;
-        private CommonTreeNodeStream methodBody;
+        private CommonTreeNodeStream functionBody;
+        private String name;
+        private int definedLine;
 
         // method xyt(param1, param2) {
-        public UserFunction(String name, List<String> parameterNames, CommonTreeNodeStream methodBody)
+        public UserFunction(String name, List<String> parameterNames, CommonTreeNodeStream functionBody, int definedLine)
         {
             this.parameterNames = parameterNames;
-            this.methodBody = methodBody;
+            this.functionBody = functionBody;
+            this.name = name;
+            this.definedLine = definedLine;
         }
 
         public override Value Invoke(List<Value> parameters)
@@ -35,10 +39,9 @@ namespace SGL.Library.Functions
                 }
 
                 // Create a tree walker to evaluate this method's code block  
-                CommonTreeNodeStream nodes = new CommonTreeNodeStream(methodBody);
-                SGLTreeWalker walker = new SGLTreeWalker(nodes, methodScope);
+                SGLTreeWalker walker = new SGLTreeWalker(functionBody, methodScope);
 
-                // Ok executing the function then
+                // Ok, executing the function then
                 Value returnValue = walker.main().Evaluate();
 
                 // we shouldn't check the return type

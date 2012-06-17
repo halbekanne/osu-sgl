@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using System.Text;
 using SGL.Storyboard;
+using SGL.Library.Functions;
 
 namespace SGL.Elements
 {
@@ -34,6 +35,7 @@ namespace SGL.Elements
         private Stack<CallItem> callStack = new Stack<CallItem>();
         private String currentCall = "main";
         private List<VisualObject> storyboardObjects = new List<VisualObject>();
+        private Dictionary<string, Function> functions = new Dictionary<string, Function>();
 
         private String debug = "";
 
@@ -50,6 +52,44 @@ namespace SGL.Elements
             }
         }
 
+        public void RegisterFunction(string name, Function func)
+        {
+            functions.Add(name, func);
+        }
+
+        public bool IsFunctionKnown(String funcName)
+        {
+            if (functions.ContainsKey(funcName))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public Function GetFunction(string name, List<Value> parameters)
+        {
+            // look if the function exists
+            if (functions.ContainsKey(name))
+            {
+                try
+                {
+                    return functions[name];
+                }
+                catch (CompilerException ce)
+                {
+                    if (ce.ErrorCode == 312)
+                    {
+                        ce.SetArguments(name, Value.PrintTypeList(parameters));
+                    }
+                    throw ce;
+                }
+            }
+            else
+            {
+                throw new CompilerException(-1, 311, name, Value.PrintTypeList(parameters));
+            }
+        }
+
         public String CurrentCall
         {
             get
@@ -62,6 +102,12 @@ namespace SGL.Elements
         {
             callStack.Push(new CallItem(currentCall, callItem.Line));
             currentCall = callItem.Call;
+        }
+
+        public void PopLastCall()
+        {
+            CallItem lastCall = callStack.Pop();
+            currentCall = lastCall.Call;
         }
 
         public Stack<CallItem> CallStack
