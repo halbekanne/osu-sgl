@@ -7,7 +7,7 @@ namespace SGL.Nodes.ControlFlow
 {
     class ForNode : AbstractNode
     {
-        private AbstractNode init;
+        private List<AbstractNode> init = new List<AbstractNode>();
         private AbstractNode condition;
         private AbstractNode iteration;
         private AbstractNode block;
@@ -19,7 +19,7 @@ namespace SGL.Nodes.ControlFlow
 
         public AbstractNode Init {
             set {
-                this.init = value;
+                this.init.Add(value);
             }
         }
 
@@ -56,11 +56,19 @@ namespace SGL.Nodes.ControlFlow
             */
               
             //Console.WriteLine("--------------------------------------");
-            for (init.Evaluate(); condition.Evaluate().BoolValue; iteration.Evaluate()) {
+            for (EvaluateInit(); condition.Evaluate().BoolValue; iteration.Evaluate())
+            {
                 block.Evaluate();
             }
 
             return Value.VOID;
+        }
+
+        private void EvaluateInit() {
+            foreach (AbstractNode initStatement in init)
+            {
+                initStatement.Evaluate();
+            }
         }
 
         public override int Line

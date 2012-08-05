@@ -34,7 +34,7 @@ namespace SGL.Nodes.Actions
 
         protected override Value Invoke()
         {
-            Value exprV = expression.Evaluate();
+            Value exprV = expression == null ? Value.NULL : expression.Evaluate();
 
             if (indexes.Count < 1)
             {

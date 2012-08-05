@@ -11,6 +11,7 @@ using System.IO;
 using System.Diagnostics;
 using SGL;
 using SGL.Elements;
+using SGL.Tests;
 
 namespace SGLTest
 {
@@ -56,7 +57,7 @@ namespace SGLTest
             {
                 //Console.WriteLine("input Text: " + SGLBox.Document.Text);
                 Compiler compiler = new Compiler();
-                compiler.SetTimeRecording(false);
+                //compiler.SetTimeRecording(false);
                 storyboardBox.Document.Text = compiler.Run(SGLBox.Document.Text);
 
                 statusLabel.Text = "";
@@ -322,6 +323,12 @@ namespace SGLTest
             {
                 this.errorBox.Clear();
             }
+        }
+
+        private void runTests_Click(object sender, EventArgs e)
+        {
+            UnitTester tester = new UnitTester();
+            tester.RunTests();
         }
 
 

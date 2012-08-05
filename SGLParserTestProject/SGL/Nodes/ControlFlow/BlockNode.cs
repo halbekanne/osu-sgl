@@ -32,7 +32,7 @@ namespace SGL.Nodes.ControlFlow
         {
             // handle offset
             //this.scope.ClearScope();
-            this.scope.AddOffset(addOffset);
+            scope.Offset += addOffset;
 
             foreach (AbstractNode stat in statements)
             {
@@ -51,7 +51,7 @@ namespace SGL.Nodes.ControlFlow
             }
 
             // Clear scope for reuse
-            scope.ClearScope();
+            scope.Clear();
 
             // return VOID if no return was done earlier
             return Value.VOID;

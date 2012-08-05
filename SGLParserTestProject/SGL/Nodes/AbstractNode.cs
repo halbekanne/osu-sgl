@@ -30,6 +30,11 @@ namespace SGL.Nodes
                 }
                 throw;
             }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception occured at line " + Line);
+                throw;
+            }
         }
 
         abstract protected Value Invoke();

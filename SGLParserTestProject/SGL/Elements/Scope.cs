@@ -10,7 +10,6 @@ namespace SGL.Elements
         private Scope parent;
         private Dictionary<String, Value> variables;// = new Dictionary<String, SGLValue>();
         private int offset = 0;
-        //private List<SpriteObject> spriteObjects = null;
 
         public Scope()
         {
@@ -19,17 +18,22 @@ namespace SGL.Elements
             variables = new Dictionary<String, Value>();
         }
 
-        public int GetOffset() {
-            return offset;
+        public Scope(Scope p)
+        {
+            parent = p;
+            variables = new Dictionary<String, Value>();
+            offset = p.Offset;
         }
 
-        public void AddOffset(int offset)
-        {
-            //this.offset = parent.GetOffset();
-            //Console.WriteLine("parent offset: " + parent.GetOffset());
-            this.offset = parent.GetOffset();
-            this.offset += offset;
-            //Console.WriteLine("Set offset in scope " + getParentNumber() + " to " + this.offset);
+        public int Offset {
+            get
+            {
+                return offset;
+            }
+            set
+            {
+                this.offset = value;
+            }
         }
 
         public void ClearOffset()
@@ -37,52 +41,86 @@ namespace SGL.Elements
             this.offset = 0;
         }
 
-        public Scope(Scope p)
+        /// <summary>
+        /// Define a variable for the first time.
+        /// </summary>
+        /// <param name="varName"></param>
+        public void Define(String varName)
         {
-            parent = p;
-            variables = new Dictionary<String, Value>();
-            //offset = p.GetOffset();
-            //Console.WriteLine("Create new scope " + getParentNumber() + " with offset " + this.offset + " parent offset " + p.GetOffset());
-            //Console.WriteLine("Parent offset in " + getParentNumber() + " was " + offset);
-        }
-
-        public void Assign(String var, Value value)
-        {
-            if (Resolve(var) != null)
+            if (Resolve(varName) != null)
             {
-                // There is already such a variable, re-assign it
-                this.ReAssign(var, value);
+                // the variable was already declared
+                throw new CompilerException(-1, 219, varName);
             }
             else
             {
-                //if (IsGlobalScope()) Console.WriteLine("This is the global scope year!");
-                // A newly declared variable  
-                variables.Add(var, value);
+                variables.Add(varName, Value.NULL);
             }
         }
 
-        public Scope Copy()
+        /// <summary>
+        /// Assign a value to an already defined variable.
+        /// </summary>
+        /// <param name="varName"></param>
+        /// <param name="value"></param>
+        public void Assign(String varName, Value value)
         {
-            // Create a shallow copy of this scope. Used in case functions are  
-            // recursively called. If we wouldn't create a copy in such cases,  
-            // changing the variables would result in changes to the Maps from  
-            // other "recursive scopes".  
-            Scope s = new Scope();
-            s.variables = new Dictionary<String, Value>(this.variables);
-            return s;
+            if (variables.ContainsKey(varName))
+            {
+                variables[varName] = value;
+            }
+            else if (HasParent())
+            {
+                // The variable was not declared in this scope, so let  
+                // the parent scope re-assign it  
+                parent.Assign(varName, value);
+            }
+            else
+            {
+                // The variable was not declared at all
+                throw new CompilerException(-1, 218, varName);
+            }
         }
 
-        public Boolean IsGlobalScope()
+        /// <summary>
+        /// Resolves the value to a parameter name. May return null.
+        /// </summary>
+        /// <param name="var"></param>
+        /// <returns></returns>
+        public Value Resolve(String var)
         {
-            return parent == null;
+            Value value;
+            variables.TryGetValue(var, out value);
+            if (value != null)
+            {
+                // The variable resides in this scope  
+                return value;
+            }
+            else if (HasParent())
+            {
+                // Let the parent scope look for the variable  
+                return parent.Resolve(var);
+            }
+            else
+            {
+                // Unknown variable  
+                return null;
+            }
         }
 
-        public Scope Parent()
+        public Boolean HasParent()
         {
-            return parent;
+            return parent != null;
         }
 
-        public int getParentNumber()
+        public Scope Parent
+        {
+            get {
+                return parent;
+            }
+        }
+
+        public int CountParents()
         {
             Scope current = this;
             int parentNum = 0;
@@ -95,183 +133,10 @@ namespace SGL.Elements
 
         }
 
-        private void ReAssign(String identifier, Value value)
-        {
-            if (variables.ContainsKey(identifier))
-            {
-                variables[identifier] = value;
-
-                // The variable is declared in this scope
-                /*SGLValue oldValue;
-                variables.TryGetValue(identifier, out oldValue);
-                String type = oldValue.GetVarType();
-                if (type.Equals("int"))
-                {
-                    if (value.IsInteger())
-                    {
-                        variables[identifier] = value;
-                    }
-                    else if (value.IsFloat())
-                    {
-                        // Convert float expression to int
-                        variables[identifier] = new SGLValue((int)Math.Floor(value.AsFloat()));
-                    }
-                    else
-                    {
-                        throw new SGLCompilerException(-1, "type mismatch", "You can't assign an expression of type " + value.GetVarType() + " to an integer variable");
-                    }
-                }
-                else if (type.Equals("float"))
-                {
-                    if (value.IsNumber())
-                    {
-                        variables[identifier] = value;
-                    }
-                    else
-                    {
-                        throw new SGLCompilerException(-1, "type mismatch", "You can't assign an expression of type " + value.GetVarType() + " to a float variable");
-                    }
-                }
-                else if (type.Equals("boolean"))
-                {
-                    if (value.IsBoolean())
-                    {
-                        variables[identifier] = value;
-                    }
-                    else
-                    {
-                        throw new SGLCompilerException(-1, "type mismatch", "You can't assign an expression of type " + value.GetVarType() + " to a boolean variable");
-                    }
-                }
-                else if (type.Equals("string"))
-                {
-                    if (value.IsString())
-                    {
-                        variables[identifier] = value;
-                    }
-                    else
-                    {
-                        throw new SGLCompilerException(-1, "type mismatch", "You can't assign an expression of type " + value.GetVarType() + " to a string variable");
-                    }
-                }
-                else if (type.Equals("Object"))
-                {
-                    if (value.IsObject())
-                    {
-                        // Add this object to the spriteObjects before the reassignment, so it don't get lost
-                        spriteObjects.Add(variables[identifier].AsObject());
-                        variables[identifier] = value;
-                    }
-                    else
-                    {
-                        throw new SGLCompilerException(-1, "type mismatch", "You can't assign an expression of type " + value.GetVarType() + " to an object variable");
-                    }
-                }
-                else
-                {
-                    throw new SGLCompilerException(-1, "unknown type", "Unknown variable type (" + type + ")");
-                }*/
-                
-            }
-            else if (parent != null)
-            {
-                // The variable was not declared in this scope, so let  
-                // the parent scope re-assign it  
-                parent.ReAssign(identifier, value);
-            }
-        }
-
-
-        public Value Resolve(String var)
-        {
-            Value value;
-            variables.TryGetValue(var, out value);
-            if (value != null)
-            {
-                // The variable resides in this scope  
-                return value;
-            }
-            else if (!IsGlobalScope())
-            {
-                // Let the parent scope look for the variable  
-                return parent.Resolve(var);
-            }
-            else
-            {
-                // Unknown variable  
-                return null;
-            }
-        }
-
-
-        public void ClearScope()
+        public void Clear()
         {
             variables = new Dictionary<String, Value>();
         }
 
-
-        public List<SpriteObject> GetObjects()
-        {
-            // TODO: delete this thing?
-            List<SpriteObject> objects = new List<SpriteObject>();
-            return objects;/*
-            foreach (KeyValuePair<String,Value> pair in variables)
-            {
-                //Console.WriteLine("1: " + pair.Key);
-                if (pair.Value.Type == ValType.Object)
-                {
-                    try
-                    {
-                        //Console.WriteLine(2);
-                        objects.Add(pair.Value.ObjectValue);
-                    }
-                    catch (CompilerException sce)
-                    {
-                        if (sce.ErrorType.Equals("undeclared object"))
-                        {
-                            sce.Message = pair.Key;
-                            throw sce;
-                        }
-                    }
-                }
-                else if (pair.Value.GetType().Equals("list"))
-                {
-                    // checks if objects are in that list or in nested lists
-                    objects.AddRange(getObjectsFromList(pair.Value));
-                }
-            }
-
-            return objects;*/
-
-        }
-
-
-        private List<SpriteObject> getObjectsFromList(Value listPointer)
-        {
-            //TODO: delete this because it's not nessecary to check for objects in scopes?
-            // recursively checks if any object is in the list or any nested lists
-            List<SpriteObject> objects = new List<SpriteObject>();
-            return objects;
-            /*
-            foreach (Value item in listPointer.AsList())
-            {
-                if (item.GetType().Equals("Object"))
-                {
-                    objects.Add(item.AsObject());
-                }
-                else if (item.GetType().Equals("list"))
-                {
-                    objects.AddRange(getObjectsFromList(item));
-                }
-            }
-            return objects;*/
-        }
-
-
-        /*
-        public void SetSpriteObjects(List<SpriteObject> spriteObjects)
-        {
-            this.spriteObjects = spriteObjects;
-        }*/
     }
 }
