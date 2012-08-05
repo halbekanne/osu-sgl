@@ -10,13 +10,13 @@ namespace SGL.Elements
     public class Value : IComparable<Value>
     {
         // return null;
-        public static readonly Value NULL = new Value();
+        public static readonly Value NULL = new Value(ValType.Null);
         // no return
-        public static readonly Value VOID = new Value();
+        public static readonly Value VOID = new Value(ValType.Void);
         // break;
-        public static readonly Value BREAK = new Value();
+        public static readonly Value BREAK = new Value(ValType.Break);
         // for error stacktracing
-        public static readonly Value INVALID = new Value();
+        public static readonly Value INVALID = new Value(ValType.Invalid);
 
         private object value;
 
@@ -75,7 +75,7 @@ namespace SGL.Elements
             get
             {
                 // TODO: Exception
-                if (type == ValType.String) return (string)value;
+                if (type == ValType.String || type == ValType.Layer || type == ValType.Origin || type == ValType.LoopType) return (string)value;
                 else throw new InvalidOperationException();
             }
         }
@@ -95,7 +95,7 @@ namespace SGL.Elements
             get
             {
                 // TODO: Exception
-                if (type == ValType.Object) return (List<Value>)value;
+                if (type == ValType.List) return (List<Value>)value;
                 else throw new InvalidOperationException();
             }
         }
@@ -110,9 +110,10 @@ namespace SGL.Elements
             }
         }
 
-        private Value()
+        private Value(ValType type)
         {
             // private constructor: only used for NULL, VOID, BREAK, ...
+            this.type = type;
         }
 
 
@@ -213,7 +214,7 @@ namespace SGL.Elements
             switch (type)
             {
                 case ValType.Boolean: return BoolValue.ToString(System.Globalization.CultureInfo.InvariantCulture);
-                case ValType.Break: return "Break";
+                case ValType.Break: return "break";
                 case ValType.Double: return DoubleValue.ToString(System.Globalization.CultureInfo.InvariantCulture);
                 case ValType.Integer: return IntValue.ToString(System.Globalization.CultureInfo.InvariantCulture);
                 case ValType.Layer: return StringValue;
@@ -231,12 +232,12 @@ namespace SGL.Elements
                     return ListValue.ToString();
 
                 case ValType.LoopType: return StringValue;
-                case ValType.Null: return "Null";
-                case ValType.Object: return "Class";
+                case ValType.Null: return "null";
+                case ValType.Object: return "class";
                 case ValType.Origin: return StringValue;
-                case ValType.Return: return "Return";
+                case ValType.Return: return "return";
                 case ValType.String: return StringValue;
-                case ValType.Void: return "Void";
+                case ValType.Void: return "void";
                 default: return "unknown";
 
             }

@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 D:\\sgl4c#\\NewSGLGramma\\SGL.g 2012-06-16 21:23:53
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 D:\\sgl4c#\\NewSGLGramma\\SGL.g 2012-08-04 23:53:58
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -39,6 +39,8 @@ public partial class SGLParser : Parser
 		"<DOWN>", 
 		"<UP>", 
 		"BLOCK", 
+		"DEF", 
+		"GLOBALDEF", 
 		"ASSIGN", 
 		"STRING", 
 		"INT_NEGATE", 
@@ -84,8 +86,8 @@ public partial class SGLParser : Parser
 		"'}'", 
 		"';'", 
 		"','", 
-		"'global'", 
 		"'='", 
+		"'global'", 
 		"'['", 
 		"']'", 
 		"'.'", 
@@ -124,26 +126,27 @@ public partial class SGLParser : Parser
     public const int T__68 = 68;
     public const int T__69 = 69;
     public const int T__66 = 66;
-    public const int CLASS = 28;
+    public const int CLASS = 30;
     public const int T__67 = 67;
     public const int T__64 = 64;
+    public const int DEF = 5;
     public const int T__65 = 65;
-    public const int VAR_LIST = 16;
+    public const int VAR_LIST = 18;
     public const int T__62 = 62;
     public const int T__63 = 63;
-    public const int IntAtom = 31;
-    public const int LoopTypeAtom = 36;
-    public const int EXP_LIST = 15;
-    public const int UTF8Letter = 42;
+    public const int IntAtom = 33;
+    public const int LoopTypeAtom = 38;
+    public const int EXP_LIST = 17;
+    public const int UTF8Letter = 44;
     public const int T__61 = 61;
     public const int T__60 = 60;
     public const int EOF = -1;
-    public const int HexDigit = 40;
-    public const int BREAK = 19;
-    public const int Identifier = 29;
-    public const int IF = 22;
-    public const int FUNC_CALL = 17;
-    public const int AT = 21;
+    public const int HexDigit = 42;
+    public const int BREAK = 21;
+    public const int Identifier = 31;
+    public const int IF = 24;
+    public const int FUNC_CALL = 19;
+    public const int AT = 23;
     public const int T__55 = 55;
     public const int T__56 = 56;
     public const int T__57 = 57;
@@ -152,55 +155,56 @@ public partial class SGLParser : Parser
     public const int T__52 = 52;
     public const int T__53 = 53;
     public const int T__54 = 54;
-    public const int Comment = 44;
-    public const int EXP = 23;
-    public const int OBJ_FUNC_CALL = 18;
-    public const int FORITER = 26;
+    public const int Comment = 46;
+    public const int EXP = 25;
+    public const int OBJ_FUNC_CALL = 20;
+    public const int FORITER = 28;
     public const int T__59 = 59;
-    public const int INT_NEGATE = 7;
-    public const int UTF8Digit = 43;
-    public const int RETURN = 20;
-    public const int WhiteSpace = 45;
+    public const int INT_NEGATE = 9;
+    public const int UTF8Digit = 45;
+    public const int RETURN = 22;
+    public const int WhiteSpace = 47;
     public const int T__50 = 50;
-    public const int VARDEC = 10;
-    public const int Null = 38;
-    public const int OriginAtom = 35;
-    public const int LayerAtom = 34;
-    public const int GLOBAL_ASSIGN = 27;
-    public const int T__46 = 46;
+    public const int VARDEC = 12;
+    public const int Null = 40;
+    public const int OriginAtom = 37;
+    public const int LayerAtom = 36;
+    public const int GLOBAL_ASSIGN = 29;
     public const int T__80 = 80;
-    public const int T__47 = 47;
     public const int T__81 = 81;
     public const int T__82 = 82;
     public const int T__83 = 83;
     public const int T__48 = 48;
     public const int T__49 = 49;
-    public const int FORDEC = 24;
-    public const int StringAtom = 30;
-    public const int INDEXES = 12;
-    public const int ColorAtom = 37;
-    public const int LIST = 14;
+    public const int FORDEC = 26;
+    public const int StringAtom = 32;
+    public const int INDEXES = 14;
+    public const int ColorAtom = 39;
+    public const int T__85 = 85;
+    public const int LIST = 16;
     public const int T__84 = 84;
-    public const int BooleanAtom = 33;
-    public const int BOOL_NEGATE = 8;
-    public const int LOOKUP = 13;
-    public const int FORCOND = 25;
+    public const int T__86 = 86;
+    public const int BooleanAtom = 35;
+    public const int BOOL_NEGATE = 10;
+    public const int LOOKUP = 15;
+    public const int FORCOND = 27;
     public const int T__71 = 71;
     public const int T__72 = 72;
-    public const int VARIABLE = 11;
+    public const int VARIABLE = 13;
     public const int T__70 = 70;
     public const int BLOCK = 4;
-    public const int VarStartInit = 39;
-    public const int ASSIGN = 5;
-    public const int FloatAtom = 32;
+    public const int VarStartInit = 41;
+    public const int ASSIGN = 7;
+    public const int GLOBALDEF = 6;
+    public const int FloatAtom = 34;
     public const int T__76 = 76;
     public const int T__75 = 75;
-    public const int VARINC = 9;
+    public const int VARINC = 11;
     public const int T__74 = 74;
-    public const int EscapeSequence = 41;
+    public const int EscapeSequence = 43;
     public const int T__73 = 73;
     public const int T__79 = 79;
-    public const int STRING = 6;
+    public const int STRING = 8;
     public const int T__78 = 78;
     public const int T__77 = 77;
 
@@ -216,7 +220,7 @@ public partial class SGLParser : Parser
         public SGLParser(ITokenStream input, RecognizerSharedState state)
     		: base(input, state) {
             InitializeCyclicDFAs();
-            this.state.ruleMemo = new Hashtable[113+1];
+            this.state.ruleMemo = new Hashtable[115+1];
              
              
         }
@@ -251,7 +255,8 @@ public partial class SGLParser : Parser
 
                     // 'block' is never null 
                     CommonTree blockTree = (CommonTree)block;
-                    CommonTreeNodeStream functionNodes = new CommonTreeNodeStream(block);
+                    Console.WriteLine("HIER: " + blockTree.ToStringTree());
+                    //CommonTreeNodeStream functionNodes = new CommonTreeNodeStream(blockTree);
 
                     // The method name with the exact same type of parameters after it, is the unique key 
                     //String key = id + " " + idListTree.ChildCount;
@@ -261,7 +266,7 @@ public partial class SGLParser : Parser
                     //idListTree.GetChild(1).ChildCount;
                     
                     // (String, List<String>, CommonTreeNodeStream)
-                    GlobalMemory.Instance.RegisterFunction(name, new UserFunction(name, functionParameters, functionNodes, defLine));
+                    GlobalMemory.Instance.RegisterFunction(name, new UserFunction(name, functionParameters, blockTree, defLine));
                     //methods.Add(id, new Method(id, idListTree, blockTree));
             }
             /*
@@ -301,12 +306,10 @@ public partial class SGLParser : Parser
                 return ids;
             }
             
-            	
-    		public override void EmitErrorMessage(string msg)
-            {
-            	//throw new SGLCompilerException(-1, "Antlr.Parser", msg);
-            	throw new Exception(msg);
-            }	
+    		public override String GetErrorMessage(RecognitionException e, String[] tokenNames) {
+       			String message = base.GetErrorMessage(e, tokenNames);
+       			throw new CompilerException(e, message); 
+       		}
 
 
 
@@ -321,7 +324,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "main"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:152:1: main : mainBlock ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:153:1: main : mainBlock ;
     public SGLParser.main_return main() // throws RecognitionException [1]
     {   
         SGLParser.main_return retval = new SGLParser.main_return();
@@ -339,12 +342,12 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:153:5: ( mainBlock )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:153:7: mainBlock
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:154:5: ( mainBlock )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:154:7: mainBlock
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	PushFollow(FOLLOW_mainBlock_in_main234);
+            	PushFollow(FOLLOW_mainBlock_in_main242);
             	mainBlock1 = mainBlock();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
@@ -388,7 +391,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "mainBlock"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:160:1: mainBlock : ( mainStatement | functionDef )* -> ^( BLOCK ( mainStatement )* ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:161:1: mainBlock : ( mainStatement | functionDef )* -> ^( BLOCK ( mainStatement )* ) ;
     public SGLParser.mainBlock_return mainBlock() // throws RecognitionException [1]
     {   
         SGLParser.mainBlock_return retval = new SGLParser.mainBlock_return();
@@ -409,20 +412,20 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:162:2: ( ( mainStatement | functionDef )* -> ^( BLOCK ( mainStatement )* ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:162:4: ( mainStatement | functionDef )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:163:2: ( ( mainStatement | functionDef )* -> ^( BLOCK ( mainStatement )* ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:163:4: ( mainStatement | functionDef )*
             {
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:162:4: ( mainStatement | functionDef )*
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:163:4: ( mainStatement | functionDef )*
             	do 
             	{
             	    int alt1 = 3;
             	    int LA1_0 = input.LA(1);
 
-            	    if ( (LA1_0 == Identifier || LA1_0 == VarStartInit || LA1_0 == 50 || (LA1_0 >= 78 && LA1_0 <= 82) || LA1_0 == 84) )
+            	    if ( (LA1_0 == Identifier || LA1_0 == VarStartInit || LA1_0 == 53 || (LA1_0 >= 80 && LA1_0 <= 84) || LA1_0 == 86) )
             	    {
             	        alt1 = 1;
             	    }
-            	    else if ( (LA1_0 == 57) )
+            	    else if ( (LA1_0 == 59) )
             	    {
             	        alt1 = 2;
             	    }
@@ -431,9 +434,9 @@ public partial class SGLParser : Parser
             	    switch (alt1) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:162:5: mainStatement
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:163:5: mainStatement
             			    {
-            			    	PushFollow(FOLLOW_mainStatement_in_mainBlock254);
+            			    	PushFollow(FOLLOW_mainStatement_in_mainBlock262);
             			    	mainStatement2 = mainStatement();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
@@ -442,9 +445,9 @@ public partial class SGLParser : Parser
             			    }
             			    break;
             			case 2 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:162:21: functionDef
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:163:21: functionDef
             			    {
-            			    	PushFollow(FOLLOW_functionDef_in_mainBlock258);
+            			    	PushFollow(FOLLOW_functionDef_in_mainBlock266);
             			    	functionDef3 = functionDef();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
@@ -475,14 +478,14 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 163:8: -> ^( BLOCK ( mainStatement )* )
+            	// 164:8: -> ^( BLOCK ( mainStatement )* )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:163:11: ^( BLOCK ( mainStatement )* )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:164:11: ^( BLOCK ( mainStatement )* )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(BLOCK, "BLOCK"), root_1);
 
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:163:20: ( mainStatement )*
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:164:20: ( mainStatement )*
             	    while ( stream_mainStatement.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_mainStatement.NextTree());
@@ -534,7 +537,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "block"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:167:1: block : ( statement )* -> ^( BLOCK ( statement )* ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:168:1: block : ( statement )* -> ^( BLOCK ( statement )* ) ;
     public SGLParser.block_return block() // throws RecognitionException [1]
     {   
         SGLParser.block_return retval = new SGLParser.block_return();
@@ -552,16 +555,16 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:168:2: ( ( statement )* -> ^( BLOCK ( statement )* ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:168:4: ( statement )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:169:2: ( ( statement )* -> ^( BLOCK ( statement )* ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:169:4: ( statement )*
             {
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:168:4: ( statement )*
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:169:4: ( statement )*
             	do 
             	{
             	    int alt2 = 2;
             	    int LA2_0 = input.LA(1);
 
-            	    if ( (LA2_0 == Identifier || LA2_0 == VarStartInit || (LA2_0 >= 78 && LA2_0 <= 82) || LA2_0 == 84) )
+            	    if ( (LA2_0 == Identifier || LA2_0 == VarStartInit || (LA2_0 >= 80 && LA2_0 <= 84) || LA2_0 == 86) )
             	    {
             	        alt2 = 1;
             	    }
@@ -572,7 +575,7 @@ public partial class SGLParser : Parser
             			case 1 :
             			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: statement
             			    {
-            			    	PushFollow(FOLLOW_statement_in_block295);
+            			    	PushFollow(FOLLOW_statement_in_block303);
             			    	statement4 = statement();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
@@ -603,14 +606,14 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 169:3: -> ^( BLOCK ( statement )* )
+            	// 170:3: -> ^( BLOCK ( statement )* )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:169:6: ^( BLOCK ( statement )* )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:170:6: ^( BLOCK ( statement )* )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(BLOCK, "BLOCK"), root_1);
 
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:169:14: ( statement )*
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:170:14: ( statement )*
             	    while ( stream_statement.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_statement.NextTree());
@@ -662,7 +665,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "singleBlock"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:173:1: singleBlock : semicolonStatement -> ^( BLOCK semicolonStatement ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:174:1: singleBlock : semicolonStatement -> ^( BLOCK semicolonStatement ) ;
     public SGLParser.singleBlock_return singleBlock() // throws RecognitionException [1]
     {   
         SGLParser.singleBlock_return retval = new SGLParser.singleBlock_return();
@@ -680,10 +683,10 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:174:2: ( semicolonStatement -> ^( BLOCK semicolonStatement ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:174:4: semicolonStatement
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:175:2: ( semicolonStatement -> ^( BLOCK semicolonStatement ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:175:4: semicolonStatement
             {
-            	PushFollow(FOLLOW_semicolonStatement_in_singleBlock320);
+            	PushFollow(FOLLOW_semicolonStatement_in_singleBlock328);
             	semicolonStatement5 = semicolonStatement();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
@@ -702,9 +705,9 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 175:3: -> ^( BLOCK semicolonStatement )
+            	// 176:3: -> ^( BLOCK semicolonStatement )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:175:6: ^( BLOCK semicolonStatement )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:176:6: ^( BLOCK semicolonStatement )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(BLOCK, "BLOCK"), root_1);
@@ -755,7 +758,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "commonBlock"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:179:1: commonBlock : ( singleBlock | '{' block '}' );
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:180:1: commonBlock : ( singleBlock | '{' block '}' );
     public SGLParser.commonBlock_return commonBlock() // throws RecognitionException [1]
     {   
         SGLParser.commonBlock_return retval = new SGLParser.commonBlock_return();
@@ -779,15 +782,15 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:180:2: ( singleBlock | '{' block '}' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:181:2: ( singleBlock | '{' block '}' )
             int alt3 = 2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0 == Identifier || LA3_0 == VarStartInit || (LA3_0 >= 78 && LA3_0 <= 79)) )
+            if ( (LA3_0 == Identifier || LA3_0 == VarStartInit || (LA3_0 >= 80 && LA3_0 <= 81)) )
             {
                 alt3 = 1;
             }
-            else if ( (LA3_0 == 46) )
+            else if ( (LA3_0 == 48) )
             {
                 alt3 = 2;
             }
@@ -802,11 +805,11 @@ public partial class SGLParser : Parser
             switch (alt3) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:180:4: singleBlock
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:181:4: singleBlock
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_singleBlock_in_commonBlock343);
+                    	PushFollow(FOLLOW_singleBlock_in_commonBlock351);
                     	singleBlock6 = singleBlock();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
@@ -815,17 +818,17 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:181:4: '{' block '}'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:182:4: '{' block '}'
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	char_literal7=(IToken)Match(input,46,FOLLOW_46_in_commonBlock348); if (state.failed) return retval;
-                    	PushFollow(FOLLOW_block_in_commonBlock351);
+                    	char_literal7=(IToken)Match(input,48,FOLLOW_48_in_commonBlock356); if (state.failed) return retval;
+                    	PushFollow(FOLLOW_block_in_commonBlock359);
                     	block8 = block();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
                     	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, block8.Tree);
-                    	char_literal9=(IToken)Match(input,47,FOLLOW_47_in_commonBlock353); if (state.failed) return retval;
+                    	char_literal9=(IToken)Match(input,49,FOLLOW_49_in_commonBlock361); if (state.failed) return retval;
 
                     }
                     break;
@@ -867,7 +870,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "mainStatement"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:186:1: mainStatement : ( statement | globalAssignmentList ';' );
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:187:1: mainStatement : ( statement | globalVarDefList ';' );
     public SGLParser.mainStatement_return mainStatement() // throws RecognitionException [1]
     {   
         SGLParser.mainStatement_return retval = new SGLParser.mainStatement_return();
@@ -878,7 +881,7 @@ public partial class SGLParser : Parser
         IToken char_literal12 = null;
         SGLParser.statement_return statement10 = default(SGLParser.statement_return);
 
-        SGLParser.globalAssignmentList_return globalAssignmentList11 = default(SGLParser.globalAssignmentList_return);
+        SGLParser.globalVarDefList_return globalVarDefList11 = default(SGLParser.globalVarDefList_return);
 
 
         object char_literal12_tree=null;
@@ -889,15 +892,15 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:187:2: ( statement | globalAssignmentList ';' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:188:2: ( statement | globalVarDefList ';' )
             int alt4 = 2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0 == Identifier || LA4_0 == VarStartInit || (LA4_0 >= 78 && LA4_0 <= 82) || LA4_0 == 84) )
+            if ( (LA4_0 == Identifier || LA4_0 == VarStartInit || (LA4_0 >= 80 && LA4_0 <= 84) || LA4_0 == 86) )
             {
                 alt4 = 1;
             }
-            else if ( (LA4_0 == 50) )
+            else if ( (LA4_0 == 53) )
             {
                 alt4 = 2;
             }
@@ -912,11 +915,11 @@ public partial class SGLParser : Parser
             switch (alt4) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:187:4: statement
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:188:4: statement
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_statement_in_mainStatement370);
+                    	PushFollow(FOLLOW_statement_in_mainStatement378);
                     	statement10 = statement();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
@@ -925,16 +928,16 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:188:4: globalAssignmentList ';'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:189:4: globalVarDefList ';'
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_globalAssignmentList_in_mainStatement375);
-                    	globalAssignmentList11 = globalAssignmentList();
+                    	PushFollow(FOLLOW_globalVarDefList_in_mainStatement383);
+                    	globalVarDefList11 = globalVarDefList();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, globalAssignmentList11.Tree);
-                    	char_literal12=(IToken)Match(input,48,FOLLOW_48_in_mainStatement377); if (state.failed) return retval;
+                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, globalVarDefList11.Tree);
+                    	char_literal12=(IToken)Match(input,50,FOLLOW_50_in_mainStatement385); if (state.failed) return retval;
 
                     }
                     break;
@@ -976,7 +979,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "statement"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:191:1: statement : ( semicolonStatement | ifStatement | atStatement | whileLoop | forLoop );
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:192:1: statement : ( semicolonStatement | ifStatement | atStatement | whileLoop | forLoop );
     public SGLParser.statement_return statement() // throws RecognitionException [1]
     {   
         SGLParser.statement_return retval = new SGLParser.statement_return();
@@ -1002,34 +1005,34 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:192:2: ( semicolonStatement | ifStatement | atStatement | whileLoop | forLoop )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:193:2: ( semicolonStatement | ifStatement | atStatement | whileLoop | forLoop )
             int alt5 = 5;
             switch ( input.LA(1) ) 
             {
             case Identifier:
             case VarStartInit:
-            case 78:
-            case 79:
+            case 80:
+            case 81:
             	{
                 alt5 = 1;
                 }
                 break;
-            case 82:
+            case 84:
             	{
                 alt5 = 2;
                 }
                 break;
-            case 84:
+            case 86:
             	{
                 alt5 = 3;
                 }
                 break;
-            case 80:
+            case 82:
             	{
                 alt5 = 4;
                 }
                 break;
-            case 81:
+            case 83:
             	{
                 alt5 = 5;
                 }
@@ -1045,11 +1048,11 @@ public partial class SGLParser : Parser
             switch (alt5) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:192:4: semicolonStatement
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:193:4: semicolonStatement
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_semicolonStatement_in_statement392);
+                    	PushFollow(FOLLOW_semicolonStatement_in_statement400);
                     	semicolonStatement13 = semicolonStatement();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
@@ -1058,11 +1061,11 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:193:4: ifStatement
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:194:4: ifStatement
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_ifStatement_in_statement397);
+                    	PushFollow(FOLLOW_ifStatement_in_statement405);
                     	ifStatement14 = ifStatement();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
@@ -1071,11 +1074,11 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 3 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:194:4: atStatement
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:195:4: atStatement
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_atStatement_in_statement402);
+                    	PushFollow(FOLLOW_atStatement_in_statement410);
                     	atStatement15 = atStatement();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
@@ -1084,11 +1087,11 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 4 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:195:4: whileLoop
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:196:4: whileLoop
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_whileLoop_in_statement407);
+                    	PushFollow(FOLLOW_whileLoop_in_statement415);
                     	whileLoop16 = whileLoop();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
@@ -1097,11 +1100,11 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 5 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:196:4: forLoop
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:197:4: forLoop
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_forLoop_in_statement412);
+                    	PushFollow(FOLLOW_forLoop_in_statement420);
                     	forLoop17 = forLoop();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
@@ -1147,7 +1150,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "semicolonStatement"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:199:1: semicolonStatement : ( objectMethodCall | methodCall | assignmentList | unaryExpression | breakStat | returnStat ) ';' ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:200:1: semicolonStatement : ( unaryExpression | objectMethodCall | methodCall | varDefList | assignment | breakStat | returnStat ) ';' ;
     public SGLParser.semicolonStatement_return semicolonStatement() // throws RecognitionException [1]
     {   
         SGLParser.semicolonStatement_return retval = new SGLParser.semicolonStatement_return();
@@ -1155,21 +1158,23 @@ public partial class SGLParser : Parser
         int semicolonStatement_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal24 = null;
-        SGLParser.objectMethodCall_return objectMethodCall18 = default(SGLParser.objectMethodCall_return);
+        IToken char_literal25 = null;
+        SGLParser.unaryExpression_return unaryExpression18 = default(SGLParser.unaryExpression_return);
 
-        SGLParser.methodCall_return methodCall19 = default(SGLParser.methodCall_return);
+        SGLParser.objectMethodCall_return objectMethodCall19 = default(SGLParser.objectMethodCall_return);
 
-        SGLParser.assignmentList_return assignmentList20 = default(SGLParser.assignmentList_return);
+        SGLParser.methodCall_return methodCall20 = default(SGLParser.methodCall_return);
 
-        SGLParser.unaryExpression_return unaryExpression21 = default(SGLParser.unaryExpression_return);
+        SGLParser.varDefList_return varDefList21 = default(SGLParser.varDefList_return);
 
-        SGLParser.breakStat_return breakStat22 = default(SGLParser.breakStat_return);
+        SGLParser.assignment_return assignment22 = default(SGLParser.assignment_return);
 
-        SGLParser.returnStat_return returnStat23 = default(SGLParser.returnStat_return);
+        SGLParser.breakStat_return breakStat23 = default(SGLParser.breakStat_return);
+
+        SGLParser.returnStat_return returnStat24 = default(SGLParser.returnStat_return);
 
 
-        object char_literal24_tree=null;
+        object char_literal25_tree=null;
 
         try 
     	{
@@ -1177,59 +1182,58 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:200:2: ( ( objectMethodCall | methodCall | assignmentList | unaryExpression | breakStat | returnStat ) ';' )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:200:4: ( objectMethodCall | methodCall | assignmentList | unaryExpression | breakStat | returnStat ) ';'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:201:2: ( ( unaryExpression | objectMethodCall | methodCall | varDefList | assignment | breakStat | returnStat ) ';' )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:201:4: ( unaryExpression | objectMethodCall | methodCall | varDefList | assignment | breakStat | returnStat ) ';'
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:200:4: ( objectMethodCall | methodCall | assignmentList | unaryExpression | breakStat | returnStat )
-            	int alt6 = 6;
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:201:4: ( unaryExpression | objectMethodCall | methodCall | varDefList | assignment | breakStat | returnStat )
+            	int alt6 = 7;
             	switch ( input.LA(1) ) 
             	{
             	case Identifier:
             		{
-            	    switch ( input.LA(2) ) 
+            	    int LA6_1 = input.LA(2);
+
+            	    if ( (synpred10_SGL()) )
             	    {
-            	    case 55:
-            	    	{
-            	        alt6 = 2;
-            	        }
-            	        break;
-            	    case 75:
-            	    case 76:
-            	    	{
-            	        alt6 = 4;
-            	        }
-            	        break;
-            	    case 52:
-            	    case 54:
-            	    	{
             	        alt6 = 1;
-            	        }
-            	        break;
-            	    	default:
-            	    	    if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-            	    	    NoViableAltException nvae_d6s1 =
-            	    	        new NoViableAltException("", 6, 1, input);
-
-            	    	    throw nvae_d6s1;
             	    }
+            	    else if ( (synpred11_SGL()) )
+            	    {
+            	        alt6 = 2;
+            	    }
+            	    else if ( (synpred12_SGL()) )
+            	    {
+            	        alt6 = 3;
+            	    }
+            	    else if ( (synpred14_SGL()) )
+            	    {
+            	        alt6 = 5;
+            	    }
+            	    else 
+            	    {
+            	        if ( state.backtracking > 0 ) {state.failed = true; return retval;}
+            	        NoViableAltException nvae_d6s1 =
+            	            new NoViableAltException("", 6, 1, input);
 
+            	        throw nvae_d6s1;
+            	    }
             	    }
             	    break;
             	case VarStartInit:
             		{
-            	    alt6 = 3;
+            	    alt6 = 4;
             	    }
             	    break;
-            	case 78:
-            		{
-            	    alt6 = 5;
-            	    }
-            	    break;
-            	case 79:
+            	case 80:
             		{
             	    alt6 = 6;
+            	    }
+            	    break;
+            	case 81:
+            		{
+            	    alt6 = 7;
             	    }
             	    break;
             		default:
@@ -1243,75 +1247,86 @@ public partial class SGLParser : Parser
             	switch (alt6) 
             	{
             	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:200:5: objectMethodCall
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:201:5: unaryExpression
             	        {
-            	        	PushFollow(FOLLOW_objectMethodCall_in_semicolonStatement425);
-            	        	objectMethodCall18 = objectMethodCall();
+            	        	PushFollow(FOLLOW_unaryExpression_in_semicolonStatement433);
+            	        	unaryExpression18 = unaryExpression();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, objectMethodCall18.Tree);
+            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, unaryExpression18.Tree);
 
             	        }
             	        break;
             	    case 2 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:201:4: methodCall
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:202:4: objectMethodCall
             	        {
-            	        	PushFollow(FOLLOW_methodCall_in_semicolonStatement430);
-            	        	methodCall19 = methodCall();
+            	        	PushFollow(FOLLOW_objectMethodCall_in_semicolonStatement439);
+            	        	objectMethodCall19 = objectMethodCall();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, methodCall19.Tree);
+            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, objectMethodCall19.Tree);
 
             	        }
             	        break;
             	    case 3 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:202:4: assignmentList
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:203:4: methodCall
             	        {
-            	        	PushFollow(FOLLOW_assignmentList_in_semicolonStatement436);
-            	        	assignmentList20 = assignmentList();
+            	        	PushFollow(FOLLOW_methodCall_in_semicolonStatement444);
+            	        	methodCall20 = methodCall();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, assignmentList20.Tree);
+            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, methodCall20.Tree);
 
             	        }
             	        break;
             	    case 4 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:203:4: unaryExpression
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:204:4: varDefList
             	        {
-            	        	PushFollow(FOLLOW_unaryExpression_in_semicolonStatement442);
-            	        	unaryExpression21 = unaryExpression();
+            	        	PushFollow(FOLLOW_varDefList_in_semicolonStatement450);
+            	        	varDefList21 = varDefList();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, unaryExpression21.Tree);
+            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, varDefList21.Tree);
 
             	        }
             	        break;
             	    case 5 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:204:4: breakStat
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:205:4: assignment
             	        {
-            	        	PushFollow(FOLLOW_breakStat_in_semicolonStatement448);
-            	        	breakStat22 = breakStat();
+            	        	PushFollow(FOLLOW_assignment_in_semicolonStatement456);
+            	        	assignment22 = assignment();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, breakStat22.Tree);
+            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, assignment22.Tree);
 
             	        }
             	        break;
             	    case 6 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:205:4: returnStat
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:206:4: breakStat
             	        {
-            	        	PushFollow(FOLLOW_returnStat_in_semicolonStatement453);
-            	        	returnStat23 = returnStat();
+            	        	PushFollow(FOLLOW_breakStat_in_semicolonStatement463);
+            	        	breakStat23 = breakStat();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, returnStat23.Tree);
+            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, breakStat23.Tree);
+
+            	        }
+            	        break;
+            	    case 7 :
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:207:4: returnStat
+            	        {
+            	        	PushFollow(FOLLOW_returnStat_in_semicolonStatement468);
+            	        	returnStat24 = returnStat();
+            	        	state.followingStackPointer--;
+            	        	if (state.failed) return retval;
+            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, returnStat24.Tree);
 
             	        }
             	        break;
 
             	}
 
-            	char_literal24=(IToken)Match(input,48,FOLLOW_48_in_semicolonStatement458); if (state.failed) return retval;
+            	char_literal25=(IToken)Match(input,50,FOLLOW_50_in_semicolonStatement473); if (state.failed) return retval;
 
             }
 
@@ -1351,7 +1366,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "oneLineStatement"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:209:1: oneLineStatement : ( assignmentList | unaryExpression );
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:211:1: oneLineStatement : ( varDefList | unaryExpression );
     public SGLParser.oneLineStatement_return oneLineStatement() // throws RecognitionException [1]
     {   
         SGLParser.oneLineStatement_return retval = new SGLParser.oneLineStatement_return();
@@ -1359,9 +1374,9 @@ public partial class SGLParser : Parser
         int oneLineStatement_StartIndex = input.Index();
         object root_0 = null;
 
-        SGLParser.assignmentList_return assignmentList25 = default(SGLParser.assignmentList_return);
+        SGLParser.varDefList_return varDefList26 = default(SGLParser.varDefList_return);
 
-        SGLParser.unaryExpression_return unaryExpression26 = default(SGLParser.unaryExpression_return);
+        SGLParser.unaryExpression_return unaryExpression27 = default(SGLParser.unaryExpression_return);
 
 
 
@@ -1371,7 +1386,7 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:210:2: ( assignmentList | unaryExpression )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:212:2: ( varDefList | unaryExpression )
             int alt7 = 2;
             int LA7_0 = input.LA(1);
 
@@ -1394,28 +1409,28 @@ public partial class SGLParser : Parser
             switch (alt7) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:210:4: assignmentList
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:212:4: varDefList
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_assignmentList_in_oneLineStatement471);
-                    	assignmentList25 = assignmentList();
+                    	PushFollow(FOLLOW_varDefList_in_oneLineStatement486);
+                    	varDefList26 = varDefList();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, assignmentList25.Tree);
+                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, varDefList26.Tree);
 
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:211:4: unaryExpression
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:213:4: unaryExpression
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_unaryExpression_in_oneLineStatement476);
-                    	unaryExpression26 = unaryExpression();
+                    	PushFollow(FOLLOW_unaryExpression_in_oneLineStatement491);
+                    	unaryExpression27 = unaryExpression();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, unaryExpression26.Tree);
+                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, unaryExpression27.Tree);
 
                     }
                     break;
@@ -1446,7 +1461,7 @@ public partial class SGLParser : Parser
     }
     // $ANTLR end "oneLineStatement"
 
-    public class assignmentList_return : ParserRuleReturnScope
+    public class varDefList_return : ParserRuleReturnScope
     {
         private object tree;
         override public object Tree
@@ -1456,24 +1471,24 @@ public partial class SGLParser : Parser
         }
     };
 
-    // $ANTLR start "assignmentList"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:214:1: assignmentList : 'var' assignment ( ',' assignment )* ;
-    public SGLParser.assignmentList_return assignmentList() // throws RecognitionException [1]
+    // $ANTLR start "varDefList"
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:216:1: varDefList : ( 'var' varDef ) ( ',' varDef )* ;
+    public SGLParser.varDefList_return varDefList() // throws RecognitionException [1]
     {   
-        SGLParser.assignmentList_return retval = new SGLParser.assignmentList_return();
+        SGLParser.varDefList_return retval = new SGLParser.varDefList_return();
         retval.Start = input.LT(1);
-        int assignmentList_StartIndex = input.Index();
+        int varDefList_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal27 = null;
-        IToken char_literal29 = null;
-        SGLParser.assignment_return assignment28 = default(SGLParser.assignment_return);
+        IToken string_literal28 = null;
+        IToken char_literal30 = null;
+        SGLParser.varDef_return varDef29 = default(SGLParser.varDef_return);
 
-        SGLParser.assignment_return assignment30 = default(SGLParser.assignment_return);
+        SGLParser.varDef_return varDef31 = default(SGLParser.varDef_return);
 
 
-        object string_literal27_tree=null;
-        object char_literal29_tree=null;
+        object string_literal28_tree=null;
+        object char_literal30_tree=null;
 
         try 
     	{
@@ -1481,24 +1496,30 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:215:2: ( 'var' assignment ( ',' assignment )* )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:215:4: 'var' assignment ( ',' assignment )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:217:2: ( ( 'var' varDef ) ( ',' varDef )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:217:4: ( 'var' varDef ) ( ',' varDef )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	string_literal27=(IToken)Match(input,VarStartInit,FOLLOW_VarStartInit_in_assignmentList491); if (state.failed) return retval;
-            	PushFollow(FOLLOW_assignment_in_assignmentList494);
-            	assignment28 = assignment();
-            	state.followingStackPointer--;
-            	if (state.failed) return retval;
-            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, assignment28.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:215:22: ( ',' assignment )*
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:217:4: ( 'var' varDef )
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:217:5: 'var' varDef
+            	{
+            		string_literal28=(IToken)Match(input,VarStartInit,FOLLOW_VarStartInit_in_varDefList507); if (state.failed) return retval;
+            		PushFollow(FOLLOW_varDef_in_varDefList510);
+            		varDef29 = varDef();
+            		state.followingStackPointer--;
+            		if (state.failed) return retval;
+            		if ( state.backtracking == 0 ) adaptor.AddChild(root_0, varDef29.Tree);
+
+            	}
+
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:218:3: ( ',' varDef )*
             	do 
             	{
             	    int alt8 = 2;
             	    int LA8_0 = input.LA(1);
 
-            	    if ( (LA8_0 == 49) )
+            	    if ( (LA8_0 == 51) )
             	    {
             	        alt8 = 1;
             	    }
@@ -1507,14 +1528,14 @@ public partial class SGLParser : Parser
             	    switch (alt8) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:215:23: ',' assignment
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:218:4: ',' varDef
             			    {
-            			    	char_literal29=(IToken)Match(input,49,FOLLOW_49_in_assignmentList497); if (state.failed) return retval;
-            			    	PushFollow(FOLLOW_assignment_in_assignmentList500);
-            			    	assignment30 = assignment();
+            			    	char_literal30=(IToken)Match(input,51,FOLLOW_51_in_varDefList517); if (state.failed) return retval;
+            			    	PushFollow(FOLLOW_varDef_in_varDefList520);
+            			    	varDef31 = varDef();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, assignment30.Tree);
+            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, varDef31.Tree);
 
             			    }
             			    break;
@@ -1548,14 +1569,14 @@ public partial class SGLParser : Parser
     	{
             if ( state.backtracking > 0 ) 
             {
-            	Memoize(input, 10, assignmentList_StartIndex); 
+            	Memoize(input, 10, varDefList_StartIndex); 
             }
         }
         return retval;
     }
-    // $ANTLR end "assignmentList"
+    // $ANTLR end "varDefList"
 
-    public class globalAssignmentList_return : ParserRuleReturnScope
+    public class varDef_return : ParserRuleReturnScope
     {
         private object tree;
         override public object Tree
@@ -1565,52 +1586,46 @@ public partial class SGLParser : Parser
         }
     };
 
-    // $ANTLR start "globalAssignmentList"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:219:1: globalAssignmentList : 'global' 'var' globalAssignment ( ',' globalAssignment )* ;
-    public SGLParser.globalAssignmentList_return globalAssignmentList() // throws RecognitionException [1]
+    // $ANTLR start "varDef"
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:222:1: varDef : variable ( '=' expression )* -> ^( DEF variable ) ( ^( ASSIGN variable expression ) )* ;
+    public SGLParser.varDef_return varDef() // throws RecognitionException [1]
     {   
-        SGLParser.globalAssignmentList_return retval = new SGLParser.globalAssignmentList_return();
+        SGLParser.varDef_return retval = new SGLParser.varDef_return();
         retval.Start = input.LT(1);
-        int globalAssignmentList_StartIndex = input.Index();
+        int varDef_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal31 = null;
-        IToken string_literal32 = null;
-        IToken char_literal34 = null;
-        SGLParser.globalAssignment_return globalAssignment33 = default(SGLParser.globalAssignment_return);
+        IToken char_literal33 = null;
+        SGLParser.variable_return variable32 = default(SGLParser.variable_return);
 
-        SGLParser.globalAssignment_return globalAssignment35 = default(SGLParser.globalAssignment_return);
+        SGLParser.expression_return expression34 = default(SGLParser.expression_return);
 
 
-        object string_literal31_tree=null;
-        object string_literal32_tree=null;
-        object char_literal34_tree=null;
-
+        object char_literal33_tree=null;
+        RewriteRuleTokenStream stream_52 = new RewriteRuleTokenStream(adaptor,"token 52");
+        RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
+        RewriteRuleSubtreeStream stream_variable = new RewriteRuleSubtreeStream(adaptor,"rule variable");
         try 
     	{
     	    if ( (state.backtracking > 0) && AlreadyParsedRule(input, 11) ) 
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:220:2: ( 'global' 'var' globalAssignment ( ',' globalAssignment )* )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:220:4: 'global' 'var' globalAssignment ( ',' globalAssignment )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:223:2: ( variable ( '=' expression )* -> ^( DEF variable ) ( ^( ASSIGN variable expression ) )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:223:4: variable ( '=' expression )*
             {
-            	root_0 = (object)adaptor.GetNilNode();
-
-            	string_literal31=(IToken)Match(input,50,FOLLOW_50_in_globalAssignmentList516); if (state.failed) return retval;
-            	string_literal32=(IToken)Match(input,VarStartInit,FOLLOW_VarStartInit_in_globalAssignmentList519); if (state.failed) return retval;
-            	PushFollow(FOLLOW_globalAssignment_in_globalAssignmentList522);
-            	globalAssignment33 = globalAssignment();
+            	PushFollow(FOLLOW_variable_in_varDef536);
+            	variable32 = variable();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, globalAssignment33.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:220:38: ( ',' globalAssignment )*
+            	if ( (state.backtracking==0) ) stream_variable.Add(variable32.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:223:13: ( '=' expression )*
             	do 
             	{
             	    int alt9 = 2;
             	    int LA9_0 = input.LA(1);
 
-            	    if ( (LA9_0 == 49) )
+            	    if ( (LA9_0 == 52) )
             	    {
             	        alt9 = 1;
             	    }
@@ -1619,14 +1634,16 @@ public partial class SGLParser : Parser
             	    switch (alt9) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:220:39: ',' globalAssignment
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:223:14: '=' expression
             			    {
-            			    	char_literal34=(IToken)Match(input,49,FOLLOW_49_in_globalAssignmentList525); if (state.failed) return retval;
-            			    	PushFollow(FOLLOW_globalAssignment_in_globalAssignmentList528);
-            			    	globalAssignment35 = globalAssignment();
+            			    	char_literal33=(IToken)Match(input,52,FOLLOW_52_in_varDef539); if (state.failed) return retval; 
+            			    	if ( (state.backtracking==0) ) stream_52.Add(char_literal33);
+
+            			    	PushFollow(FOLLOW_expression_in_varDef541);
+            			    	expression34 = expression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, globalAssignment35.Tree);
+            			    	if ( (state.backtracking==0) ) stream_expression.Add(expression34.Tree);
 
             			    }
             			    break;
@@ -1640,134 +1657,9 @@ public partial class SGLParser : Parser
             		;	// Stops C# compiler whining that label 'loop9' has no statements
 
 
-            }
-
-            retval.Stop = input.LT(-1);
-
-            if ( (state.backtracking==0) )
-            {	retval.Tree = (object)adaptor.RulePostProcessing(root_0);
-            	adaptor.SetTokenBoundaries(retval.Tree, (IToken) retval.Start, (IToken) retval.Stop);}
-        }
-        catch (RecognitionException re) 
-    	{
-            ReportError(re);
-            Recover(input,re);
-    	// Conversion of the second argument necessary, but harmless
-    	retval.Tree = (object)adaptor.ErrorNode(input, (IToken) retval.Start, input.LT(-1), re);
-
-        }
-        finally 
-    	{
-            if ( state.backtracking > 0 ) 
-            {
-            	Memoize(input, 11, globalAssignmentList_StartIndex); 
-            }
-        }
-        return retval;
-    }
-    // $ANTLR end "globalAssignmentList"
-
-    public class globalAssignment_return : ParserRuleReturnScope
-    {
-        private object tree;
-        override public object Tree
-        {
-        	get { return tree; }
-        	set { tree = (object) value; }
-        }
-    };
-
-    // $ANTLR start "globalAssignment"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:223:1: globalAssignment : variable ( indexes )? ( '=' expression )? -> ^( GLOBAL_ASSIGN variable ( indexes )? ( expression )? ) ;
-    public SGLParser.globalAssignment_return globalAssignment() // throws RecognitionException [1]
-    {   
-        SGLParser.globalAssignment_return retval = new SGLParser.globalAssignment_return();
-        retval.Start = input.LT(1);
-        int globalAssignment_StartIndex = input.Index();
-        object root_0 = null;
-
-        IToken char_literal38 = null;
-        SGLParser.variable_return variable36 = default(SGLParser.variable_return);
-
-        SGLParser.indexes_return indexes37 = default(SGLParser.indexes_return);
-
-        SGLParser.expression_return expression39 = default(SGLParser.expression_return);
-
-
-        object char_literal38_tree=null;
-        RewriteRuleTokenStream stream_51 = new RewriteRuleTokenStream(adaptor,"token 51");
-        RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
-        RewriteRuleSubtreeStream stream_indexes = new RewriteRuleSubtreeStream(adaptor,"rule indexes");
-        RewriteRuleSubtreeStream stream_variable = new RewriteRuleSubtreeStream(adaptor,"rule variable");
-        try 
-    	{
-    	    if ( (state.backtracking > 0) && AlreadyParsedRule(input, 12) ) 
-    	    {
-    	    	return retval; 
-    	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:224:2: ( variable ( indexes )? ( '=' expression )? -> ^( GLOBAL_ASSIGN variable ( indexes )? ( expression )? ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:224:4: variable ( indexes )? ( '=' expression )?
-            {
-            	PushFollow(FOLLOW_variable_in_globalAssignment542);
-            	variable36 = variable();
-            	state.followingStackPointer--;
-            	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_variable.Add(variable36.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:224:13: ( indexes )?
-            	int alt10 = 2;
-            	int LA10_0 = input.LA(1);
-
-            	if ( (LA10_0 == 52) )
-            	{
-            	    alt10 = 1;
-            	}
-            	switch (alt10) 
-            	{
-            	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: indexes
-            	        {
-            	        	PushFollow(FOLLOW_indexes_in_globalAssignment544);
-            	        	indexes37 = indexes();
-            	        	state.followingStackPointer--;
-            	        	if (state.failed) return retval;
-            	        	if ( (state.backtracking==0) ) stream_indexes.Add(indexes37.Tree);
-
-            	        }
-            	        break;
-
-            	}
-
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:224:22: ( '=' expression )?
-            	int alt11 = 2;
-            	int LA11_0 = input.LA(1);
-
-            	if ( (LA11_0 == 51) )
-            	{
-            	    alt11 = 1;
-            	}
-            	switch (alt11) 
-            	{
-            	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:224:23: '=' expression
-            	        {
-            	        	char_literal38=(IToken)Match(input,51,FOLLOW_51_in_globalAssignment548); if (state.failed) return retval; 
-            	        	if ( (state.backtracking==0) ) stream_51.Add(char_literal38);
-
-            	        	PushFollow(FOLLOW_expression_in_globalAssignment550);
-            	        	expression39 = expression();
-            	        	state.followingStackPointer--;
-            	        	if (state.failed) return retval;
-            	        	if ( (state.backtracking==0) ) stream_expression.Add(expression39.Tree);
-
-            	        }
-            	        break;
-
-            	}
-
-
 
             	// AST REWRITE
-            	// elements:          indexes, variable, expression
+            	// elements:          expression, variable, variable
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -1778,31 +1670,34 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 224:41: -> ^( GLOBAL_ASSIGN variable ( indexes )? ( expression )? )
+            	// 223:31: -> ^( DEF variable ) ( ^( ASSIGN variable expression ) )*
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:224:44: ^( GLOBAL_ASSIGN variable ( indexes )? ( expression )? )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:223:34: ^( DEF variable )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
-            	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(GLOBAL_ASSIGN, "GLOBAL_ASSIGN"), root_1);
+            	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(DEF, "DEF"), root_1);
 
             	    adaptor.AddChild(root_1, stream_variable.NextTree());
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:224:69: ( indexes )?
-            	    if ( stream_indexes.HasNext() )
-            	    {
-            	        adaptor.AddChild(root_1, stream_indexes.NextTree());
-
-            	    }
-            	    stream_indexes.Reset();
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:224:78: ( expression )?
-            	    if ( stream_expression.HasNext() )
-            	    {
-            	        adaptor.AddChild(root_1, stream_expression.NextTree());
-
-            	    }
-            	    stream_expression.Reset();
 
             	    adaptor.AddChild(root_0, root_1);
             	    }
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:223:50: ( ^( ASSIGN variable expression ) )*
+            	    while ( stream_expression.HasNext() || stream_variable.HasNext() )
+            	    {
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:223:51: ^( ASSIGN variable expression )
+            	        {
+            	        object root_1 = (object)adaptor.GetNilNode();
+            	        root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(ASSIGN, "ASSIGN"), root_1);
+
+            	        adaptor.AddChild(root_1, stream_variable.NextTree());
+            	        adaptor.AddChild(root_1, stream_expression.NextTree());
+
+            	        adaptor.AddChild(root_0, root_1);
+            	        }
+
+            	    }
+            	    stream_expression.Reset();
+            	    stream_variable.Reset();
 
             	}
 
@@ -1827,12 +1722,253 @@ public partial class SGLParser : Parser
     	{
             if ( state.backtracking > 0 ) 
             {
-            	Memoize(input, 12, globalAssignment_StartIndex); 
+            	Memoize(input, 11, varDef_StartIndex); 
             }
         }
         return retval;
     }
-    // $ANTLR end "globalAssignment"
+    // $ANTLR end "varDef"
+
+    public class globalVarDefList_return : ParserRuleReturnScope
+    {
+        private object tree;
+        override public object Tree
+        {
+        	get { return tree; }
+        	set { tree = (object) value; }
+        }
+    };
+
+    // $ANTLR start "globalVarDefList"
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:226:1: globalVarDefList : 'global' 'var' variable ( '=' expression )? ( ',' variable ( '=' expression )? )* -> ( ^( GLOBALDEF variable ) )+ ( ^( ASSIGN variable ( expression )? ) )* ;
+    public SGLParser.globalVarDefList_return globalVarDefList() // throws RecognitionException [1]
+    {   
+        SGLParser.globalVarDefList_return retval = new SGLParser.globalVarDefList_return();
+        retval.Start = input.LT(1);
+        int globalVarDefList_StartIndex = input.Index();
+        object root_0 = null;
+
+        IToken string_literal35 = null;
+        IToken string_literal36 = null;
+        IToken char_literal38 = null;
+        IToken char_literal40 = null;
+        IToken char_literal42 = null;
+        SGLParser.variable_return variable37 = default(SGLParser.variable_return);
+
+        SGLParser.expression_return expression39 = default(SGLParser.expression_return);
+
+        SGLParser.variable_return variable41 = default(SGLParser.variable_return);
+
+        SGLParser.expression_return expression43 = default(SGLParser.expression_return);
+
+
+        object string_literal35_tree=null;
+        object string_literal36_tree=null;
+        object char_literal38_tree=null;
+        object char_literal40_tree=null;
+        object char_literal42_tree=null;
+        RewriteRuleTokenStream stream_51 = new RewriteRuleTokenStream(adaptor,"token 51");
+        RewriteRuleTokenStream stream_52 = new RewriteRuleTokenStream(adaptor,"token 52");
+        RewriteRuleTokenStream stream_53 = new RewriteRuleTokenStream(adaptor,"token 53");
+        RewriteRuleTokenStream stream_VarStartInit = new RewriteRuleTokenStream(adaptor,"token VarStartInit");
+        RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
+        RewriteRuleSubtreeStream stream_variable = new RewriteRuleSubtreeStream(adaptor,"rule variable");
+        try 
+    	{
+    	    if ( (state.backtracking > 0) && AlreadyParsedRule(input, 12) ) 
+    	    {
+    	    	return retval; 
+    	    }
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:2: ( 'global' 'var' variable ( '=' expression )? ( ',' variable ( '=' expression )? )* -> ( ^( GLOBALDEF variable ) )+ ( ^( ASSIGN variable ( expression )? ) )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:4: 'global' 'var' variable ( '=' expression )? ( ',' variable ( '=' expression )? )*
+            {
+            	string_literal35=(IToken)Match(input,53,FOLLOW_53_in_globalVarDefList574); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_53.Add(string_literal35);
+
+            	string_literal36=(IToken)Match(input,VarStartInit,FOLLOW_VarStartInit_in_globalVarDefList576); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_VarStartInit.Add(string_literal36);
+
+            	PushFollow(FOLLOW_variable_in_globalVarDefList578);
+            	variable37 = variable();
+            	state.followingStackPointer--;
+            	if (state.failed) return retval;
+            	if ( (state.backtracking==0) ) stream_variable.Add(variable37.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:28: ( '=' expression )?
+            	int alt10 = 2;
+            	int LA10_0 = input.LA(1);
+
+            	if ( (LA10_0 == 52) )
+            	{
+            	    alt10 = 1;
+            	}
+            	switch (alt10) 
+            	{
+            	    case 1 :
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:29: '=' expression
+            	        {
+            	        	char_literal38=(IToken)Match(input,52,FOLLOW_52_in_globalVarDefList581); if (state.failed) return retval; 
+            	        	if ( (state.backtracking==0) ) stream_52.Add(char_literal38);
+
+            	        	PushFollow(FOLLOW_expression_in_globalVarDefList583);
+            	        	expression39 = expression();
+            	        	state.followingStackPointer--;
+            	        	if (state.failed) return retval;
+            	        	if ( (state.backtracking==0) ) stream_expression.Add(expression39.Tree);
+
+            	        }
+            	        break;
+
+            	}
+
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:46: ( ',' variable ( '=' expression )? )*
+            	do 
+            	{
+            	    int alt12 = 2;
+            	    int LA12_0 = input.LA(1);
+
+            	    if ( (LA12_0 == 51) )
+            	    {
+            	        alt12 = 1;
+            	    }
+
+
+            	    switch (alt12) 
+            		{
+            			case 1 :
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:47: ',' variable ( '=' expression )?
+            			    {
+            			    	char_literal40=(IToken)Match(input,51,FOLLOW_51_in_globalVarDefList588); if (state.failed) return retval; 
+            			    	if ( (state.backtracking==0) ) stream_51.Add(char_literal40);
+
+            			    	PushFollow(FOLLOW_variable_in_globalVarDefList590);
+            			    	variable41 = variable();
+            			    	state.followingStackPointer--;
+            			    	if (state.failed) return retval;
+            			    	if ( (state.backtracking==0) ) stream_variable.Add(variable41.Tree);
+            			    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:60: ( '=' expression )?
+            			    	int alt11 = 2;
+            			    	int LA11_0 = input.LA(1);
+
+            			    	if ( (LA11_0 == 52) )
+            			    	{
+            			    	    alt11 = 1;
+            			    	}
+            			    	switch (alt11) 
+            			    	{
+            			    	    case 1 :
+            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:61: '=' expression
+            			    	        {
+            			    	        	char_literal42=(IToken)Match(input,52,FOLLOW_52_in_globalVarDefList593); if (state.failed) return retval; 
+            			    	        	if ( (state.backtracking==0) ) stream_52.Add(char_literal42);
+
+            			    	        	PushFollow(FOLLOW_expression_in_globalVarDefList595);
+            			    	        	expression43 = expression();
+            			    	        	state.followingStackPointer--;
+            			    	        	if (state.failed) return retval;
+            			    	        	if ( (state.backtracking==0) ) stream_expression.Add(expression43.Tree);
+
+            			    	        }
+            			    	        break;
+
+            			    	}
+
+
+            			    }
+            			    break;
+
+            			default:
+            			    goto loop12;
+            	    }
+            	} while (true);
+
+            	loop12:
+            		;	// Stops C# compiler whining that label 'loop12' has no statements
+
+
+
+            	// AST REWRITE
+            	// elements:          variable, variable, expression
+            	// token labels:      
+            	// rule labels:       retval
+            	// token list labels: 
+            	// rule list labels:  
+            	// wildcard labels: 
+            	if ( (state.backtracking==0) ) {
+            	retval.Tree = root_0;
+            	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
+
+            	root_0 = (object)adaptor.GetNilNode();
+            	// 227:80: -> ( ^( GLOBALDEF variable ) )+ ( ^( ASSIGN variable ( expression )? ) )*
+            	{
+            	    if ( !(stream_variable.HasNext()) ) {
+            	        throw new RewriteEarlyExitException();
+            	    }
+            	    while ( stream_variable.HasNext() )
+            	    {
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:83: ^( GLOBALDEF variable )
+            	        {
+            	        object root_1 = (object)adaptor.GetNilNode();
+            	        root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(GLOBALDEF, "GLOBALDEF"), root_1);
+
+            	        adaptor.AddChild(root_1, stream_variable.NextTree());
+
+            	        adaptor.AddChild(root_0, root_1);
+            	        }
+
+            	    }
+            	    stream_variable.Reset();
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:106: ( ^( ASSIGN variable ( expression )? ) )*
+            	    while ( stream_variable.HasNext() )
+            	    {
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:106: ^( ASSIGN variable ( expression )? )
+            	        {
+            	        object root_1 = (object)adaptor.GetNilNode();
+            	        root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(ASSIGN, "ASSIGN"), root_1);
+
+            	        adaptor.AddChild(root_1, stream_variable.NextTree());
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:124: ( expression )?
+            	        if ( stream_expression.HasNext() )
+            	        {
+            	            adaptor.AddChild(root_1, stream_expression.NextTree());
+
+            	        }
+            	        stream_expression.Reset();
+
+            	        adaptor.AddChild(root_0, root_1);
+            	        }
+
+            	    }
+            	    stream_variable.Reset();
+
+            	}
+
+            	retval.Tree = root_0;retval.Tree = root_0;}
+            }
+
+            retval.Stop = input.LT(-1);
+
+            if ( (state.backtracking==0) )
+            {	retval.Tree = (object)adaptor.RulePostProcessing(root_0);
+            	adaptor.SetTokenBoundaries(retval.Tree, (IToken) retval.Start, (IToken) retval.Stop);}
+        }
+        catch (RecognitionException re) 
+    	{
+            ReportError(re);
+            Recover(input,re);
+    	// Conversion of the second argument necessary, but harmless
+    	retval.Tree = (object)adaptor.ErrorNode(input, (IToken) retval.Start, input.LT(-1), re);
+
+        }
+        finally 
+    	{
+            if ( state.backtracking > 0 ) 
+            {
+            	Memoize(input, 12, globalVarDefList_StartIndex); 
+            }
+        }
+        return retval;
+    }
+    // $ANTLR end "globalVarDefList"
 
     public class assignment_return : ParserRuleReturnScope
     {
@@ -1845,7 +1981,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "assignment"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:227:1: assignment : variable ( indexes )? ( '=' expression )? -> ^( ASSIGN variable ( indexes )? ( expression )? ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:234:1: assignment : variable ( indexes )? ( '=' expression )? -> ^( ASSIGN variable ( indexes )? ( expression )? ) ;
     public SGLParser.assignment_return assignment() // throws RecognitionException [1]
     {   
         SGLParser.assignment_return retval = new SGLParser.assignment_return();
@@ -1853,16 +1989,16 @@ public partial class SGLParser : Parser
         int assignment_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal42 = null;
-        SGLParser.variable_return variable40 = default(SGLParser.variable_return);
+        IToken char_literal46 = null;
+        SGLParser.variable_return variable44 = default(SGLParser.variable_return);
 
-        SGLParser.indexes_return indexes41 = default(SGLParser.indexes_return);
+        SGLParser.indexes_return indexes45 = default(SGLParser.indexes_return);
 
-        SGLParser.expression_return expression43 = default(SGLParser.expression_return);
+        SGLParser.expression_return expression47 = default(SGLParser.expression_return);
 
 
-        object char_literal42_tree=null;
-        RewriteRuleTokenStream stream_51 = new RewriteRuleTokenStream(adaptor,"token 51");
+        object char_literal46_tree=null;
+        RewriteRuleTokenStream stream_52 = new RewriteRuleTokenStream(adaptor,"token 52");
         RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
         RewriteRuleSubtreeStream stream_indexes = new RewriteRuleSubtreeStream(adaptor,"rule indexes");
         RewriteRuleSubtreeStream stream_variable = new RewriteRuleSubtreeStream(adaptor,"rule variable");
@@ -1872,59 +2008,59 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:228:2: ( variable ( indexes )? ( '=' expression )? -> ^( ASSIGN variable ( indexes )? ( expression )? ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:228:4: variable ( indexes )? ( '=' expression )?
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:235:2: ( variable ( indexes )? ( '=' expression )? -> ^( ASSIGN variable ( indexes )? ( expression )? ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:235:4: variable ( indexes )? ( '=' expression )?
             {
-            	PushFollow(FOLLOW_variable_in_assignment581);
-            	variable40 = variable();
+            	PushFollow(FOLLOW_variable_in_assignment636);
+            	variable44 = variable();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_variable.Add(variable40.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:228:13: ( indexes )?
-            	int alt12 = 2;
-            	int LA12_0 = input.LA(1);
-
-            	if ( (LA12_0 == 52) )
-            	{
-            	    alt12 = 1;
-            	}
-            	switch (alt12) 
-            	{
-            	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: indexes
-            	        {
-            	        	PushFollow(FOLLOW_indexes_in_assignment583);
-            	        	indexes41 = indexes();
-            	        	state.followingStackPointer--;
-            	        	if (state.failed) return retval;
-            	        	if ( (state.backtracking==0) ) stream_indexes.Add(indexes41.Tree);
-
-            	        }
-            	        break;
-
-            	}
-
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:228:22: ( '=' expression )?
+            	if ( (state.backtracking==0) ) stream_variable.Add(variable44.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:235:13: ( indexes )?
             	int alt13 = 2;
             	int LA13_0 = input.LA(1);
 
-            	if ( (LA13_0 == 51) )
+            	if ( (LA13_0 == 54) )
             	{
             	    alt13 = 1;
             	}
             	switch (alt13) 
             	{
             	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:228:23: '=' expression
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: indexes
             	        {
-            	        	char_literal42=(IToken)Match(input,51,FOLLOW_51_in_assignment587); if (state.failed) return retval; 
-            	        	if ( (state.backtracking==0) ) stream_51.Add(char_literal42);
-
-            	        	PushFollow(FOLLOW_expression_in_assignment589);
-            	        	expression43 = expression();
+            	        	PushFollow(FOLLOW_indexes_in_assignment638);
+            	        	indexes45 = indexes();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( (state.backtracking==0) ) stream_expression.Add(expression43.Tree);
+            	        	if ( (state.backtracking==0) ) stream_indexes.Add(indexes45.Tree);
+
+            	        }
+            	        break;
+
+            	}
+
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:235:22: ( '=' expression )?
+            	int alt14 = 2;
+            	int LA14_0 = input.LA(1);
+
+            	if ( (LA14_0 == 52) )
+            	{
+            	    alt14 = 1;
+            	}
+            	switch (alt14) 
+            	{
+            	    case 1 :
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:235:23: '=' expression
+            	        {
+            	        	char_literal46=(IToken)Match(input,52,FOLLOW_52_in_assignment642); if (state.failed) return retval; 
+            	        	if ( (state.backtracking==0) ) stream_52.Add(char_literal46);
+
+            	        	PushFollow(FOLLOW_expression_in_assignment644);
+            	        	expression47 = expression();
+            	        	state.followingStackPointer--;
+            	        	if (state.failed) return retval;
+            	        	if ( (state.backtracking==0) ) stream_expression.Add(expression47.Tree);
 
             	        }
             	        break;
@@ -1934,7 +2070,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          expression, indexes, variable
+            	// elements:          indexes, variable, expression
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -1945,22 +2081,22 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 228:41: -> ^( ASSIGN variable ( indexes )? ( expression )? )
+            	// 235:41: -> ^( ASSIGN variable ( indexes )? ( expression )? )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:228:44: ^( ASSIGN variable ( indexes )? ( expression )? )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:235:44: ^( ASSIGN variable ( indexes )? ( expression )? )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(ASSIGN, "ASSIGN"), root_1);
 
             	    adaptor.AddChild(root_1, stream_variable.NextTree());
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:228:62: ( indexes )?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:235:62: ( indexes )?
             	    if ( stream_indexes.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_indexes.NextTree());
 
             	    }
             	    stream_indexes.Reset();
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:228:71: ( expression )?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:235:71: ( expression )?
             	    if ( stream_expression.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_expression.NextTree());
@@ -2012,7 +2148,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "indexes"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:231:1: indexes : ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:238:1: indexes : ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) ;
     public SGLParser.indexes_return indexes() // throws RecognitionException [1]
     {   
         SGLParser.indexes_return retval = new SGLParser.indexes_return();
@@ -2020,15 +2156,15 @@ public partial class SGLParser : Parser
         int indexes_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal44 = null;
-        IToken char_literal46 = null;
-        SGLParser.expression_return expression45 = default(SGLParser.expression_return);
+        IToken char_literal48 = null;
+        IToken char_literal50 = null;
+        SGLParser.expression_return expression49 = default(SGLParser.expression_return);
 
 
-        object char_literal44_tree=null;
-        object char_literal46_tree=null;
-        RewriteRuleTokenStream stream_52 = new RewriteRuleTokenStream(adaptor,"token 52");
-        RewriteRuleTokenStream stream_53 = new RewriteRuleTokenStream(adaptor,"token 53");
+        object char_literal48_tree=null;
+        object char_literal50_tree=null;
+        RewriteRuleTokenStream stream_55 = new RewriteRuleTokenStream(adaptor,"token 55");
+        RewriteRuleTokenStream stream_54 = new RewriteRuleTokenStream(adaptor,"token 54");
         RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
         try 
     	{
@@ -2036,54 +2172,54 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:232:4: ( ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:232:8: ( '[' expression ']' )+
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:239:4: ( ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:239:8: ( '[' expression ']' )+
             {
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:232:8: ( '[' expression ']' )+
-            	int cnt14 = 0;
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:239:8: ( '[' expression ']' )+
+            	int cnt15 = 0;
             	do 
             	{
-            	    int alt14 = 2;
-            	    int LA14_0 = input.LA(1);
+            	    int alt15 = 2;
+            	    int LA15_0 = input.LA(1);
 
-            	    if ( (LA14_0 == 52) )
+            	    if ( (LA15_0 == 54) )
             	    {
-            	        alt14 = 1;
+            	        alt15 = 1;
             	    }
 
 
-            	    switch (alt14) 
+            	    switch (alt15) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:232:9: '[' expression ']'
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:239:9: '[' expression ']'
             			    {
-            			    	char_literal44=(IToken)Match(input,52,FOLLOW_52_in_indexes624); if (state.failed) return retval; 
-            			    	if ( (state.backtracking==0) ) stream_52.Add(char_literal44);
+            			    	char_literal48=(IToken)Match(input,54,FOLLOW_54_in_indexes679); if (state.failed) return retval; 
+            			    	if ( (state.backtracking==0) ) stream_54.Add(char_literal48);
 
-            			    	PushFollow(FOLLOW_expression_in_indexes626);
-            			    	expression45 = expression();
+            			    	PushFollow(FOLLOW_expression_in_indexes681);
+            			    	expression49 = expression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( (state.backtracking==0) ) stream_expression.Add(expression45.Tree);
-            			    	char_literal46=(IToken)Match(input,53,FOLLOW_53_in_indexes628); if (state.failed) return retval; 
-            			    	if ( (state.backtracking==0) ) stream_53.Add(char_literal46);
+            			    	if ( (state.backtracking==0) ) stream_expression.Add(expression49.Tree);
+            			    	char_literal50=(IToken)Match(input,55,FOLLOW_55_in_indexes683); if (state.failed) return retval; 
+            			    	if ( (state.backtracking==0) ) stream_55.Add(char_literal50);
 
 
             			    }
             			    break;
 
             			default:
-            			    if ( cnt14 >= 1 ) goto loop14;
+            			    if ( cnt15 >= 1 ) goto loop15;
             			    if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-            		            EarlyExitException eee14 =
-            		                new EarlyExitException(14, input);
-            		            throw eee14;
+            		            EarlyExitException eee15 =
+            		                new EarlyExitException(15, input);
+            		            throw eee15;
             	    }
-            	    cnt14++;
+            	    cnt15++;
             	} while (true);
 
-            	loop14:
-            		;	// Stops C# compiler whining that label 'loop14' has no statements
+            	loop15:
+            		;	// Stops C# compiler whining that label 'loop15' has no statements
 
 
 
@@ -2099,9 +2235,9 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 232:30: -> ^( INDEXES ( expression )+ )
+            	// 239:30: -> ^( INDEXES ( expression )+ )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:232:33: ^( INDEXES ( expression )+ )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:239:33: ^( INDEXES ( expression )+ )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(INDEXES, "INDEXES"), root_1);
@@ -2160,7 +2296,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "objectMethodCall"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:235:1: objectMethodCall : variable ( indexes )? '.' Identifier '(' ( expressionList )? ')' -> ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:242:1: objectMethodCall : variable ( indexes )? '.' Identifier '(' ( expressionList )? ')' -> ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? ) ;
     public SGLParser.objectMethodCall_return objectMethodCall() // throws RecognitionException [1]
     {   
         SGLParser.objectMethodCall_return retval = new SGLParser.objectMethodCall_return();
@@ -2168,24 +2304,24 @@ public partial class SGLParser : Parser
         int objectMethodCall_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal49 = null;
-        IToken Identifier50 = null;
-        IToken char_literal51 = null;
         IToken char_literal53 = null;
-        SGLParser.variable_return variable47 = default(SGLParser.variable_return);
+        IToken Identifier54 = null;
+        IToken char_literal55 = null;
+        IToken char_literal57 = null;
+        SGLParser.variable_return variable51 = default(SGLParser.variable_return);
 
-        SGLParser.indexes_return indexes48 = default(SGLParser.indexes_return);
+        SGLParser.indexes_return indexes52 = default(SGLParser.indexes_return);
 
-        SGLParser.expressionList_return expressionList52 = default(SGLParser.expressionList_return);
+        SGLParser.expressionList_return expressionList56 = default(SGLParser.expressionList_return);
 
 
-        object char_literal49_tree=null;
-        object Identifier50_tree=null;
-        object char_literal51_tree=null;
         object char_literal53_tree=null;
+        object Identifier54_tree=null;
+        object char_literal55_tree=null;
+        object char_literal57_tree=null;
+        RewriteRuleTokenStream stream_58 = new RewriteRuleTokenStream(adaptor,"token 58");
+        RewriteRuleTokenStream stream_57 = new RewriteRuleTokenStream(adaptor,"token 57");
         RewriteRuleTokenStream stream_56 = new RewriteRuleTokenStream(adaptor,"token 56");
-        RewriteRuleTokenStream stream_55 = new RewriteRuleTokenStream(adaptor,"token 55");
-        RewriteRuleTokenStream stream_54 = new RewriteRuleTokenStream(adaptor,"token 54");
         RewriteRuleTokenStream stream_Identifier = new RewriteRuleTokenStream(adaptor,"token Identifier");
         RewriteRuleSubtreeStream stream_expressionList = new RewriteRuleSubtreeStream(adaptor,"rule expressionList");
         RewriteRuleSubtreeStream stream_indexes = new RewriteRuleSubtreeStream(adaptor,"rule indexes");
@@ -2196,78 +2332,78 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:236:2: ( variable ( indexes )? '.' Identifier '(' ( expressionList )? ')' -> ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:236:4: variable ( indexes )? '.' Identifier '(' ( expressionList )? ')'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:243:2: ( variable ( indexes )? '.' Identifier '(' ( expressionList )? ')' -> ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:243:4: variable ( indexes )? '.' Identifier '(' ( expressionList )? ')'
             {
-            	PushFollow(FOLLOW_variable_in_objectMethodCall655);
-            	variable47 = variable();
+            	PushFollow(FOLLOW_variable_in_objectMethodCall710);
+            	variable51 = variable();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_variable.Add(variable47.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:236:13: ( indexes )?
-            	int alt15 = 2;
-            	int LA15_0 = input.LA(1);
-
-            	if ( (LA15_0 == 52) )
-            	{
-            	    alt15 = 1;
-            	}
-            	switch (alt15) 
-            	{
-            	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: indexes
-            	        {
-            	        	PushFollow(FOLLOW_indexes_in_objectMethodCall657);
-            	        	indexes48 = indexes();
-            	        	state.followingStackPointer--;
-            	        	if (state.failed) return retval;
-            	        	if ( (state.backtracking==0) ) stream_indexes.Add(indexes48.Tree);
-
-            	        }
-            	        break;
-
-            	}
-
-            	char_literal49=(IToken)Match(input,54,FOLLOW_54_in_objectMethodCall660); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_54.Add(char_literal49);
-
-            	Identifier50=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_objectMethodCall662); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_Identifier.Add(Identifier50);
-
-            	char_literal51=(IToken)Match(input,55,FOLLOW_55_in_objectMethodCall664); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_55.Add(char_literal51);
-
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:236:41: ( expressionList )?
+            	if ( (state.backtracking==0) ) stream_variable.Add(variable51.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:243:13: ( indexes )?
             	int alt16 = 2;
             	int LA16_0 = input.LA(1);
 
-            	if ( ((LA16_0 >= Identifier && LA16_0 <= Null) || LA16_0 == 55 || LA16_0 == 69 || LA16_0 == 74 || LA16_0 == 77) )
+            	if ( (LA16_0 == 54) )
             	{
             	    alt16 = 1;
             	}
             	switch (alt16) 
             	{
             	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: expressionList
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: indexes
             	        {
-            	        	PushFollow(FOLLOW_expressionList_in_objectMethodCall666);
-            	        	expressionList52 = expressionList();
+            	        	PushFollow(FOLLOW_indexes_in_objectMethodCall712);
+            	        	indexes52 = indexes();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( (state.backtracking==0) ) stream_expressionList.Add(expressionList52.Tree);
+            	        	if ( (state.backtracking==0) ) stream_indexes.Add(indexes52.Tree);
 
             	        }
             	        break;
 
             	}
 
-            	char_literal53=(IToken)Match(input,56,FOLLOW_56_in_objectMethodCall669); if (state.failed) return retval; 
+            	char_literal53=(IToken)Match(input,56,FOLLOW_56_in_objectMethodCall715); if (state.failed) return retval; 
             	if ( (state.backtracking==0) ) stream_56.Add(char_literal53);
+
+            	Identifier54=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_objectMethodCall717); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_Identifier.Add(Identifier54);
+
+            	char_literal55=(IToken)Match(input,57,FOLLOW_57_in_objectMethodCall719); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_57.Add(char_literal55);
+
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:243:41: ( expressionList )?
+            	int alt17 = 2;
+            	int LA17_0 = input.LA(1);
+
+            	if ( ((LA17_0 >= Identifier && LA17_0 <= Null) || LA17_0 == 57 || LA17_0 == 71 || LA17_0 == 76 || LA17_0 == 79) )
+            	{
+            	    alt17 = 1;
+            	}
+            	switch (alt17) 
+            	{
+            	    case 1 :
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: expressionList
+            	        {
+            	        	PushFollow(FOLLOW_expressionList_in_objectMethodCall721);
+            	        	expressionList56 = expressionList();
+            	        	state.followingStackPointer--;
+            	        	if (state.failed) return retval;
+            	        	if ( (state.backtracking==0) ) stream_expressionList.Add(expressionList56.Tree);
+
+            	        }
+            	        break;
+
+            	}
+
+            	char_literal57=(IToken)Match(input,58,FOLLOW_58_in_objectMethodCall724); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_58.Add(char_literal57);
 
 
 
             	// AST REWRITE
-            	// elements:          indexes, Identifier, variable, expressionList
+            	// elements:          expressionList, variable, indexes, Identifier
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -2278,15 +2414,15 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 236:61: -> ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? )
+            	// 243:61: -> ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:236:64: ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:243:64: ^( OBJ_FUNC_CALL variable ( indexes )? Identifier ( expressionList )? )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(OBJ_FUNC_CALL, "OBJ_FUNC_CALL"), root_1);
 
             	    adaptor.AddChild(root_1, stream_variable.NextTree());
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:236:89: ( indexes )?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:243:89: ( indexes )?
             	    if ( stream_indexes.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_indexes.NextTree());
@@ -2294,7 +2430,7 @@ public partial class SGLParser : Parser
             	    }
             	    stream_indexes.Reset();
             	    adaptor.AddChild(root_1, stream_Identifier.NextNode());
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:236:109: ( expressionList )?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:243:109: ( expressionList )?
             	    if ( stream_expressionList.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_expressionList.NextTree());
@@ -2346,7 +2482,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "variable"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:240:1: variable : Identifier -> Identifier ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:247:1: variable : Identifier -> Identifier ;
     public SGLParser.variable_return variable() // throws RecognitionException [1]
     {   
         SGLParser.variable_return retval = new SGLParser.variable_return();
@@ -2354,9 +2490,9 @@ public partial class SGLParser : Parser
         int variable_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken Identifier54 = null;
+        IToken Identifier58 = null;
 
-        object Identifier54_tree=null;
+        object Identifier58_tree=null;
         RewriteRuleTokenStream stream_Identifier = new RewriteRuleTokenStream(adaptor,"token Identifier");
 
         try 
@@ -2365,11 +2501,11 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:241:2: ( Identifier -> Identifier )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:241:4: Identifier
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:248:2: ( Identifier -> Identifier )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:248:4: Identifier
             {
-            	Identifier54=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_variable703); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_Identifier.Add(Identifier54);
+            	Identifier58=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_variable758); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_Identifier.Add(Identifier58);
 
 
 
@@ -2385,7 +2521,7 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 241:15: -> Identifier
+            	// 248:15: -> Identifier
             	{
             	    adaptor.AddChild(root_0, stream_Identifier.NextNode());
 
@@ -2430,7 +2566,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "stringAtom"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:246:1: stringAtom : StringAtom -> ^( STRING StringAtom ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:253:1: stringAtom : StringAtom -> ^( STRING StringAtom ) ;
     public SGLParser.stringAtom_return stringAtom() // throws RecognitionException [1]
     {   
         SGLParser.stringAtom_return retval = new SGLParser.stringAtom_return();
@@ -2438,9 +2574,9 @@ public partial class SGLParser : Parser
         int stringAtom_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken StringAtom55 = null;
+        IToken StringAtom59 = null;
 
-        object StringAtom55_tree=null;
+        object StringAtom59_tree=null;
         RewriteRuleTokenStream stream_StringAtom = new RewriteRuleTokenStream(adaptor,"token StringAtom");
 
         try 
@@ -2449,11 +2585,11 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:247:2: ( StringAtom -> ^( STRING StringAtom ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:247:6: StringAtom
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:254:2: ( StringAtom -> ^( STRING StringAtom ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:254:6: StringAtom
             {
-            	StringAtom55=(IToken)Match(input,StringAtom,FOLLOW_StringAtom_in_stringAtom726); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_StringAtom.Add(StringAtom55);
+            	StringAtom59=(IToken)Match(input,StringAtom,FOLLOW_StringAtom_in_stringAtom781); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_StringAtom.Add(StringAtom59);
 
 
 
@@ -2469,9 +2605,9 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 247:17: -> ^( STRING StringAtom )
+            	// 254:17: -> ^( STRING StringAtom )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:247:20: ^( STRING StringAtom )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:254:20: ^( STRING StringAtom )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(STRING, "STRING"), root_1);
@@ -2522,7 +2658,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "functionDef"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:252:1: functionDef : 'function' Identifier '(' ( variableList )? ')' commonBlock ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:259:1: functionDef : 'function' Identifier '(' ( variableList )? ')' commonBlock ;
     public SGLParser.functionDef_return functionDef() // throws RecognitionException [1]
     {   
         SGLParser.functionDef_return retval = new SGLParser.functionDef_return();
@@ -2530,19 +2666,19 @@ public partial class SGLParser : Parser
         int functionDef_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal56 = null;
-        IToken Identifier57 = null;
-        IToken char_literal58 = null;
-        IToken char_literal60 = null;
-        SGLParser.variableList_return variableList59 = default(SGLParser.variableList_return);
+        IToken string_literal60 = null;
+        IToken Identifier61 = null;
+        IToken char_literal62 = null;
+        IToken char_literal64 = null;
+        SGLParser.variableList_return variableList63 = default(SGLParser.variableList_return);
 
-        SGLParser.commonBlock_return commonBlock61 = default(SGLParser.commonBlock_return);
+        SGLParser.commonBlock_return commonBlock65 = default(SGLParser.commonBlock_return);
 
 
-        object string_literal56_tree=null;
-        object Identifier57_tree=null;
-        object char_literal58_tree=null;
-        object char_literal60_tree=null;
+        object string_literal60_tree=null;
+        object Identifier61_tree=null;
+        object char_literal62_tree=null;
+        object char_literal64_tree=null;
 
         try 
     	{
@@ -2550,63 +2686,63 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:253:2: ( 'function' Identifier '(' ( variableList )? ')' commonBlock )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:253:4: 'function' Identifier '(' ( variableList )? ')' commonBlock
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:260:2: ( 'function' Identifier '(' ( variableList )? ')' commonBlock )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:260:4: 'function' Identifier '(' ( variableList )? ')' commonBlock
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	string_literal56=(IToken)Match(input,57,FOLLOW_57_in_functionDef747); if (state.failed) return retval;
+            	string_literal60=(IToken)Match(input,59,FOLLOW_59_in_functionDef802); if (state.failed) return retval;
             	if ( state.backtracking == 0 )
-            	{string_literal56_tree = (object)adaptor.Create(string_literal56);
-            		adaptor.AddChild(root_0, string_literal56_tree);
+            	{string_literal60_tree = (object)adaptor.Create(string_literal60);
+            		adaptor.AddChild(root_0, string_literal60_tree);
             	}
-            	Identifier57=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_functionDef749); if (state.failed) return retval;
+            	Identifier61=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_functionDef804); if (state.failed) return retval;
             	if ( state.backtracking == 0 )
-            	{Identifier57_tree = (object)adaptor.Create(Identifier57);
-            		adaptor.AddChild(root_0, Identifier57_tree);
+            	{Identifier61_tree = (object)adaptor.Create(Identifier61);
+            		adaptor.AddChild(root_0, Identifier61_tree);
             	}
-            	char_literal58=(IToken)Match(input,55,FOLLOW_55_in_functionDef751); if (state.failed) return retval;
+            	char_literal62=(IToken)Match(input,57,FOLLOW_57_in_functionDef806); if (state.failed) return retval;
             	if ( state.backtracking == 0 )
-            	{char_literal58_tree = (object)adaptor.Create(char_literal58);
-            		adaptor.AddChild(root_0, char_literal58_tree);
+            	{char_literal62_tree = (object)adaptor.Create(char_literal62);
+            		adaptor.AddChild(root_0, char_literal62_tree);
             	}
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:253:30: ( variableList )?
-            	int alt17 = 2;
-            	int LA17_0 = input.LA(1);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:260:30: ( variableList )?
+            	int alt18 = 2;
+            	int LA18_0 = input.LA(1);
 
-            	if ( (LA17_0 == Identifier) )
+            	if ( (LA18_0 == Identifier) )
             	{
-            	    alt17 = 1;
+            	    alt18 = 1;
             	}
-            	switch (alt17) 
+            	switch (alt18) 
             	{
             	    case 1 :
             	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: variableList
             	        {
-            	        	PushFollow(FOLLOW_variableList_in_functionDef753);
-            	        	variableList59 = variableList();
+            	        	PushFollow(FOLLOW_variableList_in_functionDef808);
+            	        	variableList63 = variableList();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, variableList59.Tree);
+            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, variableList63.Tree);
 
             	        }
             	        break;
 
             	}
 
-            	char_literal60=(IToken)Match(input,56,FOLLOW_56_in_functionDef756); if (state.failed) return retval;
+            	char_literal64=(IToken)Match(input,58,FOLLOW_58_in_functionDef811); if (state.failed) return retval;
             	if ( state.backtracking == 0 )
-            	{char_literal60_tree = (object)adaptor.Create(char_literal60);
-            		adaptor.AddChild(root_0, char_literal60_tree);
+            	{char_literal64_tree = (object)adaptor.Create(char_literal64);
+            		adaptor.AddChild(root_0, char_literal64_tree);
             	}
-            	PushFollow(FOLLOW_commonBlock_in_functionDef758);
-            	commonBlock61 = commonBlock();
+            	PushFollow(FOLLOW_commonBlock_in_functionDef813);
+            	commonBlock65 = commonBlock();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, commonBlock61.Tree);
+            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, commonBlock65.Tree);
             	if ( (state.backtracking==0) )
             	{
-            	   DefineFunction(((Identifier57 != null) ? Identifier57.Text : null), ((variableList59 != null) ? ((object)variableList59.Tree) : null), ((commonBlock61 != null) ? ((object)commonBlock61.Tree) : null), ((Identifier57 != null) ? Identifier57.Line : 0)); 
+            	   DefineFunction(((Identifier61 != null) ? Identifier61.Text : null), ((variableList63 != null) ? ((object)variableList63.Tree) : null), ((commonBlock65 != null) ? ((object)commonBlock65.Tree) : null), ((Identifier61 != null) ? Identifier61.Line : 0)); 
             	}
 
             }
@@ -2647,7 +2783,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "expression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:272:1: expression : ( instantiateClass | conditionalExpression );
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:279:1: expression : ( instantiateClass | conditionalExpression );
     public SGLParser.expression_return expression() // throws RecognitionException [1]
     {   
         SGLParser.expression_return retval = new SGLParser.expression_return();
@@ -2655,9 +2791,9 @@ public partial class SGLParser : Parser
         int expression_StartIndex = input.Index();
         object root_0 = null;
 
-        SGLParser.instantiateClass_return instantiateClass62 = default(SGLParser.instantiateClass_return);
+        SGLParser.instantiateClass_return instantiateClass66 = default(SGLParser.instantiateClass_return);
 
-        SGLParser.conditionalExpression_return conditionalExpression63 = default(SGLParser.conditionalExpression_return);
+        SGLParser.conditionalExpression_return conditionalExpression67 = default(SGLParser.conditionalExpression_return);
 
 
 
@@ -2667,51 +2803,51 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:273:5: ( instantiateClass | conditionalExpression )
-            int alt18 = 2;
-            int LA18_0 = input.LA(1);
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:280:5: ( instantiateClass | conditionalExpression )
+            int alt19 = 2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA18_0 == 77) )
+            if ( (LA19_0 == 79) )
             {
-                alt18 = 1;
+                alt19 = 1;
             }
-            else if ( ((LA18_0 >= Identifier && LA18_0 <= Null) || LA18_0 == 55 || LA18_0 == 69 || LA18_0 == 74) )
+            else if ( ((LA19_0 >= Identifier && LA19_0 <= Null) || LA19_0 == 57 || LA19_0 == 71 || LA19_0 == 76) )
             {
-                alt18 = 2;
+                alt19 = 2;
             }
             else 
             {
                 if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-                NoViableAltException nvae_d18s0 =
-                    new NoViableAltException("", 18, 0, input);
+                NoViableAltException nvae_d19s0 =
+                    new NoViableAltException("", 19, 0, input);
 
-                throw nvae_d18s0;
+                throw nvae_d19s0;
             }
-            switch (alt18) 
+            switch (alt19) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:273:7: instantiateClass
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:280:7: instantiateClass
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_instantiateClass_in_expression795);
-                    	instantiateClass62 = instantiateClass();
+                    	PushFollow(FOLLOW_instantiateClass_in_expression850);
+                    	instantiateClass66 = instantiateClass();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, instantiateClass62.Tree);
+                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, instantiateClass66.Tree);
 
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:274:7: conditionalExpression
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:281:7: conditionalExpression
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_conditionalExpression_in_expression805);
-                    	conditionalExpression63 = conditionalExpression();
+                    	PushFollow(FOLLOW_conditionalExpression_in_expression860);
+                    	conditionalExpression67 = conditionalExpression();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, conditionalExpression63.Tree);
+                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, conditionalExpression67.Tree);
 
                     }
                     break;
@@ -2753,7 +2889,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "conditionalExpression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:279:1: conditionalExpression : conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )? ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:286:1: conditionalExpression : conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )? ;
     public SGLParser.conditionalExpression_return conditionalExpression() // throws RecognitionException [1]
     {   
         SGLParser.conditionalExpression_return retval = new SGLParser.conditionalExpression_return();
@@ -2761,17 +2897,17 @@ public partial class SGLParser : Parser
         int conditionalExpression_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal65 = null;
-        IToken char_literal67 = null;
-        SGLParser.conditionalOrExpression_return conditionalOrExpression64 = default(SGLParser.conditionalOrExpression_return);
+        IToken char_literal69 = null;
+        IToken char_literal71 = null;
+        SGLParser.conditionalOrExpression_return conditionalOrExpression68 = default(SGLParser.conditionalOrExpression_return);
 
-        SGLParser.conditionalExpression_return conditionalExpression66 = default(SGLParser.conditionalExpression_return);
+        SGLParser.conditionalExpression_return conditionalExpression70 = default(SGLParser.conditionalExpression_return);
 
-        SGLParser.conditionalExpression_return conditionalExpression68 = default(SGLParser.conditionalExpression_return);
+        SGLParser.conditionalExpression_return conditionalExpression72 = default(SGLParser.conditionalExpression_return);
 
 
-        object char_literal65_tree=null;
-        object char_literal67_tree=null;
+        object char_literal69_tree=null;
+        object char_literal71_tree=null;
 
         try 
     	{
@@ -2779,45 +2915,45 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:280:5: ( conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )? )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:280:9: conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )?
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:287:5: ( conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )? )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:287:9: conditionalOrExpression ( '?' conditionalExpression ':' conditionalExpression )?
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	PushFollow(FOLLOW_conditionalOrExpression_in_conditionalExpression831);
-            	conditionalOrExpression64 = conditionalOrExpression();
+            	PushFollow(FOLLOW_conditionalOrExpression_in_conditionalExpression886);
+            	conditionalOrExpression68 = conditionalOrExpression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, conditionalOrExpression64.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:280:33: ( '?' conditionalExpression ':' conditionalExpression )?
-            	int alt19 = 2;
-            	int LA19_0 = input.LA(1);
+            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, conditionalOrExpression68.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:287:33: ( '?' conditionalExpression ':' conditionalExpression )?
+            	int alt20 = 2;
+            	int LA20_0 = input.LA(1);
 
-            	if ( (LA19_0 == 58) )
+            	if ( (LA20_0 == 60) )
             	{
-            	    alt19 = 1;
+            	    alt20 = 1;
             	}
-            	switch (alt19) 
+            	switch (alt20) 
             	{
             	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:280:35: '?' conditionalExpression ':' conditionalExpression
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:287:35: '?' conditionalExpression ':' conditionalExpression
             	        {
-            	        	char_literal65=(IToken)Match(input,58,FOLLOW_58_in_conditionalExpression835); if (state.failed) return retval;
+            	        	char_literal69=(IToken)Match(input,60,FOLLOW_60_in_conditionalExpression890); if (state.failed) return retval;
             	        	if ( state.backtracking == 0 )
-            	        	{char_literal65_tree = (object)adaptor.Create(char_literal65);
-            	        		root_0 = (object)adaptor.BecomeRoot(char_literal65_tree, root_0);
+            	        	{char_literal69_tree = (object)adaptor.Create(char_literal69);
+            	        		root_0 = (object)adaptor.BecomeRoot(char_literal69_tree, root_0);
             	        	}
-            	        	PushFollow(FOLLOW_conditionalExpression_in_conditionalExpression838);
-            	        	conditionalExpression66 = conditionalExpression();
+            	        	PushFollow(FOLLOW_conditionalExpression_in_conditionalExpression893);
+            	        	conditionalExpression70 = conditionalExpression();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, conditionalExpression66.Tree);
-            	        	char_literal67=(IToken)Match(input,59,FOLLOW_59_in_conditionalExpression840); if (state.failed) return retval;
-            	        	PushFollow(FOLLOW_conditionalExpression_in_conditionalExpression843);
-            	        	conditionalExpression68 = conditionalExpression();
+            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, conditionalExpression70.Tree);
+            	        	char_literal71=(IToken)Match(input,61,FOLLOW_61_in_conditionalExpression895); if (state.failed) return retval;
+            	        	PushFollow(FOLLOW_conditionalExpression_in_conditionalExpression898);
+            	        	conditionalExpression72 = conditionalExpression();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, conditionalExpression68.Tree);
+            	        	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, conditionalExpression72.Tree);
 
             	        }
             	        break;
@@ -2863,7 +2999,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "conditionalOrExpression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:285:1: conditionalOrExpression : conditionalAndExpression ( '||' conditionalAndExpression )* ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:292:1: conditionalOrExpression : conditionalAndExpression ( '||' conditionalAndExpression )* ;
     public SGLParser.conditionalOrExpression_return conditionalOrExpression() // throws RecognitionException [1]
     {   
         SGLParser.conditionalOrExpression_return retval = new SGLParser.conditionalOrExpression_return();
@@ -2871,13 +3007,13 @@ public partial class SGLParser : Parser
         int conditionalOrExpression_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal70 = null;
-        SGLParser.conditionalAndExpression_return conditionalAndExpression69 = default(SGLParser.conditionalAndExpression_return);
+        IToken string_literal74 = null;
+        SGLParser.conditionalAndExpression_return conditionalAndExpression73 = default(SGLParser.conditionalAndExpression_return);
 
-        SGLParser.conditionalAndExpression_return conditionalAndExpression71 = default(SGLParser.conditionalAndExpression_return);
+        SGLParser.conditionalAndExpression_return conditionalAndExpression75 = default(SGLParser.conditionalAndExpression_return);
 
 
-        object string_literal70_tree=null;
+        object string_literal74_tree=null;
 
         try 
     	{
@@ -2885,54 +3021,54 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:286:5: ( conditionalAndExpression ( '||' conditionalAndExpression )* )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:286:9: conditionalAndExpression ( '||' conditionalAndExpression )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:293:5: ( conditionalAndExpression ( '||' conditionalAndExpression )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:293:9: conditionalAndExpression ( '||' conditionalAndExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	PushFollow(FOLLOW_conditionalAndExpression_in_conditionalOrExpression886);
-            	conditionalAndExpression69 = conditionalAndExpression();
+            	PushFollow(FOLLOW_conditionalAndExpression_in_conditionalOrExpression941);
+            	conditionalAndExpression73 = conditionalAndExpression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, conditionalAndExpression69.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:286:34: ( '||' conditionalAndExpression )*
+            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, conditionalAndExpression73.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:293:34: ( '||' conditionalAndExpression )*
             	do 
             	{
-            	    int alt20 = 2;
-            	    int LA20_0 = input.LA(1);
+            	    int alt21 = 2;
+            	    int LA21_0 = input.LA(1);
 
-            	    if ( (LA20_0 == 60) )
+            	    if ( (LA21_0 == 62) )
             	    {
-            	        alt20 = 1;
+            	        alt21 = 1;
             	    }
 
 
-            	    switch (alt20) 
+            	    switch (alt21) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:286:36: '||' conditionalAndExpression
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:293:36: '||' conditionalAndExpression
             			    {
-            			    	string_literal70=(IToken)Match(input,60,FOLLOW_60_in_conditionalOrExpression890); if (state.failed) return retval;
+            			    	string_literal74=(IToken)Match(input,62,FOLLOW_62_in_conditionalOrExpression945); if (state.failed) return retval;
             			    	if ( state.backtracking == 0 )
-            			    	{string_literal70_tree = (object)adaptor.Create(string_literal70);
-            			    		root_0 = (object)adaptor.BecomeRoot(string_literal70_tree, root_0);
+            			    	{string_literal74_tree = (object)adaptor.Create(string_literal74);
+            			    		root_0 = (object)adaptor.BecomeRoot(string_literal74_tree, root_0);
             			    	}
-            			    	PushFollow(FOLLOW_conditionalAndExpression_in_conditionalOrExpression893);
-            			    	conditionalAndExpression71 = conditionalAndExpression();
+            			    	PushFollow(FOLLOW_conditionalAndExpression_in_conditionalOrExpression948);
+            			    	conditionalAndExpression75 = conditionalAndExpression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, conditionalAndExpression71.Tree);
+            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, conditionalAndExpression75.Tree);
 
             			    }
             			    break;
 
             			default:
-            			    goto loop20;
+            			    goto loop21;
             	    }
             	} while (true);
 
-            	loop20:
-            		;	// Stops C# compiler whining that label 'loop20' has no statements
+            	loop21:
+            		;	// Stops C# compiler whining that label 'loop21' has no statements
 
 
             }
@@ -2973,7 +3109,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "conditionalAndExpression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:290:1: conditionalAndExpression : equalityExpression ( '&&' equalityExpression )* ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:297:1: conditionalAndExpression : equalityExpression ( '&&' equalityExpression )* ;
     public SGLParser.conditionalAndExpression_return conditionalAndExpression() // throws RecognitionException [1]
     {   
         SGLParser.conditionalAndExpression_return retval = new SGLParser.conditionalAndExpression_return();
@@ -2981,13 +3117,13 @@ public partial class SGLParser : Parser
         int conditionalAndExpression_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal73 = null;
-        SGLParser.equalityExpression_return equalityExpression72 = default(SGLParser.equalityExpression_return);
+        IToken string_literal77 = null;
+        SGLParser.equalityExpression_return equalityExpression76 = default(SGLParser.equalityExpression_return);
 
-        SGLParser.equalityExpression_return equalityExpression74 = default(SGLParser.equalityExpression_return);
+        SGLParser.equalityExpression_return equalityExpression78 = default(SGLParser.equalityExpression_return);
 
 
-        object string_literal73_tree=null;
+        object string_literal77_tree=null;
 
         try 
     	{
@@ -2995,54 +3131,54 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:291:5: ( equalityExpression ( '&&' equalityExpression )* )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:291:9: equalityExpression ( '&&' equalityExpression )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:298:5: ( equalityExpression ( '&&' equalityExpression )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:298:9: equalityExpression ( '&&' equalityExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	PushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression924);
-            	equalityExpression72 = equalityExpression();
+            	PushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression979);
+            	equalityExpression76 = equalityExpression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, equalityExpression72.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:291:28: ( '&&' equalityExpression )*
+            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, equalityExpression76.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:298:28: ( '&&' equalityExpression )*
             	do 
             	{
-            	    int alt21 = 2;
-            	    int LA21_0 = input.LA(1);
+            	    int alt22 = 2;
+            	    int LA22_0 = input.LA(1);
 
-            	    if ( (LA21_0 == 61) )
+            	    if ( (LA22_0 == 63) )
             	    {
-            	        alt21 = 1;
+            	        alt22 = 1;
             	    }
 
 
-            	    switch (alt21) 
+            	    switch (alt22) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:291:30: '&&' equalityExpression
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:298:30: '&&' equalityExpression
             			    {
-            			    	string_literal73=(IToken)Match(input,61,FOLLOW_61_in_conditionalAndExpression928); if (state.failed) return retval;
+            			    	string_literal77=(IToken)Match(input,63,FOLLOW_63_in_conditionalAndExpression983); if (state.failed) return retval;
             			    	if ( state.backtracking == 0 )
-            			    	{string_literal73_tree = (object)adaptor.Create(string_literal73);
-            			    		root_0 = (object)adaptor.BecomeRoot(string_literal73_tree, root_0);
+            			    	{string_literal77_tree = (object)adaptor.Create(string_literal77);
+            			    		root_0 = (object)adaptor.BecomeRoot(string_literal77_tree, root_0);
             			    	}
-            			    	PushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression931);
-            			    	equalityExpression74 = equalityExpression();
+            			    	PushFollow(FOLLOW_equalityExpression_in_conditionalAndExpression986);
+            			    	equalityExpression78 = equalityExpression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, equalityExpression74.Tree);
+            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, equalityExpression78.Tree);
 
             			    }
             			    break;
 
             			default:
-            			    goto loop21;
+            			    goto loop22;
             	    }
             	} while (true);
 
-            	loop21:
-            		;	// Stops C# compiler whining that label 'loop21' has no statements
+            	loop22:
+            		;	// Stops C# compiler whining that label 'loop22' has no statements
 
 
             }
@@ -3083,7 +3219,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "equalityExpression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:295:1: equalityExpression : relationalExpression ( ( '==' | '!=' ) relationalExpression )* ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:302:1: equalityExpression : relationalExpression ( ( '==' | '!=' ) relationalExpression )* ;
     public SGLParser.equalityExpression_return equalityExpression() // throws RecognitionException [1]
     {   
         SGLParser.equalityExpression_return retval = new SGLParser.equalityExpression_return();
@@ -3091,15 +3227,15 @@ public partial class SGLParser : Parser
         int equalityExpression_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal76 = null;
-        IToken string_literal77 = null;
-        SGLParser.relationalExpression_return relationalExpression75 = default(SGLParser.relationalExpression_return);
+        IToken string_literal80 = null;
+        IToken string_literal81 = null;
+        SGLParser.relationalExpression_return relationalExpression79 = default(SGLParser.relationalExpression_return);
 
-        SGLParser.relationalExpression_return relationalExpression78 = default(SGLParser.relationalExpression_return);
+        SGLParser.relationalExpression_return relationalExpression82 = default(SGLParser.relationalExpression_return);
 
 
-        object string_literal76_tree=null;
-        object string_literal77_tree=null;
+        object string_literal80_tree=null;
+        object string_literal81_tree=null;
 
         try 
     	{
@@ -3107,73 +3243,73 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:296:5: ( relationalExpression ( ( '==' | '!=' ) relationalExpression )* )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:296:9: relationalExpression ( ( '==' | '!=' ) relationalExpression )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:303:5: ( relationalExpression ( ( '==' | '!=' ) relationalExpression )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:303:9: relationalExpression ( ( '==' | '!=' ) relationalExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	PushFollow(FOLLOW_relationalExpression_in_equalityExpression958);
-            	relationalExpression75 = relationalExpression();
+            	PushFollow(FOLLOW_relationalExpression_in_equalityExpression1013);
+            	relationalExpression79 = relationalExpression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, relationalExpression75.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:296:30: ( ( '==' | '!=' ) relationalExpression )*
+            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, relationalExpression79.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:303:30: ( ( '==' | '!=' ) relationalExpression )*
             	do 
             	{
-            	    int alt23 = 2;
-            	    int LA23_0 = input.LA(1);
+            	    int alt24 = 2;
+            	    int LA24_0 = input.LA(1);
 
-            	    if ( ((LA23_0 >= 62 && LA23_0 <= 63)) )
+            	    if ( ((LA24_0 >= 64 && LA24_0 <= 65)) )
             	    {
-            	        alt23 = 1;
+            	        alt24 = 1;
             	    }
 
 
-            	    switch (alt23) 
+            	    switch (alt24) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:296:32: ( '==' | '!=' ) relationalExpression
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:303:32: ( '==' | '!=' ) relationalExpression
             			    {
-            			    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:296:32: ( '==' | '!=' )
-            			    	int alt22 = 2;
-            			    	int LA22_0 = input.LA(1);
+            			    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:303:32: ( '==' | '!=' )
+            			    	int alt23 = 2;
+            			    	int LA23_0 = input.LA(1);
 
-            			    	if ( (LA22_0 == 62) )
+            			    	if ( (LA23_0 == 64) )
             			    	{
-            			    	    alt22 = 1;
+            			    	    alt23 = 1;
             			    	}
-            			    	else if ( (LA22_0 == 63) )
+            			    	else if ( (LA23_0 == 65) )
             			    	{
-            			    	    alt22 = 2;
+            			    	    alt23 = 2;
             			    	}
             			    	else 
             			    	{
             			    	    if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-            			    	    NoViableAltException nvae_d22s0 =
-            			    	        new NoViableAltException("", 22, 0, input);
+            			    	    NoViableAltException nvae_d23s0 =
+            			    	        new NoViableAltException("", 23, 0, input);
 
-            			    	    throw nvae_d22s0;
+            			    	    throw nvae_d23s0;
             			    	}
-            			    	switch (alt22) 
+            			    	switch (alt23) 
             			    	{
             			    	    case 1 :
-            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:296:33: '=='
+            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:303:33: '=='
             			    	        {
-            			    	        	string_literal76=(IToken)Match(input,62,FOLLOW_62_in_equalityExpression963); if (state.failed) return retval;
+            			    	        	string_literal80=(IToken)Match(input,64,FOLLOW_64_in_equalityExpression1018); if (state.failed) return retval;
             			    	        	if ( state.backtracking == 0 )
-            			    	        	{string_literal76_tree = (object)adaptor.Create(string_literal76);
-            			    	        		root_0 = (object)adaptor.BecomeRoot(string_literal76_tree, root_0);
+            			    	        	{string_literal80_tree = (object)adaptor.Create(string_literal80);
+            			    	        		root_0 = (object)adaptor.BecomeRoot(string_literal80_tree, root_0);
             			    	        	}
 
             			    	        }
             			    	        break;
             			    	    case 2 :
-            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:296:41: '!='
+            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:303:41: '!='
             			    	        {
-            			    	        	string_literal77=(IToken)Match(input,63,FOLLOW_63_in_equalityExpression968); if (state.failed) return retval;
+            			    	        	string_literal81=(IToken)Match(input,65,FOLLOW_65_in_equalityExpression1023); if (state.failed) return retval;
             			    	        	if ( state.backtracking == 0 )
-            			    	        	{string_literal77_tree = (object)adaptor.Create(string_literal77);
-            			    	        		root_0 = (object)adaptor.BecomeRoot(string_literal77_tree, root_0);
+            			    	        	{string_literal81_tree = (object)adaptor.Create(string_literal81);
+            			    	        		root_0 = (object)adaptor.BecomeRoot(string_literal81_tree, root_0);
             			    	        	}
 
             			    	        }
@@ -3181,22 +3317,22 @@ public partial class SGLParser : Parser
 
             			    	}
 
-            			    	PushFollow(FOLLOW_relationalExpression_in_equalityExpression972);
-            			    	relationalExpression78 = relationalExpression();
+            			    	PushFollow(FOLLOW_relationalExpression_in_equalityExpression1027);
+            			    	relationalExpression82 = relationalExpression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, relationalExpression78.Tree);
+            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, relationalExpression82.Tree);
 
             			    }
             			    break;
 
             			default:
-            			    goto loop23;
+            			    goto loop24;
             	    }
             	} while (true);
 
-            	loop23:
-            		;	// Stops C# compiler whining that label 'loop23' has no statements
+            	loop24:
+            		;	// Stops C# compiler whining that label 'loop24' has no statements
 
 
             }
@@ -3237,7 +3373,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "relationalExpression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:300:1: relationalExpression : additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )* ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:307:1: relationalExpression : additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )* ;
     public SGLParser.relationalExpression_return relationalExpression() // throws RecognitionException [1]
     {   
         SGLParser.relationalExpression_return retval = new SGLParser.relationalExpression_return();
@@ -3245,19 +3381,19 @@ public partial class SGLParser : Parser
         int relationalExpression_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal80 = null;
-        IToken char_literal81 = null;
-        IToken string_literal82 = null;
-        IToken string_literal83 = null;
-        SGLParser.additiveExpression_return additiveExpression79 = default(SGLParser.additiveExpression_return);
+        IToken char_literal84 = null;
+        IToken char_literal85 = null;
+        IToken string_literal86 = null;
+        IToken string_literal87 = null;
+        SGLParser.additiveExpression_return additiveExpression83 = default(SGLParser.additiveExpression_return);
 
-        SGLParser.additiveExpression_return additiveExpression84 = default(SGLParser.additiveExpression_return);
+        SGLParser.additiveExpression_return additiveExpression88 = default(SGLParser.additiveExpression_return);
 
 
-        object char_literal80_tree=null;
-        object char_literal81_tree=null;
-        object string_literal82_tree=null;
-        object string_literal83_tree=null;
+        object char_literal84_tree=null;
+        object char_literal85_tree=null;
+        object string_literal86_tree=null;
+        object string_literal87_tree=null;
 
         try 
     	{
@@ -3265,107 +3401,107 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:301:5: ( additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )* )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:301:9: additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:308:5: ( additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:308:9: additiveExpression ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	PushFollow(FOLLOW_additiveExpression_in_relationalExpression1003);
-            	additiveExpression79 = additiveExpression();
+            	PushFollow(FOLLOW_additiveExpression_in_relationalExpression1058);
+            	additiveExpression83 = additiveExpression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, additiveExpression79.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:301:28: ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )*
+            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, additiveExpression83.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:308:28: ( ( '<' | '>' | '<=' | '>=' ) additiveExpression )*
             	do 
             	{
-            	    int alt25 = 2;
-            	    int LA25_0 = input.LA(1);
+            	    int alt26 = 2;
+            	    int LA26_0 = input.LA(1);
 
-            	    if ( ((LA25_0 >= 64 && LA25_0 <= 67)) )
+            	    if ( ((LA26_0 >= 66 && LA26_0 <= 69)) )
             	    {
-            	        alt25 = 1;
+            	        alt26 = 1;
             	    }
 
 
-            	    switch (alt25) 
+            	    switch (alt26) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:301:29: ( '<' | '>' | '<=' | '>=' ) additiveExpression
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:308:29: ( '<' | '>' | '<=' | '>=' ) additiveExpression
             			    {
-            			    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:301:29: ( '<' | '>' | '<=' | '>=' )
-            			    	int alt24 = 4;
+            			    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:308:29: ( '<' | '>' | '<=' | '>=' )
+            			    	int alt25 = 4;
             			    	switch ( input.LA(1) ) 
             			    	{
-            			    	case 64:
-            			    		{
-            			    	    alt24 = 1;
-            			    	    }
-            			    	    break;
-            			    	case 65:
-            			    		{
-            			    	    alt24 = 2;
-            			    	    }
-            			    	    break;
             			    	case 66:
             			    		{
-            			    	    alt24 = 3;
+            			    	    alt25 = 1;
             			    	    }
             			    	    break;
             			    	case 67:
             			    		{
-            			    	    alt24 = 4;
+            			    	    alt25 = 2;
+            			    	    }
+            			    	    break;
+            			    	case 68:
+            			    		{
+            			    	    alt25 = 3;
+            			    	    }
+            			    	    break;
+            			    	case 69:
+            			    		{
+            			    	    alt25 = 4;
             			    	    }
             			    	    break;
             			    		default:
             			    		    if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-            			    		    NoViableAltException nvae_d24s0 =
-            			    		        new NoViableAltException("", 24, 0, input);
+            			    		    NoViableAltException nvae_d25s0 =
+            			    		        new NoViableAltException("", 25, 0, input);
 
-            			    		    throw nvae_d24s0;
+            			    		    throw nvae_d25s0;
             			    	}
 
-            			    	switch (alt24) 
+            			    	switch (alt25) 
             			    	{
             			    	    case 1 :
-            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:301:30: '<'
+            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:308:30: '<'
             			    	        {
-            			    	        	char_literal80=(IToken)Match(input,64,FOLLOW_64_in_relationalExpression1007); if (state.failed) return retval;
+            			    	        	char_literal84=(IToken)Match(input,66,FOLLOW_66_in_relationalExpression1062); if (state.failed) return retval;
             			    	        	if ( state.backtracking == 0 )
-            			    	        	{char_literal80_tree = (object)adaptor.Create(char_literal80);
-            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal80_tree, root_0);
+            			    	        	{char_literal84_tree = (object)adaptor.Create(char_literal84);
+            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal84_tree, root_0);
             			    	        	}
 
             			    	        }
             			    	        break;
             			    	    case 2 :
-            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:301:35: '>'
+            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:308:35: '>'
             			    	        {
-            			    	        	char_literal81=(IToken)Match(input,65,FOLLOW_65_in_relationalExpression1010); if (state.failed) return retval;
+            			    	        	char_literal85=(IToken)Match(input,67,FOLLOW_67_in_relationalExpression1065); if (state.failed) return retval;
             			    	        	if ( state.backtracking == 0 )
-            			    	        	{char_literal81_tree = (object)adaptor.Create(char_literal81);
-            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal81_tree, root_0);
+            			    	        	{char_literal85_tree = (object)adaptor.Create(char_literal85);
+            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal85_tree, root_0);
             			    	        	}
 
             			    	        }
             			    	        break;
             			    	    case 3 :
-            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:301:40: '<='
+            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:308:40: '<='
             			    	        {
-            			    	        	string_literal82=(IToken)Match(input,66,FOLLOW_66_in_relationalExpression1013); if (state.failed) return retval;
+            			    	        	string_literal86=(IToken)Match(input,68,FOLLOW_68_in_relationalExpression1068); if (state.failed) return retval;
             			    	        	if ( state.backtracking == 0 )
-            			    	        	{string_literal82_tree = (object)adaptor.Create(string_literal82);
-            			    	        		root_0 = (object)adaptor.BecomeRoot(string_literal82_tree, root_0);
+            			    	        	{string_literal86_tree = (object)adaptor.Create(string_literal86);
+            			    	        		root_0 = (object)adaptor.BecomeRoot(string_literal86_tree, root_0);
             			    	        	}
 
             			    	        }
             			    	        break;
             			    	    case 4 :
-            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:301:46: '>='
+            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:308:46: '>='
             			    	        {
-            			    	        	string_literal83=(IToken)Match(input,67,FOLLOW_67_in_relationalExpression1016); if (state.failed) return retval;
+            			    	        	string_literal87=(IToken)Match(input,69,FOLLOW_69_in_relationalExpression1071); if (state.failed) return retval;
             			    	        	if ( state.backtracking == 0 )
-            			    	        	{string_literal83_tree = (object)adaptor.Create(string_literal83);
-            			    	        		root_0 = (object)adaptor.BecomeRoot(string_literal83_tree, root_0);
+            			    	        	{string_literal87_tree = (object)adaptor.Create(string_literal87);
+            			    	        		root_0 = (object)adaptor.BecomeRoot(string_literal87_tree, root_0);
             			    	        	}
 
             			    	        }
@@ -3373,22 +3509,22 @@ public partial class SGLParser : Parser
 
             			    	}
 
-            			    	PushFollow(FOLLOW_additiveExpression_in_relationalExpression1020);
-            			    	additiveExpression84 = additiveExpression();
+            			    	PushFollow(FOLLOW_additiveExpression_in_relationalExpression1075);
+            			    	additiveExpression88 = additiveExpression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, additiveExpression84.Tree);
+            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, additiveExpression88.Tree);
 
             			    }
             			    break;
 
             			default:
-            			    goto loop25;
+            			    goto loop26;
             	    }
             	} while (true);
 
-            	loop25:
-            		;	// Stops C# compiler whining that label 'loop25' has no statements
+            	loop26:
+            		;	// Stops C# compiler whining that label 'loop26' has no statements
 
 
             }
@@ -3429,7 +3565,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "additiveExpression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:305:1: additiveExpression : multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:312:1: additiveExpression : multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* ;
     public SGLParser.additiveExpression_return additiveExpression() // throws RecognitionException [1]
     {   
         SGLParser.additiveExpression_return retval = new SGLParser.additiveExpression_return();
@@ -3437,15 +3573,15 @@ public partial class SGLParser : Parser
         int additiveExpression_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal86 = null;
-        IToken char_literal87 = null;
-        SGLParser.multiplicativeExpression_return multiplicativeExpression85 = default(SGLParser.multiplicativeExpression_return);
+        IToken char_literal90 = null;
+        IToken char_literal91 = null;
+        SGLParser.multiplicativeExpression_return multiplicativeExpression89 = default(SGLParser.multiplicativeExpression_return);
 
-        SGLParser.multiplicativeExpression_return multiplicativeExpression88 = default(SGLParser.multiplicativeExpression_return);
+        SGLParser.multiplicativeExpression_return multiplicativeExpression92 = default(SGLParser.multiplicativeExpression_return);
 
 
-        object char_literal86_tree=null;
-        object char_literal87_tree=null;
+        object char_literal90_tree=null;
+        object char_literal91_tree=null;
 
         try 
     	{
@@ -3453,73 +3589,73 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:306:5: ( multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:306:9: multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:313:5: ( multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:313:9: multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	PushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression1058);
-            	multiplicativeExpression85 = multiplicativeExpression();
+            	PushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression1113);
+            	multiplicativeExpression89 = multiplicativeExpression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, multiplicativeExpression85.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:306:34: ( ( '+' | '-' ) multiplicativeExpression )*
+            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, multiplicativeExpression89.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:313:34: ( ( '+' | '-' ) multiplicativeExpression )*
             	do 
             	{
-            	    int alt27 = 2;
-            	    int LA27_0 = input.LA(1);
+            	    int alt28 = 2;
+            	    int LA28_0 = input.LA(1);
 
-            	    if ( ((LA27_0 >= 68 && LA27_0 <= 69)) )
+            	    if ( ((LA28_0 >= 70 && LA28_0 <= 71)) )
             	    {
-            	        alt27 = 1;
+            	        alt28 = 1;
             	    }
 
 
-            	    switch (alt27) 
+            	    switch (alt28) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:306:35: ( '+' | '-' ) multiplicativeExpression
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:313:35: ( '+' | '-' ) multiplicativeExpression
             			    {
-            			    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:306:35: ( '+' | '-' )
-            			    	int alt26 = 2;
-            			    	int LA26_0 = input.LA(1);
+            			    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:313:35: ( '+' | '-' )
+            			    	int alt27 = 2;
+            			    	int LA27_0 = input.LA(1);
 
-            			    	if ( (LA26_0 == 68) )
+            			    	if ( (LA27_0 == 70) )
             			    	{
-            			    	    alt26 = 1;
+            			    	    alt27 = 1;
             			    	}
-            			    	else if ( (LA26_0 == 69) )
+            			    	else if ( (LA27_0 == 71) )
             			    	{
-            			    	    alt26 = 2;
+            			    	    alt27 = 2;
             			    	}
             			    	else 
             			    	{
             			    	    if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-            			    	    NoViableAltException nvae_d26s0 =
-            			    	        new NoViableAltException("", 26, 0, input);
+            			    	    NoViableAltException nvae_d27s0 =
+            			    	        new NoViableAltException("", 27, 0, input);
 
-            			    	    throw nvae_d26s0;
+            			    	    throw nvae_d27s0;
             			    	}
-            			    	switch (alt26) 
+            			    	switch (alt27) 
             			    	{
             			    	    case 1 :
-            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:306:36: '+'
+            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:313:36: '+'
             			    	        {
-            			    	        	char_literal86=(IToken)Match(input,68,FOLLOW_68_in_additiveExpression1062); if (state.failed) return retval;
+            			    	        	char_literal90=(IToken)Match(input,70,FOLLOW_70_in_additiveExpression1117); if (state.failed) return retval;
             			    	        	if ( state.backtracking == 0 )
-            			    	        	{char_literal86_tree = (object)adaptor.Create(char_literal86);
-            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal86_tree, root_0);
+            			    	        	{char_literal90_tree = (object)adaptor.Create(char_literal90);
+            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal90_tree, root_0);
             			    	        	}
 
             			    	        }
             			    	        break;
             			    	    case 2 :
-            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:306:41: '-'
+            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:313:41: '-'
             			    	        {
-            			    	        	char_literal87=(IToken)Match(input,69,FOLLOW_69_in_additiveExpression1065); if (state.failed) return retval;
+            			    	        	char_literal91=(IToken)Match(input,71,FOLLOW_71_in_additiveExpression1120); if (state.failed) return retval;
             			    	        	if ( state.backtracking == 0 )
-            			    	        	{char_literal87_tree = (object)adaptor.Create(char_literal87);
-            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal87_tree, root_0);
+            			    	        	{char_literal91_tree = (object)adaptor.Create(char_literal91);
+            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal91_tree, root_0);
             			    	        	}
 
             			    	        }
@@ -3527,22 +3663,22 @@ public partial class SGLParser : Parser
 
             			    	}
 
-            			    	PushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression1069);
-            			    	multiplicativeExpression88 = multiplicativeExpression();
+            			    	PushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression1124);
+            			    	multiplicativeExpression92 = multiplicativeExpression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, multiplicativeExpression88.Tree);
+            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, multiplicativeExpression92.Tree);
 
             			    }
             			    break;
 
             			default:
-            			    goto loop27;
+            			    goto loop28;
             	    }
             	} while (true);
 
-            	loop27:
-            		;	// Stops C# compiler whining that label 'loop27' has no statements
+            	loop28:
+            		;	// Stops C# compiler whining that label 'loop28' has no statements
 
 
             }
@@ -3583,7 +3719,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "multiplicativeExpression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:310:1: multiplicativeExpression : powExpression ( ( '*' | '/' | '%' ) powExpression )* ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:317:1: multiplicativeExpression : powExpression ( ( '*' | '/' | '%' ) powExpression )* ;
     public SGLParser.multiplicativeExpression_return multiplicativeExpression() // throws RecognitionException [1]
     {   
         SGLParser.multiplicativeExpression_return retval = new SGLParser.multiplicativeExpression_return();
@@ -3591,17 +3727,17 @@ public partial class SGLParser : Parser
         int multiplicativeExpression_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal90 = null;
-        IToken char_literal91 = null;
-        IToken char_literal92 = null;
-        SGLParser.powExpression_return powExpression89 = default(SGLParser.powExpression_return);
-
+        IToken char_literal94 = null;
+        IToken char_literal95 = null;
+        IToken char_literal96 = null;
         SGLParser.powExpression_return powExpression93 = default(SGLParser.powExpression_return);
 
+        SGLParser.powExpression_return powExpression97 = default(SGLParser.powExpression_return);
 
-        object char_literal90_tree=null;
-        object char_literal91_tree=null;
-        object char_literal92_tree=null;
+
+        object char_literal94_tree=null;
+        object char_literal95_tree=null;
+        object char_literal96_tree=null;
 
         try 
     	{
@@ -3609,91 +3745,91 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:311:5: ( powExpression ( ( '*' | '/' | '%' ) powExpression )* )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:311:9: powExpression ( ( '*' | '/' | '%' ) powExpression )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:318:5: ( powExpression ( ( '*' | '/' | '%' ) powExpression )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:318:9: powExpression ( ( '*' | '/' | '%' ) powExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	PushFollow(FOLLOW_powExpression_in_multiplicativeExpression1103);
-            	powExpression89 = powExpression();
+            	PushFollow(FOLLOW_powExpression_in_multiplicativeExpression1158);
+            	powExpression93 = powExpression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, powExpression89.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:311:23: ( ( '*' | '/' | '%' ) powExpression )*
+            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, powExpression93.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:318:23: ( ( '*' | '/' | '%' ) powExpression )*
             	do 
             	{
-            	    int alt29 = 2;
-            	    int LA29_0 = input.LA(1);
+            	    int alt30 = 2;
+            	    int LA30_0 = input.LA(1);
 
-            	    if ( ((LA29_0 >= 70 && LA29_0 <= 72)) )
+            	    if ( ((LA30_0 >= 72 && LA30_0 <= 74)) )
             	    {
-            	        alt29 = 1;
+            	        alt30 = 1;
             	    }
 
 
-            	    switch (alt29) 
+            	    switch (alt30) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:311:24: ( '*' | '/' | '%' ) powExpression
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:318:24: ( '*' | '/' | '%' ) powExpression
             			    {
-            			    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:311:24: ( '*' | '/' | '%' )
-            			    	int alt28 = 3;
+            			    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:318:24: ( '*' | '/' | '%' )
+            			    	int alt29 = 3;
             			    	switch ( input.LA(1) ) 
             			    	{
-            			    	case 70:
-            			    		{
-            			    	    alt28 = 1;
-            			    	    }
-            			    	    break;
-            			    	case 71:
-            			    		{
-            			    	    alt28 = 2;
-            			    	    }
-            			    	    break;
             			    	case 72:
             			    		{
-            			    	    alt28 = 3;
+            			    	    alt29 = 1;
+            			    	    }
+            			    	    break;
+            			    	case 73:
+            			    		{
+            			    	    alt29 = 2;
+            			    	    }
+            			    	    break;
+            			    	case 74:
+            			    		{
+            			    	    alt29 = 3;
             			    	    }
             			    	    break;
             			    		default:
             			    		    if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-            			    		    NoViableAltException nvae_d28s0 =
-            			    		        new NoViableAltException("", 28, 0, input);
+            			    		    NoViableAltException nvae_d29s0 =
+            			    		        new NoViableAltException("", 29, 0, input);
 
-            			    		    throw nvae_d28s0;
+            			    		    throw nvae_d29s0;
             			    	}
 
-            			    	switch (alt28) 
+            			    	switch (alt29) 
             			    	{
             			    	    case 1 :
-            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:311:25: '*'
+            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:318:25: '*'
             			    	        {
-            			    	        	char_literal90=(IToken)Match(input,70,FOLLOW_70_in_multiplicativeExpression1107); if (state.failed) return retval;
+            			    	        	char_literal94=(IToken)Match(input,72,FOLLOW_72_in_multiplicativeExpression1162); if (state.failed) return retval;
             			    	        	if ( state.backtracking == 0 )
-            			    	        	{char_literal90_tree = (object)adaptor.Create(char_literal90);
-            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal90_tree, root_0);
+            			    	        	{char_literal94_tree = (object)adaptor.Create(char_literal94);
+            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal94_tree, root_0);
             			    	        	}
 
             			    	        }
             			    	        break;
             			    	    case 2 :
-            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:311:30: '/'
+            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:318:30: '/'
             			    	        {
-            			    	        	char_literal91=(IToken)Match(input,71,FOLLOW_71_in_multiplicativeExpression1110); if (state.failed) return retval;
+            			    	        	char_literal95=(IToken)Match(input,73,FOLLOW_73_in_multiplicativeExpression1165); if (state.failed) return retval;
             			    	        	if ( state.backtracking == 0 )
-            			    	        	{char_literal91_tree = (object)adaptor.Create(char_literal91);
-            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal91_tree, root_0);
+            			    	        	{char_literal95_tree = (object)adaptor.Create(char_literal95);
+            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal95_tree, root_0);
             			    	        	}
 
             			    	        }
             			    	        break;
             			    	    case 3 :
-            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:311:35: '%'
+            			    	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:318:35: '%'
             			    	        {
-            			    	        	char_literal92=(IToken)Match(input,72,FOLLOW_72_in_multiplicativeExpression1113); if (state.failed) return retval;
+            			    	        	char_literal96=(IToken)Match(input,74,FOLLOW_74_in_multiplicativeExpression1168); if (state.failed) return retval;
             			    	        	if ( state.backtracking == 0 )
-            			    	        	{char_literal92_tree = (object)adaptor.Create(char_literal92);
-            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal92_tree, root_0);
+            			    	        	{char_literal96_tree = (object)adaptor.Create(char_literal96);
+            			    	        		root_0 = (object)adaptor.BecomeRoot(char_literal96_tree, root_0);
             			    	        	}
 
             			    	        }
@@ -3701,22 +3837,22 @@ public partial class SGLParser : Parser
 
             			    	}
 
-            			    	PushFollow(FOLLOW_powExpression_in_multiplicativeExpression1117);
-            			    	powExpression93 = powExpression();
+            			    	PushFollow(FOLLOW_powExpression_in_multiplicativeExpression1172);
+            			    	powExpression97 = powExpression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, powExpression93.Tree);
+            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, powExpression97.Tree);
 
             			    }
             			    break;
 
             			default:
-            			    goto loop29;
+            			    goto loop30;
             	    }
             	} while (true);
 
-            	loop29:
-            		;	// Stops C# compiler whining that label 'loop29' has no statements
+            	loop30:
+            		;	// Stops C# compiler whining that label 'loop30' has no statements
 
 
             }
@@ -3757,7 +3893,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "powExpression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:314:1: powExpression : negateExpression ( '^' negateExpression )* ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:321:1: powExpression : negateExpression ( '^' negateExpression )* ;
     public SGLParser.powExpression_return powExpression() // throws RecognitionException [1]
     {   
         SGLParser.powExpression_return retval = new SGLParser.powExpression_return();
@@ -3765,13 +3901,13 @@ public partial class SGLParser : Parser
         int powExpression_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal95 = null;
-        SGLParser.negateExpression_return negateExpression94 = default(SGLParser.negateExpression_return);
+        IToken char_literal99 = null;
+        SGLParser.negateExpression_return negateExpression98 = default(SGLParser.negateExpression_return);
 
-        SGLParser.negateExpression_return negateExpression96 = default(SGLParser.negateExpression_return);
+        SGLParser.negateExpression_return negateExpression100 = default(SGLParser.negateExpression_return);
 
 
-        object char_literal95_tree=null;
+        object char_literal99_tree=null;
 
         try 
     	{
@@ -3779,54 +3915,54 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:315:2: ( negateExpression ( '^' negateExpression )* )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:315:4: negateExpression ( '^' negateExpression )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:322:2: ( negateExpression ( '^' negateExpression )* )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:322:4: negateExpression ( '^' negateExpression )*
             {
             	root_0 = (object)adaptor.GetNilNode();
 
-            	PushFollow(FOLLOW_negateExpression_in_powExpression1137);
-            	negateExpression94 = negateExpression();
+            	PushFollow(FOLLOW_negateExpression_in_powExpression1192);
+            	negateExpression98 = negateExpression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, negateExpression94.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:315:21: ( '^' negateExpression )*
+            	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, negateExpression98.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:322:21: ( '^' negateExpression )*
             	do 
             	{
-            	    int alt30 = 2;
-            	    int LA30_0 = input.LA(1);
+            	    int alt31 = 2;
+            	    int LA31_0 = input.LA(1);
 
-            	    if ( (LA30_0 == 73) )
+            	    if ( (LA31_0 == 75) )
             	    {
-            	        alt30 = 1;
+            	        alt31 = 1;
             	    }
 
 
-            	    switch (alt30) 
+            	    switch (alt31) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:315:22: '^' negateExpression
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:322:22: '^' negateExpression
             			    {
-            			    	char_literal95=(IToken)Match(input,73,FOLLOW_73_in_powExpression1140); if (state.failed) return retval;
+            			    	char_literal99=(IToken)Match(input,75,FOLLOW_75_in_powExpression1195); if (state.failed) return retval;
             			    	if ( state.backtracking == 0 )
-            			    	{char_literal95_tree = (object)adaptor.Create(char_literal95);
-            			    		root_0 = (object)adaptor.BecomeRoot(char_literal95_tree, root_0);
+            			    	{char_literal99_tree = (object)adaptor.Create(char_literal99);
+            			    		root_0 = (object)adaptor.BecomeRoot(char_literal99_tree, root_0);
             			    	}
-            			    	PushFollow(FOLLOW_negateExpression_in_powExpression1143);
-            			    	negateExpression96 = negateExpression();
+            			    	PushFollow(FOLLOW_negateExpression_in_powExpression1198);
+            			    	negateExpression100 = negateExpression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, negateExpression96.Tree);
+            			    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, negateExpression100.Tree);
 
             			    }
             			    break;
 
             			default:
-            			    goto loop30;
+            			    goto loop31;
             	    }
             	} while (true);
 
-            	loop30:
-            		;	// Stops C# compiler whining that label 'loop30' has no statements
+            	loop31:
+            		;	// Stops C# compiler whining that label 'loop31' has no statements
 
 
             }
@@ -3867,7 +4003,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "negateExpression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:319:1: negateExpression : ( '-' mathAtom -> ^( INT_NEGATE mathAtom ) | '!' mathAtom -> ^( BOOL_NEGATE mathAtom ) | unaryExpression | mathAtom );
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:326:1: negateExpression : ( '-' mathAtom -> ^( INT_NEGATE mathAtom ) | '!' mathAtom -> ^( BOOL_NEGATE mathAtom ) | unaryExpression | mathAtom );
     public SGLParser.negateExpression_return negateExpression() // throws RecognitionException [1]
     {   
         SGLParser.negateExpression_return retval = new SGLParser.negateExpression_return();
@@ -3875,21 +4011,21 @@ public partial class SGLParser : Parser
         int negateExpression_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal97 = null;
-        IToken char_literal99 = null;
-        SGLParser.mathAtom_return mathAtom98 = default(SGLParser.mathAtom_return);
-
-        SGLParser.mathAtom_return mathAtom100 = default(SGLParser.mathAtom_return);
-
-        SGLParser.unaryExpression_return unaryExpression101 = default(SGLParser.unaryExpression_return);
-
+        IToken char_literal101 = null;
+        IToken char_literal103 = null;
         SGLParser.mathAtom_return mathAtom102 = default(SGLParser.mathAtom_return);
 
+        SGLParser.mathAtom_return mathAtom104 = default(SGLParser.mathAtom_return);
 
-        object char_literal97_tree=null;
-        object char_literal99_tree=null;
-        RewriteRuleTokenStream stream_69 = new RewriteRuleTokenStream(adaptor,"token 69");
-        RewriteRuleTokenStream stream_74 = new RewriteRuleTokenStream(adaptor,"token 74");
+        SGLParser.unaryExpression_return unaryExpression105 = default(SGLParser.unaryExpression_return);
+
+        SGLParser.mathAtom_return mathAtom106 = default(SGLParser.mathAtom_return);
+
+
+        object char_literal101_tree=null;
+        object char_literal103_tree=null;
+        RewriteRuleTokenStream stream_71 = new RewriteRuleTokenStream(adaptor,"token 71");
+        RewriteRuleTokenStream stream_76 = new RewriteRuleTokenStream(adaptor,"token 76");
         RewriteRuleSubtreeStream stream_mathAtom = new RewriteRuleSubtreeStream(adaptor,"rule mathAtom");
         try 
     	{
@@ -3897,39 +4033,39 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:320:2: ( '-' mathAtom -> ^( INT_NEGATE mathAtom ) | '!' mathAtom -> ^( BOOL_NEGATE mathAtom ) | unaryExpression | mathAtom )
-            int alt31 = 4;
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:327:2: ( '-' mathAtom -> ^( INT_NEGATE mathAtom ) | '!' mathAtom -> ^( BOOL_NEGATE mathAtom ) | unaryExpression | mathAtom )
+            int alt32 = 4;
             switch ( input.LA(1) ) 
             {
-            case 69:
+            case 71:
             	{
-                alt31 = 1;
+                alt32 = 1;
                 }
                 break;
-            case 74:
+            case 76:
             	{
-                alt31 = 2;
+                alt32 = 2;
                 }
                 break;
             case Identifier:
             	{
-                int LA31_3 = input.LA(2);
+                int LA32_3 = input.LA(2);
 
-                if ( (LA31_3 == EOF || LA31_3 == Identifier || LA31_3 == VarStartInit || LA31_3 == 46 || (LA31_3 >= 48 && LA31_3 <= 49) || (LA31_3 >= 52 && LA31_3 <= 56) || (LA31_3 >= 58 && LA31_3 <= 73) || (LA31_3 >= 78 && LA31_3 <= 79)) )
+                if ( (LA32_3 == EOF || LA32_3 == Identifier || LA32_3 == VarStartInit || LA32_3 == 48 || (LA32_3 >= 50 && LA32_3 <= 52) || (LA32_3 >= 54 && LA32_3 <= 58) || (LA32_3 >= 60 && LA32_3 <= 75) || (LA32_3 >= 80 && LA32_3 <= 81)) )
                 {
-                    alt31 = 4;
+                    alt32 = 4;
                 }
-                else if ( ((LA31_3 >= 75 && LA31_3 <= 76)) )
+                else if ( ((LA32_3 >= 77 && LA32_3 <= 78)) )
                 {
-                    alt31 = 3;
+                    alt32 = 3;
                 }
                 else 
                 {
                     if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-                    NoViableAltException nvae_d31s3 =
-                        new NoViableAltException("", 31, 3, input);
+                    NoViableAltException nvae_d32s3 =
+                        new NoViableAltException("", 32, 3, input);
 
-                    throw nvae_d31s3;
+                    throw nvae_d32s3;
                 }
                 }
                 break;
@@ -3942,32 +4078,32 @@ public partial class SGLParser : Parser
             case LoopTypeAtom:
             case ColorAtom:
             case Null:
-            case 55:
+            case 57:
             	{
-                alt31 = 4;
+                alt32 = 4;
                 }
                 break;
             	default:
             	    if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-            	    NoViableAltException nvae_d31s0 =
-            	        new NoViableAltException("", 31, 0, input);
+            	    NoViableAltException nvae_d32s0 =
+            	        new NoViableAltException("", 32, 0, input);
 
-            	    throw nvae_d31s0;
+            	    throw nvae_d32s0;
             }
 
-            switch (alt31) 
+            switch (alt32) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:320:4: '-' mathAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:327:4: '-' mathAtom
                     {
-                    	char_literal97=(IToken)Match(input,69,FOLLOW_69_in_negateExpression1161); if (state.failed) return retval; 
-                    	if ( (state.backtracking==0) ) stream_69.Add(char_literal97);
+                    	char_literal101=(IToken)Match(input,71,FOLLOW_71_in_negateExpression1216); if (state.failed) return retval; 
+                    	if ( (state.backtracking==0) ) stream_71.Add(char_literal101);
 
-                    	PushFollow(FOLLOW_mathAtom_in_negateExpression1163);
-                    	mathAtom98 = mathAtom();
+                    	PushFollow(FOLLOW_mathAtom_in_negateExpression1218);
+                    	mathAtom102 = mathAtom();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( (state.backtracking==0) ) stream_mathAtom.Add(mathAtom98.Tree);
+                    	if ( (state.backtracking==0) ) stream_mathAtom.Add(mathAtom102.Tree);
 
 
                     	// AST REWRITE
@@ -3982,9 +4118,9 @@ public partial class SGLParser : Parser
                     	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
                     	root_0 = (object)adaptor.GetNilNode();
-                    	// 320:17: -> ^( INT_NEGATE mathAtom )
+                    	// 327:17: -> ^( INT_NEGATE mathAtom )
                     	{
-                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:320:20: ^( INT_NEGATE mathAtom )
+                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:327:20: ^( INT_NEGATE mathAtom )
                     	    {
                     	    object root_1 = (object)adaptor.GetNilNode();
                     	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(INT_NEGATE, "INT_NEGATE"), root_1);
@@ -4000,16 +4136,16 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:321:4: '!' mathAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:328:4: '!' mathAtom
                     {
-                    	char_literal99=(IToken)Match(input,74,FOLLOW_74_in_negateExpression1176); if (state.failed) return retval; 
-                    	if ( (state.backtracking==0) ) stream_74.Add(char_literal99);
+                    	char_literal103=(IToken)Match(input,76,FOLLOW_76_in_negateExpression1231); if (state.failed) return retval; 
+                    	if ( (state.backtracking==0) ) stream_76.Add(char_literal103);
 
-                    	PushFollow(FOLLOW_mathAtom_in_negateExpression1178);
-                    	mathAtom100 = mathAtom();
+                    	PushFollow(FOLLOW_mathAtom_in_negateExpression1233);
+                    	mathAtom104 = mathAtom();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( (state.backtracking==0) ) stream_mathAtom.Add(mathAtom100.Tree);
+                    	if ( (state.backtracking==0) ) stream_mathAtom.Add(mathAtom104.Tree);
 
 
                     	// AST REWRITE
@@ -4024,9 +4160,9 @@ public partial class SGLParser : Parser
                     	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
                     	root_0 = (object)adaptor.GetNilNode();
-                    	// 321:17: -> ^( BOOL_NEGATE mathAtom )
+                    	// 328:17: -> ^( BOOL_NEGATE mathAtom )
                     	{
-                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:321:20: ^( BOOL_NEGATE mathAtom )
+                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:328:20: ^( BOOL_NEGATE mathAtom )
                     	    {
                     	    object root_1 = (object)adaptor.GetNilNode();
                     	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(BOOL_NEGATE, "BOOL_NEGATE"), root_1);
@@ -4042,28 +4178,28 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 3 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:322:4: unaryExpression
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:329:4: unaryExpression
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_unaryExpression_in_negateExpression1191);
-                    	unaryExpression101 = unaryExpression();
+                    	PushFollow(FOLLOW_unaryExpression_in_negateExpression1246);
+                    	unaryExpression105 = unaryExpression();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, unaryExpression101.Tree);
+                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, unaryExpression105.Tree);
 
                     }
                     break;
                 case 4 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:323:4: mathAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:330:4: mathAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_mathAtom_in_negateExpression1196);
-                    	mathAtom102 = mathAtom();
+                    	PushFollow(FOLLOW_mathAtom_in_negateExpression1251);
+                    	mathAtom106 = mathAtom();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, mathAtom102.Tree);
+                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, mathAtom106.Tree);
 
                     }
                     break;
@@ -4105,7 +4241,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "unaryExpression"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:327:1: unaryExpression : variable ( '++' -> ^( VARINC variable ) | '--' -> ^( VARDEC variable ) ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:334:1: unaryExpression : Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) ) ;
     public SGLParser.unaryExpression_return unaryExpression() // throws RecognitionException [1]
     {   
         SGLParser.unaryExpression_return retval = new SGLParser.unaryExpression_return();
@@ -4113,62 +4249,61 @@ public partial class SGLParser : Parser
         int unaryExpression_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal104 = null;
-        IToken string_literal105 = null;
-        SGLParser.variable_return variable103 = default(SGLParser.variable_return);
+        IToken Identifier107 = null;
+        IToken string_literal108 = null;
+        IToken string_literal109 = null;
 
+        object Identifier107_tree=null;
+        object string_literal108_tree=null;
+        object string_literal109_tree=null;
+        RewriteRuleTokenStream stream_78 = new RewriteRuleTokenStream(adaptor,"token 78");
+        RewriteRuleTokenStream stream_77 = new RewriteRuleTokenStream(adaptor,"token 77");
+        RewriteRuleTokenStream stream_Identifier = new RewriteRuleTokenStream(adaptor,"token Identifier");
 
-        object string_literal104_tree=null;
-        object string_literal105_tree=null;
-        RewriteRuleTokenStream stream_75 = new RewriteRuleTokenStream(adaptor,"token 75");
-        RewriteRuleTokenStream stream_76 = new RewriteRuleTokenStream(adaptor,"token 76");
-        RewriteRuleSubtreeStream stream_variable = new RewriteRuleSubtreeStream(adaptor,"rule variable");
         try 
     	{
     	    if ( (state.backtracking > 0) && AlreadyParsedRule(input, 29) ) 
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:328:5: ( variable ( '++' -> ^( VARINC variable ) | '--' -> ^( VARDEC variable ) ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:328:9: variable ( '++' -> ^( VARINC variable ) | '--' -> ^( VARDEC variable ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:335:5: ( Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:335:9: Identifier ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) )
             {
-            	PushFollow(FOLLOW_variable_in_unaryExpression1214);
-            	variable103 = variable();
-            	state.followingStackPointer--;
-            	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_variable.Add(variable103.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:328:18: ( '++' -> ^( VARINC variable ) | '--' -> ^( VARDEC variable ) )
-            	int alt32 = 2;
-            	int LA32_0 = input.LA(1);
+            	Identifier107=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_unaryExpression1269); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_Identifier.Add(Identifier107);
 
-            	if ( (LA32_0 == 75) )
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:335:20: ( '++' -> ^( VARINC Identifier ) | '--' -> ^( VARDEC Identifier ) )
+            	int alt33 = 2;
+            	int LA33_0 = input.LA(1);
+
+            	if ( (LA33_0 == 77) )
             	{
-            	    alt32 = 1;
+            	    alt33 = 1;
             	}
-            	else if ( (LA32_0 == 76) )
+            	else if ( (LA33_0 == 78) )
             	{
-            	    alt32 = 2;
+            	    alt33 = 2;
             	}
             	else 
             	{
             	    if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-            	    NoViableAltException nvae_d32s0 =
-            	        new NoViableAltException("", 32, 0, input);
+            	    NoViableAltException nvae_d33s0 =
+            	        new NoViableAltException("", 33, 0, input);
 
-            	    throw nvae_d32s0;
+            	    throw nvae_d33s0;
             	}
-            	switch (alt32) 
+            	switch (alt33) 
             	{
             	    case 1 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:328:19: '++'
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:335:21: '++'
             	        {
-            	        	string_literal104=(IToken)Match(input,75,FOLLOW_75_in_unaryExpression1217); if (state.failed) return retval; 
-            	        	if ( (state.backtracking==0) ) stream_75.Add(string_literal104);
+            	        	string_literal108=(IToken)Match(input,77,FOLLOW_77_in_unaryExpression1272); if (state.failed) return retval; 
+            	        	if ( (state.backtracking==0) ) stream_77.Add(string_literal108);
 
 
 
             	        	// AST REWRITE
-            	        	// elements:          variable
+            	        	// elements:          Identifier
             	        	// token labels:      
             	        	// rule labels:       retval
             	        	// token list labels: 
@@ -4179,14 +4314,14 @@ public partial class SGLParser : Parser
             	        	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	        	root_0 = (object)adaptor.GetNilNode();
-            	        	// 328:24: -> ^( VARINC variable )
+            	        	// 335:26: -> ^( VARINC Identifier )
             	        	{
-            	        	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:328:27: ^( VARINC variable )
+            	        	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:335:29: ^( VARINC Identifier )
             	        	    {
             	        	    object root_1 = (object)adaptor.GetNilNode();
             	        	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(VARINC, "VARINC"), root_1);
 
-            	        	    adaptor.AddChild(root_1, stream_variable.NextTree());
+            	        	    adaptor.AddChild(root_1, stream_Identifier.NextNode());
 
             	        	    adaptor.AddChild(root_0, root_1);
             	        	    }
@@ -4197,15 +4332,15 @@ public partial class SGLParser : Parser
             	        }
             	        break;
             	    case 2 :
-            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:329:4: '--'
+            	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:336:4: '--'
             	        {
-            	        	string_literal105=(IToken)Match(input,76,FOLLOW_76_in_unaryExpression1230); if (state.failed) return retval; 
-            	        	if ( (state.backtracking==0) ) stream_76.Add(string_literal105);
+            	        	string_literal109=(IToken)Match(input,78,FOLLOW_78_in_unaryExpression1285); if (state.failed) return retval; 
+            	        	if ( (state.backtracking==0) ) stream_78.Add(string_literal109);
 
 
 
             	        	// AST REWRITE
-            	        	// elements:          variable
+            	        	// elements:          Identifier
             	        	// token labels:      
             	        	// rule labels:       retval
             	        	// token list labels: 
@@ -4216,14 +4351,14 @@ public partial class SGLParser : Parser
             	        	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	        	root_0 = (object)adaptor.GetNilNode();
-            	        	// 329:9: -> ^( VARDEC variable )
+            	        	// 336:9: -> ^( VARDEC Identifier )
             	        	{
-            	        	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:329:12: ^( VARDEC variable )
+            	        	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:336:12: ^( VARDEC Identifier )
             	        	    {
             	        	    object root_1 = (object)adaptor.GetNilNode();
             	        	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(VARDEC, "VARDEC"), root_1);
 
-            	        	    adaptor.AddChild(root_1, stream_variable.NextTree());
+            	        	    adaptor.AddChild(root_1, stream_Identifier.NextNode());
 
             	        	    adaptor.AddChild(root_0, root_1);
             	        	    }
@@ -4275,7 +4410,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "mathAtom"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:334:1: mathAtom : ( '(' expression ')' | IntAtom | FloatAtom | BooleanAtom | stringAtom | LayerAtom | OriginAtom | LoopTypeAtom | ColorAtom | Null | lookup );
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:341:1: mathAtom : ( '(' expression ')' | IntAtom | FloatAtom | BooleanAtom | stringAtom | LayerAtom | OriginAtom | LoopTypeAtom | ColorAtom | Null | lookup );
     public SGLParser.mathAtom_return mathAtom() // throws RecognitionException [1]
     {   
         SGLParser.mathAtom_return retval = new SGLParser.mathAtom_return();
@@ -4283,33 +4418,33 @@ public partial class SGLParser : Parser
         int mathAtom_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal106 = null;
-        IToken char_literal108 = null;
-        IToken IntAtom109 = null;
-        IToken FloatAtom110 = null;
-        IToken BooleanAtom111 = null;
-        IToken LayerAtom113 = null;
-        IToken OriginAtom114 = null;
-        IToken LoopTypeAtom115 = null;
-        IToken ColorAtom116 = null;
-        IToken Null117 = null;
-        SGLParser.expression_return expression107 = default(SGLParser.expression_return);
+        IToken char_literal110 = null;
+        IToken char_literal112 = null;
+        IToken IntAtom113 = null;
+        IToken FloatAtom114 = null;
+        IToken BooleanAtom115 = null;
+        IToken LayerAtom117 = null;
+        IToken OriginAtom118 = null;
+        IToken LoopTypeAtom119 = null;
+        IToken ColorAtom120 = null;
+        IToken Null121 = null;
+        SGLParser.expression_return expression111 = default(SGLParser.expression_return);
 
-        SGLParser.stringAtom_return stringAtom112 = default(SGLParser.stringAtom_return);
+        SGLParser.stringAtom_return stringAtom116 = default(SGLParser.stringAtom_return);
 
-        SGLParser.lookup_return lookup118 = default(SGLParser.lookup_return);
+        SGLParser.lookup_return lookup122 = default(SGLParser.lookup_return);
 
 
-        object char_literal106_tree=null;
-        object char_literal108_tree=null;
-        object IntAtom109_tree=null;
-        object FloatAtom110_tree=null;
-        object BooleanAtom111_tree=null;
-        object LayerAtom113_tree=null;
-        object OriginAtom114_tree=null;
-        object LoopTypeAtom115_tree=null;
-        object ColorAtom116_tree=null;
-        object Null117_tree=null;
+        object char_literal110_tree=null;
+        object char_literal112_tree=null;
+        object IntAtom113_tree=null;
+        object FloatAtom114_tree=null;
+        object BooleanAtom115_tree=null;
+        object LayerAtom117_tree=null;
+        object OriginAtom118_tree=null;
+        object LoopTypeAtom119_tree=null;
+        object ColorAtom120_tree=null;
+        object Null121_tree=null;
 
         try 
     	{
@@ -4317,217 +4452,217 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:335:2: ( '(' expression ')' | IntAtom | FloatAtom | BooleanAtom | stringAtom | LayerAtom | OriginAtom | LoopTypeAtom | ColorAtom | Null | lookup )
-            int alt33 = 11;
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:342:2: ( '(' expression ')' | IntAtom | FloatAtom | BooleanAtom | stringAtom | LayerAtom | OriginAtom | LoopTypeAtom | ColorAtom | Null | lookup )
+            int alt34 = 11;
             switch ( input.LA(1) ) 
             {
-            case 55:
+            case 57:
             	{
-                alt33 = 1;
+                alt34 = 1;
                 }
                 break;
             case IntAtom:
             	{
-                alt33 = 2;
+                alt34 = 2;
                 }
                 break;
             case FloatAtom:
             	{
-                alt33 = 3;
+                alt34 = 3;
                 }
                 break;
             case BooleanAtom:
             	{
-                alt33 = 4;
+                alt34 = 4;
                 }
                 break;
             case StringAtom:
             	{
-                alt33 = 5;
+                alt34 = 5;
                 }
                 break;
             case LayerAtom:
             	{
-                alt33 = 6;
+                alt34 = 6;
                 }
                 break;
             case OriginAtom:
             	{
-                alt33 = 7;
+                alt34 = 7;
                 }
                 break;
             case LoopTypeAtom:
             	{
-                alt33 = 8;
+                alt34 = 8;
                 }
                 break;
             case ColorAtom:
             	{
-                alt33 = 9;
+                alt34 = 9;
                 }
                 break;
             case Null:
             	{
-                alt33 = 10;
+                alt34 = 10;
                 }
                 break;
             case Identifier:
             	{
-                alt33 = 11;
+                alt34 = 11;
                 }
                 break;
             	default:
             	    if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-            	    NoViableAltException nvae_d33s0 =
-            	        new NoViableAltException("", 33, 0, input);
+            	    NoViableAltException nvae_d34s0 =
+            	        new NoViableAltException("", 34, 0, input);
 
-            	    throw nvae_d33s0;
+            	    throw nvae_d34s0;
             }
 
-            switch (alt33) 
+            switch (alt34) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:335:4: '(' expression ')'
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:342:4: '(' expression ')'
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	char_literal106=(IToken)Match(input,55,FOLLOW_55_in_mathAtom1264); if (state.failed) return retval;
-                    	PushFollow(FOLLOW_expression_in_mathAtom1267);
-                    	expression107 = expression();
+                    	char_literal110=(IToken)Match(input,57,FOLLOW_57_in_mathAtom1319); if (state.failed) return retval;
+                    	PushFollow(FOLLOW_expression_in_mathAtom1322);
+                    	expression111 = expression();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, expression107.Tree);
-                    	char_literal108=(IToken)Match(input,56,FOLLOW_56_in_mathAtom1269); if (state.failed) return retval;
+                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, expression111.Tree);
+                    	char_literal112=(IToken)Match(input,58,FOLLOW_58_in_mathAtom1324); if (state.failed) return retval;
 
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:336:7: IntAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:343:7: IntAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	IntAtom109=(IToken)Match(input,IntAtom,FOLLOW_IntAtom_in_mathAtom1281); if (state.failed) return retval;
+                    	IntAtom113=(IToken)Match(input,IntAtom,FOLLOW_IntAtom_in_mathAtom1336); if (state.failed) return retval;
                     	if ( state.backtracking == 0 )
-                    	{IntAtom109_tree = (object)adaptor.Create(IntAtom109);
-                    		adaptor.AddChild(root_0, IntAtom109_tree);
+                    	{IntAtom113_tree = (object)adaptor.Create(IntAtom113);
+                    		adaptor.AddChild(root_0, IntAtom113_tree);
                     	}
 
                     }
                     break;
                 case 3 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:337:7: FloatAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:344:7: FloatAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	FloatAtom110=(IToken)Match(input,FloatAtom,FOLLOW_FloatAtom_in_mathAtom1296); if (state.failed) return retval;
+                    	FloatAtom114=(IToken)Match(input,FloatAtom,FOLLOW_FloatAtom_in_mathAtom1351); if (state.failed) return retval;
                     	if ( state.backtracking == 0 )
-                    	{FloatAtom110_tree = (object)adaptor.Create(FloatAtom110);
-                    		adaptor.AddChild(root_0, FloatAtom110_tree);
+                    	{FloatAtom114_tree = (object)adaptor.Create(FloatAtom114);
+                    		adaptor.AddChild(root_0, FloatAtom114_tree);
                     	}
 
                     }
                     break;
                 case 4 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:338:9: BooleanAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:345:9: BooleanAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	BooleanAtom111=(IToken)Match(input,BooleanAtom,FOLLOW_BooleanAtom_in_mathAtom1312); if (state.failed) return retval;
+                    	BooleanAtom115=(IToken)Match(input,BooleanAtom,FOLLOW_BooleanAtom_in_mathAtom1367); if (state.failed) return retval;
                     	if ( state.backtracking == 0 )
-                    	{BooleanAtom111_tree = (object)adaptor.Create(BooleanAtom111);
-                    		adaptor.AddChild(root_0, BooleanAtom111_tree);
+                    	{BooleanAtom115_tree = (object)adaptor.Create(BooleanAtom115);
+                    		adaptor.AddChild(root_0, BooleanAtom115_tree);
                     	}
 
                     }
                     break;
                 case 5 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:339:4: stringAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:346:4: stringAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_stringAtom_in_mathAtom1323);
-                    	stringAtom112 = stringAtom();
+                    	PushFollow(FOLLOW_stringAtom_in_mathAtom1378);
+                    	stringAtom116 = stringAtom();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, stringAtom112.Tree);
+                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, stringAtom116.Tree);
 
                     }
                     break;
                 case 6 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:340:4: LayerAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:347:4: LayerAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	LayerAtom113=(IToken)Match(input,LayerAtom,FOLLOW_LayerAtom_in_mathAtom1334); if (state.failed) return retval;
+                    	LayerAtom117=(IToken)Match(input,LayerAtom,FOLLOW_LayerAtom_in_mathAtom1389); if (state.failed) return retval;
                     	if ( state.backtracking == 0 )
-                    	{LayerAtom113_tree = (object)adaptor.Create(LayerAtom113);
-                    		adaptor.AddChild(root_0, LayerAtom113_tree);
+                    	{LayerAtom117_tree = (object)adaptor.Create(LayerAtom117);
+                    		adaptor.AddChild(root_0, LayerAtom117_tree);
                     	}
 
                     }
                     break;
                 case 7 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:341:4: OriginAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:348:4: OriginAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	OriginAtom114=(IToken)Match(input,OriginAtom,FOLLOW_OriginAtom_in_mathAtom1345); if (state.failed) return retval;
+                    	OriginAtom118=(IToken)Match(input,OriginAtom,FOLLOW_OriginAtom_in_mathAtom1400); if (state.failed) return retval;
                     	if ( state.backtracking == 0 )
-                    	{OriginAtom114_tree = (object)adaptor.Create(OriginAtom114);
-                    		adaptor.AddChild(root_0, OriginAtom114_tree);
+                    	{OriginAtom118_tree = (object)adaptor.Create(OriginAtom118);
+                    		adaptor.AddChild(root_0, OriginAtom118_tree);
                     	}
 
                     }
                     break;
                 case 8 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:342:4: LoopTypeAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:349:4: LoopTypeAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	LoopTypeAtom115=(IToken)Match(input,LoopTypeAtom,FOLLOW_LoopTypeAtom_in_mathAtom1356); if (state.failed) return retval;
+                    	LoopTypeAtom119=(IToken)Match(input,LoopTypeAtom,FOLLOW_LoopTypeAtom_in_mathAtom1411); if (state.failed) return retval;
                     	if ( state.backtracking == 0 )
-                    	{LoopTypeAtom115_tree = (object)adaptor.Create(LoopTypeAtom115);
-                    		adaptor.AddChild(root_0, LoopTypeAtom115_tree);
+                    	{LoopTypeAtom119_tree = (object)adaptor.Create(LoopTypeAtom119);
+                    		adaptor.AddChild(root_0, LoopTypeAtom119_tree);
                     	}
 
                     }
                     break;
                 case 9 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:343:4: ColorAtom
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:350:4: ColorAtom
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	ColorAtom116=(IToken)Match(input,ColorAtom,FOLLOW_ColorAtom_in_mathAtom1369); if (state.failed) return retval;
+                    	ColorAtom120=(IToken)Match(input,ColorAtom,FOLLOW_ColorAtom_in_mathAtom1424); if (state.failed) return retval;
                     	if ( state.backtracking == 0 )
-                    	{ColorAtom116_tree = (object)adaptor.Create(ColorAtom116);
-                    		adaptor.AddChild(root_0, ColorAtom116_tree);
+                    	{ColorAtom120_tree = (object)adaptor.Create(ColorAtom120);
+                    		adaptor.AddChild(root_0, ColorAtom120_tree);
                     	}
 
                     }
                     break;
                 case 10 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:344:4: Null
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:351:4: Null
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	Null117=(IToken)Match(input,Null,FOLLOW_Null_in_mathAtom1380); if (state.failed) return retval;
+                    	Null121=(IToken)Match(input,Null,FOLLOW_Null_in_mathAtom1435); if (state.failed) return retval;
                     	if ( state.backtracking == 0 )
-                    	{Null117_tree = (object)adaptor.Create(Null117);
-                    		adaptor.AddChild(root_0, Null117_tree);
+                    	{Null121_tree = (object)adaptor.Create(Null121);
+                    		adaptor.AddChild(root_0, Null121_tree);
                     	}
 
                     }
                     break;
                 case 11 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:346:4: lookup
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:353:4: lookup
                     {
                     	root_0 = (object)adaptor.GetNilNode();
 
-                    	PushFollow(FOLLOW_lookup_in_mathAtom1394);
-                    	lookup118 = lookup();
+                    	PushFollow(FOLLOW_lookup_in_mathAtom1449);
+                    	lookup122 = lookup();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, lookup118.Tree);
+                    	if ( state.backtracking == 0 ) adaptor.AddChild(root_0, lookup122.Tree);
 
                     }
                     break;
@@ -4569,7 +4704,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "lookup"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:349:1: lookup : ( objectMethodCall ( indexes )? -> ^( LOOKUP objectMethodCall ( indexes )? ) | methodCall ( indexes )? -> ^( LOOKUP methodCall ( indexes )? ) | variable ( indexes )? -> ^( LOOKUP variable ( indexes )? ) );
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:356:1: lookup : ( objectMethodCall ( indexes )? -> ^( LOOKUP objectMethodCall ( indexes )? ) | methodCall ( indexes )? -> ^( LOOKUP methodCall ( indexes )? ) | variable ( indexes )? -> ^( LOOKUP variable ( indexes )? ) );
     public SGLParser.lookup_return lookup() // throws RecognitionException [1]
     {   
         SGLParser.lookup_return retval = new SGLParser.lookup_return();
@@ -4577,17 +4712,17 @@ public partial class SGLParser : Parser
         int lookup_StartIndex = input.Index();
         object root_0 = null;
 
-        SGLParser.objectMethodCall_return objectMethodCall119 = default(SGLParser.objectMethodCall_return);
-
-        SGLParser.indexes_return indexes120 = default(SGLParser.indexes_return);
-
-        SGLParser.methodCall_return methodCall121 = default(SGLParser.methodCall_return);
-
-        SGLParser.indexes_return indexes122 = default(SGLParser.indexes_return);
-
-        SGLParser.variable_return variable123 = default(SGLParser.variable_return);
+        SGLParser.objectMethodCall_return objectMethodCall123 = default(SGLParser.objectMethodCall_return);
 
         SGLParser.indexes_return indexes124 = default(SGLParser.indexes_return);
+
+        SGLParser.methodCall_return methodCall125 = default(SGLParser.methodCall_return);
+
+        SGLParser.indexes_return indexes126 = default(SGLParser.indexes_return);
+
+        SGLParser.variable_return variable127 = default(SGLParser.variable_return);
+
+        SGLParser.indexes_return indexes128 = default(SGLParser.indexes_return);
 
 
         RewriteRuleSubtreeStream stream_objectMethodCall = new RewriteRuleSubtreeStream(adaptor,"rule objectMethodCall");
@@ -4600,71 +4735,71 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:350:2: ( objectMethodCall ( indexes )? -> ^( LOOKUP objectMethodCall ( indexes )? ) | methodCall ( indexes )? -> ^( LOOKUP methodCall ( indexes )? ) | variable ( indexes )? -> ^( LOOKUP variable ( indexes )? ) )
-            int alt37 = 3;
-            int LA37_0 = input.LA(1);
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:357:2: ( objectMethodCall ( indexes )? -> ^( LOOKUP objectMethodCall ( indexes )? ) | methodCall ( indexes )? -> ^( LOOKUP methodCall ( indexes )? ) | variable ( indexes )? -> ^( LOOKUP variable ( indexes )? ) )
+            int alt38 = 3;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA37_0 == Identifier) )
+            if ( (LA38_0 == Identifier) )
             {
-                int LA37_1 = input.LA(2);
+                int LA38_1 = input.LA(2);
 
-                if ( (synpred57_SGL()) )
+                if ( (synpred59_SGL()) )
                 {
-                    alt37 = 1;
+                    alt38 = 1;
                 }
-                else if ( (synpred59_SGL()) )
+                else if ( (synpred61_SGL()) )
                 {
-                    alt37 = 2;
+                    alt38 = 2;
                 }
                 else if ( (true) )
                 {
-                    alt37 = 3;
+                    alt38 = 3;
                 }
                 else 
                 {
                     if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-                    NoViableAltException nvae_d37s1 =
-                        new NoViableAltException("", 37, 1, input);
+                    NoViableAltException nvae_d38s1 =
+                        new NoViableAltException("", 38, 1, input);
 
-                    throw nvae_d37s1;
+                    throw nvae_d38s1;
                 }
             }
             else 
             {
                 if ( state.backtracking > 0 ) {state.failed = true; return retval;}
-                NoViableAltException nvae_d37s0 =
-                    new NoViableAltException("", 37, 0, input);
+                NoViableAltException nvae_d38s0 =
+                    new NoViableAltException("", 38, 0, input);
 
-                throw nvae_d37s0;
+                throw nvae_d38s0;
             }
-            switch (alt37) 
+            switch (alt38) 
             {
                 case 1 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:350:4: objectMethodCall ( indexes )?
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:357:4: objectMethodCall ( indexes )?
                     {
-                    	PushFollow(FOLLOW_objectMethodCall_in_lookup1413);
-                    	objectMethodCall119 = objectMethodCall();
+                    	PushFollow(FOLLOW_objectMethodCall_in_lookup1468);
+                    	objectMethodCall123 = objectMethodCall();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( (state.backtracking==0) ) stream_objectMethodCall.Add(objectMethodCall119.Tree);
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:350:21: ( indexes )?
-                    	int alt34 = 2;
-                    	int LA34_0 = input.LA(1);
+                    	if ( (state.backtracking==0) ) stream_objectMethodCall.Add(objectMethodCall123.Tree);
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:357:21: ( indexes )?
+                    	int alt35 = 2;
+                    	int LA35_0 = input.LA(1);
 
-                    	if ( (LA34_0 == 52) )
+                    	if ( (LA35_0 == 54) )
                     	{
-                    	    alt34 = 1;
+                    	    alt35 = 1;
                     	}
-                    	switch (alt34) 
+                    	switch (alt35) 
                     	{
                     	    case 1 :
                     	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: indexes
                     	        {
-                    	        	PushFollow(FOLLOW_indexes_in_lookup1415);
-                    	        	indexes120 = indexes();
+                    	        	PushFollow(FOLLOW_indexes_in_lookup1470);
+                    	        	indexes124 = indexes();
                     	        	state.followingStackPointer--;
                     	        	if (state.failed) return retval;
-                    	        	if ( (state.backtracking==0) ) stream_indexes.Add(indexes120.Tree);
+                    	        	if ( (state.backtracking==0) ) stream_indexes.Add(indexes124.Tree);
 
                     	        }
                     	        break;
@@ -4685,15 +4820,15 @@ public partial class SGLParser : Parser
                     	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
                     	root_0 = (object)adaptor.GetNilNode();
-                    	// 350:30: -> ^( LOOKUP objectMethodCall ( indexes )? )
+                    	// 357:30: -> ^( LOOKUP objectMethodCall ( indexes )? )
                     	{
-                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:350:33: ^( LOOKUP objectMethodCall ( indexes )? )
+                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:357:33: ^( LOOKUP objectMethodCall ( indexes )? )
                     	    {
                     	    object root_1 = (object)adaptor.GetNilNode();
                     	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(LOOKUP, "LOOKUP"), root_1);
 
                     	    adaptor.AddChild(root_1, stream_objectMethodCall.NextTree());
-                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:350:59: ( indexes )?
+                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:357:59: ( indexes )?
                     	    if ( stream_indexes.HasNext() )
                     	    {
                     	        adaptor.AddChild(root_1, stream_indexes.NextTree());
@@ -4710,31 +4845,31 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 2 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:351:4: methodCall ( indexes )?
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:358:4: methodCall ( indexes )?
                     {
-                    	PushFollow(FOLLOW_methodCall_in_lookup1432);
-                    	methodCall121 = methodCall();
+                    	PushFollow(FOLLOW_methodCall_in_lookup1487);
+                    	methodCall125 = methodCall();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( (state.backtracking==0) ) stream_methodCall.Add(methodCall121.Tree);
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:351:15: ( indexes )?
-                    	int alt35 = 2;
-                    	int LA35_0 = input.LA(1);
+                    	if ( (state.backtracking==0) ) stream_methodCall.Add(methodCall125.Tree);
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:358:15: ( indexes )?
+                    	int alt36 = 2;
+                    	int LA36_0 = input.LA(1);
 
-                    	if ( (LA35_0 == 52) )
+                    	if ( (LA36_0 == 54) )
                     	{
-                    	    alt35 = 1;
+                    	    alt36 = 1;
                     	}
-                    	switch (alt35) 
+                    	switch (alt36) 
                     	{
                     	    case 1 :
                     	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: indexes
                     	        {
-                    	        	PushFollow(FOLLOW_indexes_in_lookup1434);
-                    	        	indexes122 = indexes();
+                    	        	PushFollow(FOLLOW_indexes_in_lookup1489);
+                    	        	indexes126 = indexes();
                     	        	state.followingStackPointer--;
                     	        	if (state.failed) return retval;
-                    	        	if ( (state.backtracking==0) ) stream_indexes.Add(indexes122.Tree);
+                    	        	if ( (state.backtracking==0) ) stream_indexes.Add(indexes126.Tree);
 
                     	        }
                     	        break;
@@ -4755,15 +4890,15 @@ public partial class SGLParser : Parser
                     	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
                     	root_0 = (object)adaptor.GetNilNode();
-                    	// 351:24: -> ^( LOOKUP methodCall ( indexes )? )
+                    	// 358:24: -> ^( LOOKUP methodCall ( indexes )? )
                     	{
-                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:351:27: ^( LOOKUP methodCall ( indexes )? )
+                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:358:27: ^( LOOKUP methodCall ( indexes )? )
                     	    {
                     	    object root_1 = (object)adaptor.GetNilNode();
                     	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(LOOKUP, "LOOKUP"), root_1);
 
                     	    adaptor.AddChild(root_1, stream_methodCall.NextTree());
-                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:351:47: ( indexes )?
+                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:358:47: ( indexes )?
                     	    if ( stream_indexes.HasNext() )
                     	    {
                     	        adaptor.AddChild(root_1, stream_indexes.NextTree());
@@ -4780,31 +4915,31 @@ public partial class SGLParser : Parser
                     }
                     break;
                 case 3 :
-                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:352:4: variable ( indexes )?
+                    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:359:4: variable ( indexes )?
                     {
-                    	PushFollow(FOLLOW_variable_in_lookup1452);
-                    	variable123 = variable();
+                    	PushFollow(FOLLOW_variable_in_lookup1507);
+                    	variable127 = variable();
                     	state.followingStackPointer--;
                     	if (state.failed) return retval;
-                    	if ( (state.backtracking==0) ) stream_variable.Add(variable123.Tree);
-                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:352:13: ( indexes )?
-                    	int alt36 = 2;
-                    	int LA36_0 = input.LA(1);
+                    	if ( (state.backtracking==0) ) stream_variable.Add(variable127.Tree);
+                    	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:359:13: ( indexes )?
+                    	int alt37 = 2;
+                    	int LA37_0 = input.LA(1);
 
-                    	if ( (LA36_0 == 52) )
+                    	if ( (LA37_0 == 54) )
                     	{
-                    	    alt36 = 1;
+                    	    alt37 = 1;
                     	}
-                    	switch (alt36) 
+                    	switch (alt37) 
                     	{
                     	    case 1 :
                     	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: indexes
                     	        {
-                    	        	PushFollow(FOLLOW_indexes_in_lookup1454);
-                    	        	indexes124 = indexes();
+                    	        	PushFollow(FOLLOW_indexes_in_lookup1509);
+                    	        	indexes128 = indexes();
                     	        	state.followingStackPointer--;
                     	        	if (state.failed) return retval;
-                    	        	if ( (state.backtracking==0) ) stream_indexes.Add(indexes124.Tree);
+                    	        	if ( (state.backtracking==0) ) stream_indexes.Add(indexes128.Tree);
 
                     	        }
                     	        break;
@@ -4825,15 +4960,15 @@ public partial class SGLParser : Parser
                     	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
                     	root_0 = (object)adaptor.GetNilNode();
-                    	// 352:22: -> ^( LOOKUP variable ( indexes )? )
+                    	// 359:22: -> ^( LOOKUP variable ( indexes )? )
                     	{
-                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:352:25: ^( LOOKUP variable ( indexes )? )
+                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:359:25: ^( LOOKUP variable ( indexes )? )
                     	    {
                     	    object root_1 = (object)adaptor.GetNilNode();
                     	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(LOOKUP, "LOOKUP"), root_1);
 
                     	    adaptor.AddChild(root_1, stream_variable.NextTree());
-                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:352:43: ( indexes )?
+                    	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:359:43: ( indexes )?
                     	    if ( stream_indexes.HasNext() )
                     	    {
                     	        adaptor.AddChild(root_1, stream_indexes.NextTree());
@@ -4887,7 +5022,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "instantiateClass"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:359:1: instantiateClass : 'new' Identifier '(' ( expressionList )? ')' -> ^( CLASS Identifier ( expressionList )? ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:366:1: instantiateClass : 'new' Identifier '(' ( expressionList )? ')' -> ^( CLASS Identifier ( expressionList )? ) ;
     public SGLParser.instantiateClass_return instantiateClass() // throws RecognitionException [1]
     {   
         SGLParser.instantiateClass_return retval = new SGLParser.instantiateClass_return();
@@ -4895,20 +5030,20 @@ public partial class SGLParser : Parser
         int instantiateClass_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal125 = null;
-        IToken Identifier126 = null;
-        IToken char_literal127 = null;
-        IToken char_literal129 = null;
-        SGLParser.expressionList_return expressionList128 = default(SGLParser.expressionList_return);
+        IToken string_literal129 = null;
+        IToken Identifier130 = null;
+        IToken char_literal131 = null;
+        IToken char_literal133 = null;
+        SGLParser.expressionList_return expressionList132 = default(SGLParser.expressionList_return);
 
 
-        object string_literal125_tree=null;
-        object Identifier126_tree=null;
-        object char_literal127_tree=null;
-        object char_literal129_tree=null;
-        RewriteRuleTokenStream stream_77 = new RewriteRuleTokenStream(adaptor,"token 77");
-        RewriteRuleTokenStream stream_56 = new RewriteRuleTokenStream(adaptor,"token 56");
-        RewriteRuleTokenStream stream_55 = new RewriteRuleTokenStream(adaptor,"token 55");
+        object string_literal129_tree=null;
+        object Identifier130_tree=null;
+        object char_literal131_tree=null;
+        object char_literal133_tree=null;
+        RewriteRuleTokenStream stream_79 = new RewriteRuleTokenStream(adaptor,"token 79");
+        RewriteRuleTokenStream stream_58 = new RewriteRuleTokenStream(adaptor,"token 58");
+        RewriteRuleTokenStream stream_57 = new RewriteRuleTokenStream(adaptor,"token 57");
         RewriteRuleTokenStream stream_Identifier = new RewriteRuleTokenStream(adaptor,"token Identifier");
         RewriteRuleSubtreeStream stream_expressionList = new RewriteRuleSubtreeStream(adaptor,"rule expressionList");
         try 
@@ -4917,49 +5052,49 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:360:2: ( 'new' Identifier '(' ( expressionList )? ')' -> ^( CLASS Identifier ( expressionList )? ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:360:4: 'new' Identifier '(' ( expressionList )? ')'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:367:2: ( 'new' Identifier '(' ( expressionList )? ')' -> ^( CLASS Identifier ( expressionList )? ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:367:4: 'new' Identifier '(' ( expressionList )? ')'
             {
-            	string_literal125=(IToken)Match(input,77,FOLLOW_77_in_instantiateClass1498); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_77.Add(string_literal125);
+            	string_literal129=(IToken)Match(input,79,FOLLOW_79_in_instantiateClass1553); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_79.Add(string_literal129);
 
-            	Identifier126=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_instantiateClass1500); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_Identifier.Add(Identifier126);
+            	Identifier130=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_instantiateClass1555); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_Identifier.Add(Identifier130);
 
-            	char_literal127=(IToken)Match(input,55,FOLLOW_55_in_instantiateClass1502); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_55.Add(char_literal127);
+            	char_literal131=(IToken)Match(input,57,FOLLOW_57_in_instantiateClass1557); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_57.Add(char_literal131);
 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:360:25: ( expressionList )?
-            	int alt38 = 2;
-            	int LA38_0 = input.LA(1);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:367:25: ( expressionList )?
+            	int alt39 = 2;
+            	int LA39_0 = input.LA(1);
 
-            	if ( ((LA38_0 >= Identifier && LA38_0 <= Null) || LA38_0 == 55 || LA38_0 == 69 || LA38_0 == 74 || LA38_0 == 77) )
+            	if ( ((LA39_0 >= Identifier && LA39_0 <= Null) || LA39_0 == 57 || LA39_0 == 71 || LA39_0 == 76 || LA39_0 == 79) )
             	{
-            	    alt38 = 1;
+            	    alt39 = 1;
             	}
-            	switch (alt38) 
+            	switch (alt39) 
             	{
             	    case 1 :
             	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: expressionList
             	        {
-            	        	PushFollow(FOLLOW_expressionList_in_instantiateClass1504);
-            	        	expressionList128 = expressionList();
+            	        	PushFollow(FOLLOW_expressionList_in_instantiateClass1559);
+            	        	expressionList132 = expressionList();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( (state.backtracking==0) ) stream_expressionList.Add(expressionList128.Tree);
+            	        	if ( (state.backtracking==0) ) stream_expressionList.Add(expressionList132.Tree);
 
             	        }
             	        break;
 
             	}
 
-            	char_literal129=(IToken)Match(input,56,FOLLOW_56_in_instantiateClass1507); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_56.Add(char_literal129);
+            	char_literal133=(IToken)Match(input,58,FOLLOW_58_in_instantiateClass1562); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_58.Add(char_literal133);
 
 
 
             	// AST REWRITE
-            	// elements:          Identifier, expressionList
+            	// elements:          expressionList, Identifier
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -4970,15 +5105,15 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 360:45: -> ^( CLASS Identifier ( expressionList )? )
+            	// 367:45: -> ^( CLASS Identifier ( expressionList )? )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:360:48: ^( CLASS Identifier ( expressionList )? )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:367:48: ^( CLASS Identifier ( expressionList )? )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(CLASS, "CLASS"), root_1);
 
             	    adaptor.AddChild(root_1, stream_Identifier.NextNode());
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:360:67: ( expressionList )?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:367:67: ( expressionList )?
             	    if ( stream_expressionList.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_expressionList.NextTree());
@@ -5030,7 +5165,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "expressionList"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:375:1: expressionList : expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:382:1: expressionList : expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) ;
     public SGLParser.expressionList_return expressionList() // throws RecognitionException [1]
     {   
         SGLParser.expressionList_return retval = new SGLParser.expressionList_return();
@@ -5038,14 +5173,14 @@ public partial class SGLParser : Parser
         int expressionList_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal131 = null;
-        SGLParser.expression_return expression130 = default(SGLParser.expression_return);
+        IToken char_literal135 = null;
+        SGLParser.expression_return expression134 = default(SGLParser.expression_return);
 
-        SGLParser.expression_return expression132 = default(SGLParser.expression_return);
+        SGLParser.expression_return expression136 = default(SGLParser.expression_return);
 
 
-        object char_literal131_tree=null;
-        RewriteRuleTokenStream stream_49 = new RewriteRuleTokenStream(adaptor,"token 49");
+        object char_literal135_tree=null;
+        RewriteRuleTokenStream stream_51 = new RewriteRuleTokenStream(adaptor,"token 51");
         RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
         try 
     	{
@@ -5053,50 +5188,50 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:376:3: ( expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:376:7: expression ( ',' expression )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:383:3: ( expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:383:7: expression ( ',' expression )*
             {
-            	PushFollow(FOLLOW_expression_in_expressionList1548);
-            	expression130 = expression();
+            	PushFollow(FOLLOW_expression_in_expressionList1603);
+            	expression134 = expression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_expression.Add(expression130.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:376:18: ( ',' expression )*
+            	if ( (state.backtracking==0) ) stream_expression.Add(expression134.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:383:18: ( ',' expression )*
             	do 
             	{
-            	    int alt39 = 2;
-            	    int LA39_0 = input.LA(1);
+            	    int alt40 = 2;
+            	    int LA40_0 = input.LA(1);
 
-            	    if ( (LA39_0 == 49) )
+            	    if ( (LA40_0 == 51) )
             	    {
-            	        alt39 = 1;
+            	        alt40 = 1;
             	    }
 
 
-            	    switch (alt39) 
+            	    switch (alt40) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:376:19: ',' expression
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:383:19: ',' expression
             			    {
-            			    	char_literal131=(IToken)Match(input,49,FOLLOW_49_in_expressionList1551); if (state.failed) return retval; 
-            			    	if ( (state.backtracking==0) ) stream_49.Add(char_literal131);
+            			    	char_literal135=(IToken)Match(input,51,FOLLOW_51_in_expressionList1606); if (state.failed) return retval; 
+            			    	if ( (state.backtracking==0) ) stream_51.Add(char_literal135);
 
-            			    	PushFollow(FOLLOW_expression_in_expressionList1553);
-            			    	expression132 = expression();
+            			    	PushFollow(FOLLOW_expression_in_expressionList1608);
+            			    	expression136 = expression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( (state.backtracking==0) ) stream_expression.Add(expression132.Tree);
+            			    	if ( (state.backtracking==0) ) stream_expression.Add(expression136.Tree);
 
             			    }
             			    break;
 
             			default:
-            			    goto loop39;
+            			    goto loop40;
             	    }
             	} while (true);
 
-            	loop39:
-            		;	// Stops C# compiler whining that label 'loop39' has no statements
+            	loop40:
+            		;	// Stops C# compiler whining that label 'loop40' has no statements
 
 
 
@@ -5112,9 +5247,9 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 376:36: -> ^( EXP_LIST ( expression )+ )
+            	// 383:36: -> ^( EXP_LIST ( expression )+ )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:376:39: ^( EXP_LIST ( expression )+ )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:383:39: ^( EXP_LIST ( expression )+ )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(EXP_LIST, "EXP_LIST"), root_1);
@@ -5173,7 +5308,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "variableList"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:380:1: variableList : variable ( ',' variable )* -> ^( VAR_LIST ( variable )+ ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:387:1: variableList : variable ( ',' variable )* -> ^( VAR_LIST ( variable )+ ) ;
     public SGLParser.variableList_return variableList() // throws RecognitionException [1]
     {   
         SGLParser.variableList_return retval = new SGLParser.variableList_return();
@@ -5181,14 +5316,14 @@ public partial class SGLParser : Parser
         int variableList_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken char_literal134 = null;
-        SGLParser.variable_return variable133 = default(SGLParser.variable_return);
+        IToken char_literal138 = null;
+        SGLParser.variable_return variable137 = default(SGLParser.variable_return);
 
-        SGLParser.variable_return variable135 = default(SGLParser.variable_return);
+        SGLParser.variable_return variable139 = default(SGLParser.variable_return);
 
 
-        object char_literal134_tree=null;
-        RewriteRuleTokenStream stream_49 = new RewriteRuleTokenStream(adaptor,"token 49");
+        object char_literal138_tree=null;
+        RewriteRuleTokenStream stream_51 = new RewriteRuleTokenStream(adaptor,"token 51");
         RewriteRuleSubtreeStream stream_variable = new RewriteRuleSubtreeStream(adaptor,"rule variable");
         try 
     	{
@@ -5196,50 +5331,50 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:381:3: ( variable ( ',' variable )* -> ^( VAR_LIST ( variable )+ ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:381:5: variable ( ',' variable )*
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:388:3: ( variable ( ',' variable )* -> ^( VAR_LIST ( variable )+ ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:388:5: variable ( ',' variable )*
             {
-            	PushFollow(FOLLOW_variable_in_variableList1581);
-            	variable133 = variable();
+            	PushFollow(FOLLOW_variable_in_variableList1636);
+            	variable137 = variable();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_variable.Add(variable133.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:381:14: ( ',' variable )*
+            	if ( (state.backtracking==0) ) stream_variable.Add(variable137.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:388:14: ( ',' variable )*
             	do 
             	{
-            	    int alt40 = 2;
-            	    int LA40_0 = input.LA(1);
+            	    int alt41 = 2;
+            	    int LA41_0 = input.LA(1);
 
-            	    if ( (LA40_0 == 49) )
+            	    if ( (LA41_0 == 51) )
             	    {
-            	        alt40 = 1;
+            	        alt41 = 1;
             	    }
 
 
-            	    switch (alt40) 
+            	    switch (alt41) 
             		{
             			case 1 :
-            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:381:15: ',' variable
+            			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:388:15: ',' variable
             			    {
-            			    	char_literal134=(IToken)Match(input,49,FOLLOW_49_in_variableList1584); if (state.failed) return retval; 
-            			    	if ( (state.backtracking==0) ) stream_49.Add(char_literal134);
+            			    	char_literal138=(IToken)Match(input,51,FOLLOW_51_in_variableList1639); if (state.failed) return retval; 
+            			    	if ( (state.backtracking==0) ) stream_51.Add(char_literal138);
 
-            			    	PushFollow(FOLLOW_variable_in_variableList1586);
-            			    	variable135 = variable();
+            			    	PushFollow(FOLLOW_variable_in_variableList1641);
+            			    	variable139 = variable();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( (state.backtracking==0) ) stream_variable.Add(variable135.Tree);
+            			    	if ( (state.backtracking==0) ) stream_variable.Add(variable139.Tree);
 
             			    }
             			    break;
 
             			default:
-            			    goto loop40;
+            			    goto loop41;
             	    }
             	} while (true);
 
-            	loop40:
-            		;	// Stops C# compiler whining that label 'loop40' has no statements
+            	loop41:
+            		;	// Stops C# compiler whining that label 'loop41' has no statements
 
 
 
@@ -5255,9 +5390,9 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 381:30: -> ^( VAR_LIST ( variable )+ )
+            	// 388:30: -> ^( VAR_LIST ( variable )+ )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:381:33: ^( VAR_LIST ( variable )+ )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:388:33: ^( VAR_LIST ( variable )+ )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(VAR_LIST, "VAR_LIST"), root_1);
@@ -5316,7 +5451,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "methodCall"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:384:1: methodCall : Identifier '(' ( expressionList )? ')' -> ^( FUNC_CALL Identifier ( expressionList )? ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:391:1: methodCall : Identifier '(' ( expressionList )? ')' -> ^( FUNC_CALL Identifier ( expressionList )? ) ;
     public SGLParser.methodCall_return methodCall() // throws RecognitionException [1]
     {   
         SGLParser.methodCall_return retval = new SGLParser.methodCall_return();
@@ -5324,17 +5459,17 @@ public partial class SGLParser : Parser
         int methodCall_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken Identifier136 = null;
-        IToken char_literal137 = null;
-        IToken char_literal139 = null;
-        SGLParser.expressionList_return expressionList138 = default(SGLParser.expressionList_return);
+        IToken Identifier140 = null;
+        IToken char_literal141 = null;
+        IToken char_literal143 = null;
+        SGLParser.expressionList_return expressionList142 = default(SGLParser.expressionList_return);
 
 
-        object Identifier136_tree=null;
-        object char_literal137_tree=null;
-        object char_literal139_tree=null;
-        RewriteRuleTokenStream stream_56 = new RewriteRuleTokenStream(adaptor,"token 56");
-        RewriteRuleTokenStream stream_55 = new RewriteRuleTokenStream(adaptor,"token 55");
+        object Identifier140_tree=null;
+        object char_literal141_tree=null;
+        object char_literal143_tree=null;
+        RewriteRuleTokenStream stream_58 = new RewriteRuleTokenStream(adaptor,"token 58");
+        RewriteRuleTokenStream stream_57 = new RewriteRuleTokenStream(adaptor,"token 57");
         RewriteRuleTokenStream stream_Identifier = new RewriteRuleTokenStream(adaptor,"token Identifier");
         RewriteRuleSubtreeStream stream_expressionList = new RewriteRuleSubtreeStream(adaptor,"rule expressionList");
         try 
@@ -5343,46 +5478,46 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:385:2: ( Identifier '(' ( expressionList )? ')' -> ^( FUNC_CALL Identifier ( expressionList )? ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:385:4: Identifier '(' ( expressionList )? ')'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:392:2: ( Identifier '(' ( expressionList )? ')' -> ^( FUNC_CALL Identifier ( expressionList )? ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:392:4: Identifier '(' ( expressionList )? ')'
             {
-            	Identifier136=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_methodCall1609); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_Identifier.Add(Identifier136);
+            	Identifier140=(IToken)Match(input,Identifier,FOLLOW_Identifier_in_methodCall1664); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_Identifier.Add(Identifier140);
 
-            	char_literal137=(IToken)Match(input,55,FOLLOW_55_in_methodCall1611); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_55.Add(char_literal137);
+            	char_literal141=(IToken)Match(input,57,FOLLOW_57_in_methodCall1666); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_57.Add(char_literal141);
 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:385:19: ( expressionList )?
-            	int alt41 = 2;
-            	int LA41_0 = input.LA(1);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:392:19: ( expressionList )?
+            	int alt42 = 2;
+            	int LA42_0 = input.LA(1);
 
-            	if ( ((LA41_0 >= Identifier && LA41_0 <= Null) || LA41_0 == 55 || LA41_0 == 69 || LA41_0 == 74 || LA41_0 == 77) )
+            	if ( ((LA42_0 >= Identifier && LA42_0 <= Null) || LA42_0 == 57 || LA42_0 == 71 || LA42_0 == 76 || LA42_0 == 79) )
             	{
-            	    alt41 = 1;
+            	    alt42 = 1;
             	}
-            	switch (alt41) 
+            	switch (alt42) 
             	{
             	    case 1 :
             	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: expressionList
             	        {
-            	        	PushFollow(FOLLOW_expressionList_in_methodCall1613);
-            	        	expressionList138 = expressionList();
+            	        	PushFollow(FOLLOW_expressionList_in_methodCall1668);
+            	        	expressionList142 = expressionList();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( (state.backtracking==0) ) stream_expressionList.Add(expressionList138.Tree);
+            	        	if ( (state.backtracking==0) ) stream_expressionList.Add(expressionList142.Tree);
 
             	        }
             	        break;
 
             	}
 
-            	char_literal139=(IToken)Match(input,56,FOLLOW_56_in_methodCall1616); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_56.Add(char_literal139);
+            	char_literal143=(IToken)Match(input,58,FOLLOW_58_in_methodCall1671); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_58.Add(char_literal143);
 
 
 
             	// AST REWRITE
-            	// elements:          expressionList, Identifier
+            	// elements:          Identifier, expressionList
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -5393,15 +5528,15 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 385:39: -> ^( FUNC_CALL Identifier ( expressionList )? )
+            	// 392:39: -> ^( FUNC_CALL Identifier ( expressionList )? )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:385:42: ^( FUNC_CALL Identifier ( expressionList )? )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:392:42: ^( FUNC_CALL Identifier ( expressionList )? )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(FUNC_CALL, "FUNC_CALL"), root_1);
 
             	    adaptor.AddChild(root_1, stream_Identifier.NextNode());
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:385:65: ( expressionList )?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:392:65: ( expressionList )?
             	    if ( stream_expressionList.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_expressionList.NextTree());
@@ -5453,7 +5588,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "breakStat"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:390:1: breakStat : 'break' -> BREAK ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:397:1: breakStat : 'break' -> BREAK ;
     public SGLParser.breakStat_return breakStat() // throws RecognitionException [1]
     {   
         SGLParser.breakStat_return retval = new SGLParser.breakStat_return();
@@ -5461,10 +5596,10 @@ public partial class SGLParser : Parser
         int breakStat_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal140 = null;
+        IToken string_literal144 = null;
 
-        object string_literal140_tree=null;
-        RewriteRuleTokenStream stream_78 = new RewriteRuleTokenStream(adaptor,"token 78");
+        object string_literal144_tree=null;
+        RewriteRuleTokenStream stream_80 = new RewriteRuleTokenStream(adaptor,"token 80");
 
         try 
     	{
@@ -5472,11 +5607,11 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:391:2: ( 'break' -> BREAK )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:391:4: 'break'
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:398:2: ( 'break' -> BREAK )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:398:4: 'break'
             {
-            	string_literal140=(IToken)Match(input,78,FOLLOW_78_in_breakStat1643); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_78.Add(string_literal140);
+            	string_literal144=(IToken)Match(input,80,FOLLOW_80_in_breakStat1698); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_80.Add(string_literal144);
 
 
 
@@ -5492,7 +5627,7 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 391:12: -> BREAK
+            	// 398:12: -> BREAK
             	{
             	    adaptor.AddChild(root_0, (object)adaptor.Create(BREAK, "BREAK"));
 
@@ -5537,7 +5672,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "returnStat"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:394:1: returnStat : 'return' expression -> ^( RETURN expression ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:401:1: returnStat : 'return' expression -> ^( RETURN expression ) ;
     public SGLParser.returnStat_return returnStat() // throws RecognitionException [1]
     {   
         SGLParser.returnStat_return retval = new SGLParser.returnStat_return();
@@ -5545,12 +5680,12 @@ public partial class SGLParser : Parser
         int returnStat_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal141 = null;
-        SGLParser.expression_return expression142 = default(SGLParser.expression_return);
+        IToken string_literal145 = null;
+        SGLParser.expression_return expression146 = default(SGLParser.expression_return);
 
 
-        object string_literal141_tree=null;
-        RewriteRuleTokenStream stream_79 = new RewriteRuleTokenStream(adaptor,"token 79");
+        object string_literal145_tree=null;
+        RewriteRuleTokenStream stream_81 = new RewriteRuleTokenStream(adaptor,"token 81");
         RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
         try 
     	{
@@ -5558,17 +5693,17 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:395:2: ( 'return' expression -> ^( RETURN expression ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:395:4: 'return' expression
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:402:2: ( 'return' expression -> ^( RETURN expression ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:402:4: 'return' expression
             {
-            	string_literal141=(IToken)Match(input,79,FOLLOW_79_in_returnStat1658); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_79.Add(string_literal141);
+            	string_literal145=(IToken)Match(input,81,FOLLOW_81_in_returnStat1713); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_81.Add(string_literal145);
 
-            	PushFollow(FOLLOW_expression_in_returnStat1660);
-            	expression142 = expression();
+            	PushFollow(FOLLOW_expression_in_returnStat1715);
+            	expression146 = expression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_expression.Add(expression142.Tree);
+            	if ( (state.backtracking==0) ) stream_expression.Add(expression146.Tree);
 
 
             	// AST REWRITE
@@ -5583,9 +5718,9 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 395:24: -> ^( RETURN expression )
+            	// 402:24: -> ^( RETURN expression )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:395:27: ^( RETURN expression )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:402:27: ^( RETURN expression )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(RETURN, "RETURN"), root_1);
@@ -5636,7 +5771,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "whileLoop"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:399:1: whileLoop : 'while' expression commonBlock -> ^( 'while' expression commonBlock ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:406:1: whileLoop : 'while' expression commonBlock -> ^( 'while' expression commonBlock ) ;
     public SGLParser.whileLoop_return whileLoop() // throws RecognitionException [1]
     {   
         SGLParser.whileLoop_return retval = new SGLParser.whileLoop_return();
@@ -5644,14 +5779,14 @@ public partial class SGLParser : Parser
         int whileLoop_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal143 = null;
-        SGLParser.expression_return expression144 = default(SGLParser.expression_return);
+        IToken string_literal147 = null;
+        SGLParser.expression_return expression148 = default(SGLParser.expression_return);
 
-        SGLParser.commonBlock_return commonBlock145 = default(SGLParser.commonBlock_return);
+        SGLParser.commonBlock_return commonBlock149 = default(SGLParser.commonBlock_return);
 
 
-        object string_literal143_tree=null;
-        RewriteRuleTokenStream stream_80 = new RewriteRuleTokenStream(adaptor,"token 80");
+        object string_literal147_tree=null;
+        RewriteRuleTokenStream stream_82 = new RewriteRuleTokenStream(adaptor,"token 82");
         RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
         RewriteRuleSubtreeStream stream_commonBlock = new RewriteRuleSubtreeStream(adaptor,"rule commonBlock");
         try 
@@ -5660,26 +5795,26 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:400:2: ( 'while' expression commonBlock -> ^( 'while' expression commonBlock ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:400:4: 'while' expression commonBlock
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:407:2: ( 'while' expression commonBlock -> ^( 'while' expression commonBlock ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:407:4: 'while' expression commonBlock
             {
-            	string_literal143=(IToken)Match(input,80,FOLLOW_80_in_whileLoop1683); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_80.Add(string_literal143);
+            	string_literal147=(IToken)Match(input,82,FOLLOW_82_in_whileLoop1738); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_82.Add(string_literal147);
 
-            	PushFollow(FOLLOW_expression_in_whileLoop1685);
-            	expression144 = expression();
+            	PushFollow(FOLLOW_expression_in_whileLoop1740);
+            	expression148 = expression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_expression.Add(expression144.Tree);
-            	PushFollow(FOLLOW_commonBlock_in_whileLoop1687);
-            	commonBlock145 = commonBlock();
+            	if ( (state.backtracking==0) ) stream_expression.Add(expression148.Tree);
+            	PushFollow(FOLLOW_commonBlock_in_whileLoop1742);
+            	commonBlock149 = commonBlock();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_commonBlock.Add(commonBlock145.Tree);
+            	if ( (state.backtracking==0) ) stream_commonBlock.Add(commonBlock149.Tree);
 
 
             	// AST REWRITE
-            	// elements:          80, commonBlock, expression
+            	// elements:          commonBlock, 82, expression
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -5690,12 +5825,12 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 400:35: -> ^( 'while' expression commonBlock )
+            	// 407:35: -> ^( 'while' expression commonBlock )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:400:38: ^( 'while' expression commonBlock )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:407:38: ^( 'while' expression commonBlock )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
-            	    root_1 = (object)adaptor.BecomeRoot(stream_80.NextNode(), root_1);
+            	    root_1 = (object)adaptor.BecomeRoot(stream_82.NextNode(), root_1);
 
             	    adaptor.AddChild(root_1, stream_expression.NextTree());
             	    adaptor.AddChild(root_1, stream_commonBlock.NextTree());
@@ -5744,7 +5879,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "forLoop"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:403:1: forLoop : 'for' '(' (dec= oneLineStatement )? ';' (cond= expression )? ';' (iter= oneLineStatement )? ')' commonBlock -> ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:410:1: forLoop : 'for' '(' (dec= oneLineStatement )? ';' (cond= expression )? ';' (iter= oneLineStatement )? ')' commonBlock -> ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock ) ;
     public SGLParser.forLoop_return forLoop() // throws RecognitionException [1]
     {   
         SGLParser.forLoop_return retval = new SGLParser.forLoop_return();
@@ -5752,29 +5887,29 @@ public partial class SGLParser : Parser
         int forLoop_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal146 = null;
-        IToken char_literal147 = null;
-        IToken char_literal148 = null;
-        IToken char_literal149 = null;
-        IToken char_literal150 = null;
+        IToken string_literal150 = null;
+        IToken char_literal151 = null;
+        IToken char_literal152 = null;
+        IToken char_literal153 = null;
+        IToken char_literal154 = null;
         SGLParser.oneLineStatement_return dec = default(SGLParser.oneLineStatement_return);
 
         SGLParser.expression_return cond = default(SGLParser.expression_return);
 
         SGLParser.oneLineStatement_return iter = default(SGLParser.oneLineStatement_return);
 
-        SGLParser.commonBlock_return commonBlock151 = default(SGLParser.commonBlock_return);
+        SGLParser.commonBlock_return commonBlock155 = default(SGLParser.commonBlock_return);
 
 
-        object string_literal146_tree=null;
-        object char_literal147_tree=null;
-        object char_literal148_tree=null;
-        object char_literal149_tree=null;
-        object char_literal150_tree=null;
-        RewriteRuleTokenStream stream_48 = new RewriteRuleTokenStream(adaptor,"token 48");
-        RewriteRuleTokenStream stream_56 = new RewriteRuleTokenStream(adaptor,"token 56");
-        RewriteRuleTokenStream stream_55 = new RewriteRuleTokenStream(adaptor,"token 55");
-        RewriteRuleTokenStream stream_81 = new RewriteRuleTokenStream(adaptor,"token 81");
+        object string_literal150_tree=null;
+        object char_literal151_tree=null;
+        object char_literal152_tree=null;
+        object char_literal153_tree=null;
+        object char_literal154_tree=null;
+        RewriteRuleTokenStream stream_58 = new RewriteRuleTokenStream(adaptor,"token 58");
+        RewriteRuleTokenStream stream_57 = new RewriteRuleTokenStream(adaptor,"token 57");
+        RewriteRuleTokenStream stream_83 = new RewriteRuleTokenStream(adaptor,"token 83");
+        RewriteRuleTokenStream stream_50 = new RewriteRuleTokenStream(adaptor,"token 50");
         RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
         RewriteRuleSubtreeStream stream_commonBlock = new RewriteRuleSubtreeStream(adaptor,"rule commonBlock");
         RewriteRuleSubtreeStream stream_oneLineStatement = new RewriteRuleSubtreeStream(adaptor,"rule oneLineStatement");
@@ -5784,29 +5919,29 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:404:2: ( 'for' '(' (dec= oneLineStatement )? ';' (cond= expression )? ';' (iter= oneLineStatement )? ')' commonBlock -> ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:404:4: 'for' '(' (dec= oneLineStatement )? ';' (cond= expression )? ';' (iter= oneLineStatement )? ')' commonBlock
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:411:2: ( 'for' '(' (dec= oneLineStatement )? ';' (cond= expression )? ';' (iter= oneLineStatement )? ')' commonBlock -> ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:411:4: 'for' '(' (dec= oneLineStatement )? ';' (cond= expression )? ';' (iter= oneLineStatement )? ')' commonBlock
             {
-            	string_literal146=(IToken)Match(input,81,FOLLOW_81_in_forLoop1709); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_81.Add(string_literal146);
+            	string_literal150=(IToken)Match(input,83,FOLLOW_83_in_forLoop1764); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_83.Add(string_literal150);
 
-            	char_literal147=(IToken)Match(input,55,FOLLOW_55_in_forLoop1711); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_55.Add(char_literal147);
+            	char_literal151=(IToken)Match(input,57,FOLLOW_57_in_forLoop1766); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_57.Add(char_literal151);
 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:404:17: (dec= oneLineStatement )?
-            	int alt42 = 2;
-            	int LA42_0 = input.LA(1);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:411:17: (dec= oneLineStatement )?
+            	int alt43 = 2;
+            	int LA43_0 = input.LA(1);
 
-            	if ( (LA42_0 == Identifier || LA42_0 == VarStartInit) )
+            	if ( (LA43_0 == Identifier || LA43_0 == VarStartInit) )
             	{
-            	    alt42 = 1;
+            	    alt43 = 1;
             	}
-            	switch (alt42) 
+            	switch (alt43) 
             	{
             	    case 1 :
             	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: dec= oneLineStatement
             	        {
-            	        	PushFollow(FOLLOW_oneLineStatement_in_forLoop1715);
+            	        	PushFollow(FOLLOW_oneLineStatement_in_forLoop1770);
             	        	dec = oneLineStatement();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
@@ -5817,23 +5952,23 @@ public partial class SGLParser : Parser
 
             	}
 
-            	char_literal148=(IToken)Match(input,48,FOLLOW_48_in_forLoop1718); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_48.Add(char_literal148);
+            	char_literal152=(IToken)Match(input,50,FOLLOW_50_in_forLoop1773); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_50.Add(char_literal152);
 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:404:44: (cond= expression )?
-            	int alt43 = 2;
-            	int LA43_0 = input.LA(1);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:411:44: (cond= expression )?
+            	int alt44 = 2;
+            	int LA44_0 = input.LA(1);
 
-            	if ( ((LA43_0 >= Identifier && LA43_0 <= Null) || LA43_0 == 55 || LA43_0 == 69 || LA43_0 == 74 || LA43_0 == 77) )
+            	if ( ((LA44_0 >= Identifier && LA44_0 <= Null) || LA44_0 == 57 || LA44_0 == 71 || LA44_0 == 76 || LA44_0 == 79) )
             	{
-            	    alt43 = 1;
+            	    alt44 = 1;
             	}
-            	switch (alt43) 
+            	switch (alt44) 
             	{
             	    case 1 :
             	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: cond= expression
             	        {
-            	        	PushFollow(FOLLOW_expression_in_forLoop1722);
+            	        	PushFollow(FOLLOW_expression_in_forLoop1777);
             	        	cond = expression();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
@@ -5844,23 +5979,23 @@ public partial class SGLParser : Parser
 
             	}
 
-            	char_literal149=(IToken)Match(input,48,FOLLOW_48_in_forLoop1725); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_48.Add(char_literal149);
+            	char_literal153=(IToken)Match(input,50,FOLLOW_50_in_forLoop1780); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_50.Add(char_literal153);
 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:404:65: (iter= oneLineStatement )?
-            	int alt44 = 2;
-            	int LA44_0 = input.LA(1);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:411:65: (iter= oneLineStatement )?
+            	int alt45 = 2;
+            	int LA45_0 = input.LA(1);
 
-            	if ( (LA44_0 == Identifier || LA44_0 == VarStartInit) )
+            	if ( (LA45_0 == Identifier || LA45_0 == VarStartInit) )
             	{
-            	    alt44 = 1;
+            	    alt45 = 1;
             	}
-            	switch (alt44) 
+            	switch (alt45) 
             	{
             	    case 1 :
             	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: iter= oneLineStatement
             	        {
-            	        	PushFollow(FOLLOW_oneLineStatement_in_forLoop1729);
+            	        	PushFollow(FOLLOW_oneLineStatement_in_forLoop1784);
             	        	iter = oneLineStatement();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
@@ -5871,18 +6006,18 @@ public partial class SGLParser : Parser
 
             	}
 
-            	char_literal150=(IToken)Match(input,56,FOLLOW_56_in_forLoop1732); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_56.Add(char_literal150);
+            	char_literal154=(IToken)Match(input,58,FOLLOW_58_in_forLoop1787); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_58.Add(char_literal154);
 
-            	PushFollow(FOLLOW_commonBlock_in_forLoop1734);
-            	commonBlock151 = commonBlock();
+            	PushFollow(FOLLOW_commonBlock_in_forLoop1789);
+            	commonBlock155 = commonBlock();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_commonBlock.Add(commonBlock151.Tree);
+            	if ( (state.backtracking==0) ) stream_commonBlock.Add(commonBlock155.Tree);
 
 
             	// AST REWRITE
-            	// elements:          iter, dec, 81, commonBlock, cond
+            	// elements:          83, commonBlock, cond, dec, iter
             	// token labels:      
             	// rule labels:       retval, dec, iter, cond
             	// token list labels: 
@@ -5896,19 +6031,19 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_cond = new RewriteRuleSubtreeStream(adaptor, "rule cond", cond!=null ? cond.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 405:2: -> ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock )
+            	// 412:2: -> ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:405:5: ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:412:5: ^( 'for' ^( FORDEC ( $dec)? ) ^( FORCOND ( $cond)? ) ^( FORITER ( $iter)? ) commonBlock )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
-            	    root_1 = (object)adaptor.BecomeRoot(stream_81.NextNode(), root_1);
+            	    root_1 = (object)adaptor.BecomeRoot(stream_83.NextNode(), root_1);
 
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:405:13: ^( FORDEC ( $dec)? )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:412:13: ^( FORDEC ( $dec)? )
             	    {
             	    object root_2 = (object)adaptor.GetNilNode();
             	    root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(FORDEC, "FORDEC"), root_2);
 
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:405:22: ( $dec)?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:412:22: ( $dec)?
             	    if ( stream_dec.HasNext() )
             	    {
             	        adaptor.AddChild(root_2, stream_dec.NextTree());
@@ -5918,12 +6053,12 @@ public partial class SGLParser : Parser
 
             	    adaptor.AddChild(root_1, root_2);
             	    }
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:405:29: ^( FORCOND ( $cond)? )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:412:29: ^( FORCOND ( $cond)? )
             	    {
             	    object root_2 = (object)adaptor.GetNilNode();
             	    root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(FORCOND, "FORCOND"), root_2);
 
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:405:39: ( $cond)?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:412:39: ( $cond)?
             	    if ( stream_cond.HasNext() )
             	    {
             	        adaptor.AddChild(root_2, stream_cond.NextTree());
@@ -5933,12 +6068,12 @@ public partial class SGLParser : Parser
 
             	    adaptor.AddChild(root_1, root_2);
             	    }
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:405:47: ^( FORITER ( $iter)? )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:412:47: ^( FORITER ( $iter)? )
             	    {
             	    object root_2 = (object)adaptor.GetNilNode();
             	    root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(FORITER, "FORITER"), root_2);
 
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:405:57: ( $iter)?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:412:57: ( $iter)?
             	    if ( stream_iter.HasNext() )
             	    {
             	        adaptor.AddChild(root_2, stream_iter.NextTree());
@@ -5994,7 +6129,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "ifStatement"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:408:1: ifStatement : ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:415:1: ifStatement : ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) ;
     public SGLParser.ifStatement_return ifStatement() // throws RecognitionException [1]
     {   
         SGLParser.ifStatement_return retval = new SGLParser.ifStatement_return();
@@ -6002,11 +6137,11 @@ public partial class SGLParser : Parser
         int ifStatement_StartIndex = input.Index();
         object root_0 = null;
 
-        SGLParser.ifStat_return ifStat152 = default(SGLParser.ifStat_return);
+        SGLParser.ifStat_return ifStat156 = default(SGLParser.ifStat_return);
 
-        SGLParser.elseIfStat_return elseIfStat153 = default(SGLParser.elseIfStat_return);
+        SGLParser.elseIfStat_return elseIfStat157 = default(SGLParser.elseIfStat_return);
 
-        SGLParser.elseStat_return elseStat154 = default(SGLParser.elseStat_return);
+        SGLParser.elseStat_return elseStat158 = default(SGLParser.elseStat_return);
 
 
         RewriteRuleSubtreeStream stream_elseIfStat = new RewriteRuleSubtreeStream(adaptor,"rule elseIfStat");
@@ -6018,73 +6153,73 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:409:2: ( ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:409:4: ifStat ( elseIfStat )* ( elseStat )?
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:416:2: ( ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:416:4: ifStat ( elseIfStat )* ( elseStat )?
             {
-            	PushFollow(FOLLOW_ifStat_in_ifStatement1779);
-            	ifStat152 = ifStat();
+            	PushFollow(FOLLOW_ifStat_in_ifStatement1834);
+            	ifStat156 = ifStat();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_ifStat.Add(ifStat152.Tree);
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:409:11: ( elseIfStat )*
+            	if ( (state.backtracking==0) ) stream_ifStat.Add(ifStat156.Tree);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:416:11: ( elseIfStat )*
             	do 
             	{
-            	    int alt45 = 2;
-            	    int LA45_0 = input.LA(1);
+            	    int alt46 = 2;
+            	    int LA46_0 = input.LA(1);
 
-            	    if ( (LA45_0 == 83) )
+            	    if ( (LA46_0 == 85) )
             	    {
-            	        int LA45_1 = input.LA(2);
+            	        int LA46_1 = input.LA(2);
 
-            	        if ( (LA45_1 == 82) )
+            	        if ( (LA46_1 == 84) )
             	        {
-            	            alt45 = 1;
+            	            alt46 = 1;
             	        }
 
 
             	    }
 
 
-            	    switch (alt45) 
+            	    switch (alt46) 
             		{
             			case 1 :
             			    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: elseIfStat
             			    {
-            			    	PushFollow(FOLLOW_elseIfStat_in_ifStatement1781);
-            			    	elseIfStat153 = elseIfStat();
+            			    	PushFollow(FOLLOW_elseIfStat_in_ifStatement1836);
+            			    	elseIfStat157 = elseIfStat();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return retval;
-            			    	if ( (state.backtracking==0) ) stream_elseIfStat.Add(elseIfStat153.Tree);
+            			    	if ( (state.backtracking==0) ) stream_elseIfStat.Add(elseIfStat157.Tree);
 
             			    }
             			    break;
 
             			default:
-            			    goto loop45;
+            			    goto loop46;
             	    }
             	} while (true);
 
-            	loop45:
-            		;	// Stops C# compiler whining that label 'loop45' has no statements
+            	loop46:
+            		;	// Stops C# compiler whining that label 'loop46' has no statements
 
-            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:409:23: ( elseStat )?
-            	int alt46 = 2;
-            	int LA46_0 = input.LA(1);
+            	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:416:23: ( elseStat )?
+            	int alt47 = 2;
+            	int LA47_0 = input.LA(1);
 
-            	if ( (LA46_0 == 83) )
+            	if ( (LA47_0 == 85) )
             	{
-            	    alt46 = 1;
+            	    alt47 = 1;
             	}
-            	switch (alt46) 
+            	switch (alt47) 
             	{
             	    case 1 :
             	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: elseStat
             	        {
-            	        	PushFollow(FOLLOW_elseStat_in_ifStatement1784);
-            	        	elseStat154 = elseStat();
+            	        	PushFollow(FOLLOW_elseStat_in_ifStatement1839);
+            	        	elseStat158 = elseStat();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return retval;
-            	        	if ( (state.backtracking==0) ) stream_elseStat.Add(elseStat154.Tree);
+            	        	if ( (state.backtracking==0) ) stream_elseStat.Add(elseStat158.Tree);
 
             	        }
             	        break;
@@ -6094,7 +6229,7 @@ public partial class SGLParser : Parser
 
 
             	// AST REWRITE
-            	// elements:          elseStat, ifStat, elseIfStat
+            	// elements:          elseIfStat, elseStat, ifStat
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -6105,22 +6240,22 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 409:33: -> ^( IF ifStat ( elseIfStat )* ( elseStat )? )
+            	// 416:33: -> ^( IF ifStat ( elseIfStat )* ( elseStat )? )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:409:36: ^( IF ifStat ( elseIfStat )* ( elseStat )? )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:416:36: ^( IF ifStat ( elseIfStat )* ( elseStat )? )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(IF, "IF"), root_1);
 
             	    adaptor.AddChild(root_1, stream_ifStat.NextTree());
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:409:48: ( elseIfStat )*
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:416:48: ( elseIfStat )*
             	    while ( stream_elseIfStat.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_elseIfStat.NextTree());
 
             	    }
             	    stream_elseIfStat.Reset();
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:409:60: ( elseStat )?
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:416:60: ( elseStat )?
             	    if ( stream_elseStat.HasNext() )
             	    {
             	        adaptor.AddChild(root_1, stream_elseStat.NextTree());
@@ -6172,7 +6307,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "ifStat"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:411:1: ifStat : 'if' expression commonBlock -> ^( EXP expression commonBlock ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:418:1: ifStat : 'if' expression commonBlock -> ^( EXP expression commonBlock ) ;
     public SGLParser.ifStat_return ifStat() // throws RecognitionException [1]
     {   
         SGLParser.ifStat_return retval = new SGLParser.ifStat_return();
@@ -6180,14 +6315,14 @@ public partial class SGLParser : Parser
         int ifStat_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal155 = null;
-        SGLParser.expression_return expression156 = default(SGLParser.expression_return);
+        IToken string_literal159 = null;
+        SGLParser.expression_return expression160 = default(SGLParser.expression_return);
 
-        SGLParser.commonBlock_return commonBlock157 = default(SGLParser.commonBlock_return);
+        SGLParser.commonBlock_return commonBlock161 = default(SGLParser.commonBlock_return);
 
 
-        object string_literal155_tree=null;
-        RewriteRuleTokenStream stream_82 = new RewriteRuleTokenStream(adaptor,"token 82");
+        object string_literal159_tree=null;
+        RewriteRuleTokenStream stream_84 = new RewriteRuleTokenStream(adaptor,"token 84");
         RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
         RewriteRuleSubtreeStream stream_commonBlock = new RewriteRuleSubtreeStream(adaptor,"rule commonBlock");
         try 
@@ -6196,26 +6331,26 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:412:2: ( 'if' expression commonBlock -> ^( EXP expression commonBlock ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:412:4: 'if' expression commonBlock
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:419:2: ( 'if' expression commonBlock -> ^( EXP expression commonBlock ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:419:4: 'if' expression commonBlock
             {
-            	string_literal155=(IToken)Match(input,82,FOLLOW_82_in_ifStat1809); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_82.Add(string_literal155);
+            	string_literal159=(IToken)Match(input,84,FOLLOW_84_in_ifStat1864); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_84.Add(string_literal159);
 
-            	PushFollow(FOLLOW_expression_in_ifStat1811);
-            	expression156 = expression();
+            	PushFollow(FOLLOW_expression_in_ifStat1866);
+            	expression160 = expression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_expression.Add(expression156.Tree);
-            	PushFollow(FOLLOW_commonBlock_in_ifStat1813);
-            	commonBlock157 = commonBlock();
+            	if ( (state.backtracking==0) ) stream_expression.Add(expression160.Tree);
+            	PushFollow(FOLLOW_commonBlock_in_ifStat1868);
+            	commonBlock161 = commonBlock();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_commonBlock.Add(commonBlock157.Tree);
+            	if ( (state.backtracking==0) ) stream_commonBlock.Add(commonBlock161.Tree);
 
 
             	// AST REWRITE
-            	// elements:          commonBlock, expression
+            	// elements:          expression, commonBlock
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -6226,9 +6361,9 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 412:32: -> ^( EXP expression commonBlock )
+            	// 419:32: -> ^( EXP expression commonBlock )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:412:35: ^( EXP expression commonBlock )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:419:35: ^( EXP expression commonBlock )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(EXP, "EXP"), root_1);
@@ -6280,7 +6415,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "elseIfStat"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:415:1: elseIfStat : 'else' 'if' expression commonBlock -> ^( EXP expression commonBlock ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:422:1: elseIfStat : 'else' 'if' expression commonBlock -> ^( EXP expression commonBlock ) ;
     public SGLParser.elseIfStat_return elseIfStat() // throws RecognitionException [1]
     {   
         SGLParser.elseIfStat_return retval = new SGLParser.elseIfStat_return();
@@ -6288,17 +6423,17 @@ public partial class SGLParser : Parser
         int elseIfStat_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal158 = null;
-        IToken string_literal159 = null;
-        SGLParser.expression_return expression160 = default(SGLParser.expression_return);
+        IToken string_literal162 = null;
+        IToken string_literal163 = null;
+        SGLParser.expression_return expression164 = default(SGLParser.expression_return);
 
-        SGLParser.commonBlock_return commonBlock161 = default(SGLParser.commonBlock_return);
+        SGLParser.commonBlock_return commonBlock165 = default(SGLParser.commonBlock_return);
 
 
-        object string_literal158_tree=null;
-        object string_literal159_tree=null;
-        RewriteRuleTokenStream stream_82 = new RewriteRuleTokenStream(adaptor,"token 82");
-        RewriteRuleTokenStream stream_83 = new RewriteRuleTokenStream(adaptor,"token 83");
+        object string_literal162_tree=null;
+        object string_literal163_tree=null;
+        RewriteRuleTokenStream stream_84 = new RewriteRuleTokenStream(adaptor,"token 84");
+        RewriteRuleTokenStream stream_85 = new RewriteRuleTokenStream(adaptor,"token 85");
         RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
         RewriteRuleSubtreeStream stream_commonBlock = new RewriteRuleSubtreeStream(adaptor,"rule commonBlock");
         try 
@@ -6307,25 +6442,25 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:416:2: ( 'else' 'if' expression commonBlock -> ^( EXP expression commonBlock ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:416:4: 'else' 'if' expression commonBlock
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:423:2: ( 'else' 'if' expression commonBlock -> ^( EXP expression commonBlock ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:423:4: 'else' 'if' expression commonBlock
             {
-            	string_literal158=(IToken)Match(input,83,FOLLOW_83_in_elseIfStat1834); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_83.Add(string_literal158);
+            	string_literal162=(IToken)Match(input,85,FOLLOW_85_in_elseIfStat1889); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_85.Add(string_literal162);
 
-            	string_literal159=(IToken)Match(input,82,FOLLOW_82_in_elseIfStat1836); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_82.Add(string_literal159);
+            	string_literal163=(IToken)Match(input,84,FOLLOW_84_in_elseIfStat1891); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_84.Add(string_literal163);
 
-            	PushFollow(FOLLOW_expression_in_elseIfStat1838);
-            	expression160 = expression();
+            	PushFollow(FOLLOW_expression_in_elseIfStat1893);
+            	expression164 = expression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_expression.Add(expression160.Tree);
-            	PushFollow(FOLLOW_commonBlock_in_elseIfStat1840);
-            	commonBlock161 = commonBlock();
+            	if ( (state.backtracking==0) ) stream_expression.Add(expression164.Tree);
+            	PushFollow(FOLLOW_commonBlock_in_elseIfStat1895);
+            	commonBlock165 = commonBlock();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_commonBlock.Add(commonBlock161.Tree);
+            	if ( (state.backtracking==0) ) stream_commonBlock.Add(commonBlock165.Tree);
 
 
             	// AST REWRITE
@@ -6340,9 +6475,9 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 416:39: -> ^( EXP expression commonBlock )
+            	// 423:39: -> ^( EXP expression commonBlock )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:416:42: ^( EXP expression commonBlock )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:423:42: ^( EXP expression commonBlock )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(EXP, "EXP"), root_1);
@@ -6394,7 +6529,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "elseStat"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:419:1: elseStat : 'else' commonBlock -> ^( EXP commonBlock ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:426:1: elseStat : 'else' commonBlock -> ^( EXP commonBlock ) ;
     public SGLParser.elseStat_return elseStat() // throws RecognitionException [1]
     {   
         SGLParser.elseStat_return retval = new SGLParser.elseStat_return();
@@ -6402,12 +6537,12 @@ public partial class SGLParser : Parser
         int elseStat_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal162 = null;
-        SGLParser.commonBlock_return commonBlock163 = default(SGLParser.commonBlock_return);
+        IToken string_literal166 = null;
+        SGLParser.commonBlock_return commonBlock167 = default(SGLParser.commonBlock_return);
 
 
-        object string_literal162_tree=null;
-        RewriteRuleTokenStream stream_83 = new RewriteRuleTokenStream(adaptor,"token 83");
+        object string_literal166_tree=null;
+        RewriteRuleTokenStream stream_85 = new RewriteRuleTokenStream(adaptor,"token 85");
         RewriteRuleSubtreeStream stream_commonBlock = new RewriteRuleSubtreeStream(adaptor,"rule commonBlock");
         try 
     	{
@@ -6415,17 +6550,17 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:420:2: ( 'else' commonBlock -> ^( EXP commonBlock ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:420:4: 'else' commonBlock
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:427:2: ( 'else' commonBlock -> ^( EXP commonBlock ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:427:4: 'else' commonBlock
             {
-            	string_literal162=(IToken)Match(input,83,FOLLOW_83_in_elseStat1862); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_83.Add(string_literal162);
+            	string_literal166=(IToken)Match(input,85,FOLLOW_85_in_elseStat1917); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_85.Add(string_literal166);
 
-            	PushFollow(FOLLOW_commonBlock_in_elseStat1864);
-            	commonBlock163 = commonBlock();
+            	PushFollow(FOLLOW_commonBlock_in_elseStat1919);
+            	commonBlock167 = commonBlock();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_commonBlock.Add(commonBlock163.Tree);
+            	if ( (state.backtracking==0) ) stream_commonBlock.Add(commonBlock167.Tree);
 
 
             	// AST REWRITE
@@ -6440,9 +6575,9 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 420:23: -> ^( EXP commonBlock )
+            	// 427:23: -> ^( EXP commonBlock )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:420:26: ^( EXP commonBlock )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:427:26: ^( EXP commonBlock )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(EXP, "EXP"), root_1);
@@ -6493,7 +6628,7 @@ public partial class SGLParser : Parser
     };
 
     // $ANTLR start "atStatement"
-    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:427:1: atStatement : 'at' expression commonBlock -> ^( AT expression commonBlock ) ;
+    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:434:1: atStatement : 'at' expression commonBlock -> ^( AT expression commonBlock ) ;
     public SGLParser.atStatement_return atStatement() // throws RecognitionException [1]
     {   
         SGLParser.atStatement_return retval = new SGLParser.atStatement_return();
@@ -6501,14 +6636,14 @@ public partial class SGLParser : Parser
         int atStatement_StartIndex = input.Index();
         object root_0 = null;
 
-        IToken string_literal164 = null;
-        SGLParser.expression_return expression165 = default(SGLParser.expression_return);
+        IToken string_literal168 = null;
+        SGLParser.expression_return expression169 = default(SGLParser.expression_return);
 
-        SGLParser.commonBlock_return commonBlock166 = default(SGLParser.commonBlock_return);
+        SGLParser.commonBlock_return commonBlock170 = default(SGLParser.commonBlock_return);
 
 
-        object string_literal164_tree=null;
-        RewriteRuleTokenStream stream_84 = new RewriteRuleTokenStream(adaptor,"token 84");
+        object string_literal168_tree=null;
+        RewriteRuleTokenStream stream_86 = new RewriteRuleTokenStream(adaptor,"token 86");
         RewriteRuleSubtreeStream stream_expression = new RewriteRuleSubtreeStream(adaptor,"rule expression");
         RewriteRuleSubtreeStream stream_commonBlock = new RewriteRuleSubtreeStream(adaptor,"rule commonBlock");
         try 
@@ -6517,26 +6652,26 @@ public partial class SGLParser : Parser
     	    {
     	    	return retval; 
     	    }
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:428:2: ( 'at' expression commonBlock -> ^( AT expression commonBlock ) )
-            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:428:4: 'at' expression commonBlock
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:435:2: ( 'at' expression commonBlock -> ^( AT expression commonBlock ) )
+            // D:\\sgl4c#\\NewSGLGramma\\SGL.g:435:4: 'at' expression commonBlock
             {
-            	string_literal164=(IToken)Match(input,84,FOLLOW_84_in_atStatement1889); if (state.failed) return retval; 
-            	if ( (state.backtracking==0) ) stream_84.Add(string_literal164);
+            	string_literal168=(IToken)Match(input,86,FOLLOW_86_in_atStatement1944); if (state.failed) return retval; 
+            	if ( (state.backtracking==0) ) stream_86.Add(string_literal168);
 
-            	PushFollow(FOLLOW_expression_in_atStatement1891);
-            	expression165 = expression();
+            	PushFollow(FOLLOW_expression_in_atStatement1946);
+            	expression169 = expression();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_expression.Add(expression165.Tree);
-            	PushFollow(FOLLOW_commonBlock_in_atStatement1893);
-            	commonBlock166 = commonBlock();
+            	if ( (state.backtracking==0) ) stream_expression.Add(expression169.Tree);
+            	PushFollow(FOLLOW_commonBlock_in_atStatement1948);
+            	commonBlock170 = commonBlock();
             	state.followingStackPointer--;
             	if (state.failed) return retval;
-            	if ( (state.backtracking==0) ) stream_commonBlock.Add(commonBlock166.Tree);
+            	if ( (state.backtracking==0) ) stream_commonBlock.Add(commonBlock170.Tree);
 
 
             	// AST REWRITE
-            	// elements:          commonBlock, expression
+            	// elements:          expression, commonBlock
             	// token labels:      
             	// rule labels:       retval
             	// token list labels: 
@@ -6547,9 +6682,9 @@ public partial class SGLParser : Parser
             	RewriteRuleSubtreeStream stream_retval = new RewriteRuleSubtreeStream(adaptor, "rule retval", retval!=null ? retval.Tree : null);
 
             	root_0 = (object)adaptor.GetNilNode();
-            	// 428:32: -> ^( AT expression commonBlock )
+            	// 435:32: -> ^( AT expression commonBlock )
             	{
-            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:428:35: ^( AT expression commonBlock )
+            	    // D:\\sgl4c#\\NewSGLGramma\\SGL.g:435:35: ^( AT expression commonBlock )
             	    {
             	    object root_1 = (object)adaptor.GetNilNode();
             	    root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(AT, "AT"), root_1);
@@ -6590,66 +6725,85 @@ public partial class SGLParser : Parser
     }
     // $ANTLR end "atStatement"
 
-    // $ANTLR start "synpred57_SGL"
-    public void synpred57_SGL_fragment() {
-        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:350:4: ( objectMethodCall ( indexes )? )
-        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:350:4: objectMethodCall ( indexes )?
+    // $ANTLR start "synpred10_SGL"
+    public void synpred10_SGL_fragment() {
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:201:5: ( unaryExpression )
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:201:5: unaryExpression
         {
-        	PushFollow(FOLLOW_objectMethodCall_in_synpred57_SGL1413);
-        	objectMethodCall();
+        	PushFollow(FOLLOW_unaryExpression_in_synpred10_SGL433);
+        	unaryExpression();
         	state.followingStackPointer--;
         	if (state.failed) return ;
-        	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:350:21: ( indexes )?
-        	int alt47 = 2;
-        	int LA47_0 = input.LA(1);
-
-        	if ( (LA47_0 == 52) )
-        	{
-        	    alt47 = 1;
-        	}
-        	switch (alt47) 
-        	{
-        	    case 1 :
-        	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: indexes
-        	        {
-        	        	PushFollow(FOLLOW_indexes_in_synpred57_SGL1415);
-        	        	indexes();
-        	        	state.followingStackPointer--;
-        	        	if (state.failed) return ;
-
-        	        }
-        	        break;
-
-        	}
-
 
         }
     }
-    // $ANTLR end "synpred57_SGL"
+    // $ANTLR end "synpred10_SGL"
 
-    // $ANTLR start "synpred59_SGL"
-    public void synpred59_SGL_fragment() {
-        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:351:4: ( methodCall ( indexes )? )
-        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:351:4: methodCall ( indexes )?
+    // $ANTLR start "synpred11_SGL"
+    public void synpred11_SGL_fragment() {
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:202:4: ( objectMethodCall )
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:202:4: objectMethodCall
         {
-        	PushFollow(FOLLOW_methodCall_in_synpred59_SGL1432);
+        	PushFollow(FOLLOW_objectMethodCall_in_synpred11_SGL439);
+        	objectMethodCall();
+        	state.followingStackPointer--;
+        	if (state.failed) return ;
+
+        }
+    }
+    // $ANTLR end "synpred11_SGL"
+
+    // $ANTLR start "synpred12_SGL"
+    public void synpred12_SGL_fragment() {
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:203:4: ( methodCall )
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:203:4: methodCall
+        {
+        	PushFollow(FOLLOW_methodCall_in_synpred12_SGL444);
         	methodCall();
         	state.followingStackPointer--;
         	if (state.failed) return ;
-        	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:351:15: ( indexes )?
-        	int alt48 = 2;
-        	int LA48_0 = input.LA(1);
 
-        	if ( (LA48_0 == 52) )
+        }
+    }
+    // $ANTLR end "synpred12_SGL"
+
+    // $ANTLR start "synpred14_SGL"
+    public void synpred14_SGL_fragment() {
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:205:4: ( assignment )
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:205:4: assignment
+        {
+        	PushFollow(FOLLOW_assignment_in_synpred14_SGL456);
+        	assignment();
+        	state.followingStackPointer--;
+        	if (state.failed) return ;
+
+        }
+    }
+    // $ANTLR end "synpred14_SGL"
+
+    // $ANTLR start "synpred59_SGL"
+    public void synpred59_SGL_fragment() {
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:357:4: ( objectMethodCall ( indexes )? )
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:357:4: objectMethodCall ( indexes )?
+        {
+        	PushFollow(FOLLOW_objectMethodCall_in_synpred59_SGL1468);
+        	objectMethodCall();
+        	state.followingStackPointer--;
+        	if (state.failed) return ;
+        	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:357:21: ( indexes )?
+        	int alt49 = 2;
+        	int LA49_0 = input.LA(1);
+
+        	if ( (LA49_0 == 54) )
         	{
-        	    alt48 = 1;
+        	    alt49 = 1;
         	}
-        	switch (alt48) 
+        	switch (alt49) 
         	{
         	    case 1 :
         	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: indexes
         	        {
-        	        	PushFollow(FOLLOW_indexes_in_synpred59_SGL1434);
+        	        	PushFollow(FOLLOW_indexes_in_synpred59_SGL1470);
         	        	indexes();
         	        	state.followingStackPointer--;
         	        	if (state.failed) return ;
@@ -6664,8 +6818,99 @@ public partial class SGLParser : Parser
     }
     // $ANTLR end "synpred59_SGL"
 
+    // $ANTLR start "synpred61_SGL"
+    public void synpred61_SGL_fragment() {
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:358:4: ( methodCall ( indexes )? )
+        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:358:4: methodCall ( indexes )?
+        {
+        	PushFollow(FOLLOW_methodCall_in_synpred61_SGL1487);
+        	methodCall();
+        	state.followingStackPointer--;
+        	if (state.failed) return ;
+        	// D:\\sgl4c#\\NewSGLGramma\\SGL.g:358:15: ( indexes )?
+        	int alt50 = 2;
+        	int LA50_0 = input.LA(1);
+
+        	if ( (LA50_0 == 54) )
+        	{
+        	    alt50 = 1;
+        	}
+        	switch (alt50) 
+        	{
+        	    case 1 :
+        	        // D:\\sgl4c#\\NewSGLGramma\\SGL.g:0:0: indexes
+        	        {
+        	        	PushFollow(FOLLOW_indexes_in_synpred61_SGL1489);
+        	        	indexes();
+        	        	state.followingStackPointer--;
+        	        	if (state.failed) return ;
+
+        	        }
+        	        break;
+
+        	}
+
+
+        }
+    }
+    // $ANTLR end "synpred61_SGL"
+
     // Delegated rules
 
+   	public bool synpred61_SGL() 
+   	{
+   	    state.backtracking++;
+   	    int start = input.Mark();
+   	    try 
+   	    {
+   	        synpred61_SGL_fragment(); // can never throw exception
+   	    }
+   	    catch (RecognitionException re) 
+   	    {
+   	        Console.Error.WriteLine("impossible: "+re);
+   	    }
+   	    bool success = !state.failed;
+   	    input.Rewind(start);
+   	    state.backtracking--;
+   	    state.failed = false;
+   	    return success;
+   	}
+   	public bool synpred10_SGL() 
+   	{
+   	    state.backtracking++;
+   	    int start = input.Mark();
+   	    try 
+   	    {
+   	        synpred10_SGL_fragment(); // can never throw exception
+   	    }
+   	    catch (RecognitionException re) 
+   	    {
+   	        Console.Error.WriteLine("impossible: "+re);
+   	    }
+   	    bool success = !state.failed;
+   	    input.Rewind(start);
+   	    state.backtracking--;
+   	    state.failed = false;
+   	    return success;
+   	}
+   	public bool synpred12_SGL() 
+   	{
+   	    state.backtracking++;
+   	    int start = input.Mark();
+   	    try 
+   	    {
+   	        synpred12_SGL_fragment(); // can never throw exception
+   	    }
+   	    catch (RecognitionException re) 
+   	    {
+   	        Console.Error.WriteLine("impossible: "+re);
+   	    }
+   	    bool success = !state.failed;
+   	    input.Rewind(start);
+   	    state.backtracking--;
+   	    state.failed = false;
+   	    return success;
+   	}
    	public bool synpred59_SGL() 
    	{
    	    state.backtracking++;
@@ -6684,13 +6929,31 @@ public partial class SGLParser : Parser
    	    state.failed = false;
    	    return success;
    	}
-   	public bool synpred57_SGL() 
+   	public bool synpred11_SGL() 
    	{
    	    state.backtracking++;
    	    int start = input.Mark();
    	    try 
    	    {
-   	        synpred57_SGL_fragment(); // can never throw exception
+   	        synpred11_SGL_fragment(); // can never throw exception
+   	    }
+   	    catch (RecognitionException re) 
+   	    {
+   	        Console.Error.WriteLine("impossible: "+re);
+   	    }
+   	    bool success = !state.failed;
+   	    input.Rewind(start);
+   	    state.backtracking--;
+   	    state.failed = false;
+   	    return success;
+   	}
+   	public bool synpred14_SGL() 
+   	{
+   	    state.backtracking++;
+   	    int start = input.Mark();
+   	    try 
+   	    {
+   	        synpred14_SGL_fragment(); // can never throw exception
    	    }
    	    catch (RecognitionException re) 
    	    {
@@ -6710,179 +6973,187 @@ public partial class SGLParser : Parser
 
  
 
-    public static readonly BitSet FOLLOW_mainBlock_in_main234 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_mainStatement_in_mainBlock254 = new BitSet(new ulong[]{0x0204008020000002UL,0x000000000017C000UL});
-    public static readonly BitSet FOLLOW_functionDef_in_mainBlock258 = new BitSet(new ulong[]{0x0204008020000002UL,0x000000000017C000UL});
-    public static readonly BitSet FOLLOW_statement_in_block295 = new BitSet(new ulong[]{0x0000008020000002UL,0x000000000017C000UL});
-    public static readonly BitSet FOLLOW_semicolonStatement_in_singleBlock320 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_singleBlock_in_commonBlock343 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_46_in_commonBlock348 = new BitSet(new ulong[]{0x0000808020000000UL,0x000000000017C000UL});
-    public static readonly BitSet FOLLOW_block_in_commonBlock351 = new BitSet(new ulong[]{0x0000800000000000UL});
-    public static readonly BitSet FOLLOW_47_in_commonBlock353 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_statement_in_mainStatement370 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_globalAssignmentList_in_mainStatement375 = new BitSet(new ulong[]{0x0001000000000000UL});
-    public static readonly BitSet FOLLOW_48_in_mainStatement377 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_semicolonStatement_in_statement392 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_ifStatement_in_statement397 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_atStatement_in_statement402 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_whileLoop_in_statement407 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_forLoop_in_statement412 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_objectMethodCall_in_semicolonStatement425 = new BitSet(new ulong[]{0x0001000000000000UL});
-    public static readonly BitSet FOLLOW_methodCall_in_semicolonStatement430 = new BitSet(new ulong[]{0x0001000000000000UL});
-    public static readonly BitSet FOLLOW_assignmentList_in_semicolonStatement436 = new BitSet(new ulong[]{0x0001000000000000UL});
-    public static readonly BitSet FOLLOW_unaryExpression_in_semicolonStatement442 = new BitSet(new ulong[]{0x0001000000000000UL});
-    public static readonly BitSet FOLLOW_breakStat_in_semicolonStatement448 = new BitSet(new ulong[]{0x0001000000000000UL});
-    public static readonly BitSet FOLLOW_returnStat_in_semicolonStatement453 = new BitSet(new ulong[]{0x0001000000000000UL});
-    public static readonly BitSet FOLLOW_48_in_semicolonStatement458 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_assignmentList_in_oneLineStatement471 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_unaryExpression_in_oneLineStatement476 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_VarStartInit_in_assignmentList491 = new BitSet(new ulong[]{0x0000000020000000UL});
-    public static readonly BitSet FOLLOW_assignment_in_assignmentList494 = new BitSet(new ulong[]{0x0002000000000002UL});
-    public static readonly BitSet FOLLOW_49_in_assignmentList497 = new BitSet(new ulong[]{0x0000000020000000UL});
-    public static readonly BitSet FOLLOW_assignment_in_assignmentList500 = new BitSet(new ulong[]{0x0002000000000002UL});
-    public static readonly BitSet FOLLOW_50_in_globalAssignmentList516 = new BitSet(new ulong[]{0x0000008000000000UL});
-    public static readonly BitSet FOLLOW_VarStartInit_in_globalAssignmentList519 = new BitSet(new ulong[]{0x0000000020000000UL});
-    public static readonly BitSet FOLLOW_globalAssignment_in_globalAssignmentList522 = new BitSet(new ulong[]{0x0002000000000002UL});
-    public static readonly BitSet FOLLOW_49_in_globalAssignmentList525 = new BitSet(new ulong[]{0x0000000020000000UL});
-    public static readonly BitSet FOLLOW_globalAssignment_in_globalAssignmentList528 = new BitSet(new ulong[]{0x0002000000000002UL});
-    public static readonly BitSet FOLLOW_variable_in_globalAssignment542 = new BitSet(new ulong[]{0x0018000000000002UL});
-    public static readonly BitSet FOLLOW_indexes_in_globalAssignment544 = new BitSet(new ulong[]{0x0008000000000002UL});
-    public static readonly BitSet FOLLOW_51_in_globalAssignment548 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expression_in_globalAssignment550 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_variable_in_assignment581 = new BitSet(new ulong[]{0x0018000000000002UL});
-    public static readonly BitSet FOLLOW_indexes_in_assignment583 = new BitSet(new ulong[]{0x0008000000000002UL});
-    public static readonly BitSet FOLLOW_51_in_assignment587 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expression_in_assignment589 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_52_in_indexes624 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expression_in_indexes626 = new BitSet(new ulong[]{0x0020000000000000UL});
-    public static readonly BitSet FOLLOW_53_in_indexes628 = new BitSet(new ulong[]{0x0010000000000002UL});
-    public static readonly BitSet FOLLOW_variable_in_objectMethodCall655 = new BitSet(new ulong[]{0x0050000000000000UL});
-    public static readonly BitSet FOLLOW_indexes_in_objectMethodCall657 = new BitSet(new ulong[]{0x0040000000000000UL});
-    public static readonly BitSet FOLLOW_54_in_objectMethodCall660 = new BitSet(new ulong[]{0x0000000020000000UL});
-    public static readonly BitSet FOLLOW_Identifier_in_objectMethodCall662 = new BitSet(new ulong[]{0x0080000000000000UL});
-    public static readonly BitSet FOLLOW_55_in_objectMethodCall664 = new BitSet(new ulong[]{0x0180007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expressionList_in_objectMethodCall666 = new BitSet(new ulong[]{0x0100000000000000UL});
-    public static readonly BitSet FOLLOW_56_in_objectMethodCall669 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_Identifier_in_variable703 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_StringAtom_in_stringAtom726 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_57_in_functionDef747 = new BitSet(new ulong[]{0x0000000020000000UL});
-    public static readonly BitSet FOLLOW_Identifier_in_functionDef749 = new BitSet(new ulong[]{0x0080000000000000UL});
-    public static readonly BitSet FOLLOW_55_in_functionDef751 = new BitSet(new ulong[]{0x0100000020000000UL});
-    public static readonly BitSet FOLLOW_variableList_in_functionDef753 = new BitSet(new ulong[]{0x0100000000000000UL});
-    public static readonly BitSet FOLLOW_56_in_functionDef756 = new BitSet(new ulong[]{0x0000408020000000UL,0x000000000000C000UL});
-    public static readonly BitSet FOLLOW_commonBlock_in_functionDef758 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_instantiateClass_in_expression795 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_conditionalExpression_in_expression805 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_conditionalOrExpression_in_conditionalExpression831 = new BitSet(new ulong[]{0x0400000000000002UL});
-    public static readonly BitSet FOLLOW_58_in_conditionalExpression835 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_conditionalExpression_in_conditionalExpression838 = new BitSet(new ulong[]{0x0800000000000000UL});
-    public static readonly BitSet FOLLOW_59_in_conditionalExpression840 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_conditionalExpression_in_conditionalExpression843 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_conditionalAndExpression_in_conditionalOrExpression886 = new BitSet(new ulong[]{0x1000000000000002UL});
-    public static readonly BitSet FOLLOW_60_in_conditionalOrExpression890 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_conditionalAndExpression_in_conditionalOrExpression893 = new BitSet(new ulong[]{0x1000000000000002UL});
-    public static readonly BitSet FOLLOW_equalityExpression_in_conditionalAndExpression924 = new BitSet(new ulong[]{0x2000000000000002UL});
-    public static readonly BitSet FOLLOW_61_in_conditionalAndExpression928 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_equalityExpression_in_conditionalAndExpression931 = new BitSet(new ulong[]{0x2000000000000002UL});
-    public static readonly BitSet FOLLOW_relationalExpression_in_equalityExpression958 = new BitSet(new ulong[]{0xC000000000000002UL});
-    public static readonly BitSet FOLLOW_62_in_equalityExpression963 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_63_in_equalityExpression968 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_relationalExpression_in_equalityExpression972 = new BitSet(new ulong[]{0xC000000000000002UL});
-    public static readonly BitSet FOLLOW_additiveExpression_in_relationalExpression1003 = new BitSet(new ulong[]{0x0000000000000002UL,0x000000000000000FUL});
-    public static readonly BitSet FOLLOW_64_in_relationalExpression1007 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_65_in_relationalExpression1010 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_66_in_relationalExpression1013 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_67_in_relationalExpression1016 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_additiveExpression_in_relationalExpression1020 = new BitSet(new ulong[]{0x0000000000000002UL,0x000000000000000FUL});
-    public static readonly BitSet FOLLOW_multiplicativeExpression_in_additiveExpression1058 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000030UL});
-    public static readonly BitSet FOLLOW_68_in_additiveExpression1062 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_69_in_additiveExpression1065 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_multiplicativeExpression_in_additiveExpression1069 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000030UL});
-    public static readonly BitSet FOLLOW_powExpression_in_multiplicativeExpression1103 = new BitSet(new ulong[]{0x0000000000000002UL,0x00000000000001C0UL});
-    public static readonly BitSet FOLLOW_70_in_multiplicativeExpression1107 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_71_in_multiplicativeExpression1110 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_72_in_multiplicativeExpression1113 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_powExpression_in_multiplicativeExpression1117 = new BitSet(new ulong[]{0x0000000000000002UL,0x00000000000001C0UL});
-    public static readonly BitSet FOLLOW_negateExpression_in_powExpression1137 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000200UL});
-    public static readonly BitSet FOLLOW_73_in_powExpression1140 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_negateExpression_in_powExpression1143 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000200UL});
-    public static readonly BitSet FOLLOW_69_in_negateExpression1161 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_mathAtom_in_negateExpression1163 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_74_in_negateExpression1176 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_mathAtom_in_negateExpression1178 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_unaryExpression_in_negateExpression1191 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_mathAtom_in_negateExpression1196 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_variable_in_unaryExpression1214 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000001800UL});
-    public static readonly BitSet FOLLOW_75_in_unaryExpression1217 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_76_in_unaryExpression1230 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_55_in_mathAtom1264 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expression_in_mathAtom1267 = new BitSet(new ulong[]{0x0100000000000000UL});
-    public static readonly BitSet FOLLOW_56_in_mathAtom1269 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_IntAtom_in_mathAtom1281 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_FloatAtom_in_mathAtom1296 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_BooleanAtom_in_mathAtom1312 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_stringAtom_in_mathAtom1323 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_LayerAtom_in_mathAtom1334 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_OriginAtom_in_mathAtom1345 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_LoopTypeAtom_in_mathAtom1356 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_ColorAtom_in_mathAtom1369 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_Null_in_mathAtom1380 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_lookup_in_mathAtom1394 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_objectMethodCall_in_lookup1413 = new BitSet(new ulong[]{0x0010000000000002UL});
-    public static readonly BitSet FOLLOW_indexes_in_lookup1415 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_methodCall_in_lookup1432 = new BitSet(new ulong[]{0x0010000000000002UL});
-    public static readonly BitSet FOLLOW_indexes_in_lookup1434 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_variable_in_lookup1452 = new BitSet(new ulong[]{0x0010000000000002UL});
-    public static readonly BitSet FOLLOW_indexes_in_lookup1454 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_77_in_instantiateClass1498 = new BitSet(new ulong[]{0x0000000020000000UL});
-    public static readonly BitSet FOLLOW_Identifier_in_instantiateClass1500 = new BitSet(new ulong[]{0x0080000000000000UL});
-    public static readonly BitSet FOLLOW_55_in_instantiateClass1502 = new BitSet(new ulong[]{0x0180007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expressionList_in_instantiateClass1504 = new BitSet(new ulong[]{0x0100000000000000UL});
-    public static readonly BitSet FOLLOW_56_in_instantiateClass1507 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_expression_in_expressionList1548 = new BitSet(new ulong[]{0x0002000000000002UL});
-    public static readonly BitSet FOLLOW_49_in_expressionList1551 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expression_in_expressionList1553 = new BitSet(new ulong[]{0x0002000000000002UL});
-    public static readonly BitSet FOLLOW_variable_in_variableList1581 = new BitSet(new ulong[]{0x0002000000000002UL});
-    public static readonly BitSet FOLLOW_49_in_variableList1584 = new BitSet(new ulong[]{0x0000000020000000UL});
-    public static readonly BitSet FOLLOW_variable_in_variableList1586 = new BitSet(new ulong[]{0x0002000000000002UL});
-    public static readonly BitSet FOLLOW_Identifier_in_methodCall1609 = new BitSet(new ulong[]{0x0080000000000000UL});
-    public static readonly BitSet FOLLOW_55_in_methodCall1611 = new BitSet(new ulong[]{0x0180007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expressionList_in_methodCall1613 = new BitSet(new ulong[]{0x0100000000000000UL});
-    public static readonly BitSet FOLLOW_56_in_methodCall1616 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_78_in_breakStat1643 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_79_in_returnStat1658 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expression_in_returnStat1660 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_80_in_whileLoop1683 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expression_in_whileLoop1685 = new BitSet(new ulong[]{0x0000408020000000UL,0x000000000000C000UL});
-    public static readonly BitSet FOLLOW_commonBlock_in_whileLoop1687 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_81_in_forLoop1709 = new BitSet(new ulong[]{0x0080000000000000UL});
-    public static readonly BitSet FOLLOW_55_in_forLoop1711 = new BitSet(new ulong[]{0x0001008020000000UL});
-    public static readonly BitSet FOLLOW_oneLineStatement_in_forLoop1715 = new BitSet(new ulong[]{0x0001000000000000UL});
-    public static readonly BitSet FOLLOW_48_in_forLoop1718 = new BitSet(new ulong[]{0x0081007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expression_in_forLoop1722 = new BitSet(new ulong[]{0x0001000000000000UL});
-    public static readonly BitSet FOLLOW_48_in_forLoop1725 = new BitSet(new ulong[]{0x0100008020000000UL});
-    public static readonly BitSet FOLLOW_oneLineStatement_in_forLoop1729 = new BitSet(new ulong[]{0x0100000000000000UL});
-    public static readonly BitSet FOLLOW_56_in_forLoop1732 = new BitSet(new ulong[]{0x0000408020000000UL,0x000000000000C000UL});
-    public static readonly BitSet FOLLOW_commonBlock_in_forLoop1734 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_ifStat_in_ifStatement1779 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000080000UL});
-    public static readonly BitSet FOLLOW_elseIfStat_in_ifStatement1781 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000080000UL});
-    public static readonly BitSet FOLLOW_elseStat_in_ifStatement1784 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_82_in_ifStat1809 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expression_in_ifStat1811 = new BitSet(new ulong[]{0x0000408020000000UL,0x000000000000C000UL});
-    public static readonly BitSet FOLLOW_commonBlock_in_ifStat1813 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_83_in_elseIfStat1834 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000040000UL});
-    public static readonly BitSet FOLLOW_82_in_elseIfStat1836 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expression_in_elseIfStat1838 = new BitSet(new ulong[]{0x0000408020000000UL,0x000000000000C000UL});
-    public static readonly BitSet FOLLOW_commonBlock_in_elseIfStat1840 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_83_in_elseStat1862 = new BitSet(new ulong[]{0x0000408020000000UL,0x000000000000C000UL});
-    public static readonly BitSet FOLLOW_commonBlock_in_elseStat1864 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_84_in_atStatement1889 = new BitSet(new ulong[]{0x0080007FE0000000UL,0x0000000000002420UL});
-    public static readonly BitSet FOLLOW_expression_in_atStatement1891 = new BitSet(new ulong[]{0x0000408020000000UL,0x000000000000C000UL});
-    public static readonly BitSet FOLLOW_commonBlock_in_atStatement1893 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_objectMethodCall_in_synpred57_SGL1413 = new BitSet(new ulong[]{0x0010000000000002UL});
-    public static readonly BitSet FOLLOW_indexes_in_synpred57_SGL1415 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_methodCall_in_synpred59_SGL1432 = new BitSet(new ulong[]{0x0010000000000002UL});
-    public static readonly BitSet FOLLOW_indexes_in_synpred59_SGL1434 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_mainBlock_in_main242 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_mainStatement_in_mainBlock262 = new BitSet(new ulong[]{0x0820020080000002UL,0x00000000005F0000UL});
+    public static readonly BitSet FOLLOW_functionDef_in_mainBlock266 = new BitSet(new ulong[]{0x0820020080000002UL,0x00000000005F0000UL});
+    public static readonly BitSet FOLLOW_statement_in_block303 = new BitSet(new ulong[]{0x0000020080000002UL,0x00000000005F0000UL});
+    public static readonly BitSet FOLLOW_semicolonStatement_in_singleBlock328 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_singleBlock_in_commonBlock351 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_48_in_commonBlock356 = new BitSet(new ulong[]{0x0002020080000000UL,0x00000000005F0000UL});
+    public static readonly BitSet FOLLOW_block_in_commonBlock359 = new BitSet(new ulong[]{0x0002000000000000UL});
+    public static readonly BitSet FOLLOW_49_in_commonBlock361 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_statement_in_mainStatement378 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_globalVarDefList_in_mainStatement383 = new BitSet(new ulong[]{0x0004000000000000UL});
+    public static readonly BitSet FOLLOW_50_in_mainStatement385 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_semicolonStatement_in_statement400 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_ifStatement_in_statement405 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_atStatement_in_statement410 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_whileLoop_in_statement415 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_forLoop_in_statement420 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_unaryExpression_in_semicolonStatement433 = new BitSet(new ulong[]{0x0004000000000000UL});
+    public static readonly BitSet FOLLOW_objectMethodCall_in_semicolonStatement439 = new BitSet(new ulong[]{0x0004000000000000UL});
+    public static readonly BitSet FOLLOW_methodCall_in_semicolonStatement444 = new BitSet(new ulong[]{0x0004000000000000UL});
+    public static readonly BitSet FOLLOW_varDefList_in_semicolonStatement450 = new BitSet(new ulong[]{0x0004000000000000UL});
+    public static readonly BitSet FOLLOW_assignment_in_semicolonStatement456 = new BitSet(new ulong[]{0x0004000000000000UL});
+    public static readonly BitSet FOLLOW_breakStat_in_semicolonStatement463 = new BitSet(new ulong[]{0x0004000000000000UL});
+    public static readonly BitSet FOLLOW_returnStat_in_semicolonStatement468 = new BitSet(new ulong[]{0x0004000000000000UL});
+    public static readonly BitSet FOLLOW_50_in_semicolonStatement473 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_varDefList_in_oneLineStatement486 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_unaryExpression_in_oneLineStatement491 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_VarStartInit_in_varDefList507 = new BitSet(new ulong[]{0x0000000080000000UL});
+    public static readonly BitSet FOLLOW_varDef_in_varDefList510 = new BitSet(new ulong[]{0x0008000000000002UL});
+    public static readonly BitSet FOLLOW_51_in_varDefList517 = new BitSet(new ulong[]{0x0000000080000000UL});
+    public static readonly BitSet FOLLOW_varDef_in_varDefList520 = new BitSet(new ulong[]{0x0008000000000002UL});
+    public static readonly BitSet FOLLOW_variable_in_varDef536 = new BitSet(new ulong[]{0x0010000000000002UL});
+    public static readonly BitSet FOLLOW_52_in_varDef539 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_varDef541 = new BitSet(new ulong[]{0x0010000000000002UL});
+    public static readonly BitSet FOLLOW_53_in_globalVarDefList574 = new BitSet(new ulong[]{0x0000020000000000UL});
+    public static readonly BitSet FOLLOW_VarStartInit_in_globalVarDefList576 = new BitSet(new ulong[]{0x0000000080000000UL});
+    public static readonly BitSet FOLLOW_variable_in_globalVarDefList578 = new BitSet(new ulong[]{0x0018000000000002UL});
+    public static readonly BitSet FOLLOW_52_in_globalVarDefList581 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_globalVarDefList583 = new BitSet(new ulong[]{0x0008000000000002UL});
+    public static readonly BitSet FOLLOW_51_in_globalVarDefList588 = new BitSet(new ulong[]{0x0000000080000000UL});
+    public static readonly BitSet FOLLOW_variable_in_globalVarDefList590 = new BitSet(new ulong[]{0x0018000000000002UL});
+    public static readonly BitSet FOLLOW_52_in_globalVarDefList593 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_globalVarDefList595 = new BitSet(new ulong[]{0x0008000000000002UL});
+    public static readonly BitSet FOLLOW_variable_in_assignment636 = new BitSet(new ulong[]{0x0050000000000002UL});
+    public static readonly BitSet FOLLOW_indexes_in_assignment638 = new BitSet(new ulong[]{0x0010000000000002UL});
+    public static readonly BitSet FOLLOW_52_in_assignment642 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_assignment644 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_54_in_indexes679 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_indexes681 = new BitSet(new ulong[]{0x0080000000000000UL});
+    public static readonly BitSet FOLLOW_55_in_indexes683 = new BitSet(new ulong[]{0x0040000000000002UL});
+    public static readonly BitSet FOLLOW_variable_in_objectMethodCall710 = new BitSet(new ulong[]{0x0140000000000000UL});
+    public static readonly BitSet FOLLOW_indexes_in_objectMethodCall712 = new BitSet(new ulong[]{0x0100000000000000UL});
+    public static readonly BitSet FOLLOW_56_in_objectMethodCall715 = new BitSet(new ulong[]{0x0000000080000000UL});
+    public static readonly BitSet FOLLOW_Identifier_in_objectMethodCall717 = new BitSet(new ulong[]{0x0200000000000000UL});
+    public static readonly BitSet FOLLOW_57_in_objectMethodCall719 = new BitSet(new ulong[]{0x060001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expressionList_in_objectMethodCall721 = new BitSet(new ulong[]{0x0400000000000000UL});
+    public static readonly BitSet FOLLOW_58_in_objectMethodCall724 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_Identifier_in_variable758 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_StringAtom_in_stringAtom781 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_59_in_functionDef802 = new BitSet(new ulong[]{0x0000000080000000UL});
+    public static readonly BitSet FOLLOW_Identifier_in_functionDef804 = new BitSet(new ulong[]{0x0200000000000000UL});
+    public static readonly BitSet FOLLOW_57_in_functionDef806 = new BitSet(new ulong[]{0x0400000080000000UL});
+    public static readonly BitSet FOLLOW_variableList_in_functionDef808 = new BitSet(new ulong[]{0x0400000000000000UL});
+    public static readonly BitSet FOLLOW_58_in_functionDef811 = new BitSet(new ulong[]{0x0001020080000000UL,0x0000000000030000UL});
+    public static readonly BitSet FOLLOW_commonBlock_in_functionDef813 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_instantiateClass_in_expression850 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_conditionalExpression_in_expression860 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_conditionalOrExpression_in_conditionalExpression886 = new BitSet(new ulong[]{0x1000000000000002UL});
+    public static readonly BitSet FOLLOW_60_in_conditionalExpression890 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_conditionalExpression_in_conditionalExpression893 = new BitSet(new ulong[]{0x2000000000000000UL});
+    public static readonly BitSet FOLLOW_61_in_conditionalExpression895 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_conditionalExpression_in_conditionalExpression898 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_conditionalAndExpression_in_conditionalOrExpression941 = new BitSet(new ulong[]{0x4000000000000002UL});
+    public static readonly BitSet FOLLOW_62_in_conditionalOrExpression945 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_conditionalAndExpression_in_conditionalOrExpression948 = new BitSet(new ulong[]{0x4000000000000002UL});
+    public static readonly BitSet FOLLOW_equalityExpression_in_conditionalAndExpression979 = new BitSet(new ulong[]{0x8000000000000002UL});
+    public static readonly BitSet FOLLOW_63_in_conditionalAndExpression983 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_equalityExpression_in_conditionalAndExpression986 = new BitSet(new ulong[]{0x8000000000000002UL});
+    public static readonly BitSet FOLLOW_relationalExpression_in_equalityExpression1013 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000003UL});
+    public static readonly BitSet FOLLOW_64_in_equalityExpression1018 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_65_in_equalityExpression1023 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_relationalExpression_in_equalityExpression1027 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000003UL});
+    public static readonly BitSet FOLLOW_additiveExpression_in_relationalExpression1058 = new BitSet(new ulong[]{0x0000000000000002UL,0x000000000000003CUL});
+    public static readonly BitSet FOLLOW_66_in_relationalExpression1062 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_67_in_relationalExpression1065 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_68_in_relationalExpression1068 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_69_in_relationalExpression1071 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_additiveExpression_in_relationalExpression1075 = new BitSet(new ulong[]{0x0000000000000002UL,0x000000000000003CUL});
+    public static readonly BitSet FOLLOW_multiplicativeExpression_in_additiveExpression1113 = new BitSet(new ulong[]{0x0000000000000002UL,0x00000000000000C0UL});
+    public static readonly BitSet FOLLOW_70_in_additiveExpression1117 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_71_in_additiveExpression1120 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_multiplicativeExpression_in_additiveExpression1124 = new BitSet(new ulong[]{0x0000000000000002UL,0x00000000000000C0UL});
+    public static readonly BitSet FOLLOW_powExpression_in_multiplicativeExpression1158 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000700UL});
+    public static readonly BitSet FOLLOW_72_in_multiplicativeExpression1162 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_73_in_multiplicativeExpression1165 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_74_in_multiplicativeExpression1168 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_powExpression_in_multiplicativeExpression1172 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000700UL});
+    public static readonly BitSet FOLLOW_negateExpression_in_powExpression1192 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000800UL});
+    public static readonly BitSet FOLLOW_75_in_powExpression1195 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_negateExpression_in_powExpression1198 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000800UL});
+    public static readonly BitSet FOLLOW_71_in_negateExpression1216 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_mathAtom_in_negateExpression1218 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_76_in_negateExpression1231 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_mathAtom_in_negateExpression1233 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_unaryExpression_in_negateExpression1246 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_mathAtom_in_negateExpression1251 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_Identifier_in_unaryExpression1269 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000006000UL});
+    public static readonly BitSet FOLLOW_77_in_unaryExpression1272 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_78_in_unaryExpression1285 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_57_in_mathAtom1319 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_mathAtom1322 = new BitSet(new ulong[]{0x0400000000000000UL});
+    public static readonly BitSet FOLLOW_58_in_mathAtom1324 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_IntAtom_in_mathAtom1336 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_FloatAtom_in_mathAtom1351 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_BooleanAtom_in_mathAtom1367 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_stringAtom_in_mathAtom1378 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_LayerAtom_in_mathAtom1389 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_OriginAtom_in_mathAtom1400 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_LoopTypeAtom_in_mathAtom1411 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_ColorAtom_in_mathAtom1424 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_Null_in_mathAtom1435 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_lookup_in_mathAtom1449 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_objectMethodCall_in_lookup1468 = new BitSet(new ulong[]{0x0040000000000002UL});
+    public static readonly BitSet FOLLOW_indexes_in_lookup1470 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_methodCall_in_lookup1487 = new BitSet(new ulong[]{0x0040000000000002UL});
+    public static readonly BitSet FOLLOW_indexes_in_lookup1489 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_variable_in_lookup1507 = new BitSet(new ulong[]{0x0040000000000002UL});
+    public static readonly BitSet FOLLOW_indexes_in_lookup1509 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_79_in_instantiateClass1553 = new BitSet(new ulong[]{0x0000000080000000UL});
+    public static readonly BitSet FOLLOW_Identifier_in_instantiateClass1555 = new BitSet(new ulong[]{0x0200000000000000UL});
+    public static readonly BitSet FOLLOW_57_in_instantiateClass1557 = new BitSet(new ulong[]{0x060001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expressionList_in_instantiateClass1559 = new BitSet(new ulong[]{0x0400000000000000UL});
+    public static readonly BitSet FOLLOW_58_in_instantiateClass1562 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_expression_in_expressionList1603 = new BitSet(new ulong[]{0x0008000000000002UL});
+    public static readonly BitSet FOLLOW_51_in_expressionList1606 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_expressionList1608 = new BitSet(new ulong[]{0x0008000000000002UL});
+    public static readonly BitSet FOLLOW_variable_in_variableList1636 = new BitSet(new ulong[]{0x0008000000000002UL});
+    public static readonly BitSet FOLLOW_51_in_variableList1639 = new BitSet(new ulong[]{0x0000000080000000UL});
+    public static readonly BitSet FOLLOW_variable_in_variableList1641 = new BitSet(new ulong[]{0x0008000000000002UL});
+    public static readonly BitSet FOLLOW_Identifier_in_methodCall1664 = new BitSet(new ulong[]{0x0200000000000000UL});
+    public static readonly BitSet FOLLOW_57_in_methodCall1666 = new BitSet(new ulong[]{0x060001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expressionList_in_methodCall1668 = new BitSet(new ulong[]{0x0400000000000000UL});
+    public static readonly BitSet FOLLOW_58_in_methodCall1671 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_80_in_breakStat1698 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_81_in_returnStat1713 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_returnStat1715 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_82_in_whileLoop1738 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_whileLoop1740 = new BitSet(new ulong[]{0x0001020080000000UL,0x0000000000030000UL});
+    public static readonly BitSet FOLLOW_commonBlock_in_whileLoop1742 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_83_in_forLoop1764 = new BitSet(new ulong[]{0x0200000000000000UL});
+    public static readonly BitSet FOLLOW_57_in_forLoop1766 = new BitSet(new ulong[]{0x0004020080000000UL});
+    public static readonly BitSet FOLLOW_oneLineStatement_in_forLoop1770 = new BitSet(new ulong[]{0x0004000000000000UL});
+    public static readonly BitSet FOLLOW_50_in_forLoop1773 = new BitSet(new ulong[]{0x020401FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_forLoop1777 = new BitSet(new ulong[]{0x0004000000000000UL});
+    public static readonly BitSet FOLLOW_50_in_forLoop1780 = new BitSet(new ulong[]{0x0400020080000000UL});
+    public static readonly BitSet FOLLOW_oneLineStatement_in_forLoop1784 = new BitSet(new ulong[]{0x0400000000000000UL});
+    public static readonly BitSet FOLLOW_58_in_forLoop1787 = new BitSet(new ulong[]{0x0001020080000000UL,0x0000000000030000UL});
+    public static readonly BitSet FOLLOW_commonBlock_in_forLoop1789 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_ifStat_in_ifStatement1834 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000200000UL});
+    public static readonly BitSet FOLLOW_elseIfStat_in_ifStatement1836 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000200000UL});
+    public static readonly BitSet FOLLOW_elseStat_in_ifStatement1839 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_84_in_ifStat1864 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_ifStat1866 = new BitSet(new ulong[]{0x0001020080000000UL,0x0000000000030000UL});
+    public static readonly BitSet FOLLOW_commonBlock_in_ifStat1868 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_85_in_elseIfStat1889 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000100000UL});
+    public static readonly BitSet FOLLOW_84_in_elseIfStat1891 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_elseIfStat1893 = new BitSet(new ulong[]{0x0001020080000000UL,0x0000000000030000UL});
+    public static readonly BitSet FOLLOW_commonBlock_in_elseIfStat1895 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_85_in_elseStat1917 = new BitSet(new ulong[]{0x0001020080000000UL,0x0000000000030000UL});
+    public static readonly BitSet FOLLOW_commonBlock_in_elseStat1919 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_86_in_atStatement1944 = new BitSet(new ulong[]{0x020001FF80000000UL,0x0000000000009080UL});
+    public static readonly BitSet FOLLOW_expression_in_atStatement1946 = new BitSet(new ulong[]{0x0001020080000000UL,0x0000000000030000UL});
+    public static readonly BitSet FOLLOW_commonBlock_in_atStatement1948 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_unaryExpression_in_synpred10_SGL433 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_objectMethodCall_in_synpred11_SGL439 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_methodCall_in_synpred12_SGL444 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_assignment_in_synpred14_SGL456 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_objectMethodCall_in_synpred59_SGL1468 = new BitSet(new ulong[]{0x0040000000000002UL});
+    public static readonly BitSet FOLLOW_indexes_in_synpred59_SGL1470 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_methodCall_in_synpred61_SGL1487 = new BitSet(new ulong[]{0x0040000000000002UL});
+    public static readonly BitSet FOLLOW_indexes_in_synpred61_SGL1489 = new BitSet(new ulong[]{0x0000000000000002UL});
 
 }
 }

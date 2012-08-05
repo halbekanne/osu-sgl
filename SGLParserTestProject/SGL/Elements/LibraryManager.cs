@@ -32,13 +32,16 @@ namespace SGL.Elements
         }
 
         private void RegisterClasses() {
+            this.RegisterClass("List", new List());
             this.RegisterClass("Sprite", new Sprite());
+            this.RegisterClass("Animation", new Animation());
         }
 
         private void RegisterFunctions()
         {
             this.RegisterFunction("sin", new SinFunction());
-            this.RegisterFunction("print", new PrintFunction());
+            this.RegisterFunction("rand", new RandFunction());
+            this.RegisterFunction("println", new PrintFunction());
         }
 
         // memory for classes
@@ -89,7 +92,7 @@ namespace SGL.Elements
         /// <param name="name"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public Class GetClass(string name, List<Value> parameters)
+        public object GetClass(string name, List<Value> parameters)
         {
             // look if the class exists
             if (classes.ContainsKey(name))

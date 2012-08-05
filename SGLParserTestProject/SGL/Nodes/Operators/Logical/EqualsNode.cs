@@ -11,7 +11,7 @@ namespace SGL.Nodes.Operators.Logical
 
         protected override Value Operate(Value value1, Value value2)
         {
-            return new Value(value1.Equals(value2.BoolValue), ValType.Boolean);
+            return new Value(value1.Equals(value2), ValType.Boolean);
         }
     }
 }

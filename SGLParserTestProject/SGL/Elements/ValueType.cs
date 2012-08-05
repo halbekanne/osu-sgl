@@ -4,6 +4,6 @@
     {
         Integer, StrictInteger, Double, StrictDouble, Boolean, String, List,
         Object, Layer, Origin, LoopType,
-        Null, Void, Break, Return
+        Null, Void, Break, Return, Invalid
     }
 }

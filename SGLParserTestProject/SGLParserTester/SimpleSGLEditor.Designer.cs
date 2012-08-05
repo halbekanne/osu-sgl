@@ -52,6 +52,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.miSaveSgl = new System.Windows.Forms.ToolStripMenuItem();
             this.miSaveOsb = new System.Windows.Forms.ToolStripMenuItem();
+            this.runTests = new System.Windows.Forms.ToolStripButton();
             this.tabControl.SuspendLayout();
             this.tabSGL.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -209,6 +210,7 @@
             this.compilerPBar,
             this.statusLabel,
             this.compileSBButton,
+            this.runTests,
             this.toolStripButton1,
             this.CopyrightLabel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 537);
@@ -314,6 +316,17 @@
             this.miSaveOsb.Text = "Save .osb";
             this.miSaveOsb.Click += new System.EventHandler(this.miSaveOsb_Click);
             // 
+            // runTests
+            // 
+            this.runTests.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.runTests.Image = ((System.Drawing.Image)(resources.GetObject("runTests.Image")));
+            this.runTests.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.runTests.Name = "runTests";
+            this.runTests.Size = new System.Drawing.Size(78, 22);
+            this.runTests.Text = "Run Tests";
+            this.runTests.ToolTipText = "Compiles SGL code into storybard code";
+            this.runTests.Click += new System.EventHandler(this.runTests_Click);
+            // 
             // SimpleSGLEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,5 +379,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem miSaveSgl;
         private System.Windows.Forms.ToolStripMenuItem miSaveOsb;
+        private System.Windows.Forms.ToolStripButton runTests;
     }
 }

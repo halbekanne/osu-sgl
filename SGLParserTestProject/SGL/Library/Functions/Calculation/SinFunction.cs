@@ -18,8 +18,8 @@ namespace SGL.Library.Functions.Calculation
         {
             if (Value.TypeCompare(param, ValType.Double)) return sin(param[0].DoubleValue);
 
-            // TODO: Exception
-            throw new Exception();
+            // TODO: Name
+            throw new CompilerException(-1, 302, "sin", Value.PrintTypeList(param));
         }
 
     }

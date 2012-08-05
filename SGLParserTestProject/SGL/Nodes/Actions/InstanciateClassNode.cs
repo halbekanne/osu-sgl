@@ -21,7 +21,7 @@ namespace SGL.Nodes.Actions
                 throw new CompilerException(line, 311, className);
             }
             this.className = className;
-            this.parameters = parameters;
+            this.parameters = parameters != null ? parameters : new List<AbstractNode>();
             this.line = line;
         }
 
@@ -34,8 +34,13 @@ namespace SGL.Nodes.Actions
                 values.Add(node.Evaluate());
             }
 
-            Class classObj = LibraryManager.Instance.GetClass(className, values);
-            return new Value(classObj, ValType.Object);
+            object classObj = LibraryManager.Instance.GetClass(className, values);
+            if (classObj is Value)
+            {
+                return (Value)classObj;
+            } else {
+                return new Value(classObj, ValType.Object);
+            }
         }
 
         public override int Line

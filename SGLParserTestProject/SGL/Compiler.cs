@@ -56,7 +56,7 @@ namespace SGL
                 //Console.WriteLine("Tokens:" + tokens.ToString());
                 // Step 2: Converting the tokens into a tree
                 CommonTreeNodeStream tree = GenerateTree(tokens);
-                
+
                 // Step 3: Compiling the tree into storyboard code
                 String output = GenerateStoryboardCode(tree);
                 String debug = GlobalMemory.Instance.DebugString;
@@ -74,7 +74,7 @@ namespace SGL
                     output = "Debug:\r\n" + debug + "\r\nStoryboard:\r\n" + output;
                 }
 
-                
+
 
                 return output;
             }
@@ -89,7 +89,7 @@ namespace SGL
                 Thread errorReporter = new Thread(errObj.DoWork);
                 errorReporter.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
                 errorReporter.Start();*/
-                Console.Write("-----------------------------------------------------------------------");
+                Console.WriteLine("-----------------------------------------------------------------------");
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
                 throw;
