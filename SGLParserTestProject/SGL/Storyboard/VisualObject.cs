@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Text;
 using SGL.Elements;
 
@@ -8,12 +7,46 @@ namespace SGL.Storyboard
 {
     public abstract class VisualObject : IComparable
     {
-        private List<Command> storyboardCommands = new List<Command>();
+        private readonly List<Command> storyboardCommands = new List<Command>();
+        protected string filepath;
 
         protected string layer;
         protected string origin;
-        protected string filepath;
         protected int priority = 0;
+
+        protected int x = 320;
+        protected int y = 240;
+        protected double scaleFactor = 1;
+
+
+        public int X
+        {
+            get
+            {
+                return x;
+            }
+        }
+
+        public int Y
+        {
+            get
+            {
+                return y;
+            }
+        }
+
+        public double Scale
+        {
+            get
+            {
+                return scaleFactor;
+            }
+        }
+
+        public VisualObject()
+        {
+
+        }
 
         public VisualObject(string layer, string origin, string filepath)
         {
@@ -22,14 +55,46 @@ namespace SGL.Storyboard
             this.filepath = filepath;
         }
 
+        public int Priority
+        {
+            get { return priority; }
+        }
+
+        #region IComparable Members
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+
+            // sort order: 1. layer, 2. priority
+            var that = obj as VisualObject;
+            if (that != null)
+            {
+                int layerCompare = LayerToInt().CompareTo(that.LayerToInt());
+                if (layerCompare != 0) return layerCompare;
+                else
+                {
+                    return Priority.CompareTo(that.Priority);
+                }
+            }
+            else
+                throw new ArgumentException("Object is not a VisualObject");
+        }
+
+        #endregion
+
         /// <summary>
         /// Generates the storyboard code for one VisualObject
         /// </summary>
         /// <param name="storyboardCode"></param>
-        public void GenerateSbCode(StringBuilder storyboardCode)
+        public virtual void GenerateSbCode(StringBuilder storyboardCode)
         {
             // Start Sprite with this code
-            storyboardCode.AppendLine(GetStoryboardInitCode());
+            String initCode = GetStoryboardInitCode();
+            if (initCode != null)
+            {
+                storyboardCode.AppendLine(initCode);
+            }
 
             foreach (Command command in storyboardCommands)
             {
@@ -44,42 +109,20 @@ namespace SGL.Storyboard
 
         protected abstract String GetStoryboardInitCode();
 
-        public int CompareTo(object obj)
-        {
-            if (obj == null) return 1;
-
-            // sort order: 1. layer, 2. priority
-            VisualObject that = obj as VisualObject;
-            if (that != null)
-            {
-                int layerCompare = this.LayerToInt().CompareTo(that.LayerToInt());
-                if (layerCompare != 0) return layerCompare;
-                else
-                {
-                    return this.Priority.CompareTo(that.Priority);
-                }
-            }
-            else
-                throw new ArgumentException("Object is not a VisualObject");
-        }
-
         public int LayerToInt()
         {
-            switch (this.layer)
+            switch (layer)
             {
-                case "Background": return 0;
-                case "Fail": return 1;
-                case "Pass": return 2;
-                case "Foreground": return 3;
-                default: throw new Exception("unknown layer type");
-            }
-        }
-
-        public int Priority
-        {
-            get
-            {
-                return priority;
+                case "Background":
+                    return 0;
+                case "Fail":
+                    return 1;
+                case "Pass":
+                    return 2;
+                case "Foreground":
+                    return 3;
+                default:
+                    throw new Exception("unknown layer type");
             }
         }
 
@@ -88,15 +131,17 @@ namespace SGL.Storyboard
 
         // 3 Parameter Methods
         // Coloring
-        public void color(int easing, int startTime, int endTime, int startRed, int startGreen, int startBlue, int endRed, int endGreen, int endBlue)
+        public virtual void color(int easing, int startTime, int endTime, int startRed, int startGreen, int startBlue,
+                          int endRed, int endGreen, int endBlue)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
-            double[] startParams = new double[] { startRed, startGreen, startBlue };
-            double[] endParams = new double[] { endRed, endGreen, endBlue };
-            this.AddCommand(new Animation(AnimationType.Color, easing, startTime, endTime, startParams, endParams));
+            var startParams = new double[] {startRed, startGreen, startBlue};
+            var endParams = new double[] {endRed, endGreen, endBlue};
+            AddCommand(new Animation(AnimationType.Color, easing, startTime, endTime, startParams, endParams));
         }
 
-        public void color(int startTime, int endTime, int startRed, int startGreen, int startBlue, int endRed, int endGreen, int endBlue)
+        public void color(int startTime, int endTime, int startRed, int startGreen, int startBlue, int endRed,
+                          int endGreen, int endBlue)
         {
             color(0, startTime, endTime, startRed, startGreen, startBlue, endRed, endGreen, endBlue);
         }
@@ -114,12 +159,14 @@ namespace SGL.Storyboard
 
         // 2 Parameter Methods
         // Moving
-        public void move(int easing, int startTime, int endTime, int startX, int startY, int endX, int endY)
+        public virtual void move(int easing, int startTime, int endTime, int startX, int startY, int endX, int endY)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
-            double[] startParams = new double[] { startX, startY };
-            double[] endParams = new double[] { endX, endY };
-            this.AddCommand(new Animation(AnimationType.Move, easing, startTime, endTime, startParams, endParams));
+            var startParams = new double[] {startX, startY};
+            var endParams = new double[] {endX, endY};
+            AddCommand(new Animation(AnimationType.Move, easing, startTime, endTime, startParams, endParams));
+            this.x = endX;
+            this.y = endY;
         }
 
         public void move(int startTime, int endTime, int startX, int startY, int endX, int endY)
@@ -138,12 +185,14 @@ namespace SGL.Storyboard
         }
 
         // Vector Scaling
-        public void scaleVec(int easing, int startTime, int endTime, double startX, double startY, double endX, double endY)
+        public virtual void scaleVec(int easing, int startTime, int endTime, double startX, double startY, double endX,
+                             double endY)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
-            double[] startParams = new double[] { startX, startY };
-            double[] endParams = new double[] { endX, endY };
-            this.AddCommand(new Animation(AnimationType.ScaleVec, easing, startTime, endTime, startParams, endParams));
+            var startParams = new[] {startX, startY};
+            var endParams = new[] {endX, endY};
+            AddCommand(new Animation(AnimationType.ScaleVec, easing, startTime, endTime, startParams, endParams));
+            this.scaleFactor = (endX + endY) / 2;
         }
 
         public void scaleVec(int startTime, int endTime, double startX, double startY, double endX, double endY)
@@ -163,12 +212,12 @@ namespace SGL.Storyboard
 
         // 1 Parameter Methods
         // Fading
-        public void fade(int easing, int startTime, int endTime, double startOpacity, double endOpacity)
+        public virtual void fade(int easing, int startTime, int endTime, double startOpacity, double endOpacity)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
-            double[] startParams = new double[] { startOpacity };
-            double[] endParams = new double[] { endOpacity };
-            this.AddCommand(new Animation(AnimationType.Fade, easing, startTime, endTime, startParams, endParams));
+            var startParams = new[] {startOpacity};
+            var endParams = new[] {endOpacity};
+            AddCommand(new Animation(AnimationType.Fade, easing, startTime, endTime, startParams, endParams));
         }
 
         public void fade(int startTime, int endTime, double startOpacity, double endOpacity)
@@ -187,12 +236,13 @@ namespace SGL.Storyboard
         }
 
         // Scaling
-        public void scale(int easing, int startTime, int endTime, double startScale, double endScale)
+        public virtual void scale(int easing, int startTime, int endTime, double startScale, double endScale)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
-            double[] startParams = new double[] { startScale };
-            double[] endParams = new double[] { endScale };
-            this.AddCommand(new Animation(AnimationType.Scale, easing, startTime, endTime, startParams, endParams));
+            var startParams = new[] {startScale};
+            var endParams = new[] {endScale};
+            AddCommand(new Animation(AnimationType.Scale, easing, startTime, endTime, startParams, endParams));
+            this.scaleFactor = endScale;
         }
 
         public void scale(int startTime, int endTime, double startScale, double endScale)
@@ -212,12 +262,12 @@ namespace SGL.Storyboard
 
 
         // Rotating
-        public void rotate(int easing, int startTime, int endTime, double startAngle, double endAngle)
+        public virtual void rotate(int easing, int startTime, int endTime, double startAngle, double endAngle)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
-            double[] startParams = new double[] { startAngle };
-            double[] endParams = new double[] { endAngle };
-            this.AddCommand(new Animation(AnimationType.Rotate, easing, startTime, endTime, startParams, endParams));
+            var startParams = new[] {startAngle};
+            var endParams = new[] {endAngle};
+            AddCommand(new Animation(AnimationType.Rotate, easing, startTime, endTime, startParams, endParams));
         }
 
         public void rotate(int startTime, int endTime, double startAngle, double endAngle)
@@ -237,12 +287,13 @@ namespace SGL.Storyboard
 
 
         // moveX
-        public void moveX(int easing, int startTime, int endTime, double startX, double endX)
+        public virtual void moveX(int easing, int startTime, int endTime, double startX, double endX)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
-            double[] startParams = new double[] { startX };
-            double[] endParams = new double[] { endX };
-            this.AddCommand(new Animation(AnimationType.MoveX, easing, startTime, endTime, startParams, endParams));
+            var startParams = new[] {startX};
+            var endParams = new[] {endX};
+            AddCommand(new Animation(AnimationType.MoveX, easing, startTime, endTime, startParams, endParams));
+            this.x = (int)endX;
         }
 
         public void moveX(int startTime, int endTime, double startX, double endX)
@@ -262,12 +313,13 @@ namespace SGL.Storyboard
 
 
         // moveY
-        public void moveY(int easing, int startTime, int endTime, double startY, double endY)
+        public virtual void moveY(int easing, int startTime, int endTime, double startY, double endY)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
-            double[] startParams = new double[] { startY };
-            double[] endParams = new double[] { endY };
-            this.AddCommand(new Animation(AnimationType.MoveY, easing, startTime, endTime, startParams, endParams));
+            var startParams = new[] {startY};
+            var endParams = new[] {endY};
+            AddCommand(new Animation(AnimationType.MoveY, easing, startTime, endTime, startParams, endParams));
+            this.y = (int)endY;
         }
 
         public void moveY(int startTime, int endTime, double startY, double endY)
@@ -284,8 +336,5 @@ namespace SGL.Storyboard
         {
             moveY(0, 0, 0, startY, startY);
         }
-
-
-
     }
 }

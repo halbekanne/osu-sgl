@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using SGL.Elements;
-using System.Globalization;
 
 namespace SGL.Library.Functions.IO
 {
-    class PrintFunction : Function
+    internal class PrintFunction : Function
     {
-
         private void print(Value value)
         {
             GlobalMemory.Instance.debugAddLine(value.ToString());

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-using System.Text;
+﻿using System.Collections.Generic;
 using SGL.Elements;
 
 namespace SGL.Library.Functions
 {
-    abstract class Function
+    internal abstract class Function
     {
         /*
         protected Function(string name)
@@ -28,9 +25,6 @@ namespace SGL.Library.Functions
 
         //public abstract bool TestPatameters(List<Value> parameters);
 
-        
-
-        
 
         /*
         protected ValType returnType;

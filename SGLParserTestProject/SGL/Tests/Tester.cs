@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SGL.Tests
 {
-    class Tester
+    internal class Tester
     {
         private List<AbstractTest> tests;
 
@@ -21,7 +20,8 @@ namespace SGL.Tests
         public void RunTests()
         {
             int testNum = 0, passed = 0, failed = 0;
-            foreach (AbstractTest test in tests) {
+            foreach (AbstractTest test in tests)
+            {
                 Console.Write("Running test '" + test.Name + "'... ");
                 bool result = test.Run();
                 if (result)

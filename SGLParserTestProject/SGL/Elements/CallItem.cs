@@ -1,29 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-
-using System.Text;
 
 namespace SGL.Elements
 {
-    class CallItem
+    internal class CallItem
     {
-        private string call;
-        private int line;
-
         public CallItem(String call, int line)
         {
-            this.call = call;
-            this.line = line;
+            this.Call = call;
+            this.Line = line;
         }
-        public String Call
-        {
-            get { return call; }
-            set { call = value; }
-        }
-        public int Line
-        {
-            get { return line; }
-            set { line = value; }
-        }
+
+        public String Call { get; set; }
+
+        public int Line { get; set; }
     }
 }

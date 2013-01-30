@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
-using System.ComponentModel;
 using SGL.Library.Classes;
 
 namespace SGL.Elements
 {
-
     public class Value : IComparable<Value>
     {
         // return null;
@@ -18,97 +17,8 @@ namespace SGL.Elements
         // for error stacktracing
         public static readonly Value INVALID = new Value(ValType.Invalid);
 
-        private object value;
-
-        private ValType type;
-
-        public object RawValue
-        {
-            get
-            {
-                return value;
-            }
-        }
-
-        public ValType Type
-        {
-            get
-            {
-                return type;
-            }
-        }
-
-        // object with the value information
-        public int IntValue {
-            get
-            {
-                // TODO: Exception
-                if (type == ValType.Integer) return (int)value;
-                else if (type == ValType.Double) return Convert.ToInt32((double)value);
-                else throw new InvalidOperationException();
-            }
-        }
-
-        public double DoubleValue
-        {
-            get
-            {
-                // TODO: Exception
-                if (type == ValType.Double) return (double)value;
-                else if (type == ValType.Integer) return Convert.ToDouble((int)value);
-                else throw new InvalidOperationException();
-            }
-        }
-
-        public bool BoolValue
-        {
-            get
-            {
-                // TODO: Exception
-                if (type == ValType.Boolean) return (bool)value;
-                else throw new InvalidOperationException();
-            }
-        }
-
-        public string StringValue
-        {
-            get
-            {
-                // TODO: Exception
-                if (type == ValType.String || type == ValType.Layer || type == ValType.Origin || type == ValType.LoopType) return (string)value;
-                else throw new InvalidOperationException();
-            }
-        }
-
-        public Class ObjectValue
-        {
-            get
-            {
-                // TODO: Exception
-                if (type == ValType.Object) return (Class)value;
-                else throw new InvalidOperationException();
-            }
-        }
-
-        public List<Value> ListValue
-        {
-            get
-            {
-                // TODO: Exception
-                if (type == ValType.List) return (List<Value>)value;
-                else throw new InvalidOperationException();
-            }
-        }
-
-        public Value ReturnValue
-        {
-            get
-            {
-                // TODO: Exception
-                if (type == ValType.Return) return (Value)value;
-                else throw new InvalidOperationException();
-            }
-        }
+        private readonly ValType type;
+        private readonly object value;
 
         private Value(ValType type)
         {
@@ -138,26 +48,161 @@ namespace SGL.Elements
             */
         }
 
+        public object RawValue
+        {
+            get { return value; }
+        }
+
+        public ValType Type
+        {
+            get { return type; }
+        }
+
+        // object with the value information
+        public int IntValue
+        {
+            get
+            {
+                // TODO: Exception
+                switch (type)
+                {
+                    case ValType.Integer:
+                        return (int) value;
+                        break;
+                    case ValType.Double:
+                        return Convert.ToInt32((double) value);
+                        break;
+                    default:
+                        throw new InvalidOperationException();
+                        break;
+                }
+            }
+        }
+
+        public double DoubleValue
+        {
+            get
+            {
+                // TODO: Exception
+                if (type == ValType.Double) return (double) value;
+                else if (type == ValType.Integer) return Convert.ToDouble((int) value);
+                else throw new InvalidOperationException();
+            }
+        }
+
+        public bool BoolValue
+        {
+            get
+            {
+                // TODO: Exception
+                if (type == ValType.Boolean) return (bool) value;
+                else throw new InvalidOperationException();
+            }
+        }
+
+        public string StringValue
+        {
+            get
+            {
+                // TODO: Exception
+                if (type == ValType.String || type == ValType.Layer || type == ValType.Origin ||
+                    type == ValType.LoopType) return (string) value;
+                else throw new InvalidOperationException();
+            }
+        }
+
+        public Class ObjectValue
+        {
+            get
+            {
+                // TODO: Exception
+                if (type == ValType.Object) return (Class) value;
+                else throw new InvalidOperationException();
+            }
+        }
+
+        public List<Value> ListValue
+        {
+            get
+            {
+                // TODO: Exception
+                if (type == ValType.List) return (List<Value>) value;
+                else throw new InvalidOperationException();
+            }
+        }
+
+        public Value ReturnValue
+        {
+            get
+            {
+                // TODO: Exception
+                if (type == ValType.Return) return (Value) value;
+                else throw new InvalidOperationException();
+            }
+        }
+
+        public String TypeString
+        {
+            get
+            {
+                switch (type)
+                {
+                    case ValType.Boolean:
+                        return "Boolean";
+                    case ValType.Break:
+                        return "Break";
+                    case ValType.Double:
+                        return "Double";
+                    case ValType.Integer:
+                        return "Integer";
+                    case ValType.Layer:
+                        return "Layer";
+                    case ValType.List:
+                        return "List";
+                    case ValType.LoopType:
+                        return "LoopType";
+                    case ValType.Null:
+                        return "Null";
+                    case ValType.Object:
+                        return "Object";
+                    case ValType.Origin:
+                        return "Origin";
+                    case ValType.Return:
+                        return "Return";
+                    case ValType.String:
+                        return "String";
+                    case ValType.Void:
+                        return "Void";
+                    default:
+                        return "unknown";
+                }
+            }
+        }
 
 
         // Compare one value to another
+
+        #region IComparable<Value> Members
+
         public int CompareTo(Value that)
         {
             try
             {
                 // this comparison can fail, but it may be covered by the next comparisons
-                if (this.RawValue is IComparable && that.RawValue is IComparable)
+                if (RawValue is IComparable && that.RawValue is IComparable)
                 {
                     // if both can be compared, use that to compare both
-                    return ((IComparable)this.RawValue).CompareTo(that.RawValue);
+                    return ((IComparable) RawValue).CompareTo(that.RawValue);
                 }
             }
             finally
             {
-                    throw new Exception("illegal expression: can't compare `" +
-                        this + "` to `" + that + "`");
+                throw new Exception("illegal expression: can't compare `" +
+                                    this + "` to `" + that + "`");
             }
         }
+
+        #endregion
 
         // Checks if one value is the same as another value
         public override Boolean Equals(Object o)
@@ -167,33 +212,33 @@ namespace SGL.Elements
             
             ValType thatType = that.GetType();
             */
-            Value that = (Value)o;
+            var that = (Value) o;
 
-            if (this.TypeEquals(ValType.Double, true) || that.TypeEquals(ValType.Double, true))
+            if (TypeEquals(ValType.Double, true) || that.TypeEquals(ValType.Double, true))
             {
                 // Float Comparison
-                double diff = Math.Abs(this.DoubleValue - that.DoubleValue);
+                double diff = Math.Abs(DoubleValue - that.DoubleValue);
                 return diff < 0.00000000001;
             }
-            else if (this.TypeEquals(ValType.Integer, true) && that.TypeEquals(ValType.Integer, true))
+            else if (TypeEquals(ValType.Integer, true) && that.TypeEquals(ValType.Integer, true))
             {
                 // Integer Comparison
-                return this.IntValue == that.IntValue;
+                return IntValue == that.IntValue;
             }
-            else if (this.Type == ValType.Boolean && that.Type == ValType.Boolean)
+            else if (Type == ValType.Boolean && that.Type == ValType.Boolean)
             {
                 // Boolean Comparison
-                return this.BoolValue == that.BoolValue;
+                return BoolValue == that.BoolValue;
             }
-            else if (this.Type == ValType.String && that.Type == ValType.String)
+            else if (Type == ValType.String && that.Type == ValType.String)
             {
                 // String Comparison
-                return this.StringValue.Equals(that.StringValue, StringComparison.Ordinal);
+                return StringValue.Equals(that.StringValue, StringComparison.Ordinal);
             }
-            else if (this.Type == that.Type && (this.Type == ValType.Layer || this.Type == ValType.LoopType || this.Type == ValType.Origin))
+            else if (Type == that.Type && (Type == ValType.Layer || Type == ValType.LoopType || Type == ValType.Origin))
             {
                 // Comparison of other string-like types
-                return this.StringValue.Equals(that.StringValue, StringComparison.Ordinal);
+                return StringValue.Equals(that.StringValue, StringComparison.Ordinal);
             }
             else
             {
@@ -213,17 +258,22 @@ namespace SGL.Elements
         {
             switch (type)
             {
-                case ValType.Boolean: return BoolValue.ToString(System.Globalization.CultureInfo.InvariantCulture);
-                case ValType.Break: return "break";
-                case ValType.Double: return DoubleValue.ToString(System.Globalization.CultureInfo.InvariantCulture);
-                case ValType.Integer: return IntValue.ToString(System.Globalization.CultureInfo.InvariantCulture);
-                case ValType.Layer: return StringValue;
-                case ValType.List: 
-                    StringBuilder builder = new StringBuilder();
+                case ValType.Boolean:
+                    return BoolValue.ToString(CultureInfo.InvariantCulture);
+                case ValType.Break:
+                    return "break";
+                case ValType.Double:
+                    return DoubleValue.ToString(CultureInfo.InvariantCulture);
+                case ValType.Integer:
+                    return IntValue.ToString(CultureInfo.InvariantCulture);
+                case ValType.Layer:
+                    return StringValue;
+                case ValType.List:
+                    var builder = new StringBuilder();
                     builder.Append("{");
                     for (int i = 0; i < ListValue.Count; i++) // Loop through all strings
                     {
-                        builder.Append(ListValue[i].ToString()); // Append string to StringBuilder
+                        builder.Append(ListValue[i]); // Append string to StringBuilder
                         if (i < ListValue.Count - 1)
                             builder.Append(",");
                     }
@@ -231,42 +281,25 @@ namespace SGL.Elements
                     string result = builder.ToString(); // Get string from StringBuilder
                     return ListValue.ToString();
 
-                case ValType.LoopType: return StringValue;
-                case ValType.Null: return "null";
-                case ValType.Object: return "class";
-                case ValType.Origin: return StringValue;
-                case ValType.Return: return "return";
-                case ValType.String: return StringValue;
-                case ValType.Void: return "void";
-                default: return "unknown";
-
+                case ValType.LoopType:
+                    return StringValue;
+                case ValType.Null:
+                    return "null";
+                case ValType.Object:
+                    return "class";
+                case ValType.Origin:
+                    return StringValue;
+                case ValType.Return:
+                    return "return";
+                case ValType.String:
+                    return StringValue;
+                case ValType.Void:
+                    return "void";
+                default:
+                    return "unknown";
             }
         }
 
-
-        public String TypeString
-        {
-            get
-            {
-                switch (type)
-                {
-                    case ValType.Boolean: return "Boolean";
-                    case ValType.Break: return "Break";
-                    case ValType.Double: return "Double";
-                    case ValType.Integer: return "Integer";
-                    case ValType.Layer: return "Layer";
-                    case ValType.List: return "List";
-                    case ValType.LoopType: return "LoopType";
-                    case ValType.Null: return "Null";
-                    case ValType.Object: return "Object";
-                    case ValType.Origin: return "Origin";
-                    case ValType.Return: return "Return";
-                    case ValType.String: return "String";
-                    case ValType.Void: return "Void";
-                    default: return "unknown";
-                }
-            }
-        }
 
         /*
         public static String TypeToString(ValType type) {
@@ -308,16 +341,16 @@ namespace SGL.Elements
                     return type == ValType.Integer || type == ValType.Double;
                 case ValType.Double:
                     return type == ValType.Integer || type == ValType.Double;
-                case ValType.StrictInteger: 
+                case ValType.StrictInteger:
                     return type == ValType.Integer;
-                case ValType.StrictDouble: 
+                case ValType.StrictDouble:
                     return type == ValType.Double;
                 default:
                     return type == acceptedType;
             }
         }
 
-        
+
         public static bool TypeCompare(List<Value> valueList, params ValType[] acceptedTypes)
         {
             if (valueList.Count != acceptedTypes.Length) return false;
@@ -342,8 +375,5 @@ namespace SGL.Elements
             }
             return output;
         }
-
-
     }
 }
-

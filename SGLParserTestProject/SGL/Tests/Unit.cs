@@ -1,22 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SGL;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using SGL.Antlr;
-using SGL.Nodes;
 using SGL.Elements;
+using SGL.Nodes;
 
 namespace SGL.Tests
 {
     public class Unit
     {
-        String name;
-        String input;
-        String output;
-        bool debug = false;
-        String realOutput = "";
+        private readonly bool debug;
+        private readonly String input;
+        private readonly String name;
+        private readonly String output;
+        private String realOutput = "";
 
         public Unit(String name, String input, String output)
         {
@@ -58,22 +55,22 @@ namespace SGL.Tests
             {
                 GlobalMemory.Clear();
 
-                ANTLRStringStream sStream = new ANTLRStringStream(input);
-                SGLLexer lexer = new SGLLexer(sStream);
+                var sStream = new ANTLRStringStream(input);
+                var lexer = new SGLLexer(sStream);
 
-                CommonTokenStream tStream = new CommonTokenStream(lexer);
+                var tStream = new CommonTokenStream(lexer);
 
                 // Parsing
-                SGLParser parser = new SGLParser(tStream);
-                CommonTree t = (CommonTree)parser.main().Tree;
+                var parser = new SGLParser(tStream);
+                var t = (CommonTree) parser.main().Tree;
 
                 // Printing tree
                 Console.WriteLine("; " + t.ToStringTree());
 
                 // TreeWalking
-                CommonTreeNodeStream treeStream = new CommonTreeNodeStream(t);
+                var treeStream = new CommonTreeNodeStream(t);
 
-                SGLTreeWalker tw = new SGLTreeWalker(treeStream, true);
+                var tw = new SGLTreeWalker(treeStream, true);
                 AbstractNode returned = tw.main();
                 returned.Evaluate();
 
@@ -98,7 +95,6 @@ namespace SGL.Tests
                 {
                     return false;
                 }
-
             }
             catch (CompilerException ce)
             {
@@ -113,6 +109,5 @@ namespace SGL.Tests
                 return false;
             }
         }
-
     }
 }

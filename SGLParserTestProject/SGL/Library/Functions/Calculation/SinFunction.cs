@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.Text;
 using SGL.Elements;
 
 namespace SGL.Library.Functions.Calculation
 {
-    class SinFunction : Function
+    internal class SinFunction : Function
     {
-
         private Value sin(double value)
         {
             return new Value(Math.Sin(value), ValType.Double);
@@ -21,6 +18,5 @@ namespace SGL.Library.Functions.Calculation
             // TODO: Name
             throw new CompilerException(-1, 302, "sin", Value.PrintTypeList(param));
         }
-
     }
 }

@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SGL.Elements;
+﻿using SGL.Elements;
 
 namespace SGL.Nodes.ControlFlow
 {
-    class WhileNode : AbstractNode
+    internal class WhileNode : AbstractNode
     {
-        private AbstractNode expression;
-        private AbstractNode block;
+        private readonly AbstractNode block;
+        private readonly AbstractNode expression;
 
         public WhileNode(AbstractNode expression, AbstractNode block)
         {
             this.expression = expression;
             this.block = block;
+        }
+
+        public override int Line
+        {
+            get { return expression.Line; }
         }
 
         protected override Value Invoke()
@@ -22,7 +24,7 @@ namespace SGL.Nodes.ControlFlow
             if (exprV.Type != ValType.Boolean)
             {
                 throw new CompilerException(Line, 217, "condition", "IF", "Boolean", exprV.TypeString);
-            }  
+            }
 
             while (expression.Evaluate().BoolValue)
             {
@@ -43,14 +45,5 @@ namespace SGL.Nodes.ControlFlow
 
             return Value.VOID;
         }
-
-        public override int Line
-        {
-            get
-            {
-                return expression.Line;
-            }
-        }
-
     }
 }

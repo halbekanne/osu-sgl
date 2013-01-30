@@ -1,32 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SGL.Nodes;
-using SGL.Elements;
+﻿using SGL.Elements;
 
 namespace SGL.Nodes.Values
 {
-    class BreakNode : AbstractNode
+    internal class BreakNode : AbstractNode
     {
-        int line;
+        private readonly int line;
 
         public BreakNode(int line)
         {
             this.line = line;
         }
 
+        public override int Line
+        {
+            get { return line; }
+        }
+
         protected override Value Invoke()
         {
             return Value.BREAK;
         }
-
-        public override int Line
-        {
-            get
-            {
-                return line;
-            }
-        }
-
     }
 }

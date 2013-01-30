@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using SGL.Elements;
 
 namespace SGL.Nodes
@@ -11,6 +9,13 @@ namespace SGL.Nodes
     /// </summary>
     public abstract class AbstractNode
     {
+        /// <summary>
+        /// Retrieves the line number from the corresponding code for this node. Very important for troubleshooting!
+        /// It will try to get the line from lexer tokens.
+        /// </summary>
+        /// <returns>Returns the line number.</returns>
+        public abstract int Line { get; }
+
         /// <summary>
         /// Evaluates this node which normally causes underlying nodes to evaluate first. The returning value can then be used by the parent nodes.
         /// This method is sealed because subclasses should allways override Invoke() instead!
@@ -26,7 +31,7 @@ namespace SGL.Nodes
             {
                 if (ce.Line < 1)
                 {
-                    ce.Line = this.Line;
+                    ce.Line = Line;
                 }
                 throw;
             }
@@ -37,13 +42,6 @@ namespace SGL.Nodes
             }
         }
 
-        abstract protected Value Invoke();
-
-        /// <summary>
-        /// Retrieves the line number from the corresponding code for this node. Very important for troubleshooting!
-        /// It will try to get the line from lexer tokens.
-        /// </summary>
-        /// <returns>Returns the line number.</returns>
-        abstract public int Line { get; }
+        protected abstract Value Invoke();
     }
 }
