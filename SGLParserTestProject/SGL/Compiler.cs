@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+using System.Diagnostics;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
-using System.Diagnostics;
-using System.Threading;
-using SGL.Elements;
 using SGL.Antlr;
+using SGL.Elements;
 
 namespace SGL
 {
@@ -28,11 +24,6 @@ namespace SGL
         private Boolean timeRecording = true;
         private String treeString = "undefined";
 
-        public Compiler()
-        {
-
-        }
-
         /// <summary>
         /// Compiles SGL code into osu! storyboard code.
         /// </summary>
@@ -45,13 +36,12 @@ namespace SGL
         {
             try
             {
-
                 //Console.WriteLine("Input:" + input);
                 // Step 1: Converting the input stream into tokens
                 CommonTokenStream tokens = GenerateTokens(input);
 
                 // Preparation: Clearing the GlobalMemory
-                this.Clear();
+                Clear();
 
                 //Console.WriteLine("Tokens:" + tokens.ToString());
                 // Step 2: Converting the tokens into a tree
@@ -75,7 +65,6 @@ namespace SGL
                 }
 
 
-
                 return output;
             }
             catch (CompilerException sce)
@@ -94,8 +83,6 @@ namespace SGL
                 Console.WriteLine(ex.StackTrace);
                 throw;
             }
-
-            
         }
 
         /// <summary>
@@ -114,7 +101,7 @@ namespace SGL
         /// <returns></returns>
         public String GetTreeString()
         {
-            return this.treeString;
+            return treeString;
         }
 
 
@@ -127,14 +114,15 @@ namespace SGL
 
                 // Lexer: Converting the string into tokens
 
-                SGLLexer lexer = new SGLLexer(new ANTLRStringStream(input));
+                var lexer = new SGLLexer(new ANTLRStringStream(input));
 
-                CommonTokenStream tokenStream = new CommonTokenStream(lexer);
+                var tokenStream = new CommonTokenStream(lexer);
 
                 if (timeRecording)
                 {
                     timeNeeded.Stop();
-                    Console.WriteLine("Time needed for converting the string into tokens: " + timeNeeded.ElapsedMilliseconds + " ms (" + timeNeeded.Elapsed + ")");
+                    Console.WriteLine("Time needed for converting the string into tokens: " +
+                                      timeNeeded.ElapsedMilliseconds + " ms (" + timeNeeded.Elapsed + ")");
                 }
                 return tokenStream;
             }
@@ -142,7 +130,6 @@ namespace SGL
             {
                 throw e;
             }
-            
         }
 
 
@@ -152,10 +139,10 @@ namespace SGL
             if (timeRecording) timeNeeded.Start();
 
             // Treewalker: Compiling the abstract syntax tree to storyboard code
-            SGLParser parser = new SGLParser(input);
-            CommonTree ast = (CommonTree)parser.main().Tree;
-            this.treeString = ast.ToStringTree();
-            CommonTreeNodeStream astStream = new CommonTreeNodeStream(ast);
+            var parser = new SGLParser(input);
+            var ast = (CommonTree) parser.main().Tree;
+            treeString = ast.ToStringTree();
+            var astStream = new CommonTreeNodeStream(ast);
 
             // Saving the methods for the treewalker
             /*this.methods = parser.methods;
@@ -167,11 +154,11 @@ namespace SGL
             if (timeRecording)
             {
                 timeNeeded.Stop();
-                Console.WriteLine("Time needed for converting the tokens into a tree: " + timeNeeded.ElapsedMilliseconds + " ms (" + timeNeeded.Elapsed + ")");
+                Console.WriteLine("Time needed for converting the tokens into a tree: " + timeNeeded.ElapsedMilliseconds +
+                                  " ms (" + timeNeeded.Elapsed + ")");
             }
             return astStream;
         }
-
 
 
         private String GenerateStoryboardCode(CommonTreeNodeStream input)
@@ -180,7 +167,7 @@ namespace SGL
             if (timeRecording) timeNeeded.Start();
 
             // Parser: Converting the tokens into an abstract syntax tree
-            SGLTreeWalker treewalker = new SGLTreeWalker(input, true);
+            var treewalker = new SGLTreeWalker(input, true);
             treewalker.main().Evaluate();
             //String output = treewalker.GetStoryboardCode().ToString();
             String output = GlobalMemory.Instance.StoryboardCode.ToString();
@@ -188,7 +175,8 @@ namespace SGL
             if (timeRecording)
             {
                 timeNeeded.Stop();
-                Console.WriteLine("Time needed for converting the tree into storyboard code: " + timeNeeded.ElapsedMilliseconds + " ms (" + timeNeeded.Elapsed + ")");
+                Console.WriteLine("Time needed for converting the tree into storyboard code: " +
+                                  timeNeeded.ElapsedMilliseconds + " ms (" + timeNeeded.Elapsed + ")");
             }
             return output;
         }
@@ -196,7 +184,6 @@ namespace SGL
 
         private void Clear()
         {
-
             GlobalMemory.Clear();
             /*
             // get the library
@@ -208,6 +195,5 @@ namespace SGL
             // register methods
             library.RegisterMethod();*/
         }
-
     }
 }

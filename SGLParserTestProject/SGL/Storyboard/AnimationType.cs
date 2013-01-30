@@ -1,9 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-
-using System.Text;
-
-namespace SGL.Storyboard
+﻿namespace SGL.Storyboard
 {
-    public enum AnimationType { Move, MoveX, MoveY, Scale, ScaleVec, Fade, Rotate, Color }
+    public enum AnimationType
+    {
+        Move,
+        MoveX,
+        MoveY,
+        Scale,
+        ScaleVec,
+        Fade,
+        Rotate,
+        Color
+    }
 }

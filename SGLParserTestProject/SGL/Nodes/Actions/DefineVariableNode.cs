@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using SGL.Elements;
 
 namespace SGL.Nodes.Actions
 {
-    class DefineVariableNode : AbstractNode
+    internal class DefineVariableNode : AbstractNode
     {
-        private String name;
-        private Scope scope;
-        private int line;
+        private readonly int line;
+        private readonly String name;
+        private readonly Scope scope;
 
         public DefineVariableNode(String name, Scope scope, int line)
         {
@@ -22,29 +20,23 @@ namespace SGL.Nodes.Actions
         public DefineVariableNode(String name, int line)
         {
             this.name = name;
-            this.scope = GlobalMemory.Instance.GlobalScope;
+            scope = GlobalMemory.Instance.GlobalScope;
             this.line = line;
+        }
+
+        public override int Line
+        {
+            get { return line; }
         }
 
         protected override Value Invoke()
         {
-
             // a simple assignment
             //scope.SetSpriteObjects(spriteObjects);
             scope.Define(name);
 
 
-
             return Value.VOID;
         }
-
-        public override int Line
-        {
-            get
-            {
-                return line;
-            }
-        }
-
     }
 }

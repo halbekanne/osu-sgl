@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SGL.Elements;
+﻿using SGL.Elements;
 
 namespace SGL.Nodes.Operators.Logical
 {
-    class OrNode : AbstractBinaryOperatorNode
+    internal class OrNode : AbstractBinaryOperatorNode
     {
-        public OrNode(AbstractNode node1, AbstractNode node2) : base(node1, node2) { }
+        public OrNode(AbstractNode node1, AbstractNode node2) : base(node1, node2)
+        {
+        }
 
         protected override Value Operate(Value value1, Value value2)
         {

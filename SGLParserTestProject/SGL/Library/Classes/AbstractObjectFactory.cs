@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.Text;
 using SGL.Elements;
+using System.Reflection;
 
 namespace SGL.Library.Classes
 {
-    public abstract class Class
+    public abstract class AbstractObjectFactory
     {
         //public abstract void Test();
         public abstract String Name { get; }
 
-        public abstract Value InvokeMethod(String name, List<Value> parameters);
-        public abstract object CreateObject(List<Value> parameters);
+        public abstract object CreateNewInstance(List<Value> parameters);
 
         /*
         public abstract List<...> GetConstructors();

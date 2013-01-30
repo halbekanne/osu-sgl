@@ -1,53 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using SGL.Elements;
 
 namespace SGL.Nodes.ControlFlow
 {
-    class IfNode : AbstractNode
+    internal class IfNode : AbstractNode
     {
-        private List<Choice> choices;
+        private readonly List<Choice> choices;
 
         public IfNode()
         {
             choices = new List<Choice>();
-        }
-
-        private class Choice
-        {
-            public AbstractNode expression;
-            public AbstractNode block;
-
-            public Choice(AbstractNode expression, AbstractNode block)
-            {
-                this.expression = expression;
-                this.block = block;
-            }
-        }
-
-        public void AddChoice(AbstractNode expression, AbstractNode block)
-        {
-            choices.Add(new Choice(expression, block));
-        }
-
-
-        protected override Value Invoke()
-        {
-
-           foreach(Choice choice in choices) {
-              Value value = choice.expression.Evaluate();  
-  
-              if(value.Type != ValType.Boolean) {
-                  throw new CompilerException(Line, 217, "condition", "IF", "Boolean", value.TypeString);
-              }  
-  
-              if(value.BoolValue) {
-                  return choice.block.Evaluate();  
-              }  
-            }  
-  
-            return Value.VOID;  
         }
 
         public override int Line
@@ -59,5 +21,46 @@ namespace SGL.Nodes.ControlFlow
             }
         }
 
+        public void AddChoice(AbstractNode expression, AbstractNode block)
+        {
+            choices.Add(new Choice(expression, block));
+        }
+
+
+        protected override Value Invoke()
+        {
+            foreach (Choice choice in choices)
+            {
+                Value value = choice.expression.Evaluate();
+
+                if (value.Type != ValType.Boolean)
+                {
+                    throw new CompilerException(Line, 217, "condition", "IF", "Boolean", value.TypeString);
+                }
+
+                if (value.BoolValue)
+                {
+                    return choice.block.Evaluate();
+                }
+            }
+
+            return Value.VOID;
+        }
+
+        #region Nested type: Choice
+
+        private class Choice
+        {
+            public readonly AbstractNode block;
+            public readonly AbstractNode expression;
+
+            public Choice(AbstractNode expression, AbstractNode block)
+            {
+                this.expression = expression;
+                this.block = block;
+            }
+        }
+
+        #endregion
     }
 }

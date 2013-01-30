@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SGL.Elements;
+﻿using SGL.Elements;
 
 namespace SGL.Nodes.Operators.Arithmetical
 {
-    class AddNode : AbstractBinaryOperatorNode
+    internal class AddNode : AbstractBinaryOperatorNode
     {
-
-        public AddNode(AbstractNode node1, AbstractNode node2) : base(node1, node2) {}
+        public AddNode(AbstractNode node1, AbstractNode node2) : base(node1, node2)
+        {
+        }
 
         protected override Value Operate(Value value1, Value value2)
         {
@@ -25,7 +23,7 @@ namespace SGL.Nodes.Operators.Arithmetical
             else if (value1.Type == ValType.String || value2.Type == ValType.String)
             {
                 // "Hello " + 1 => String
-                return new Value(value1.ToString() + "" + value2.ToString(), ValType.String);
+                return new Value(value1 + "" + value2, ValType.String);
             }
             else
             {

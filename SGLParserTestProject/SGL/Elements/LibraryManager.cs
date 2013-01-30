@@ -1,54 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.Text;
 using SGL.Library.Classes;
-using System.Reflection;
 using SGL.Library.Functions;
 using SGL.Library.Functions.Calculation;
 using SGL.Library.Functions.IO;
+using System.Reflection;
 
 namespace SGL.Elements
 {
-
     /// <summary>
     /// Singleton containing classes which can be used in SGL
     /// </summary>
-    class LibraryManager
+    internal class LibraryManager
     {
         private static readonly LibraryManager instance = new LibraryManager();
+        private readonly Dictionary<string, AbstractObjectFactory> classes = new Dictionary<string, AbstractObjectFactory>();
 
-        private LibraryManager() { 
+        // memory for methods
+        private readonly Dictionary<string, Function> functions = new Dictionary<string, Function>();
+
+        private LibraryManager()
+        {
             RegisterClasses();
             RegisterFunctions();
         }
 
         public static LibraryManager Instance
         {
-            get
-            {
-                return instance;
-            }
+            get { return instance; }
         }
 
-        private void RegisterClasses() {
-            this.RegisterClass("List", new List());
-            this.RegisterClass("Sprite", new Sprite());
-            this.RegisterClass("Animation", new Animation());
+        private void RegisterClasses()
+        {
+            RegisterClass("List", new ListFactory());
+            RegisterClass("Sprite", new SpriteFactory());
+            RegisterClass("Animation", new AnimationFactory());
+            RegisterClass("Layer", new LayerFactory());
         }
 
         private void RegisterFunctions()
         {
-            this.RegisterFunction("sin", new SinFunction());
-            this.RegisterFunction("rand", new RandFunction());
-            this.RegisterFunction("println", new PrintFunction());
+            RegisterFunction("sin", new SinFunction());
+            RegisterFunction("rand", new RandFunction());
+            RegisterFunction("println", new PrintFunction());
         }
 
         // memory for classes
-        private Dictionary<string, Class> classes = new Dictionary<string, Class>();
-
-        // memory for methods
-        private Dictionary<string, Function> functions = new Dictionary<string, Function>();
 
         //public Function GetFunction(string name, List<Value> parameters);
 
@@ -75,7 +72,7 @@ namespace SGL.Elements
             return false;
         }
 
-        public void RegisterClass(string name, Class cls)
+        public void RegisterClass(string name, AbstractObjectFactory cls)
         {
             classes.Add(name, cls);
         }
@@ -99,7 +96,7 @@ namespace SGL.Elements
             {
                 try
                 {
-                    return classes[name].CreateObject(parameters);
+                    return classes[name].CreateNewInstance(parameters);
                 }
                 catch (CompilerException ce)
                 {
@@ -141,7 +138,27 @@ namespace SGL.Elements
             }
         }
 
+        public Value InvokeMethod(object instance, String methodName, List<Value> parameters)
+        {
+            List<Type> parameterTypes = new List<Type>();
+            foreach (Value parameter in parameters) {
+                parameterTypes.Add(parameter.GetType());
+            }
 
+            // Get the desired method by name
+            MethodInfo methodInfo = instance.GetType().GetMethod(methodName, parameterTypes.ToArray());
+
+            // Use the instance to call the method
+            if (methodInfo != null)
+            {
+                return (Value)methodInfo.Invoke(instance, parameters.ToArray());
+            }
+            else
+            {
+                return null;
+            }
+
+        }
 
 
 

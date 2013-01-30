@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using SGL.Elements;
 
 namespace SGL.Nodes.Actions
 {
-    class AssignVariableNode : AbstractNode
+    internal class AssignVariableNode : AbstractNode
     {
-        private String name;
-        private List<AbstractNode> indexes;
-        private AbstractNode expression;
-        private Scope scope;
-        private int line;
+        private readonly AbstractNode expression;
+        private readonly List<AbstractNode> indexes;
+        private readonly int line;
+        private readonly String name;
+        private readonly Scope scope;
 
-        public AssignVariableNode(String name, List<AbstractNode> indexes, AbstractNode expression, Scope scope, int line)
+        public AssignVariableNode(String name, List<AbstractNode> indexes, AbstractNode expression, Scope scope,
+                                  int line)
         {
             this.name = name;
             this.indexes = (indexes == null) ? new List<AbstractNode>() : indexes;
@@ -28,8 +28,13 @@ namespace SGL.Nodes.Actions
             this.name = name;
             this.indexes = (indexes == null) ? new List<AbstractNode>() : indexes;
             this.expression = expression;
-            this.scope = GlobalMemory.Instance.GlobalScope;
+            scope = GlobalMemory.Instance.GlobalScope;
             this.line = line;
+        }
+
+        public override int Line
+        {
+            get { return line; }
         }
 
         protected override Value Invoke()
@@ -91,14 +96,5 @@ namespace SGL.Nodes.Actions
 
             return Value.VOID;
         }
-
-        public override int Line
-        {
-            get
-            {
-                return line;
-            }
-        }
-
     }
 }

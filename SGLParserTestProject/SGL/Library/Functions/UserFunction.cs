@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.Text;
 using Antlr.Runtime.Tree;
-using SGL.Elements;
 using SGL.Antlr;
+using SGL.Elements;
 
 namespace SGL.Library.Functions
 {
     /// <summary>
     /// A method defined by "method [name]() { ... } in the actuall SGL code."
     /// </summary>
-    class UserFunction : Function
+    internal class UserFunction : Function
     {
-        private List<String> parameterNames;
-        private CommonTree functionBody;
-        private String name;
+        private readonly CommonTree functionBody;
+        private readonly List<String> parameterNames;
         private int definedLine;
+        private String name;
 
         // method xyt(param1, param2) {
         public UserFunction(String name, List<String> parameterNames, CommonTree functionBody, int definedLine)
@@ -32,16 +30,16 @@ namespace SGL.Library.Functions
             if (parameters.Count == parameterNames.Count)
             {
                 // create new scope for the method call
-                Scope methodScope = new Scope();
+                var methodScope = new Scope();
                 for (int i = 0; i < parameterNames.Count; i++)
                 {
                     methodScope.Define(parameterNames[i]);
                     methodScope.Assign(parameterNames[i], parameters[i]);
                 }
 
-                CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(functionBody);
+                var nodeStream = new CommonTreeNodeStream(functionBody);
                 // Create a tree walker to evaluate this method's code block  
-                SGLTreeWalker walker = new SGLTreeWalker(nodeStream, methodScope);
+                var walker = new SGLTreeWalker(nodeStream, methodScope);
 
                 // Ok, executing the function then
                 Value returnValue = walker.main().Evaluate();
@@ -62,7 +60,7 @@ namespace SGL.Library.Functions
             if (parameters.Count == parameterNames.Count)
             {
                 // create new scope for the method call
-                Scope methodScope = new Scope();
+                var methodScope = new Scope();
                 methodScope.Define("this");
                 methodScope.Assign("this", objectVar);
                 for (int i = 0; i < parameterNames.Count; i++)
@@ -72,9 +70,9 @@ namespace SGL.Library.Functions
                 }
 
 
-                CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(functionBody);
+                var nodeStream = new CommonTreeNodeStream(functionBody);
                 // Create a tree walker to evaluate this method's code block  
-                SGLTreeWalker walker = new SGLTreeWalker(nodeStream, methodScope);
+                var walker = new SGLTreeWalker(nodeStream, methodScope);
 
                 Value returnValue = null;
 
@@ -92,6 +90,5 @@ namespace SGL.Library.Functions
             // TODO: Exception
             throw new Exception();
         }
-
     }
 }

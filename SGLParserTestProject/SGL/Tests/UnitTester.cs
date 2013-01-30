@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SGL.Tests
 {
     public class UnitTester
     {
-
-        private List<Unit> units = new List<Unit>();
+        private readonly List<Unit> units = new List<Unit>();
 
         private void InitUnits()
         {
-
             // Sprite initialisation tests
             /*units.Add(new Unit("Sprite initialisation #1", "var o = new Sprite(\"test.png\");", "Sprite,Foreground,Centre,\"test.png\",320,240", true));
             units.Add(new Unit("Sprite initialisation #2", "var o = new Sprite(0, \"test.png\");", "Sprite,Foreground,Centre,\"test.png\",320,240", true));
@@ -36,7 +33,8 @@ namespace SGL.Tests
             units.Add(new Unit("Expressions - Comparison ||", "println(false || true);", "True", true));
             units.Add(new Unit("Expressions - Comparison &&", "println(true && false);", "False", true));
             units.Add(new Unit("Expressions - Short If ( ? : )", "println(3 > 4 ? 1 : 2);", "2", true));
-            units.Add(new Unit("Expressions - Complex Case", "println(3 > 4 ? 1 : 3*(5+4)%6/-(8-1.0));", "-0.428571428571429", true));
+            units.Add(new Unit("Expressions - Complex Case", "println(3 > 4 ? 1 : 3*(5+4)%6/-(8-1.0));",
+                               "-0.428571428571429", true));
 
             // Variable handling
             units.Add(new Unit("Variable - null", "var a; \r\n println(a);", "null", true));
@@ -51,15 +49,21 @@ namespace SGL.Tests
 
             // IF-Statements
             units.Add(new Unit("If-Statements & Blocks #1 ", "if (3 > 2) println(2);", "2", true));
-            units.Add(new Unit("If-Statements & Blocks #2", "if (3 > 2) { \r\n println(2); \r\n println(1); \r\n }", "2\r\n1", true));
-            units.Add(new Unit("If-Statements & Blocks #3", "if (3 < 2) println(1); \r\n else if (3 > 2) println(2);", "2", true));
-            units.Add(new Unit("If-Statements & Blocks #4", "if (3 < 2) { \r\n println(1); \r\n } \r\n else if (3 > 2) { \r\n println(2); \r\n println(1); \r\n }", "2\r\n1", true));
-            units.Add(new Unit("If-Statements & Blocks #5", "if (3 < 2) println(1); \r\n else if (3 == 2) println(2); \r\n else println(3); ", "3", true));
-            units.Add(new Unit("If-Statements & Blocks #6", "if (3 < 2) { \r\n println(1); \r\n } \r\n else if (3 == 2) { \r\n println(2); \r\n println(1); \r\n } \r\n else { \r\n println(3); \r\n println(4); \r\n }", "3\r\n4", true));
-
-
+            units.Add(new Unit("If-Statements & Blocks #2", "if (3 > 2) { \r\n println(2); \r\n println(1); \r\n }",
+                               "2\r\n1", true));
+            units.Add(new Unit("If-Statements & Blocks #3", "if (3 < 2) println(1); \r\n else if (3 > 2) println(2);",
+                               "2", true));
+            units.Add(new Unit("If-Statements & Blocks #4",
+                               "if (3 < 2) { \r\n println(1); \r\n } \r\n else if (3 > 2) { \r\n println(2); \r\n println(1); \r\n }",
+                               "2\r\n1", true));
+            units.Add(new Unit("If-Statements & Blocks #5",
+                               "if (3 < 2) println(1); \r\n else if (3 == 2) println(2); \r\n else println(3); ", "3",
+                               true));
+            units.Add(new Unit("If-Statements & Blocks #6",
+                               "if (3 < 2) { \r\n println(1); \r\n } \r\n else if (3 == 2) { \r\n println(2); \r\n println(1); \r\n } \r\n else { \r\n println(3); \r\n println(4); \r\n }",
+                               "3\r\n4", true));
         }
-        
+
         public void RunTests()
         {
             InitUnits();
@@ -71,29 +75,24 @@ namespace SGL.Tests
             {
                 if (unit.RunTest())
                 {
-                    Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=~> Test " + unit.GetName() + ": Ok <~=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+                    Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=~> Test " +
+                                      unit.GetName() + ": Ok <~=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
                     passed++;
                 }
                 else
                 {
-                    Console.WriteLine("X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=~> Test " + unit.GetName() + ": FAILED!!! <~=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X");
+                    Console.WriteLine("X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=~> Test " +
+                                      unit.GetName() +
+                                      ": FAILED!!! <~=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X=X");
                     Console.WriteLine("Input:" + unit.GetInput());
                     Console.WriteLine("Expected: " + unit.GetOutput());
                     Console.WriteLine("But was: " + unit.GetRealOutput());
                     failed++;
                 }
-
             }
 
-            Console.WriteLine("Testing finished: " + units.Count + " tests done, " + passed + " passed, " + failed + " failed.");
-
-
-
-
-
-
+            Console.WriteLine("Testing finished: " + units.Count + " tests done, " + passed + " passed, " + failed +
+                              " failed.");
         }
-
-
     }
 }

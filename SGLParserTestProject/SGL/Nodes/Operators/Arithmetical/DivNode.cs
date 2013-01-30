@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SGL.Elements;
+﻿using SGL.Elements;
 
 namespace SGL.Nodes.Operators.Arithmetical
 {
-    class DivNode : AbstractBinaryOperatorNode
+    internal class DivNode : AbstractBinaryOperatorNode
     {
-
-        public DivNode(AbstractNode node1, AbstractNode node2) : base(node1, node2) { }
+        public DivNode(AbstractNode node1, AbstractNode node2) : base(node1, node2)
+        {
+        }
 
         protected override Value Operate(Value value1, Value value2)
         {
@@ -20,7 +18,7 @@ namespace SGL.Nodes.Operators.Arithmetical
                     // division by 0
                     throw new CompilerException(-1, 205);
                 }
-                return new Value(value1.IntValue / value2.IntValue, ValType.Integer);
+                return new Value(value1.IntValue/value2.IntValue, ValType.Integer);
             }
             else if (value1.TypeEquals(ValType.Double) && value2.TypeEquals(ValType.Double))
             {
@@ -30,7 +28,7 @@ namespace SGL.Nodes.Operators.Arithmetical
                     // division by 0
                     throw new CompilerException(-1, 205);
                 }
-                return new Value(value1.DoubleValue / value2.DoubleValue, ValType.Double);
+                return new Value(value1.DoubleValue/value2.DoubleValue, ValType.Double);
             }
 
             else
@@ -38,7 +36,5 @@ namespace SGL.Nodes.Operators.Arithmetical
                 throw new CompilerException(Line, 202, "/", value1.TypeString, value2.TypeString);
             }
         }
-
-
     }
 }

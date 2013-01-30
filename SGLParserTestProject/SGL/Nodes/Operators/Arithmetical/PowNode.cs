@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using SGL.Elements;
 
 namespace SGL.Nodes.Operators.Arithmetical
 {
-    class PowNode : AbstractBinaryOperatorNode
+    internal class PowNode : AbstractBinaryOperatorNode
     {
         private AbstractNode lhs;
         private AbstractNode rhs;
 
-        public PowNode(AbstractNode node1, AbstractNode node2) : base(node1, node2) { }
+        public PowNode(AbstractNode node1, AbstractNode node2) : base(node1, node2)
+        {
+        }
 
         protected override Value Operate(Value value1, Value value2)
         {
-
             // number + number
             if (value1.Type == ValType.Integer && value2.Type == ValType.Integer)
             {
@@ -40,7 +39,7 @@ namespace SGL.Nodes.Operators.Arithmetical
                 else
                     return new Value(x, ValType.Double);
             }
-            // float + number / number + float  
+                // float + number / number + float  
             else if (value1.TypeEquals(ValType.Double) && value2.TypeEquals(ValType.Double))
             {
                 double x = Math.Pow(value1.DoubleValue, value1.DoubleValue);

@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SGL.Elements;
+﻿using SGL.Elements;
 
 namespace SGL.Nodes.Values
 {
-    class ReturnNode : AbstractNode
+    internal class ReturnNode : AbstractNode
     {
-        private AbstractNode expression;
+        private readonly AbstractNode expression;
 
         public ReturnNode(AbstractNode expression)
         {
             this.expression = expression;
+        }
+
+        public override int Line
+        {
+            get { return expression.Line; }
         }
 
         protected override Value Invoke()
@@ -19,16 +21,5 @@ namespace SGL.Nodes.Values
             Value exprVal = expression.Evaluate();
             return new Value(exprVal, ValType.Return);
         }
-
-        public override int Line
-        {
-            get
-            {
-                return expression.Line;
-            }
-        }
-
-
-
     }
 }

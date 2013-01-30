@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.Text;
 using SGL.Elements;
 using SGL.Library.Classes;
 using SGL.Library.Functions;
 
 namespace SGL.Nodes.Actions
 {
-    class InvokeFunctionNode : AbstractNode
+    internal class InvokeFunctionNode : AbstractNode
     {
-        private String objectVar;
-        private String funcName;
-        private List<AbstractNode> parameters;
-        private Scope scope;
-        private int line;
+        private readonly String funcName;
+        private readonly int line;
+        private readonly String objectVar;
+        private readonly List<AbstractNode> parameters;
+        private readonly Scope scope;
 
         public InvokeFunctionNode(String funcName, List<AbstractNode> parameters, int line)
         {
@@ -28,7 +26,8 @@ namespace SGL.Nodes.Actions
             this.line = line;
         }
 
-        public InvokeFunctionNode(String objectVar, List<AbstractNode> indexes, String funcName, List<AbstractNode> parameters, Scope scope, int line)
+        public InvokeFunctionNode(String objectVar, List<AbstractNode> indexes, String funcName,
+                                  List<AbstractNode> parameters, Scope scope, int line)
         {
             this.funcName = funcName;
             this.parameters = parameters != null ? parameters : new List<AbstractNode>();
@@ -37,11 +36,16 @@ namespace SGL.Nodes.Actions
             this.line = line;
         }
 
+        public override int Line
+        {
+            get { return line; }
+        }
+
         protected override Value Invoke()
         {
             if (objectVar != null && scope != null)
             {
-                List<Value> values = new List<Value>();
+                var values = new List<Value>();
                 foreach (AbstractNode node in parameters)
                 {
                     values.Add(node.Evaluate());
@@ -56,7 +60,7 @@ namespace SGL.Nodes.Actions
                 {
                     try
                     {
-                        Class objectInstance = resolvedValue.ObjectValue;
+                        AbstractObjectFactory objectInstance = resolvedValue.ObjectValue;
                         return objectInstance.InvokeMethod(funcName, values);
                     }
                     catch (CompilerException ce)
@@ -65,12 +69,11 @@ namespace SGL.Nodes.Actions
                         {
                             if (GlobalMemory.Instance.IsFunctionKnown(funcName))
                             {
-
                                 Function function = GlobalMemory.Instance.GetFunction(funcName, values);
                                 if (function is UserFunction)
                                 {
                                     GlobalMemory.Instance.AddCallToStack(new CallItem(funcName, Line));
-                                    Value returnValue = ((UserFunction)function).Invoke(resolvedValue, values);
+                                    Value returnValue = ((UserFunction) function).Invoke(resolvedValue, values);
                                     GlobalMemory.Instance.PopLastCall();
                                     return returnValue;
                                 }
@@ -78,7 +81,6 @@ namespace SGL.Nodes.Actions
                                 {
                                     throw;
                                 }
-
                             }
                             else
                             {
@@ -90,13 +92,12 @@ namespace SGL.Nodes.Actions
                             throw;
                         }
                     }
-
                 }
                 throw new CompilerException(line, 316, resolvedValue.TypeString);
             }
             else
             {
-                List<Value> values = new List<Value>();
+                var values = new List<Value>();
                 foreach (AbstractNode node in parameters)
                 {
                     values.Add(node.Evaluate());
@@ -116,16 +117,7 @@ namespace SGL.Nodes.Actions
                     GlobalMemory.Instance.PopLastCall();
                     return returnValue;
                 }
-                
             }
         }
-
-        public override int Line
-        {
-            get {
-                return line;
-            }
-        }
-
     }
 }

@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using SGL.Elements;
 
 namespace SGL.Nodes.Operators
 {
-
     /// <summary>
     /// Abstract class for all kind of operators which perform an action on 2 values, e.g. addition.
     /// </summary>
     public abstract class AbstractTernaryOperatorNode : AbstractNode
     {
-        private AbstractNode node1;
-        private AbstractNode node2;
+        private readonly AbstractNode node1;
+        private readonly AbstractNode node2;
         private AbstractNode node3;
 
         public AbstractTernaryOperatorNode(AbstractNode node1, AbstractNode node2, AbstractNode node3)
@@ -22,7 +19,15 @@ namespace SGL.Nodes.Operators
             this.node2 = node3;
         }
 
-        public abstract Value Operate(Value value1, Value value2, Value value3, ValType type1, ValType type2, ValType type3);
+        public abstract String Name { get; }
+
+        public override int Line
+        {
+            get { return node1.Line; }
+        }
+
+        public abstract Value Operate(Value value1, Value value2, Value value3, ValType type1, ValType type2,
+                                      ValType type3);
 
         public abstract bool CheckArguments(ValType type1, ValType type2, ValType type3);
 
@@ -54,16 +59,5 @@ namespace SGL.Nodes.Operators
                 throw new CompilerException(Line, 203, Name, value1.TypeString, value2.TypeString, value3.TypeString);
             }
         }
-
-        public abstract String Name { get; }
-
-        public override int Line {
-            get
-            {
-                return node1.Line;
-            }
-        }
-
-
     }
 }

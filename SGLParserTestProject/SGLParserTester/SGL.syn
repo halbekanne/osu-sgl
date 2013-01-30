@@ -5,27 +5,27 @@
 		<Keywords>
 			<PatternGroup Name="Keywords" Style="SGL Keyword" CaseSensitive="true">
                      <Patterns>
-                     at break else for if method new return while
+                     at break else for while if function new return while this
                      </Patterns>
-            </PatternGroup>
+      </PatternGroup>
 			
 			<PatternGroup Name="Types" Style="SGL Types" CaseSensitive="true">
                      <Patterns>
-                     boolean float int Object string void global
+                     var global
                      </Patterns>
-            </PatternGroup>
+      </PatternGroup>
 			
 			<PatternGroup Name="Lyterals" Style="SGL Number" CaseSensitive="true">
                      <Patterns>
                      true false null
                      </Patterns>
-            </PatternGroup>
+      </PatternGroup>
 			
 			<PatternGroup Name="Classes" Style="SGL Class" CaseSensitive="true">
                      <Patterns>
                      Sprite Animation move moveX moveY fade rotate scale scaleVec color
                      </Patterns>
-            </PatternGroup>
+      </PatternGroup>
 		
 			<PatternGroup Name="Numbers" Style="SGL Number">
 				<Pattern Text="([0-9]+\.[0-9]*)" IsComplex="true" />
@@ -64,29 +64,29 @@
 		
         <Bracket Start="(" End=")" Style="SGL Code" />
 		<Keywords>
-			<PatternGroup Name="Keywords" Style="SGL Keyword" CaseSensitive="true">
-                     <Patterns>
-                     at break else for if method new return while
-                     </Patterns>
-            </PatternGroup>
-			
-			<PatternGroup Name="Types" Style="SGL Types" CaseSensitive="true">
-                     <Patterns>
-                     boolean float int Object string void global
-                     </Patterns>
-            </PatternGroup>
-			
-			<PatternGroup Name="Lyterals" Style="SGL Number" CaseSensitive="true">
-                     <Patterns>
-                     true false null
-                     </Patterns>
-            </PatternGroup>
-			
-			<PatternGroup Name="Classes" Style="SGL Class" CaseSensitive="true">
-                     <Patterns>
-                     Sprite Animation
-                     </Patterns>
-            </PatternGroup>
+      <PatternGroup Name="Keywords" Style="SGL Keyword" CaseSensitive="true">
+        <Patterns>
+          at break else for while if function new return while this
+        </Patterns>
+      </PatternGroup>
+
+      <PatternGroup Name="Types" Style="SGL Types" CaseSensitive="true">
+        <Patterns>
+          var global
+        </Patterns>
+      </PatternGroup>
+
+      <PatternGroup Name="Lyterals" Style="SGL Number" CaseSensitive="true">
+        <Patterns>
+          true false null
+        </Patterns>
+      </PatternGroup>
+
+      <PatternGroup Name="Classes" Style="SGL Class" CaseSensitive="true">
+        <Patterns>
+          Sprite Animation move moveX moveY fade rotate scale scaleVec color
+        </Patterns>
+      </PatternGroup>
 		
 			<PatternGroup Name="Numbers" Style="SGL Number">
 				<Pattern Text="([0-9]+\.[0-9]*)" IsComplex="true" />

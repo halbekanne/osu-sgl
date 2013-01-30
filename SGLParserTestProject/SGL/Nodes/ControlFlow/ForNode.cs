@@ -1,50 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using SGL.Elements;
 
 namespace SGL.Nodes.ControlFlow
 {
-    class ForNode : AbstractNode
+    internal class ForNode : AbstractNode
     {
-        private List<AbstractNode> init = new List<AbstractNode>();
+        private readonly List<AbstractNode> init = new List<AbstractNode>();
+        private AbstractNode block;
         private AbstractNode condition;
         private AbstractNode iteration;
-        private AbstractNode block;
 
-        public ForNode()
+        public AbstractNode Init
         {
-
-        }
-
-        public AbstractNode Init {
-            set {
-                this.init.Add(value);
-            }
+            set { init.Add(value); }
         }
 
         public AbstractNode Condition
         {
-            set
-            {
-                this.condition = value;
-            }
+            set { condition = value; }
         }
 
         public AbstractNode Iteration
         {
-            set
-            {
-                this.iteration = value;
-            }
+            set { iteration = value; }
         }
 
         public AbstractNode Block
         {
-            set
-            {
-                this.block = value;
-            }
+            set { block = value; }
+        }
+
+        public override int Line
+        {
+            get { return condition.Line; }
         }
 
         protected override Value Invoke()
@@ -54,7 +42,7 @@ namespace SGL.Nodes.ControlFlow
             Console.WriteLine("cond: " + condition.Evaluate());
             Console.WriteLine("iteration: " + iteration.Evaluate());
             */
-              
+
             //Console.WriteLine("--------------------------------------");
             for (EvaluateInit(); condition.Evaluate().BoolValue; iteration.Evaluate())
             {
@@ -64,20 +52,12 @@ namespace SGL.Nodes.ControlFlow
             return Value.VOID;
         }
 
-        private void EvaluateInit() {
+        private void EvaluateInit()
+        {
             foreach (AbstractNode initStatement in init)
             {
                 initStatement.Evaluate();
             }
         }
-
-        public override int Line
-        {
-            get
-            {
-                return condition.Line;
-            }
-        }
-
     }
 }

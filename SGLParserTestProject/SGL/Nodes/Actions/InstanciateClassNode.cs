@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.Text;
 using SGL.Elements;
-using SGL.Library.Classes;
 
 namespace SGL.Nodes.Actions
 {
-    class InstanciateClassNode : AbstractNode
+    internal class InstanciateClassNode : AbstractNode
     {
-        private String className;
-        private List<AbstractNode> parameters;
-        private int line;
+        private readonly String className;
+        private readonly int line;
+        private readonly List<AbstractNode> parameters;
 
         public InstanciateClassNode(String className, List<AbstractNode> parameters, int line)
         {
@@ -26,9 +23,14 @@ namespace SGL.Nodes.Actions
         }
 
 
+        public override int Line
+        {
+            get { return line; }
+        }
+
         protected override Value Invoke()
         {
-            List<Value> values = new List<Value>();
+            var values = new List<Value>();
             foreach (AbstractNode node in parameters)
             {
                 values.Add(node.Evaluate());
@@ -37,18 +39,12 @@ namespace SGL.Nodes.Actions
             object classObj = LibraryManager.Instance.GetClass(className, values);
             if (classObj is Value)
             {
-                return (Value)classObj;
-            } else {
+                return (Value) classObj;
+            }
+            else
+            {
                 return new Value(classObj, ValType.Object);
             }
         }
-
-        public override int Line
-        {
-            get {
-                return line;
-            }
-        }
-
     }
 }

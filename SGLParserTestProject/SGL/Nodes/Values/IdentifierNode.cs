@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using SGL.Elements;
 
 namespace SGL.Nodes.Values
 {
-    class IdentifierNode : AbstractNode
+    internal class IdentifierNode : AbstractNode
     {
-        private String identifier;
-        private Scope scope;
-        private int line;
+        private readonly String identifier;
+        private readonly int line;
+        private readonly Scope scope;
 
         public IdentifierNode(String identifier, Scope scope, int line)
         {
@@ -18,9 +16,14 @@ namespace SGL.Nodes.Values
             this.line = line;
         }
 
+
+        public override int Line
+        {
+            get { return line; }
+        }
+
         protected override Value Invoke()
         {
-
             Value value = scope.Resolve(identifier);
             if (value == null)
             {
@@ -29,16 +32,5 @@ namespace SGL.Nodes.Values
 
             return value;
         }
-
-
-        public override int Line
-        {
-            get
-            {
-                return line;
-            }
-        }
-
-
     }
 }

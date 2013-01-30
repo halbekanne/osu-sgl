@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using SGL.Elements;
-
 
 namespace SGL.Nodes.Values
 {
-    class LookupNode : AbstractNode
+    internal class LookupNode : AbstractNode
     {
-        private AbstractNode expression;
-        private List<AbstractNode> indexes;
+        private readonly AbstractNode expression;
+        private readonly List<AbstractNode> indexes;
 
         public LookupNode(AbstractNode e, List<AbstractNode> i)
         {
@@ -17,12 +14,16 @@ namespace SGL.Nodes.Values
             indexes = i;
         }
 
+        public override int Line
+        {
+            get { return expression.Line; }
+        }
+
         protected override Value Invoke()
         {
-
             Value value = expression.Evaluate();
 
-            List<Value> indexValues = new List<Value>();
+            var indexValues = new List<Value>();
 
             foreach (AbstractNode indexNode in indexes)
             {
@@ -31,7 +32,6 @@ namespace SGL.Nodes.Values
 
             foreach (Value index in indexValues)
             {
-
                 if (!index.TypeEquals(ValType.Integer))
                 {
                     throw new CompilerException(Line, 214, index.TypeString);
@@ -47,14 +47,5 @@ namespace SGL.Nodes.Values
 
             return value;
         }
-
-        public override int Line
-        {
-            get
-            {
-                return expression.Line;
-            }
-        }
-
     }
 }

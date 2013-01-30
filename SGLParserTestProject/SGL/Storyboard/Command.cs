@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-
 using System.Text;
 
 namespace SGL.Storyboard
@@ -9,19 +7,22 @@ namespace SGL.Storyboard
     {
         public int startTime;
 
+        #region IComparable Members
+
         public int CompareTo(Object o)
         {
             if (o is Command)
             {
-                return this.startTime - ((Command)o).startTime;
+                return startTime - ((Command) o).startTime;
             }
             else
             {
                 // TODO: Exception
                 throw new Exception("Storyboard commands can't be compared");
             }
-
         }
+
+        #endregion
 
         public abstract void AddSoryboardCode(StringBuilder storyboardCode);
     }

@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using SGL.Storyboard;
 
 namespace SGL.Elements
 {
     public class Scope
     {
-        private Scope parent;
-        private Dictionary<String, Value> variables;// = new Dictionary<String, SGLValue>();
-        private int offset = 0;
+        private readonly Scope parent;
+        private int offset;
+        private Dictionary<String, Value> variables; // = new Dictionary<String, SGLValue>();
 
         public Scope()
         {
@@ -25,20 +23,20 @@ namespace SGL.Elements
             offset = p.Offset;
         }
 
-        public int Offset {
-            get
-            {
-                return offset;
-            }
-            set
-            {
-                this.offset = value;
-            }
+        public int Offset
+        {
+            get { return offset; }
+            set { offset = value; }
+        }
+
+        public Scope Parent
+        {
+            get { return parent; }
         }
 
         public void ClearOffset()
         {
-            this.offset = 0;
+            offset = 0;
         }
 
         /// <summary>
@@ -113,13 +111,6 @@ namespace SGL.Elements
             return parent != null;
         }
 
-        public Scope Parent
-        {
-            get {
-                return parent;
-            }
-        }
-
         public int CountParents()
         {
             Scope current = this;
@@ -130,13 +121,11 @@ namespace SGL.Elements
                 current = current.parent;
             }
             return parentNum;
-
         }
 
         public void Clear()
         {
             variables = new Dictionary<String, Value>();
         }
-
     }
 }
