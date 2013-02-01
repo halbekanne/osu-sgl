@@ -17,7 +17,11 @@ namespace SGL.Elements
         private readonly Dictionary<string, Function> functions = new Dictionary<string, Function>();
         private readonly Scope globalScope = new Scope();
         private readonly Random random = new Random();
+<<<<<<< HEAD
         private readonly List<Sprite> storyboardObjects = new List<Sprite>();
+=======
+        private readonly List<VisualObject> storyboardObjects = new List<VisualObject>();
+>>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58
         private String currentCall = "main";
 
         private String debug = "";
@@ -67,7 +71,11 @@ namespace SGL.Elements
                 storyboardObjects.Sort();
 
                 int layer = -1;
+<<<<<<< HEAD
                 foreach (Sprite storyboardObject in storyboardObjects)
+=======
+                foreach (VisualObject storyboardObject in storyboardObjects)
+>>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58
                 {
                     while (layer < storyboardObject.LayerToInt())
                     {

@@ -116,7 +116,11 @@ namespace SGL.Elements
             get
             {
                 // TODO: Exception
+<<<<<<< HEAD
                 if (type == ValType.Object) return (AbstractObjectFactory) value;
+=======
+                if (type == ValType.Object) return (Class) value;
+>>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58
                 else throw new InvalidOperationException();
             }
         }

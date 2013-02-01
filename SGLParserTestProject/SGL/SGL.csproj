@@ -60,6 +60,12 @@
     <Compile Include="Library\Classes\AbstractObjectFactory.cs" />
     <Compile Include="Library\Classes\AnimationFactory.cs" />
     <Compile Include="Library\Classes\SpriteFactory.cs" />
+    <Compile Include="Library\Classes\Layer.cs" />
+    <Compile Include="Library\Classes\List.cs" />
+    <Compile Include="Library\Classes\Class.cs" />
+    <Compile Include="Library\Classes\Animation.cs" />
+    <Compile Include="Library\Classes\Sprite.cs" />
+    <Compile Include="Library\Classes\Subclass.cs" />
     <Compile Include="Elements\CompilerException.cs" />
     <Compile Include="Elements\Scope.cs" />
     <Compile Include="Elements\CallItem.cs" />
@@ -121,6 +127,10 @@
     <Compile Include="Storyboard\Elements\AnimationObject.cs" />
     <Compile Include="Storyboard\Elements\Layer.cs" />
     <Compile Include="Storyboard\Elements\Sprite.cs" />
+    <Compile Include="Storyboard\AnimationObject.cs" />
+    <Compile Include="Storyboard\LayerObject.cs" />
+    <Compile Include="Storyboard\SpriteObject.cs" />
+    <Compile Include="Storyboard\VisualObject.cs" />
     <Compile Include="Tests\AbstractTest.cs" />
     <Compile Include="Tests\Tester.cs" />
     <Compile Include="Tests\Unit.cs" />

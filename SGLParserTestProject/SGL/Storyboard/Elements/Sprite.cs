@@ -18,18 +18,25 @@ namespace SGL.Storyboard
         protected int y = 240;
         protected double scaleFactor = 1;
 
+<<<<<<< HEAD:SGLParserTestProject/SGL/Storyboard/Elements/Sprite.cs
         public Sprite()
         {
 
         }
 
         public Sprite(string layer, string origin, string filepath)
+=======
+
+        public int X
+>>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58:SGLParserTestProject/SGL/Storyboard/VisualObject.cs
         {
-            this.layer = layer;
-            this.origin = origin;
-            this.filepath = filepath;
+            get
+            {
+                return x;
+            }
         }
 
+<<<<<<< HEAD:SGLParserTestProject/SGL/Storyboard/Elements/Sprite.cs
 
         public int X
         {
@@ -55,6 +62,36 @@ namespace SGL.Storyboard
             }
         }
 
+=======
+        public int Y
+        {
+            get
+            {
+                return y;
+            }
+        }
+
+        public double Scale
+        {
+            get
+            {
+                return scaleFactor;
+            }
+        }
+
+        public VisualObject()
+        {
+
+        }
+
+        public VisualObject(string layer, string origin, string filepath)
+        {
+            this.layer = layer;
+            this.origin = origin;
+            this.filepath = filepath;
+        }
+
+>>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58:SGLParserTestProject/SGL/Storyboard/VisualObject.cs
         public int Priority
         {
             get { return priority; }
@@ -67,7 +104,11 @@ namespace SGL.Storyboard
             if (obj == null) return 1;
 
             // sort order: 1. layer, 2. priority
+<<<<<<< HEAD:SGLParserTestProject/SGL/Storyboard/Elements/Sprite.cs
             var that = obj as Sprite;
+=======
+            var that = obj as VisualObject;
+>>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58:SGLParserTestProject/SGL/Storyboard/VisualObject.cs
             if (that != null)
             {
                 int layerCompare = LayerToInt().CompareTo(that.LayerToInt());
@@ -84,7 +125,11 @@ namespace SGL.Storyboard
         #endregion
 
         /// <summary>
+<<<<<<< HEAD:SGLParserTestProject/SGL/Storyboard/Elements/Sprite.cs
         /// Generates the storyboard code for one Sprite
+=======
+        /// Generates the storyboard code for one VisualObject
+>>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58:SGLParserTestProject/SGL/Storyboard/VisualObject.cs
         /// </summary>
         /// <param name="storyboardCode"></param>
         public virtual void GenerateSbCode(StringBuilder storyboardCode)
@@ -102,6 +147,7 @@ namespace SGL.Storyboard
             }
         }
 
+<<<<<<< HEAD:SGLParserTestProject/SGL/Storyboard/Elements/Sprite.cs
         protected virtual String GetStoryboardInitCode()
         {
             return "Sprite," + layer + "," + origin + ",\"" + filepath + "\",320,240";
@@ -112,6 +158,15 @@ namespace SGL.Storyboard
             storyboardCommands.Add(command);
         }
 
+=======
+        public void AddCommand(Command command)
+        {
+            storyboardCommands.Add(command);
+        }
+
+        protected abstract String GetStoryboardInitCode();
+
+>>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58:SGLParserTestProject/SGL/Storyboard/VisualObject.cs
         public int LayerToInt()
         {
             switch (layer)
@@ -339,7 +394,10 @@ namespace SGL.Storyboard
         {
             moveY(0, 0, 0, startY, startY);
         }
+<<<<<<< HEAD:SGLParserTestProject/SGL/Storyboard/Elements/Sprite.cs
 
 
+=======
+>>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58:SGLParserTestProject/SGL/Storyboard/VisualObject.cs
     }
 }
