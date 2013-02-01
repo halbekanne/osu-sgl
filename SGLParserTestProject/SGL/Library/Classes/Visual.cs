@@ -5,13 +5,8 @@ using SGL.Storyboard;
 
 namespace SGL.Library.Classes
 {
-    public abstract class Visual : AbstractObjectFactory
+    public abstract class Visual : Class
     {
-<<<<<<< HEAD
-        
-
-        
-=======
         protected VisualObject visualObject;
 
         public VisualObject Object
@@ -259,6 +254,5 @@ namespace SGL.Library.Classes
             //TODO: Exception
             throw new Exception();
         }
->>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58
     }
 }

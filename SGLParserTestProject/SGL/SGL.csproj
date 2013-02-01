@@ -55,11 +55,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Compiler.cs" />
-    <Compile Include="Library\Classes\LayerFactory.cs" />
-    <Compile Include="Library\Classes\ListFactory.cs" />
-    <Compile Include="Library\Classes\AbstractObjectFactory.cs" />
-    <Compile Include="Library\Classes\AnimationFactory.cs" />
-    <Compile Include="Library\Classes\SpriteFactory.cs" />
     <Compile Include="Library\Classes\Layer.cs" />
     <Compile Include="Library\Classes\List.cs" />
     <Compile Include="Library\Classes\Class.cs" />
@@ -124,9 +119,6 @@
     <Compile Include="Storyboard\Animation.cs" />
     <Compile Include="Storyboard\AnimationType.cs" />
     <Compile Include="Storyboard\Command.cs" />
-    <Compile Include="Storyboard\Elements\AnimationObject.cs" />
-    <Compile Include="Storyboard\Elements\Layer.cs" />
-    <Compile Include="Storyboard\Elements\Sprite.cs" />
     <Compile Include="Storyboard\AnimationObject.cs" />
     <Compile Include="Storyboard\LayerObject.cs" />
     <Compile Include="Storyboard\SpriteObject.cs" />
@@ -153,7 +145,6 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Library\Factories\" />
     <Folder Include="Library\Functions\Conversion\" />
   </ItemGroup>
   <ItemGroup>

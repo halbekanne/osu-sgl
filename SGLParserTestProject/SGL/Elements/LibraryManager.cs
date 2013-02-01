@@ -4,7 +4,6 @@ using SGL.Library.Classes;
 using SGL.Library.Functions;
 using SGL.Library.Functions.Calculation;
 using SGL.Library.Functions.IO;
-using System.Reflection;
 
 namespace SGL.Elements
 {
@@ -14,11 +13,7 @@ namespace SGL.Elements
     internal class LibraryManager
     {
         private static readonly LibraryManager instance = new LibraryManager();
-<<<<<<< HEAD
-        private readonly Dictionary<string, AbstractObjectFactory> classes = new Dictionary<string, AbstractObjectFactory>();
-=======
         private readonly Dictionary<string, Class> classes = new Dictionary<string, Class>();
->>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58
 
         // memory for methods
         private readonly Dictionary<string, Function> functions = new Dictionary<string, Function>();
@@ -36,17 +31,10 @@ namespace SGL.Elements
 
         private void RegisterClasses()
         {
-<<<<<<< HEAD
-            RegisterClass("List", new ListFactory());
-            RegisterClass("Sprite", new SpriteFactory());
-            RegisterClass("Animation", new AnimationFactory());
-            RegisterClass("Layer", new LayerFactory());
-=======
             RegisterClass("List", new List());
             RegisterClass("Sprite", new Sprite());
             RegisterClass("Animation", new Animation());
             RegisterClass("Layer", new Layer());
->>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58
         }
 
         private void RegisterFunctions()
@@ -83,7 +71,7 @@ namespace SGL.Elements
             return false;
         }
 
-        public void RegisterClass(string name, AbstractObjectFactory cls)
+        public void RegisterClass(string name, Class cls)
         {
             classes.Add(name, cls);
         }
@@ -107,7 +95,7 @@ namespace SGL.Elements
             {
                 try
                 {
-                    return classes[name].CreateNewInstance(parameters);
+                    return classes[name].CreateObject(parameters);
                 }
                 catch (CompilerException ce)
                 {
@@ -148,33 +136,5 @@ namespace SGL.Elements
                 throw new CompilerException(-1, 311, name, Value.PrintTypeList(parameters));
             }
         }
-<<<<<<< HEAD
-
-        public Value InvokeMethod(object instance, String methodName, List<Value> parameters)
-        {
-            List<Type> parameterTypes = new List<Type>();
-            foreach (Value parameter in parameters) {
-                parameterTypes.Add(parameter.GetType());
-            }
-
-            // Get the desired method by name
-            MethodInfo methodInfo = instance.GetType().GetMethod(methodName, parameterTypes.ToArray());
-
-            // Use the instance to call the method
-            if (methodInfo != null)
-            {
-                return (Value)methodInfo.Invoke(instance, parameters.ToArray());
-            }
-            else
-            {
-                return null;
-            }
-
-        }
-
-
-
-=======
->>>>>>> acd057c2e1cb7c9ab7790ac768f8e71ba04f5e58
     }
 }
