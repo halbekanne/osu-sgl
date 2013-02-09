@@ -2,13 +2,13 @@
 
 namespace SGL.Storyboard.Generators.Visual
 {
-    public class AnimationObject : AbstractVisualGenerator
+    public class AnimationGenerator : AbstractVisualGenerator
     {
         private readonly int frameCount;
         private readonly int frameDelay;
         private readonly string loopType;
 
-        public AnimationObject(string layer, string origin, string filepath, int frameCount, int frameDelay,
+        public AnimationGenerator(string layer, string origin, string filepath, int frameCount, int frameDelay,
                                string loopType)
             : base(layer, origin, filepath)
         {

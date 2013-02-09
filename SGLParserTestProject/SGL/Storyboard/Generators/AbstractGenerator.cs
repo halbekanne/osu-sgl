@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SGL.Storyboard.Generators
 {
-    class AbstractGenerator
+    public class AbstractGenerator
     {
         public virtual void GenerateBackgroundVideoEvents(StringBuilder storyboardCode)
         {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SGL.Elements;
-using SGL.Storyboard;
+using SGL.Storyboard.Generators.Visual;
 
 namespace SGL.Library.Classes
 {
@@ -11,7 +11,7 @@ namespace SGL.Library.Classes
         private readonly String origin;
         private readonly String path;
 
-        //private SpriteObject sprite;
+        //private SpriteGenerator sprite;
 
         // used for class registration
         public SpriteClass()
@@ -33,7 +33,7 @@ namespace SGL.Library.Classes
             this.path = path;
             this.layer = layer;
             this.origin = origin;
-            InitializiseSpriteObject();
+            InitializiseSpriteGenerator();
         }
 
         public override string Name
@@ -41,11 +41,11 @@ namespace SGL.Library.Classes
             get { return "Sprite"; }
         }
 
-        private void InitializiseSpriteObject()
+        private void InitializiseSpriteGenerator()
         {
-            visualObject = new SpriteObject(layer, origin, path);
+            visualObject = new SpriteGenerator(layer, origin, path);
             // we need to save this object in order to generate the storyboard when all parsing processes finished
-            GlobalMemory.Instance.RegisterVisualObject(visualObject);
+            GlobalMemory.Instance.RegisterStoryboardGenerator(visualObject);
         }
 
 

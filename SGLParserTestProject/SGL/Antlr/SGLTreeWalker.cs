@@ -497,13 +497,13 @@ namespace SGL.Antlr
 
         	
             // sort the sprites and animations, lowest priority first
-            spriteObjects.Sort();
+            SpriteGenerators.Sort();
 
     			//storyboardCode.AppendLine("[Events]");
                 //storyboardCode.AppendLine("//Background and Video events");
                 //storyboardCode.AppendLine("//Storyboard Layer 0 (Background)");
                 int currentLayer = 0;
-                foreach (SpriteObject currentObject in spriteObjects) {
+                foreach (SpriteGenerator currentObject in SpriteGenerators) {
                     while (currentObject.GetLayerNumber() > currentLayer)
                     {
                         currentLayer++;

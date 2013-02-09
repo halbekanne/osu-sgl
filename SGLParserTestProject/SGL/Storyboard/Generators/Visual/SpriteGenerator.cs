@@ -2,13 +2,12 @@
 
 namespace SGL.Storyboard.Generators.Visual
 {
-    public class SpriteObject : AbstractVisualGenerator
+    public class SpriteGenerator : AbstractVisualGenerator
     {
-        public SpriteObject(string layer, string origin, string filepath)
+        public SpriteGenerator(string layer, string origin, string filepath)
             : base(layer, origin, filepath)
         {
         }
-
 
         protected override String GetStoryboardInitCode()
         {

@@ -14,6 +14,11 @@ namespace SGL.Storyboard.Generators.Visual
         protected int x = 320;
         protected int y = 240;
         protected double scaleFactor = 1;
+        protected double opacity = 1;
+        protected double rotation = 0;
+        protected int red = 255;
+        protected int green = 255;
+        protected int blue = 255;
 
         private readonly List<Command> storyboardCommands = new List<Command>();
 
@@ -54,6 +59,45 @@ namespace SGL.Storyboard.Generators.Visual
             }
         }
 
+        public double Opacity
+        {
+            get
+            {
+                return opacity;
+            }
+        }
+
+        public double Rotation
+        {
+            get
+            {
+                return rotation;
+            }
+        }
+
+        public double Red
+        {
+            get
+            {
+                return red;
+            }
+        }
+
+        public double Green
+        {
+            get
+            {
+                return green;
+            }
+        }
+
+        public double Blue
+        {
+            get
+            {
+                return blue;
+            }
+        }
 
         public int Priority
         {
@@ -64,28 +108,28 @@ namespace SGL.Storyboard.Generators.Visual
 
         #region Mehtods for general storyboard generation
 
-        public virtual void GenerateBackgroundSection(StringBuilder storyboardCode)
+        public override void GenerateBackgroundSection(StringBuilder storyboardCode)
         {
             if (layer.Equals("Background")) {
                 GenerateStoryboardCode(storyboardCode);
             }
         }
 
-        public virtual void GenerateFailSection(StringBuilder storyboardCode)
+        public override void GenerateFailSection(StringBuilder storyboardCode)
         {
             if (layer.Equals("Fail")) {
                 GenerateStoryboardCode(storyboardCode);
             }
         }
 
-        public virtual void GeneratePassSection(StringBuilder storyboardCode)
+        public override void GeneratePassSection(StringBuilder storyboardCode)
         {
             if (layer.Equals("Pass")) {
                 GenerateStoryboardCode(storyboardCode);
             }
         }
 
-        public virtual void GenerateForegroundSection(StringBuilder storyboardCode)
+        public override void GenerateForegroundSection(StringBuilder storyboardCode)
         {
             if (layer.Equals("Foreground")) {
                 GenerateStoryboardCode(storyboardCode);
@@ -162,35 +206,6 @@ namespace SGL.Storyboard.Generators.Visual
 
         #region Methods for generating code for storyboard commands
 
-        #region color
-
-        public virtual void color(int easing, int startTime, int endTime, int startRed, int startGreen, int startBlue,
-                          int endRed, int endGreen, int endBlue)
-        {
-            if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
-            var startParams = new double[] {startRed, startGreen, startBlue};
-            var endParams = new double[] {endRed, endGreen, endBlue};
-            AddCommand(new Animation(AnimationType.Color, easing, startTime, endTime, startParams, endParams));
-        }
-
-        public void color(int startTime, int endTime, int startRed, int startGreen, int startBlue, int endRed,
-                          int endGreen, int endBlue)
-        {
-            color(0, startTime, endTime, startRed, startGreen, startBlue, endRed, endGreen, endBlue);
-        }
-
-        public void color(int startTime, int startRed, int startGreen, int startBlue)
-        {
-            color(0, startTime, startTime, startRed, startGreen, startBlue, startRed, startGreen, startBlue);
-        }
-
-        public void color(int startRed, int startGreen, int startBlue)
-        {
-            color(0, 0, 0, startRed, startGreen, startBlue, startRed, startGreen, startBlue);
-        }
-
-        #endregion
-
         #region move
 
         public virtual void move(int easing, int startTime, int endTime, int startX, int startY, int endX, int endY)
@@ -216,6 +231,61 @@ namespace SGL.Storyboard.Generators.Visual
         public void move(int startX, int startY)
         {
             move(0, 0, 0, startX, startY, startX, startY);
+        }
+
+        #endregion
+
+        #region fade
+
+        public virtual void fade(int easing, int startTime, int endTime, double startOpacity, double endOpacity)
+        {
+            if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
+            var startParams = new[] { startOpacity };
+            var endParams = new[] { endOpacity };
+            AddCommand(new Animation(AnimationType.Fade, easing, startTime, endTime, startParams, endParams));
+        }
+
+        public void fade(int startTime, int endTime, double startOpacity, double endOpacity)
+        {
+            fade(0, startTime, endTime, startOpacity, endOpacity);
+        }
+
+        public void fade(int startTime, double startOpacity)
+        {
+            fade(0, startTime, startTime, startOpacity, startOpacity);
+        }
+
+        public void fade(double startOpacity)
+        {
+            fade(0, 0, 0, startOpacity, startOpacity);
+        }
+
+        #endregion
+
+        #region scale
+
+        public virtual void scale(int easing, int startTime, int endTime, double startScale, double endScale)
+        {
+            if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
+            var startParams = new[] { startScale };
+            var endParams = new[] { endScale };
+            AddCommand(new Animation(AnimationType.Scale, easing, startTime, endTime, startParams, endParams));
+            this.scaleFactor = endScale;
+        }
+
+        public void scale(int startTime, int endTime, double startScale, double endScale)
+        {
+            scale(0, startTime, endTime, startScale, endScale);
+        }
+
+        public void scale(int startTime, double startScale)
+        {
+            scale(0, startTime, startTime, startScale, startScale);
+        }
+
+        public void scale(double startScale)
+        {
+            scale(0, 0, 0, startScale, startScale);
         }
 
         #endregion
@@ -249,61 +319,6 @@ namespace SGL.Storyboard.Generators.Visual
 
         #endregion
 
-        #region fade
-
-        public virtual void fade(int easing, int startTime, int endTime, double startOpacity, double endOpacity)
-        {
-            if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
-            var startParams = new[] {startOpacity};
-            var endParams = new[] {endOpacity};
-            AddCommand(new Animation(AnimationType.Fade, easing, startTime, endTime, startParams, endParams));
-        }
-
-        public void fade(int startTime, int endTime, double startOpacity, double endOpacity)
-        {
-            fade(0, startTime, endTime, startOpacity, endOpacity);
-        }
-
-        public void fade(int startTime, double startOpacity)
-        {
-            fade(0, startTime, startTime, startOpacity, startOpacity);
-        }
-
-        public void fade(double startOpacity)
-        {
-            fade(0, 0, 0, startOpacity, startOpacity);
-        }
-
-        #endregion
-
-        #region scale
-
-        public virtual void scale(int easing, int startTime, int endTime, double startScale, double endScale)
-        {
-            if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
-            var startParams = new[] {startScale};
-            var endParams = new[] {endScale};
-            AddCommand(new Animation(AnimationType.Scale, easing, startTime, endTime, startParams, endParams));
-            this.scaleFactor = endScale;
-        }
-
-        public void scale(int startTime, int endTime, double startScale, double endScale)
-        {
-            scale(0, startTime, endTime, startScale, endScale);
-        }
-
-        public void scale(int startTime, double startScale)
-        {
-            scale(0, startTime, startTime, startScale, startScale);
-        }
-
-        public void scale(double startScale)
-        {
-            scale(0, 0, 0, startScale, startScale);
-        }
-
-        #endregion
-
         #region rotate
 
         public virtual void rotate(int easing, int startTime, int endTime, double startAngle, double endAngle)
@@ -327,6 +342,35 @@ namespace SGL.Storyboard.Generators.Visual
         public void rotate(double startAngle)
         {
             rotate(0, 0, 0, startAngle, startAngle);
+        }
+
+        #endregion
+
+        #region color
+
+        public virtual void color(int easing, int startTime, int endTime, int startRed, int startGreen, int startBlue,
+                          int endRed, int endGreen, int endBlue)
+        {
+            if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
+            var startParams = new double[] { startRed, startGreen, startBlue };
+            var endParams = new double[] { endRed, endGreen, endBlue };
+            AddCommand(new Animation(AnimationType.Color, easing, startTime, endTime, startParams, endParams));
+        }
+
+        public void color(int startTime, int endTime, int startRed, int startGreen, int startBlue, int endRed,
+                          int endGreen, int endBlue)
+        {
+            color(0, startTime, endTime, startRed, startGreen, startBlue, endRed, endGreen, endBlue);
+        }
+
+        public void color(int startTime, int startRed, int startGreen, int startBlue)
+        {
+            color(0, startTime, startTime, startRed, startGreen, startBlue, startRed, startGreen, startBlue);
+        }
+
+        public void color(int startRed, int startGreen, int startBlue)
+        {
+            color(0, 0, 0, startRed, startGreen, startBlue, startRed, startGreen, startBlue);
         }
 
         #endregion

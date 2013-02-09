@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using SGL.Elements;
-using SGL.Storyboard;
+using SGL.Storyboard.Generators.Visual;
 
 namespace SGL.Library.Classes
 {
     public abstract class AbstractVisualClass : AbstractClass
     {
-        protected VisualGenerator visualObject;
+        protected AbstractVisualGenerator visualObject;
 
-        public VisualGenerator Object
+        public AbstractVisualGenerator Object
         {
             get
             {

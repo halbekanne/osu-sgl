@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SGL.Elements;
-using SGL.Storyboard;
+using SGL.Storyboard.Generators.Visual;
 
 namespace SGL.Library.Classes
 {
@@ -14,7 +14,7 @@ namespace SGL.Library.Classes
         private readonly String origin;
         private readonly String path;
 
-        //private AnimationObject sprite;
+        //private AnimationGenerator sprite;
 
         // used for class registration
         public AnimationClass()
@@ -44,7 +44,7 @@ namespace SGL.Library.Classes
             this.frameCount = frameCount;
             this.frameDelay = frameDelay;
             this.loopType = loopType;
-            InitializiseAnimationObject();
+            InitializiseAnimationGenerator();
         }
 
         public override string Name
@@ -52,11 +52,11 @@ namespace SGL.Library.Classes
             get { return "Animation"; }
         }
 
-        private void InitializiseAnimationObject()
+        private void InitializiseAnimationGenerator()
         {
-            visualObject = new AnimationObject(layer, origin, path, frameCount, frameDelay, loopType);
+            visualObject = new AnimationGenerator(layer, origin, path, frameCount, frameDelay, loopType);
             // we need to save this object in order to generate the storyboard when all parsing processes finished
-            GlobalMemory.Instance.RegisterVisualObject(visualObject);
+            GlobalMemory.Instance.RegisterStoryboardGenerator(visualObject);
         }
 
 

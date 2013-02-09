@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using SGL.Library.Functions;
-using SGL.Storyboard;
+using SGL.Storyboard.Generators;
 
 namespace SGL.Elements
 {
@@ -17,7 +17,7 @@ namespace SGL.Elements
         private readonly Dictionary<string, Function> functions = new Dictionary<string, Function>();
         private readonly Scope globalScope = new Scope();
         private readonly Random random = new Random();
-        private readonly List<VisualGenerator> storyboardObjects = new List<VisualGenerator>();
+        private readonly List<AbstractGenerator> storyboardGenerators = new List<AbstractGenerator>();
         private String currentCall = "main";
 
         private String debug = "";
@@ -60,61 +60,47 @@ namespace SGL.Elements
         {
             get
             {
-                var sb = new StringBuilder();
-                sb.Append("//Background and Video events\r\n");
+                var storyboardCode = new StringBuilder();
 
-                // sort all sbObjects: 1. layer, 2. priority
-                storyboardObjects.Sort();
-
-                int layer = -1;
-                foreach (VisualGenerator storyboardObject in storyboardObjects)
+                storyboardCode.Append("[Events]\r\n");
+                storyboardCode.Append("//Background and Video events\r\n");
+                foreach (AbstractGenerator storyboardGenerator in storyboardGenerators)
                 {
-                    while (layer < storyboardObject.LayerToInt())
-                    {
-                        layer++;
-                        switch (layer)
-                        {
-                            case 0:
-                                sb.Append("//Storyboard Layer 0 (Background)\r\n");
-                                break;
-                            case 1:
-                                sb.Append("//Storyboard Layer 1 (Fail)\r\n");
-                                break;
-                            case 2:
-                                sb.Append("//Storyboard Layer 2 (Pass)\r\n");
-                                break;
-                            case 3:
-                                sb.Append("//Storyboard Layer 3 (Foreground)\r\n");
-                                break;
-                        }
-                    }
-                    storyboardObject.GenerateSbCode(sb);
+                    storyboardGenerator.GenerateBackgroundVideoEvents(storyboardCode);
                 }
 
-                while (layer < 3)
+                storyboardCode.Append("//Storyboard Layer 0 (Background)\r\n");
+                foreach (AbstractGenerator storyboardGenerator in storyboardGenerators)
                 {
-                    layer++;
-                    switch (layer)
-                    {
-                        case 0:
-                            sb.Append("//Storyboard Layer 0 (Background)\r\n");
-                            break;
-                        case 1:
-                            sb.Append("//Storyboard Layer 1 (Fail)\r\n");
-                            break;
-                        case 2:
-                            sb.Append("//Storyboard Layer 2 (Pass)\r\n");
-                            break;
-                        case 3:
-                            sb.Append("//Storyboard Layer 3 (Foreground)\r\n");
-                            break;
-                    }
+                    storyboardGenerator.GenerateBackgroundSection(storyboardCode);
                 }
 
-                sb.Append("//Storyboard Sound Samples");
+                storyboardCode.Append("//Storyboard Layer 1 (Fail)\r\n");
+                foreach (AbstractGenerator storyboardGenerator in storyboardGenerators)
+                {
+                    storyboardGenerator.GenerateFailSection(storyboardCode);
+                }
+
+                storyboardCode.Append("//Storyboard Layer 2 (Pass)\r\n");
+                foreach (AbstractGenerator storyboardGenerator in storyboardGenerators)
+                {
+                    storyboardGenerator.GeneratePassSection(storyboardCode);
+                }
+
+                storyboardCode.Append("//Storyboard Layer 3 (Foreground)\r\n");
+                foreach (AbstractGenerator storyboardGenerator in storyboardGenerators)
+                {
+                    storyboardGenerator.GenerateForegroundSection(storyboardCode);
+                }
+
+                storyboardCode.Append("//Storyboard Sound Samples\r\n");
+                foreach (AbstractGenerator storyboardGenerator in storyboardGenerators)
+                {
+                    storyboardGenerator.GenerateSoundSamples(storyboardCode);
+                }
 
                 // TODO: make the storyboard code actually working
-                return sb;
+                return storyboardCode;
             }
         }
 
@@ -179,9 +165,9 @@ namespace SGL.Elements
         }
 
 
-        public void RegisterVisualObject(VisualGenerator vo)
+        public void RegisterStoryboardGenerator(AbstractGenerator generator)
         {
-            storyboardObjects.Add(vo);
+            storyboardGenerators.Add(generator);
         }
     }
 }

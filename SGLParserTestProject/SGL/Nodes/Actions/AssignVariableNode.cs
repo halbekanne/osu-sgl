@@ -44,7 +44,7 @@ namespace SGL.Nodes.Actions
             if (indexes.Count < 1)
             {
                 // a simple assignment
-                //scope.SetSpriteObjects(spriteObjects);
+                //scope.SetSpriteGenerators(SpriteGenerators);
                 scope.Assign(name, exprV);
             }
             else

@@ -1,4 +1,4 @@
-﻿using SGL.Storyboard;
+﻿using SGL.Storyboard.Generators.Visual;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,12 +7,12 @@ namespace SGL.Library.Classes
 {
     class LayerClass : AbstractVisualClass
     {
-        List<AbstractVisualClass> layerObjects;
+        List<AbstractVisualClass> LayerGenerators;
 
-        public LayerClass(List<AbstractVisualClass> layerObjects)
+        public LayerClass(List<AbstractVisualClass> LayerGenerators)
         {
-            this.layerObjects = layerObjects;
-            visualObject = new LayerObject(layerObjects);
+            this.LayerGenerators = LayerGenerators;
+            visualObject = new LayerGenerator(LayerGenerators);
         }
 
         public LayerClass()
@@ -27,11 +27,11 @@ namespace SGL.Library.Classes
 
         public override object CreateInstance(List<Elements.Value> parameters)
         {
-            ListClass<AbstractVisualClass> layerObjects = new List<AbstractVisualClass>();
+            List<AbstractVisualClass> LayerGenerators = new List<AbstractVisualClass>();
             foreach (Elements.Value parameter in parameters) {
-                layerObjects.Add((AbstractVisualClass)parameter.ObjectValue);
+                LayerGenerators.Add((AbstractVisualClass)parameter.ObjectValue);
             }
-            return new LayerClass(layerObjects);
+            return new LayerClass(LayerGenerators);
         }
     }
 }

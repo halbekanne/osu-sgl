@@ -32,7 +32,7 @@ namespace SGL.Nodes.Actions
         protected override Value Invoke()
         {
             // a simple assignment
-            //scope.SetSpriteObjects(spriteObjects);
+            //scope.SetSpriteGenerators(SpriteGenerators);
             scope.Define(name);
 
 
