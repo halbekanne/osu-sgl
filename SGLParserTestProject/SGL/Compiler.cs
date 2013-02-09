@@ -1,4 +1,19 @@
-﻿using System;
+﻿//  Storyboard Generation Language
+//  Copyright (C) 2013 Dominik Halfkann
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+using System;
 using System.Diagnostics;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
@@ -50,14 +65,6 @@ namespace SGL
                 // Step 3: Compiling the tree into storyboard code
                 String output = GenerateStoryboardCode(tree);
                 String debug = GlobalMemory.Instance.DebugString;
-
-                /*output = "[Events]\r\n" +
-                    "//Background and Video events\r\n" +
-                    "//Storyboard Layer 0 (Background)\r\n" +
-                    "//Storyboard Layer 1 (Fail)\r\n" +
-                    "//Storyboard Layer 2 (Pass)\r\n" +
-                    "//Storyboard Layer 3 (Foreground)\r\n" + output + "\r\n" +
-                    "//Storyboard Sound Samples";*/
 
                 if (!debug.Equals(""))
                 {
