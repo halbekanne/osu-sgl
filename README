@@ -5,7 +5,4 @@ A storyboard editor, along with a compiler for the Storyboard Generation Languag
 
 The SGL compiler uses Antlr for parsing and treewalking actions.
 
-SGLParserTestProject - A very simple GUI for the SGL Compiler (also included)
-
-sbEditor - The storyboard editor with syntax highlighting and such
-
+Everything I did is licensed under GNU GPL 3, Antlr is licensed under BSD.
