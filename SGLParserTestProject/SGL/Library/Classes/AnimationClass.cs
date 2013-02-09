@@ -60,7 +60,7 @@ namespace SGL.Library.Classes
         }
 
 
-        public override object CreateObject(List<Value> param)
+        public override object CreateInstance(List<Value> param)
         {
             if (Value.TypeCompare(param, ValType.String, ValType.Integer, ValType.Integer))
                 return new AnimationClass(param[0].StringValue, param[1].IntValue, param[2].IntValue);

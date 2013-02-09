@@ -95,7 +95,7 @@ namespace SGL.Elements
             {
                 try
                 {
-                    return classes[name].CreateObject(parameters);
+                    return classes[name].CreateInstance(parameters);
                 }
                 catch (CompilerException ce)
                 {

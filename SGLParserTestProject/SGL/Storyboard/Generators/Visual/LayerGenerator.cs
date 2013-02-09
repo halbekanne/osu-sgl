@@ -8,10 +8,10 @@ namespace SGL.Storyboard.Generators.Visual
     {
         private List<AbstractVisualGenerator> layerObjects;
 
-        public LayerObject(List<Visual> layerClasses)
+        public LayerObject(List<AbstractVisualClass> layerClasses)
         {
             ListClass<AbstractVisualGenerator> layerObjectsTemp = new List<AbstractVisualGenerator>();
-            foreach (Visual obj in layerClasses)
+            foreach (AbstractVisualClass obj in layerClasses)
             {
                 layerObjectsTemp.Add(obj.Object);
             }

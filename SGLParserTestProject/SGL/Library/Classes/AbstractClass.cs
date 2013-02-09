@@ -10,7 +10,7 @@ namespace SGL.Library.Classes
         public abstract String Name { get; }
 
         public abstract Value InvokeMethod(String name, List<Value> parameters);
-        public abstract object CreateObject(List<Value> parameters);
+        public abstract object CreateInstance(List<Value> parameters);
 
         /*
         public abstract List<...> GetConstructors();

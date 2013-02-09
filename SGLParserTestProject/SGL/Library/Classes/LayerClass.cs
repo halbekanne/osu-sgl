@@ -25,7 +25,7 @@ namespace SGL.Library.Classes
             get { return "Visual"; }
         }
 
-        public override object CreateObject(List<Elements.Value> parameters)
+        public override object CreateInstance(List<Elements.Value> parameters)
         {
             ListClass<AbstractVisualClass> layerObjects = new List<AbstractVisualClass>();
             foreach (Elements.Value parameter in parameters) {

@@ -11,7 +11,7 @@ namespace SGL.Library.Classes
             get { return "List"; }
         }
 
-        public override object CreateObject(List<Value> param)
+        public override object CreateInstance(List<Value> param)
         {
             return new Value(param, ValType.List);
             //else throw new CompilerException(-1, 312);

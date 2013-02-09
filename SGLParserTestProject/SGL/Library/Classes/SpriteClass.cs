@@ -49,7 +49,7 @@ namespace SGL.Library.Classes
         }
 
 
-        public override object CreateObject(List<Value> param)
+        public override object CreateInstance(List<Value> param)
         {
             if (Value.TypeCompare(param, ValType.String)) return new SpriteClass(param[0].StringValue);
             else if (Value.TypeCompare(param, ValType.String, ValType.Layer))

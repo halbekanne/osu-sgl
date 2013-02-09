@@ -55,16 +55,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Compiler.cs" />
-    <Compile Include="Library\Classes\Layer.cs" />
-    <Compile Include="Library\Classes\List.cs" />
-    <Compile Include="Library\Classes\Class.cs" />
-    <Compile Include="Library\Classes\Animation.cs" />
-    <Compile Include="Library\Classes\Sprite.cs" />
-    <Compile Include="Library\Classes\Subclass.cs" />
+    <Compile Include="Library\Classes\LayerClass.cs" />
+    <Compile Include="Library\Classes\ListClass.cs" />
+    <Compile Include="Library\Classes\AbstractClass.cs" />
+    <Compile Include="Library\Classes\AnimationClass.cs" />
+    <Compile Include="Library\Classes\SpriteClass.cs" />
     <Compile Include="Elements\CompilerException.cs" />
     <Compile Include="Elements\Scope.cs" />
     <Compile Include="Elements\CallItem.cs" />
-    <Compile Include="Library\Classes\Visual.cs" />
+    <Compile Include="Library\Classes\AbstractVisualClass.cs" />
     <Compile Include="Library\Functions\Calculation\RandFunction.cs" />
     <Compile Include="Library\Functions\Calculation\SinFunction.cs" />
     <Compile Include="Library\Functions\IO\PrintFunction.cs" />
@@ -119,10 +118,10 @@
     <Compile Include="Storyboard\Animation.cs" />
     <Compile Include="Storyboard\AnimationType.cs" />
     <Compile Include="Storyboard\Command.cs" />
-    <Compile Include="Storyboard\AnimationObject.cs" />
+    <Compile Include="Storyboard\Generators\Visual\AnimationGenerator.cs" />
     <Compile Include="Storyboard\Generators\AbstractGenerator.cs" />
-    <Compile Include="Storyboard\LayerObject.cs" />
-    <Compile Include="Storyboard\SpriteObject.cs" />
+    <Compile Include="Storyboard\Generators\Visual\LayerGenerator.cs" />
+    <Compile Include="Storyboard\Generators\Visual\SpriteGenerator.cs" />
     <Compile Include="Storyboard\Generators\Visual\AbstractVisualGenerator.cs" />
     <Compile Include="Tests\AbstractTest.cs" />
     <Compile Include="Tests\Tester.cs" />
