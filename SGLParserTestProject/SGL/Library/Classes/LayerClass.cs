@@ -5,17 +5,17 @@ using System.Text;
 
 namespace SGL.Library.Classes
 {
-    class Layer : Visual
+    class LayerClass : AbstractVisualClass
     {
-        List<Visual> layerObjects;
+        List<AbstractVisualClass> layerObjects;
 
-        public Layer(List<Visual> layerObjects)
+        public LayerClass(List<AbstractVisualClass> layerObjects)
         {
             this.layerObjects = layerObjects;
             visualObject = new LayerObject(layerObjects);
         }
 
-        public Layer()
+        public LayerClass()
         {
             // TODO: Complete member initialization
         }
@@ -27,11 +27,11 @@ namespace SGL.Library.Classes
 
         public override object CreateObject(List<Elements.Value> parameters)
         {
-            List<Visual> layerObjects = new List<Visual>();
+            ListClass<AbstractVisualClass> layerObjects = new List<AbstractVisualClass>();
             foreach (Elements.Value parameter in parameters) {
-                layerObjects.Add((Visual)parameter.ObjectValue);
+                layerObjects.Add((AbstractVisualClass)parameter.ObjectValue);
             }
-            return new Layer(layerObjects);
+            return new LayerClass(layerObjects);
         }
     }
 }

@@ -111,12 +111,12 @@ namespace SGL.Elements
             }
         }
 
-        public Class ObjectValue
+        public AbstractClass ObjectValue
         {
             get
             {
                 // TODO: Exception
-                if (type == ValType.Object) return (Class) value;
+                if (type == ValType.Object) return (AbstractClass) value;
                 else throw new InvalidOperationException();
             }
         }

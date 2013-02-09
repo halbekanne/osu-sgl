@@ -60,7 +60,7 @@ namespace SGL.Nodes.Actions
                 {
                     try
                     {
-                        Class objectInstance = resolvedValue.ObjectValue;
+                        AbstractClass objectInstance = resolvedValue.ObjectValue;
                         return objectInstance.InvokeMethod(funcName, values);
                     }
                     catch (CompilerException ce)

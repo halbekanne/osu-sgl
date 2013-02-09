@@ -13,7 +13,7 @@ namespace SGL.Elements
     internal class LibraryManager
     {
         private static readonly LibraryManager instance = new LibraryManager();
-        private readonly Dictionary<string, Class> classes = new Dictionary<string, Class>();
+        private readonly Dictionary<string, AbstractClass> classes = new Dictionary<string, AbstractClass>();
 
         // memory for methods
         private readonly Dictionary<string, Function> functions = new Dictionary<string, Function>();
@@ -31,10 +31,10 @@ namespace SGL.Elements
 
         private void RegisterClasses()
         {
-            RegisterClass("List", new List());
-            RegisterClass("Sprite", new Sprite());
-            RegisterClass("Animation", new Animation());
-            RegisterClass("Layer", new Layer());
+            RegisterClass("List", new ListClass());
+            RegisterClass("Sprite", new SpriteClass());
+            RegisterClass("Animation", new AnimationClass());
+            RegisterClass("Layer", new LayerClass());
         }
 
         private void RegisterFunctions()
@@ -71,7 +71,7 @@ namespace SGL.Elements
             return false;
         }
 
-        public void RegisterClass(string name, Class cls)
+        public void RegisterClass(string name, AbstractClass cls)
         {
             classes.Add(name, cls);
         }

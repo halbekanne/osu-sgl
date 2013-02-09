@@ -4,7 +4,7 @@ using SGL.Elements;
 
 namespace SGL.Library.Classes
 {
-    public abstract class Class
+    public abstract class AbstractClass
     {
         //public abstract void Test();
         public abstract String Name { get; }

@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 
-namespace SGL.Storyboard
+namespace SGL.Storyboard.Generators.Visual
 {
-    public class LayerObject : VisualObject
+    public class LayerObject : AbstractVisualGenerator
     {
-        private List<VisualObject> layerObjects;
+        private List<AbstractVisualGenerator> layerObjects;
 
         public LayerObject(List<Visual> layerClasses)
         {
-            List<VisualObject> layerObjectsTemp = new List<VisualObject>();
+            ListClass<AbstractVisualGenerator> layerObjectsTemp = new List<AbstractVisualGenerator>();
             foreach (Visual obj in layerClasses)
             {
                 layerObjectsTemp.Add(obj.Object);
@@ -29,7 +29,7 @@ namespace SGL.Storyboard
 
         public override void move(int easing, int startTime, int endTime, int startX, int startY, int endX, int endY)
         {
-            foreach (VisualObject obj in layerObjects)
+            foreach (AbstractVisualGenerator obj in layerObjects)
             {
                 obj.move(easing, startTime, endTime, obj.X + startX, obj.Y + startY, obj.X + endX, obj.Y + endY);
             }
@@ -38,7 +38,7 @@ namespace SGL.Storyboard
 
         public override void scale(int easing, int startTime, int endTime, double startScale, double endScale)
         {
-            foreach (VisualObject obj in layerObjects)
+            foreach (AbstractVisualGenerator obj in layerObjects)
             {
                 obj.scale(easing, startTime, endTime, obj.Scale * startScale, obj.Scale * endScale);
             }

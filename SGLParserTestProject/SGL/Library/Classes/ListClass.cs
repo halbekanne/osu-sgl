@@ -4,7 +4,7 @@ using SGL.Elements;
 
 namespace SGL.Library.Classes
 {
-    internal class List : Class
+    internal class ListClass : AbstractClass
     {
         public override string Name
         {

@@ -5,7 +5,7 @@ using SGL.Storyboard;
 
 namespace SGL.Library.Classes
 {
-    internal class Animation : Visual
+    internal class AnimationClass : AbstractVisualClass
     {
         private readonly int frameCount;
         private readonly int frameDelay;
@@ -17,26 +17,26 @@ namespace SGL.Library.Classes
         //private AnimationObject sprite;
 
         // used for class registration
-        public Animation()
+        public AnimationClass()
         {
         }
 
-        private Animation(String path, int frameCount, int frameDelay)
+        private AnimationClass(String path, int frameCount, int frameDelay)
             : this(path, "Foreground", "Centre", frameCount, frameDelay, "LoopForever")
         {
         }
 
-        private Animation(String path, String layer, int frameCount, int frameDelay)
+        private AnimationClass(String path, String layer, int frameCount, int frameDelay)
             : this(path, layer, "Centre", frameCount, frameDelay, "LoopForever")
         {
         }
 
-        private Animation(String path, String layer, String origin, int frameCount, int frameDelay)
+        private AnimationClass(String path, String layer, String origin, int frameCount, int frameDelay)
             : this(path, layer, origin, frameCount, frameDelay, "LoopForever")
         {
         }
 
-        private Animation(String path, String layer, String origin, int frameCount, int frameDelay, string loopType)
+        private AnimationClass(String path, String layer, String origin, int frameCount, int frameDelay, string loopType)
         {
             this.path = path;
             this.layer = layer;
@@ -63,17 +63,17 @@ namespace SGL.Library.Classes
         public override object CreateObject(List<Value> param)
         {
             if (Value.TypeCompare(param, ValType.String, ValType.Integer, ValType.Integer))
-                return new Animation(param[0].StringValue, param[1].IntValue, param[2].IntValue);
+                return new AnimationClass(param[0].StringValue, param[1].IntValue, param[2].IntValue);
             else if (Value.TypeCompare(param, ValType.String, ValType.Layer, ValType.Integer, ValType.Integer))
-                return new Animation(param[0].StringValue, param[1].StringValue, param[2].IntValue,
+                return new AnimationClass(param[0].StringValue, param[1].StringValue, param[2].IntValue,
                                      param[3].IntValue);
             else if (Value.TypeCompare(param, ValType.String, ValType.Layer, ValType.Origin, ValType.Integer,
                                        ValType.Integer))
-                return new Animation(param[0].StringValue, param[1].StringValue, param[2].StringValue,
+                return new AnimationClass(param[0].StringValue, param[1].StringValue, param[2].StringValue,
                                      param[3].IntValue, param[4].IntValue);
             else if (Value.TypeCompare(param, ValType.String, ValType.Layer, ValType.Origin, ValType.Integer,
                                        ValType.Integer, ValType.LoopType))
-                return new Animation(param[0].StringValue, param[1].StringValue, param[2].StringValue,
+                return new AnimationClass(param[0].StringValue, param[1].StringValue, param[2].StringValue,
                                      param[3].IntValue, param[4].IntValue, param[5].StringValue);
             else throw new CompilerException(-1, 312);
         }

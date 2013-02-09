@@ -5,7 +5,7 @@ using SGL.Storyboard;
 
 namespace SGL.Library.Classes
 {
-    internal class Sprite : Visual
+    internal class SpriteClass : AbstractVisualClass
     {
         private readonly String layer;
         private readonly String origin;
@@ -14,21 +14,21 @@ namespace SGL.Library.Classes
         //private SpriteObject sprite;
 
         // used for class registration
-        public Sprite()
+        public SpriteClass()
         {
         }
 
-        private Sprite(String path)
+        private SpriteClass(String path)
             : this(path, "Foreground", "Centre")
         {
         }
 
-        private Sprite(String path, String layer)
+        private SpriteClass(String path, String layer)
             : this(path, layer, "Centre")
         {
         }
 
-        private Sprite(String path, String layer, String origin)
+        private SpriteClass(String path, String layer, String origin)
         {
             this.path = path;
             this.layer = layer;
@@ -51,11 +51,11 @@ namespace SGL.Library.Classes
 
         public override object CreateObject(List<Value> param)
         {
-            if (Value.TypeCompare(param, ValType.String)) return new Sprite(param[0].StringValue);
+            if (Value.TypeCompare(param, ValType.String)) return new SpriteClass(param[0].StringValue);
             else if (Value.TypeCompare(param, ValType.String, ValType.Layer))
-                return new Sprite(param[0].StringValue, param[1].StringValue);
+                return new SpriteClass(param[0].StringValue, param[1].StringValue);
             else if (Value.TypeCompare(param, ValType.String, ValType.Layer, ValType.Origin))
-                return new Sprite(param[0].StringValue, param[1].StringValue, param[2].StringValue);
+                return new SpriteClass(param[0].StringValue, param[1].StringValue, param[2].StringValue);
             else throw new CompilerException(-1, 312);
         }
     }

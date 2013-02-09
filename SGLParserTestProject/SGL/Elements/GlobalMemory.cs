@@ -17,7 +17,7 @@ namespace SGL.Elements
         private readonly Dictionary<string, Function> functions = new Dictionary<string, Function>();
         private readonly Scope globalScope = new Scope();
         private readonly Random random = new Random();
-        private readonly List<VisualObject> storyboardObjects = new List<VisualObject>();
+        private readonly List<VisualGenerator> storyboardObjects = new List<VisualGenerator>();
         private String currentCall = "main";
 
         private String debug = "";
@@ -67,7 +67,7 @@ namespace SGL.Elements
                 storyboardObjects.Sort();
 
                 int layer = -1;
-                foreach (VisualObject storyboardObject in storyboardObjects)
+                foreach (VisualGenerator storyboardObject in storyboardObjects)
                 {
                     while (layer < storyboardObject.LayerToInt())
                     {
@@ -179,7 +179,7 @@ namespace SGL.Elements
         }
 
 
-        public void RegisterVisualObject(VisualObject vo)
+        public void RegisterVisualObject(VisualGenerator vo)
         {
             storyboardObjects.Add(vo);
         }

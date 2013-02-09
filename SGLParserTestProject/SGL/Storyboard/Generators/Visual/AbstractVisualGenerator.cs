@@ -3,21 +3,32 @@ using System.Collections.Generic;
 using System.Text;
 using SGL.Elements;
 
-namespace SGL.Storyboard
+namespace SGL.Storyboard.Generators.Visual
 {
-    public abstract class VisualObject : IComparable
+    public abstract class AbstractVisualGenerator : AbstractGenerator, IComparable
     {
-        private readonly List<Command> storyboardCommands = new List<Command>();
         protected string filepath;
-
         protected string layer;
         protected string origin;
         protected int priority = 0;
-
         protected int x = 320;
         protected int y = 240;
         protected double scaleFactor = 1;
 
+        private readonly List<Command> storyboardCommands = new List<Command>();
+
+        public AbstractVisualGenerator()
+        {
+        }
+
+        public AbstractVisualGenerator(string layer, string origin, string filepath)
+        {
+            this.layer = layer;
+            this.origin = origin;
+            this.filepath = filepath;
+        }
+
+        #region Properties
 
         public int X
         {
@@ -43,51 +54,49 @@ namespace SGL.Storyboard
             }
         }
 
-        public VisualObject()
-        {
-
-        }
-
-        public VisualObject(string layer, string origin, string filepath)
-        {
-            this.layer = layer;
-            this.origin = origin;
-            this.filepath = filepath;
-        }
 
         public int Priority
         {
             get { return priority; }
         }
 
-        #region IComparable Members
+        #endregion
 
-        public int CompareTo(object obj)
+        #region Mehtods for general storyboard generation
+
+        public virtual void GenerateBackgroundSection(StringBuilder storyboardCode)
         {
-            if (obj == null) return 1;
-
-            // sort order: 1. layer, 2. priority
-            var that = obj as VisualObject;
-            if (that != null)
-            {
-                int layerCompare = LayerToInt().CompareTo(that.LayerToInt());
-                if (layerCompare != 0) return layerCompare;
-                else
-                {
-                    return Priority.CompareTo(that.Priority);
-                }
+            if (layer.Equals("Background")) {
+                GenerateStoryboardCode(storyboardCode);
             }
-            else
-                throw new ArgumentException("Object is not a VisualObject");
         }
 
-        #endregion
+        public virtual void GenerateFailSection(StringBuilder storyboardCode)
+        {
+            if (layer.Equals("Fail")) {
+                GenerateStoryboardCode(storyboardCode);
+            }
+        }
+
+        public virtual void GeneratePassSection(StringBuilder storyboardCode)
+        {
+            if (layer.Equals("Pass")) {
+                GenerateStoryboardCode(storyboardCode);
+            }
+        }
+
+        public virtual void GenerateForegroundSection(StringBuilder storyboardCode)
+        {
+            if (layer.Equals("Foreground")) {
+                GenerateStoryboardCode(storyboardCode);
+            }
+        }
 
         /// <summary>
         /// Generates the storyboard code for one VisualObject
         /// </summary>
         /// <param name="storyboardCode"></param>
-        public virtual void GenerateSbCode(StringBuilder storyboardCode)
+        protected virtual void GenerateStoryboardCode(StringBuilder storyboardCode)
         {
             // Start Sprite with this code
             String initCode = GetStoryboardInitCode();
@@ -102,12 +111,30 @@ namespace SGL.Storyboard
             }
         }
 
-        public void AddCommand(Command command)
-        {
-            storyboardCommands.Add(command);
-        }
+        #endregion
 
         protected abstract String GetStoryboardInitCode();
+
+        #region IComparable Members
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+
+            // sort order: 1. layer, 2. priority
+            var that = obj as AbstractVisualGenerator;
+            if (that != null)
+            {
+                int layerCompare = LayerToInt().CompareTo(that.LayerToInt());
+                if (layerCompare != 0) return layerCompare;
+                else
+                {
+                    return Priority.CompareTo(that.Priority);
+                }
+            }
+            else
+                throw new ArgumentException("Object is not a VisualObject");
+        }
 
         public int LayerToInt()
         {
@@ -126,11 +153,17 @@ namespace SGL.Storyboard
             }
         }
 
+        #endregion
 
-        // Methods for Animation
+        public void AddCommand(Command command)
+        {
+            storyboardCommands.Add(command);
+        }
 
-        // 3 Parameter Methods
-        // Coloring
+        #region Methods for generating code for storyboard commands
+
+        #region color
+
         public virtual void color(int easing, int startTime, int endTime, int startRed, int startGreen, int startBlue,
                           int endRed, int endGreen, int endBlue)
         {
@@ -156,9 +189,10 @@ namespace SGL.Storyboard
             color(0, 0, 0, startRed, startGreen, startBlue, startRed, startGreen, startBlue);
         }
 
+        #endregion
 
-        // 2 Parameter Methods
-        // Moving
+        #region move
+
         public virtual void move(int easing, int startTime, int endTime, int startX, int startY, int endX, int endY)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
@@ -184,7 +218,10 @@ namespace SGL.Storyboard
             move(0, 0, 0, startX, startY, startX, startY);
         }
 
-        // Vector Scaling
+        #endregion
+
+        #region vector scaling
+
         public virtual void scaleVec(int easing, int startTime, int endTime, double startX, double startY, double endX,
                              double endY)
         {
@@ -210,8 +247,10 @@ namespace SGL.Storyboard
             scaleVec(0, 0, 0, startX, startY, startX, startY);
         }
 
-        // 1 Parameter Methods
-        // Fading
+        #endregion
+
+        #region fade
+
         public virtual void fade(int easing, int startTime, int endTime, double startOpacity, double endOpacity)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
@@ -235,7 +274,10 @@ namespace SGL.Storyboard
             fade(0, 0, 0, startOpacity, startOpacity);
         }
 
-        // Scaling
+        #endregion
+
+        #region scale
+
         public virtual void scale(int easing, int startTime, int endTime, double startScale, double endScale)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
@@ -260,8 +302,10 @@ namespace SGL.Storyboard
             scale(0, 0, 0, startScale, startScale);
         }
 
+        #endregion
 
-        // Rotating
+        #region rotate
+
         public virtual void rotate(int easing, int startTime, int endTime, double startAngle, double endAngle)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
@@ -285,8 +329,10 @@ namespace SGL.Storyboard
             rotate(0, 0, 0, startAngle, startAngle);
         }
 
+        #endregion
 
-        // moveX
+        #region moveY
+
         public virtual void moveX(int easing, int startTime, int endTime, double startX, double endX)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
@@ -311,8 +357,10 @@ namespace SGL.Storyboard
             moveX(0, 0, 0, startX, startX);
         }
 
+        #endregion
 
-        // moveY
+        #region moveY
+
         public virtual void moveY(int easing, int startTime, int endTime, double startY, double endY)
         {
             if (easing < 0 || easing > 2) throw new CompilerException(-1, 315, easing.ToString());
@@ -336,5 +384,9 @@ namespace SGL.Storyboard
         {
             moveY(0, 0, 0, startY, startY);
         }
+
+        #endregion
+
+        #endregion
     }
 }

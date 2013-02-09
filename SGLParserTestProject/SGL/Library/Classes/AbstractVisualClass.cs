@@ -5,11 +5,11 @@ using SGL.Storyboard;
 
 namespace SGL.Library.Classes
 {
-    public abstract class Visual : Class
+    public abstract class AbstractVisualClass : AbstractClass
     {
-        protected VisualObject visualObject;
+        protected VisualGenerator visualObject;
 
-        public VisualObject Object
+        public VisualGenerator Object
         {
             get
             {

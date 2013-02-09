@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace SGL.Storyboard
+namespace SGL.Storyboard.Generators.Visual
 {
-    public class SpriteObject : VisualObject
+    public class SpriteObject : AbstractVisualGenerator
     {
         public SpriteObject(string layer, string origin, string filepath)
             : base(layer, origin, filepath)

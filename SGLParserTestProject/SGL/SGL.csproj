@@ -120,9 +120,10 @@
     <Compile Include="Storyboard\AnimationType.cs" />
     <Compile Include="Storyboard\Command.cs" />
     <Compile Include="Storyboard\AnimationObject.cs" />
+    <Compile Include="Storyboard\Generators\AbstractGenerator.cs" />
     <Compile Include="Storyboard\LayerObject.cs" />
     <Compile Include="Storyboard\SpriteObject.cs" />
-    <Compile Include="Storyboard\VisualObject.cs" />
+    <Compile Include="Storyboard\Generators\Visual\AbstractVisualGenerator.cs" />
     <Compile Include="Tests\AbstractTest.cs" />
     <Compile Include="Tests\Tester.cs" />
     <Compile Include="Tests\Unit.cs" />

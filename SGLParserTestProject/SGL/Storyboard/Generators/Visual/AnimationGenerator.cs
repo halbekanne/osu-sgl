@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace SGL.Storyboard
+namespace SGL.Storyboard.Generators.Visual
 {
-    public class AnimationObject : VisualObject
+    public class AnimationObject : AbstractVisualGenerator
     {
         private readonly int frameCount;
         private readonly int frameDelay;
