@@ -260,7 +260,8 @@ namespace SGL.Elements
                 // everything else shouldn't be compared
                 //throw new CompilerException(-1, 204, new String[] {Value.TypeToString(thisType), Value.TypeToString(thatType)});
                 // TODO: Exception
-                throw new Exception();
+                //throw new Exception();
+                return false;
             }
         }
 

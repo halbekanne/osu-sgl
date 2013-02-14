@@ -75,7 +75,7 @@ namespace SGLTest
             {
                 statusLabel.Text = "Unexpected error occured";
 
-                errorBox.Text = "An unexpected error occured (Error was reported automatically):\r\n" +
+                errorBox.Text = "An unexpected error occured:\r\n" +
                 ue.Message + "\r\n" +
                 ue.StackTrace;
             }
@@ -329,6 +329,21 @@ namespace SGLTest
         {
             UnitTester tester = new UnitTester();
             tester.RunTests();
+        }
+
+        private void sGLUserManualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"http://moonshadow.hostbeef.com/sgl/");
+        }
+
+        private void osuThreadBugsFeatureRequestsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"http://osu.ppy.sh/forum/t/118733");
+        }
+
+        private void bugListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"https://github.com/MoonShade/osu-sgl/issues");
         }
 
 

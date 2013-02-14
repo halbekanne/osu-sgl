@@ -68,7 +68,7 @@ namespace SGL.Nodes.ControlFlow
                 if (value.Type == ValType.Return)
                 {
                     // return early from this block if value is a return statement  
-                    return value.ReturnValue;
+                    return value;
                 }
             }
 

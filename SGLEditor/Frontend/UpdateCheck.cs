@@ -10,7 +10,7 @@ namespace SGLTest
 
     class UpdateCheck
     {
-        const int currentVersion = 100;
+        const int currentVersion = 101001;
         private SimpleSGLEditor editor;
 
         public UpdateCheck(SimpleSGLEditor editor)
@@ -20,8 +20,8 @@ namespace SGLTest
 
         public void DoWork()
         {
-            /*
-            String uri = @"http://www.osu-german.de/sglerror/update.php";
+            
+            String uri = @"http://moonshadow.hostbeef.com/sglerror/update.php";
             String updateRaw = HttpPost(uri, "");
             String[] update = updateRaw.Split('|');
             if (update.Length == 2)
@@ -31,7 +31,7 @@ namespace SGLTest
                     editor.ShowUpdateAvaliable(editor, update[1]);
                 }
 
-            }*/
+            }
 
         }
 

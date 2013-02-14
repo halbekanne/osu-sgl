@@ -58,13 +58,21 @@ namespace SGL.Library.Functions
 
                 // Ok, executing the function then
                 Value returnValue = walker.main().Evaluate();
+                if (returnValue.Type == ValType.Return)
+                {
+                    return returnValue.ReturnValue;
+                }
+                else
+                {
+                    return returnValue;
+                }
 
                 // we shouldn't check the return type
                 /*if (!returnValue.GetVarType().Equals(this.returnType))
                 {
                     throw new Exception("The method doesn't return the expected return type (" + returnValue.ToString()  + " is not from type " + this.returnType + ")");
                 }*/
-                return returnValue;
+                
             }
             // TODO: Exception
             throw new Exception();

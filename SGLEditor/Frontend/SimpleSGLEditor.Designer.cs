@@ -43,7 +43,6 @@
             this.compilerPBar = new System.Windows.Forms.ToolStripProgressBar();
             this.statusLabel = new System.Windows.Forms.ToolStripLabel();
             this.compileSBButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.CopyrightLabel = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +51,11 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.miSaveSgl = new System.Windows.Forms.ToolStripMenuItem();
             this.miSaveOsb = new System.Windows.Forms.ToolStripMenuItem();
-            this.runTests = new System.Windows.Forms.ToolStripButton();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sGLUserManualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.osuThreadBugsFeatureRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bugListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tabControl.SuspendLayout();
             this.tabSGL.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -210,8 +213,6 @@
             this.compilerPBar,
             this.statusLabel,
             this.compileSBButton,
-            this.runTests,
-            this.toolStripButton1,
             this.CopyrightLabel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 537);
             this.toolStrip1.Name = "toolStrip1";
@@ -243,28 +244,19 @@
             this.compileSBButton.ToolTipText = "Compiles SGL code into storybard code";
             this.compileSBButton.Click += new System.EventHandler(this.compileSBButton_Click);
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(90, 22);
-            this.toolStripButton1.Text = "Report Error";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
             // CopyrightLabel
             // 
             this.CopyrightLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.CopyrightLabel.Name = "CopyrightLabel";
-            this.CopyrightLabel.Size = new System.Drawing.Size(218, 22);
-            this.CopyrightLabel.Text = "SGL BETA 1.0 - Dominik Halfkann (2011)";
+            this.CopyrightLabel.Size = new System.Drawing.Size(276, 22);
+            this.CopyrightLabel.Text = "SGL Editor (Beta 1.1.001) - Dominik Halfkann (2013)";
             this.CopyrightLabel.Click += new System.EventHandler(this.CopyrightLabel_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
@@ -316,16 +308,42 @@
             this.miSaveOsb.Text = "Save .osb";
             this.miSaveOsb.Click += new System.EventHandler(this.miSaveOsb_Click);
             // 
-            // runTests
+            // helpToolStripMenuItem
             // 
-            this.runTests.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.runTests.Image = ((System.Drawing.Image)(resources.GetObject("runTests.Image")));
-            this.runTests.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.runTests.Name = "runTests";
-            this.runTests.Size = new System.Drawing.Size(78, 22);
-            this.runTests.Text = "Run Tests";
-            this.runTests.ToolTipText = "Compiles SGL code into storybard code";
-            this.runTests.Click += new System.EventHandler(this.runTests_Click);
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.osuThreadBugsFeatureRequestsToolStripMenuItem,
+            this.bugListToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.sGLUserManualToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // sGLUserManualToolStripMenuItem
+            // 
+            this.sGLUserManualToolStripMenuItem.Name = "sGLUserManualToolStripMenuItem";
+            this.sGLUserManualToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.sGLUserManualToolStripMenuItem.Text = "SGL User Manual";
+            this.sGLUserManualToolStripMenuItem.Click += new System.EventHandler(this.sGLUserManualToolStripMenuItem_Click);
+            // 
+            // osuThreadBugsFeatureRequestsToolStripMenuItem
+            // 
+            this.osuThreadBugsFeatureRequestsToolStripMenuItem.Name = "osuThreadBugsFeatureRequestsToolStripMenuItem";
+            this.osuThreadBugsFeatureRequestsToolStripMenuItem.Size = new System.Drawing.Size(297, 22);
+            this.osuThreadBugsFeatureRequestsToolStripMenuItem.Text = "osu! Thread (Help/Bugs/Feature Requests)";
+            this.osuThreadBugsFeatureRequestsToolStripMenuItem.Click += new System.EventHandler(this.osuThreadBugsFeatureRequestsToolStripMenuItem_Click);
+            // 
+            // bugListToolStripMenuItem
+            // 
+            this.bugListToolStripMenuItem.Name = "bugListToolStripMenuItem";
+            this.bugListToolStripMenuItem.Size = new System.Drawing.Size(297, 22);
+            this.bugListToolStripMenuItem.Text = "Bug/Improvement List";
+            this.bugListToolStripMenuItem.Click += new System.EventHandler(this.bugListToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(294, 6);
             // 
             // SimpleSGLEditor
             // 
@@ -371,7 +389,6 @@
         private Alsing.Windows.Forms.SyntaxBoxControl storyboardBox;
         private Alsing.SourceCode.SyntaxDocument syntaxStoryboard;
         private System.Windows.Forms.ToolStripLabel CopyrightLabel;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miNew;
@@ -379,6 +396,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem miSaveSgl;
         private System.Windows.Forms.ToolStripMenuItem miSaveOsb;
-        private System.Windows.Forms.ToolStripButton runTests;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sGLUserManualToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem osuThreadBugsFeatureRequestsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bugListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }

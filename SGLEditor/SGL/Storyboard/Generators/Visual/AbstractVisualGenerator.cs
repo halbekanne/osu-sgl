@@ -390,7 +390,7 @@ namespace SGL.Storyboard.Generators.Visual
 
         #endregion
 
-        #region moveY
+        #region moveX
 
         public virtual void moveX(int easing, int startTime, int endTime, double startX, double endX)
         {
