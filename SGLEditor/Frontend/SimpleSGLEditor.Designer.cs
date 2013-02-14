@@ -52,10 +52,10 @@
             this.miSaveSgl = new System.Windows.Forms.ToolStripMenuItem();
             this.miSaveOsb = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sGLUserManualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.osuThreadBugsFeatureRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bugListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.sGLUserManualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl.SuspendLayout();
             this.tabSGL.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -249,7 +249,7 @@
             this.CopyrightLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.CopyrightLabel.Name = "CopyrightLabel";
             this.CopyrightLabel.Size = new System.Drawing.Size(276, 22);
-            this.CopyrightLabel.Text = "SGL Editor (Beta 1.1.001) - Dominik Halfkann (2013)";
+            this.CopyrightLabel.Text = "SGL Editor (Beta 1.1.002) - Dominik Halfkann (2013)";
             this.CopyrightLabel.Click += new System.EventHandler(this.CopyrightLabel_Click);
             // 
             // menuStrip1
@@ -319,13 +319,6 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // sGLUserManualToolStripMenuItem
-            // 
-            this.sGLUserManualToolStripMenuItem.Name = "sGLUserManualToolStripMenuItem";
-            this.sGLUserManualToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.sGLUserManualToolStripMenuItem.Text = "SGL User Manual";
-            this.sGLUserManualToolStripMenuItem.Click += new System.EventHandler(this.sGLUserManualToolStripMenuItem_Click);
-            // 
             // osuThreadBugsFeatureRequestsToolStripMenuItem
             // 
             this.osuThreadBugsFeatureRequestsToolStripMenuItem.Name = "osuThreadBugsFeatureRequestsToolStripMenuItem";
@@ -345,6 +338,13 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(294, 6);
             // 
+            // sGLUserManualToolStripMenuItem
+            // 
+            this.sGLUserManualToolStripMenuItem.Name = "sGLUserManualToolStripMenuItem";
+            this.sGLUserManualToolStripMenuItem.Size = new System.Drawing.Size(297, 22);
+            this.sGLUserManualToolStripMenuItem.Text = "SGL User Manual";
+            this.sGLUserManualToolStripMenuItem.Click += new System.EventHandler(this.sGLUserManualToolStripMenuItem_Click);
+            // 
             // SimpleSGLEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,7 +355,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SimpleSGLEditor";
-            this.Text = "SimpleSGLEditor";
+            this.Text = "SGL Editor";
             this.Load += new System.EventHandler(this.SimpleSGLEditor_Load);
             this.tabControl.ResumeLayout(false);
             this.tabSGL.ResumeLayout(false);
