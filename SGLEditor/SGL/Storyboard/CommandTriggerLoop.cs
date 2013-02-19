@@ -14,29 +14,30 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace SGL.Storyboard.Generators.Visual
+namespace SGL.Storyboard
 {
-    internal class AnimationGenerator : AbstractVisualGenerator
+    class CommandTriggerLoop : CommandLoop
     {
-        private readonly int frameCount;
-        private readonly int frameDelay;
-        private readonly string loopType;
+        private String triggerName;
+        private int endTime;
 
-        public AnimationGenerator(string layer, string origin, string filepath, int frameCount, int frameDelay,
-                               string loopType)
-            : base(layer, origin, filepath)
+        public CommandTriggerLoop(String triggerName, int startTime, int endTime) : base(startTime)
         {
-            this.frameCount = frameCount;
-            this.frameDelay = frameDelay;
-            this.loopType = loopType;
+            this.triggerName = triggerName;
+            this.endTime = endTime;
         }
 
-
-        protected override String GetStoryboardInitCode()
+        public override void AddSoryboardCode(StringBuilder storyboardCode)
         {
-            return "Animation," + layer + "," + origin + ",\"" + filepath + "\",320,240," + frameCount + "," +
-                   frameDelay + "," + loopType;
+            storyboardCode.Append(" T," + triggerName + "," + startTime + "," + endTime + "\r\n");
+            foreach (Animation currentAnimation in nestedAnimations)
+            {
+                storyboardCode.Append(" ");
+                currentAnimation.AddSoryboardCode(storyboardCode);
+            }
         }
     }
 }

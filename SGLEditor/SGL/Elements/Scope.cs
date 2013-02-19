@@ -18,7 +18,7 @@ using System.Collections.Generic;
 
 namespace SGL.Elements
 {
-    public class Scope
+    internal class Scope
     {
         private readonly Scope parent;
         private int offset;

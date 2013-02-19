@@ -22,7 +22,7 @@ using SGL.Nodes;
 
 namespace SGL.Tests
 {
-    public class Unit
+    internal class Unit
     {
         private readonly bool debug;
         private readonly String input;

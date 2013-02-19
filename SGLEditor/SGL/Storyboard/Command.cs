@@ -18,9 +18,14 @@ using System.Text;
 
 namespace SGL.Storyboard
 {
-    public abstract class Command : IComparable
+    internal abstract class Command : IComparable
     {
         public int startTime;
+
+        public Command(int startTime)
+        {
+            this.startTime = startTime;
+        }
 
         #region IComparable Members
 

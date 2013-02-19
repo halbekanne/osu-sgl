@@ -21,7 +21,7 @@ using SGL.Library.Classes;
 
 namespace SGL.Elements
 {
-    public class Value : IComparable<Value>
+    internal class Value : IComparable<Value>
     {
         // return null;
         public static readonly Value NULL = new Value(ValType.Null);
@@ -121,7 +121,7 @@ namespace SGL.Elements
             {
                 // TODO: Exception
                 if (type == ValType.String || type == ValType.Layer || type == ValType.Origin ||
-                    type == ValType.LoopType) return (string) value;
+                    type == ValType.LoopType || type == ValType.LoopTrigger) return (string)value;
                 else throw new InvalidOperationException();
             }
         }
@@ -186,6 +186,8 @@ namespace SGL.Elements
                         return "Return";
                     case ValType.String:
                         return "String";
+                    case ValType.LoopTrigger:
+                        return "LoopTrigger";
                     case ValType.Void:
                         return "Void";
                     default:
@@ -250,7 +252,7 @@ namespace SGL.Elements
                 // String Comparison
                 return StringValue.Equals(that.StringValue, StringComparison.Ordinal);
             }
-            else if (Type == that.Type && (Type == ValType.Layer || Type == ValType.LoopType || Type == ValType.Origin))
+            else if (Type == that.Type && (Type == ValType.Layer || Type == ValType.LoopType || Type == ValType.Origin || Type == ValType.LoopTrigger))
             {
                 // Comparison of other string-like types
                 return StringValue.Equals(that.StringValue, StringComparison.Ordinal);
@@ -304,6 +306,8 @@ namespace SGL.Elements
                 case ValType.Object:
                     return "class";
                 case ValType.Origin:
+                    return StringValue;
+                case ValType.LoopTrigger:
                     return StringValue;
                 case ValType.Return:
                     return "return";

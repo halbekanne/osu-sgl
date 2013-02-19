@@ -17,21 +17,22 @@ namespace SGL.Elements
 {
     public enum ValType
     {
-        Integer,
-        StrictInteger,
-        Double,
-        StrictDouble,
         Boolean,
-        String,
-        List,
-        Object,
+        Break,
+        Double,
+        Integer,
+        Invalid,
         Layer,
-        Origin,
+        List,
         LoopType,
         Null,
-        Void,
-        Break,
+        Object,
+        Origin,
         Return,
-        Invalid
+        StrictDouble,
+        StrictInteger,
+        String,
+        LoopTrigger,
+        Void
     }
 }

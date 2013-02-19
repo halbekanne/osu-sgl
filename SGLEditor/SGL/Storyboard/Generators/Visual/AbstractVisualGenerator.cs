@@ -20,7 +20,7 @@ using SGL.Elements;
 
 namespace SGL.Storyboard.Generators.Visual
 {
-    public abstract class AbstractVisualGenerator : AbstractGenerator, IComparable
+    internal abstract class AbstractVisualGenerator : AbstractGenerator, IComparable
     {
         protected string filepath;
         protected string layer;
@@ -34,6 +34,8 @@ namespace SGL.Storyboard.Generators.Visual
         protected int red = 255;
         protected int green = 255;
         protected int blue = 255;
+        protected bool insideLoop = false;
+        protected CommandLoop currentLoop;
 
         private readonly List<Command> storyboardCommands = new List<Command>();
 
@@ -216,7 +218,21 @@ namespace SGL.Storyboard.Generators.Visual
 
         public void AddCommand(Command command)
         {
-            storyboardCommands.Add(command);
+            if (!insideLoop)
+            {
+                storyboardCommands.Add(command);
+            }
+            else
+            {
+                if (command is Animation)
+                {
+                    currentLoop.AddAnimation((Animation)command);
+                }
+                else
+                {
+                    throw new Exception("tried to add a loop inside a loop but should never occur");
+                }
+            }
         }
 
         #region Methods for generating code for storyboard commands
@@ -447,5 +463,35 @@ namespace SGL.Storyboard.Generators.Visual
         #endregion
 
         #endregion
+
+        #region Methods for Looping
+
+        public virtual void startLoop(int startTime, int loopCount)
+        {
+            this.currentLoop = new CommandLoop(startTime, loopCount);
+            AddCommand(currentLoop);
+            this.insideLoop = true;
+        }
+
+        public virtual void startTriggerLoop(string loopTrigger, int startTime, int endTime)
+        {
+            this.currentLoop = new CommandTriggerLoop(loopTrigger, startTime, endTime);
+            AddCommand(currentLoop);
+            this.insideLoop = true;
+        }
+
+        internal void endLoop()
+        {
+            this.currentLoop = null;
+            this.insideLoop = false;
+        }
+
+        #endregion
+
+
+
+
+
+        
     }
 }

@@ -118,6 +118,8 @@
     <Compile Include="Storyboard\Animation.cs" />
     <Compile Include="Storyboard\AnimationType.cs" />
     <Compile Include="Storyboard\Command.cs" />
+    <Compile Include="Storyboard\CommandLoop.cs" />
+    <Compile Include="Storyboard\CommandTriggerLoop.cs" />
     <Compile Include="Storyboard\Generators\Visual\AnimationGenerator.cs" />
     <Compile Include="Storyboard\Generators\AbstractGenerator.cs" />
     <Compile Include="Storyboard\Generators\Visual\LayerGenerator.cs" />

@@ -22,7 +22,7 @@ namespace SGL.Nodes
     /// Interface for all kind of nodes. Nodes are classes which hold other nodes. 
     /// Their purpose is to perform a specific action to their children nodes and then return a value. This value can then be used by their parent nodes to perform another action and so forth.
     /// </summary>
-    public abstract class AbstractNode
+    internal abstract class AbstractNode
     {
         /// <summary>
         /// Retrieves the line number from the corresponding code for this node. Very important for troubleshooting!

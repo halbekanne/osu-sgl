@@ -20,7 +20,7 @@ using SGL.Storyboard.Generators.Visual;
 
 namespace SGL.Library.Classes
 {
-    public abstract class AbstractVisualClass : AbstractClass
+    internal abstract class AbstractVisualClass : AbstractClass
     {
         protected AbstractVisualGenerator visualObject;
 
@@ -262,7 +262,30 @@ namespace SGL.Library.Classes
                     else
                         throw new CompilerException(-1, 313, Name, name, Value.PrintTypeList(param));
 
-
+                case "startLoop":
+                    if (Value.TypeCompare(param, ValType.Integer, ValType.Integer))
+                    {
+                        visualObject.startLoop(param[0].IntValue, param[1].IntValue);
+                        return Value.VOID;
+                    }
+                    else
+                        throw new CompilerException(-1, 313, Name, name, Value.PrintTypeList(param));
+                case "startTriggerLoop":
+                    if (Value.TypeCompare(param, ValType.LoopTrigger, ValType.Integer, ValType.Integer))
+                    {
+                        visualObject.startTriggerLoop(param[0].StringValue, param[1].IntValue, param[2].IntValue);
+                        return Value.VOID;
+                    }
+                    else
+                        throw new CompilerException(-1, 313, Name, name, Value.PrintTypeList(param));
+                case "endLoop":
+                    if (param.Count == 0)
+                    {
+                        visualObject.endLoop();
+                        return Value.VOID;
+                    }
+                    else
+                        throw new CompilerException(-1, 313, Name, name, Value.PrintTypeList(param));
                 default:
                     throw new CompilerException(-1, 314, Name, name);
             }

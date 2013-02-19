@@ -20,7 +20,7 @@ namespace SGL.Nodes.Operators
     /// <summary>
     /// Abstract class for all kind of operators which perform an action on 1 values, e.g. negation.
     /// </summary>
-    public abstract class AbstractUnaryOperatorNode : AbstractNode
+    internal abstract class AbstractUnaryOperatorNode : AbstractNode
     {
         private readonly AbstractNode node;
 

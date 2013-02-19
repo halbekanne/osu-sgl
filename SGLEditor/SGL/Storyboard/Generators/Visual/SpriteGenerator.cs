@@ -17,7 +17,7 @@ using System;
 
 namespace SGL.Storyboard.Generators.Visual
 {
-    public class SpriteGenerator : AbstractVisualGenerator
+    internal class SpriteGenerator : AbstractVisualGenerator
     {
         public SpriteGenerator(string layer, string origin, string filepath)
             : base(layer, origin, filepath)

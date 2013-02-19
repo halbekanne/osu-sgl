@@ -17,33 +17,34 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGL.Storyboard.Generators
+namespace SGL.Storyboard
 {
-    internal class AbstractGenerator
+    class CommandLoop : Command
     {
-        public virtual void GenerateBackgroundVideoEvents(StringBuilder storyboardCode)
+
+        private int loopCount;
+        protected List<Animation> nestedAnimations = new List<Animation>();
+
+        protected CommandLoop(int startTime) : base(startTime) { }
+
+        public CommandLoop(int startTime, int loopCount) : base(startTime)
         {
+            this.loopCount = loopCount;
         }
 
-        public virtual void GenerateBackgroundSection(StringBuilder storyboardCode)
+        public void AddAnimation(Animation animation)
         {
+            this.nestedAnimations.Add(animation);
         }
 
-        public virtual void GenerateFailSection(StringBuilder storyboardCode)
+        public override void AddSoryboardCode(StringBuilder storyboardCode)
         {
+            storyboardCode.Append(" L," + startTime + "," + loopCount + "\r\n");
+            foreach (Animation currentAnimation in nestedAnimations)
+            {
+                storyboardCode.Append(" ");
+                currentAnimation.AddSoryboardCode(storyboardCode);
+            }
         }
-
-        public virtual void GeneratePassSection(StringBuilder storyboardCode)
-        {
-        }
-
-        public virtual void GenerateForegroundSection(StringBuilder storyboardCode)
-        {
-        }
-
-        public virtual void GenerateSoundSamples(StringBuilder storyboardCode)
-        {
-        }
-
     }
 }

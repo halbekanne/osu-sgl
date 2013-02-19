@@ -19,7 +19,7 @@ using SGL.Elements;
 
 namespace SGL.Library.Classes
 {
-    public abstract class AbstractClass
+    internal abstract class AbstractClass
     {
         //public abstract void Test();
         public abstract String Name { get; }

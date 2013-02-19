@@ -20,7 +20,7 @@ namespace SGL.Nodes.Operators
     /// <summary>
     /// Abstract class for all kind of operators which perform an action on 2 values, e.g. addition.
     /// </summary>
-    public abstract class AbstractBinaryOperatorNode : AbstractNode
+    internal abstract class AbstractBinaryOperatorNode : AbstractNode
     {
         private readonly AbstractNode node1;
         private readonly AbstractNode node2;

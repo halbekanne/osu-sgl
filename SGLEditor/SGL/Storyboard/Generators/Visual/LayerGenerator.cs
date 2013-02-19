@@ -19,7 +19,7 @@ using System.Collections.Generic;
 
 namespace SGL.Storyboard.Generators.Visual
 {
-    public class LayerGenerator : AbstractVisualGenerator
+    internal class LayerGenerator : AbstractVisualGenerator
     {
         private List<AbstractVisualGenerator> LayerGenerators;
 

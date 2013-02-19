@@ -36,11 +36,10 @@ namespace SGL.Storyboard
         /// <param name="startParams"></param>
         /// <param name="endParams"></param>
         public Animation(AnimationType animationType, int easing, int startTime, int endTime, double[] startParams,
-                         double[] endParams)
+                         double[] endParams) : base(startTime)
         {
             this.animationType = animationType;
             this.easing = easing;
-            this.startTime = startTime;
             this.endTime = endTime;
             this.startParams = startParams;
             this.endParams = endParams;
