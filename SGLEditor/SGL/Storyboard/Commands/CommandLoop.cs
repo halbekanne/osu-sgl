@@ -17,22 +17,29 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGL.Storyboard
+namespace SGL.Storyboard.Commands
 {
-    class CommandTriggerLoop : CommandLoop
+    class CommandLoop : Command
     {
-        private String triggerName;
-        private int endTime;
 
-        public CommandTriggerLoop(String triggerName, int startTime, int endTime) : base(startTime)
+        private int loopCount;
+        protected List<Animation> nestedAnimations = new List<Animation>();
+
+        protected CommandLoop(int startTime) : base(startTime) { }
+
+        public CommandLoop(int startTime, int loopCount) : base(startTime)
         {
-            this.triggerName = triggerName;
-            this.endTime = endTime;
+            this.loopCount = loopCount;
+        }
+
+        public void AddAnimation(Animation animation)
+        {
+            this.nestedAnimations.Add(animation);
         }
 
         public override void AddSoryboardCode(StringBuilder storyboardCode)
         {
-            storyboardCode.Append(" T," + triggerName + "," + startTime + "," + endTime + "\r\n");
+            storyboardCode.Append(" L," + startTime + "," + loopCount + "\r\n");
             foreach (Animation currentAnimation in nestedAnimations)
             {
                 storyboardCode.Append(" ");

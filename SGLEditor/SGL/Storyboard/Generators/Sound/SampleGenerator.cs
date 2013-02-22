@@ -17,34 +17,26 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGL.Storyboard
+namespace SGL.Storyboard.Generators.Sound
 {
-    class CommandLoop : Command
+    class SampleGenerator : AbstractGenerator
     {
+        private int time;
+        private String layer;
+        private String filepath;
+        private int volume;
 
-        private int loopCount;
-        protected List<Animation> nestedAnimations = new List<Animation>();
-
-        protected CommandLoop(int startTime) : base(startTime) { }
-
-        public CommandLoop(int startTime, int loopCount) : base(startTime)
+        public SampleGenerator(int time, String layer, String filepath, int volume)
         {
-            this.loopCount = loopCount;
+            this.time = time;
+            this.layer = layer;
+            this.filepath = filepath;
+            this.volume = volume;
         }
 
-        public void AddAnimation(Animation animation)
+        public override void GenerateSoundSamples(StringBuilder storyboardCode)
         {
-            this.nestedAnimations.Add(animation);
-        }
-
-        public override void AddSoryboardCode(StringBuilder storyboardCode)
-        {
-            storyboardCode.Append(" L," + startTime + "," + loopCount + "\r\n");
-            foreach (Animation currentAnimation in nestedAnimations)
-            {
-                storyboardCode.Append(" ");
-                currentAnimation.AddSoryboardCode(storyboardCode);
-            }
+            storyboardCode.AppendLine("Sample," + time+ "," + layer + ",\"" + filepath + "\"," + volume);
         }
     }
 }

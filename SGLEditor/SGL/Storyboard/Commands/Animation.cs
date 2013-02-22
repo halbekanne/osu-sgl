@@ -17,7 +17,7 @@ using System;
 using System.Globalization;
 using System.Text;
 
-namespace SGL.Storyboard
+namespace SGL.Storyboard.Commands
 {
     internal class Animation : Command
     {
@@ -61,7 +61,10 @@ namespace SGL.Storyboard
         {
         }
 
-        public override void AddSoryboardCode(StringBuilder storyboardCode)
+        public override void 
+            
+            
+            AddSoryboardCode(StringBuilder storyboardCode)
         {
             switch (animationType)
             {

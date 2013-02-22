@@ -59,6 +59,7 @@
     <Compile Include="Library\Classes\ListClass.cs" />
     <Compile Include="Library\Classes\AbstractClass.cs" />
     <Compile Include="Library\Classes\AnimationClass.cs" />
+    <Compile Include="Library\Classes\SampleClass.cs" />
     <Compile Include="Library\Classes\SpriteClass.cs" />
     <Compile Include="Elements\CompilerException.cs" />
     <Compile Include="Elements\Scope.cs" />
@@ -115,11 +116,12 @@
     <Compile Include="Nodes\Values\ListNode.cs" />
     <Compile Include="Nodes\Values\LookupNode.cs" />
     <Compile Include="Nodes\Values\ReturnNode.cs" />
-    <Compile Include="Storyboard\Animation.cs" />
-    <Compile Include="Storyboard\AnimationType.cs" />
-    <Compile Include="Storyboard\Command.cs" />
-    <Compile Include="Storyboard\CommandLoop.cs" />
-    <Compile Include="Storyboard\CommandTriggerLoop.cs" />
+    <Compile Include="Storyboard\Commands\Animation.cs" />
+    <Compile Include="Storyboard\Commands\AnimationType.cs" />
+    <Compile Include="Storyboard\Commands\Command.cs" />
+    <Compile Include="Storyboard\Commands\CommandLoop.cs" />
+    <Compile Include="Storyboard\Commands\CommandTriggerLoop.cs" />
+    <Compile Include="Storyboard\Generators\Sound\SampleGenerator.cs" />
     <Compile Include="Storyboard\Generators\Visual\AnimationGenerator.cs" />
     <Compile Include="Storyboard\Generators\AbstractGenerator.cs" />
     <Compile Include="Storyboard\Generators\Visual\LayerGenerator.cs" />

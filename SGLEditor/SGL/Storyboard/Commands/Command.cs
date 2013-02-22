@@ -16,7 +16,7 @@
 using System;
 using System.Text;
 
-namespace SGL.Storyboard
+namespace SGL.Storyboard.Commands
 {
     internal abstract class Command : IComparable
     {
