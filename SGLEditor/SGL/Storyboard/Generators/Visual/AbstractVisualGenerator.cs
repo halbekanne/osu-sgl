@@ -463,11 +463,38 @@ namespace SGL.Storyboard.Generators.Visual
 
         #endregion
 
-        #endregion
+		#region additive
+		
+		public virtual void additive(int startTime, int endTime) 
+		{
+			AddCommand(new Flag(FlagType.Additive, startTime, endTime));
+		}
 
-        #region Methods for Looping
+		#endregion
 
-        public virtual void startLoop(int startTime, int loopCount)
+		#region flipX
+
+		public virtual void flipH(int startTime, int endTime) 
+		{
+			AddCommand(new Flag(FlagType.FlipH, startTime, endTime));
+		}
+
+		#endregion
+
+		#region flipY
+
+		public virtual void flipV(int startTime, int endTime) 
+		{
+			AddCommand(new Flag(FlagType.FlipV, startTime, endTime));
+		}
+
+		#endregion
+		
+		#endregion
+
+		#region Methods for Looping
+
+		public virtual void startLoop(int startTime, int loopCount)
         {
             this.currentLoop = new CommandLoop(startTime, loopCount);
             AddCommand(currentLoop);
@@ -489,10 +516,5 @@ namespace SGL.Storyboard.Generators.Visual
 
         #endregion
 
-
-
-
-
-        
-    }
+	}
 }

@@ -121,6 +121,8 @@
     <Compile Include="Storyboard\Commands\Command.cs" />
     <Compile Include="Storyboard\Commands\CommandLoop.cs" />
     <Compile Include="Storyboard\Commands\CommandTriggerLoop.cs" />
+    <Compile Include="Storyboard\Commands\Flag.cs" />
+    <Compile Include="Storyboard\Commands\FlagType.cs" />
     <Compile Include="Storyboard\Generators\Sound\SampleGenerator.cs" />
     <Compile Include="Storyboard\Generators\Visual\AnimationGenerator.cs" />
     <Compile Include="Storyboard\Generators\AbstractGenerator.cs" />
