@@ -262,6 +262,27 @@ namespace SGL.Library.Classes
                     else
                         throw new CompilerException(-1, 313, Name, name, Value.PrintTypeList(param));
 
+				case "additive":
+					if (Value.TypeCompare(param, ValType.Integer, ValType.Integer)) {
+						visualObject.additive(param[0].IntValue, param[1].IntValue);
+						return Value.VOID;
+					} else
+						throw new CompilerException(-1, 313, Name, name, Value.PrintTypeList(param));
+				
+				case "flipH":
+					if (Value.TypeCompare(param, ValType.Integer, ValType.Integer)) {
+						visualObject.flipH(param[0].IntValue, param[1].IntValue);
+						return Value.VOID;
+					} else
+						throw new CompilerException(-1, 313, Name, name, Value.PrintTypeList(param));
+
+				case "flipV":
+					if (Value.TypeCompare(param, ValType.Integer, ValType.Integer)) {
+						visualObject.flipV(param[0].IntValue, param[1].IntValue);
+						return Value.VOID;
+					} else
+						throw new CompilerException(-1, 313, Name, name, Value.PrintTypeList(param));
+
                 case "startLoop":
                     if (Value.TypeCompare(param, ValType.Integer, ValType.Integer))
                     {
