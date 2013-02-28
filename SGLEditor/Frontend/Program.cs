@@ -15,7 +15,7 @@ namespace WindowsFormsApplication4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SimpleSGLEditor());
+            Application.Run(new SGLEditor());
             //Application.Run(new Form1());
             //Application.Run(new Kana_finden());
         }

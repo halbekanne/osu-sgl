@@ -56,6 +56,7 @@
             this.bugListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.sGLUserManualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.tabControl.SuspendLayout();
             this.tabSGL.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -70,11 +71,10 @@
             // 
             this.tabControl.Controls.Add(this.tabSGL);
             this.tabControl.Controls.Add(this.tabSB);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Location = new System.Drawing.Point(0, 24);
+            this.tabControl.Location = new System.Drawing.Point(57, 79);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(784, 513);
+            this.tabControl.Size = new System.Drawing.Size(727, 458);
             this.tabControl.TabIndex = 0;
             // 
             // tabSGL
@@ -83,7 +83,7 @@
             this.tabSGL.Location = new System.Drawing.Point(4, 22);
             this.tabSGL.Name = "tabSGL";
             this.tabSGL.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSGL.Size = new System.Drawing.Size(776, 487);
+            this.tabSGL.Size = new System.Drawing.Size(719, 432);
             this.tabSGL.TabIndex = 0;
             this.tabSGL.Text = "SGL Code";
             this.tabSGL.UseVisualStyleBackColor = true;
@@ -102,8 +102,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.errorBox);
-            this.splitContainer1.Size = new System.Drawing.Size(770, 481);
-            this.splitContainer1.SplitterDistance = 380;
+            this.splitContainer1.Size = new System.Drawing.Size(713, 426);
+            this.splitContainer1.SplitterDistance = 302;
             this.splitContainer1.TabIndex = 0;
             // 
             // SGLBox
@@ -128,7 +128,7 @@
             this.SGLBox.LockCursorUpdate = false;
             this.SGLBox.Name = "SGLBox";
             this.SGLBox.ShowScopeIndicator = false;
-            this.SGLBox.Size = new System.Drawing.Size(770, 380);
+            this.SGLBox.Size = new System.Drawing.Size(713, 302);
             this.SGLBox.SmoothScroll = false;
             this.SGLBox.SplitviewH = -4;
             this.SGLBox.SplitviewV = -4;
@@ -153,7 +153,7 @@
             this.errorBox.Multiline = true;
             this.errorBox.Name = "errorBox";
             this.errorBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.errorBox.Size = new System.Drawing.Size(770, 97);
+            this.errorBox.Size = new System.Drawing.Size(713, 120);
             this.errorBox.TabIndex = 0;
             // 
             // tabSB
@@ -162,7 +162,7 @@
             this.tabSB.Location = new System.Drawing.Point(4, 22);
             this.tabSB.Name = "tabSB";
             this.tabSB.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSB.Size = new System.Drawing.Size(776, 487);
+            this.tabSB.Size = new System.Drawing.Size(719, 432);
             this.tabSB.TabIndex = 1;
             this.tabSB.Text = "Storyboard Code";
             this.tabSB.UseVisualStyleBackColor = true;
@@ -189,7 +189,7 @@
             this.storyboardBox.LockCursorUpdate = false;
             this.storyboardBox.Name = "storyboardBox";
             this.storyboardBox.ShowScopeIndicator = false;
-            this.storyboardBox.Size = new System.Drawing.Size(770, 481);
+            this.storyboardBox.Size = new System.Drawing.Size(713, 426);
             this.storyboardBox.SmoothScroll = false;
             this.storyboardBox.SplitviewH = -4;
             this.storyboardBox.SplitviewV = -4;
@@ -345,11 +345,21 @@
             this.sGLUserManualToolStripMenuItem.Text = "SGL User Manual";
             this.sGLUserManualToolStripMenuItem.Click += new System.EventHandler(this.sGLUserManualToolStripMenuItem_Click);
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.CanOverflow = false;
+            this.toolStrip2.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(784, 25);
+            this.toolStrip2.TabIndex = 3;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
             // SimpleSGLEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -401,5 +411,6 @@
         private System.Windows.Forms.ToolStripMenuItem osuThreadBugsFeatureRequestsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bugListToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStrip toolStrip2;
     }
 }

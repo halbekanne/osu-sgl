@@ -64,6 +64,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IErrorReporter.cs" />
+    <Compile Include="IItem.cs" />
+    <Compile Include="IPreviewUserControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SGLEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SGLEditor.Designer.cs">
+      <DependentUpon>SGLEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="SimpleSGLEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +108,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SGLEditor.resx">
+      <DependentUpon>SGLEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SimpleSGLEditor.resx">
       <DependentUpon>SimpleSGLEditor.cs</DependentUpon>
     </EmbeddedResource>
