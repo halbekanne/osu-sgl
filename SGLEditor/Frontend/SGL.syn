@@ -23,7 +23,7 @@
 			
 			<PatternGroup Name="Classes" Style="SGL Class" CaseSensitive="true">
                      <Patterns>
-                     Sprite Animation move moveX moveY fade rotate scale scaleVec color startLoop startTriggerLoop endLoop
+                     Sprite Animation move moveX moveY fade rotate scale scaleVec color additive flipH flipV startLoop startTriggerLoop endLoop
                      </Patterns>
       </PatternGroup>
 		
@@ -84,7 +84,7 @@
 
       <PatternGroup Name="Classes" Style="SGL Class" CaseSensitive="true">
         <Patterns>
-          Sprite Animation move moveX moveY fade rotate scale scaleVec color startLoop startTriggerLoop endLoop
+          Sprite Animation move moveX moveY fade rotate scale scaleVec color additive flipH flipV startLoop startTriggerLoop endLoop
         </Patterns>
       </PatternGroup>
 		
